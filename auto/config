@@ -6,4 +6,5 @@ lb config noauto \
     --architecture i386 \
     --archive-areas "main contrib non-free" \
     --apt-http-proxy "http://localhost:3142/" \
+    --distribution jessie \
 	"${@}"
