@@ -1,0 +1,8 @@
+# Install newest Iceweasel
+Package: iceweasel
+Pin: release n=experimental
+Pin-Priority: 900
+
+Package: iceweasel-*
+Pin: release n=experimental
+Pin-Priority: 900
