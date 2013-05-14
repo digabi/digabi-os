@@ -9,7 +9,7 @@ build:
 	sudo lh build
 
 clean:
-	sudo lh clean
+	sudo lh clean --all --purge
 
 dist:	config build
 	mv binary.hybrid.iso digabi-livecd-$(VERSION).iso
