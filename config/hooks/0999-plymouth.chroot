@@ -5,11 +5,7 @@ set -e
 # Set Plymouth theme
 THEME="spinfinity"
 
-if [ -x "/usr/sbin/plymouth-set-default-theme" ]
+if [ -e "/usr/sbin/plymouth-set-default-theme" ] && [ -e "/usr/share/plymouth/themes/${THEME}/${THEME}.plymouth" ]
 then
-    if [ -f "/usr/share/plymouth/themes/${THEME}/${THEME}.plymouth" ]
-    then
-        /usr/sbin/plymouth-set-default-theme "$THEME"
-        /usr/sbin/update-initramfs -u
-    fi
+    /usr/sbin/plymouth-set-default-theme "$THEME"
 fi
