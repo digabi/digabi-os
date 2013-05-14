@@ -2,9 +2,24 @@
 
 set -e
 
+ARCHITECTURE="i386"
+DISTRIBUTION="jessie"
+REPOSITORY="http://ftp.fi.debian.org/debian/"
+
 lb config noauto \
-    --architecture i386 \
-    --archive-areas "main contrib non-free" \
+    --architecture $ARCHITECTURE \
+    --archive-areas "main" \
     --apt-http-proxy "http://localhost:3142/" \
-    --distribution jessie \
+    --distribution $DISTRIBUTION \
+    --apt-indices false \
+    --apt-recommends false \
+    --bootappend-live "boot=live config locales=fi_FI.UTF-8,sv_SE.UTF-8,en_US.UTF-8,sv_FI.UTF-8 keyboard-layouts=fi quiet splash" \
+    --iso-volume "digabi $(date +%Y%m%d-%H:%M)" \
+    --iso-publisher "Ylioppilastutkintolautakunta / digabi ; http://digabi.fi ; digabi@digabi.fi" \
+    --memtest none \
+    --parent-mirror-bootstrap $REPOSITORY \
+    --parent-mirror-binary $REPOSITORY \
+    --mirror-bootstrap $REPOSITORY \
+    --mirror-chroot $REPOSITORY \
+    --mirror-binary $REPOSITORY \
 	"${@}"
