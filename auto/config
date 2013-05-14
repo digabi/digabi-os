@@ -3,15 +3,30 @@
 set -e
 
 ARCHITECTURE="i386"
+
+case "$(dpkg --print-architecture)" in
+    amd64)
+        _LINUX_FLAVOURS="amd64"
+        _SOURCE="false"
+        ;;
+    i386)
+        _LINUX_FLAVOURS="486 686-pae"
+        _SOURCE="false"
+        ;;
+esac
+
+
 DISTRIBUTION="jessie"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
 
 lb config noauto \
-    --architecture $ARCHITECTURE \
+    --clean \
+    --ignore-system-defaults \
+    --architecture "${ARCHITECTURE}" \
     --archive-areas "main" \
     --apt-http-proxy "http://localhost:3142/" \
-    --distribution $DISTRIBUTION \
-    --linux-flavour "686-pae" \
+    --distribution "${DISTRIBUTION}" \
+    --linux-flavour "$(_LINUX_FLAVOURS)" \
     --linux-packages "linux-image linux-headers" \
     --apt-indices false \
     --apt-recommends false \
@@ -19,6 +34,7 @@ lb config noauto \
     --iso-volume "digabi $(date +%Y%m%d-%H:%M)" \
     --iso-publisher "Ylioppilastutkintolautakunta / digabi ; http://digabi.fi ; digabi@digabi.fi" \
     --memtest none \
+    --source "$(_SOURCE)" \
     --parent-mirror-bootstrap $REPOSITORY \
     --parent-mirror-binary $REPOSITORY \
     --mirror-bootstrap $REPOSITORY \
