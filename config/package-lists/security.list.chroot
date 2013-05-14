@@ -1,0 +1,4 @@
+# Support for Smart Cards
+pcscd
+opensc
+pcsc-tools
