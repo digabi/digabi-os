@@ -1,0 +1,2 @@
+locales     locales/default_environment_locale              fi_FI.UTF-8
+locales     locales/locales_to_be_generated                 en_US.UTF-8 UTF-8, fi_FI.UTF-8 UTF-8, sv_SE.UTF-8
