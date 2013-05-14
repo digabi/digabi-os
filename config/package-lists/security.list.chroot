@@ -2,3 +2,11 @@
 pcscd
 opensc
 pcsc-tools
+
+
+# Apparmor
+apparmor
+apparmor-notify
+apparmor-profiles
+apparmor-utils
+libpam-apparmor
