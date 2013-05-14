@@ -1,0 +1,12 @@
+# Web browser (Firefox)
+iceweasel
+iceweasel-l10n-fi
+
+# LibreOffice
+libreoffice
+libreoffice-gtk
+
+# Hardware detection
+lshw
+imvirt
+dmidecode
