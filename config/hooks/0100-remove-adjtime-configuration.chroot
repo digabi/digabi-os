@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+# Reset generated file
+
+if [ -e /run ]
+then
+	# wheezy
+
+cat > /etc/adjtime << EOF
+0.0 0 0.0
+0
+UTC
+EOF
+
+else
+	# squeeze
+	echo "0.0 0 0.0" > /etc/adjtime
+fi

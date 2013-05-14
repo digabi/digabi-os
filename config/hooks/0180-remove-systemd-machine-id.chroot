@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+# Remove systemd machine id.
+#
+# This removes systemd machine id that cache that makes each system unique.
+
+rm -f /etc/machine-id

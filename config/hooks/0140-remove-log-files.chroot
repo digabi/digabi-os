@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+# Truncate log files
+for _FILE in $(find /var/log/ -type f)
+do
+	: > ${_FILE}
+done

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+# Update the mlocate database.
+#
+# It is convenient for this to be already up to date on the live system, and it
+# means that if the live system is later installed to a hard disk then less
+# work will be required after installation.
+
+if [ -x /usr/bin/updatedb.mlocate ]
+then
+	updatedb.mlocate
+fi

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+# Update the Apt File cache.
+#
+# This allows to use using apt-file out-of-the-box.
+
+. /root/config/binary
+
+if [ -x /usr/bin/apt-file ] && [ "${LB_APT_INDICES}" = "true" ]
+then
+	apt-file update
+fi
