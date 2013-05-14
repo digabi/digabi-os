@@ -11,7 +11,8 @@ lb config noauto \
     --archive-areas "main" \
     --apt-http-proxy "http://localhost:3142/" \
     --distribution $DISTRIBUTION \
-    --linux-flavour 686 \
+    --linux-flavour "686-pae" \
+    --linux-packages "linux-image linux-headers" \
     --apt-indices false \
     --apt-recommends false \
     --bootappend-live "boot=live config locales=fi_FI.UTF-8,sv_SE.UTF-8,en_US.UTF-8,sv_FI.UTF-8 keyboard-layouts=fi quiet splash hostname=digabi username=digabi" \
