@@ -7,6 +7,7 @@ Sähköisen ylioppilastutkinnon päätelaiteasennuksen testialusta.
 ## Vaatimukset
     apt-get install live-helper
 
+Suositeltavaa käyttää esim. `apt-cacher-ng` -pakettivälimuistia, mikäli käännösoperaatioita on useita.
 
 ## Levyn kääntäminen
 Versionumeron valintaan käytetään `git describe` -komentoa.
