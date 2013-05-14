@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+# Remove sudo
+export SUDO_FORCE_REMOVE="yes"
+
+apt-get -y remove sudo
