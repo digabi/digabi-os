@@ -21,7 +21,7 @@ DISTRIBUTION="jessie"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
 
 LOCALES="fi_FI.UTF-8,sv_SE.UTF-8,en_US.UTF-8,sv_FI.UTF-8"
-KEYBOARD_LAYOUT="fi,sv,en"
+KEYBOARD_LAYOUT="fi"
 HOSTCONFIG="hostname=digabi username=digabi"
 BOOTAPPEND_LIVE="boot=live config locales=${LOCALES} keyboard-layouts=${KEYBOARD_LAYOUT} quiet splash ${HOSTCONFIG} security=apparmor"
 
