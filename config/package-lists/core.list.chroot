@@ -1,6 +1,7 @@
 # Core packages
 # apt-cache dpeends live-config live-boot
 
+# If apt recommends have been disabled, install essential packages manually
 #if APT_RECOMMENDS false
 live-tools
 user-setup
@@ -12,6 +13,7 @@ locales
 uuid-runtime
 #endif
 
+# Basic X11 system, using XFCE
 task-laptop
 task-xfce-desktop
 xfce4-power-manager
@@ -21,3 +23,6 @@ dbus-x11
 epdfview
 tango-icon-theme
 gstreamer0.10-alsa
+
+# Sync clock w/ NTP
+chrony
