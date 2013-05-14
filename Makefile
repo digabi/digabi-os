@@ -11,6 +11,9 @@ build:
 clean:
 	sudo lh clean --all --purge
 
+bclean:
+	find config -type f -name "*~" -exec rm {} \;
+
 dist:	config build
 	mv binary.hybrid.iso digabi-livecd-$(VERSION).iso
 	md5sum digabi-livecd-$(VERSION).iso >digabi-livecd-$(VERSION).md5sum
