@@ -26,3 +26,6 @@ gstreamer0.10-alsa
 
 # Sync clock w/ NTP
 chrony
+
+# Auditing
+auditd
