@@ -28,3 +28,6 @@ source*.tar*
 source*.contents
 source*.packages
 source*.zsync
+
+digabi-livecd-*.iso
+digabi-livecd_config-*.tar.xz
