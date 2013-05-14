@@ -2,9 +2,10 @@
 
 set -e
 
-ARCHITECTURE="i386"
+#ARCHITECTURE="i386"
+ARCHITECTURE="$(dpkg --print-architecture)"
 
-case "$(dpkg --print-architecture)" in
+case "${ARCHITECTURE}" in
     amd64)
         _LINUX_FLAVOURS="amd64"
         _SOURCE="false"
@@ -19,6 +20,11 @@ esac
 DISTRIBUTION="jessie"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
 
+LOCALES="fi_FI.UTF-8,sv_SE.UTF-8,en_US.UTF-8,sv_FI.UTF-8"
+KEYBOARD_LAYOUT="fi,sv,en"
+HOSTCONFIG="hostname=digabi username=digabi"
+BOOTAPPEND_LIVE="boot=live config locales=${LOCALES} keyboard-layouts=${KEYBOARD_LAYOUT} quiet splash ${HOSTCONFIG} security=apparmor"
+
 lb config noauto \
     --clean \
     --ignore-system-defaults \
@@ -30,7 +36,7 @@ lb config noauto \
     --linux-packages "linux-image linux-headers" \
     --apt-indices false \
     --apt-recommends false \
-    --bootappend-live "boot=live config locales=fi_FI.UTF-8,sv_SE.UTF-8,en_US.UTF-8,sv_FI.UTF-8 keyboard-layouts=fi quiet splash hostname=digabi username=digabi" \
+    --bootappend-live "${BOOTAPPEND_LIVE}" \
     --iso-volume "digabi $(date +%Y%m%d-%H:%M)" \
     --iso-publisher "Ylioppilastutkintolautakunta / digabi ; http://digabi.fi ; digabi@digabi.fi" \
     --memtest none \
