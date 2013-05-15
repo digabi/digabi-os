@@ -7,8 +7,19 @@ gstreamer0.10-alsa
 
 
 # GUI, XFCE4
-task-xfce-desktop
-xfce4-power-manager
-xfce4-mixer
-xfce4-terminal
-epdfview
+#task-xfce-desktop
+#xfce4-power-manager
+#xfce4-mixer
+#xfce4-terminal
+#epdfview
+
+# GUI, LXDE
+task-lxde-desktop
+lxtask
+lxlauncher
+lxinput
+#lxpolkit
+lxrandr
+lxsession
+lxterminal
+lxappearance

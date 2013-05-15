@@ -3,8 +3,11 @@ iceweasel
 iceweasel-l10n-fi
 
 # LibreOffice
-libreoffice
-libreoffice-gtk
+#libreoffice
+#libreoffice-gtk
+
+# Abiword Text Editor
+abiword
 
 # Hardware detection
 lshw
