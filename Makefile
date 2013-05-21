@@ -3,13 +3,13 @@ VERSION = $(shell git describe)
 all:	config build
 
 config:	clean
-	lh config
+	lb config
 
 build:
-	sudo lh build
+	sudo lb build
 
 clean:
-	sudo lh clean --all --purge
+	sudo lb clean --all --purge
 
 bclean:
 	find config -type f -name "*~" -exec rm {} \;
