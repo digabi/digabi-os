@@ -2,8 +2,8 @@
 
 set -e
 
-#ARCHITECTURE="i386"
-ARCHITECTURE="$(dpkg --print-architecture)"
+ARCHITECTURE="i386"
+#ARCHITECTURE="$(dpkg --print-architecture)"
 
 case "${ARCHITECTURE}" in
     amd64)
@@ -17,7 +17,7 @@ case "${ARCHITECTURE}" in
 esac
 
 
-DISTRIBUTION="jessie"
+DISTRIBUTION="wheezy"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
 
 LOCALES="fi_FI.UTF-8,sv_SE.UTF-8,en_US.UTF-8,sv_FI.UTF-8"
@@ -30,7 +30,7 @@ lb config noauto \
     --ignore-system-defaults \
     --architecture "${ARCHITECTURE}" \
     --archive-areas "main" \
-    --apt-http-proxy "http://localhost:3142/" \
+    --apt-http-proxy "http://10.0.2.2:3142/" \
     --distribution "${DISTRIBUTION}" \
     --linux-flavour "$(_LINUX_FLAVOURS)" \
     --linux-packages "linux-image linux-headers" \
