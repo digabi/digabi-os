@@ -6,3 +6,7 @@ Pin-Priority: 900
 Package: iceweasel-*
 Pin: release n=experimental
 Pin-Priority: 900
+
+Package: xulrunner-*
+Pin: release n=experimental
+Pin-Priority: 900
