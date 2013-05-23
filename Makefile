@@ -1,4 +1,5 @@
 VERSION = $(shell git describe)
+ISO_FILE = "binary.hybrid.iso"
 
 all:	config build
 
@@ -16,7 +17,7 @@ bclean:
 
 collect_iso:
 	ISO_FILENAME = digabi-livecd-$(VERSION).iso
-	mv binary.hybrid.iso $(ISO_FILENAME)
+	mv $(ISO_FILE) $(ISO_FILENAME)
 	md5sum $(ISO_FILENAME) >$(ISO_FILENAME).md5sum
 
 	gpg -a --detach-sign $(ISO_FILENAME)
@@ -32,4 +33,4 @@ pub:	dist
 	mv digabi-livecd* /public/www/
 
 test:	clean build
-	mv binary.hybrid.iso /public/
+	mv $(ISO_FILE) /public/www/
