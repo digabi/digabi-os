@@ -22,6 +22,11 @@ collect_iso:
 	gpg -a --detach-sign $(ISO_FILENAME)
 
 collect_config:
-	tar --exclude-backups -cvJf digabi-livecd_config-$(VERSION).tar.xz config
+	CONFIG_FILENAME = digabi-livecd_config-$(VERSION).tar.xz
+	tar --exclude-backups -cvJf $(CONFIG_FILENAME) config
+	gpg -a --detach-sign $(CONFIG_FILENAME)
 
 dist:	config build collect_iso collect_config
+
+pub:	dist
+	mv digabi-livecd* /public/www/
