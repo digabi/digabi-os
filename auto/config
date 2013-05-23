@@ -35,7 +35,7 @@ lb config noauto \
     --archive-areas "main" \
     --apt-http-proxy "http://10.0.2.2:3142/" \
     --distribution "${DISTRIBUTION}" \
-    --linux-flavour "$(_LINUX_FLAVOURS)" \
+    --linux-flavour "${_LINUX_FLAVOURS}" \
     --linux-packages "linux-image linux-headers" \
     --apt-indices false \
     --apt-recommends false \
@@ -43,7 +43,7 @@ lb config noauto \
     --iso-volume "digabi $(date +%Y%m%d-%H:%M)" \
     --iso-publisher "Ylioppilastutkintolautakunta / digabi ; http://digabi.fi ; digabi@digabi.fi" \
     --memtest none \
-    --source "$(_SOURCE)" \
+    --source "${_SOURCE}" \
     --parent-mirror-bootstrap $REPOSITORY \
     --parent-mirror-binary $REPOSITORY \
     --mirror-bootstrap $REPOSITORY \
