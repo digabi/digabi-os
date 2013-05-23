@@ -30,3 +30,6 @@ dist:	config build collect_iso collect_config
 
 pub:	dist
 	mv digabi-livecd* /public/www/
+
+test:	clean build
+	mv binary.hybrid.iso /public/
