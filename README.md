@@ -3,9 +3,9 @@ digabi livecd
 Sähköisen ylioppilastutkinnon päätelaiteasennuksen testialusta.
 
 ## Yhteystiedot
-* http://digabi.fi/
-* https://github.com/digabi/digabi-live
-* email: digabi@ylioppilastutkinto.fi
+ * http://digabi.fi/
+ * https://github.com/digabi/digabi-live
+ * email: digabi@ylioppilastutkinto.fi
 
 ## Vaatimukset
     apt-get install live-helper
@@ -22,8 +22,9 @@ Versionumeron valintaan käytetään `git describe` -komentoa. Versionumero haet
 
 ## Sekalaista
 Tällä hetkellä rakennusympäristöstä on seuraavat oletukset:
-* virtuaalikone
-* isäntäkoneelta jaettu hakemisto johon voidaan kirjoittaa, on mountattu /public ; tämän alta löytyy alihakemisto www, joka julkaistaan www-palvelimella
+
+ * virtuaalikone
+ * isäntäkoneelta jaettu hakemisto johon voidaan kirjoittaa, on mountattu /public ; tämän alta löytyy alihakemisto www, joka julkaistaan www-palvelimella
 
 ## Lisenssitiedot
 Toteutus pohjautuu Debianin pakettikirjastoon, ja sisällytetyt ohjelmat käyttävät lukuisia erilaisia lisenssejä. Kaikki lisenssitiedot löydät osoitteesta [Debianin kotisivuilta](http://www.debian.org/legal/licenses/).
