@@ -18,5 +18,10 @@ Tällä hetkellä levy käyttää julkaisuversiona Debian Jessietä (testing), j
     ln -s /usr/share/debootstrap/scripts/wheezy /usr/share/debootstrap/scripts/jessie
 
 
+## Sekalaista
+Tällä hetkellä rakennusympäristöstä on seuraavat oletukset:
+ - virtuaalikone
+ - isäntäkoneelta jaettu hakemisto johon voidaan kirjoittaa, on mountattu /public ; tämän alta löytyy alihakemisto www, joka julkaistaan www-palvelimella
+
 ## Lisenssitiedot
 Toteutus pohjautuu Debianin pakettikirjastoon, ja sisällytetyt ohjelmat käyttävät lukuisia erilaisia lisenssejä. Kaikki lisenssitiedot löydät osoitteesta [Debianin kotisivuilta](http://www.debian.org/legal/licenses/).
