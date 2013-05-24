@@ -29,7 +29,7 @@ lb config noauto \
     --ignore-system-defaults \
     --architecture "${ARCHITECTURE}" \
     --archive-areas "main" \
-    --apt-http-proxy "http://10.0.2.2:3142/" \
+    --apt-http-proxy "http://localhost:3142/" \
     --distribution "${DISTRIBUTION}" \
     --linux-flavour "${_LINUX_FLAVOURS}" \
     --linux-packages "linux-image linux-headers" \
