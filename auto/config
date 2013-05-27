@@ -11,7 +11,7 @@ case "${ARCHITECTURE}" in
         _SOURCE="false"
         ;;
     i386)
-        _LINUX_FLAVOURS="686"
+        _LINUX_FLAVOURS="686-pae"
         _SOURCE="false"
         ;;
     *)
@@ -32,7 +32,7 @@ lb config noauto \
     --apt-http-proxy "http://localhost:3142/" \
     --distribution "${DISTRIBUTION}" \
     --linux-flavour "${_LINUX_FLAVOURS}" \
-    --linux-packages "digabi-kernel" \
+    --linux-packages "linux-image linux-headers" \
     --apt-indices false \
     --apt-recommends false \
     --bootappend-live "${BOOTAPPEND_LIVE}" \
