@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mount -t proc proc chroot/proc
+mount -o bind /sys chroot/sys
+mount -o bind /dev/pts chroot/dev/pts
+
+chroot chroot /bin/bash
+
+umount chroot/proc
+umount chroot/sys
+umount chroot/dev/pts
