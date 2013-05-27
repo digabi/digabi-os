@@ -5,15 +5,21 @@
     <property name="screen0" type="empty">
       <property name="monitor0" type="empty">
         <property name="brightness" type="empty"/>
-        <property name="color1" type="empty"/>
+        <property name="color1" type="array">
+          <value type="uint" value="5654"/>
+          <value type="uint" value="20046"/>
+          <value type="uint" value="31097"/>
+          <value type="uint" value="65535"/>
+        </property>
         <property name="color2" type="empty"/>
-        <property name="color-style" type="empty"/>
+        <property name="color-style" type="int" value="0"/>
         <property name="image-path" type="string" value="/usr/share/digabi/images/background.png"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="empty"/>
+        <property name="last-image" type="string" value="/usr/share/digabi/images/background.png"/>
         <property name="last-single-image" type="string" value="/usr/share/digabi/images/background.png"/>
-        <property name="image-style" type="int" value="4"/>
+        <property name="image-style" type="int" value="1"/>
       </property>
     </property>
   </property>
 </channel>
+
