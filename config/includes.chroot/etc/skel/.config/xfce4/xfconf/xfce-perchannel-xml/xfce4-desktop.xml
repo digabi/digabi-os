@@ -17,7 +17,7 @@
         <property name="image-show" type="empty"/>
         <property name="last-image" type="string" value="/usr/share/digabi/images/background.png"/>
         <property name="last-single-image" type="string" value="/usr/share/digabi/images/background.png"/>
-        <property name="image-style" type="int" value="1"/>
+        <property name="image-style" type="int" value="0"/>
       </property>
     </property>
   </property>
