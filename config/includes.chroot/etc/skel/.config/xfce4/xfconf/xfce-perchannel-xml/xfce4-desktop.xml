@@ -21,5 +21,15 @@
       </property>
     </property>
   </property>
+  <property name="desktop-menu" type="empty">
+    <property name="show" type="bool" value="false"/>
+  </property>
+  <property name="desktop-icons" type="empty">
+    <property name="file-icons" type="empty">
+      <property name="show-filesystem" type="bool" value="false"/>
+      <property name="show-home" type="bool" value="false"/>
+    </property>
+    <property name="icon-size" type="uint" value="64"/>
+  </property>
 </channel>
 
