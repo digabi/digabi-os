@@ -11,7 +11,7 @@ case "${ARCHITECTURE}" in
         _SOURCE="false"
         ;;
     i386)
-        _LINUX_FLAVOURS="486 686-pae"
+        _LINUX_FLAVOURS="686-pae"
         _SOURCE="false"
         ;;
     *)
