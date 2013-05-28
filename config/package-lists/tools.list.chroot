@@ -7,13 +7,6 @@ chromium-l10n
 #iceweasel-l10n-fi
 #xulrunner-21.0
 
-# LibreOffice
-#libreoffice
-#libreoffice-gtk
-
-# Abiword Text Editor
-abiword
-
 # Hardware detection
 lshw
 imvirt
