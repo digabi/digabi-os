@@ -5,19 +5,19 @@ label Suomeksi
 	initrd @INITRD@
 	append @APPEND_LIVE@
 
-label På Svenska
-	menu label ^Live (@FLAVOUR@)
-	menu default
-	linux @LINUX@
-	initrd @INITRD@
-	append @APPEND_LIVE@
+#label På Svenska
+#	menu label ^Live (@FLAVOUR@)
+#	menu default
+#	linux @LINUX@
+#	initrd @INITRD@
+#	append @APPEND_LIVE@
 
-label In English
-	menu label ^Live (@FLAVOUR@)
-	menu default
-	linux @LINUX@
-	initrd @INITRD@
-	append @APPEND_LIVE@
+#label In English
+#	menu label ^Live (@FLAVOUR@)
+#	menu default
+#	linux @LINUX@
+#	initrd @INITRD@
+#	append @APPEND_LIVE@
 
 #label live-@FLAVOUR@-failsafe
 #	menu label ^Live (@FLAVOUR@ failsafe)
