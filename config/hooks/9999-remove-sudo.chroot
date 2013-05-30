@@ -4,5 +4,5 @@ set -e
 
 if [ -f "/lib/live/config/0040-sudo" ]
 then
-	rm "/lib/live/config/0040-sudo"
+#	rm "/lib/live/config/0040-sudo"
 fi
