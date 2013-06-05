@@ -5,20 +5,20 @@ set -e
 ARCHITECTURE="i386"
 #ARCHITECTURE="$(dpkg --print-architecture)"
 
-case "${ARCHITECTURE}" in
-    amd64)
-        _LINUX_FLAVOURS="amd64"
-        _SOURCE="false"
-        ;;
-    i386)
-        _LINUX_FLAVOURS="486 686-pae"
-        _SOURCE="false"
-        ;;
-    *)
-	_LINUX_FLAVOURS="686-pae"
-	_SOURCE="false"
-esac
-
+#case "${ARCHITECTURE}" in
+#    amd64)
+#        _LINUX_FLAVOURS="amd64"
+#        _SOURCE="false"
+#        ;;
+#    i386)
+#        _LINUX_FLAVOURS="486 686-pae"
+#        _SOURCE="false"
+#        ;;
+#    *)
+#	_LINUX_FLAVOURS="686-pae"
+#	_SOURCE="false"
+#esac
+_LINUX_FLAVOURS="ytl"
 
 DISTRIBUTION="wheezy"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
@@ -32,7 +32,7 @@ lb config noauto \
     --apt-http-proxy "http://10.0.2.2:3142/" \
     --distribution "${DISTRIBUTION}" \
     --linux-flavour "${_LINUX_FLAVOURS}" \
-    --linux-packages "linux-image linux-headers" \
+    --linux-packages "linux-image" \
     --apt-indices false \
     --apt-recommends false \
     --bootappend-live "${BOOTAPPEND_LIVE}" \
