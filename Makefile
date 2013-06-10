@@ -30,7 +30,9 @@ collect_config:
 dist:	config build collect_iso collect_config
 
 pub:	dist
-	mv digabi-livecd* /public/www/
+    mkdir -p dist/
+	mv digabi-livecd* dist/
 
 test:	clean build
-	mv $(ISO_FILE) /public/www/
+    mkdir -p dist
+	mv $(ISO_FILE) dist/
