@@ -34,5 +34,6 @@ pub:	dist
 	mv digabi-livecd* dist/
 
 test:	clean build
+    # TODO: If not exists
     mkdir -p dist
 	mv $(ISO_FILE) dist/
