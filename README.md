@@ -22,5 +22,3 @@ See doc/*.md
 
 ## License
 This product is based on Debian 7.0 (wheezy), and includes software w/ various licenses. For licensing information, see [Debian License information ](http://www.debian.org/legal/licenses/).
-
-
