@@ -1,36 +1,26 @@
-digabi livecd
+Digabi Live
 ================================
-Sähköisen ylioppilastutkinnon päätelaiteasennuksen testialusta.
+
+## Introduction
 
 
-
-## Yhteystiedot
+## Contact
+ * The Matriculation Examination Board, PL50, 00581 Helsinki, Finland
  * http://digabi.fi/
  * https://github.com/digabi/digabi-live
  * email: digabi@ylioppilastutkinto.fi
 
-## Vaatimukset
+
+## Requirements for build system
  * Debian 7.0 (wheezy)
-    apt-get install live-helper
-
-Suositeltavaa käyttää esim. `apt-cacher-ng` -pakettivälimuistia, mikäli käännösoperaatioita on useita.
-
-## Levyn kääntäminen
-Versionumeron valintaan käytetään `git describe` -komentoa. Versionumero haetaan git:n tagista.
-    make dist
-
-### Uuden tagin luominen
-    git tag -a 1.0 -m "Created tag for version 1.0"
+ * packages: live-build, build-essential, kernel-package, apt-cacher-ng
 
 
-## Sekalaista
-Tällä hetkellä rakennusympäristöstä on seuraavat oletukset:
-
- * virtuaalikone
- * isäntäkoneelta jaettu hakemisto johon voidaan kirjoittaa, on mountattu /public ; tämän alta löytyy alihakemisto www, joka julkaistaan www-palvelimella
+## Documentation
+See doc/*.md
 
 
+## License
+This product is based on Debian 7.0 (wheezy), and includes software w/ various licenses. For licensing information, see [Debian License information ](http://www.debian.org/legal/licenses/).
 
 
-## Lisenssitiedot
-Toteutus pohjautuu Debianin pakettikirjastoon, ja sisällytetyt ohjelmat käyttävät lukuisia erilaisia lisenssejä. Kaikki lisenssitiedot löydät osoitteesta [Debianin kotisivuilta](http://www.debian.org/legal/licenses/).
