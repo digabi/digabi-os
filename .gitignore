@@ -33,3 +33,5 @@ digabi-livecd-*.iso
 digabi-livecd_config-*.tar.xz
 
 .lock
+
+dist
