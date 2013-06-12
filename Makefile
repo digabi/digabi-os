@@ -30,10 +30,10 @@ collect_config:
 dist:	config build collect_iso collect_config
 
 pub:	dist
-    mkdir -p dist/
+	mkdir -p dist/
 	mv digabi-livecd* dist/
 
 test:	clean build
-    # TODO: If not exists
-    mkdir -p dist
+	# TODO: If not exists
+	mkdir -p dist
 	mv $(ISO_FILE) dist/
