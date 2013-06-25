@@ -35,3 +35,5 @@ digabi-livecd_config-*.tar.xz
 .lock
 
 dist
+*.md5sum
+*.asc
