@@ -1,7 +1,7 @@
 VERSION = $(shell git describe)
-ISO_FILE = "binary.hybrid.iso"
+ISO_FILE = binary.hybrid.iso
 
-FILENAME_PREFIX = "digabi-livecd"
+FILENAME_PREFIX = digabi-livecd
 
 all:	config build
 
@@ -18,22 +18,17 @@ bclean:
 	find config -type f -name "*~" -exec rm {} \;
 
 collect_iso:
+	mkdir -p dist
+
 	mv $(ISO_FILE) $(FILENAME_PREFIX)-$(VERSION).iso
 	md5sum $(FILENAME_PREFIX)-$(VERSION) >$(FILENAME_PREFIX)-$(VERSION).md5sum
-
+	mv $(FILENAME_PREFIX)-$(VERSION).iso dist/
 	#gpg -a --detach-sign $() # TODO
 
 collect_config:
-	tar --exclude-backups -cvJf $(FILENAME_PREFIX)_config-$(VERSION).tar.xz config
+	mkdir -p dist
+	tar --exclude-backups -cvJf dist/$(FILENAME_PREFIX)_config-$(VERSION).tar.xz config
 	#gpg -a --detach-sign $(CONFIG_FILENAME)
 
-dist:	config build collect_iso collect_config
-
-pub:	dist
-	mkdir -p dist/
-	mv digabi-livecd* dist/
-
-test:	clean build
-	# TODO: If not exists
-	mkdir -p dist
-	mv $(ISO_FILE) dist/
+dist:	clean config build collect_iso collect_config
+	
