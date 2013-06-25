@@ -3,3 +3,7 @@
 virtualbox-guest-dkms
 virtualbox-guest-x11
 virtualbox-guest-utils
+
+wicd-gtk
+wpasupplicant
+wireless-tools
