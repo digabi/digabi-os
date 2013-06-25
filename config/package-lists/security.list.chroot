@@ -10,3 +10,8 @@ apparmor-notify
 apparmor-profiles
 apparmor-utils
 libpam-apparmor
+
+# Hardening
+harden-environment
+harden-clients
+harden-servers
