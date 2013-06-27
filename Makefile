@@ -30,5 +30,10 @@ collect_config:
 	tar --exclude-backups -cvJf dist/$(FILENAME_PREFIX)_config-$(VERSION).tar.xz config
 	#gpg -a --detach-sign $(CONFIG_FILENAME)
 
-dist:	clean config build collect_iso collect_config
+collect_logs:
+	mkdir -p dist
+	gzip build.log
+	mv build.log.gz dist/$(FILENAME_PREFIX)_build-$(VERSION).log.gz
+
+dist:	clean config build collect_iso collect_config collect_logs
 	
