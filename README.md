@@ -12,8 +12,8 @@ Digabi Live
 
 
 ## Requirements for build system
- * Debian 7.0 (wheezy)
- * packages: live-build, build-essential, kernel-package, apt-cacher-ng
+ * [Debian](http://www.debian.org/) 7.0 (wheezy)
+ * packages: `live-build, build-essential, kernel-package, apt-cacher-ng` (for full list: see `doc/INSTALL.md`)
 
 
 ## Documentation
