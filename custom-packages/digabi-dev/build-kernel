@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Helper for building Linux kernel
+# (c) 2013 Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+
+if [ -f "~/.digabirc" ]
+then
+    . ~/.digabirc
+fi
+
+if [ ! -f .config ]
+then
+    echo "No kernel .config found, exiting..."
+    exit 1
+fi
+
+if [ -f .revision ]
+then
+    REVISION="$(head -n1 .revision)"
+else
+    echo -n "Revision number: "
+    read REVISION
+#    REVISION="1"
+fi
+
+REVISION="$(echo $REVISION |awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')"
+echo $REVISION >.revision
+
+echo "Cleaning build directories..."
+fakeroot make-kpkg clean
+
+echo "Building revision ${REVISION}..."
+fakeroot make-kpkg --initrd --revision "${REVISION}" kernel_image kernel_headers kernel_source 2>&1 |tee build.log
+
+TIMESTAMP="$(date +%s)"
+CONFIG_TARGET="../config-$(make kernelversion)-${REVISION}_${TIMESTAMP}.config"
+
+cp .config "${CONFIG_TARGET}"
