@@ -1,0 +1,5 @@
+# config file for digabi-dev
+
+REPREPRO_BASE="~/digabi-repository"
+
+BUILD_BUMP_VERSION="yes"
