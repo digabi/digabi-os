@@ -49,4 +49,4 @@ See `doc/*.md`.
 
 
 ## License
-This product is based on Debian 7.0 (wheezy), and includes software w/ various licenses. For licensing information, see [Debian License information ](http://www.debian.org/legal/licenses/). Work done by MEB is licensed under GPLv3.
+This product is based on Debian 7.0 (wheezy), and includes software w/ various licenses. For licensing information, see [Debian License information ](http://www.debian.org/legal/licenses/). Work done by MEB is licensed under GPLv3, except MEB logo, which is used in ISOs, provided by `digabi-customization` package.
