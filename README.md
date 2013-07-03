@@ -6,9 +6,9 @@ Digabi Live
 
 ## Contact
  * The Matriculation Examination Board, PL50, 00581 Helsinki, Finland
- * http://digabi.fi/
- * https://github.com/digabi/digabi-live
- * email: digabi@ylioppilastutkinto.fi
+ * [digabi.fi](http://digabi.fi/)
+ * [github.com/digabi/digabi-live](https://github.com/digabi/digabi-live)
+ * email: [digabi@ylioppilastutkinto.fi](mailto:digabi@ylioppilastutkinto.fi)
 
 
 ## Requirements for build system
