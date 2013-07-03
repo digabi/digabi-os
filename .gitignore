@@ -39,3 +39,4 @@ dist
 *.asc
 
 *.deb
+custom-packages/linux-image
