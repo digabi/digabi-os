@@ -1,6 +1,11 @@
 Kernel for Digabi live
 ======================================
 
+## TODO
+ - add instructions to check GPG signatures (Kernel, patches, ...?)
+ - add more specific instructions for module configuration
+
+
 ## Create directory structure
     mkdir digabi-kernel
     cd digabi-kernel
@@ -53,4 +58,10 @@ Grsecurity from downloaded patch:
 #### Enable grsecurity
 
 
-Other config: see included kernel config.
+#### Make other modifications
+See included kernel config.
+
+
+## Compile kernel
+    fakeroot make-kpkg clean
+    fakeroot make-kpkg --initrd kernel_image kernel_headers kernel_source
