@@ -17,7 +17,7 @@ Digabi Live
 
 
 ## Documentation
-See doc/*.md
+See `doc/*.md`.
 
 
 ## License
