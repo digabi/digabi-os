@@ -37,3 +37,5 @@ digabi-livecd_config-*.tar.xz
 dist
 *.md5sum
 *.asc
+
+*.deb
