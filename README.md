@@ -34,7 +34,7 @@ Live system goals:
 
 ## Contact
  * [The Matriculation Examination Board of Finland](http://www.ylioppilastutkinto.fi/), PL50, 00581 Helsinki, Finland
- * [digabi.fi](http://digabi.fi/)
+ * Project website: [digabi.fi](http://digabi.fi/)
  * [github.com/digabi/digabi-live](https://github.com/digabi/digabi-live)
  * email: [digabi@ylioppilastutkinto.fi](mailto:digabi@ylioppilastutkinto.fi)
 
