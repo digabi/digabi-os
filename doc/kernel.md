@@ -28,6 +28,7 @@ Kernel for Digabi live
 
 ## Patch Linux source
 AUFS patches from git:
+
     patch -p1 < ../aufs3-standalone/aufs3-kbuild.patch
     patch -p1 < ../aufs3-standalone/aufs3-base.patch
     patch -p1 < ../aufs3-standalone/aufs3-proc_map.patch
