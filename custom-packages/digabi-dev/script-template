@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# this script is part of digabi-dev package
+#
+# (c) 2013 Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+# GPLv3
+
+if [ -f /etc/digabirc ]
+then
+    . /etc/digabirc
+fi
+
+if [ -f $HOME/.digabirc ]
+then
+    . $HOME/.digabirc
+fi
+
+if [ -f .digabirc ]
+then
+    . .digabirc
+fi
