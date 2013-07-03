@@ -6,9 +6,8 @@ Kernel for Digabi live
  - add more specific instructions for module configuration
 
 
-## Create directory structure
-    mkdir digabi-kernel
-    cd digabi-kernel
+## Use digabi-live kernel working directory
+    cd custom-packages/linux-image
 
 
 ## Fetch required code
