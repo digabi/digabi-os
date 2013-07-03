@@ -22,7 +22,7 @@ The renewed examination system will contain following subsystems:
 
 During the year 2013 the project sets standards for the rooms used in the exam, selects the test system and the supporting devices as well as starts planning the new processes.
 
-In addition, there will be a **live (operating) system**, running on student-owned devices (laptops etc.). First (test)version of aforementioned system will be implemented with Linux. This is it.
+There will be a **live (operating) system**, running on student-owned devices (laptops etc.), used for accessing the test system. First (test)version of aforementioned system will be implemented with Linux. This is it.
 
 
 ## Goals
