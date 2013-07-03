@@ -1,0 +1,11 @@
+Origin: Digabi
+Label: Digabi
+Codename: wheezy
+Architectures: i386
+Components: main contrib non-free
+Description: APT Repository for Digabi
+
+# Official
+#SignWith: 0x9D3D06EE
+# Testing
+#SignWith: 0xF03E2D4A
