@@ -3,9 +3,8 @@ chromium
 chromium-l10n
 
 # Web browser (Firefox)
-#iceweasel
-#iceweasel-l10n-fi
-#xulrunner-21.0
+iceweasel
+iceweasel-l10n-fi
 
 # Hardware detection
 lshw
