@@ -1,5 +1,7 @@
-Digabi Live
+Digabi Live (Live-Linux)
 ================================
+TL;DR Sources for Digabi Live, a Live-Linux preview, created by The Matriculation Examination Board of Finland.
+
 
 ## Introduction
 **The Matriculation Examination Board of Finland** (MEB) arranges annually two examinations for students finishing their upper secondary school. The most popular subjects may have as many as 30 000 simultaneously attending students. The exams take place in the 450 schools around Finland. The organisation of the exams (the board) is funded by the government (~33%) and students (~66%).
@@ -20,7 +22,7 @@ The renewed examination system will contain following subsystems:
 
 During the year 2013 the project sets standards for the rooms used in the exam, selects the test system and the supporting devices as well as starts planning the new processes.
 
-In addition, there will be a live system, running on student-owned devices (laptops etc.). First (test)version of aforementioned system will be implemented with Linux. This is it.
+In addition, there will be a **live (operating) system**, running on student-owned devices (laptops etc.). First (test)version of aforementioned system will be implemented with Linux. This is it.
 
 
 ## Goals
@@ -47,4 +49,4 @@ See `doc/*.md`.
 
 
 ## License
-This product is based on Debian 7.0 (wheezy), and includes software w/ various licenses. For licensing information, see [Debian License information ](http://www.debian.org/legal/licenses/).
+This product is based on Debian 7.0 (wheezy), and includes software w/ various licenses. For licensing information, see [Debian License information ](http://www.debian.org/legal/licenses/). Work done by MEB is licensed under GPLv3.
