@@ -31,10 +31,14 @@ Kernel for Digabi live
 ## Patch Linux source
 AUFS patches from git:
 
+    # Apply patches
     patch -p1 < ../aufs3-standalone/aufs3-kbuild.patch
     patch -p1 < ../aufs3-standalone/aufs3-base.patch
     patch -p1 < ../aufs3-standalone/aufs3-proc_map.patch
     patch -p1 < ../aufs3-standalone/aufs3-standalone.patch
+    # Copy required files
+    cp -R ../aufs3-standalone/{Documentation,fs} .
+    cp ../aufs3-standalone/include/linux/aufs_type.h ./include/linux/
 
 
 Grsecurity from downloaded patch:
