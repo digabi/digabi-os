@@ -1,3 +1,9 @@
+digabi-adm (1.0.1) stable; urgency=low
+
+  * Added iptables.rules from live-build config tree. Currently empty.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 14:46:23 +0300
+
 digabi-adm (1.0.0) stable; urgency=low
 
   * Initial release. Replaces live-build packagelists: tools, security.
