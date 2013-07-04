@@ -23,6 +23,7 @@ _LINUX_FLAVOURS="ytl"
 DISTRIBUTION="wheezy"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
+ISO_PUBLISHER="YTL / digabi ; http://digabi.fi ; digabi@ylioppilastutkinto.fi" \
 
 lb config noauto \
     --clean \
