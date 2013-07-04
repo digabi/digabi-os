@@ -1,3 +1,9 @@
+digabi-customization (1.5.1) stable; urgency=low
+
+  * Use background.png from proprietary folder, which includes content that will not be added into DVCS.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 14:02:16 +0300
+
 digabi-customization (1.5.0) stable; urgency=low
 
   * Initial version w/ changelog. Added plymouth packages from live-build package list.

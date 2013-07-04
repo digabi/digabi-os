@@ -18,7 +18,7 @@ Changelog: changelog
 # Readme: <README.Debian file; defaults to a generic one>
 # Extra-Files: <comma-separated list of additional files for the doc directory>
 # Files: <pair of space-separated paths; First is file to include, second is destination>
-#Files: background.png /usr/share/digabi/images
+Files: proprietary/background.png /usr/share/digabi/images
 #  <more pairs, if there's more than one file to include. Notice the starting space>
 Description: Customizations for Digabi project (backgrounds etc.)
  Package contains customization files.
