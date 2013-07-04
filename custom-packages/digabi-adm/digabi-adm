@@ -23,7 +23,9 @@ Changelog: changelog
 # Extra-Files: <comma-separated list of additional files for the doc directory>
 # Files: <pair of space-separated paths; First is file to include, second is destination>
 #  <more pairs, if there's more than one file to include. Notice the starting space>
-Description: <short description; defaults to some wise words> 
- long description and info
- .
- second paragraph
+Description: Install essential, mostly security-related packages into Digabi system (meta-package)
+ Including:
+ - lshw, imvirt, dmidecode: hardware detection
+ - harden-*: system hardening
+ - apparmor, apparmor-*: limiting system access
+ - chrony: ntp synchronization
