@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Build all custom packages
+#
+# (c) 2013 Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+# GPLv3
+
+CUSTOM_PACKAGE_DIR="custom-packages"
+
+#_CUSTOM_PACKAGES="${CUSTOM_PACKAGE_DIR}/*"
+
+cd "${CUSTOM_PACKAGE_DIR}"
+for d in `ls -d *`
+do
+	PACKAGE_NAME="$(basename ${d})"
+
+	if [ -f "${d}/${PACKAGE_NAME}" ]
+	then
+		echo "Found package ${PACKAGE_NAME}"
+		cd "${PACKAGE_NAME}"
+
+		echo "Building package ${PACKAGE_NAME}..."
+		equivs-build "${PACKAGE_NAME}"
+		# package exists, build it, move results into reprepro collection area
+		cd ..
+	fi
+
+done
+cd ..
