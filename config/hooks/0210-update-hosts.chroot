@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Update /etc/hosts to include all allowed IP addresses
+# Removes need to allow DNS (53/udp) when testing
+
+set -e
+
+HOSTS="notfound.xd.fi sensori.digabi.fi digabi.fi"
+
+for h in ${HOSTS}
+do
+	IP="$(host $h |awk '/ has address /{ print $4 }')"
+
+	if [ -n "${IP}" ]
+	then
+		echo "${IP}\t${h}" >>/etc/hosts
+	fi
+done
