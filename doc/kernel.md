@@ -4,6 +4,7 @@ Kernel for Digabi live
 ## TODO
  - add instructions to check GPG signatures (Kernel, patches, ...?)
  - add more specific instructions for module configuration
+ - currently patches need to be applied in order: grsecurity -> aufs, or build will fail, check if causes problems / vulnerabilites
 
 
 ## Use digabi-live kernel working directory
