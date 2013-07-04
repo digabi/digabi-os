@@ -10,6 +10,7 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 # Pre-Depends: <comma-separated list of packages>
 Depends: kernel-package, build-essential, live-build
 Recommends: equivs, reprepro, piuparts
+Suggests: devscripts
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
 # Provides: <comma-separated list of packages>
