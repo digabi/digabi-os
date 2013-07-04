@@ -1,0 +1,5 @@
+linux-image-ytl (3.2.48-1) stable; urgency=low
+
+  * Initial release w/ changelog.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 14:03:32 +0300
