@@ -22,6 +22,7 @@ Changelog: changelog
 # Readme: <README.Debian file; defaults to a generic one>
 # Extra-Files: <comma-separated list of additional files for the doc directory>
 # Files: <pair of space-separated paths; First is file to include, second is destination>
+Files: testing.list /etc/apt/sources.list.d
 #  <more pairs, if there's more than one file to include. Notice the starting space>
 Description: Tools to help testing Digabi Live System (meta-package)
  This includes:
