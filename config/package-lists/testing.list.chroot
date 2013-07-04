@@ -1,9 +1,0 @@
-# Packages for testing live system in VirtualBox environment
-
-virtualbox-guest-dkms
-virtualbox-guest-x11
-virtualbox-guest-utils
-
-wicd-gtk
-wpasupplicant
-wireless-tools
