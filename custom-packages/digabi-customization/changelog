@@ -1,0 +1,5 @@
+digabi-customization (1.5.0) stable; urgency=low
+
+  * Initial version w/ changelog. Added plymouth packages from live-build package list.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 13:59:56 +0300
