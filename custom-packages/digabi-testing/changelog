@@ -1,0 +1,5 @@
+digabi-testing (1.0.0) UNRELEASED; urgency=low
+
+  * Initial release. Imported package list from live-build.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 13:50:03 +0300
