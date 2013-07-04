@@ -1,6 +1,8 @@
 # INSTALL
 Setting up build environment.
 
+See also [Debian Live Manual](http://live.debian.net/manual/).
+
 
 ## Setup Debian installation
 TBD
