@@ -1,0 +1,5 @@
+digabi-apps (1.0.0) stable; urgency=low
+
+  * Initial release. Replaces live-build packagelists: content, tools.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 14:12:06 +0300

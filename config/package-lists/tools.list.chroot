@@ -1,11 +1,3 @@
-# Web browser (Chromium)
-chromium
-chromium-l10n
-
-# Web browser (Firefox)
-iceweasel
-iceweasel-l10n-fi
-
 # Hardware detection
 lshw
 imvirt
