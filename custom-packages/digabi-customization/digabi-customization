@@ -1,0 +1,24 @@
+Section: misc
+Priority: optional
+Homepage: http://digabi.fi/
+Standards-Version: 3.9.2
+
+Package: digabi-customization
+Version: 1.1.2
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+# Pre-Depends: <comma-separated list of packages>
+# Depends: <comma-separated list of packages>
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+Architecture: all
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+Files: background.png /usr/share/digabi/images
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: Customizations for Digabi project (backgrounds etc.)
+ Package contains customization files.
