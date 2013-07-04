@@ -1,8 +1,8 @@
 # Digabi Custom Packages
 
 digabi-client
-digabi-audit
-digabi-feedback
+#digabi-audit
+#digabi-feedback
 digabi-customization
-digabi-restrictions
+digabi-adm
 digabi-testing
