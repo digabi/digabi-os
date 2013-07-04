@@ -1,0 +1,5 @@
+- firewall / iptables
+ - read config from /etc/digabi/firewall
+ - apply configuration
+- apply apparmor restrictions
+- 
