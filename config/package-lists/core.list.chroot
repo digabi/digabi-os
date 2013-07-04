@@ -14,14 +14,3 @@ uuid-runtime
 #endif
 
 task-laptop
-
-# Sync clock w/ NTP
-chrony
-
-# Auditing
-auditd
-
-consolekit
-libpam-ck-connector
-
-policykit-1

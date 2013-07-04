@@ -6,17 +6,18 @@ Priority: optional
 # Homepage: <enter URL here; no default>
 Standards-Version: 3.9.2
 
-Package: <package name; defaults to equivs-dummy>
-# Version: <enter version here; defaults to 1.0>
-# Maintainer: Your Name <yourname@example.com>
+Package: digabi-adm
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 # Pre-Depends: <comma-separated list of packages>
-# Depends: <comma-separated list of packages>
+Depends: lshw, imvirt, dmidecode, harden-environment, harden-clients, harden-servers, apparmor, apparmor-notify, apparmor-profiles, apparmor-utils, libpam-apparmor, auditd, consolekit, libpam-ck-connector, policykit-1, chrony
+# pcscd, opensc, pcsc-tools
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
 # Provides: <comma-separated list of packages>
 # Replaces: <comma-separated list of packages>
 # Architecture: all
 # Copyright: <copyright file; defaults to GPL2>
+Changelog: changelog
 # Changelog: <changelog file; defaults to a generic changelog>
 # Readme: <README.Debian file; defaults to a generic one>
 # Extra-Files: <comma-separated list of additional files for the doc directory>

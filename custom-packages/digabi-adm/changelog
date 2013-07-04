@@ -1,0 +1,5 @@
+digabi-adm (1.0.0) stable; urgency=low
+
+  * Initial release. Replaces live-build packagelists: tools, security.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 14:17:01 +0300
