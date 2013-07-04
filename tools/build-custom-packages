@@ -20,7 +20,7 @@ do
 		cd "${PACKAGE_NAME}"
 
 		echo "Building package ${PACKAGE_NAME}..."
-		equivs-build "${PACKAGE_NAME}"
+		equivs-build "${PACKAGE_NAME}" 1>/dev/null
 		# package exists, build it, move results into reprepro collection area
 		mv *.deb ..
 		cd ..
