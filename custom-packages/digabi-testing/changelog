@@ -1,3 +1,9 @@
+digabi-testing (1.0.3) stable; urgency=low
+
+  * Removed VirtualBox guest additions, there is no support in kernel anymore.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 05 Jul 2013 14:58:13 +0300
+
 digabi-testing (1.0.2) stable; urgency=low
 
   * Added iptables-testing.rules, which allow all outgoing traffic. For test usage only, will not be included in final version.

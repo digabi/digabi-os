@@ -10,7 +10,7 @@ Package: digabi-testing
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 # Version: <enter version here; defaults to 1.0>
 # Pre-Depends: <comma-separated list of packages>
-Depends: virtualbox-guest-dkms, virtualbox-guest-x11, virtualbox-guest-utils, wicd-gtk, wpasupplicant, wireless-tools
+Depends: wicd-gtk, wpasupplicant, wireless-tools
 # Depends: <comma-separated list of packages>
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
@@ -27,5 +27,4 @@ Files: testing.list /etc/apt/sources.list.d
 #  <more pairs, if there's more than one file to include. Notice the starting space>
 Description: Tools to help testing Digabi Live System (meta-package)
  This includes:
-  - VirtualBox support (virtualbox-guest-dksm, virtualbox-guest-x11, virtualbox-guest-utils)
   - WLAN/WiFi support (packages: (wicd-gtk, wpasupplicant, wireless-tools)
