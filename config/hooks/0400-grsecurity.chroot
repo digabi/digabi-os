@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+apt-get -y install paxctl
+
+#paxctl -z $CHROMIUM
+#paxctl -z
+
