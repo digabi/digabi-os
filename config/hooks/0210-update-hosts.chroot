@@ -7,6 +7,14 @@ set -e
 
 HOSTS="notfound.xd.fi sensori.digabi.fi digabi.fi"
 
+if [ -z `dpkg --get-selections |grep -v deinstall |grep bind9-host` ]
+then
+	apt-get -y install bind9-host
+	_HOST_INSTALLED="1"
+else
+	_HOST_INSTALLED="0"
+fi
+
 for h in ${HOSTS}
 do
 	IP="$(host $h |awk '/ has address /{ print $4 }')"
@@ -16,3 +24,8 @@ do
 		echo "${IP}\t${h}" >>/etc/hosts
 	fi
 done
+
+if [ "${HOST_INSTALLED}" = "1" ]
+then
+	apt-get -y remove bind9-host
+fi
