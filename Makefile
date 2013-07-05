@@ -1,4 +1,5 @@
-VERSION = $(shell git describe)
+VERSION = $(shell git describe)_$(shell date +%s)
+
 ISO_FILE = binary.hybrid.iso
 
 FILENAME_PREFIX = digabi-livecd
