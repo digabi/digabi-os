@@ -16,7 +16,10 @@ Create new changelog inside package
 
     dch --create -c changelog
 
-Update changelog
+Update changelog (create new version, or modify unreleased)
 
     dch -c changelog
 
+Release
+
+    dch -r --distribution stable -c changelog
