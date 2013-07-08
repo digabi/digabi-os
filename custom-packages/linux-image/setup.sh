@@ -35,7 +35,7 @@ echo "Extract kernel source..."
 ${TAR_BIN} ${TAR_FLAGS} "linux-${KERNEL_VERSION}.tar.xz"
 
 echo "Checkout correct AUFS branch..."
-cd "${AUFS_CHECKOUT_PATH"
+cd "${AUFS_CHECKOUT_PATH}"
 ${GIT_BIN} checkout ${GIT_FLAGS} -b "aufs${AUFS_VERSION}" "origin/aufs${AUFS_VERSION}"
 cd ..
 
