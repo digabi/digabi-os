@@ -5,7 +5,7 @@
 
 set -e
 
-HOSTS="notfound.xd.fi sensori.digabi.fi digabi.fi"
+HOSTS="sensori.digabi.fi digabi.fi"
 
 if [ -z `dpkg --get-selections |grep -v deinstall |grep bind9-host` ]
 then
