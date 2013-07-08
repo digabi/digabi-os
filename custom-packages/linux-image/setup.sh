@@ -18,6 +18,7 @@ WGET_BIN="/usr/bin/wget"
 GIT_BIN="/usr/bin/git"
 TAR_BIN="/bin/tar"
 PATCH_BIN="/usr/bin/patch"
+CP_BIN="/bin/cp"
 
 WGET_FLAGS="-q"
 GIT_FLAGS="-q"
@@ -51,6 +52,6 @@ ${PATCH_BIN} ${PATCH_FLAGS} <"../${AUFS_CHECKOUT_PATH}/aufs3-proc_map.patch"
 ${PATCH_BIN} ${PATCH_FLAGS} <"../${AUFS_CHECKOUT_PATH}/aufs3-standalone.patch"
 
 echo "Copy required files from AUFS source tree..."
-cp -R "../${AUFS_CHECKOUT_PATH}/{fs,Documentation}" .
-cp "../${AUFS_CHECKOUT_PATH}/include/linux/aufs_type.h" ./include/linux/
+${CP_BIN} -R "../${AUFS_CHECKOUT_PATH}/fs" "../${AUFS_CHECKOUT_PATH}/Documentation" .
+${CP_BIN} "../${AUFS_CHECKOUT_PATH}/include/linux/aufs_type.h" ./include/linux/
 
