@@ -1,0 +1,22 @@
+#!/bin/sh
+
+COMMAND="$1"
+
+case "${COMMAND}" in
+	allow*)
+		if [ -f "/etc/iptables-testing.rules" ]
+		then
+			/sbin/iptables-restore </etc/iptables-testing.rules
+		fi
+		;;
+	deny*)
+		if [ -f "/etc/iptables.rules" ]
+		then
+			iptables-restore </etc/iptables.rules
+		fi
+		;;
+	*)
+		echo "Invalid command: ${COMMAND}"
+		exit 1
+		;;
+esac

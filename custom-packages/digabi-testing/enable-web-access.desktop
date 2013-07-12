@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Enable Web Access
+Comment=Removes default restrictions from Digabi firewall, and allows access to everywhere. (Feature only available in Digabi Live demo version.)
+Exec=/usr/sbin/digabi-webaccess allow
+Icon=gnome-dev-wavelan
+Path=
+Terminal=false
+StartupNotify=false

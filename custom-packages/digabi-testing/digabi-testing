@@ -24,6 +24,8 @@ Changelog: changelog
 # Files: <pair of space-separated paths; First is file to include, second is destination>
 Files: testing.list /etc/apt/sources.list.d
  iptables-testing.rules /etc
+ digabi-webaccess /usr/sbin
+ enable-web-access.desktop /etc/skel/Desktop
 #  <more pairs, if there's more than one file to include. Notice the starting space>
 Description: Tools to help testing Digabi Live System (meta-package)
  This includes:

@@ -1,3 +1,15 @@
+digabi-testing (1.0.5) stable; urgency=low
+
+  * Added desktop entry for enabling network access. (ie. running digabi-webaccess).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Jul 2013 14:06:00 +0300
+
+digabi-testing (1.0.4) stable; urgency=low
+
+  * Added `digabi-webaccess` command, which allows user to switch firewall mode (allow/deny).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Jul 2013 14:00:12 +0300
+
 digabi-testing (1.0.3) stable; urgency=low
 
   * Removed VirtualBox guest additions, there is no support in kernel anymore.
