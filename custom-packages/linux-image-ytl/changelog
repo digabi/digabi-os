@@ -1,3 +1,9 @@
+linux-image-ytl (3.2.48-3) stable; urgency=low
+
+  * Bumping version number, repository already has -2, so we need -3.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Jul 2013 10:41:36 +0300
+
 linux-image-ytl (3.2.48-2) stable; urgency=low
 
   * Bumping version number, releasing new version to replace earlier, from testing -branch.
