@@ -1,3 +1,9 @@
+linux-image-ytl (3.2.48-2) stable; urgency=low
+
+  * Bumping version number, releasing new version to replace earlier, from testing -branch.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Jul 2013 10:13:39 +0300
+
 linux-image-ytl (3.2.48-1) stable; urgency=low
 
   * Initial release w/ changelog.
