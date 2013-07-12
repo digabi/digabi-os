@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+BACKGROUND_FILE="/usr/share/digabi/images/background.png"
+
+if [ -f "${BACKGROUND_FILE}" ]
+then
+	update-alternatives /usr/share/images/desktop-base/desktop-background desktop-background "${BACKGROUND_FILE}" 10000
+fi
