@@ -8,25 +8,13 @@ Standards-Version: 3.9.2
 
 Package: digabi-testing
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-# Version: <enter version here; defaults to 1.0>
-# Pre-Depends: <comma-separated list of packages>
-Depends: wicd-gtk, wpasupplicant, wireless-tools
-# Depends: <comma-separated list of packages>
-# Recommends: <comma-separated list of packages>
-# Suggests: <comma-separated list of packages>
-# Provides: <comma-separated list of packages>
-# Replaces: <comma-separated list of packages>
-# Architecture: all
-# Copyright: <copyright file; defaults to GPL2>
+Depends: wicd-gtk, wpasupplicant, wireless-tools, virtualbox-guest-dkms, virtualbox-guest-x11, virtualbox-guest-utils
 Changelog: changelog
-# Readme: <README.Debian file; defaults to a generic one>
-# Extra-Files: <comma-separated list of additional files for the doc directory>
-# Files: <pair of space-separated paths; First is file to include, second is destination>
 Files: testing.list /etc/apt/sources.list.d
  iptables-testing.rules /etc
  digabi-webaccess /usr/sbin
  enable-web-access.desktop /etc/skel/Desktop
-#  <more pairs, if there's more than one file to include. Notice the starting space>
 Description: Tools to help testing Digabi Live System (meta-package)
  This includes:
   - WLAN/WiFi support (packages: (wicd-gtk, wpasupplicant, wireless-tools)
+  - VirtualBox support (virtualbox-guest-dksm, virtualbox-guest-x11, virtualbox-guest-utils)
