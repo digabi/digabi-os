@@ -1,3 +1,9 @@
+digabi-customization (1.5.2) stable; urgency=low
+
+  * Added license (all rights reserved).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 17 Jul 2013 08:35:04 +0300
+
 digabi-customization (1.5.1) stable; urgency=low
 
   * Use background.png from proprietary folder, which includes content that will not be added into DVCS.

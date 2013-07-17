@@ -13,7 +13,7 @@ Depends: plymouth, plymouth-drm, plymouth-themes-spinfinity, plymouth-x11
 # Provides: <comma-separated list of packages>
 # Replaces: <comma-separated list of packages>
 Architecture: all
-# Copyright: <copyright file; defaults to GPL2>
+Copyright: copyright
 Changelog: changelog
 # Readme: <README.Debian file; defaults to a generic one>
 # Extra-Files: <comma-separated list of additional files for the doc directory>
