@@ -36,7 +36,7 @@ Otherwise, use GitHub clone:
 
 ## Preparation
     # Copy our proprietary logo into bootloader config
-    cp logo.svg.in config/bootloader/isolinux/splash.svg.in
+    cp logo.svg.in config/bootloaders/isolinux/splash.svg.in
 
 
 ## Compiling ISO image
