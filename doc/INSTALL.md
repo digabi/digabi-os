@@ -34,6 +34,10 @@ Otherwise, use GitHub clone:
     apt-get install live-build build-essential kernel-package apt-cacher-ng
 
 
+## Preparation
+    # Copy our proprietary logo into bootloader config
+    cp logo.svg.in config/bootloader/isolinux/splash.svg.in
+
 
 ## Compiling ISO image
 To compile new ISO image, you may use make:
