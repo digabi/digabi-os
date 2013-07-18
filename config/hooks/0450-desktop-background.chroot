@@ -2,7 +2,7 @@
 
 set -e
 
-BACKGROUND_FILE="/usr/share/digabi/images/proprietary/background.png"
+BACKGROUND_FILE="/usr/share/digabi/proprietary/background.svg"
 
 if [ -f "${BACKGROUND_FILE}" ]
 then
