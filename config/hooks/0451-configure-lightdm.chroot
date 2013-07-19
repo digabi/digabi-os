@@ -12,7 +12,7 @@ if [ -x "${LIGHTDM_SET_BIN}" ]
 then
 	${LIGHTDM_SET_BIN} --autologin "${USERNAME}"
 	${LIGHTDM_SET_BIN} --hide-users false
-	${LIGHTDM_SET_BIn} --allow-guest false
+	${LIGHTDM_SET_BIN} --allow-guest false
 fi
 
 if [ -f "${LIGHTDM_GTK_CONF}" ]
