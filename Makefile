@@ -36,5 +36,9 @@ collect_logs:
 	gzip build.log
 	mv build.log.gz dist/$(FILENAME_PREFIX)_build-$(VERSION).log.gz
 
-dist:	clean config build collect_iso collect_config collect_logs
+collect_info:
+	mkdir -p dist
+	tar -cvJf dist/$(FILENAME_PREFIX)_logs-$(VERSION).tar.xz chroot.packages.install binary.contents binary.packages chroot.packages.live
+
+dist:	clean config build collect_iso collect_config collect_logs collect_info
 	
