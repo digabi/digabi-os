@@ -2,8 +2,15 @@
 
 set -e
 
+CHROMIUM_DIR="/usr/lib/chromium"
+PAXCTL_BIN="/sbin/paxctl"
+
+
 apt-get -y install paxctl
 
-#paxctl -z $CHROMIUM
-#paxctl -z
+# See <https://en.wikibooks.org/wiki/Grsecurity/Application-specific_Settings>
+# chromium:         PaX flags: P----m-x-eR-
+# chromium-sandbox: PaX flags: -----m-x-e-
 
+${PAXCTL_BIN} -cPmxeR "${CHROMIUM_DIR}/chromium"
+${PAXCTL_BIN} -cmxe "${CHROMIUM_DIR}/chromium-sandbox"
