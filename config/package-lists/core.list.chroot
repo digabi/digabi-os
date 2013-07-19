@@ -46,3 +46,9 @@ epdfview
 #lxsession
 #lxterminal
 #lxappearance
+
+# Web Browsers
+chromium
+chromium-l10n
+iceweasel
+iceweasel-l10n-fi
