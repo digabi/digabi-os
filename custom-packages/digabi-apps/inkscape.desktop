@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Draw (Inkscape)
+Exec=/usr/bin/inkscape
+Icon=inkscape
+Path=
+Terminal=false
+StartupNotify=false

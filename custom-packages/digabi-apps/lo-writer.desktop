@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Word Processing (LibreOffice Writer)
+Exec=/usr/bin/libreoffice --writer
+Icon=libreoffice-writer
+Path=
+Terminal=false
+StartupNotify=false

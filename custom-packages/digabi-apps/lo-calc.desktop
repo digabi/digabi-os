@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Spreadsheet (LibreOffice Calc)
+Exec=/usr/bin/libreoffice --calc
+Icon=libreoffice-calc
+Path=
+Terminal=false
+StartupNotify=false

@@ -1,3 +1,9 @@
+digabi-apps (1.0.1) stable; urgency=low
+
+  * Added desktop icons for the most important apps.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 19 Jul 2013 16:10:55 +0300
+
 digabi-apps (1.0.0) stable; urgency=low
 
   * Initial release. Replaces live-build packagelists: content, tools.

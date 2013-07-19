@@ -1,29 +1,18 @@
-### Commented entries have reasonable defaults.
-### Uncomment to edit them.
-# Source: <source package name; defaults to package name>
 Section: misc
 Priority: optional
-# Homepage: <enter URL here; no default>
+Homepage: http://digabi.fi/
 Standards-Version: 3.9.2
 
 Package: digabi-apps
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: libreoffice, libreoffice-gtk, ghemical, chemtool, inkscape, lyx, octave, texmacs, chromium, chromium-l10n, iceweasel, iceweasel-l10n-fi
 
-# Maintainer: Your Name <yourname@example.com>
-# Pre-Depends: <comma-separated list of packages>
-# Depends: <comma-separated list of packages>
-# Recommends: <comma-separated list of packages>
-# Suggests: <comma-separated list of packages>
-# Provides: <comma-separated list of packages>
-# Replaces: <comma-separated list of packages>
-# Architecture: all
+Architecture: all
 Changelog: changelog
-# Copyright: <copyright file; defaults to GPL2>
-# Changelog: <changelog file; defaults to a generic changelog>
-# Readme: <README.Debian file; defaults to a generic one>
-# Extra-Files: <comma-separated list of additional files for the doc directory>
-# Files: <pair of space-separated paths; First is file to include, second is destination>
-#  <more pairs, if there's more than one file to include. Notice the starting space>
+Files: chromium.desktop /etc/skel/Desktop
+ inkscape.desktop /etc/skel/Desktop
+ lo-calc.desktop /etc/skel/Desktop
+ lo-writer.desktop /etc/skel/Desktop
+ lo-impress.desktop /etc/skel/Desktop
 Description: Digabi software collection (meta-package)
  Installs allowed apps to Digabi system.

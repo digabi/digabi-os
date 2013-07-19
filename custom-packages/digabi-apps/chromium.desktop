@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Web Browser (Chromium)
+Exec=/usr/bin/chromium
+Icon=web-browser
+Path=
+Terminal=false
+StartupNotify=false

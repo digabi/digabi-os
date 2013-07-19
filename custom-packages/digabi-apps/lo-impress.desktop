@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Presentation Graphics (LibreOffice Impress)
+Exec=/usr/bin/libreoffice --impress
+Icon=libreoffice-impress
+Path=
+Terminal=false
+StartupNotify=false
