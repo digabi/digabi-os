@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+FILES="xfce4-session-logout xfce4-about xfhelp4 exo-mail-reader exo-terminal-emulator Thunar xfrun4 exo-file-manager"
+
+for f in $FILES
+do
+	FILE="/usr/share/applications/${f}.desktop"
+	if [ -f "${FILE}" ]
+	then
+		rm "${FILE}"
+	fi
+done
