@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+USERNAME="digabi"
+
+# TODO: Add support for different architectures: amd64 etc. (ie. check it, and select path)
+LIGHTDM_SET_BIN="/usr/lib/i386-linux-gnu/lightdm/lightdm-set-defaults"
+LIGHTDM_GTK_CONF="/etc/lightdm/lightdm-gtk-greeter.conf"
+
+if [ -x "${LIGHTDM_SET_BIN}" ]
+then
+	${LIGHTDM_SET_BIN} --autologin "${USERNAME}"
+	${LIGHTDM_SET_BIN} --hide-users false
+	${LIGHTDM_SET_BIn} --allow-guest false
+fi
+
+if [ -f "${LIGHTDM_GTK_CONF}" ]
+then
+	echo "sed -i ..."
+	# TODO: [greeter] / background, show-language-selector=true
+fi
