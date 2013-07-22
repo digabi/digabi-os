@@ -2,6 +2,8 @@
 Version=1.0
 Type=Application
 Name=Draw (Inkscape)
+Name[fi]=Piirto-ohjelma (Inkscape)
+Name[sv]=Ritprogram (Inkscape)
 Exec=/usr/bin/inkscape
 Icon=inkscape
 Path=

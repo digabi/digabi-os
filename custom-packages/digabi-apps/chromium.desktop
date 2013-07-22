@@ -2,6 +2,8 @@
 Version=1.0
 Type=Application
 Name=Web Browser (Chromium)
+Name[fi]=Verkkoselain (Chromium)
+Name[sv]=Webbläsare (Chromium)
 Exec=/usr/bin/chromium
 Icon=web-browser
 Path=

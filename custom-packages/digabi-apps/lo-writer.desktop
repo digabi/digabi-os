@@ -2,6 +2,8 @@
 Version=1.0
 Type=Application
 Name=Word Processing (LibreOffice Writer)
+Name[fi]=Tekstinkäsittely (LibreOffice Writer)
+Name[sv]=Ordbehandlare (LibreOffice Writer)
 Exec=/usr/bin/libreoffice --writer
 Icon=libreoffice-writer
 Path=

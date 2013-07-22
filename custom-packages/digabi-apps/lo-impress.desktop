@@ -2,6 +2,8 @@
 Version=1.0
 Type=Application
 Name=Presentation Graphics (LibreOffice Impress)
+Name[fi]=Esitysgrafiikka (LibreOffice Impress)
+Name[sv]=Presentationsprogram (LibreOffice Impress)
 Exec=/usr/bin/libreoffice --impress
 Icon=libreoffice-impress
 Path=
