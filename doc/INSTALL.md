@@ -4,8 +4,10 @@ Setting up build environment.
 See also [Debian Live Manual](http://live.debian.net/manual/).
 
 
-## Setup Debian installation
-TBD
+## Install Debian
+Might also work on Ubuntu, but not tested. There will also be a Vagrant box that you can use to compile new images. VirtualBox images, maybe?
+
+**TBD**
 
 
 ## Checkout config from git
@@ -48,6 +50,6 @@ If successful, output will be named `digabi-livecd-$(git describe).iso`. For exa
 
 
 ### Creating new tag
-    git tag -a 1.0 -m "Created tag for version 1.0"
+    git tag -a v1.0 -m "Created tag for version 1.0"
 
 
