@@ -1,81 +1,134 @@
 #!/bin/sh
 
-if [ -f ./versions ]
-then
-	. ./versions
-else
-	echo "Version config (./versions) not found, exiting."
-	exit 1
-fi
+# Download and patch kernel sources
+# GPLv2
+#
+# (c) 2013 The Matriculation Examination Board of Finland / Ylioppilastutkintolautakunta
+# Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 
-KERNEL_URL="https://www.kernel.org/pub/linux/kernel/v3.x/linux-${KERNEL_VERSION}.tar.xz"
-GRSECURITY_URL="https://grsecurity.net/stable/grsecurity-${GRSECURITY_VERSION}.patch"
-AUFS_URL="http://git.code.sf.net/p/aufs/aufs3-standalone"
 
-KERNEL_DIR="linux-${KERNEL_VERSION}"
-KERNEL_ARCHIVE="${KERNEL_DIR}.tar.xz"
-AUFS_CHECKOUT_PATH="aufs3-standalone"
+KERNEL_VERSION="3.2.48"
+AUFS_VERSION="3.2"
+GRSECURITY_VERSION="2.9.1"
+
+
+# Configure apps
+BASENAME_BIN="/bin/basename"
+
+ECHO_BIN="/bin/echo"
 
 WGET_BIN="/usr/bin/wget"
-GIT_BIN="/usr/bin/git"
-TAR_BIN="/bin/tar"
-PATCH_BIN="/usr/bin/patch"
-CP_BIN="/bin/cp"
-
 WGET_FLAGS="-q"
-GIT_FLAGS="-q"
+
+TAR_BIN="/bin/tar"
 TAR_FLAGS="-xJf"
+
+PATCH_BIN="/usr/bin/patch"
 PATCH_FLAGS="-s -p1"
 
-if [ ! -f "${KERNEL_ARCHIVE}" ]
+CP_BIN="/bin/cp"
+CP_FLAGS="-R"
+
+UNZIP_BIN="/usr/bin/unzip"
+UNZIP_FLAGS=""
+
+BINARIES="${BASENAME_BIN} ${ECHO_BIN} ${WGET_BIN} ${TAR_BIN} ${PATCH_BIN} ${CP_BIN} ${UNZIP_BIN}"
+for b in ${BINARIES}
+do
+	if [ ! -x "${b}" ]
+	then
+		echo "Command `${b}` not found, exiting..."
+		exit 1
+	fi
+done
+
+
+# Linux Kernel <https://kernel.org/>
+KERNEL_URL="https://www.kernel.org/pub/linux/kernel/v3.x/linux-${KERNEL_VERSION}.tar.xz"
+KERNEL_ARCHIVE_FILE="$(${BASENAME_BIN} ${KERNEL_URL})"
+KERNEL_SOURCE_DIR="$(${ECHO_BIN} ${KERNEL_ARCHIVE_FILE} |sed 's/\.tar\.xz//')"
+
+# Grsecurity <https://grsecurity.net/>
+GRSECURITY_PATCH_FILE="grsecurity-${GRSECURITY_VERSION}-${KERNEL_VERSION}.patch"
+GRSECURITY_URL="https://github.com/digabi/digabi-misc/raw/master/${GRSECURITY_PATCH_FILE}"
+#GRSECURITY_PATCH_FILE="$(${BASENAME_BIN} ${GRSECURITY_URL})"
+
+# AUFS, Advanced Union Filesystem <http://aufs.sourceforge.net/>
+AUFS_URL="https://github.com/digabi/aufs3-standalone/archive/aufs${AUFS_VERSION}.zip"
+AUFS_ARCHIVE_FILE="$(${BASENAME_BIN} ${AUFS_URL})"
+AUFS_SOURCE_DIR="aufs3-standalone-aufs${AUFS_VERSION}" 			# TODO: Extract directory name from GitHub repo + branch
+
+
+echo "Download required files..."
+if [ -f "${KERNEL_ARCHIVE}" ]
 then
-	echo "Get kernel source..."
+	echo "Kernel already downloaded, skipping..."
+else
+	echo "Download kernel..."
 	${WGET_BIN} ${WGET_FLAGS} "${KERNEL_URL}"
-else
-	echo "Kernel source already downloaded..."
-	echo "TODO: check kernel source checksum, verify signature"
 fi
-
-if [ ! -d "${KERNEL_DIR}" ]
+if [ -f "${GRSECURITY_PATCH_FILE}" ]
 then
-	echo "Extracting kernel source..."
-	${TAR_BIN} ${TAR_FLAGS} "${KERNEL_ARCHIVE}"
+	echo "grsecurity patch already downloaded, skipping..."
 else
-	echo "Kernel source already extracted..."
-	echo "TODO: Check if source has been already patched"
+	echo "Download grsecurity patch..."
+	${WGET_BIN} ${WGET_FLAGS} "${GRSECURITY_URL}"
+fi
+if [ -f "${AUFS_ARCHIVE_FILE}" ]
+then
+	echo "AUFS patch already downloaded, skipping..."
+else
+	echo "Download AUFS3 patch..."
+	${WGET_BIN} ${WGET_FLAGS} "${AUFS_URL}"
 fi
 
-echo "TODO: check if patch already downloaded / applied"
-echo "Get grsecurity patch..."
-${WGET_BIN} ${WGET_FLAGS} "${GRSECURITY_URL}"
+echo "Extract sources..."
+if [ -d "${KERNEL_SOURCE_DIR}" ]
+then
+	echo "Kernel archive already extracted, skipping..."
+else
+	echo "Extracting kernel..."
+	${TAR_BIN} ${TAR_FLAGS} "${KERNEL_ARCHIVE}"
+fi
+if [ -d "${AUFS_SOURCE_DIR}" ]
+then
+	echo "AUFS3 archive already extracted, skipping..."
+else
+	echo "Extracting AUFS3 sources..."
+	${UNZIP_BIN} ${UNZIP_FLAGS} "${AUFS_ARCHIVE_FILE}"
+fi
 
-echo "TODO: Check if repository already cloned, pull newest changes"
-echo "Get AUFS source..."
-${GIT_BIN} clone ${GIT_FLAGS} "${AUFS_URL}" "${AUFS_CHECKOUT_PATH}"
+cd "${KERNEL_DIR}"
+echo "Patching kernel sources..."
+AUFS_PATCHES="kbuild base standalone"
+for p in ${AUFS_PATCHES}
+do
+	echo "Applying AUFS3 patch: ${p}..."
+	${PATCH_BIN} ${PATCH_FLAGS} < "../${AUFS_SOURCE_DIR}/aufs3-${p}.patch"
+done
+AUFS_FILES="fs Documentation"
+for f in ${AUFS_FILES}
+do
+	echo "Copying required files from AUFS3 source: ${f}..."
+	${CP_BIN} ${CP_FLAGS} "../${AUFS_SOURCE_DIR}/${f}" .
+done
+${CP_BIN} "../${AUFS_SOURCE_DIR}/include/linux/aufs_type.h" ./include/linux/
+
+echo "Applying grsecurity patch..."
+${PATCH_BIN} ${PATCH_FLAGS} < "../${GRSECURITY_PATCH_FILE}"
+
+echo
+echo "Done!"
 
 
-echo "Checkout correct AUFS branch..."
-cd "${AUFS_CHECKOUT_PATH}"
-${GIT_BIN} checkout ${GIT_FLAGS} -b "aufs${AUFS_VERSION}" "origin/aufs${AUFS_VERSION}"
-cd ..
+exit 0
+	echo "TODO: check kernel source checksum, verify signature"
+	echo "TODO: Check if source has been already patched"
+	echo "TODO: check if patch already downloaded / applied"
 
-cd "linux-${KERNEL_VERSION}"
-
-echo "Apply grsecurity patch..."
-${PATCH_BIN} ${PATCH_FLAGS} <"../grsecurity-${GRSECURITY_VERSION}.patch"
-
-echo "Apply AUFS patch..."
-${PATCH_BIN} ${PATCH_FLAGS} <"../${AUFS_CHECKOUT_PATH}/aufs3-kbuild.patch"
-${PATCH_BIN} ${PATCH_FLAGS} <"../${AUFS_CHECKOUT_PATH}/aufs3-base.patch"
-${PATCH_BIN} ${PATCH_FLAGS} <"../${AUFS_CHECKOUT_PATH}/aufs3-proc_map.patch"
-${PATCH_BIN} ${PATCH_FLAGS} <"../${AUFS_CHECKOUT_PATH}/aufs3-standalone.patch"
-
-echo "Copy required files from AUFS source tree..."
-${CP_BIN} -R "../${AUFS_CHECKOUT_PATH}/fs" "../${AUFS_CHECKOUT_PATH}/Documentation" .
-${CP_BIN} "../${AUFS_CHECKOUT_PATH}/include/linux/aufs_type.h" ./include/linux/
 
 echo "TODO: Check if patching succeeds"
-echo "TODO: Fix these:"
+echo "TODO: Fix these: (caused by aufs3-proc_map.patch)"
 echo " 1 out of 2 hunks FAILED -- saving rejects to file fs/proc/task_mmu.c.rej"
 echo " 1 out of 1 hunk FAILED -- saving rejects to file kernel/fork.c.rej"
 
