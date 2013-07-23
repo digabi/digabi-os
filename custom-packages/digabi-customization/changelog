@@ -1,3 +1,9 @@
+digabi-customization (1.5.5) stable; urgency=low
+
+  * Added script to automatically configure XFCE settings (background etc.).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 23 Jul 2013 17:45:16 +0300
+
 digabi-customization (1.5.4) stable; urgency=low
 
   * Added background also as .png (1024x768).

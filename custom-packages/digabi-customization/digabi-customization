@@ -12,6 +12,8 @@ Changelog: changelog
 Files: proprietary/background.svg /usr/share/digabi
  proprietary/background.png /usr/share/digabi
  proprietary/splash.svg.in /usr/share/digabi
+ configure-xfce /usr/share/digabi
+ digabi-xfconf.desktop /etc/skel/.config/autostart
 Description: Customizations for Digabi project (backgrounds etc.)
  Package contains customization files.
   - plymouth, plymouth-*: boot splash
