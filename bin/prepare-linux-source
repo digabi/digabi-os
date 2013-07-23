@@ -33,7 +33,7 @@ CP_FLAGS="-R"
 MOVE_BIN="/bin/mv"
 
 UNZIP_BIN="/usr/bin/unzip"
-UNZIP_FLAGS="-u"
+UNZIP_FLAGS="-uq"
 
 DATE_BIN="/bin/date"
 DATE_FORMAT="+%Y%m%d%H%M%S"
