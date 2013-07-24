@@ -5,7 +5,7 @@ Standards-Version: 3.9.2
 
 Package: digabi-apps
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: libreoffice, libreoffice-gtk, ghemical, inkscape, lyx, chromium, chromium-l10n, iceweasel, iceweasel-l10n-fi, vlc
+Depends: libreoffice, libreoffice-gtk, ghemical, inkscape, lyx, chromium, chromium-l10n, iceweasel, iceweasel-l10n-fi, vlc, geogebra
 
 Architecture: all
 Changelog: changelog
@@ -14,5 +14,6 @@ Files: chromium.desktop /etc/skel/Desktop
  lo-calc.desktop /etc/skel/Desktop
  lo-writer.desktop /etc/skel/Desktop
  lo-impress.desktop /etc/skel/Desktop
+ geogebra-license.txt /usr/share/digabi
 Description: Digabi software collection (meta-package)
  Installs allowed apps to Digabi system.

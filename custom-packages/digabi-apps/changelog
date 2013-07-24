@@ -1,3 +1,9 @@
+digabi-apps (1.0.5) stable; urgency=low
+
+  * Added GeoGebra <http://www.geogebra.org/>. Included license also in this package.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 10:39:53 +0300
+
 digabi-apps (1.0.4) stable; urgency=low
 
   * Added VLC.
