@@ -19,7 +19,8 @@ ${PAXCTL_BIN} -cm "/usr/lib/iceweasel/iceweasel"
 
 # Custom rules:
 # ghemical:	    PaX flags: -----m-x-e--
-
+# java:		    PaX flags: -----m-x-e-- ; REQUIRED FOR GEOGEBRA
 ${PAXCTL_BIN} -cm "/usr/bin/ghemical"
+${PAXCTL_BIN} -cm "/usr/lib/jvm/java-6-openjdk-i386/jre/bin/java" # TODO: Architecture selection automatically
 
 apt-get -y remove paxctl
