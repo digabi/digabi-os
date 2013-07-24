@@ -1,3 +1,15 @@
+digabi-apps (1.0.4) stable; urgency=low
+
+  * Added VLC.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 09:39:00 +0300
+
+digabi-apps (1.0.3) stable; urgency=low
+
+  * Removed chemtool, octave, texmacs
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 09:32:09 +0300
+
 digabi-apps (1.0.2) stable; urgency=low
 
   * Translated application names.
