@@ -11,6 +11,15 @@ apt-get -y install paxctl
 # See <https://en.wikibooks.org/wiki/Grsecurity/Application-specific_Settings>
 # chromium:         PaX flags: P----m-x-eR-
 # chromium-sandbox: PaX flags: -----m-x-e-
+# iceweasel:	    PaX flags: -----m-x-e-
 
 ${PAXCTL_BIN} -cPmxeR "${CHROMIUM_DIR}/chromium"
 ${PAXCTL_BIN} -cmxe "${CHROMIUM_DIR}/chromium-sandbox"
+${PAXCTL_BIN} -cm "/usr/lib/iceweasel/iceweasel"
+
+# Custom rules:
+# ghemical:	    PaX flags: -----m-x-e--
+
+${PAXCTL_BIN} -cm "/usr/bin/ghemical"
+
+apt-get remove paxctl
