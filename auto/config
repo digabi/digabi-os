@@ -19,7 +19,7 @@ ARCHITECTURE="i386"
 #	_SOURCE="false"
 #esac
 _LINUX_FLAVOURS="ytl"
-_SOURCE="true"
+_SOURCE="false"
 
 DISTRIBUTION="wheezy"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
