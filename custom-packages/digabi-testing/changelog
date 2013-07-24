@@ -1,3 +1,9 @@
+digabi-testing (1.0.8) stable; urgency=low
+
+  * Removed VirtualBox guest addons for now. (Again!)
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 18:26:52 +0300
+
 digabi-testing (1.0.7) stable; urgency=low
 
   * Translations.
