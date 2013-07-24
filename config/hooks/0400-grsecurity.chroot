@@ -22,4 +22,4 @@ ${PAXCTL_BIN} -cm "/usr/lib/iceweasel/iceweasel"
 
 ${PAXCTL_BIN} -cm "/usr/bin/ghemical"
 
-apt-get remove paxctl
+apt-get -y remove paxctl
