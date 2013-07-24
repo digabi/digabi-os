@@ -3,27 +3,37 @@
 # Configure XFCE4 settings
 
 # Single color
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/color-style -s 0
+xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/color-style -t int -s 0
+
 # Color from background.svg
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/color1 -s 9509,17733,29298,65535
+xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/color1 -t uint -s 9509 -t uint -s 17733 -t uint -s 29298 -t uint -s 65535
+
 # Centered
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/image-style -s 1
+xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/image-style -t int -s 1
+
 # Our custom image
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/last-image -s /usr/share/digabi/proprietary/background.svg
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/last-single-image -s /usr/share/digabi/proprietary/background.svg
+xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -t string -s /usr/share/digabi/proprietary/background.svg
+xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/last-image -t string -s /usr/share/digabi/proprietary/background.svg
+xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/last-single-image -t string -s /usr/share/digabi/proprietary/background.svg
 
 # Hide filesystem from desktop
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -t int -s 0
+
 # Hide home
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-home -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-home -t int -s 0
+
 # Hide removable drives
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-removable -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-removable -t int -s 0
+
 # Hide trash
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -t int -s 0
+
 # Resize icons (64x64)
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/icon-size -s 64
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/icon-size -t int -s 64
+
 # Hide context menu
-xfconf-query -n -c xfce4-desktop -p /desktop-menu/show -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-menu/show -t int -s 0
+
 # Hide window list
-xfconf-query -n -c xfce4-desktop -p /windowlist-menu/show -s 0
+xfconf-query -n -c xfce4-desktop -p /windowlist-menu/show -t int -s 0
 

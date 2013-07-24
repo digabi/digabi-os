@@ -1,3 +1,9 @@
+digabi-customization (1.5.6) stable; urgency=low
+
+  * Added value types for configure-xfce -script, required when creating new settings.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 09:24:40 +0300
+
 digabi-customization (1.5.5) stable; urgency=low
 
   * Added script to automatically configure XFCE settings (background etc.).
