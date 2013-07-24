@@ -37,3 +37,5 @@ xfconf-query -n -c xfce4-desktop -p /desktop-menu/show -t int -s 0
 # Hide window list
 xfconf-query -n -c xfce4-desktop -p /windowlist-menu/show -t int -s 0
 
+# Set custom image for menu
+xfconf-query -n -c xfce4-panel -p /plugins/plugin-1/button-icon -t string -s /usr/share/digabi/proprietary/digabi_48x48.png
