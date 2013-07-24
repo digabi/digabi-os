@@ -1,3 +1,9 @@
+digabi-testing (1.0.7) stable; urgency=low
+
+  * Translations.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 09:49:22 +0300
+
 digabi-testing (1.0.6) stable; urgency=low
 
   * Restored VirtualBox guest additions.
