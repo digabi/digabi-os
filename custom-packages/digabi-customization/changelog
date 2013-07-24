@@ -1,3 +1,10 @@
+digabi-customization (1.5.10) stable; urgency=low
+
+  * Fixed invalid value types (integers to booleans).
+  * Fixed invalid value path (icon size).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 17:29:49 +0300
+
 digabi-customization (1.5.9) stable; urgency=low
 
   * Updated logo (no background, squared).

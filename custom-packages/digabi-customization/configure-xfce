@@ -17,25 +17,25 @@ xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/last-image -t str
 xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/last-single-image -t string -s /usr/share/digabi/proprietary/background.svg
 
 # Hide filesystem from desktop
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -t int -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -t bool -s false
 
 # Hide home
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-home -t int -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-home -t bool -s false
 
 # Hide removable drives
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-removable -t int -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-removable -t bool -s false
 
 # Hide trash
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -t int -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -t bool -s false
 
 # Resize icons (64x64)
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/icon-size -t int -s 64
+xfconf-query -n -c xfce4-desktop -p /desktop-icons/icon-size -t int -s 64
 
 # Hide context menu
-xfconf-query -n -c xfce4-desktop -p /desktop-menu/show -t int -s 0
+xfconf-query -n -c xfce4-desktop -p /desktop-menu/show -t bool -s false
 
 # Hide window list
-xfconf-query -n -c xfce4-desktop -p /windowlist-menu/show -t int -s 0
+xfconf-query -n -c xfce4-desktop -p /windowlist-menu/show -t bool -s false
 
 # Set custom image for menu
 xfconf-query -n -c xfce4-panel -p /plugins/plugin-1/button-icon -t string -s /usr/share/digabi/proprietary/digabi_48x48.png
