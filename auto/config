@@ -21,6 +21,7 @@ ARCHITECTURE="i386"
 _LINUX_FLAVOURS="ytl"
 _SOURCE="false"
 
+ARCHIVE_AREAS="main contrib non-free"
 DISTRIBUTION="wheezy"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
@@ -30,7 +31,7 @@ lb config noauto \
     --clean \
     --ignore-system-defaults \
     --architecture "${ARCHITECTURE}" \
-    --archive-areas "main" \
+    --archive-areas "${ARCHIVE_AREAS}" \
     --apt-http-proxy "http://localhost:3142/" \
     --distribution "${DISTRIBUTION}" \
     --linux-flavour "${_LINUX_FLAVOURS}" \
