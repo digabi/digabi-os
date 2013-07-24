@@ -1,3 +1,9 @@
+digabi-customization (1.5.9) stable; urgency=low
+
+  * Updated logo (no background, squared).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 16:05:41 +0300
+
 digabi-customization (1.5.8) stable; urgency=low
 
   * Use Digabi logo in menu.
