@@ -19,6 +19,7 @@ ARCHITECTURE="i386"
 #	_SOURCE="false"
 #esac
 _LINUX_FLAVOURS="ytl"
+_SOURCE="true"
 
 DISTRIBUTION="wheezy"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
@@ -41,9 +42,9 @@ lb config noauto \
     --iso-publisher "${ISO_PUBLISHER}" \
     --memtest none \
     --source "${_SOURCE}" \
-    --parent-mirror-bootstrap $REPOSITORY \
-    --parent-mirror-binary $REPOSITORY \
-    --mirror-bootstrap $REPOSITORY \
-    --mirror-chroot $REPOSITORY \
-    --mirror-binary $REPOSITORY \
+    --parent-mirror-bootstrap "${REPOSITORY}" \
+    --parent-mirror-binary "${REPOSITORY}" \
+    --mirror-bootstrap "${REPOSITORY}" \
+    --mirror-chroot "${REPOSITORY}" \
+    --mirror-binary "${REPOSITORY}" \
 	"${@}"
