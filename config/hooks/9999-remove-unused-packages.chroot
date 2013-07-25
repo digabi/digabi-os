@@ -2,4 +2,4 @@
 
 set -e
 
-apt-get -y autoremove bind9-host bluez-firmware firmware-bnx2 firmware-myricom firmware-qlogic info netcat-traditional traceroute usbmuxd zd1211-firmware libmtp-runtime libmtp9 mtp-tools
+apt-get -y autoremove bind9-host bluez-firmware firmware-bnx2 firmware-myricom firmware-qlogic info netcat-traditional traceroute usbmuxd zd1211-firmware libmtp9
