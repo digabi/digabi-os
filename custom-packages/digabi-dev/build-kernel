@@ -33,6 +33,6 @@ echo "Building revision ${REVISION}..."
 fakeroot make-kpkg --initrd --revision "${REVISION}" kernel_image kernel_headers kernel_source 2>&1 |tee build.log
 
 TIMESTAMP="$(date +%s)"
-CONFIG_TARGET="../config-$(make kernelversion)-${REVISION}_${TIMESTAMP}.config"
+CONFIG_TARGET="../linux-$(make kernelversion)-${REVISION}_${TIMESTAMP}.config"
 
 cp .config "${CONFIG_TARGET}"
