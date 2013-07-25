@@ -52,11 +52,11 @@ po::powerokwait:/etc/init.d/powerfail stop
 # so if you want to add more getty's go ahead but skip tty7 if you run X.
 #
 1:2345:respawn:/sbin/getty 38400 tty1
-2:23:respawn:/sbin/getty 38400 tty2
-3:23:respawn:/sbin/getty 38400 tty3
-4:23:respawn:/sbin/getty 38400 tty4
-5:23:respawn:/sbin/getty 38400 tty5
-6:23:respawn:/sbin/getty 38400 tty6
+#2:23:respawn:/sbin/getty 38400 tty2
+#3:23:respawn:/sbin/getty 38400 tty3
+#4:23:respawn:/sbin/getty 38400 tty4
+#5:23:respawn:/sbin/getty 38400 tty5
+#6:23:respawn:/sbin/getty 38400 tty6
 
 # Example how to put a getty on a serial line (for a terminal)
 #
