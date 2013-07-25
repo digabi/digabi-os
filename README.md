@@ -32,6 +32,16 @@ Live system goals:
  * provide solid system for attending the exam
 
 
+## Howto
+Assuming you have required packages installed (see below), building new image is quite easy:
+
+    git clone https://github.com/digabi/digabi-live.git
+    cd digabi-live
+    make dist
+
+After building, image can be found in `dist/` directory.
+
+
 ## Contact
  * [The Matriculation Examination Board of Finland](http://www.ylioppilastutkinto.fi/), PB50, 00581 Helsinki, Finland
  * Project website: [digabi.fi](http://digabi.fi/)

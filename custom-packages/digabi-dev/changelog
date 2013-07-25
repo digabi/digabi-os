@@ -1,5 +1,20 @@
-digabi-dev (2.5.0) UNRELEASED; urgency=low
+digabi-dev (3.0) stable; urgency=low
+
+  * Added new command: `digabi`, to control all digabi-related scripts.
+  * Included `prepare-linux-sources`, `build-kernel`, `build-custom-packages` scripts.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 13:51:30 +0300
+
+digabi-dev (2.5.1) stable; urgency=low
+
+  * Now depends on devscripts (we like `dch`).
+  * Removed useless comments from control file.
+  * Depends on git, equivs.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 13:43:28 +0300
+
+digabi-dev (2.5.0) stable; urgency=low
 
   * Initial release w/ changelog.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 10:56:07 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 13:42:15 +0300
