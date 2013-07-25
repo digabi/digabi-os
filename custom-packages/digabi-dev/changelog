@@ -1,3 +1,10 @@
+digabi-dev (3.0) stable; urgency=low
+
+  * Added new command: `digabi`, to control all digabi-related scripts.
+  * Included `prepare-linux-sources`, `build-kernel`, `build-custom-packages` scripts.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 13:51:30 +0300
+
 digabi-dev (2.5.1) stable; urgency=low
 
   * Now depends on devscripts (we like `dch`).
