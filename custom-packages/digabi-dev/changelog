@@ -1,3 +1,9 @@
+digabi-dev (3.1) UNRELEASED; urgency=low
+
+  * Fetch Digabi config when using prepare-linux-source.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 15:29:58 +0300
+
 digabi-dev (3.0) stable; urgency=low
 
   * Added new command: `digabi`, to control all digabi-related scripts.
