@@ -1,0 +1,12 @@
+Section: misc
+Priority: optional
+Homepage: https://digabi.fi/
+Standards-Version: 3.9.2
+
+Package: digabi-common
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Architecture: all
+Changelog: changelog
+Files: digabi /usr/bin
+Description: Common files for Digabi
+ Currently only provides digabi -command

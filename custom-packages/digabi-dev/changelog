@@ -1,3 +1,9 @@
+digabi-dev (3.6.0) stable; urgency=low
+
+  * Removed conflict w/ digabi-testing, now we depend on digabi-common, which includes digabi-command.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 18:12:14 +0300
+
 digabi-dev (3.5) stable; urgency=low
 
   * Now conflicts w/ digabi-testing (value in control file, common file /usr/bin/digabi).

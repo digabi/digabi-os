@@ -3,6 +3,10 @@
 set -e
 
 COMMAND="$1"
+if [ "$#" -ge 1 ]
+then
+	shift
+fi
 
 if [ -z "${COMMAND}" ]
 then
@@ -17,7 +21,7 @@ COMMAND_FILE="${DIGABI_SCRIPT_LIBRARY}/${COMMAND}"
 
 if [ -x "${COMMAND_FILE}" ]
 then
-	exec "${COMMAND_FILE}"
+	exec "${COMMAND_FILE}" "$@"
 else
 	echo "Invalid command: ${COMMAND}, exiting..."
 	exit 1

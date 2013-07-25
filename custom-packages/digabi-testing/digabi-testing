@@ -8,12 +8,11 @@ Standards-Version: 3.9.2
 
 Package: digabi-testing
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: wicd-gtk, wpasupplicant, wireless-tools
-Conflicts: digabi-dev
+Depends: wicd-gtk, wpasupplicant, wireless-tools, digabi-common
 Changelog: changelog
 Files: testing.list /etc/apt/sources.list.d
  iptables-testing.rules /etc
- digabi-webaccess /usr/sbin
+ webaccess /usr/lib/digabi/scripts
  enable-web-access.desktop /etc/skel/Desktop
 Description: Tools to help testing Digabi Live System (meta-package)
  This includes:

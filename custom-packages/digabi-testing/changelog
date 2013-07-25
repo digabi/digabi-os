@@ -1,3 +1,10 @@
+digabi-testing (1.2.0) stable; urgency=low
+
+  * Removed conflict w/ digabi-dev.
+  * Depend on digabi-common, which includes digabi -command.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 18:13:17 +0300
+
 digabi-testing (1.1.0) stable; urgency=low
 
   * Added digabi command from digabi-dev -package, to allow easier custom scripts.
