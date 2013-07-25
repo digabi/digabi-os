@@ -1,23 +1,23 @@
-label Suomeksi
-	menu label ^Live (@FLAVOUR@)
+label finnish
+	menu label ^Suomeksi
 	menu default
 	linux @LINUX@
 	initrd @INITRD@
-	append @APPEND_LIVE@
+	append @APPEND_LIVE@ locales=fi_FI.UTF-8 keyboard-layouts=fi
 
-#label På Svenska
-#	menu label ^Live (@FLAVOUR@)
-#	menu default
-#	linux @LINUX@
-#	initrd @INITRD@
-#	append @APPEND_LIVE@
+label swedish
+	menu label ^Pa Svenska
+	menu default
+	linux @LINUX@
+	initrd @INITRD@
+	append @APPEND_LIVE@ locales=sv_SE.UTF-8,sv_FI.UTF-8 keyboard-layouts=se
 
-#label In English
-#	menu label ^Live (@FLAVOUR@)
-#	menu default
-#	linux @LINUX@
-#	initrd @INITRD@
-#	append @APPEND_LIVE@
+label english
+	menu label ^In English
+	menu default
+	linux @LINUX@
+	initrd @INITRD@
+	append @APPEND_LIVE@ locales=en_GB.UTF-8,en_US.UTF-8 keyboard-layouts=en
 
 #label live-@FLAVOUR@-failsafe
 #	menu label ^Live (@FLAVOUR@ failsafe)
