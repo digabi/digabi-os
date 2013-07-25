@@ -64,6 +64,7 @@ AUFS_URL="https://github.com/digabi/aufs3-standalone/archive/aufs${AUFS_VERSION}
 AUFS_ARCHIVE_FILE="$(${BASENAME_BIN} ${AUFS_URL})"
 AUFS_SOURCE_DIR="aufs3-standalone-aufs${AUFS_VERSION}" 			# TODO: Extract directory name from GitHub repo + branch
 
+DIGABI_CONFIG_URL="https://github.com/digabi/digabi-live/raw/master/custom-packages/linux-image/linux.config"
 
 if [ -f "${KERNEL_ARCHIVE}" ]
 then
@@ -123,6 +124,8 @@ ${CP_BIN} "../${AUFS_SOURCE_DIR}/include/linux/aufs_type.h" ./include/linux/
 
 echo "Applying grsecurity patch..."
 ${PATCH_BIN} ${PATCH_FLAGS} < "../${GRSECURITY_PATCH_FILE}"
+
+${WGET_BIN} ${WGET_FLAGS} -O .config "${DIGABI_CONFIG_URL}"
 
 echo
 echo "Done!"
