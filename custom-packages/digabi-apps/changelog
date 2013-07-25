@@ -1,3 +1,9 @@
+digabi-apps (1.0.7) stable; urgency=low
+
+  * Updated Swedish translation for LibreOffice Writer.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 13:11:14 +0300
+
 digabi-apps (1.0.6) stable; urgency=low
 
   * Swedish ranslations for LibreOffice and Iceweasel.
