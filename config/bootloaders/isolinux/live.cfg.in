@@ -7,14 +7,12 @@ label finnish
 
 label swedish
 	menu label ^Pa Svenska
-	menu default
 	linux @LINUX@
 	initrd @INITRD@
 	append @APPEND_LIVE@ locales=sv_SE.UTF-8,sv_FI.UTF-8 keyboard-layouts=se
 
 label english
 	menu label ^In English
-	menu default
 	linux @LINUX@
 	initrd @INITRD@
 	append @APPEND_LIVE@ locales=en_GB.UTF-8,en_US.UTF-8 keyboard-layouts=en
