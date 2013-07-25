@@ -5,7 +5,7 @@ Standards-Version: 3.9.2
 
 Package: digabi-apps
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: libreoffice, libreoffice-gtk, ghemical, inkscape, lyx, chromium, chromium-l10n, iceweasel, iceweasel-l10n-fi, vlc, geogebra
+Depends: libreoffice, libreoffice-gtk, libreoffice-l10n-sv, ghemical, inkscape, lyx, chromium, chromium-l10n, iceweasel, iceweasel-l10n-fi, iceweasel-l10n-sv, vlc, geogebra
 
 Architecture: all
 Changelog: changelog

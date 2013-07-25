@@ -1,3 +1,9 @@
+digabi-apps (1.0.6) stable; urgency=low
+
+  * Swedish ranslations for LibreOffice and Iceweasel.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 11:52:59 +0300
+
 digabi-apps (1.0.5) stable; urgency=low
 
   * Added GeoGebra <http://www.geogebra.org/>. Included license also in this package.
