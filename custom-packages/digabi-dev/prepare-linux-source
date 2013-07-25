@@ -125,6 +125,7 @@ ${CP_BIN} "../${AUFS_SOURCE_DIR}/include/linux/aufs_type.h" ./include/linux/
 echo "Applying grsecurity patch..."
 ${PATCH_BIN} ${PATCH_FLAGS} < "../${GRSECURITY_PATCH_FILE}"
 
+echo "Fetch current config from ${DIGABI_CONFIG_URL}..."
 ${WGET_BIN} ${WGET_FLAGS} -O .config "${DIGABI_CONFIG_URL}"
 
 echo
