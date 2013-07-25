@@ -1,4 +1,10 @@
-digabi-dev (3.1) UNRELEASED; urgency=low
+digabi-dev (3.2) stable; urgency=low
+
+  * Added default values for digabirc, not yet used.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 15:44:21 +0300
+
+digabi-dev (3.1) stable; urgency=low
 
   * Fetch Digabi config when using prepare-linux-source.
 
