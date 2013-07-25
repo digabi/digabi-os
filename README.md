@@ -34,6 +34,7 @@ Live system goals:
 
 ## Howto
 Assuming you have required packages installed (see below), building new image is quite easy:
+
     git clone https://github.com/digabi/digabi-live.git
     cd digabi-live
     make dist
