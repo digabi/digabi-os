@@ -47,13 +47,6 @@ epdfview
 #lxterminal
 #lxappearance
 
-# Web Browsers
-chromium
-chromium-l10n
-iceweasel
-iceweasel-l10n-fi
-
-
 firmware-linux
 
 #if ARCHIVE_AREAS non-free
