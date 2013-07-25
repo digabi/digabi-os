@@ -39,3 +39,7 @@ xfconf-query -n -c xfce4-desktop -p /windowlist-menu/show -t bool -s false
 
 # Set custom image for menu
 xfconf-query -n -c xfce4-panel -p /plugins/plugin-1/button-icon -t string -s /usr/share/digabi/proprietary/digabi_48x48.png
+
+# Hide suspend & hibernate from log-out window
+xfconf-query -n -c xfce4-session -p /shutdown/ShowSuspend -t bool -s false
+xfconf-query -n -c xfce4-session -p /shutdown/ShowHibernate -t bool -s false
