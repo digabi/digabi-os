@@ -1,3 +1,9 @@
+digabi-dev (3.5) stable; urgency=low
+
+  * Now conflicts w/ digabi-testing (value in control file, common file /usr/bin/digabi).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 17:53:16 +0300
+
 digabi-dev (3.3) stable; urgency=low
 
   * Determine core count, select -j(CORES + 1) for building kernel.

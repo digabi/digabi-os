@@ -6,6 +6,7 @@ Standards-Version: 3.9.2
 Package: digabi-dev
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: kernel-package, build-essential, live-build, git, equivs, devscripts
+Conflicts: digabi-testing
 Recommends: reprepro, piuparts
 Architecture: all
 Changelog: changelog

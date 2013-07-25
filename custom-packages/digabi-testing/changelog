@@ -1,3 +1,10 @@
+digabi-testing (1.1.0) stable; urgency=low
+
+  * Added digabi command from digabi-dev -package, to allow easier custom scripts.
+  * Now this package conflicts with digabi-dev.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 17:52:20 +0300
+
 digabi-testing (1.0.8) stable; urgency=low
 
   * Removed VirtualBox guest addons for now. (Again!)

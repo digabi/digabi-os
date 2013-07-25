@@ -9,6 +9,7 @@ Standards-Version: 3.9.2
 Package: digabi-testing
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: wicd-gtk, wpasupplicant, wireless-tools
+Conflicts: digabi-dev
 Changelog: changelog
 Files: testing.list /etc/apt/sources.list.d
  iptables-testing.rules /etc
