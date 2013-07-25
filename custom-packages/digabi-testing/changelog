@@ -1,3 +1,9 @@
+digabi-testing (1.2.1) stable; urgency=low
+
+  * Added sudo rules to allow user run "digabi webaccess allow".
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 18:46:48 +0300
+
 digabi-testing (1.2.0) stable; urgency=low
 
   * Removed conflict w/ digabi-dev.

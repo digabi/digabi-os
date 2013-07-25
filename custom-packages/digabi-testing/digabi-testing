@@ -13,6 +13,7 @@ Changelog: changelog
 Files: testing.list /etc/apt/sources.list.d
  iptables-testing.rules /etc
  webaccess /usr/lib/digabi/scripts
+ digabi-webaccess /etc/sudoers.d
  enable-web-access.desktop /etc/skel/Desktop
 Description: Tools to help testing Digabi Live System (meta-package)
  This includes:
