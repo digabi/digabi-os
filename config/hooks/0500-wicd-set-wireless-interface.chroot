@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+WICD_CONFIG="/etc/wicd/manager-settings.conf"
+
+if [ -f "${WICD_CONFIG}" ]
+then
+	sed -i 's/wireless_interface = None/wireless_interface = wlan0/' "${WICD_CONFIG}"
+fi
