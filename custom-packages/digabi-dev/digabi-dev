@@ -13,7 +13,6 @@ Files: digabi /usr/bin
  prepare-linux-source /usr/lib/digabi/scripts
  build-kernel /usr/lib/digabi/scripts
  build-custom-packages /usr/lib/digabi/scripts
-# digabirc /usr/share/doc/digabi-developer/examples
-# digabi-pkg /usr/bin
+ digabirc /usr/share/doc/digabi-developer/examples
 Description: Development tools for Digabi
  Package installs essential build tools for Digabi.
