@@ -1,3 +1,9 @@
+digabi-apps (1.0.8) stable; urgency=low
+
+  * Fixed invalid package name.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 13:26:52 +0300
+
 digabi-apps (1.0.7) stable; urgency=low
 
   * Updated Swedish translation for LibreOffice Writer.
