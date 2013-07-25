@@ -1,5 +1,16 @@
 # config file for digabi-dev
 
+# Read config from /etc/digabirc
+USE_GLOBAL_DIGABIRC="0"
+
+# Where our reprepro repository is located?
 REPREPRO_BASE="~/digabi-repository"
 
+# Increase version number always when building
 BUILD_BUMP_VERSION="yes"
+
+# URLs
+DIGABI_REPOSITORY_BASE_URL="https://github.com/digabi"
+DIGABI_LIVE_REPOSITORY_URL="${DIGABI_REPOSITORY_BASE_URL}/digabi-live"
+DIGABI_MISC_REPOSITORY_URL="${DIGABI_REPOSITORY_BASE_URL}/digabi-misc"
+DIGABI_REPO_REPOSITORY_URL="${DIGABI_REPOSITORY_BASE_URL}/digabi-repository"
