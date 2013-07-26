@@ -1,3 +1,9 @@
+digabi-testing (1.2.2) stable; urgency=low
+
+  * Replaced wicd with network-manager.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 26 Jul 2013 11:18:00 +0300
+
 digabi-testing (1.2.1) stable; urgency=low
 
   * Added sudo rules to allow user run "digabi webaccess allow".
