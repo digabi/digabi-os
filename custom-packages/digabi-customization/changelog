@@ -1,3 +1,10 @@
+digabi-customization (1.5.12) stable; urgency=low
+
+  * Set default theme for XFWM4.
+  * Set workspace count to 1.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 26 Jul 2013 12:43:51 +0300
+
 digabi-customization (1.5.11) stable; urgency=low
 
   * Hide suspend/hibernate.

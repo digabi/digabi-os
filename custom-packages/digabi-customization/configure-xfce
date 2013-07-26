@@ -1,45 +1,57 @@
 #!/bin/sh
 
 # Configure XFCE4 settings
+XFCONF_BIN="/usr/bin/xfconf-query"
+XFCONF_FLAGS="-n"
+XFWM_THEME="Default-4.6"
+
+BACKGROUND_IMAGE="/usr/share/digabi/proprietary/background.svg"
+MENU_ICON="/usr/share/digabi/proprietary/digabi_48x48.png"
 
 # Single color
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/color-style -t int -s 0
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color-style" -t "int" -s 0
 
 # Color from background.svg
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/color1 -t uint -s 9509 -t uint -s 17733 -t uint -s 29298 -t uint -s 65535
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color1" -t "uint" -s 9509 -t "uint" -s 17733 -t "uint" -s 29298 -t "uint" -s 65535
 
 # Centered
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/image-style -t int -s 1
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-style" -t "int" -s 1
 
 # Our custom image
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -t string -s /usr/share/digabi/proprietary/background.svg
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/last-image -t string -s /usr/share/digabi/proprietary/background.svg
-xfconf-query -n -c xfce4-desktop -p /backdrop/screen0/monitor0/last-single-image -t string -s /usr/share/digabi/proprietary/background.svg
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-path" -t "string" -s "${BACKGROUND_IMAGE}"
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/last-image" -t "string" -s "${BACKGROUND_IMAGE}"
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/last-single-image" -t "string" -s "${BACKGROUND_IMAGE}"
 
 # Hide filesystem from desktop
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -t bool -s false
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-filesystem" -t "bool" -s "false"
 
 # Hide home
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-home -t bool -s false
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-home" -t "bool" -s "false"
 
 # Hide removable drives
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-removable -t bool -s false
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-removable" -t "bool" -s "false"
 
 # Hide trash
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -t bool -s false
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-trash" -t "bool" -s "false"
 
 # Resize icons (64x64)
-xfconf-query -n -c xfce4-desktop -p /desktop-icons/icon-size -t int -s 64
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/icon-size" -t "int" -s 64
 
 # Hide context menu
-xfconf-query -n -c xfce4-desktop -p /desktop-menu/show -t bool -s false
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-menu/show" -t "bool" -s "false"
 
 # Hide window list
-xfconf-query -n -c xfce4-desktop -p /windowlist-menu/show -t bool -s false
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/windowlist-menu/show" -t "bool" -s "false"
 
 # Set custom image for menu
-xfconf-query -n -c xfce4-panel -p /plugins/plugin-1/button-icon -t string -s /usr/share/digabi/proprietary/digabi_48x48.png
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-1/button-icon" -t "string" -s "${MENU_ICON}"
 
 # Hide suspend & hibernate from log-out window
-xfconf-query -n -c xfce4-session -p /shutdown/ShowSuspend -t bool -s false
-xfconf-query -n -c xfce4-session -p /shutdown/ShowHibernate -t bool -s false
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowSuspend" -t "bool" -s "false"
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowHibernate" -t "bool" -s "false"
+
+# Set default theme
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/theme" -t "string" -s "${XFWM_THEME}"
+
+# Set workspace count
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/workspace_count" -t "int" -s 1
