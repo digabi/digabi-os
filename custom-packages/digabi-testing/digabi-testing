@@ -15,6 +15,7 @@ Files: testing.list /etc/apt/sources.list.d
  webaccess /usr/lib/digabi/scripts
  digabi-webaccess /etc/sudoers.d
  enable-web-access.desktop /etc/skel/Desktop
+ fetch-sources /usr/lib/digabi/scripts
 Description: Tools to help testing Digabi Live System (meta-package)
  This includes:
   - WLAN/WiFi support
