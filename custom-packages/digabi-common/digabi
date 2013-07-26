@@ -22,6 +22,10 @@ COMMAND_FILE="${DIGABI_SCRIPT_LIBRARY}/${COMMAND}"
 if [ -x "${COMMAND_FILE}" ]
 then
 	exec "${COMMAND_FILE}" "$@"
+elif [ "${COMMAND}" = "help" ]
+then
+	echo "Available commands:"
+	ls "${DIGABI_SCRIPT_LIBRARY}"
 else
 	echo "Invalid command: ${COMMAND}, exiting..."
 	exit 1

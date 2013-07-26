@@ -1,5 +1,11 @@
-digabi-common (1.0.0) UNRELEASED; urgency=low
+digabi-common (1.0.1) stable; urgency=low
+
+  * Added command help, which lists all available commands.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 26 Jul 2013 12:58:58 +0300
+
+digabi-common (1.0.0) stable; urgency=low
 
   * Initial release.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 18:09:52 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 26 Jul 2013 12:58:29 +0300
