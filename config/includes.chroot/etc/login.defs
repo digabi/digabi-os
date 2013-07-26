@@ -47,12 +47,12 @@ FAILLOG_ENAB		yes
 # WARNING: Unknown usernames may become world readable. 
 # See #290803 and #298773 for details about how this could become a security
 # concern
-LOG_UNKFAIL_ENAB	no
+LOG_UNKFAIL_ENAB	yes
 
 #
 # Enable logging of successful logins
 #
-LOG_OK_LOGINS		no
+LOG_OK_LOGINS		yes
 
 #
 # Enable "syslog" logging of su activity - in addition to sulog file logging.
@@ -64,7 +64,7 @@ SYSLOG_SG_ENAB		yes
 #
 # If defined, all su activity is logged to this file.
 #
-#SULOG_FILE	/var/log/sulog
+SULOG_FILE	/var/log/sulog
 
 #
 # If defined, file which maps tty line to TERM environment parameter.
@@ -199,7 +199,7 @@ CHFN_RESTRICT		rwh
 # Should login be allowed if we can't cd to the home directory?
 # Default in no.
 #
-DEFAULT_HOME	yes
+DEFAULT_HOME	no
 
 #
 # If defined, this command is run when removing a user.
