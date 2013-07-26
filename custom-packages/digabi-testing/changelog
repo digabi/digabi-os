@@ -1,3 +1,9 @@
+digabi-testing (1.2.5) stable; urgency=low
+
+  * Fixed syntax.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 26 Jul 2013 14:04:31 +0300
+
 digabi-testing (1.2.4) stable; urgency=low
 
   * Added fetch-sources command to ease downloading sources.list.
