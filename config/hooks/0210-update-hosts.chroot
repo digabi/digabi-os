@@ -5,6 +5,9 @@
 
 set -e
 
+echo "83.145.200.151		digabi.fi" >>/etc/hosts
+
+exit 0
 HOSTS="digabi.fi"
 
 if [ -z `dpkg --get-selections |grep -v deinstall |grep bind9-host` ]
