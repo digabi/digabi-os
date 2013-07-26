@@ -1,3 +1,9 @@
+digabi-testing (1.2.3) stable; urgency=low
+
+  * VirtualBox Guest Additions.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 26 Jul 2013 12:47:26 +0300
+
 digabi-testing (1.2.2) stable; urgency=low
 
   * Replaced wicd with network-manager.

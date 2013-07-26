@@ -1,0 +1,13 @@
+#!/bin/sh
+
+LOGFILE=`mktemp`
+echo "Logfile: ${LOGFILE}"
+/sbin/ifconfig >$LOGFILE
+
+
+
+
+
+
+
+rm "${LOGFILE}"

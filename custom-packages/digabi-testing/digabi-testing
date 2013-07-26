@@ -8,7 +8,7 @@ Standards-Version: 3.9.2
 
 Package: digabi-testing
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: wpasupplicant, wireless-tools, digabi-common, network-manager, network-manager-gnome
+Depends: wpasupplicant, wireless-tools, digabi-common, network-manager, network-manager-gnome, virtualbox-guest-x11
 Changelog: changelog
 Files: testing.list /etc/apt/sources.list.d
  iptables-testing.rules /etc
@@ -17,4 +17,6 @@ Files: testing.list /etc/apt/sources.list.d
  enable-web-access.desktop /etc/skel/Desktop
 Description: Tools to help testing Digabi Live System (meta-package)
  This includes:
-  - WLAN/WiFi support (packages: (wicd-gtk, wpasupplicant, wireless-tools)
+  - WLAN/WiFi support
+  - NetworkManager
+  - VirtualBox Guest Additions
