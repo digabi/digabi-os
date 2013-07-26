@@ -5,6 +5,17 @@ set -e
 CHROMIUM_DIR="/usr/lib/chromium"
 PAXCTL_BIN="/sbin/paxctl"
 
+set_paxflags() {
+	FLAGS="$1"
+	BINARY="$2"
+
+	if [ -f "${BINARY}" ]
+	then
+		${PAXCTL_BIN} ${FLAGS} "${BINARY}"
+	else
+		echo "I: Binary ${BINARY} not found, PaX flags not set."
+	fi
+}
 
 apt-get -y install paxctl
 
@@ -13,14 +24,14 @@ apt-get -y install paxctl
 # chromium-sandbox: PaX flags: -----m-x-e-
 # iceweasel:	    PaX flags: -----m-x-e-
 
-${PAXCTL_BIN} -cPmxeR "${CHROMIUM_DIR}/chromium"
-${PAXCTL_BIN} -cmxe "${CHROMIUM_DIR}/chromium-sandbox"
-${PAXCTL_BIN} -cm "/usr/lib/iceweasel/iceweasel"
+set_paxflags -cPmxeR "${CHROMIUM_DIR}/chromium"
+set_paxflags -cmxe "${CHROMIUM_DIR}/chromium-sandbox"
+set_paxflags -cm "/usr/lib/iceweasel/iceweasel"
 
 # Custom rules:
 # ghemical:	    PaX flags: -----m-x-e--
 # java:		    PaX flags: -----m-x-e-- ; REQUIRED FOR GEOGEBRA
-${PAXCTL_BIN} -cm "/usr/bin/ghemical"
-${PAXCTL_BIN} -cm "/usr/lib/jvm/java-6-openjdk-i386/jre/bin/java" # TODO: Architecture selection automatically
+set_paxflags -cm "/usr/bin/ghemical"
+set_paxflags -cm "/usr/lib/jvm/java-6-openjdk-i386/jre/bin/java" # TODO: Architecture selection automatically
 
 apt-get -y remove paxctl
