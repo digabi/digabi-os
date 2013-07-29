@@ -1,3 +1,9 @@
+digabi-apps (1.0.9) stable; urgency=low
+
+  * Added Audacity.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 29 Jul 2013 15:49:57 +0300
+
 digabi-apps (1.0.8) stable; urgency=low
 
   * Fixed invalid package name.
