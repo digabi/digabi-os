@@ -32,8 +32,11 @@ set_paxflags -cm "/usr/lib/iceweasel/iceweasel"
 # ghemical:	    PaX flags: -----m-x-e--
 # java:		    PaX flags: -----m-x-e-- ; REQUIRED FOR GEOGEBRA
 # audacity:	    PaX flags: -----m-x-e--
+# plymouthd:	    PaX flags: -----m-x-e--
 set_paxflags -cm "/usr/bin/ghemical"
 set_paxflags -cm "/usr/lib/jvm/java-6-openjdk-i386/jre/bin/java" # TODO: Architecture selection automatically
 set_paxflags -cm "/usr/bin/audacity"
+
+set_paxflags -cm "/sbin/plymouthd"
 
 apt-get -y remove paxctl
