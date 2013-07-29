@@ -1,3 +1,9 @@
+digabi-customization (1.5.13) stable; urgency=low
+
+  * Replace logout w/ shutdown.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 29 Jul 2013 17:20:41 +0300
+
 digabi-customization (1.5.12) stable; urgency=low
 
   * Set default theme for XFWM4.

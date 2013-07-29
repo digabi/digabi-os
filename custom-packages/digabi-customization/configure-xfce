@@ -55,3 +55,10 @@ ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/theme" -t "string" -s "${X
 
 # Set workspace count
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/workspace_count" -t "int" -s 1
+
+# Show shutdown button instead of logout window
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-2/first-action" -t "int" -s 3
+
+# Remove unused panel icons
+#${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-9" -r
+#${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-10" -r
