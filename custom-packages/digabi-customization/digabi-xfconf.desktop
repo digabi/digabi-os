@@ -2,7 +2,7 @@
 Type=Application
 Name=digabi-xfconf
 Comment=Configure desktop settings
-Exec=/usr/share/digabi/configure-xfce
+Exec=/usr/bin/digabi configure-xfce
 StartupNotify=false
 Terminal=false
 Hidden=false

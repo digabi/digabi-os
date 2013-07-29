@@ -5,7 +5,7 @@ Standards-Version: 3.9.2
 
 Package: digabi-customization
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: plymouth, plymouth-drm, plymouth-themes-spinfinity, plymouth-x11
+Depends: plymouth, plymouth-drm, plymouth-themes-spinfinity, plymouth-x11, digabi-common
 Architecture: all
 Copyright: copyright
 Changelog: changelog
@@ -14,7 +14,7 @@ Files: proprietary/background.svg /usr/share/digabi
  proprietary/splash.svg.in /usr/share/digabi
  proprietary/digabi.svg /usr/share/digabi
  proprietary/digabi_48x48.png /usr/share/digabi
- configure-xfce /usr/share/digabi
+ configure-xfce /usr/lib/digabi/scripts
  digabi-xfconf.desktop /etc/skel/.config/autostart
 Description: Customizations for Digabi project (backgrounds etc.)
  Package contains customization files.
