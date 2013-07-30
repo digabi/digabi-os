@@ -1,3 +1,9 @@
+digabi-dev (3.6.1) stable; urgency=low
+
+  * Modified build-kernel revision numbering, now includes human-readable timestamp.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 30 Jul 2013 13:27:54 +0300
+
 digabi-dev (3.6.0) stable; urgency=low
 
   * Removed conflict w/ digabi-testing, now we depend on digabi-common, which includes digabi-command.

@@ -26,15 +26,17 @@ fi
 REVISION="$(echo $REVISION |awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')"
 echo $REVISION >.revision
 
+_REVISION="$(date +%Y%m%d%H%M%S)-${REVISION}"
+
 echo "Cleaning build directories..."
 fakeroot make-kpkg clean
 
 _PARALLEL="$(cat /proc/cpuinfo |egrep ^processor |tail -n 1 |awk '{print $3}' |awk -F. '{$NF = $NF + 2;} 1' | sed 's/ /./g')"
 
 echo "Building revision ${REVISION}..."
-fakeroot make-kpkg -j${_PARALLEL} --initrd --revision "${REVISION}" kernel_image kernel_headers kernel_source 2>&1 |tee build.log
+fakeroot make-kpkg -j${_PARALLEL} --initrd --revision "${_REVISION}" kernel_image kernel_headers kernel_source 2>&1 |tee build.log
 
 TIMESTAMP="$(date +%s)"
-CONFIG_TARGET="../linux-$(make kernelversion)-${REVISION}_${TIMESTAMP}.config"
+CONFIG_TARGET="../linux-$(make kernelversion)-${_REVISION}_${TIMESTAMP}.config"
 
 cp .config "${CONFIG_TARGET}"
