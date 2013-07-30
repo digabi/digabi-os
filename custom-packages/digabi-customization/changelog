@@ -1,3 +1,9 @@
+digabi-customization (1.6) stable; urgency=low
+
+  * Added multiple background sizes, .xml config file for selecting size.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 30 Jul 2013 09:58:39 +0300
+
 digabi-customization (1.5.14) stable; urgency=low
 
   * Use configure-xfce via Digabi tool.
