@@ -1,3 +1,10 @@
+digabi-apps (1.0.10) stable; urgency=low
+
+  * Added desktop icon for Iceweasel.
+  * Fixed Swedish translation for Inkscape desktop icon.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 30 Jul 2013 08:32:18 +0300
+
 digabi-apps (1.0.9) stable; urgency=low
 
   * Added Audacity.

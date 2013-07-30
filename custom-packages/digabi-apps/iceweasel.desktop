@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Web Browser (Iceweasel)
+Name[fi]=Verkkoselain (Iceweasel)
+Name[sv]=Webbläsare (Iceweasel)
+Exec=/usr/bin/iceweasel
+Icon=web-browser
+Path=
+Terminal=false
+StartupNotify=false
