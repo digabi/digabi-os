@@ -1,3 +1,9 @@
+digabi-testing (1.2.6) stable; urgency=low
+
+  * Renamed fetch-sources to apt-sources.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 30 Jul 2013 14:57:11 +0300
+
 digabi-testing (1.2.5) stable; urgency=low
 
   * Fixed syntax.
