@@ -8,5 +8,6 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Architecture: all
 Changelog: changelog
 Files: digabi /usr/bin
+ digabi.gpg /etc/apt/trusted.gpg.d
 Description: Common files for Digabi
  Currently only provides digabi -command
