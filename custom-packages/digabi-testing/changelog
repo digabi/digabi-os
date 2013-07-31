@@ -1,3 +1,9 @@
+digabi-testing (1.2.9) stable; urgency=low
+
+  * Replaced wireless-tools w/ iw.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 31 Jul 2013 13:54:40 +0300
+
 digabi-testing (1.2.8) stable; urgency=low
 
   * Added dmesg command to digabi, show dmesg output w/o grsec exec/chdir logs.
