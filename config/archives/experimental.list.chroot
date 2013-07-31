@@ -1,1 +1,1 @@
-deb http://ftp.fi.debian.org/debian/ experimental main
+deb http://ftp.fi.debian.org/debian/ experimental main contrib non-free

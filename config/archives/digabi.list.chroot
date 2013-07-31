@@ -1,1 +1,1 @@
-deb http://digabi.fi/debian/ wheezy main
+deb http://digabi.fi/debian/ wheezy main contrib non-free
