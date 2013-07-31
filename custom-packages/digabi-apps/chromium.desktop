@@ -6,6 +6,5 @@ Name[fi]=Verkkoselain (Chromium)
 Name[sv]=Webbläsare (Chromium)
 Exec=/usr/bin/chromium
 Icon=web-browser
-Path=
 Terminal=false
 StartupNotify=false

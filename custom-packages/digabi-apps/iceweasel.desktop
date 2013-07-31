@@ -6,6 +6,5 @@ Name[fi]=Verkkoselain (Iceweasel)
 Name[sv]=Webbläsare (Iceweasel)
 Exec=/usr/bin/iceweasel
 Icon=web-browser
-Path=
 Terminal=false
 StartupNotify=false

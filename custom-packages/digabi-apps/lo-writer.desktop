@@ -6,6 +6,5 @@ Name[fi]=Tekstinkäsittely (LibreOffice Writer)
 Name[sv]=Textbehandling (LibreOffice Writer)
 Exec=/usr/bin/libreoffice --writer
 Icon=libreoffice-writer
-Path=
 Terminal=false
 StartupNotify=false

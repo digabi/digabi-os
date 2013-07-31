@@ -6,6 +6,5 @@ Name[fi]=Esitysgrafiikka (LibreOffice Impress)
 Name[sv]=Presentationsprogram (LibreOffice Impress)
 Exec=/usr/bin/libreoffice --impress
 Icon=libreoffice-impress
-Path=
 Terminal=false
 StartupNotify=false

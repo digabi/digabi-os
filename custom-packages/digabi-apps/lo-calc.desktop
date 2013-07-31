@@ -6,6 +6,5 @@ Name[fi]=Taulukkolaskenta (LibreOffice Calc)
 Name[sv]=Kalkylprogram (LibreOffice Calc)
 Exec=/usr/bin/libreoffice --calc
 Icon=libreoffice-calc
-Path=
 Terminal=false
 StartupNotify=false

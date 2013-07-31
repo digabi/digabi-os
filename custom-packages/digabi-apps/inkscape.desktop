@@ -6,6 +6,5 @@ Name[fi]=Piirto-ohjelma (Inkscape)
 Name[sv]=Ritningsprogram (Inkscape)
 Exec=/usr/bin/inkscape
 Icon=inkscape
-Path=
 Terminal=false
 StartupNotify=false

@@ -1,3 +1,9 @@
+digabi-apps (1.0.11) stable; urgency=low
+
+  * Removed Path= lines from .desktop files, not required.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 31 Jul 2013 13:49:49 +0300
+
 digabi-apps (1.0.10) stable; urgency=low
 
   * Added desktop icon for Iceweasel.

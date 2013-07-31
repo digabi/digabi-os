@@ -9,7 +9,8 @@ Depends: libreoffice, libreoffice-gtk, libreoffice-l10n-sv, ghemical, inkscape, 
 
 Architecture: all
 Changelog: changelog
-Files: chromium.desktop /etc/skel/Desktop
+Files: iceweasel.desktop /etc/skel/Desktop
+ chromium.desktop /etc/skel/Desktop
  inkscape.desktop /etc/skel/Desktop
  lo-calc.desktop /etc/skel/Desktop
  lo-writer.desktop /etc/skel/Desktop
