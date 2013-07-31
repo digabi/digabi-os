@@ -10,8 +10,7 @@ Package: digabi-testing
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: wpasupplicant, wireless-tools, digabi-common, network-manager, network-manager-gnome, virtualbox-guest-x11
 Changelog: changelog
-Files: testing.list /etc/apt/sources.list.d
- iptables-testing.rules /etc
+Files: iptables-testing.rules /etc
  webaccess /usr/lib/digabi/scripts
  digabi-webaccess /etc/sudoers.d
  enable-web-access.desktop /etc/skel/Desktop
