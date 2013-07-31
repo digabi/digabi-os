@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+dmesg |grep -v "grsec: exec of" |grep -v "grsec: chdir to"

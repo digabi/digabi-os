@@ -1,3 +1,9 @@
+digabi-testing (1.2.8) stable; urgency=low
+
+  * Added dmesg command to digabi, show dmesg output w/o grsec exec/chdir logs.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 31 Jul 2013 13:32:07 +0300
+
 digabi-testing (1.2.7) stable; urgency=low
 
   * Removed testing.list, not required, and gets removed by live-build hooks anyways.
