@@ -14,16 +14,17 @@ uuid-runtime
 #endif
 
 task-laptop
-# Graphical User Interface
 
+
+# Graphical User Interface
 xserver-xorg-video-all
 xserver-xorg-input-all
-
 
 dbus-x11
 tango-icon-theme
 gstreamer0.10-alsa
-
+mousepad
+evince-gtk
 
 
 # GUI, XFCE4
