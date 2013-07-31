@@ -1,3 +1,9 @@
+digabi-dev (3.6.2) stable; urgency=low
+
+  * Added debian-changelog to digabi scripts.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 31 Jul 2013 14:34:53 +0300
+
 digabi-dev (3.6.1) stable; urgency=low
 
   * Modified build-kernel revision numbering, now includes human-readable timestamp.
