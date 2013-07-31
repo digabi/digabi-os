@@ -2,9 +2,27 @@
 
 set -e
 
-BACKGROUND_FILE="/usr/share/digabi/proprietary/background.svg"
+BACKGROUND_DIR="/usr/share/digabi/proprietary"
+CONFIG_KEY_BASE="/usr/share/images/desktop-base"
 
-if [ -f "${BACKGROUND_FILE}" ]
+update_alternative() {
+	CONFIG_KEY_NAME="$1"
+	CONFIG_KEY="${CONFIG_KEY_BASE}/${CONFIG_KEY_NAME}"
+	CONFIG_VALUE="${BACKGROUND_DIR}/$2"
+#	CONFIG_BASE="${${3}:-${CONFIG_KEY_BASE}}"
+
+	if [ -f "${CONFIG_VALUE}" ]
+	then
+		update-alternatives --install "${CONFIG_KEY}" "${CONFIG_KEY_NAME}" "${CONFIG_VALUE}" 10000
+	else
+		echo "I: File not found: ${CONFIG_VALUE}, not updating alternatives (${CONFIG_KEY})"
+	fi
+}
+
+if [ -d "${BACKGROUND_DIR}" ]
 then
-	update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background "${BACKGROUND_FILE}" 10000
+	update_alternative "desktop-background" "background.svg"
+	update_alternative "desktop-background.xml" "digabi-background.xml"
+	update_alternative "desktop-grub" "background_1024x768.png"
+	update_alternative "desktop-splash" "background.svg"
 fi
