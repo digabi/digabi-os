@@ -5,7 +5,3 @@ Pin-Priority: 900
 Package: task-xfce-desktop
 Pin: release n=testing
 Pin-Priority: 900
-
-Package: *
-Pin: release n=testing
-Pin-Priority: 1
