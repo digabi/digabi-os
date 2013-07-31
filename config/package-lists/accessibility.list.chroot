@@ -1,8 +1,10 @@
-gnome-orca
+#gnome-orca
 
 screader
 festival
 
 brltty-x11
+xbrlapi
 
 at-spi
+at-spi2-core
