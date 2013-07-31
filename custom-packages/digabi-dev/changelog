@@ -1,3 +1,9 @@
+digabi-dev (3.6.3) stable; urgency=low
+
+  * Including debian-changelog file. Helps a lot!
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 31 Jul 2013 18:23:48 +0300
+
 digabi-dev (3.6.2) stable; urgency=low
 
   * Added debian-changelog to digabi scripts.
