@@ -1,3 +1,15 @@
+digabi-apps (1.0.15) stable; urgency=low
+
+  * Added Freemind, removed pymol.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 01 Aug 2013 12:51:43 +0300
+
+digabi-apps (1.0.14) stable; urgency=low
+
+  * Removed stellarium, not installable.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 01 Aug 2013 12:34:26 +0300
+
 digabi-apps (1.0.13) stable; urgency=low
 
   * Updated apps, removed grace, added stellarium, gpredict etc.
