@@ -7,6 +7,8 @@
 # Allow HTTPS (443/tcp) to digabi.fi (83.145.200.151)
 -A OUTPUT -d 83.145.200.151/32 -p tcp -m tcp --dport 443 -j ACCEPT
 -A OUTPUT -d 83.145.200.151/32 -p tcp -m tcp --dport 80 -j ACCEPT
+-A OUTPUT -d 83.143.221.46/32 -p tcp -m tcp --dport 443 -j ACCEPT
+-A OUTPUT -d 83.143.221.46/32 -p tcp -m tcp --dport 80 -j ACCEPT
 # Allow DHCP
 -A OUTPUT -p udp -m udp --sport 68 --dport 67 -j ACCEPT
 # Log denied output, for debugging
