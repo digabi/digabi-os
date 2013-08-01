@@ -6,7 +6,7 @@ Standards-Version: 3.9.2
 Package: digabi-dev
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: kernel-package, build-essential, live-build, git, equivs, devscripts, digabi-common
-Recommends: reprepro, piuparts
+Recommends: reprepro, piuparts, apt-cacher-ng
 Architecture: all
 Changelog: changelog
 Files: prepare-linux-source /usr/lib/digabi/scripts
