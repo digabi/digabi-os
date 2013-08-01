@@ -1,3 +1,9 @@
+digabi-apps (1.0.13) stable; urgency=low
+
+  * Updated apps, removed grace, added stellarium, gpredict etc.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 01 Aug 2013 12:27:44 +0300
+
 digabi-apps (1.0.12) stable; urgency=low
 
   * Added lots of new applications.
