@@ -1,3 +1,9 @@
+digabi-testing (1.2.10) stable; urgency=low
+
+  * Added execute bit for desktop icons.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 01 Aug 2013 15:05:02 +0300
+
 digabi-testing (1.2.9) stable; urgency=low
 
   * Replaced wireless-tools w/ iw.
