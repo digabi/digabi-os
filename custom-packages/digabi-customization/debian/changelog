@@ -1,3 +1,9 @@
+digabi-customization (1.7) UNRELEASED; urgency=low
+
+  * Restructuring package sources.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 01 Aug 2013 14:17:07 +0300
+
 digabi-customization (1.6) stable; urgency=low
 
   * Added multiple background sizes, .xml config file for selecting size.
