@@ -1,8 +1,14 @@
-digabi-customization (1.7) UNRELEASED; urgency=low
+digabi-customization (1.9.0) UNRELEASED; urgency=low
+
+  * Set monitor1 too, fixes background issues on systems that have 2 monitors.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 02 Aug 2013 11:09:03 +0300
+
+digabi-customization (1.8) stable; urgency=low
 
   * Restructuring package sources.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 01 Aug 2013 14:17:07 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 02 Aug 2013 11:09:00 +0300
 
 digabi-customization (1.6) stable; urgency=low
 

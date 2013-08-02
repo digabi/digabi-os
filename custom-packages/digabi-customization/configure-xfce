@@ -3,24 +3,30 @@
 # Configure XFCE4 settings
 XFCONF_BIN="/usr/bin/xfconf-query"
 XFCONF_FLAGS="-n"
-XFWM_THEME="Default-4.6"
+XFWM_THEME="Xfce-4.6"
 
 BACKGROUND_IMAGE="/usr/share/digabi/proprietary/background.svg"
 MENU_ICON="/usr/share/digabi/proprietary/digabi_48x48.png"
 
 # Single color
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color-style" -t "int" -s 0
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/color-style" -t "int" -s 0
 
 # Color from background.svg
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color1" -t "uint" -s 9509 -t "uint" -s 17733 -t "uint" -s 29298 -t "uint" -s 65535
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/color1" -t "uint" -s 9509 -t "uint" -s 17733 -t "uint" -s 29298 -t "uint" -s 65535
 
 # Centered
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-style" -t "int" -s 1
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/image-style" -t "int" -s 1
 
 # Our custom image
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-path" -t "string" -s "${BACKGROUND_IMAGE}"
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/last-image" -t "string" -s "${BACKGROUND_IMAGE}"
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/last-single-image" -t "string" -s "${BACKGROUND_IMAGE}"
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/image-path" -t "string" -s "${BACKGROUND_IMAGE}"
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/last-image" -t "string" -s "${BACKGROUND_IMAGE}"
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/last-single-image" -t "string" -s "${BACKGROUND_IMAGE}"
 
 # Hide filesystem from desktop
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-filesystem" -t "bool" -s "false"
@@ -58,7 +64,3 @@ ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/workspace_count" -t "int" 
 
 # Show shutdown button instead of logout window
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-2/first-action" -t "int" -s 3
-
-# Remove unused panel icons
-#${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-9" -r
-#${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-10" -r
