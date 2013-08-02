@@ -17,21 +17,12 @@
          "time_period": 4
       },
       "clear_lso_data_enabled": false,
-      "last_clear_browsing_data_time": "13014715084007994",
+      "last_clear_browsing_data_time": "",
       "last_known_google_url": "https://www.google.fi/",
       "last_prompted_google_url": "https://www.google.fi/",
       "pepper_flash_settings_enabled": false,
       "show_home_button": true,
       "window_placement": {
-         "bottom": 1025,
-         "left": 779,
-         "maximized": false,
-         "right": 1724,
-         "top": 31,
-         "work_area_bottom": 1045,
-         "work_area_left": 0,
-         "work_area_right": 1920,
-         "work_area_top": 31
       }
    },
    "cloud_print": {
@@ -51,7 +42,7 @@
       "prepopulate_id": "1",
       "search_terms_replacement_key": "espv",
       "search_url": "{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}",
-      "suggest_url": "{google:baseSuggestURL}search?{google:searchFieldtrialParameter}client=chrome&q={searchTerms}&{google:cursorPosition}sugkey={google:suggestAPIKeyParameter}"
+      "suggest_url": "{google:baseSuggestURL}search?{google:searchFieldtrialParameter}client=chrome&q={searchTerms}&{google:cursorPosition}{google:zeroPrefixUrl}sugkey={google:suggestAPIKeyParameter}"
    },
    "distribution": {
       "create_all_shortcuts": true,
@@ -64,52 +55,24 @@
    },
    "dns_prefetching": {
       "enabled": true,
-      "host_referral_list": [ 2 ],
-      "startup_list": [ 1 ]
+      "host_referral_list": [ 2, [ "http://digabi.fi/", [ "http://digabi.fi/", 6.897862999999998, "http://www.facebook.com/", 2.2733802 ] ] ],
+      "startup_list": [ 1, "http://digabi.fi/", "http://www.facebook.com/" ]
    },
    "download": {
       "directory_upgrade": true
    },
    "extensions": {
+      "alerts": {
+         "initialized": true
+      },
       "autoupdate": {
-         "next_check": "13014732614856550"
+         "next_check": ""
       },
       "chrome_url_overrides": {
          "bookmarks": [ "chrome-extension://eemcgdkfndhakfknompkggombfjjjeno/main.html" ]
       },
-      "last_chrome_version": "27.0.1453.93",
+      "last_chrome_version": "28.0.1500.71",
       "settings": {
-         "ahfgeienlihckogmohjhadlkjgocpleb": {
-            "active_permissions": {
-               "api": [ "management", "webstorePrivate" ]
-            },
-            "app_launcher_ordinal": "n",
-            "creation_flags": 1,
-            "from_bookmark": false,
-            "from_webstore": false,
-            "install_time": "13014713412724442",
-            "location": 5,
-            "manifest": {
-               "app": {
-                  "launch": {
-                     "web_url": "https://chrome.google.com/webstore"
-                  },
-                  "urls": [ "https://chrome.google.com/webstore" ]
-               },
-               "description": "Chrome Web Store",
-               "icons": {
-                  "128": "webstore_icon_128.png",
-                  "16": "webstore_icon_16.png"
-               },
-               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCtl3tO0osjuzRsf6xtD2SKxPlTfuoy7AWoObysitBPvH5fE1NaAA1/2JkPWkVDhdLBWLaIBPYeXbzlHp3y4Vv/4XG+aN5qFE3z+1RU/NqkzVYHtIpVScf3DjTYtKVL66mzVGijSoAIwbFCC3LpGdaoe6Q1rSRDp76wR6jjFzsYwQIDAQAB",
-               "name": "Store",
-               "permissions": [ "webstorePrivate", "management" ],
-               "version": "0.2"
-            },
-            "page_ordinal": "n",
-            "path": "/usr/lib/chromium/resources/web_store",
-            "was_installed_by_default": false
-         },
          "eemcgdkfndhakfknompkggombfjjjeno": {
             "active_permissions": {
                "api": [ "bookmarks", "bookmarkManagerPrivate", "metricsPrivate", "systemPrivate", "tabs" ],
@@ -118,7 +81,7 @@
             "creation_flags": 1,
             "from_bookmark": false,
             "from_webstore": false,
-            "install_time": "13014713412722577",
+            "install_time": "",
             "location": 5,
             "manifest": {
                "chrome_url_overrides": {
@@ -135,36 +98,10 @@
             },
             "path": "/usr/lib/chromium/resources/bookmark_manager",
             "was_installed_by_default": false
-         },
-         "mfehgcgbbipciphmccgaenjidiccnmng": {
-            "active_permissions": {
-               "api": [ "cloudPrintPrivate" ]
-            },
-            "creation_flags": 1,
-            "from_bookmark": false,
-            "from_webstore": false,
-            "install_time": "13014713412724104",
-            "location": 5,
-            "manifest": {
-               "app": {
-                  "launch": {
-                     "web_url": "https://www.google.com/cloudprint"
-                  },
-                  "urls": [ "https://www.google.com/cloudprint/enable_chrome_connector" ]
-               },
-               "description": "Cloud Print",
-               "display_in_launcher": false,
-               "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDqOhnwk4+HXVfGyaNsAQdU/js1Na56diW08oF1MhZiwzSnJsEaeuMN9od9q9N4ZdK3o1xXOSARrYdE+syV7Dl31nf6qz3A6K+D5NHe6sSB9yvYlIiN37jdWdrfxxE0pRYEVYZNTe3bzq3NkcYJlOdt1UPcpJB+isXpAGUKUvt7EQIDAQAB",
-               "name": "Cloud Print",
-               "permissions": [ "cloudPrintPrivate" ],
-               "version": "0.1"
-            },
-            "path": "/usr/lib/chromium/resources/cloud_print",
-            "was_installed_by_default": false
          }
       }
    },
-   "homepage": "http://www.debian.org",
+   "homepage": "http://digabi.fi/",
    "intl": {
       "accept_languages": "fi,en-US,en,sv"
    },
@@ -181,12 +118,12 @@
       "enabled_nacl": true,
       "last_internal_directory": "/usr/lib/chromium",
       "plugins_list": [ {
-         "enabled": true,
+         "enabled": false,
          "name": "Chromoting Viewer",
          "path": "internal-remoting-viewer",
          "version": ""
       }, {
-         "enabled": true,
+         "enabled": false,
          "name": "Chromoting Viewer"
       } ],
       "removed_old_component_pepper_flash_settings": true
@@ -201,14 +138,16 @@
       "exited_cleanly": true,
       "is_managed": false,
       "local_profile_id": 3389029,
-      "name": "Ensimm\u00E4inen k\u00E4ytt\u00E4j\u00E4",
+      "name": "Digabi",
       "password_manager_enabled": false
    },
    "search": {
       "suggest_enabled": false
    },
    "session": {
-      "restore_on_startup_migrated": true
+      "restore_on_startup": 4,
+      "restore_on_startup_migrated": true,
+      "urls_to_restore_on_startup": [ "http://digabi.fi/" ]
    },
    "sync": {
       "suppress_start": true
