@@ -1,3 +1,9 @@
+linux-image-ytl (3.2.49-1) UNRELEASED; urgency=low
+
+  * Updated from 3.2.48 to 3.2.49.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 02 Aug 2013 15:07:38 +0300
+
 linux-image-ytl (3.2.48-3) stable; urgency=low
 
   * Bumping version number, repository already has -2, so we need -3.

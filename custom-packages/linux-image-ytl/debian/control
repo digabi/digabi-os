@@ -5,12 +5,12 @@ Standards-Version: 3.9.2
 
 Package: linux-image-ytl
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: linux-headers-3.2.48-grsec-ytl | linux-headers-3.2.48-ytl, linux-image-3.2.48-grsec-ytl | linux-image-3.2.48-ytl
-#Suggests: linux-source-3.2.48-grsec-ytl | linux-source-3.2.48-ytl
+Depends: linux-headers-3.2.49-grsec-ytl | linux-headers-3.2.49-ytl, linux-image-3.2.49-grsec-ytl | linux-image-3.2.49-ytl
+Suggests: linux-source-3.2.49-grsec-ytl | linux-source-3.2.49-ytl
 Architectures: i386
-Changelog: changelog
+Changelog: debian/changelog
 Description: Digabi Linux kernel for 32-bit PCs (meta-package)
  This package depends on the latest Digabi Linux kernel and modules for use on PCs
  with 32-bit AMD or Intel processors.
-
+ 
  Only for Digabi Live systems.
