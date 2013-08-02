@@ -8,11 +8,10 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: kernel-package, build-essential, live-build, git, equivs, devscripts, digabi-common
 Recommends: reprepro, piuparts, apt-cacher-ng
 Architecture: all
-Changelog: changelog
+Changelog: debian/changelog
 Files: prepare-linux-source /usr/lib/digabi/scripts
  build-kernel /usr/lib/digabi/scripts
  build-custom-packages /usr/lib/digabi/scripts
  digabirc /usr/share/doc/digabi-developer/examples
- debian-changelog /usr/lib/digabi/scripts
 Description: Development tools for Digabi
  Package installs essential build tools for Digabi.
