@@ -48,5 +48,6 @@ lb config noauto \
     --mirror-bootstrap "${REPOSITORY}" \
     --mirror-chroot "${REPOSITORY}" \
     --mirror-binary "${REPOSITORY}" \
-    --security "true"
+    --security "true" \
+    --win32-loader "true" \
 	"${@}"
