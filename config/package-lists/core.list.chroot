@@ -58,4 +58,5 @@ firmware-ipw2x00
 firmware-iwlwifi
 firmware-ralink
 firmware-realtek
+ttf-mscorefonts-installer
 #endif
