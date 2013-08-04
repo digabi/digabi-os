@@ -34,8 +34,8 @@ xfce4-mixer
 xfce4-terminal
 lxpolkit
 fbxkb
-
-epdfview
+xfce4-notifyd
+libnotify-bin
 
 # GUI, LXDE
 #task-lxde-desktop
