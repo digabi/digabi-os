@@ -1,3 +1,9 @@
+digabi-dev (3.6.6) stable; urgency=low
+
+  * New command, build-package, which uses equivs-build to build current package.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 03:07:39 +0300
+
 digabi-dev (3.6.5) stable; urgency=low
 
   * Restructured packaging (using debian/control).

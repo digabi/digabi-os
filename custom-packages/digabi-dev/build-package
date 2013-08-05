@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+# TODO: Check if file basename `dirname $0` exists (file which name is same as dir), if, build it
+# TODO: Allow building packages w/ $0 <package-name>
+
+if [ -f "debian/control" ]
+then
+	equivs-build debian/control
+else
+	echo "Package control file debian/control not found"
+	exit 1
+fi
