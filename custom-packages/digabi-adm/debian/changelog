@@ -1,3 +1,10 @@
+digabi-adm (1.5.4) stable; urgency=low
+
+  * Using debian/control structure.
+  * Depends virt-what.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 14:17:13 +0300
+
 digabi-adm (1.5.3) stable; urgency=low
 
   * Allowed HTTP(S) to e-lomake.fi.

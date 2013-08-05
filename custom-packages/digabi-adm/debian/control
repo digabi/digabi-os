@@ -5,8 +5,8 @@ Standards-Version: 3.9.2
 
 Package: digabi-adm
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: lshw, imvirt, dmidecode, harden-environment, harden-clients, harden-servers, apparmor, apparmor-notify, apparmor-profiles, apparmor-utils, libpam-apparmor, auditd, consolekit, libpam-ck-connector, policykit-1, chrony
-Changelog: changelog
+Depends: lshw, virt-what, imvirt, dmidecode, harden-environment, harden-clients, harden-servers, apparmor, apparmor-notify, apparmor-profiles, apparmor-utils, libpam-apparmor, auditd, consolekit, libpam-ck-connector, policykit-1, chrony
+Changelog: debian/changelog
 Files: iptables.rules /etc
 Description: Install essential, mostly security-related packages into Digabi system (meta-package)
  Including:
