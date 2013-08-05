@@ -1,8 +1,14 @@
-digabi-testing (1.2.11) UNRELEASED; urgency=low
+digabi-testing (1.2.12) stable; urgency=low
+
+  * Fixed Swedish translation.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 03:03:06 +0300
+
+digabi-testing (1.2.11) stable; urgency=low
 
   * Added Gnome Keyring, to enable WiFi password support.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 02 Aug 2013 16:16:05 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 03:02:44 +0300
 
 digabi-testing (1.2.10) stable; urgency=low
 
