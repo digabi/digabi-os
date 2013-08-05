@@ -1,3 +1,10 @@
+digabi-testing (1.2.15) UNRELEASED; urgency=low
+
+  * Fixed bugs in feedback.
+  * Depends uuid-runtime.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 13:35:18 +0300
+
 digabi-testing (1.2.14) stable; urgency=low
 
   * Collect device information.
