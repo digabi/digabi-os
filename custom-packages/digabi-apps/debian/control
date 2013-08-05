@@ -8,7 +8,7 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: libreoffice, libreoffice-gtk, libreoffice-l10n-sv, ghemical, inkscape, lyx, chromium, chromium-l10n, iceweasel, iceweasel-l10n-fi, iceweasel-l10n-sv-se, vlc, geogebra, audacity, gpredict, freemind
 
 Architecture: all
-Changelog: changelog
+Changelog: debian/changelog
 Files: iceweasel.desktop /etc/skel/Desktop
  chromium.desktop /etc/skel/Desktop
  inkscape.desktop /etc/skel/Desktop
