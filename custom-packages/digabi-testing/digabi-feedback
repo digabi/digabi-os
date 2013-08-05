@@ -1,0 +1,2 @@
+# sudo: allow user to enable web access
+digabi		ALL = NOPASSWD: /usr/bin/digabi feedback

@@ -1,3 +1,9 @@
+digabi-testing (1.2.14) stable; urgency=low
+
+  * Collect device information.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 08:46:20 +0300
+
 digabi-testing (1.2.13) stable; urgency=low
 
   * Initial version for network status notifications.

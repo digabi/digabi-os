@@ -1,0 +1,52 @@
+#!/bin/sh
+
+set -e
+
+UUID_FILE="/tmp/uuid"
+if [ -r "${UUID_FILE}" ]
+then
+	UUID="$(uuidgen)"
+	echo "${UUID}" >${UUID_FILE}
+else
+	UUID="$(cat ${UUID_FILE} |head -n1)"
+fi
+
+
+TEMP_FILE="$(mktemp)"
+
+echo "# --META-- #" >>${TEMP_FILE}
+echo "Date: $(date)" >${TEMP_FILE}
+echo "UUID: ${UUID}" >>${TEMP_FILE}
+
+echo "# --CPUINFO-- #" >>${TEMP_FILE}
+cat /proc/cpuinfo >>${TEMP_FILE}
+
+echo "# --MEMINFO-- #" >>${TEMP_FILE}
+cat /proc/meminfo >>${TEMP_FILE}
+
+echo "# --LSUSB-- #" >>${TEMP_FILE}
+lsusb >>${TEMP_FILE}
+
+echo "# --LSPCI-- #" >>${TEMP_FILE}
+lspci >>${TEMP_FILE}
+
+#echo "# --LSHW-- #" >>${TEMP_FILE}
+
+echo "# --IMVIRT-- #" >>${TEMP_FILE}
+imvirt >>${TEMP_FILE}
+
+echo "# --CMDLINE-- #" >>${TEMP_FILE}
+cat /proc/cmdline >>${TEMP_FILE}
+
+echo "# --LSMOD-- #" >>${TEMP_FILE}
+lsmod >>${TEMP_FILE}
+
+echo "# --UPTIME-- #" >>${TEMP_FILE}
+uptime >>${TEMP_FILE}
+
+echo "# --DMIDECODE-- #" >>${TEMP_FILE}
+dmidecode >>${TEMP_FILE}
+
+echo "# ---- #" >>${TEMP_FILE}
+
+curl --retry 50 --retry-delay 60 --retry-max-time 3600 -F"dup=true" -F"data=@{TEMP_FILE}" https://digabi.fi/s/feedback.php
