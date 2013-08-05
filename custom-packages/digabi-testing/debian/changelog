@@ -1,3 +1,9 @@
+digabi-testing (1.2.13) stable; urgency=low
+
+  * Initial version for network status notifications.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 03:16:36 +0300
+
 digabi-testing (1.2.12) stable; urgency=low
 
   * Fixed Swedish translation.

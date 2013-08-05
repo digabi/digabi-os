@@ -2,17 +2,27 @@
 
 COMMAND="$1"
 
+send_notification() {
+	NOTIFY_BIN="/usr/bin/notify-send"
+	if [ -x "${NOTIFY_BIN}" ]
+	then
+		${NOTIFY_BIN} -i dev-wavelan "${1}" "${2}"
+	fi
+}
+
 case "${COMMAND}" in
 	allow*)
 		if [ -f "/etc/iptables-testing.rules" ]
 		then
 			/sbin/iptables-restore </etc/iptables-testing.rules
+			send_notification "Network access allowed" "You can now access Internet freely."
 		fi
 		;;
 	deny*)
 		if [ -f "/etc/iptables.rules" ]
 		then
 			iptables-restore </etc/iptables.rules
+			send_notification "Network access disallowed" "You can only access predefined Internet sites (digabi.fi)"
 		fi
 		;;
 	*)
