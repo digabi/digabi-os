@@ -1,9 +1,15 @@
-digabi-testing (1.2.15) UNRELEASED; urgency=low
+digabi-testing (1.2.16) UNRELEASED; urgency=low
+
+  * Fixed invalid path for feedback autostart.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 15:15:05 +0300
+
+digabi-testing (1.2.15) stable; urgency=low
 
   * Fixed bugs in feedback.
   * Depends uuid-runtime.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 13:35:18 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 15:15:03 +0300
 
 digabi-testing (1.2.14) stable; urgency=low
 

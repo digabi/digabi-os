@@ -11,7 +11,7 @@ Files: iptables-testing.rules /etc
  webaccess /usr/lib/digabi/scripts
  digabi-webaccess /etc/sudoers.d
  enable-web-access.desktop /etc/skel/Desktop
- digabi-feedback.desktop /etc/skel/Desktop
+ digabi-feedback.desktop /etc/skel/.config/autostart
  digabi-feedback /etc/sudoers.d
  feedback /usr/lib/digabi/scripts
  apt-sources /usr/lib/digabi/scripts
