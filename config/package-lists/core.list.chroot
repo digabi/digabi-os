@@ -14,7 +14,7 @@ uuid-runtime
 #endif
 
 task-laptop
-
+usbutils
 
 # Graphical User Interface
 xserver-xorg-video-all
