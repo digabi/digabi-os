@@ -49,4 +49,4 @@ dmidecode >>${TEMP_FILE}
 
 echo "# ---- #" >>${TEMP_FILE}
 
-curl --retry 50 --retry-delay 60 --retry-max-time 3600 -F"dup=true" -F"data=@{TEMP_FILE}" https://digabi.fi/s/feedback.php
+curl --retry 50 --retry-delay 60 --retry-max-time 3600 -F"dup=true" -F"data=@${TEMP_FILE}" https://digabi.fi/s/feedback.php
