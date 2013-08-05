@@ -6,7 +6,7 @@ Standards-Version: 3.9.2
 Package: digabi-common
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Architecture: all
-Changelog: changelog
+Changelog: debian/changelog
 Files: digabi /usr/bin
  digabi.gpg /etc/apt/trusted.gpg.d
 Description: Common files for Digabi

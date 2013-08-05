@@ -1,3 +1,9 @@
+digabi-common (1.0.3) stable; urgency=low
+
+  * Restructuring, using debian/control.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 14:18:26 +0300
+
 digabi-common (1.0.2) stable; urgency=low
 
   * Added Digabi production key to APT keyring.
