@@ -1,9 +1,15 @@
-linux-image-ytl (3.2.49-1) UNRELEASED; urgency=low
+linux-image-ytl (3.2.50-1) stable; urgency=low
+
+  * Updated from 3.2.49 to 3.2.50.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 07 Aug 2013 01:45:13 +0300
+
+linux-image-ytl (3.2.49-1) stable; urgency=low
 
   * Updated from 3.2.48 to 3.2.49.
   * Dropped support for non-grsec kernel.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 02 Aug 2013 15:07:38 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 07 Aug 2013 01:44:45 +0300
 
 linux-image-ytl (3.2.48-3) stable; urgency=low
 
