@@ -1,8 +1,15 @@
-digabi-testing (1.2.16) UNRELEASED; urgency=low
+digabi-testing (1.2.17) UNRELEASED; urgency=low
+
+  * Fixed Swedish translation for webaccess.
+  * Fixed sudo path for feedback autostart.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 06 Aug 2013 09:28:23 +0300
+
+digabi-testing (1.2.16) stable; urgency=low
 
   * Fixed invalid path for feedback autostart.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 05 Aug 2013 15:15:05 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 06 Aug 2013 09:28:14 +0300
 
 digabi-testing (1.2.15) stable; urgency=low
 
