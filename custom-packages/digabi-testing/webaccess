@@ -6,11 +6,12 @@ send_notification() {
 	NOTIFY_BIN="/usr/bin/notify-send"
 	if [ -x "${NOTIFY_BIN}" ]
 	then
-		${NOTIFY_BIN} -i dev-wavelan "${1}" "${2}"
+		${NOTIFY_BIN} --icon=dev-wavelan "${1}" "${2}"
 	fi
 }
 
 case "${COMMAND}" in
+	toggle*)
 	allow*)
 		if [ -f "/etc/iptables-testing.rules" ]
 		then

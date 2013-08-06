@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=digabi-feedback
-Comment=Collect feedback from system
-Exec=/usr/bin/sudo /usr/bin/digabi feedback
-StartupNotify=false
-Terminal=false
-Hidden=false

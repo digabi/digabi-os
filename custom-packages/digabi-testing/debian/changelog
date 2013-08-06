@@ -1,9 +1,16 @@
-digabi-testing (1.2.17) UNRELEASED; urgency=low
+digabi-testing (1.3.0) stable; urgency=low
+
+  * Moved feedback stuff to digabi-feedback package (separate repository currently).
+  * Renamed enable-webaccess to toggle-webaccess, will change functionality from single-function (allow) to multi: allow/deny.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 07 Aug 2013 01:29:54 +0300
+
+digabi-testing (1.2.17) stable; urgency=low
 
   * Fixed Swedish translation for webaccess.
   * Fixed sudo path for feedback autostart.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 06 Aug 2013 09:28:23 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 07 Aug 2013 01:28:55 +0300
 
 digabi-testing (1.2.16) stable; urgency=low
 
