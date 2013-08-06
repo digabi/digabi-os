@@ -1,8 +1,14 @@
-digabi-customization (1.9.0) UNRELEASED; urgency=low
+digabi-customization (1.9.1) stable; urgency=low
+
+  * Added Digabi plymouth theme.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 07 Aug 2013 01:39:04 +0300
+
+digabi-customization (1.9.0) stable; urgency=low
 
   * Set monitor1 too, fixes background issues on systems that have 2 monitors.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 02 Aug 2013 11:09:03 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 07 Aug 2013 01:38:46 +0300
 
 digabi-customization (1.8) stable; urgency=low
 
