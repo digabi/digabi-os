@@ -55,5 +55,11 @@ After building, image can be found in `dist/` directory.
 See `doc/*.md`.
 
 
+## Disclaimer
+The current version of the Matriculation Examination Board's exam operating system aims to demonstrate the exam execution environment. The Matriculation Examination Board reserves the right to revise the exam operating system without prior notice.  As this is solely a test version, the final product may be different.
+
+The operating system is designed so that it will not make modifications to the workstation. All testing is done at one's own risk.
+
+
 ## License
 This product is based on Debian 7.0 (wheezy), and includes software w/ various licenses. For licensing information, see [Debian License information ](http://www.debian.org/legal/licenses/). Work done by MEB is licensed under GPLv3, except MEB logo (provided by `digabi-customization` package), and when otherwise noted. Content in `gh-pages` branch has its own licenses.
