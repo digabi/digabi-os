@@ -37,6 +37,8 @@ set_paxflags -cm "/usr/bin/ghemical"
 set_paxflags -cm "/usr/lib/jvm/java-6-openjdk-i386/jre/bin/java" # TODO: Architecture selection automatically
 set_paxflags -cm "/usr/bin/audacity"
 
-set_paxflags -cm "/sbin/plymouthd"
+#set_paxflags -cm "/sbin/plymouthd"
+set_paxflags -cm "/usr/bin/VBoxClient"
+set_paxflags -cm "/usr/bin/nm-applet"
 
 apt-get -y remove paxctl
