@@ -1,3 +1,9 @@
+linux-image-ytl (3.2.50-2) stable; urgency=low
+
+  * Fixed syntax, see <http://www.debian.org/doc/debian-policy/ch-controlfields.html>. Thanks to @aapo.
+
+ -- Ville Korhonen <ville@xd.fi>  Wed, 07 Aug 2013 23:05:02 +0300
+
 linux-image-ytl (3.2.50-1) stable; urgency=low
 
   * Updated from 3.2.49 to 3.2.50.
