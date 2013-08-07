@@ -1,14 +1,14 @@
 include disclaimer.cfg
 
 label finnish
-	menu label ^Hyv„ksyn - k„yt„ j„rjestelm„„ suomeksi
+	menu label ^HyvÃ¤ksyn - kÃ¤ytÃ¤ jÃ¤rjestelmÃ¤Ã¤ suomeksi
 	menu default
 	linux @LINUX@
 	initrd @INITRD@
 	append @APPEND_LIVE@ locales=fi_FI.UTF-8 keyboard-layouts=fi
 
 label swedish
-	menu label ^Jag accepterar - anv„nda P† Svenska
+	menu label ^Jag accepterar - anvÃ¤nda PÃ¥ Svenska
 	linux @LINUX@
 	initrd @INITRD@
 	append @APPEND_LIVE@ locales=sv_SE.UTF-8,sv_FI.UTF-8 keyboard-layouts=se
