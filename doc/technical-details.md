@@ -3,9 +3,9 @@
 
 Digabi Live is based on Debian 7.0 (wheezy).
 
- - Linux 3.2.48 (vanilla, from kernel.org)
- - latest grsecurity patch
- - AUFS3 standalone module
+ - Linux 3.2.50 (vanilla, from kernel.org)
+ - latest grsecurity patch (see repository digabi-misc)
+ - AUFS3 standalone module (see repository aufs3-standalone, branch aufs3.2)
  - live-build 3.0
  - XFCE 4.10 from Debian testing (jessie)
 
