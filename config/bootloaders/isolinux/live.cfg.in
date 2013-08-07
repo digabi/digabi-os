@@ -1,4 +1,4 @@
-include disclaimer.cfg
+display disclaimer.cfg
 
 label finnish
 	menu label ^Hyv„ksyn - k„yt„ j„rjestelm„„ suomeksi
