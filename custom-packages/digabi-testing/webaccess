@@ -12,6 +12,8 @@ send_notification() {
 
 case "${COMMAND}" in
 	toggle*)
+		echo "FIXME"
+		;;
 	allow*)
 		if [ -f "/etc/iptables-testing.rules" ]
 		then
