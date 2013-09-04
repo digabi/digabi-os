@@ -25,14 +25,19 @@ ARCHIVE_AREAS="main contrib non-free"
 DISTRIBUTION="jessie"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
-ISO_PUBLISHER="YTL / digabi ; http://digabi.fi ; digabi@ylioppilastutkinto.fi" \
+ISO_PUBLISHER="YTL / digabi ; http://digabi.fi ; digabi@ylioppilastutkinto.fi"
+
+if [ -z "${HTTP_PROXY}" ]
+then
+    HTTP_PROXY="http://localhost:3142/"
+fi
 
 lb config noauto \
     --clean \
     --ignore-system-defaults \
     --architecture "${ARCHITECTURE}" \
     --archive-areas "${ARCHIVE_AREAS}" \
-    --apt-http-proxy "http://localhost:3142/" \
+    --apt-http-proxy "${HTTP_PROXY}" \
     --distribution "${DISTRIBUTION}" \
     --linux-flavour "${_LINUX_FLAVOURS}" \
     --linux-packages "linux-image" \
