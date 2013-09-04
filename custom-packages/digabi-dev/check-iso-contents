@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+ISOFILE="$1"
+
+if [ -z "${ISOFILE}" ]
+then
+    echo "Usage: $0 <isofile>"
+    exit 1
+fi
+
+if [ ! -f "${ISOFILE}" ]
+then
+    echo "ISO file ${ISOFILE} not found, exiting..."
+    exit 1
+fi
+
+TEMPDIR="$(mktemp -d)"
+
+ISO_MOUNT="${TEMPDIR}/iso"
+SQFS_MOUNT="${TEMPDIR}/sqfs"
+
+mkdir -p "${ISO_MOUNT}"
+
+echo "Mounting ISO (${ISOFILE}) to ${ISO_MOUNT}..."
+/bin/mount -o loop ${ISOFILE} ${ISO_MOUNT}
+
+
+echo "Unmounting ISO (${ISO_MOUNT})..."
+/bin/umount -l ${ISO_MOUNT}
