@@ -1,8 +1,14 @@
-digabi-dev (3.6.7) UNRELEASED; urgency=low
+digabi-dev (3.6.8) UNRELEASED; urgency=low
+
+  * Added gcc-4.7-plugin-dev to dependencies (required for PaX support in kernel building).
+
+ -- Ville Korhonen <ville@xd.fi>  Wed, 04 Sep 2013 22:39:36 +0300
+
+digabi-dev (3.6.7) stable; urgency=low
 
   * Updated Kernel now using 3.2.50.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 06 Aug 2013 18:34:08 +0300
+ -- Ville Korhonen <ville@xd.fi>  Wed, 04 Sep 2013 22:39:28 +0300
 
 digabi-dev (3.6.6) stable; urgency=low
 
