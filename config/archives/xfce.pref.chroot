@@ -1,7 +1,0 @@
-Package: xfce4
-Pin: release n=testing
-Pin-Priority: 900
-
-Package: task-xfce-desktop
-Pin: release n=testing
-Pin-Priority: 900
