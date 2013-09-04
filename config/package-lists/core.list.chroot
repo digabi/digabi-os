@@ -33,6 +33,7 @@ xfce4-power-manager
 xfce4-mixer
 xfce4-terminal
 lxpolkit
+polkit-1
 fbxkb
 xfce4-notifyd
 libnotify-bin
