@@ -1,0 +1,71 @@
+#!/bin/sh
+
+set -e
+
+warning() {
+	echo "W: $@"
+}
+
+error() {
+	echo "E: $@"
+}
+
+debug() {
+	echo "D: $@"
+}
+
+info() {
+	echo "I: $@"
+}
+
+mount_iso() {
+    FILE="$1"
+    MOUNT_PATH="$2"
+
+    if [ ! -f "${FILE}" ]
+    then
+        error "Can't mount non-existent file: ${FILE}"
+        exit 1
+    fi
+
+    if [ ! -d "${MOUNT_PATH}" ]
+    then
+        error "Can't mount to non-existent mount path: ${MOUNT_PATH}"
+        exit 1
+    fi
+
+    echo "Mounting ${FILE} to ${MOUNT_PATH}..."
+    /bin/mount -t iso9660 -o loop,ro ${FILE} ${MOUNT_PATH}
+}
+
+mount_squashfs() {
+    FILE="$1"
+    MOUNT_PATH="$2"
+
+    if [ ! -f "${FILE}" ]
+    then
+        error "Can't mount non-existent file: ${FILE}"
+        exit 1
+    fi
+
+    if [ ! -d "${MOUNT_PATH}" ]
+    then
+        error "Can't mount to non-existent mount path: ${MOUNT_PATH}"
+        exit 1
+    fi
+
+    echo "Mounting ${FILE} to ${MOUNT_PATH}..."
+    /bin/mount -t squashfs -o ro ${FILE} ${MOUNT_PATH}
+}
+
+unmount_path() {
+    MOUNT_PATH="$1"
+    if [ ! -d "${MOUNT_PATH}" ]
+    then
+        error "Can't unmount non-existent path: ${MOUNT_PATH}"
+        exit 1
+    fi
+
+    info "Unmounting ${MOUNT_PATH}..."
+    /bin/umount ${MOUNT_PATH}
+}

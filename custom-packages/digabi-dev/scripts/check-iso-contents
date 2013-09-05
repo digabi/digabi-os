@@ -1,58 +1,47 @@
 #!/bin/sh
 
+HELPERS="$(dirname "$0")/_helpers"
+if [ -f "${HELPERS}" ]
+then
+    . ${HELPERS}
+fi
+
 set +e
 
-ISOFILE="$1"
+ISO_FILE="$1"
 
-if [ -z "${ISOFILE}" ]
+if [ -z "${ISO_FILE}" ]
 then
-    echo "Usage: $0 <isofile>"
+    echo "Usage: $0 <iso-file>"
     exit 1
 fi
 
-if [ ! -f "${ISOFILE}" ]
+if [ ! -f "${ISO_FILE}" ]
 then
-    echo "ISO file ${ISOFILE} not found, exiting..."
+    echo "ISO file ${ISO_FILE} not found, exiting..."
     exit 1
 fi
-
-warning() {
-	echo "W: $@"
-}
-
-error() {
-	echo "E: $@"
-}
-
-debug() {
-	echo "D: $@"
-}
-
-info() {
-	echo "I: $@"
-}
 
 TEMPDIR="$(mktemp -d)"
 
 ISO_MOUNT="${TEMPDIR}/iso"
 SQFS_MOUNT="${TEMPDIR}/sqfs"
+SQFS_FILE="${ISO_MOUNT}/live/filesystem.squashfs"
 
+debug "# BEGIN"
 mkdir -p "${ISO_MOUNT}"
 mkdir -p "${SQFS_MOUNT}"
 
 # Init
-info "Mounting ISO (${ISOFILE}) to ${ISO_MOUNT}..."
-/bin/mount -t iso9660 -o ro,loop ${ISOFILE} ${ISO_MOUNT}
-
-info "Mounting SquashFS to ${SQFS_MOUNT}..."
-/bin/mount -t squashfs -o ro ${ISO_MOUNT}/live/filesystem.squashfs ${SQFS_MOUNT}
+mount_iso "${ISO_FILE}" "${ISO_MOUNT}"
+mount_squashfs "${SQFS_FILE}" "${SQFS_MOUNT}"
 
 # Do the tricks...
 
 info "Testijuttu jeejeeejee"
 
 info "Check image size..."
-info "Image size: $(/usr/bin/stat --format=%s ${ISOFILE}) bytes."
+info "Image size: $(/usr/bin/stat --format=%s ${ISO_FILE}) bytes."
 
 info "Search for SUID/SGID binaries..."
 {
@@ -79,7 +68,8 @@ debug "TODO: Check crontab"
 info "Find all TODO/FIXME notes..."
 # Find from both, ISO and SquashFS
 {
-	/bin/egrep -IR "(TODO|FIXME)" ${TEMPDIR}
+    debug "..."
+#	/bin/egrep -IR "(TODO|FIXME)" ${TEMPDIR}
 }
 
 
@@ -87,8 +77,6 @@ info "Find all TODO/FIXME notes..."
 debug "TODO: Check sysctl values"
 
 # Stop...
-info "Unmounting SquashFS (${SQFS_MOUNT})..."
-/bin/umount -l ${SQFS_MOUNT}
-
-info "Unmounting ISO (${ISO_MOUNT})..."
-/bin/umount -l ${ISO_MOUNT}
+debug "# END"
+unmount_path ${SQFS_MOUNT}
+unmount_path ${ISO_MOUNT}
