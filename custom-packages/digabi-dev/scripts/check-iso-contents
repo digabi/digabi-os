@@ -79,7 +79,7 @@ debug "TODO: Check crontab"
 info "Find all TODO/FIXME notes..."
 # Find from both, ISO and SquashFS
 {
-	/bin/egrep -R "(TODO|FIXME)" ${TEMPDIR}
+	/bin/egrep -IR "(TODO|FIXME)" ${TEMPDIR}
 }
 
 
