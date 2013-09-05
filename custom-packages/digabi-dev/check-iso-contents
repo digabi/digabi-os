@@ -41,10 +41,10 @@ mkdir -p "${ISO_MOUNT}"
 mkdir -p "${SQFS_MOUNT}"
 
 # Init
-echo "Mounting ISO (${ISOFILE}) to ${ISO_MOUNT}..."
+info "Mounting ISO (${ISOFILE}) to ${ISO_MOUNT}..."
 /bin/mount -t iso9660 -o ro,loop ${ISOFILE} ${ISO_MOUNT}
 
-echo "Mounting SquashFS to ${SQFS_MOUNT}..."
+info "Mounting SquashFS to ${SQFS_MOUNT}..."
 /bin/mount -t squashfs -o ro ${ISO_MOUNT}/live/filesystem.squashfs ${SQFS_MOUNT}
 
 # Do the tricks...
@@ -54,11 +54,17 @@ info "Testijuttu jeejeeejee"
 debug "TODO: Check image size"
 debug "TODO: Search for SUID/SGID binaries"
 debug "TODO: Require whitelisting for SUID/SGID binaries and their packages"
-
+debug "TODO: Check that required packages are installed"
+debug "TODO: Check that unused users have no shells"
+debug "TODO: Check that root user is locked"
+debug "TODO: Check enabled services"
+debug "TODO: Check crontab"
+debug "TODO: Grep TODO/FIXME/..."
+debug "TODO: Check sysctl values"
 
 # Stop...
-echo "Unmounting SquashFS (${SQFS_MOUNT})..."
+info "Unmounting SquashFS (${SQFS_MOUNT})..."
 /bin/umount -l ${SQFS_MOUNT}
 
-echo "Unmounting ISO (${ISO_MOUNT})..."
+info "Unmounting ISO (${ISO_MOUNT})..."
 /bin/umount -l ${ISO_MOUNT}
