@@ -38,8 +38,6 @@ mount_squashfs "${SQFS_FILE}" "${SQFS_MOUNT}"
 
 # Do the tricks...
 
-info "Testijuttu jeejeeejee"
-
 info "Check image size..."
 info "Image size: $(/usr/bin/stat --format=%s ${ISO_FILE}) bytes."
 
