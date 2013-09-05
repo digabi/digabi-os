@@ -9,10 +9,11 @@ Depends: kernel-package, gcc-4.7-plugin-dev, build-essential, live-build, git, e
 Recommends: reprepro, piuparts, apt-cacher-ng
 Architecture: all
 Changelog: debian/changelog
-Files: prepare-linux-source /usr/lib/digabi/scripts
- build-kernel /usr/lib/digabi/scripts
- build-custom-packages /usr/lib/digabi/scripts
- build-package /usr/lib/digabi/scripts
+Files: scripts/prepare-linux-source /usr/lib/digabi
+ scripts/build-kernel /usr/lib/digabi
+ scripts/build-custom-packages /usr/lib/digabi
+ scripts/build-package /usr/lib/digabi
+ scripts/check-iso-contents /usr/lib/digabi
  digabirc /usr/share/doc/digabi-developer/examples
 Description: Development tools for Digabi
  Package installs essential build tools for Digabi.
