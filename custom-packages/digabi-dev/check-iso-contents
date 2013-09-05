@@ -16,16 +16,49 @@ then
     exit 1
 fi
 
+warning() {
+	echo "W: $@"
+}
+
+error() {
+	echo "E: $@"
+}
+
+debug() {
+	echo "D: $@"
+}
+
+info() {
+	echo "I: $@"
+}
+
 TEMPDIR="$(mktemp -d)"
 
 ISO_MOUNT="${TEMPDIR}/iso"
 SQFS_MOUNT="${TEMPDIR}/sqfs"
 
 mkdir -p "${ISO_MOUNT}"
+mkdir -p "${SQFS_MOUNT}"
 
+# Init
 echo "Mounting ISO (${ISOFILE}) to ${ISO_MOUNT}..."
-/bin/mount -o loop ${ISOFILE} ${ISO_MOUNT}
+/bin/mount -t iso9660 -o ro,loop ${ISOFILE} ${ISO_MOUNT}
 
+echo "Mounting SquashFS to ${SQFS_MOUNT}..."
+/bin/mount -t squashfs -o ro ${ISO_MOUNT}/live/filesystem.squashfs ${SQFS_MOUNT}
+
+# Do the tricks...
+
+info "Testijuttu jeejeeejee"
+
+debug "TODO: Check image size"
+debug "TODO: Search for SUID/SGID binaries"
+debug "TODO: Require whitelisting for SUID/SGID binaries and their packages"
+
+
+# Stop...
+echo "Unmounting SquashFS (${SQFS_MOUNT})..."
+/bin/umount -l ${SQFS_MOUNT}
 
 echo "Unmounting ISO (${ISO_MOUNT})..."
 /bin/umount -l ${ISO_MOUNT}
