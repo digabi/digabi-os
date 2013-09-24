@@ -10,7 +10,6 @@ Changelog: debian/changelog
 Files: iptables-testing.rules /etc
  webaccess /usr/lib/digabi/scripts
  digabi-webaccess /etc/sudoers.d
- toggle-web-access.desktop /etc/skel/Desktop
  apt-sources /usr/lib/digabi/scripts
  dmesg /usr/lib/digabi/scripts
 Description: Tools to help testing Digabi Live System (meta-package)
