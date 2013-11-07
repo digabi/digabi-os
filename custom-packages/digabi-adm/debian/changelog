@@ -1,8 +1,14 @@
-digabi-adm (1.5.4+nmu1) UNRELEASED; urgency=low
+digabi-adm (1.5.6) UNRELEASED; urgency=low
+
+  * Added iptables rules for Digabi demo server.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 07 Nov 2013 17:31:59 +0200
+
+digabi-adm (1.5.5) stable; urgency=low
 
   * Removed iptables rules.
 
- -- Ville Korhonen <ville@xd.fi>  Wed, 04 Sep 2013 23:56:32 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 07 Nov 2013 17:31:46 +0200
 
 digabi-adm (1.5.4) stable; urgency=low
 

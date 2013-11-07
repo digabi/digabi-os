@@ -7,7 +7,7 @@ Package: digabi-adm
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: lshw, virt-what, imvirt, dmidecode, harden-environment, harden-clients, harden-servers, apparmor, apparmor-notify, apparmor-profiles, apparmor-utils, libpam-apparmor, auditd, consolekit, libpam-ck-connector, policykit-1, chrony
 Changelog: debian/changelog
-#Files: iptables.rules /etc
+Files: iptables.rules /etc
 Description: Install essential, mostly security-related packages into Digabi system (meta-package)
  Including:
  - lshw, imvirt, dmidecode: hardware detection
