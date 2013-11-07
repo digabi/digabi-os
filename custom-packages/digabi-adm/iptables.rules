@@ -1,0 +1,11 @@
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:0]
+-A INPUT -s 172.16.2.1/32 -p tcp --sport 80 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -s 172.16.2.1/32 -p tcp --sport 443 -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p udp -m udp --dport 67 -j ACCEPT
+-A OUTPUT -d 172.16.2.1/32 -p tcp -m tcp --dport 80 -j ACCEPT
+-A OUTPUT -d 172.16.2.1/32 -p tcp -m tcp --dport 443 -j ACCEPT
+-A OUTPUT -p udp -m udp --dport 68 -j ACCEPT
+COMMIT
