@@ -2,4 +2,11 @@
 
 set -e
 
-apt-get -y autoremove bluez-firmware firmware-bnx2 firmware-myricom firmware-qlogic info netcat-traditional traceroute usbmuxd zd1211-firmware
+PACKAGES="bluez-firmware firmware-bnx2 firmware-myricom firmware-qlogic\
+          info netcat-traditional traceroute usbmuxd zd1211-firmware\
+          cpp cpp-4.8 gcc-4.7-base gcc-4.8-base"
+
+for p in $PACKAGES
+do
+    apt-get -y autoremove $p
+done
