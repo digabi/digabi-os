@@ -8,9 +8,9 @@ libreoffice-l10n-sv
 
 chromium
 chromium-l10n
-iceweasel
-iceweasel-l10n-fi, 
-iceweasel-l10n-sv-se
+iceweasel/experimental
+iceweasel-l10n-fi/experimental
+iceweasel-l10n-sv-se/experimental
 
 vlc
 
