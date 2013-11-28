@@ -14,7 +14,7 @@ do
     else
         echo "I: Setting shell for user ${a} to /bin/false"
         /usr/bin/chsh ${a} -s /bin/false
-        /bin/passwd -d ${a}
-        /bin/passwd -l ${a}
+        /usr/bin/passwd -d ${a}
+        /usr/bin/passwd -l ${a}
     fi
 done
