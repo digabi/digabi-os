@@ -13,7 +13,7 @@ build:
 	sudo lb build
 
 clean:
-	sudo lb clean --all --purge
+	sudo lb clean --all
 
 bclean:
 	find config -type f -name "*~" -exec rm {} \;
