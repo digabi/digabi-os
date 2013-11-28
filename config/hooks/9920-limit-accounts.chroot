@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+WHITELISTED="root nobody"
+ACCOUNTS="$(cat /etc/passwd |cut -d: -f1)"
+
+echo "I: Remove unnecessary shells..."
+for a in ${ACCOUNTS}
+do
+    if [[ "${WHITELISTED}" =~ "$a" ]]
+    then
+        echo "I: Shell for user ${a} is whitelisted, leaving untouched"
+    else
+        echo "I: Setting shell for user ${a} to /bin/false"
+        /usr/bin/chsh ${a} -s /bin/false
+        /bin/passwd -d ${a}
+        /bin/passwd -l ${a}
+    fi
+done
