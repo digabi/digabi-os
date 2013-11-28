@@ -1,4 +1,18 @@
-# Digabi Custom Packages
+# Digabi customizations (apps, ui)
 
-#digabi-customization
-digabi-apps
+# digabi-customization
+
+libreoffice
+libreoffice-gtk
+libreoffice-l10n-sv
+
+chromium
+chromium-l10n
+iceweasel
+iceweasel-l10n-fi, 
+iceweasel-l10n-sv-se
+
+vlc
+
+geogebra
+
