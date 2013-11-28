@@ -6,17 +6,17 @@ imvirt
 dmidecode
 
 harden-environment
-harden-clients, 
+harden-clients 
 harden-servers
 
 apparmor
 apparmor-notify
-apparmor-profiles, 
+apparmor-profiles 
 apparmor-utils
 libpam-apparmor
 
 auditd
 
-consolekit, 
+consolekit 
 libpam-ck-connector
 policykit-1
