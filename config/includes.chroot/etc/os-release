@@ -1,10 +1,10 @@
-PRETTY_NAME="Digabi Live 2.0a (Least Concern Daubenton's Bat)"
+PRETTY_NAME="Digabi Live 2.1 (Extinct Western Black Rhinoceros)"
 NAME="Digabi Live"
-VERSION_ID="2.0a"
-VERSION="2.0a (Least Concern Daubenton's Bat)"
+VERSION_ID="2.1"
+VERSION="2.1 (Extinct Western Black Rhinoceros)"
 ID=digabi
 ID_LIKE=debian
 ANSI_COLOR="1;32"
-HOME_URL="http://digabi.fi/live/"
-SUPPORT_URL="http://digabi.fi/live/"
-BUG_REPORT_URL="http://digabi.fi/live/"
+HOME_URL="http://digabi.fi/"
+SUPPORT_URL="http://digabi.fi/"
+BUG_REPORT_URL="http://digabi.fi/"
