@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+VERSION="$(git describe --tags --long)"
+
+FILE="config/includes.chroot/etc/os-release"
+
+if [ -f "${FILE}" ]
+then
+    echo "I: Updating /etc/os-release for version ${VERSION}..."
+    # TODO
+else
+    echo "W: File not found: ${FILE}, will not update /etc/os-release for version ${VERSION}!"
+fi
+
