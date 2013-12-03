@@ -18,7 +18,9 @@ ARCHITECTURE="i386"
 #	_LINUX_FLAVOURS="686-pae"
 #	_SOURCE="false"
 #esac
-_LINUX_FLAVOURS="ytl"
+
+_LINUX_FLAVOURS="686-pae"
+#_LINUX_FLAVOURS="ytl"
 _SOURCE="false"
 
 ARCHIVE_AREAS="main contrib non-free"
