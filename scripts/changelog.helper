@@ -8,4 +8,4 @@ then
     exit 1
 fi
 
-git log --pretty=oneline --abbrev-commit "${COMMIT}.."|cut -d" " -f2- |sort -u
+git log --pretty=oneline --abbrev-commit "${COMMIT}"|cut -d" " -f2- |sort -u
