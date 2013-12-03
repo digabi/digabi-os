@@ -1,4 +1,4 @@
-VERSION = $(shell git describe)_$(shell date +%Y%m%d%H%M%S)
+VERSION = $(shell git describe --tags --long)_$(shell date +%Y%m%d%H%M%S)
 
 ISO_FILE = binary.hybrid.iso
 
