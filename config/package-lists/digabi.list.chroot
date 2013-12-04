@@ -4,7 +4,10 @@ digabi-customization
 
 libreoffice
 libreoffice-gtk
+libreoffice-l10n-fi
 libreoffice-l10n-sv
+libreoffice-math
+libreoffice-voikko
 
 chromium
 chromium-l10n
