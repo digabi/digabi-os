@@ -44,3 +44,5 @@ TODO
 _site
 
 tmp/
+
+config/includes.chroot/opt/sw
