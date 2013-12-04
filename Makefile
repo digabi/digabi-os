@@ -7,6 +7,7 @@ FILENAME_PREFIX = digabi-livecd
 all:	config build
 
 config:	clean
+	exec scripts/*.config
 	lb config
 
 build:
@@ -14,6 +15,7 @@ build:
 	sudo lb build
 
 clean:
+	exec scripts/*.clean
 	sudo lb clean --all
 
 bclean:
