@@ -12,14 +12,16 @@ then
 fi
 
 STAGED="$(git diff-index --quiet --cached HEAD)"
-if [ "${STAGED}" != "0" ]
+STAGED_STATUS="$(echo $?)"
+if [ "${STAGED_STATUS}" != "0" ]
 then
     RET="1"
     echo "W: git: Found staged, uncommitted files."
 fi
 
 UNSTAGED="$(git diff-files --quiet)"
-if [ "${UNSTAGED}" != "0" ]
+UNSTAGED_STATUS="$(echo $?)"
+if [ "${UNSTAGED_STATUS}" != "0" ]
 then
     RET="1"
     echo "W: git: Found unstaged files."
