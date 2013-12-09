@@ -19,6 +19,8 @@ case "${BUILD_VERSION}" in
         DATE="$(date +%y.%m.%d)"
 esac
 
+TIME=""
+
 if [ -z "${NOGIT}" ]
 then
     GIT_VERSION="-$(git rev-parse --short HEAD)"
@@ -26,5 +28,5 @@ else
     GIT_VERSION=""
 fi
 
-VERSION="v${DATE}${GIT_VERSION}+${BUILD_VERSION}"
+VERSION="v${DATE}${GIT_VERSION}+${BUILD_VERSION}${TIME}"
 echo ${VERSION}
