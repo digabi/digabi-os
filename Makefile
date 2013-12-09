@@ -37,9 +37,3 @@ dist:	clean config build
 	mv build.log $(TARGET)/
 	tar -cJf $(TARGET)/$(FILENAME_PREFIX)-config_$(VERSION).tar.xz config
 	tar -cJf $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION).tar.xz chroot.packages.install binary.contents binary.packages chroot.packages.live
-    	
-	for f in `ls $(TARGET)/$(FILENAME_PREFIX)-*`
-	do
-		md5sum $f >$f.md5sum
-		sha256sum $f >$f.sha256sum
-	done
