@@ -23,7 +23,7 @@ config:	clean
 	$(LIVE_BUILD) config
 
 build:
-	$(ROOT_CMD) $(LIVE_BUILD) build
+	$(ROOT_CMD) $(LIVE_BUILD) build |tee build.log
 
 clean:
 	$(ROOT_CMD) $(LIVE_BUILD) clean --all
