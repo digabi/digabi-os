@@ -2,9 +2,8 @@
 
 set -e
 
-VERSION_LONG="$(git describe --tags --long)"
-VERSION_SHORT="$(echo $VERSION_LONG |cut -d- -f1 |cut -dv -f2)"
-VERSION="${VERSION_SHORT}"
+CUR_DIR="$(dirname $0)"
+VERSION="$(${CUR_DIR}/version.helper)"
 
 FILE="config/includes.chroot/etc/os-release"
 
