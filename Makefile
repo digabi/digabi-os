@@ -12,7 +12,8 @@ LIVE_BUILD = lb
 ROOT_CMD = sudo
 
 VERSION = $(shell ./scripts/version.helper)
-TARGET = dist/$(VERSION)
+#TARGET = dist/$(VERSION)
+TARGET = dist
 
 ISO_FILE = binary.hybrid.iso
 FILENAME_PREFIX = digabi-livecd
@@ -34,6 +35,6 @@ bclean:
 dist:	clean config build
 	mkdir -p $(TARGET)
 	mv $(ISO_FILE) $(TARGET)/$(FILENAME_PREFIX)-livecd_$(VERSION).iso
-	mv build.log $(TARGET)/
+	mv build.log $(TARGET)/$(FILENAME_PREFIX)-buildlog_$(VERSION).log
 	tar -cJf $(TARGET)/$(FILENAME_PREFIX)-config_$(VERSION).tar.xz config
 	tar -cJf $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION).tar.xz chroot.packages.install binary.contents binary.packages chroot.packages.live
