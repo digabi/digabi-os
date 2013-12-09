@@ -11,7 +11,6 @@ config:	clean
 	lb config
 
 build:
-	exec scripts/*.build
 	sudo lb build
 
 clean:

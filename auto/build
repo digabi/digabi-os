@@ -2,4 +2,23 @@
 
 set -e
 
+BUILD_HOOKS="$(ls ${PWD}/scripts/*.build)"
+
+if [ -n "${BUILD_HOOKS}" ]
+then
+    echo "I: Executing build hooks..."
+fi
+
+for hook in ${BUILD_HOOKS}
+do
+    hook_base="$(basename ${hook})"
+    if [ -x "${hook}" ]
+    then
+        echo "I: Executing hook ${hook_base}..."
+        ${hook}
+    else
+        echo "W: Non-executable hook ${hook_base}."
+    fi
+done
+
 lb build noauto "${@}" 2>&1 | tee build.log
