@@ -2,6 +2,23 @@
 
 set -e
 
+BUILD_VERSION="${1}"
+case "${BUILD_VERSION}" in
+    dev*)
+        BUILD_VERSION="dev"
+        shift 1
+        ;;
+    dist*)
+        BUILD_VERSION="dist"
+        shift 1
+        ;;
+    *)
+        BUILD_VERSION="dev"
+esac
+
+VERSION="$(${PWD}/scripts/version.helper ${BUILD_VERSION})"
+echo "I: Building version ${VERSION}..."
+
 BUILD_HOOKS="$(ls ${PWD}/scripts/*.build)"
 
 if [ -n "${BUILD_HOOKS}" ]
