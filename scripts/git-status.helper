@@ -25,5 +25,4 @@ then
     echo "W: git: Found unstaged files."
 fi
 
-echo "Status: ${RET}"
 exit ${RET}
