@@ -1,4 +1,5 @@
-VERSION = $(shell git describe --tags --long)_$(shell date +%Y%m%d%H%M%S)
+#VERSION = $(shell git describe --tags --long)_$(shell date +%Y%m%d%H%M%S)
+VERSION = $(shell ./scripts/version.helper)
 
 ISO_FILE = binary.hybrid.iso
 
