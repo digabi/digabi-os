@@ -46,3 +46,4 @@ _site
 tmp/
 
 config/includes.chroot/opt/sw
+config/includes.chroot/etc/skel
