@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+BUILD_VERSION="${1}"
+NOGIT="${2}"
+
+case "${BUILD_VERSION}" in
+    dev*)
+        BUILD_VERSION="+dev"
+        DATE="$(date +%y.%m.%d)"
+        ;;
+    dist*)
+#        BUILD_VERSION="dist"
+        BUILD_VERSION=""
+        DATE="$(date +%y.%m)"
+        ;;
+    *)
+        BUILD_VERSION="+dev"
+        DATE="$(date +%y.%m.%d)"
+esac
+
+TIME="_$(date +%Y%m%d%H%M%S)"
+
+if [ -z "${NOGIT}" ]
+then
+    GIT_VERSION="-$(git rev-parse --short HEAD)"
+else
+    GIT_VERSION=""
+fi
+
+VERSION="v${DATE}${BUILD_VERSION}${GIT_VERSION}${TIME}"
+echo ${VERSION}

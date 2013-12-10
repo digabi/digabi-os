@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+addgroup() {
+    GID="$1"
+    GROUP="$2"
+    /usr/sbin/groupadd --gid ${GID} ${GROUP}
+    echo "I: Added group ${GROUP} with GID ${GID}."
+}
+
+addgroup 2100 grsec-procexempt
+addgroup 2110 grsec-tpeuntrusted
+addgroup 2120 grsec-denysockets
+addgroup 2121 grsec-denyclisockets
+addgroup 2122 grsec-denysrvsockets
+addgroup 2200 ninja

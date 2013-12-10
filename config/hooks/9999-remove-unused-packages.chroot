@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -e
-
-apt-get -y autoremove bluez-firmware firmware-bnx2 firmware-myricom firmware-qlogic info netcat-traditional traceroute usbmuxd zd1211-firmware

@@ -1,0 +1,7 @@
+/bin/su:users:
+/usr/bin/sudo:users:
+/bin/fusermount:users:
+/usr/bin/passwd:users:
+/usr/bin/pulseaudio:users:
+/usr/sbin/hald:haldaemon:
+/usr/lib/hal/hald-runner:haldaemon:

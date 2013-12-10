@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# Update /etc/hosts to include all allowed IP addresses
-# Removes need to allow DNS (53/udp) when testing
-# TODO: This is only for testing, to be removed
-
-set -e
-
-echo "83.145.200.151		digabi.fi" >>/etc/hosts

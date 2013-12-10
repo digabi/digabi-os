@@ -1,0 +1,80 @@
+#!/bin/sh
+
+HELPERS="$(dirname "$0")/_helpers"
+if [ -f "${HELPERS}" ]
+then
+    . ${HELPERS}
+fi
+
+set +e
+
+ISO_FILE="$1"
+
+if [ -z "${ISO_FILE}" ]
+then
+    echo "Usage: $0 <iso-file>"
+    exit 1
+fi
+
+if [ ! -f "${ISO_FILE}" ]
+then
+    echo "ISO file ${ISO_FILE} not found, exiting..."
+    exit 1
+fi
+
+TEMPDIR="$(mktemp -d)"
+
+ISO_MOUNT="${TEMPDIR}/iso"
+SQFS_MOUNT="${TEMPDIR}/sqfs"
+SQFS_FILE="${ISO_MOUNT}/live/filesystem.squashfs"
+
+debug "# BEGIN"
+mkdir -p "${ISO_MOUNT}"
+mkdir -p "${SQFS_MOUNT}"
+
+# Init
+mount_iso "${ISO_FILE}" "${ISO_MOUNT}"
+mount_squashfs "${SQFS_FILE}" "${SQFS_MOUNT}"
+
+# Do the tricks...
+
+info "Check image size..."
+info "Image size: $(/usr/bin/stat --format=%s ${ISO_FILE}) bytes."
+
+info "Search for SUID/SGID binaries..."
+{
+	SUID_SGID="$(/usr/bin/find ${SQFS_MOUNT} -type f \( -perm +4000 -o -perm +2000 \) -print 2>/dev/null |xargs)"
+	for s in ${SUID_SGID}
+	do
+		warning "SUID/SGID: $(echo $s |sed "s,${SQFS_MOUNT},,g")"
+	done
+}
+
+debug "TODO: Require whitelisting for SUID/SGID binaries and their packages"
+
+debug "TODO: Search for world writable files/directories"
+{
+	find ${SQFS_MOUNT} -xdev -perm +o=w ! \( -type d -perm +o=t \) ! -type l -print
+}
+
+debug "TODO: Check that required packages are installed"
+debug "TODO: Check that unused users have no shells"
+debug "TODO: Check that root user is locked"
+debug "TODO: Check enabled services"
+debug "TODO: Check crontab"
+
+info "Find all TODO/FIXME notes..."
+# Find from both, ISO and SquashFS
+{
+    debug "..."
+#	/bin/egrep -IR "(TODO|FIXME)" ${TEMPDIR}
+}
+
+
+
+debug "TODO: Check sysctl values"
+
+# Stop...
+debug "# END"
+unmount_path ${SQFS_MOUNT}
+unmount_path ${ISO_MOUNT}

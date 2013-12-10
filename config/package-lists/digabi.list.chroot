@@ -1,9 +1,32 @@
-# Digabi Custom Packages
+# Digabi customizations (apps, ui)
 
-digabi-client
-#digabi-audit
-#digabi-feedback
 digabi-customization
-digabi-adm
-digabi-testing
-digabi-apps
+
+libreoffice
+libreoffice-gtk
+libreoffice-l10n-fi
+libreoffice-l10n-sv
+libreoffice-math
+libreoffice-voikko
+
+chromium
+chromium-l10n
+iceweasel/experimental
+iceweasel-l10n-fi/experimental
+iceweasel-l10n-sv-se/experimental
+
+vlc
+
+geogebra
+maxima
+wxmaxima
+
+inkscape
+
+wine
+
+pinta
+gimp
+
+virtualbox-guest-x11
+virtualbox-guest-dkms

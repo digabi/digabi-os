@@ -3,7 +3,7 @@
 set -e
 
 # Set Plymouth theme
-THEME="spinfinity"
+THEME="text"
 
 if [ -e "/usr/sbin/plymouth-set-default-theme" ] && [ -e "/usr/share/plymouth/themes/${THEME}/${THEME}.plymouth" ]
 then

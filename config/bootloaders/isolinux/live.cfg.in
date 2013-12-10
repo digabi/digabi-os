@@ -1,24 +1,53 @@
+include disclaimer.cfg
+
 label finnish
-	menu label ^Suomeksi
+	menu label ^K„yt„ j„rjestelm„„ suomeksi
 	menu default
+	text help
+Vastuuvapauslauseke
+
+YTL k„ytt”j„rjestelm„n testiversio on tarkoitettu s„hk”isen ylioppilaskokeen
+suoritusymp„rist”n testaamiseen ja esittelyyn. YTL voi tehd„ k„ytt”j„rjestel-
+m„n testiversioon muutoksia ennalta ilmoittamatta. K„ytt”j„rjestelm„n testi-
+versio ei v„ltt„m„tt„ vastaa lopullisessa kokeessa k„ytett„v„„ k„ytt”j„rjes-
+telm„„.
+K„ytt”j„rjestelm„ on suunniteltu siten, ett„ se ei tee muutoksia ty”asemaan.
+K„ytt”j„rjestelm„n testaaminen tapahtuu k„ytt„j„n omalla vastuulla.
+	endtext
 	linux @LINUX@
 	initrd @INITRD@
 	append @APPEND_LIVE@ locales=fi_FI.UTF-8 keyboard-layouts=fi
 
 label swedish
-	menu label ^Pa Svenska
+	menu label ^Anv„nda p† svenska
+	text help
+F”rnekande
+
+Testversionen av SEN:s operativsystem har skapats f”r att kunna presentera och
+testa milj”n som det elektroniska studentprovet avl„ggs i. SEN kan utan
+f”rvarning g”ra „ndringar i operativsystemets testversion. Testversionen av
+operativsystemet motsvarar inte n”dv„ndigtvis det slutgiltiga operativsystemet
+som kommer att anv„ndas i studentprovet.
+Operativsystemet g”r inga f”r„ndringar i anv„ndarens dator. Testningen av
+operativsystemet sker p† anv„ndarens egen risk.
+	endtext
 	linux @LINUX@
 	initrd @INITRD@
 	append @APPEND_LIVE@ locales=sv_SE.UTF-8,sv_FI.UTF-8 keyboard-layouts=se
 
 label english
-	menu label ^In English
+	menu label ^Use the system in English
+	text help
+Disclaimer
+
+The current version of the Matriculation Examination Board's exam operating
+system aims to demonstrate the exam execution environment. The Matriculation
+Examination Board reserves the right to revise the exam operating system
+without prior notice.  As this is solely a test version, the final product
+may be different.
+The operating system is designed so that it will not make modifications to
+the workstation. All testing is done at one's own risk.
+	endtext
 	linux @LINUX@
 	initrd @INITRD@
 	append @APPEND_LIVE@ locales=en_GB.UTF-8,en_US.UTF-8 keyboard-layouts=en
-
-#label live-@FLAVOUR@-failsafe
-#	menu label ^Live (@FLAVOUR@ failsafe)
-#	linux @LINUX@
-#	initrd @INITRD@
-#	append @APPEND_LIVE_FAILSAFE@

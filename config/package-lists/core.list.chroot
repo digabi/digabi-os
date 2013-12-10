@@ -37,17 +37,6 @@ fbxkb
 xfce4-notifyd
 libnotify-bin
 
-# GUI, LXDE
-#task-lxde-desktop
-#lxtask
-#lxlauncher
-#lxinput
-#lxpolkit
-#lxrandr
-#lxsession
-#lxterminal
-#lxappearance
-
 firmware-linux
 
 #if ARCHIVE_AREAS non-free

@@ -101,7 +101,7 @@
          }
       }
    },
-   "homepage": "http://digabi.fi/",
+   "homepage": "http://koe.demo.digabi.fi/",
    "intl": {
       "accept_languages": "fi,en-US,en,sv"
    },

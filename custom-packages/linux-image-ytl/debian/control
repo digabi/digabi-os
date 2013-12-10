@@ -1,3 +1,4 @@
+Source: linux-image-ytl
 Section: kernel
 Priority: optional
 Homepage: http://digabi.fi/
@@ -7,10 +8,10 @@ Package: linux-image-ytl
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: linux-headers-3.2.50-grsec-ytl, linux-image-3.2.50-grsec-ytl
 Suggests: linux-source-3.2.50-grsec-ytl
-Architectures: i386
+Architecture: i386
 Changelog: debian/changelog
 Description: Digabi Linux kernel for 32-bit PCs (meta-package)
  This package depends on the latest Digabi Linux kernel and modules for use on PCs
  with 32-bit AMD or Intel processors.
- 
+ .
  Only for Digabi Live systems.

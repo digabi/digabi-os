@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# <http://stackoverflow.com/questions/2657935/checking-for-a-dirty-index-or-untracked-files-with-git>
+
+RET="0"
+
+UNTRACKED="$(git ls-files --exclude-standard --others |xargs)"
+if [ -n "${UNTRACKED}" ]
+then
+    RET="1"
+    echo "E: git: Found untracked files."
+fi
+
+STAGED="$(git diff-index --quiet --cached HEAD)"
+STAGED_STATUS="$(echo $?)"
+if [ "${STAGED_STATUS}" != "0" ]
+then
+    RET="1"
+    echo "E: git: Found staged, uncommitted files."
+fi
+
+UNSTAGED="$(git diff-files --quiet)"
+UNSTAGED_STATUS="$(echo $?)"
+if [ "${UNSTAGED_STATUS}" != "0" ]
+then
+    RET="1"
+    echo "E: git: Found unstaged files."
+fi
+
+exit ${RET}

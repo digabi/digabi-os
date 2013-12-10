@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ip6tables-save -c >/etc/ip6tables.rules
+
+if [ -f "/etc/ip6tables.downrules" ]
+then
+	ip6tables-restore < /etc/ip6tables.downrules
+fi
+
+exit 0
