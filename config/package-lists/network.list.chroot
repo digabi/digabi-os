@@ -1,6 +1,11 @@
+# Support for WiFi / WLAN connections
 wpasupplicant
 iw
+
+# Network settings
 network-manager
 network-manager-gnome
+
+# To save WiFi/WLAN passphrases
 gnome-keyring
 
