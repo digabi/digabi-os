@@ -6,7 +6,7 @@ Versioning
  - (2.0 Least Concern Daubenton's Bat)
 
 
-== New version numbering (year.month.day.revision) ==
+## New version numbering (year.month.day.revision)
  - 13.12 Extinct Western Black Rhinoceros
  - 14.01
 
