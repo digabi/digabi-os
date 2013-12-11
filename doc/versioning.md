@@ -8,4 +8,5 @@ Versioning
 
 ## New version numbering (year.month.day.revision)
  - 13.12 Extinct Western Black Rhinoceros
+  - 13.12.24 Least Concern Santa Claus
  - 14.01
