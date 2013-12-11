@@ -9,6 +9,3 @@ Versioning
 ## New version numbering (year.month.day.revision)
  - 13.12 Extinct Western Black Rhinoceros
  - 14.01
-
-
-(TODO: Update build scripts, use automatic versioning.)
