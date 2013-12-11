@@ -1,6 +1,13 @@
 Versioning
 ============================================
-All public releases do have a codename, in format `(IUCN vulnerability status) (English name for species)`.
+All public releases do have a codename, based on animals, in format `(IUCN vulnerability status) (English name for species)`.
+
+## Creating codename
+
+ 1. Pick an animal
+ 2. Check its IUCN vulnerability status
+ 3. ...
+ 4. Profit!
 
 ## Initial releases
 First versions, released in Autumn 2013, were numbered as `1.x` and `2.x`.
