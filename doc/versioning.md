@@ -1,12 +1,12 @@
 Versioning
 ============================================
 
-
+## Initial releases (Autumn 2013)
  - 1.0 Endangered Saimaa ringed seal: first public release, August 2013
  - (2.0 Least Concern Daubenton's Bat)
 
 
-## New version numbering (year.month.day.revision)
+## New version numbering (year.month.day.revision) (since Dec 2013)
  - 13.12 Extinct Western Black Rhinoceros
   - 13.12.24 Least Concern Santa Claus
  - 14.01
