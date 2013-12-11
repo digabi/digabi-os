@@ -1,7 +1,9 @@
 # Digabi customizations (apps, ui)
 
+# Digabi custom UI
 digabi-customization
 
+# LibreOffice office suite
 libreoffice
 libreoffice-gtk
 libreoffice-l10n-fi
@@ -9,24 +11,33 @@ libreoffice-l10n-sv
 libreoffice-math
 libreoffice-voikko
 
+# Web browser: chromium =~ Google Chrome
 chromium
 chromium-l10n
+
+# Web browser: iceweasel (Firefox)
+# Installing from experimental repository, to get new version
 iceweasel/experimental
 iceweasel-l10n-fi/experimental
 iceweasel-l10n-sv-se/experimental
 
+# VLC media player
 vlc
 
+# Math
 geogebra
 maxima
 wxmaxima
 
-inkscape
-
+# Wine, providing support for Windows apps
 wine
 
+# Graphics
 pinta
 gimp
+inkscape
 
+# VirtualBox modules to make testing easier
 virtualbox-guest-x11
 virtualbox-guest-dkms
+linux-headers-686-pae

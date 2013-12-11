@@ -1,14 +1,19 @@
+# Monitor processes running as root (uid 0)
 ninja
 
+# Collect device inforrmation
 lshw
 virt-what
 imvirt
 dmidecode
 
+# Hardening
 harden-environment
 harden-clients 
 harden-servers
 
+# AppArmor: limit what apps can do
+# TODO: Configure AppArmor
 apparmor
 apparmor-notify
 apparmor-profiles 
