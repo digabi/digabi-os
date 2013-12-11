@@ -11,9 +11,12 @@ libreoffice-l10n-sv
 libreoffice-math
 libreoffice-voikko
 
-# Web browsers, chromium =~ Google Chrome, iceweasel =~ Firefox
+# Web browser: chromium =~ Google Chrome
 chromium
 chromium-l10n
+
+# Web browser: iceweasel (Firefox)
+# Installing from experimental repository, to get new version
 iceweasel/experimental
 iceweasel-l10n-fi/experimental
 iceweasel-l10n-sv-se/experimental
