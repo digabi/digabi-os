@@ -5,8 +5,7 @@ Standards-Version: 3.9.2
 
 Package: digabi-customization
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: plymouth, plymouth-drm, plymouth-themes-spinfinity, plymouth-x11, digabi-common
-Provides: plymouth-themes-digabi
+Depends: digabi-common, plymouth-themes-digabi
 Architecture: all
 Copyright: debian/copyright
 Changelog: debian/changelog
@@ -22,16 +21,6 @@ Files: proprietary/background.svg /usr/share/digabi
  proprietary/digabi_48x48.png /usr/share/digabi
  configure-xfce /usr/lib/digabi/scripts
  digabi-xfconf.desktop /etc/skel/.config/autostart
- digabi/box.png /usr/share/plymouth/themes
- digabi/bullet.png /usr/share/plymouth/themes
- digabi/digabi.plymouth /usr/share/plymouth/themes
- digabi/digabi.script /usr/share/plymouth/themes
- digabi/entry.png /usr/share/plymouth/themes
- digabi/lock.png /usr/share/plymouth/themes
- digabi/progress_bar.png /usr/share/plymouth/themes
- digabi/progress_box.png /usr/share/plymouth/themes
- digabi/digabi.png /usr/share/plymouth/themes
 Description: Customizations for Digabi project (backgrounds etc.)
  Package contains customization files.
-  - plymouth, plymouth-*: boot splash
   - logos for The Matriculation Examination Board of Finland (proprietary!)
