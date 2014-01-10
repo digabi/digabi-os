@@ -42,7 +42,7 @@ lb config noauto \
     --apt-http-proxy "${APT_PROXY}" \
     --distribution "${DISTRIBUTION}" \
     --linux-flavour "${_LINUX_FLAVOURS}" \
-    --linux-packages "linux-image" \
+    --linux-packages "linux-image-3.2.0-4" \
     --apt-indices "false" \
     --apt-recommends "false" \
     --bootappend-live "${BOOTAPPEND_LIVE}" \
