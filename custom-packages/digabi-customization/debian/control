@@ -9,6 +9,18 @@ Depends: digabi-common, plymouth-themes-digabi, digabi-backgrounds
 Architecture: all
 Changelog: debian/changelog
 Files: configure-xfce /usr/lib/digabi/scripts
- digabi-xfconf.desktop /etc/skel/.config/autostart
+# digabi-xfconf.desktop /etc/skel/.config/autostart
 Description: Customizations for Digabi project.
  Package contains customization files.
+File: postinst
+ #!/bin/sh -e
+ set -e
+ update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/digabi/proprietary/background.svg 100
+ update-alternatives --install /usr/share/images/desktop-base/desktop-background.xml desktop-background.xml /usr/share/digabi/proprietary/digabi-background.xml 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/digabi/proprietary/digabi.svg 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-splash desktop-splash /usr/share/digabi/proprietary/background.svg 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-grub desktop-grub /usr/share/digabi/proprietary/background.svg 100
+File: prerm
+ #!/bin/sh -e
+ set -e
+ echo "TODO: Remove update-alternative settings"

@@ -1,3 +1,10 @@
+digabi-customization (2.0) stable; urgency=low
+
+  * Configure background using update-alternatives (was: custom XFCE4 autostart script).
+  * Splitted backgrounds to separate digabi-backgrounds package. Configuration in this package.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 10 Jan 2014 10:20:45 +0200
+
 digabi-customization (1.9.1) stable; urgency=low
 
   * Added Digabi plymouth theme.
