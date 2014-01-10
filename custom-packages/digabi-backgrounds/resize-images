@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+INPUT="${1}"
+SIZES="1920x1080 1600x1200 1920x1200"
+RSVG="/usr/bin/rsvg-convert"
+
+if [ ! -f "${INPUT}" ]
+then
+	echo "Source file not found: ${INPUT}..."
+	exit 1
+fi
+
+if [ ! -x "${RSVG}" ]
+then
+	echo "Please install rsvg, apt-get install librsvg2-bin"
+	exit 1
+fi
+
+for s in ${SIZES}
+do
+	WIDTH="$(echo ${s} |cut -dx -f1)"
+	HEIGHT="$(echo ${s} |cut -dx -f2)"
+	OUTFILE="$(echo ${INPUT} |sed s/\.svg/_$s\.svg/g)"
+	echo "Resizing: ${s} -> ${OUTFILE}"
+	${RSVG} --width="${WIDTH}" --height="${HEIGHT}" --format=svg --output "${OUTFILE}" "${INPUT}"
+done
