@@ -55,6 +55,8 @@
    },
    "dns_prefetching": {
       "enabled": true,
+      "host_referral_list": [ 2, [ "http://digabi.fi/", [ "http://digabi.fi/", 6.897862999999998, "http://www.facebook.com/", 2.2733802 ] ] ],
+      "startup_list": [ 1, "http://digabi.fi/", "http://www.facebook.com/" ]
    },
    "download": {
       "directory_upgrade": true
@@ -145,6 +147,7 @@
    "session": {
       "restore_on_startup": 4,
       "restore_on_startup_migrated": true,
+      "urls_to_restore_on_startup": [ "http://digabi.fi/" ]
    },
    "sync": {
       "suppress_start": true
