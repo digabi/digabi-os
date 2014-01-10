@@ -22,7 +22,7 @@ user_pref("browser.pagethumbnails.storage_version", 2);
 user_pref("browser.places.importBookmarksHTML", false);
 user_pref("browser.places.smartBookmarksVersion", 4);
 user_pref("browser.preferences.advanced.selectedTabIndex", 0);
-user_pref("browser.startup.homepage", "http://koe.demo.digabi.fi/");
+user_pref("browser.startup.homepage", "file:///var/www/index.html");
 user_pref("browser.startup.homepage_override.buildID", "20130626024843");
 user_pref("browser.startup.homepage_override.mstone", "17.0.7");
 user_pref("browser.syncPromoViewsLeft", 2);
