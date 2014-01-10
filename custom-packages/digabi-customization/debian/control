@@ -7,7 +7,6 @@ Package: digabi-customization
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: digabi-common, plymouth-themes-digabi, digabi-backgrounds
 Architecture: all
-Copyright: debian/copyright
 Changelog: debian/changelog
 Files: configure-xfce /usr/lib/digabi/scripts
  digabi-xfconf.desktop /etc/skel/.config/autostart
