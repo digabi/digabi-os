@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+NINJA_CONF="/etc/ninja/ninja.conf"
+
+if [ ! -f "/etc/ninja/ninja.conf" ]
+then
+	echo "W: Ninja config not found, not updating!"
+	exit 0
+fi
+
+echo "I: Enabling Ninja: Allow killing processes."
+sed -i 's/no_kill = yes/no_kill = no/g' "${NINJA_CONF}"
+sed -i 's/no_kill_ppid = yes/no_kill_ppid = no/g' "${NINJA_CONF}"
