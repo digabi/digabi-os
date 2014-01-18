@@ -3,6 +3,8 @@ set -e
 
 # This script updates /etc/os-release to match current release.
 
+OSR="/etc/os-release"
+
 # Version list: contains list of current releases
 # format: VERSION CODENAME
 # example: 4.0 Extinct Examplespecies
@@ -11,7 +13,7 @@ VERSION_LIST="/usr/share/digabi/versions.txt"
 # Digabi version number
 DIGABI_VERSION="/etc/digabi-version"
 
-if [ ! -f "${DIGABI_VERSION} ]
+if [ ! -f "${DIGABI_VERSION}" ]
 then
 	echo "E: Version file (${DIGABI_VERSION}) not found, unknown release!"
 	exit 1
@@ -30,7 +32,10 @@ VERSION="$(cat ${VERSION_LIST} |grep ^${CURRENT_VERSION})"
 if [ "x${VERSION}" != "x" ]
 then
 	echo "I: Updating /etc/os-release..."
-	# TODO
+	CODENAME="$(echo ${VERSION} |cut -d\" \" -f2-)"
+	sed -i -e '/VERSION_ID=/s/=.*/="${CURRENT_VERSION}"/' ${OSR}
+	sed -i -e '/VERSION=/s/=.*/="${CURRENT_VERSION} (${CODENAME})"/' ${OSR}
+	sed -i -e '/PRETTY_NAME=/s/=.*/="Digabi Live ${CURRENT_VERSION} (${CODENAME})"/' ${OSR}
 else
 	echo "I: Current version (${CURRENT_VERSION}) not found in version list. Not updating /etc/os-release."
 fi
