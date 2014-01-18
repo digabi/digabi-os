@@ -24,7 +24,6 @@ config:	clean
 	$(LIVE_BUILD) config
 
 build:
-	echo $(VERSION) >./config/includes.chroot/etc/digabi-version
 	$(ROOT_CMD) $(LIVE_BUILD) build |tee build.log
 
 clean:

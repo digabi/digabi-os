@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+CUR_DIR="$(dirname $0)"
+VERSION="$(${CUR_DIR}/version.helper)"
+
+FILE="config/includes.chroot/etc/digabi-version"
+
+echo "I: Updating version number: /etc/digabi-version..."
+echo ${VERSION} >"${CUR_DIR}/../${FILE}"
