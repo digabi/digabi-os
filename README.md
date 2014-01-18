@@ -19,7 +19,7 @@ Assuming you have required packages installed (see below), building new image is
 
 After building, image can be found in `dist/` directory.
 
-Published .ISO images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
+Our images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
 
 
 ## Contact
