@@ -12,3 +12,4 @@ do
 		rm "${FILE}"
 	fi
 done
+update-menus
