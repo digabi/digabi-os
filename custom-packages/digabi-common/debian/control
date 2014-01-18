@@ -9,6 +9,6 @@ Architecture: all
 Changelog: debian/changelog
 Files: digabi /usr/bin
  digabi.gpg /etc/apt/trusted.gpg.d
- version /usr/share/digabi/scripts
+ version /usr/lib/digabi/scripts
 Description: Common files for Digabi
  Currently only provides digabi -command
