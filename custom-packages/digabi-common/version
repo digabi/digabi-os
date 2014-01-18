@@ -21,6 +21,6 @@ then
 	echo "${GIT_COMMIT}"
 else
 	VERSION="$(cat ${VERSION_FILE})"
-	echo "Digabi Live ${VERSION"
+	echo "Digabi Live ${VERSION}"
 fi
 
