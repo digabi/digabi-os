@@ -15,8 +15,8 @@ SHORT="$1"
 
 if [ "x${SHORT}" = "xshort" ]
 then
-	VERSION="$(cat ${VERSION_FILE} |cut -d+ -f1 |cut -b2-) $(cat ${VERSION_FILE} |cut -d- -f2 |cut -d -f1)"
-	GIT_COMMIT="$(cat ${VERSION_FILE} |cut -d- -f2 |cut -d -f1)"
+	VERSION="$(cat ${VERSION_FILE} |cut -d+ -f1 |cut -b2-)"
+	GIT_COMMIT="$(cat ${VERSION_FILE} |cut -d- -f2 |cut -d_ -f1)"
 	echo "${VERSION}"
 	echo "${GIT_COMMIT}"
 else
