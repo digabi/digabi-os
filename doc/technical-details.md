@@ -1,13 +1,13 @@
 # Techical Details
 ==============================
 
-Digabi Live is based on Debian 7.0 (wheezy).
+Digabi Live is based on upcoming Debian jessie release (8.0), currently in testing stage.
 
  - Linux 3.2.50 (vanilla, from kernel.org)
  - latest grsecurity patch (see repository digabi-misc)
  - AUFS3 standalone module (see repository aufs3-standalone, branch aufs3.2)
  - live-build 3.0
- - XFCE 4.10 from Debian testing (jessie)
+ - XFCE 4.10
 
 Build environment is Debian 7.0.
 
@@ -20,3 +20,4 @@ Build environment is Debian 7.0.
 | Network    | ethernet, IEEE802.11a/b/g/n                  |
 | Sound      | ..                                           |
 
+For official specifications, see http://ylioppilastutkinto.fi/fi/maaraykset/sahkoinenylioppilastutkinto/ (in Finnish).
