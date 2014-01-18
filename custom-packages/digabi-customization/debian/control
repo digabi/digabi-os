@@ -9,7 +9,7 @@ Depends: digabi-common, plymouth-themes-digabi, digabi-backgrounds
 Architecture: all
 Changelog: debian/changelog
 Files: configure-xfce /usr/lib/digabi/scripts
-# digabi-xfconf.desktop /etc/skel/.config/autostart
+ digabi-xfconf.desktop /etc/skel/.config/autostart
 Description: Customizations for Digabi project.
  Package contains customization files.
 File: postinst

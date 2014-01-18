@@ -1,3 +1,11 @@
+digabi-customization (2.1) stable; urgency=low
+
+  * Fixed XFCE4 menu icon (now using .svg).
+  * Disabled uncool settigns (resizing background icons).
+  * Background image-style automatic (instead of centered), works better with our new background.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 18 Jan 2014 15:21:12 +0200
+
 digabi-customization (2.0) stable; urgency=low
 
   * Configure background using update-alternatives (was: custom XFCE4 autostart script).
