@@ -36,8 +36,8 @@ NAME="Digabi Live"
 
 
 # Update
-VERSION="\"${CURRENT_VERSION} (${CODENAME})\""
-PRETTYNAME="\"${NAME} ${CURRENT_VERSION} (${CODENAME})\""
+VERSION="\"${CURRENT_VERSION} (${CODENAME:=Unknown Umbrella Bird})\""
+PRETTYNAME="\"${NAME} ${CURRENT_VERSION} (${CODENAME:=Unknown Umbrella Bird})\""
 CV="\"${CURRENT_VERSION}\""
 
 sed -i "s/^\(PRETTY_NAME\s*=\s*\).*$/\1$PRETTYNAME/" $OSR
