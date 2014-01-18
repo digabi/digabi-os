@@ -8,14 +8,28 @@ Custom Debian Packages
 
 
 ## Create new package
-    equivs-control my-package
+
+    mkdir my-package && cd my-package
+    mkdir debian
+    equivs-control debian/control
+
+    # create changelog (debian/changelog)
+    dch --create
 
 
 ## Edit package
-    $EDITOR my-package
+
+    $EDITOR debian/control
+    
+    # update changelog
+    dch
+
+    # mark as release
+    dch --release
 
 
 ## Build package
-    equivs-build my-package
+
+    equivs-build debian/control
 
 
