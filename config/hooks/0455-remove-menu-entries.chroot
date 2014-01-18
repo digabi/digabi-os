@@ -2,7 +2,7 @@
 
 set -e
 
-FILES="xfce4-session-logout xfce4-about xfhelp4 exo-mail-reader exo-terminal-emulator Thunar xfrun4 exo-file-manager"
+FILES="xfce4-session-logout xfce4-about xfhelp4 exo-mail-reader exo-terminal-emulator Thunar xfrun4 exo-file-manager uninstaller globaltime xfce-xfcalendar-settings xfce4-appfinder xfcalendar"
 
 for f in $FILES
 do
