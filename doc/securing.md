@@ -12,3 +12,5 @@ Securing Digabi Live
  - enable PaX, RBAC
  - add script for checking SUID/SGID binaries, require whitelisting (make build fail, if not whitelisted)
  - remove unnecessary packages
+ - enable Ninja support
+ - limit pkexec in non-dev builds
