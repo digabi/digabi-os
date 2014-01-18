@@ -1,0 +1,3 @@
+This folder includes scripts and hooks, which will be run OUTSIDE live-build chroot.
+
+Create your scripts inside live-build environment if possible, and use this folder ONLY if you need to access content outside live environment.
