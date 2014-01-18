@@ -26,16 +26,20 @@ then
 fi
 
 CURRENT_VERSION="$(cat ${DIGABI_VERSION} |cut -d+ -f1 |cut -b2-)"
+CURRENT_VERSION="13.12"
 
-VERSION="$(cat ${VERSION_LIST} |grep ^${CURRENT_VERSION})"
+VERSION="$(cat ${VERSION_LIST} |grep ${CURRENT_VERSION})"
 
-if [ "x${VERSION}" != "x" ]
-then
-	echo "I: Updating /etc/os-release..."
-	CODENAME="$(echo ${VERSION} |cut -d\" \" -f2-)"
-	sed -i -e '/VERSION_ID=/s/=.*/="${CURRENT_VERSION}"/' ${OSR}
-	sed -i -e '/VERSION=/s/=.*/="${CURRENT_VERSION} (${CODENAME})"/' ${OSR}
-	sed -i -e '/PRETTY_NAME=/s/=.*/="Digabi Live ${CURRENT_VERSION} (${CODENAME})"/' ${OSR}
-else
-	echo "I: Current version (${CURRENT_VERSION}) not found in version list. Not updating /etc/os-release."
-fi
+CODENAME="$(echo ${VERSION} |cut -d' ' -f2-)"
+
+NAME="Digabi Live"
+
+
+# Update
+VERSION="\"${CURRENT_VERSION} (${CODENAME})\""
+PRETTYNAME="\"${NAME} ${CURRENT_VERSION} (${CODENAME})\""
+CV="\"${CURRENT_VERSION}\""
+
+sed -i "s/^\(PRETTY_NAME\s*=\s*\).*$/\1$PRETTYNAME/" $OSR
+sed -i "s/^\(VERSION_ID\s*=\s*\).*$/\1$CV/" $OSR
+sed -i "s/^\(VERSION\s*=\s*\).*$/\1$VERSION/" $OSR
