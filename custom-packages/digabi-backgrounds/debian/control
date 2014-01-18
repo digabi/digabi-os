@@ -1,0 +1,21 @@
+Section: misc
+Priority: optional
+Homepage: http://digabi.fi/
+Standards-Version: 3.9.2
+
+Package: digabi-backgrounds
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Architecture: all
+Copyright: debian/copyright
+Changelog: debian/changelog
+Files: proprietary/background.svg /usr/share/digabi
+# proprietary/background_1024x768.png /usr/share/digabi
+# proprietary/background_1280x1024.png /usr/share/digabi
+# proprietary/background_1600x1200.png /usr/share/digabi
+# proprietary/background_1920x1080.png /usr/share/digabi
+# proprietary/background_1920x1200.png /usr/share/digabi
+ proprietary/digabi-background.xml /usr/share/digabi
+ proprietary/splash.svg.in /usr/share/digabi
+ proprietary/digabi.svg /usr/share/digabi
+# proprietary/digabi_48x48.png /usr/share/digabi
+Description: Digabi Background files.

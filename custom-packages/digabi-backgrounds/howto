@@ -1,0 +1,6 @@
+Howto (digabi-backgrounds)
+
+Clone https://github.com/ypcs/digabi-proprietary to proprietary and build using equivs.
+
+
+Image resizing script uses RSVG, from package librsvg2-bin

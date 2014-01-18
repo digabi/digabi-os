@@ -6,7 +6,7 @@ XFCONF_FLAGS="-n"
 XFWM_THEME="Xfce-4.6"
 
 BACKGROUND_IMAGE="/usr/share/digabi/proprietary/background.svg"
-MENU_ICON="/usr/share/digabi/proprietary/digabi_48x48.png"
+MENU_ICON="/usr/share/digabi/proprietary/digabi.svg"
 
 # Single color
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color-style" -t "int" -s 0
@@ -17,8 +17,8 @@ ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/color1" -t "uint" -s 9509 -t "uint" -s 17733 -t "uint" -s 29298 -t "uint" -s 65535
 
 # Centered
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-style" -t "int" -s 1
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/image-style" -t "int" -s 1
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-style" -t "int" -s 0
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/image-style" -t "int" -s 0
 
 # Our custom image
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-path" -t "string" -s "${BACKGROUND_IMAGE}"
@@ -41,10 +41,7 @@ ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/s
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-trash" -t "bool" -s "false"
 
 # Resize icons (64x64)
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/icon-size" -t "int" -s 64
-
-# Hide context menu
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-menu/show" -t "bool" -s "false"
+#${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/icon-size" -t "int" -s 64
 
 # Hide window list
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/windowlist-menu/show" -t "bool" -s "false"

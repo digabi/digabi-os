@@ -20,5 +20,4 @@ First versions, released in Autumn 2013, were numbered as `1.x` and `2.x`.
 Since December 2013, new versioning scheme was introduced. Follows Ubuntu pattern: `(year - 2000).(month).(day)`. See file `scripts/version.helper` for technical details.
 
  - 13.12 Extinct Western Black Rhinoceros
-  - 13.12.24 Least Concern Santa Claus
  - 14.01

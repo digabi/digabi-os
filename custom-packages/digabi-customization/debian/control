@@ -5,33 +5,22 @@ Standards-Version: 3.9.2
 
 Package: digabi-customization
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: plymouth, plymouth-drm, plymouth-themes-spinfinity, plymouth-x11, digabi-common
-Provides: plymouth-themes-digabi
+Depends: digabi-common, plymouth-themes-digabi, digabi-backgrounds
 Architecture: all
-Copyright: debian/copyright
 Changelog: debian/changelog
-Files: proprietary/background.svg /usr/share/digabi
- proprietary/background_1024x768.png /usr/share/digabi
- proprietary/background_1280x1024.png /usr/share/digabi
- proprietary/background_1600x1200.png /usr/share/digabi
- proprietary/background_1920x1080.png /usr/share/digabi
- proprietary/background_1920x1200.png /usr/share/digabi
- proprietary/digabi-background.xml /usr/share/digabi
- proprietary/splash.svg.in /usr/share/digabi
- proprietary/digabi.svg /usr/share/digabi
- proprietary/digabi_48x48.png /usr/share/digabi
- configure-xfce /usr/lib/digabi/scripts
+Files: configure-xfce /usr/lib/digabi/scripts
  digabi-xfconf.desktop /etc/skel/.config/autostart
- digabi/box.png /usr/share/plymouth/themes
- digabi/bullet.png /usr/share/plymouth/themes
- digabi/digabi.plymouth /usr/share/plymouth/themes
- digabi/digabi.script /usr/share/plymouth/themes
- digabi/entry.png /usr/share/plymouth/themes
- digabi/lock.png /usr/share/plymouth/themes
- digabi/progress_bar.png /usr/share/plymouth/themes
- digabi/progress_box.png /usr/share/plymouth/themes
- digabi/digabi.png /usr/share/plymouth/themes
-Description: Customizations for Digabi project (backgrounds etc.)
+Description: Customizations for Digabi project.
  Package contains customization files.
-  - plymouth, plymouth-*: boot splash
-  - logos for The Matriculation Examination Board of Finland (proprietary!)
+File: postinst
+ #!/bin/sh -e
+ set -e
+ update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/digabi/proprietary/background.svg 100
+ update-alternatives --install /usr/share/images/desktop-base/desktop-background.xml desktop-background.xml /usr/share/digabi/proprietary/digabi-background.xml 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/digabi/proprietary/digabi.svg 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-splash desktop-splash /usr/share/digabi/proprietary/background.svg 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-grub desktop-grub /usr/share/digabi/proprietary/background.svg 100
+File: prerm
+ #!/bin/sh -e
+ set -e
+ echo "TODO: Remove update-alternative settings"

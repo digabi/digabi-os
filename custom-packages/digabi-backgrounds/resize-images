@@ -1,0 +1,38 @@
+#!/bin/sh
+
+
+set -e
+
+INPUT="${1}"
+IMAGE_PATH="/usr/share/digabi/proprietary"
+XML_FILE="$(dirname ${INPUT})/digabi-background.xml"
+SIZES="1920x1080 1600x1200 1920x1200"
+RSVG="/usr/bin/rsvg-convert"
+
+if [ ! -f "${INPUT}" ]
+then
+	echo "Source file not found: ${INPUT}..."
+	exit 1
+fi
+
+if [ ! -x "${RSVG}" ]
+then
+	echo "Please install rsvg, apt-get install librsvg2-bin"
+	exit 1
+fi
+
+echo "<background>" >${XML_FILE}
+echo "    <static>" >>${XML_FILE}
+echo "        <duration>8640000.0</duration>" >>${XML_FILE}
+echo "        <file>" >>${XML_FILE}
+for s in ${SIZES}
+do
+	WIDTH="$(echo ${s} |cut -dx -f1)"
+	HEIGHT="$(echo ${s} |cut -dx -f2)"
+	OUTFILE="$(echo ${INPUT} |sed s/\.svg/_$s\.svg/g)"
+	${RSVG} --width="${WIDTH}" --height="${HEIGHT}" --format=svg --output "${OUTFILE}" "${INPUT}"
+	echo "            <size width=\"${WIDTH}\" height=\"${HEIGHT}\">${IMAGE_PATH}/$(basename ${OUTFILE})</size>" >>${XML_FILE}
+done
+echo "        </file>" >>${XML_FILE}
+echo "    </static>" >>${XML_FILE}
+echo "</background>" >>${XML_FILE}

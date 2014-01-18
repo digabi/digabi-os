@@ -1,0 +1,6 @@
+digabi-backgrounds (1.0) unstable; urgency=low
+
+  * Initial release.
+  * Separated from digabi-customization.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 10 Jan 2014 10:05:30 +0200
