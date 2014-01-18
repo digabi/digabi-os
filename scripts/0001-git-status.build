@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Prevent building if uncommitted changes.
+
 # <http://stackoverflow.com/questions/2657935/checking-for-a-dirty-index-or-untracked-files-with-git>
 
 RET="0"
