@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+VERSION_FILE="/etc/digabi-version"
+
+if [ ! -f "${VERSION_FILE}" ]
+then
+	echo "No version number available."
+	exit 1
+fi
+
+SHORT="$1"
+
+
+if [ "x${SHORT}" = "xshort" ]
+then
+	VERSION="$(cat ${VERSION_FILE} |cut -d+ -f1 |cut -b2-) $(cat ${VERSION_FILE} |cut -d- -f2 |cut -d -f1)"
+	GIT_COMMIT="$(cat ${VERSION_FILE} |cut -d- -f2 |cut -d -f1)"
+	echo "${VERSION}"
+	echo "${GIT_COMMIT}"
+else
+	VERSION="$(cat ${VERSION_FILE})"
+	echo "Digabi Live ${VERSION"
+fi
+
