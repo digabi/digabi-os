@@ -1,0 +1,4 @@
+Package: *
+Pin: release n=sid
+Pin-Priority: 1
+

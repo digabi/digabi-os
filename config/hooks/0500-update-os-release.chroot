@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+#set -e
 
 # This script updates /etc/os-release to match current release.
 
