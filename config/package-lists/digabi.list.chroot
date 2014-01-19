@@ -36,8 +36,3 @@ wine
 pinta
 gimp
 inkscape
-
-# VirtualBox modules to make testing easier
-virtualbox-guest-x11
-virtualbox-guest-dkms
-linux-headers-686-pae
