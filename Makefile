@@ -34,7 +34,7 @@ bclean:
 
 dist:	clean config build
 	mkdir -p $(TARGET)
-	mv $(ISO_FILE) $(TARGET)/$(FILENAME_PREFIX)-livecd_$(VERSION).iso
+	mv $(ISO_FILE) $(TARGET)/$(FILENAME_PREFIX)_$(VERSION).iso
 	mv build.log $(TARGET)/$(FILENAME_PREFIX)-buildlog_$(VERSION).log
 	tar -cJf $(TARGET)/$(FILENAME_PREFIX)-config_$(VERSION).tar.xz config
 	tar -cJf $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION).tar.xz chroot.packages.install binary.contents binary.packages chroot.packages.live
