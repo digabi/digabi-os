@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+SSH_CONFIG="/etc/ssh/sshd_config"
+
+if [ ! -f "${SSH_CONFIG}" ]
+then
+	echo "I: sshd config not found, not hardening... (openssh-server not installed?)"
+	exit 0
+fi
+
+echo "I: Hardening sshd config..."
+
+sed -i 's/PermitRootLogin yes/PermitRootLogin without-password/g' "${SSH_CONFIG}"
+sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' "${SSH_CONFIG}"
