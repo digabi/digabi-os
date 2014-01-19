@@ -22,6 +22,7 @@ config/common
 config/source
 config/includes.chroot/etc/digabi-version
 config/includes.chroot/usr/share/digabi/versions.txt
+config/includes.chroot/root
 
 source/
 source*.iso
