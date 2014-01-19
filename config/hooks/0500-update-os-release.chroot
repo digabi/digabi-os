@@ -26,7 +26,6 @@ then
 fi
 
 CURRENT_VERSION="$(cat ${DIGABI_VERSION} |cut -d+ -f1 |cut -b2-)"
-CURRENT_VERSION="13.12"
 
 VERSION="$(cat ${VERSION_LIST} |grep ${CURRENT_VERSION})"
 
