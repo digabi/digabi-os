@@ -12,6 +12,7 @@ All public releases do have a codename, based on animals, in format `(IUCN vulne
 ## Initial releases
 First versions, released in Autumn 2013, were numbered as `1.x` and `2.x`.
 
+ - 0.0 Unknown Umbrella Bird: default version for unconfigured build
  - 1.0 Endangered Saimaa ringed seal: first public release, August 2013
  - 2.0 Least Concern Daubenton's Bat: misc improvements, never officially released
 
