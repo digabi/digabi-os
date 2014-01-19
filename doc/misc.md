@@ -8,7 +8,7 @@ Misc. things to remember.
 
 
 ## Tool for symlinking latest .ISO (for website, for VirtualBox testing)
-    if [ -f latest.iso ]; then rm latest.iso ; fi && ln -s `ls -lt digabi-livecd-*.iso |head -n 1 |awk '{print $9}'` latest.iso
+    if [ -f latest.iso ]; then rm latest.iso ; fi && ln -s `ls -lt digabi-livecd_*.iso |head -n 1 |awk '{print $9}'` latest.iso
 
 ## Debian changelog
 Create new changelog inside package
