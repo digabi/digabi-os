@@ -30,5 +30,12 @@ else
     GIT_VERSION=""
 fi
 
-VERSION="v${DATE}${BUILD_VERSION}${GIT_VERSION}${TIME}"
+if [ -f "$(dirname $0)/../.ytl" ]
+then
+    OFFICIAL=""
+else
+    OFFICIAL="u"
+fi
+
+VERSION="v${DATE}${BUILD_VERSION}${GIT_VERSION}${TIME}${OFFICIAL}"
 echo ${VERSION}
