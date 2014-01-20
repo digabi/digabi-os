@@ -7,11 +7,17 @@
 
 CUSTOM_PACKAGE_DIR="custom-packages"
 
+if [ ! -d "${CUSTOM_PACKAGE_DIR}" ]
+then
+	echo "E: Custom package dir ${CUSTOM_PACKAGE_DIR} not found. Exiting..."
+	exit 1
+fi
+
 cd "${CUSTOM_PACKAGE_DIR}"
 
 for pkg in `ls`
 do
-    if [ -d "${pkg}" && -f "${pkg}/debian/control" ]
+    if [ -d "${pkg}" ] && [ -f "${pkg}/debian/control" ]
     then
         cd "${pkg}"
         equivs-build debian/control
