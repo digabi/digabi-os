@@ -9,7 +9,13 @@ do
 	FILE="/usr/share/applications/${f}.desktop"
 	if [ -f "${FILE}" ]
 	then
-		rm "${FILE}"
+		if [ $(grep -q "^Hidden" "${FILE}") ]
+		then
+			sed -i 's/^(Hidden\s*=\s*\).*$/\1true/' "${FILE}"
+		else
+			echo "Hidden=true" >>"${FILE}"
+		fi
 	fi
 done
+
 update-menus
