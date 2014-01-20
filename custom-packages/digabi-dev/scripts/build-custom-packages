@@ -7,24 +7,18 @@
 
 CUSTOM_PACKAGE_DIR="custom-packages"
 
-#_CUSTOM_PACKAGES="${CUSTOM_PACKAGE_DIR}/*"
-
 cd "${CUSTOM_PACKAGE_DIR}"
-for d in `ls -d *`
+
+for pkg in `ls`
 do
-	PACKAGE_NAME="$(basename ${d})"
-
-	if [ -f "${d}/${PACKAGE_NAME}" ]
-	then
-		echo "Found package ${PACKAGE_NAME}"
-		cd "${PACKAGE_NAME}"
-
-		echo "Building package ${PACKAGE_NAME}..."
-		equivs-build "${PACKAGE_NAME}" 1>/dev/null
-		# package exists, build it, move results into reprepro collection area
-		mv *.deb ..
-		cd ..
-	fi
-
+    if [ -d "${pkg}" && -f "${pkg}/debian/control" ]
+    then
+        cd "${pkg}"
+        equivs-build debian/control
+        mv *.deb ..
+        cd ..
+    fi
 done
+
 cd ..
+

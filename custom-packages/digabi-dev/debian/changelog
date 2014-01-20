@@ -1,9 +1,16 @@
-digabi-dev (3.6.9) UNRELEASED; urgency=low
+digabi-dev (3.6.10) stable; urgency=low
+
+  * Updated build-custom-packages script. Build using debian/control 
+  files.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 20 Jan 2014 19:52:39 +0200
+
+digabi-dev (3.6.9) stable; urgency=low
 
   * Added libncurses5-dev (required for 'make menuconfig' when building 
   kernel)
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 28 Nov 2013 02:09:43 +0200
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 20 Jan 2014 19:51:47 +0200
 
 digabi-dev (3.6.8) stable; urgency=low
 
