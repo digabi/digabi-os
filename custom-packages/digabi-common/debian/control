@@ -7,8 +7,8 @@ Package: digabi-common
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Architecture: all
 Changelog: debian/changelog
+Depends: digabi-repository
 Files: digabi /usr/bin
- digabi.gpg /etc/apt/trusted.gpg.d
  version /usr/lib/digabi/scripts
 Description: Common files for Digabi
  Currently only provides digabi -command
