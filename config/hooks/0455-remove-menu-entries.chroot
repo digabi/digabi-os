@@ -12,4 +12,6 @@ do
 		rm "${FILE}"
 	fi
 done
+
 update-menus
+update-desktop-database
