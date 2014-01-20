@@ -2,21 +2,22 @@
 
 set -e
 
-BUILD_VERSION="${1}"
+#BUILD_VERSION="${1}"
+#BUILD_VERSION="${BUILD_VERSION:=dev}"
 NOGIT="${2}"
+BRANCH="$(git branch |sed -n '/\* /s///p')"
 
-case "${BUILD_VERSION}" in
-    dev*)
+case "${BRANCH}" in
+    dev|dev*)
         BUILD_VERSION="+dev"
         DATE="$(date +%y.%m.%d)"
         ;;
-    dist*)
-#        BUILD_VERSION="dist"
+    dist*|master*)
         BUILD_VERSION=""
         DATE="$(date +%y.%m)"
         ;;
     *)
-        BUILD_VERSION="+dev"
+        BUILD_VERSION="+dev+${BRANCH}"
         DATE="$(date +%y.%m.%d)"
 esac
 
