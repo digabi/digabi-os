@@ -5,7 +5,7 @@ Standards-Version: 3.9.2
 
 Package: digabi-dev
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: kernel-package, gcc-4.7-plugin-dev, build-essential,
+Depends: kernel-package, gcc-4.8-plugin-dev, build-essential,
  live-build, git, equivs, devscripts, digabi-common, apt-file, 
  libncurses5-dev
 Recommends: reprepro, piuparts, apt-cacher-ng
