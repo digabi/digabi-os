@@ -1,3 +1,9 @@
+digabi-common (1.0.5) stable; urgency=low
+
+  * Install GPG key using digabi-repository package.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 20 Jan 2014 19:18:12 +0200
+
 digabi-common (1.0.4) stable; urgency=low
 
   * Added support for getting Digabi Live version.
