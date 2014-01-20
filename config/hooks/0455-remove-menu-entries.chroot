@@ -9,7 +9,7 @@ do
 	FILE="/usr/share/applications/${f}.desktop"
 	if [ -f "${FILE}" ]
 	then
-		if [ grep -q "^Hidden" "${FILE}" ]
+		if [ $(grep -q "^Hidden" "${FILE}") ]
 		then
 			sed -i 's/^(Hidden\s*=\s*\).*$/\1true/' "${FILE}"
 		else
