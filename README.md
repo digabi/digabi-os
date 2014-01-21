@@ -1,12 +1,14 @@
 Digabi Live (Live-Linux)
 ================================
-TL;DR Sources for Digabi Live, a Live-Linux preview, created by The Matriculation Examination Board of Finland.
+TL;DR Sources for Digabi Live, a Live-Linux preview, created by The 
+Matriculation Examination Board of Finland.
 
 
 ## Goals
 Live system goals:
 
- * prevent cheating (using forbidden materials, communication w/ other students, using internet when forbidden)
+ * prevent cheating (using forbidden materials, communication w/ other 
+  students, using internet when forbidden)
  * provide solid system for attending the exam
 
 
@@ -30,7 +32,7 @@ Our images are published via [SourceForge](http://sourceforge.net/projects/digab
 
 
 ## Requirements for build system
- * [Debian](http://www.debian.org/) 7.0 (wheezy)
+ * [Debian](http://www.debian.org/) 8.0 (jessie)
  * packages: `live-build, build-essential, kernel-package, apt-cacher-ng` (for full list: see `doc/INSTALL.md`)
 
 
@@ -39,10 +41,20 @@ See `doc/*.md`.
 
 
 ## Disclaimer
-The current version of the Matriculation Examination Board's exam operating system aims to demonstrate the exam execution environment. The Matriculation Examination Board reserves the right to revise the exam operating system without prior notice.  As this is solely a test version, the final product may be different.
+The current version of the Matriculation Examination Board's exam 
+operating system aims to demonstrate the exam execution environment. 
+The Matriculation Examination Board reserves the right to revise the 
+exam operating system without prior notice.  As this is solely a test 
+version, the final product may be different.
 
-The operating system is designed so that it will not make modifications to the workstation. All testing is done at one's own risk.
+The operating system is designed so that it will not make modifications 
+to the workstation. All testing is done at one's own risk.
 
 
 ## License
-This product is based on Debian 7.0 (wheezy), and includes software w/ various licenses. For licensing information, see [Debian License information ](http://www.debian.org/legal/licenses/). Work done by MEB is licensed under GPLv3, except MEB logo (provided by `digabi-customization` package), and when otherwise noted. Content in `gh-pages` branch has its own licenses.
+This product is based on upcoming Debian 8.0 (jessie), and includes 
+software w/ various licenses. For licensing information, see [Debian 
+License information ](http://www.debian.org/legal/licenses/). Work done 
+by MEB is licensed under GPLv3, except MEB logo (provided by 
+`digabi-customization` package), and when otherwise noted. Content in 
+`gh-pages` branch has its own licenses.
