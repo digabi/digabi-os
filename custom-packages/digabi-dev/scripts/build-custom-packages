@@ -17,10 +17,10 @@ cd "${CUSTOM_PACKAGE_DIR}"
 
 for pkg in `ls`
 do
-    if [ -d "${pkg}" ] && [ -f "${pkg}/debian/control" ]
+    if [ -d "${pkg}" ]
     then
         cd "${pkg}"
-        equivs-build debian/control
+        digabi build-package
         mv *.deb ..
         cd ..
     fi
