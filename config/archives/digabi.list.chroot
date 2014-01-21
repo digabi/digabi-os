@@ -1,1 +1,4 @@
-deb http://digabi.fi/debian/ jessie main contrib non-free
+# Digabi APT repository
+# <http://digabi.fi/>
+
+deb http://digabi.fi/debian jessie main contrib non-free
