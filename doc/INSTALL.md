@@ -23,7 +23,7 @@ Otherwise, use GitHub clone:
 ## Install required packages (for development)
 
     # Add Digabi APT repository:
-    echo "deb http://digabi.fi/debian/ wheezy main" >/etc/apt/sources.list.d/digabi.list
+    echo "deb http://digabi.fi/debian/ jessie main contrib non-free" >/etc/apt/sources.list.d/digabi.list
     # Fetch Digabi GPG key from keyserver:
     apt-key add --keyserver hkp://keyserver.ubuntu.com:80 0xFFFFFFFF
     # Update package lists
