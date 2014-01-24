@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+if [ -f "/lib/live/config/1090-policykit" ]
+then
+	rm "/lib/live/config/1090-policykit"
+fi
