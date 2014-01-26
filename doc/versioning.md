@@ -22,3 +22,16 @@ Since December 2013, new versioning scheme was introduced. Follows Ubuntu patter
 
  - 13.12 Extinct Western Black Rhinoceros
  - 14.01
+
+Since 14.01.XX version number has been available in .ISO images, file 
+`/etc/digabi-version`. In terminal you can use command `digabi 
+version` to check version number.
+
+Currently the full format of .ISO image versions is
+
+    v14.01.21+dev-e566cec_20140121111949
+
+where `14.01.21` is the compilation date, in this example 21th of 
+January  2014. `+dev` is the git branch in which compilation was made. 
+No branch, if built from `master`. `e566cec` is the git commit from which this image 
+has been built `20140121111949` is timestamp, when build was started.
