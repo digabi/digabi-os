@@ -34,7 +34,7 @@ Our images are published via [SourceForge](http://sourceforge.net/projects/digab
 ## Requirements for build system
  * [Debian](http://www.debian.org/) 8.0 (jessie)
  * packages: `live-build, build-essential, kernel-package, apt-cacher-ng` (for full list: see `doc/INSTALL.md`)
-
+ * you may use [Digabi Buildbox](http://sourceforge.net/projects/digabi/files/tools), VirtualBox machine image for build environment. You probably want to run `sudo apt-get update && sudo apt-get dist-upgrade` after first run
 
 ## Documentation
 See `doc/*.md`.
