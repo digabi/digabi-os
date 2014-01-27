@@ -24,8 +24,14 @@ Otherwise, use GitHub clone:
 
     # Add Digabi APT repository:
     echo "deb http://digabi.fi/debian/ jessie main contrib non-free" >/etc/apt/sources.list.d/digabi.list
-    # Fetch Digabi GPG key from keyserver:
-    apt-key add --keyserver hkp://keyserver.ubuntu.com:80 0xFFFFFFFF
+    # Fetch Digabi GPG key:
+    # pub   4096R/9D3D06EE 2013-05-23 [expires: 2016-01-20]
+    #       Key fingerprint = 91AE C10B CEF8 EF27 41CB  B886 20F1 4706 9D3D 06EE
+    # uid                  Ylioppilastutkintolautakunta / Digabi (Signing key for Digabi repository) <digabi@ylioppilastutkinto.fi>
+    # sub   4096R/3578D7AF 2013-05-23 [expires: 2014-05-23]      
+
+    wget -O digabi.asc https://digabi.fi/s/digabi.asc
+    apt-key add digabi.asc
     # Update package lists
     apt-get update
     # Install required tools
