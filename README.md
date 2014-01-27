@@ -12,8 +12,21 @@ Live system goals:
  * provide solid system for attending the exam
 
 
-## Howto
-Assuming you have required packages installed (see below), building new image is quite easy:
+## Documentation
+For documentation, see `doc/*.md`. Manual for `live-build` toolset: 
+[Debian Live Manual](http://live.debian.net/manual/3.x/).
+
+### Requirements for build system
+ * [Debian](http://www.debian.org/) 8.0 (jessie)
+ * for required packages, see file 
+ `custom-packages/digabi-dev/debian/control` (especially lines Depends, 
+ Recommends)
+ * you may use [Digabi Buildbox](http://sourceforge.net/projects/digabi/files/tools), VirtualBox machine image for build environment. You probably want to run `sudo apt-get update && sudo apt-get dist-upgrade` after first run
+
+
+### How to build
+Assuming you have required packages installed (see above), building new 
+image is quite easy:
 
     git clone https://github.com/digabi/digabi-live.git
     cd digabi-live
@@ -22,23 +35,6 @@ Assuming you have required packages installed (see below), building new image is
 After building, image can be found in `dist/` directory.
 
 Our images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
-
-For instructions on using `live-build`, see [Debian Live Manual](http://live.debian.net/manual/3.x/)
-
-## Contact
- * [The Matriculation Examination Board of Finland](http://www.ylioppilastutkinto.fi/), PB50, 00581 Helsinki, Finland
- * Project website: [digabi.fi](http://digabi.fi/)
- * [github.com/digabi/digabi-live](https://github.com/digabi/digabi-live)
- * email: [digabi@ylioppilastutkinto.fi](mailto:digabi@ylioppilastutkinto.fi)
-
-
-## Requirements for build system
- * [Debian](http://www.debian.org/) 8.0 (jessie)
- * packages: `live-build, build-essential, kernel-package, apt-cacher-ng` (for full list: see `doc/INSTALL.md`)
- * you may use [Digabi Buildbox](http://sourceforge.net/projects/digabi/files/tools), VirtualBox machine image for build environment. You probably want to run `sudo apt-get update && sudo apt-get dist-upgrade` after first run
-
-## Documentation
-See `doc/*.md`.
 
 
 ## Disclaimer
@@ -59,3 +55,10 @@ License information ](http://www.debian.org/legal/licenses/). Work done
 by MEB is licensed under GPLv3, except MEB logo (provided by 
 `digabi-customization` package), and when otherwise noted. Content in 
 `gh-pages` branch has its own licenses.
+
+
+## Contact
+ * [The Matriculation Examination Board of Finland](http://www.ylioppilastutkinto.fi/), PB50, 00581 Helsinki, Finland
+ * Project website: [digabi.fi](http://digabi.fi/)
+ * [github.com/digabi/digabi-live](https://github.com/digabi/digabi-live)
+ * email: [digabi@ylioppilastutkinto.fi](mailto:digabi@ylioppilastutkinto.fi)
