@@ -10,3 +10,9 @@ say Disclaimer
 say The current version of the Matriculation Examination Board's exam operating system aims to demonstrate the exam execution environment. The Matriculation Examination Board reserves the right to revise the exam operating system without prior notice.  As this is solely a test version, the final product may be different.
 say The operating system is designed so that it will not make modifications to the workstation. All testing is done at one's own risk.
 
+say Освобождение от ответственности
+
+say Тестовая версия операционной системы Комиссии выпускных экзаменов Финляндии предназначена для тестировании и демонстрации электронного студенческого экзамена. Комиссия выпускных экзаменов Финляндии может вносить во тестовую версию операционной системы изменения без предварительного уведомления. Тестовая версия операционной системы не обьязательно такая окончательно. Операционная система разработана таким образом, что она не делает никаких изменений в компьютер.
+
+say Тестирование операционной системы на собственный риск пользователь.
+
