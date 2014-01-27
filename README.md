@@ -23,6 +23,7 @@ After building, image can be found in `dist/` directory.
 
 Our images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
 
+For instructions on using `live-build`, see [Debian Live Manual](http://live.debian.net/manual/3.x/)
 
 ## Contact
  * [The Matriculation Examination Board of Finland](http://www.ylioppilastutkinto.fi/), PB50, 00581 Helsinki, Finland
