@@ -1,7 +1,8 @@
 Digabi Live (Live-Linux)
 ================================
 TL;DR Sources for Digabi Live, a Live-Linux preview, created by The 
-Matriculation Examination Board of Finland.
+Matriculation Examination Board of Finland (In Finnish: 
+[Ylioppilastutkintolautakunta](http://www.ylioppilastutkinto.fi/)).
 
 
 ## Goals
