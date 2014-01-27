@@ -6,7 +6,9 @@ If you want to login:
  username: digabi
  password: live
 
-Having problems? Tweet your problem using hashtag #digabi (you may include pictures).
+Having problems? Tweet your problem using hashtag #digabi (you may 
+include pictures). Or, file an issue at 
+<https://github.com/digabi/digabi-live/issues>.
 
 If you want to return to the graphical user interface, try pressing CTRL+ALT+F8 (or CTRL+ALT+F7).
 
