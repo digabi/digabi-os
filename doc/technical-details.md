@@ -20,4 +20,4 @@ Build environment is Debian 7.0.
 | Network    | ethernet, IEEE802.11a/b/g/n                  |
 | Sound      | ..                                           |
 
-For official specifications, see http://ylioppilastutkinto.fi/fi/maaraykset/sahkoinenylioppilastutkinto/ (in Finnish).
+For official specifications, see http://www.ylioppilastutkinto.fi/fi/ylioppilastutkinto/yleiset-maaraykset-ja-ohjeet (in Finnish).
