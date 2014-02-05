@@ -2,9 +2,7 @@
 
 set -e
 
-#BUILD_VERSION="${1}"
-#BUILD_VERSION="${BUILD_VERSION:=dev}"
-NOGIT="${2}"
+SPECIAL="${1}"
 BRANCH="$(git branch |sed -n '/\* /s///p')"
 
 case "${BRANCH}" in
@@ -22,13 +20,18 @@ case "${BRANCH}" in
 esac
 
 TIME="_$(date +%Y%m%d%H%M%S)"
+GIT_VERSION="-$(git rev-parse --short HEAD)"
 
-if [ -z "${NOGIT}" ]
-then
-    GIT_VERSION="-$(git rev-parse --short HEAD)"
-else
-    GIT_VERSION=""
-fi
+case "${SPECIAL}" in
+    nogit)
+        GIT_VERSION=""
+	;;
+    notime)
+	TIME=""
+	;;
+    *)
+	;;
+esac
 
 if [ -f "$(dirname $0)/../.ytl" ]
 then
