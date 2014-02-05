@@ -28,7 +28,7 @@ DISTRIBUTION="jessie"
 REPOSITORY="http://ftp.fi.debian.org/debian/"
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
-ISO_VOLUME="digabi-live-$(../scripts/version.helper)"
+ISO_VOLUME="digabi-live-$(./scripts/version.helper)"
 
 if [ -z "${APT_PROXY}" ]
 then
