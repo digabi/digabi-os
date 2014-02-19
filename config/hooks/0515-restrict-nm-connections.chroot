@@ -1,5 +1,5 @@
 #!/bin/sh
-set +e
+set -e
 
 # Restrict access to NetworkManager connections
 
@@ -8,6 +8,6 @@ CONFIG_PATH="/etc/NetworkManager/system-connections"
 if [ -d "${CONFIG_PATH}" ]
 then
     echo "I: Limit access to NetworkManager configurations..."
-    chown -f root:root "${CONFIG_PATH}/*"
-    chmod -f 0600 "${CONFIG_PATH}/*"
+    find "${CONFIG_PATH}" -type f -exec chown root:root {} \;
+    find "${CONFIG_PATH}" -type f -exec chmod 0600 {} \;
 fi
