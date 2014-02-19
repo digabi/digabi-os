@@ -1,0 +1,9 @@
+# bash completions for digabi command (provided by digabi-common)
+
+_digabi() {
+	local cur
+	local cmds=("/usr/lib/digabi/scripts/$2"*)
+	[[ -e ${cmds[0]} ]] && COMPREPLY=( "${cmds[@]##*/}" )
+}
+
+complete -F _digabi digabi
