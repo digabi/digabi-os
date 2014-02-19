@@ -53,3 +53,5 @@ config/includes.chroot/opt/sw
 config/includes.chroot/etc/skel
 
 .ytl
+
+local/live-build

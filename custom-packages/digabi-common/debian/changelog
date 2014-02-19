@@ -1,3 +1,9 @@
+digabi-common (1.1.0) stable; urgency=low
+
+  * Added bash_completion.d script for digabi command.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 19 Feb 2014 14:25:26 +0200
+
 digabi-common (1.0.5) stable; urgency=low
 
   * Install GPG key using digabi-repository package.

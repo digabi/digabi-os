@@ -1,0 +1,8 @@
+# bash completions for digabi command (provided by digabi-common)
+
+_digabi() {
+	local cur
+	COMPREPLY=( $(compgen -W "$(ls /usr/lib/digabi/scripts/)" -- $cur) )
+}
+
+complete -F _digabi digabi
