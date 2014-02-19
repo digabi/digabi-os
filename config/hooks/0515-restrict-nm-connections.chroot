@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+# Restrict access to NetworkManager connections
+
+chown root:root /etc/NetworkManager/system-connections/*
+chmod 0600 /etc/NetworkManager/system-connections/*
