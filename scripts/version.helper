@@ -2,36 +2,45 @@
 
 set -e
 
-SPECIAL="${1}"
+SPECIAL="${@}"
 BRANCH="$(git branch |sed -n '/\* /s///p')"
 
 case "${BRANCH}" in
     dev|dev*)
         BUILD_VERSION="+dev"
-        DATE="$(date +%y.%m.%d)"
+        DATE="v$(date +%y.%m.%d)"
         ;;
     dist*|master*)
         BUILD_VERSION=""
-        DATE="$(date +%y.%m)"
+        DATE="v$(date +%y.%m)"
         ;;
     *)
         BUILD_VERSION="+dev+${BRANCH}"
-        DATE="$(date +%y.%m.%d)"
+        DATE="v$(date +%y.%m.%d)"
 esac
 
 TIME="_$(date +%Y%m%d%H%M%S)"
 GIT_VERSION="-$(git rev-parse --short HEAD)"
 
-case "${SPECIAL}" in
-    nogit)
-        GIT_VERSION=""
-	;;
-    notime)
-	TIME=""
-	;;
-    *)
-	;;
-esac
+for s in ${SPECIAL}
+do
+	case "${s}" in
+	    shortver)
+		DATE="$(date +%y%m%d)"
+		;;
+	    nobuild)
+		BUILD_VERSION="+${BRANCH}"
+		;;
+	    nogit)
+	        GIT_VERSION=""
+		;;
+	    notime)
+		TIME=""
+		;;
+	    *)
+		;;
+	esac
+done
 
 if [ -f "$(dirname $0)/../.ytl" ]
 then
@@ -40,5 +49,5 @@ else
     OFFICIAL="u"
 fi
 
-VERSION="v${DATE}${BUILD_VERSION}${GIT_VERSION}${TIME}${OFFICIAL}"
+VERSION="${DATE}${BUILD_VERSION}${GIT_VERSION}${TIME}${OFFICIAL}"
 echo ${VERSION}
