@@ -2,8 +2,7 @@
 
 _digabi() {
 	local cur
-	local cmds=("/usr/lib/digabi/scripts/$2"*)
-	[[ -e ${cmds[0]} ]] && COMPREPLY=( "${cmds[@]##*/}" )
+	COMPREPLY=( $(compgen -W "$(ls /usr/lib/digabi/scripts/)" -- $cur) )
 }
 
 complete -F _digabi digabi
