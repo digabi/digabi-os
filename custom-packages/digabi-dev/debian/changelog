@@ -1,8 +1,14 @@
-digabi-dev (3.6.12) UNRELEASED; urgency=low
+digabi-dev (3.7.0) stable; urgency=low
+
+  * Added dumpet to package recommends. Allows dumping ISO image contents, ie. for debugging.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Feb 2014 18:59:20 +0200
+
+digabi-dev (3.6.12) stable; urgency=low
 
   * Updated build scripts for custom packages.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 21 Jan 2014 10:43:02 +0200
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Feb 2014 18:58:38 +0200
 
 digabi-dev (3.6.11) stable; urgency=low
 
