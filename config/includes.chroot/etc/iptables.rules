@@ -8,9 +8,11 @@
 -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -m comment --comment "Allow existing connections." -j ACCEPT
 -A INPUT -d 127.0.0.0/8 -i lo -p tcp -m tcp --dport 1025:65535 -m comment --comment "Allow local connections to non-privileged ports." -j ACCEPT
 -A INPUT -m comment --comment "Custom Digabi rules." -j digabi-input
+-A INPUT -m comment --comment "Log other traffic, before dropping it." -m limit --limit 2/min -j LOG
 -A OUTPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 -A OUTPUT -p udp -m udp --sport 68 --dport 67 -m comment --comment "Allow DHCP (client-to-server)." -j ACCEPT
 -A OUTPUT -m comment --comment "Custom Digabi rules." -j digabi-output
+-A OUTPUT -m comment --comment "Log other traffic, before dropping it." -m limit --limit 2/min -j LOG
 -A digabi-input -p tcp -m tcp --dport 22 -j ACCEPT
 -A digabi-input -j RETURN
 -A digabi-output -p udp -m udp --dport 53 -j ACCEPT
