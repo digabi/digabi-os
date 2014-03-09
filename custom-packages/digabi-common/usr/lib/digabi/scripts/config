@@ -2,6 +2,16 @@
 
 set -e
 
+# Handle Digabi configuration files
+
+# Config files: /etc/digabi/* (global), ~/.config/digabi/* (user)
+# Variable structure: APPNAME_KEYNAME, example: "BROWSER_HOMEPAGE"
+# File naming: appname, example: "browser"
+# File format: APPNAME_KEYNAME=VALUE, example: BROWSER_HOMEPAGE="http://digabi.fi/"
+
+# Copyright 2014 Ylioppilastutkintolautakunta
+# Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+
 COMMAND="$1"
 if [ "$2" = "--global" ]
 then
@@ -11,8 +21,6 @@ then
 else
     KEY="$2"
 fi
-
-# TODO: If --global, use /etc/digabi as configuration path, else use ~/.digabi
 
 info() {
     echo "I: $@"
@@ -43,7 +51,7 @@ KEY="$(echo ${KEY} |tr '[:lower:]' '[:upper:]' |sed 's/-/_/g')"
 
 if [ -z "${GLOBAL}" ]
 then
-    CONFIG_DIR="${HOME}/.digabi"
+    CONFIG_DIR="${XDG_CONFIG_HOME:=${HOME}/.config}/digabi"
 else
     CONFIG_DIR="/etc/digabi/.digabi"
 fi
