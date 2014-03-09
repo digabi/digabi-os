@@ -32,7 +32,7 @@ for s in ${SPECIAL}
 do
 	case "${s}" in
 	    shortver)
-		DATE="$(date +%y%m%d)"
+		DATE="$(echo ${DATE} |sed 's/\.//g')"
 		;;
 	    nobuild)
 		BUILD_VERSION="+${BRANCH}"
