@@ -70,9 +70,11 @@ CONFIG_FILE="${CONFIG_DIR}/${APPNAME}"
 
 case "${COMMAND}" in
     set)
-        # TODO: Set value
+        # TODO: Set value: if value exists in file, replace it ; otherwise append to file
         VALUE="$3"
         info "Set ${KEY}=${VALUE} to ${CONFIG_FILE}."
+        error "Not implemented!"
+        exit 1
         ;;
     get)
         # TODO: Get value (or return default, if specified) ; if using user config, no default, use global
