@@ -8,4 +8,10 @@ insert_final_newline = true
 indent_style = space
 indent_size = 4
 
+[control]
+indent_style = space
+indent_size = 1
 
+[*.md]
+indent_style = space
+indent_size = 4
