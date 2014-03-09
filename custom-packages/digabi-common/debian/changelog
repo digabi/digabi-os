@@ -1,3 +1,9 @@
+digabi-common (1.2.0) stable; urgency=medium
+
+  * Added command `digabi config`.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sun, 09 Mar 2014 17:36:53 +0200
+
 digabi-common (1.1.0) stable; urgency=low
 
   * Added bash_completion.d script for digabi command.
