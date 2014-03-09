@@ -53,7 +53,16 @@ if [ -z "${GLOBAL}" ]
 then
     CONFIG_DIR="${XDG_CONFIG_HOME:=${HOME}/.config}/digabi"
 else
-    CONFIG_DIR="/etc/digabi/.digabi"
+    CONFIG_DIR="/etc/digabi"
+fi
+
+# If CONFIG_DIR doesn't exist, create it
+if [ ! -d "${CONFIG_DIR}" ]
+then
+    if [ -w "$(dirname ${CONFIG_DIR})" ]
+    then
+        mkdir -p "${CONFIG_DIR}"
+    fi
 fi
 
 APPNAME="$(echo ${KEY} |cut -d_ -f1 |tr '[:upper:]' '[:lower:]')"
@@ -62,9 +71,13 @@ CONFIG_FILE="${CONFIG_DIR}/${APPNAME}"
 case "${COMMAND}" in
     set)
         # TODO: Set value
+        VALUE="$3"
+        info "Set ${KEY}=${VALUE} to ${CONFIG_FILE}."
         ;;
     get)
-        # TODO: Get value (or return default, if specified)
+        # TODO: Get value (or return default, if specified) ; if using user config, no default, use global
+        DEFAULT="$3"
+        info "Get ${KEY} from ${CONFIG_FILE} (default: ${DEFAULT})."
         ;;
     conf-file)
         echo "${CONFIG_FILE}"
