@@ -9,7 +9,7 @@ Depends: kernel-package, gcc-4.8-plugin-dev, build-essential,
  live-build, git, equivs, devscripts, digabi-common, apt-file, 
  libncurses5-dev, packaging-dev, python-six, editorconfig
 Recommends: reprepro, piuparts, apt-cacher-ng
-Suggests: pastebinit
+Suggests: pastebinit, vim, vim-scripts
 Architecture: all
 Changelog: debian/changelog
 Files: scripts/prepare-linux-source /usr/lib/digabi
