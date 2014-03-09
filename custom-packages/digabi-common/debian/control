@@ -10,6 +10,7 @@ Changelog: debian/changelog
 Depends: digabi-repository
 Files: usr/bin/digabi /
  usr/lib/digabi/scripts/version /
+ usr/lib/digabi/scripts/config /
  etc/bash_completion.d/digabi /
 Description: Common files for Digabi
  Currently only provides digabi -command

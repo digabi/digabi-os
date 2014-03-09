@@ -1,14 +1,37 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
-COMMAND="$1"
-KEY="$2"
+# Handle Digabi configuration files
 
-# TODO: If --global, use /etc/digabi as configuration path, else use ~/.digabi
+# Config files: /etc/digabi/* (global), ~/.config/digabi/* (user)
+# Variable structure: APPNAME_KEYNAME, example: "BROWSER_HOMEPAGE"
+# File naming: appname, example: "browser"
+# File format: APPNAME_KEYNAME=VALUE, example: BROWSER_HOMEPAGE="http://digabi.fi/"
+
+# Copyright 2014 Ylioppilastutkintolautakunta
+# Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+
+COMMAND="$1"
+if [ "$2" = "--global" ]
+then
+    GLOBAL="true"
+    KEY="$3"
+    shift
+else
+    KEY="$2"
+fi
+
+info() {
+    echo "I: $@"
+}
+
+error() {
+    echo "E: $@"
+}
 
 usage() {
-    echo "Usage: $0 {get|set} <key> [value]"
+    echo "Usage: $0 {get|set|source|conf-file|show} <key> [value]"
 }
 
 if [ -z "${COMMAND}" ]
@@ -24,12 +47,65 @@ then
     usage
     exit 1
 fi
+KEY="$(echo ${KEY} |tr '[:lower:]' '[:upper:]' |sed 's/-/_/g')"
+
+if [ -z "${GLOBAL}" ]
+then
+    CONFIG_DIR="${XDG_CONFIG_HOME:=${HOME}/.config}/digabi"
+else
+    CONFIG_DIR="/etc/digabi"
+fi
+
+# If CONFIG_DIR doesn't exist, create it
+if [ ! -d "${CONFIG_DIR}" ]
+then
+    if [ -w "$(dirname ${CONFIG_DIR})" ]
+    then
+        mkdir -p "${CONFIG_DIR}"
+    fi
+fi
+
+APPNAME="$(echo ${KEY} |cut -d_ -f1 |tr '[:upper:]' '[:lower:]')"
+CONFIG_FILE="${CONFIG_DIR}/${APPNAME}"
 
 case "${COMMAND}" in
     set)
-    
+        # TODO: Set value: if value exists in file, replace it ; otherwise append to file
+        VALUE="$3"
+        info "Set ${KEY}=${VALUE} to ${CONFIG_FILE}."
+        error "Not implemented!"
+        exit 1
         ;;
     get)
+        # TODO: Get value (or return default, if specified) ; if using user config, no default, use global
+        . "${CONFIG_FILE}"
+        if [ -z "${!KEY}" ]
+        then
+            echo "${DEFAULT:=$3}"
+        else
+            echo "${!KEY}"
+        fi
+        ;;
+    conf-file)
+        echo "${CONFIG_FILE}"
+        ;;
+    source)
+        if [ -f "${CONFIG_FILE}" ]
+        then
+            . "${CONFIG_FILE}"
+        else
+            error "Config file not found: ${CONFIG_FILE}."
+            exit 1
+        fi
+        ;;
+    show)
+        if [ -f "${CONFIG_FILE}" ]
+        then
+            cat "${CONFIG_FILE}"
+        else
+            error "Config file not found: ${CONFIG_FILE}."
+            exit 1
+        fi
         ;;
     **)
         echo "Invalid command: ${COMMAND}, exiting..."
