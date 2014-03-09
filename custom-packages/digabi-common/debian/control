@@ -8,8 +8,8 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Architecture: all
 Changelog: debian/changelog
 Depends: digabi-repository
-Files: digabi /usr/bin
- version /usr/lib/digabi/scripts
+Files: usr/bin/digabi /
+ usr/lib/digabi/scripts/version /
  etc/bash_completion.d/digabi /
 Description: Common files for Digabi
  Currently only provides digabi -command
