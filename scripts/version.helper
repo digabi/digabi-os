@@ -13,9 +13,10 @@ case "${BRANCH}" in
     dist*|master*)
         BUILD_VERSION=""
 	TAG="$(git tag -l --contains HEAD)"
-	if [ -z "${TAG}" ]
-		DATE="${TAG}"
+	if [ -n "${TAG}" ]
 	then
+		DATE="${TAG}"
+	else
 	        DATE="v$(date +%y.%m)"
 	fi
         ;;
