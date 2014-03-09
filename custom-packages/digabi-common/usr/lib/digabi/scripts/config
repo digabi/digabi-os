@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+COMMAND="$1"
+KEY="$2"
+
+usage() {
+    echo "Usage: $0 {get|set} <key> [value]"
+}
+
+if [ -z "${COMMAND}" ]
+then
+    echo "Command is missing..."
+    usage
+    exit 1
+fi
+
+if [ -z "${KEY}" ]
+then
+    echo "Key is missing..."
+    usage
+    exit 1
+fi
+
+case "${COMMAND}" in
+    set)
+    
+        ;;
+    get)
+        ;;
+    **)
+        echo "Invalid command: ${COMMAND}, exiting..."
+        exit 1
+esac
