@@ -5,6 +5,8 @@ set -e
 COMMAND="$1"
 KEY="$2"
 
+# TODO: If --global, use /etc/digabi as configuration path, else use ~/.digabi
+
 usage() {
     echo "Usage: $0 {get|set} <key> [value]"
 }
