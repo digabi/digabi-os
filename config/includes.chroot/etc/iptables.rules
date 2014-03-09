@@ -23,7 +23,9 @@
 -A digabi-output -p udp -m udp --dport 53 -j ACCEPT
 -A digabi-output -p tcp -m tcp --dport 8123 -s 127.0.0.0/8 -d 127.0.0.0/8 -m owner --uid-owner dansguardian -j ACCEPT -m comment --comment "Allow proxy access for dansguardian (dansguardian -> proxy)."
 -A digabi-output -p tcp -m tcp --dport 8080 -s 127.0.0.0/8 -d 127.0.0.0/8 -j ACCEPT -m comment --comment "Allow dansguardian access for all users (user -> dansguardian -> proxy)."
--A digabi-output -p tcp -m tcp --dport 80 -m owner --uid-owner proxy -j ACCEPT -m comment --comment "Allow HTTP for user proxy."
--A digabi-output -p tcp -m tcp --dport 443 -m owner --uid-owner proxy -j ACCEPT -m comment --comment "Allow HTTPS for user proxy."
+#-A digabi-output -p tcp -m tcp --dport 80 -m owner --uid-owner proxy -j ACCEPT -m comment --comment "Allow HTTP for user proxy."
+#-A digabi-output -p tcp -m tcp --dport 443 -m owner --uid-owner proxy -j ACCEPT -m comment --comment "Allow HTTPS for user proxy."
+-A digabi-output -p tcp -m tcp --dport 80 -j ACCEPT -m comment --comment "Allow HTTP."
+-A digabi-output -p tcp -m tcp --dport 443 -j ACCEPT -m comment --comment "Allow HTTPS."
 -A digabi-output -j RETURN
 COMMIT
