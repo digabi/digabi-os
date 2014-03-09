@@ -8,7 +8,7 @@ KEY="$2"
 # TODO: If --global, use /etc/digabi as configuration path, else use ~/.digabi
 
 usage() {
-    echo "Usage: $0 {get|set} <key> [value]"
+    echo "Usage: $0 {get|set|source|conf-file|show} <key> [value]"
 }
 
 if [ -z "${COMMAND}" ]
@@ -24,12 +24,33 @@ then
     usage
     exit 1
 fi
+KEY="$(echo ${KEY} |tr '[:lower:]' '[:upper:]' |sed 's/-/_/g')"
+
+if [ -z "${GLOBAL}" ]
+then
+    CONFIG_DIR="${HOME}/.digabi"
+else
+    CONFIG_DIR="/etc/digabi/.digabi"
+fi
+
+APPNAME="$(echo ${KEY} |cut -d_ -f1 |tr '[:upper:]' '[:lower:]')"
+CONFIG_FILE="${CONFIG_DIR}/${APPNAME}"
 
 case "${COMMAND}" in
     set)
-    
+        # TODO: Set value
         ;;
     get)
+        # TODO: Get value (or return default, if specified)
+        ;;
+    conf-file)
+        echo "${CONFIG_FILE}"
+        ;;
+    source)
+        # TODO: Source (. /path/to/file) config file
+        ;;
+    show)
+        # TODO: Show config file
         ;;
     **)
         echo "Invalid command: ${COMMAND}, exiting..."
