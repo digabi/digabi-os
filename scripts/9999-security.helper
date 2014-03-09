@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+# TODO: Run automated auditing for .ISO image
+# TODO: Require that ALL SUID/SGID binaries have been whitelisted
+# TODO: Check for common issues with configuration
+# TODO: Check all user accounts (shells, passwords, ...)
