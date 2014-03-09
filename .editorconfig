@@ -9,7 +9,7 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-[control]
+[{control}]
 indent_style = space
 indent_size = 1
 
@@ -17,6 +17,6 @@ indent_size = 1
 indent_style = space
 indent_size = 4
 
-[Makefile]
+[{Makefile}]
 ident_style = tab
 indent_size = 1
