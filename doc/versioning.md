@@ -21,7 +21,7 @@ First versions, released in Autumn 2013, were numbered as `1.x` and `2.x`.
 Since December 2013, new versioning scheme was introduced. Follows Ubuntu pattern: `(year - 2000).(month).(day)`. See file `scripts/version.helper` for technical details.
 
  - 13.12 Extinct Western Black Rhinoceros
- - 14.01
+ - 14.04
 
 Since 14.01.XX version number has been available in .ISO images, file 
 `/etc/digabi-version`. In terminal you can use command `digabi 
@@ -35,3 +35,22 @@ where `14.01.21` is the compilation date, in this example 21th of
 January  2014. `+dev` is the git branch in which compilation was made. 
 No branch, if built from `master`. `e566cec` is the git commit from which this image 
 has been built `20140121111949` is timestamp, when build was started.
+
+For official releases there is git tag for that commit, and version number is in format
+
+    version_gitcommit_timestamp
+
+For beta releases (experimental, only for testing purposes)
+
+    v14.03b1_abcdef_2014...
+    v14.03b2_abcdee_2014...
+
+For official releases (stable, for end-users, these have cool codenames)
+
+    v14.03_abcdef_20140309120315
+    v14.04_defaaa_2014...
+
+For updates (fixes bugs in release, has no new features)
+
+    v14.03r1_abcdef_2014...
+    v14.03r2_defabc_2014...
