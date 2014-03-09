@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -78,8 +78,13 @@ case "${COMMAND}" in
         ;;
     get)
         # TODO: Get value (or return default, if specified) ; if using user config, no default, use global
-        DEFAULT="$3"
-        info "Get ${KEY} from ${CONFIG_FILE} (default: ${DEFAULT})."
+        . "${CONFIG_FILE}"
+        if [ -z "${!KEY}" ]
+        then
+            echo "${DEFAULT:=$3}"
+        else
+            echo "${!KEY}"
+        fi
         ;;
     conf-file)
         echo "${CONFIG_FILE}"
