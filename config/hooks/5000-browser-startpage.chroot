@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+# Configure browser homepage
+HOMEPAGE="http://demo.digabi.fi/"
+echo "pref(\"browser.startup.homepage\", \"${HOMEPAGE}\");" >>/etc/iceweasel/profile/prefs.js
