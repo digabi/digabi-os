@@ -17,6 +17,6 @@ fi
 
 if [ -f "${LIGHTDM_GTK_CONF}" ]
 then
-	echo "sed -i ..."
+	echo "TODO: sed -i ..."
 	# TODO: [greeter] / background, show-language-selector=true
 fi

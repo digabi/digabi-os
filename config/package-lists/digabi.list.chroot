@@ -36,3 +36,8 @@ wine
 pinta
 gimp
 inkscape
+
+# content filtering
+dansguardian
+# proxy, required by dansguardian
+polipo

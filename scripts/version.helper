@@ -12,7 +12,13 @@ case "${BRANCH}" in
         ;;
     dist*|master*)
         BUILD_VERSION=""
-        DATE="v$(date +%y.%m)"
+	TAG="$(git tag -l --contains HEAD)"
+	if [ -n "${TAG}" ]
+	then
+		DATE="${TAG}"
+	else
+	        DATE="v$(date +%y.%m)"
+	fi
         ;;
     *)
         BUILD_VERSION="+dev+${BRANCH}"

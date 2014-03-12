@@ -55,3 +55,4 @@ config/includes.chroot/etc/skel
 .ytl
 
 local/live-build
+config/root-password
