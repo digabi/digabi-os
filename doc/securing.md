@@ -13,3 +13,4 @@ Securing Digabi Live
  - add script for checking SUID/SGID binaries, require whitelisting (make build fail, if not whitelisted)
  - remove unnecessary packages
  - enable Ninja support
+ - mount /proc w/ hidepid={1|2}
