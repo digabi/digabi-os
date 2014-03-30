@@ -32,6 +32,9 @@ clean:
 bclean:
 	find config -type f -name "*~" -exec rm {} \;
 
+purge:
+	$(ROOT_CMD) $(LIVE_BUILD) clean --all --purge
+
 dist:	clean config build
 	mkdir -p $(TARGET)
 	mv $(ISO_FILE) $(TARGET)/$(FILENAME_PREFIX)_$(VERSION).iso
