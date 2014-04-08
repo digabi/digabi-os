@@ -7,3 +7,6 @@
 [submodule "custom-packages/digabi-buildbox-app"]
 	path = custom-packages/digabi-buildbox-app
 	url = git://github.com/digabi/digabi-buildbox-app.git
+[submodule "custom-packages/digabi-live-extras"]
+	path = custom-packages/digabi-live-extras
+	url = git://github.com/digabi/digabi-live-extras.git
