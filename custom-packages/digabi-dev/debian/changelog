@@ -1,3 +1,9 @@
+digabi-dev (3.7.1) stable; urgency=medium
+
+  * Updated build-package script. Display package name instead of full path.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Apr 2014 15:34:28 +0300
+
 digabi-dev (3.7.0) stable; urgency=low
 
   * Added dumpet to package recommends. Allows dumping ISO image contents, ie. for debugging.
