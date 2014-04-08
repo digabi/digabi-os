@@ -1,3 +1,9 @@
+digabi-customization (2.2) stable; urgency=medium
+
+  * Fixed invalid path to XFCE configuration autostart.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Apr 2014 14:53:04 +0300
+
 digabi-customization (2.1) stable; urgency=low
 
   * Fixed XFCE4 menu icon (now using .svg).
