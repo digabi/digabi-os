@@ -33,10 +33,10 @@ $(CHROOT_PACKAGES):
 	mkdir -p $(CHROOT_PACKAGES)
 	digabi build-custom-packages
 
-	for pkg in $(shell cat config/package-lists/digabi.list.chroot |grep ^digabi |xargs)
-	do
-		mv custom-packages/$(pkg)_*_*.deb $(CHROOT_PACKAGES)/
-	done
+	#for pkg in $(shell cat config/package-lists/digabi.list.chroot |grep ^digabi |xargs)
+	#do
+	#	mv custom-packages/$(pkg)_*_*.deb $(CHROOT_PACKAGES)/
+	#done
 	# TODO: List packages we need (cat config/package-lists/digabi.list.chroot |grep ^digabi |xargs)
 	# TODO: For $pkg in $packages
 	
