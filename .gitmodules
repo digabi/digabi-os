@@ -1,0 +1,3 @@
+[submodule "custom-packages/digabi-feedback"]
+	path = custom-packages/digabi-feedback
+	url = git://github.com/digabi/digabi-feedback.git
