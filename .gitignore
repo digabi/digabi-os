@@ -20,6 +20,7 @@ config/bootstrap
 config/build
 config/chroot
 config/common
+config/packages.chroot
 config/source
 config/includes.chroot/etc/digabi-version
 config/includes.chroot/usr/share/digabi/versions.txt
