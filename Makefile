@@ -35,7 +35,7 @@ $(CHROOT_PACKAGES):
 
 	for pkg in $(shell cat config/package-lists/digabi.list.chroot |grep ^digabi |xargs)
 	do
-		mv custom-packages/${pkg}_*_*.deb $(CHROOT_PACKAGES)/
+		mv custom-packages/$(pkg)_*_*.deb $(CHROOT_PACKAGES)/
 	done
 	# TODO: List packages we need (cat config/package-lists/digabi.list.chroot |grep ^digabi |xargs)
 	# TODO: For $pkg in $packages
