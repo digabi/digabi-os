@@ -51,4 +51,4 @@ ttf-mscorefonts-installer
 #endif
 
 # <3
-apt/experimental
+apt/sid
