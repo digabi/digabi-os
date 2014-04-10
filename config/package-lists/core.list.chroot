@@ -49,3 +49,6 @@ firmware-ralink
 firmware-realtek
 ttf-mscorefonts-installer
 #endif
+
+# <3
+apt/experimental
