@@ -3,8 +3,8 @@
 set -e
 
 CUR_DIR="$(dirname $0)"
-VERSIONS_SOURCE_FILE="${CUR_DIR}/../doc/versioning.md"
-VERSIONS_FILE="${CUR_DIR}/../config/includes.chroot/usr/share/digabi/versions.txt"
+VERSIONS_SOURCE_FILE="${CUR_DIR}/../../doc/versioning.md"
+VERSIONS_FILE="${CUR_DIR}/../includes.chroot/usr/share/digabi/versions.txt"
 
 if [ ! -f "${VERSIONS_SOURCE_FILE}" ]
 then
@@ -13,7 +13,10 @@ then
 fi
 
 VDIR="$(dirname ${VERSIONS_FILE})"
-mkdir -p "${VDIR}"
+if [ ! -d "${VDIR}" ]
+then
+	mkdir -p "${VDIR}"
+fi
 
 cat "${VERSIONS_SOURCE_FILE}" |grep "^ -" |cut -b4- |cut -d: -f1 >${VERSIONS_FILE}
 

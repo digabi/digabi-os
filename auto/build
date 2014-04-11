@@ -19,8 +19,8 @@ esac
 VERSION="$(${PWD}/scripts/version.helper ${BUILD_VERSION})"
 echo "I: Building version ${VERSION}..."
 
-PRE_BUILD_HOOKS="$(ls ${PWD}/scripts/*.pre-build)"
-POST_BUILD_HOOKS="$(ls ${PWD}/scripts/*.post-build)"
+PRE_BUILD_HOOKS="$(ls ${PWD}/config/hooks/*.pre-build)"
+POST_BUILD_HOOKS="$(ls ${PWD}/config/hooks/*.post-build)"
 
 if [ -n "${PRE_BUILD_HOOKS}" ]
 then
