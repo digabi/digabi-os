@@ -1,3 +1,9 @@
+digabi-backgrounds (1.0+digabi1) unstable; urgency=medium
+
+  * Rebuild.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Apr 2014 18:23:36 +0300
+
 digabi-backgrounds (1.0) unstable; urgency=low
 
   * Initial release.
