@@ -1,3 +1,9 @@
+digabi-common (1.2.1) stable; urgency=medium
+
+  * Moved digabi-repository from Depends to Suggests.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Apr 2014 19:25:26 +0300
+
 digabi-common (1.2.0) stable; urgency=medium
 
   * Added command `digabi config`.
