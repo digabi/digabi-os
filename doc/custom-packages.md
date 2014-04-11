@@ -2,6 +2,14 @@ Custom Debian Packages
 ====================================
 
 
+## Configure apt-cacher-ng
+To use apt-cacher-ng as proxy, you must add following config to `/etc/apt-cacher-ng/digabi.conf`:
+
+    Remap-digabi: digabi.fi
+    PassThroughPattern: digabi\.fi:443$
+
+After adding config, restart apt-cacher-ng: `service apt-cacher-ng restart`.
+
 
 ## Install required packages
     apt-get install equivs
