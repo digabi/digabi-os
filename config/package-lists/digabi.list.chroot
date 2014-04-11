@@ -1,6 +1,7 @@
 # Digabi customizations (apps, ui)
 
 apt-transport-https
+ca-certificates
 
 # Digabi custom UI
 digabi-customization
