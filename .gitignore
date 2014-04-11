@@ -13,6 +13,7 @@ build.log
 cache/
 
 chroot/
+chroot.files
 chroot.packages.*
 
 config/binary
