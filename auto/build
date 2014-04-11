@@ -19,14 +19,15 @@ esac
 VERSION="$(${PWD}/scripts/version.helper ${BUILD_VERSION})"
 echo "I: Building version ${VERSION}..."
 
-BUILD_HOOKS="$(ls ${PWD}/scripts/*.build)"
+PRE_BUILD_HOOKS="$(ls ${PWD}/scripts/*.pre-build)"
+POST_BUILD_HOOKS="$(ls ${PWD}/scripts/*.post-build)"
 
-if [ -n "${BUILD_HOOKS}" ]
+if [ -n "${PRE_BUILD_HOOKS}" ]
 then
-    echo "I: Executing build hooks..."
+    echo "I: Executing pre-build hooks..."
 fi
 
-for hook in ${BUILD_HOOKS}
+for hook in ${PRE_BUILD_HOOKS}
 do
     hook_base="$(basename ${hook})"
     if [ -x "${hook}" ]
@@ -39,3 +40,20 @@ do
 done
 
 lb build noauto "${@}" 2>&1
+
+if [ -n "${POST_BUILD_HOOKS}" ]
+then
+    echo "I: Executing post-build hooks..."
+fi
+
+for hook in ${POST_BUILD_HOOKS}
+do
+    hook_base="$(basename ${hook})"
+    if [ -x "${hook}" ]
+    then
+        echo "I: Executing hook ${hook_base}..."
+        ${hook}
+    else
+        echo "W: Non-executable hook ${hook_base}."
+    fi
+done
