@@ -5,6 +5,12 @@ apt-transport-https
 # Digabi custom UI
 digabi-customization
 
+# Feedback client
+# see details: <https://digabi.fi/tekniikka/digabi-os/laitteistotuki/>
+# privacy policy: <https://digabi.fi/tekniikka/digabi-os/rekisteriseloste/>)
+# source: <https://github.com/digabi/digabi-feedback>
+digabi-feedback
+
 # LibreOffice office suite
 libreoffice
 libreoffice-gtk
