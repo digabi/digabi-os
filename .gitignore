@@ -59,3 +59,11 @@ config/includes.chroot/etc/skel
 
 local/live-build
 config/root-password
+
+# After live-build 4.x
+live-image-*.contents
+live-image-*.files
+live-image-*.hybrid.iso
+live-image-*.hybrid.iso.zsync
+live-image-*.packages
+
