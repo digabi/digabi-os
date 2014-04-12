@@ -1,3 +1,9 @@
+digabi-dev (3.8.0) stable; urgency=medium
+
+  * Added configuration for apt-cacher-ng: allow access to digabi.fi repositories via HTTPS.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 12 Apr 2014 23:50:11 +0300
+
 digabi-dev (3.7.0) stable; urgency=low
 
   * Added dumpet to package recommends. Allows dumping ISO image contents, ie. for debugging.
