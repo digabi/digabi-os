@@ -11,35 +11,42 @@ Might also work on Ubuntu, but not tested. There will also be a Vagrant box that
 
 
 ## Checkout config from git
-If you're Digabi project developer (you have access to sensori.digabi.fi):
+Clone from our GitHub repository:
 
-    git clone git@sensori.digabi.fi:digabi-live.git
+    git clone https://github.com/digabi/digabi-live.git digabi-live
 
-Otherwise, use GitHub clone:
+Fetch submodules
 
-    git clone https://github.com/digabi/digabi-live.git
-
+    cd digabi-live
+    git submodule init
+    git submodule update
 
 ## Install required packages (for development)
 
-    # Add Digabi APT repository:
-    echo "deb http://digabi.fi/debian/ jessie main contrib non-free" >/etc/apt/sources.list.d/digabi.list
-    # Fetch Digabi GPG key:
+Install HTTPS support for APT (our repositories are served only via HTTPS).
+
+    apt-get -y install apt-transport-https
+
+Add Digabi APT repository:
+
+    echo "deb https://digabi.fi/debian/ jessie main contrib non-free" >/etc/apt/sources.list.d/digabi.list
+
+Fetch Digabi GPG key:
+
     # pub   4096R/9D3D06EE 2013-05-23 [expires: 2016-01-20]
     #       Key fingerprint = 91AE C10B CEF8 EF27 41CB  B886 20F1 4706 9D3D 06EE
     # uid                  Ylioppilastutkintolautakunta / Digabi (Signing key for Digabi repository) <digabi@ylioppilastutkinto.fi>
     # sub   4096R/3578D7AF 2013-05-23 [expires: 2014-05-23]      
 
-    wget -O digabi.asc https://digabi.fi/s/digabi.asc
-    apt-key add digabi.asc
-    # Update package lists
-    apt-get update
-    # Install required tools
-    apt-get install digabi-dev
+    wget -O- https://digabi.fi/debian/digabi.asc |sudo apt-key add -
 
-    OR:
-    # Install required packages manually (might not be up-to-date, see correct list from digabi-dev package)
-    apt-get install live-build build-essential kernel-package apt-cacher-ng
+Update package lists
+
+    apt-get update
+
+Install required tools
+
+    apt-get install digabi-dev
 
 
 ## Preparation
