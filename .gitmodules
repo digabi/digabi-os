@@ -1,0 +1,12 @@
+[submodule "custom-packages/digabi-feedback"]
+	path = custom-packages/digabi-feedback
+	url = git://github.com/digabi/digabi-feedback.git
+[submodule "custom-packages/digabi-buildbox"]
+	path = custom-packages/digabi-buildbox
+	url = git://github.com/digabi/digabi-buildbox.git
+[submodule "custom-packages/digabi-buildbox-app"]
+	path = custom-packages/digabi-buildbox-app
+	url = git://github.com/digabi/digabi-buildbox-app.git
+[submodule "custom-packages/digabi-live-extras"]
+	path = custom-packages/digabi-live-extras
+	url = git://github.com/digabi/digabi-live-extras.git

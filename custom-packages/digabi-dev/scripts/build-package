@@ -7,7 +7,7 @@ set -e
 
 if [ -f "debian/control" ]
 then
-    echo "I: Building package. ($PWD)"
+    echo "I: Building package ($(basename ${PWD}))."
 	equivs-build debian/control 1>/dev/null
 else
 	echo "E: Package control file debian/control not found. ($PWD)"
