@@ -13,7 +13,9 @@ build.log
 cache/
 
 chroot/
+chroot.files
 chroot.packages.*
+chroot.tmp
 
 config/binary
 config/bootstrap

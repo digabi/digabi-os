@@ -1,0 +1,13 @@
+Section: misc
+Priority: optional
+Homepage: https://digabi.fi/os
+Standards-Version: 3.9.2
+
+Package: digabi-live
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Architecture: all
+Changelog: debian/changelog
+Depends: digabi-common, apt-transport-https, ca-certificates
+Suggests: digabi-repository
+Description: Common files for Digabi Live
+ TBD

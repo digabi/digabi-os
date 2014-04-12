@@ -1,9 +1,16 @@
 # Digabi customizations (apps, ui)
 
-apt-transport-https
+# digabi-live
+digabi-live
 
 # Digabi custom UI
 digabi-customization
+
+# Feedback client
+# see details: <https://digabi.fi/tekniikka/digabi-os/laitteistotuki/>
+# privacy policy: <https://digabi.fi/tekniikka/digabi-os/rekisteriseloste/>)
+# source: <https://github.com/digabi/digabi-feedback>
+digabi-feedback
 
 # LibreOffice office suite
 libreoffice
@@ -27,7 +34,7 @@ iceweasel-l10n-sv-se/experimental
 vlc
 
 # Math
-geogebra
+geogebra44
 maxima
 wxmaxima
 
@@ -47,3 +54,8 @@ polipo
 
 # Install how-can-i-help, so our users could find ways to help Debian (and Digabi)
 how-can-i-help
+
+# mindmapping
+vym
+freeplane
+vue
