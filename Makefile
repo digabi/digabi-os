@@ -45,7 +45,6 @@ build: config
 
 clean:
 	$(ROOT_CMD) $(LIVE_BUILD) clean --all
-	rm -rf $(CHROOT_PACKAGES)
 
 bclean:
 	find config -type f -name "*~" -exec rm {} \;
