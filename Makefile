@@ -51,7 +51,7 @@ bclean:
 
 purge:
 	$(ROOT_CMD) $(LIVE_BUILD) clean --all --purge
-	rm config/build
+	rm -f config/build
 	rm -f config/root-password
 	rm -rf $(CHROOT_PACKAGES)
 
