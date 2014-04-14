@@ -52,3 +52,5 @@ ttf-mscorefonts-installer
 
 # <3
 apt/sid
+
+alsa-utils
