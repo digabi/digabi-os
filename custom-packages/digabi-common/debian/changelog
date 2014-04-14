@@ -1,3 +1,9 @@
+digabi-common (1.2.2) stable; urgency=medium
+
+  * Check if config file exists, before sourcing it.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 14 Apr 2014 17:58:52 +0300
+
 digabi-common (1.2.1) stable; urgency=medium
 
   * Moved digabi-repository from Depends to Suggests.

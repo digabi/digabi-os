@@ -78,7 +78,11 @@ case "${COMMAND}" in
         ;;
     get)
         # TODO: Get value (or return default, if specified) ; if using user config, no default, use global
-        . "${CONFIG_FILE}"
+	if [ -f "${CONFIG_FILE}" ]
+	then
+        	. "${CONFIG_FILE}"
+	fi
+
         if [ -z "${!KEY}" ]
         then
             echo "${DEFAULT:=$3}"
