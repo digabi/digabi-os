@@ -1,4 +1,5 @@
 # Digabi APT repository
 # <http://digabi.fi/>
 
-deb https://digabi.fi/debian jessie main contrib non-free
+#deb https://digabi.fi/debian jessie main contrib non-free
+deb http://apt.mirror/digabi jessie main contrib non-free
