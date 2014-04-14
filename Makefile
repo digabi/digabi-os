@@ -55,7 +55,7 @@ purge:
 	rm -f config/root-password
 	rm -rf $(CHROOT_PACKAGES)
 
-dist:	purge bclean build
+dist:	clean bclean build
 	mkdir -p $(TARGET)
 	mv $(ISO_FILE) $(TARGET)/$(FILENAME_PREFIX)_$(VERSION).iso
 	mv build.log $(TARGET)/$(FILENAME_PREFIX)-build_$(VERSION).log
