@@ -50,6 +50,7 @@ lb config noauto \
     --iso-publisher "${ISO_PUBLISHER}" \
     --memtest "none" \
     --source "${_SOURCE}" \
+    --apt-source-archives "${_SOURCE}" \
     --parent-mirror-bootstrap "${REPOSITORY}" \
     --parent-mirror-binary "${REPOSITORY}" \
     --mirror-bootstrap "${REPOSITORY}" \
