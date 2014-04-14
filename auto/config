@@ -40,7 +40,6 @@ lb config noauto \
     --ignore-system-defaults \
     --architecture "${ARCHITECTURE}" \
     --archive-areas "${ARCHIVE_AREAS}" \
-    --apt-http-proxy "${APT_PROXY}" \
     --distribution "${DISTRIBUTION}" \
     --linux-flavour "${_LINUX_FLAVOURS}" \
     --linux-packages "linux-image" \
