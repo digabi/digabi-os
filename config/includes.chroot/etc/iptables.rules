@@ -19,10 +19,10 @@
 -A OUTPUT -m comment --comment "Reject traffic (tcp)." -p tcp -j REJECT --reject-with tcp-reset
 -A OUTPUT -m comment --comment "Reject traffic (udp)." -p udp -j REJECT --reject-with icmp-port-unreachable
 -A digabi-input -p tcp -m tcp --dport 22 -j ACCEPT -m comment --comment "SSH server (if enabled at build time)"
--A digabi-input -p tcp -m tcp --dport 4010 -s 127.0.0.0/8 -d 127.0.0.0/8 -j ACCEPT -m comment --comment "Maxima"
+-A digabi-input -p tcp -m tcp --sport 4010 -s 127.0.0.0/8 -d 127.0.0.0/8 -j ACCEPT -m comment --comment "Maxima"
 -A digabi-input -j RETURN
 -A digabi-output -p udp -m udp --dport 53 -j ACCEPT
--A digabi-output -p tcp -m tcp --sport 4010 -s 127.0.0.0/8 -d 127.0.0.0/8 -j ACCEPT -m comment --comment "Maxima"
+-A digabi-output -p tcp -m tcp --dport 4010 -s 127.0.0.0/8 -d 127.0.0.0/8 -j ACCEPT -m comment --comment "Maxima"
 -A digabi-output -p tcp -m tcp --dport 8123 -s 127.0.0.0/8 -d 127.0.0.0/8 -m owner --uid-owner dansguardian -j ACCEPT -m comment --comment "Allow proxy access for dansguardian (dansguardian -> proxy)."
 -A digabi-output -p tcp -m tcp --dport 8080 -s 127.0.0.0/8 -d 127.0.0.0/8 -j ACCEPT -m comment --comment "Allow dansguardian access for all users (user -> dansguardian -> proxy)."
 #-A digabi-output -p tcp -m tcp --dport 80 -m owner --uid-owner proxy -j ACCEPT -m comment --comment "Allow HTTP for user proxy."
