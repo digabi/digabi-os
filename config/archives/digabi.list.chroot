@@ -2,4 +2,5 @@
 # <http://digabi.fi/>
 
 #deb https://digabi.fi/debian jessie main contrib non-free
-deb http://apt.mirror/digabi jessie main contrib non-free
+deb http://temporary-digabi-apt-repository-waiting-for-another-host.ypcs.fi/debian/ jessie main contrib non-free
+# TODO: Change to dev.digabi.fi when CNAME is ready
