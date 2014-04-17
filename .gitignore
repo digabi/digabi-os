@@ -67,3 +67,4 @@ live-image-*.hybrid.iso
 live-image-*.hybrid.iso.zsync
 live-image-*.packages
 
+.vagrant
