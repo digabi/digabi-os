@@ -20,7 +20,8 @@ TAR_BIN = /bin/tar
 TAR_FLAGS = -cJf
 TAR_EXT = .tar.xz
 
-ISO_FILE = live-image-$(ARCH).hybrid.iso
+#ISO_FILE = live-image-$(ARCH).hybrid.iso
+ISO_FILE = binary.hybrid.iso
 FILENAME_PREFIX = digabi-os
 
 CHROOT_PACKAGES = config/packages.chroot
@@ -61,6 +62,6 @@ collect:
 	mv $(ISO_FILE) $(TARGET)/$(FILENAME_PREFIX)_$(VERSION).iso
 	mv build.log $(TARGET)/$(FILENAME_PREFIX)-build_$(VERSION).log
 	$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-config_$(VERSION)$(TAR_EXT) config
-	$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION)$(TAR_EXT) chroot.packages.install chroot.packages.live chroot.files live-image-$(ARCH).*
+	$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION)$(TAR_EXT) chroot.packages.install chroot.packages.live binary.*
 
 dist:	clean bclean build collect
