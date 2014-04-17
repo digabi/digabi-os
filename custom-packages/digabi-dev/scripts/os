@@ -1,0 +1,44 @@
+#!/bin/sh
+
+set -e
+
+COMMAND="$1"
+
+REPO_URL="https://github.com/digabi/digabi-live"
+REPO_PATH="digabi-live"
+
+# TODO: If currently in digabi-live, do not clone (use current dir)
+# TODO: Check that git repo is right one (first commit?)
+# TODO: Show changelog between two versions (default: latest tag -> latest-1 tag), "Changes in XX.XX.YY"
+# TODO: Add other commands... clone repository, create patch from customizations, ...
+# TODO: Create tool or queueing DOS builds (w/ 
+
+case "${COMMAND}" in
+	fetch)
+		COMMIT="$2"
+		BRANCH="$3"
+
+		if [ -z "${COMMIT}" ]
+		then
+			echo "Usage: $0 fetch <commit-id> <branch-to-be-created>"
+			echo "Example: $0 fetch 24b3e6 mytestbuild"
+			exit 1
+		fi
+
+
+		if [ -d "${PWD}/${REPO_PATH}" ]
+		then
+			git pull "${REPO_URL}"
+		else
+			git clone "${REPO_URL}" "${REPO_PATH}"
+		fi
+		cd ${REPO_PATH}
+
+		git co -b ${BRANCH} ${COMMIT}
+		echo "I: Successfully checked out commit ${COMMIT}, created branch ${BRANCH}."
+		;;
+	*)
+		echo "E: Invalid command: ${COMMAND}."
+		exit 1
+		;;
+esac

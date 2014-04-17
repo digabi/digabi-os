@@ -6,8 +6,9 @@ Standards-Version: 3.9.2
 Package: digabi-dev
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: build-essential, live-build, git, equivs, devscripts, digabi-common, 
- packaging-dev, editorconfig, debconf-utils
-Recommends: reprepro, piuparts, apt-cacher-ng, kernel-package, gcc-4.8-plugin-dev, libncurses5-dev, python-six, lintian
+ packaging-dev, debconf-utils
+Recommends: reprepro, piuparts, apt-cacher-ng, kernel-package,
+ gcc-4.8-plugin-dev, libncurses5-dev, python-six, lintian, editorconfig
 Suggests: pastebinit, vim, vim-scripts, apt-file
 Architecture: all
 Changelog: debian/changelog

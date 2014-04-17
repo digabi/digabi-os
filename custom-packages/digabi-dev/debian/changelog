@@ -1,3 +1,9 @@
+digabi-dev (3.8.1) stable; urgency=medium
+
+  * Moved editorconfig from Depends to Recommends.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 17 Apr 2014 14:10:05 +0300
+
 digabi-dev (3.8.0) stable; urgency=medium
 
   * Added configuration for apt-cacher-ng: allow access to digabi.fi repositories via HTTPS.
