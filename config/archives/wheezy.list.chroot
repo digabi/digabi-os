@@ -8,12 +8,12 @@ deb http://security.debian.org/ wheezy/updates main contrib non-free
 deb http://ftp.fi.debian.org/debian/ wheezy-updates main contrib non-free
 #deb-src http://ftp.fi.debian.org/debian/ wheezy-updates main contrib non-free
 
-#deb http://apt.mirror/debian/ wheezy main non-free contrib
-#deb-src http://apt.mirror/debian/ wheezy main non-free contrib
+#deb http://ftp.fi.debian.org/debian/ wheezy main non-free contrib
+#deb-src http://ftp.fi.debian.org/debian/ wheezy main non-free contrib
 
 #deb http://security.debian.org/ wheezy/updates main contrib non-free
 #deb-src http://security.debian.org/ wheezy/updates main contrib non-free
 
 # wheezy-updates, previously known as 'volatile'
-#deb http://apt.mirror/debian/ wheezy-updates main contrib non-free
-#deb-src http://apt.mirror/debian/ wheezy-updates main contrib non-free
+#deb http://ftp.fi.debian.org/debian/ wheezy-updates main contrib non-free
+#deb-src http://ftp.fi.debian.org/debian/ wheezy-updates main contrib non-free

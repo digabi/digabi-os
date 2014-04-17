@@ -1,2 +1,2 @@
 deb http://ftp.fi.debian.org/debian/ experimental main contrib non-free
-#deb http://apt.mirror/debian/ experimental main contrib non-free
+#deb http://ftp.fi.debian.org/debian/ experimental main contrib non-free

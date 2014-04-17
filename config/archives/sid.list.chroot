@@ -1,2 +1,2 @@
 deb http://ftp.fi.debian.org/debian sid main contrib non-free
-#deb http://apt.mirror/debian sid main contrib non-free
+#deb http://ftp.fi.debian.org/debian sid main contrib non-free
