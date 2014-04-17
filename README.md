@@ -35,7 +35,8 @@ image is quite easy:
 
 After building, image can be found in `dist/` directory.
 
-Note: build will fail if there is uncommitted changes to git.
+ - Note: build will fail if there is uncommitted changes to git.
+ - Note: build will fail if you're trying to build in /vagrant
 
 Our images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
 
