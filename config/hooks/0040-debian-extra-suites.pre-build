@@ -26,7 +26,7 @@ then
             echo "W: Configuration for suite ${suite} already exists, not updating (${CFG_FILE})..."
         else
             echo "I: Add sources.list for suite ${suite}..."
-            echo "deb ${REPOSITORY} ${SUITE} ${COMPONENTS}" >${CFG_FILE}
+            echo "deb ${REPOSITORY} ${suite} ${COMPONENTS}" >${CFG_FILE}
         fi
     done
 fi
