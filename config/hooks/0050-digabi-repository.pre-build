@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+# Use repository config from submodule digabi-repository (ie. copy it to the config when starting build)
+
+REPO_PATH="custom-packages/digabi-repository"
+CONFIG_PATH="config/archives"
+
+SIGNING_KEY="${REPO_PATH}/digabi.gpgasc"
+REPO_CONFIG="${REPO_PATH}/digabi.list"
+
+
+if [ ! -f "${SIGNING_KEY}" ]
+then
+    echo "E: Digabi repository signing key not found (${SIGNING_KEY})."
+    exit 1
+fi
+
+if [ ! -f "${REPO_CONFIG}" ]
+then
+    echo "E: Digabi repository config not found (${REPO_CONFIG})."
+    exit 1
+fi
+
+echo "I: Copying Digabi repository signing key..."
+cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.chroot"
+cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.binary"
+
+echo "I: Copying Digabi repository config..."
+cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.chroot"
