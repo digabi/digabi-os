@@ -7,7 +7,7 @@ set -e
 REPO_PATH="custom-packages/digabi-repository"
 CONFIG_PATH="config/archives"
 
-SIGNING_KEY="${REPO_PATH}/digabi.gpgasc"
+SIGNING_KEY="${REPO_PATH}/digabi.asc"
 REPO_CONFIG="${REPO_PATH}/digabi.list"
 
 
