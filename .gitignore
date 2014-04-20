@@ -67,3 +67,6 @@ live-image-*.hybrid.iso
 live-image-*.hybrid.iso.zsync
 live-image-*.packages
 
+config/archives/digabi.key.chroot
+config/archives/digabi.key.binary
+config/archives/digabi.list.chroot
