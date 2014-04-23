@@ -1,0 +1,13 @@
+Section: misc
+Priority: optional
+Homepage: https://digabi.fi/os
+Standards-Version: 3.9.2
+Vcs-Browser: https://github.com/digabi/digabi-live
+Vcs-Git: git://github.com/digabi/digabi-live.git
+
+Package: digabi-os
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Copyright: <copyright file; defaults to GPL2>
+Changelog: debian/changelog
+Description: Digabi OS
+ Meta-package.
