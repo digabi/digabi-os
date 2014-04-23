@@ -18,19 +18,19 @@ First versions, released in Autumn 2013, were numbered as `1.x` and `2.x`.
 
 
 ## Version numbering (year.month.day.revision)
-Since December 2013, new versioning scheme was introduced. Follows Ubuntu pattern: `(year - 2000).(month).(day)`. See file `scripts/version.helper` for technical details.
+Since December 2013, new versioning scheme was introduced. Follows Ubuntu pattern: `(year - 2000).(month)`. See file `scripts/version.helper` for technical details.
 
  - 13.12 Extinct Western Black Rhinoceros
  - 14.04
 
-Since 14.01.XX version number has been available in .ISO images, see file 
+Since v14.01 version number has been available in .ISO images, see file 
 `/etc/digabi-version`. In terminal you can use command `digabi 
 version` to check version number.
 
 
 At build-time version number is determined with script `scripts/version.helper`.
 
-Currently the full format of .ISO image versions is
+Currently the full format of .ISO image versions is (OUTDATED!)
 
     version+gitbranch-gitcommit_timestamp
 
