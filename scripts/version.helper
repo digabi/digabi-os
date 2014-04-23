@@ -2,58 +2,36 @@
 
 set -e
 
-SPECIAL="${@}"
-BRANCH="$(git branch |sed -n '/\* /s///p')"
+CHANGELOG_VERSION="$(dpkg-parsechangelog |grep ^Version: |cut -d' ' -f2)"
+GIT_COMMIT="+$(git rev-parse --short HEAD)"
+TIMESTAMP="+$(date +%Y%m%d%H%M)"
+BRANCH=".$(git branch |sed -n '/\* /s///p')"
 
-case "${BRANCH}" in
-    dev|dev*)
-        BUILD_VERSION="+dev"
-        DATE="v$(date +%y.%m.%d)"
-        ;;
-    dist*|master*)
-        BUILD_VERSION=""
-	TAG="$(git tag -l --contains HEAD)"
-	if [ -n "${TAG}" ]
-	then
-		DATE="${TAG}"
-	else
-	        DATE="v$(date +%y.%m)"
-	fi
-        ;;
-    *)
-        BUILD_VERSION="+dev+${BRANCH}"
-        DATE="v$(date +%y.%m.%d)"
-esac
-
-TIME="_$(date +%Y%m%d%H%M%S)"
-GIT_VERSION="-$(git rev-parse --short HEAD)"
-
-for s in ${SPECIAL}
-do
-	case "${s}" in
-	    shortver)
-		DATE="$(echo ${DATE} |sed 's/\.//g')"
-		;;
-	    nobuild)
-		BUILD_VERSION="+${BRANCH}"
-		;;
-	    nogit)
-	        GIT_VERSION=""
-		;;
-	    notime)
-		TIME=""
-		;;
-	    *)
-		;;
-	esac
-done
-
-if [ -f "$(dirname $0)/../.ytl" ]
+if [ -f "$(dirname $0)/../.official" ]
 then
-    OFFICIAL=""
+    OFFICIAL="+ytl"
 else
-    OFFICIAL="u"
+    OFFICIAL=""
 fi
 
-VERSION="${DATE}${BUILD_VERSION}${GIT_VERSION}${TIME}${OFFICIAL}"
-echo ${VERSION}
+ARGS="$@"
+
+for arg in ${ARGS}
+do
+    case "${arg}" in
+        notime|notimestamp|shortver)
+            TIMESTAMP=""
+        ;;
+        nogit)
+            GIT_COMMIT=""
+        ;;
+        nobranch)
+            BRANCH=""
+        ;;
+        *)
+        ;;
+    esac
+done
+
+VERSION="${CHANGELOG_VERSION}${TIMESTAMP}${GIT_COMMIT}${BRANCH}${OFFICIAL}"
+echo "${VERSION}"
