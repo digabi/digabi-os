@@ -55,7 +55,7 @@ tmp/
 config/includes.chroot/opt/sw
 config/includes.chroot/etc/skel
 
-.ytl
+.official
 
 local/live-build
 config/root-password
