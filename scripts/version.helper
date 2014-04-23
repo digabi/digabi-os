@@ -20,6 +20,10 @@ case "${BRANCH}" in
 	        DATE="v$(date +%y.%m)"
 	fi
         ;;
+    ?no?branch*)
+	BUILD_VERSION="+co"
+	DATE="v14.04.23"
+	;;
     *)
         BUILD_VERSION="+dev+${BRANCH}"
         DATE="v$(date +%y.%m.%d)"
