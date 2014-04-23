@@ -1,3 +1,11 @@
+digabi-os (14.05a1) UNRELEASED; urgency=low
+
+  * Upgraded GeoGebra to 4.4, using package from upstream.
+  * Added multiple tools for mindmap editing (VUE, Freeplane, VYM), for testing purposes.
+  * Added digabi-feedback client.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 23 Apr 2014 23:54:40 +0300
+
 digabi-os (1.0) stable; urgency=low
 
   * Initial release.
