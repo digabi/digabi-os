@@ -25,7 +25,9 @@ _SOURCE="false"
 
 ARCHIVE_AREAS="main contrib non-free"
 DISTRIBUTION="jessie"
-REPOSITORY="http://ftp.fi.debian.org/debian/"
+if [ -z "${REPOSITORY}" ] ; then
+	REPOSITORY="http://ftp.fi.debian.org/debian/"
+fi
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
 ISO_VOLUME="dos-$(./scripts/version.helper notime nobuild shortver |cut -b-27)"
