@@ -25,17 +25,19 @@ _SOURCE="false"
 
 ARCHIVE_AREAS="main contrib non-free"
 DISTRIBUTION="jessie"
+
 if [ -z "${REPOSITORY}" ] ; then
     REPOSITORY="http://ftp.fi.debian.org/debian/"
 fi
+
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
 ISO_VOLUME="dos-$(./scripts/version.helper notime nobuild shortver |cut -b-27)"
 
-if [ -z "${APT_PROXY}" ]
-then
-    APT_PROXY="http://localhost:3142/"
-fi
+#if [ -z "${APT_PROXY}" ]
+#then
+#    APT_PROXY="http://localhost:3142/"
+#fi
 
 lb config noauto \
     --clean \
