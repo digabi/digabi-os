@@ -55,10 +55,5 @@ polipo
 # Install how-can-i-help, so our users could find ways to help Debian (and Digabi)
 how-can-i-help
 
-# mindmapping
-vym
-freeplane
-vue
-
 # custom fonts, ui
 fonts-lato
