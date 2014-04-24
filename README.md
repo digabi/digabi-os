@@ -31,6 +31,7 @@ image is quite easy:
 
     git clone https://github.com/digabi/digabi-live.git
     cd digabi-live
+    git submodule init && git submodule update
     make dist
 
 After building, image can be found in `dist/` directory.
