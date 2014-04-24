@@ -67,3 +67,11 @@ live-image-*.hybrid.iso
 live-image-*.hybrid.iso.zsync
 live-image-*.packages
 
+config/archives/digabi.key.chroot
+config/archives/digabi.key.binary
+config/archives/digabi.list.chroot
+
+# We configure these using config/debian-extra-suites + hook
+config/archives/wheezy.list.chroot
+config/archives/sid.list.chroot
+config/archives/experimental.list.chroot

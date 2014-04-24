@@ -56,6 +56,12 @@ purge:
 	rm -f config/build
 	rm -f config/root-password
 	rm -rf $(CHROOT_PACKAGES)
+	rm -f config/archives/digabi.key.chroot
+	rm -f config/archives/digabi.key.binary
+	rm -f config/archives/digabi.list.chroot
+	rm -f config/archives/wheezy.list.chroot
+	rm -f config/archives/sid.list.chroot
+	rm -f config/archives/experimental.list.chroot
 
 collect:
 	mkdir -p $(TARGET)
