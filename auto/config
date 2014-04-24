@@ -46,8 +46,9 @@ _SOURCE="false"
 ARCHIVE_AREAS="main contrib non-free"
 DISTRIBUTION="jessie"
 
+DEFAULT_REPOSITORY="http://ftp.fi.debian.org/debian/"
 if [ -z "${REPOSITORY}" ] ; then
-    REPOSITORY="http://ftp.fi.debian.org/debian/"
+    REPOSITORY="${DEFAULT_REPOSITORY}"
 fi
 
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
@@ -79,7 +80,7 @@ lb config noauto \
     --parent-mirror-binary "${REPOSITORY}" \
     --mirror-bootstrap "${REPOSITORY}" \
     --mirror-chroot "${REPOSITORY}" \
-    --mirror-binary "${REPOSITORY}" \
+    --mirror-binary "${DEFAULT_REPOSITORY}" \
     --security "true" \
     --win32-loader "true" \
 	"${@}"
