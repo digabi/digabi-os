@@ -5,6 +5,7 @@ set -e
 if [ -f "debian/changelog" ]
 then
     echo "I: Including debian/changelog to binary."
-    mkdir -p config/includes.binary/usr/share/digabi
-    cp debian/changelog config/includes.binary/usr/share/digabi
+    mkdir -p config/includes.binary
+    # TODO: Change \n to \r\n (Windows-style line endings...) ?
+    cp debian/changelog config/includes.binary/changelog.txt
 fi
