@@ -76,3 +76,6 @@ config/archives/digabi.list.chroot
 config/archives/wheezy.list.chroot
 config/archives/sid.list.chroot
 config/archives/experimental.list.chroot
+
+# Ignore changelog
+config/includes.binary/changelog.txt
