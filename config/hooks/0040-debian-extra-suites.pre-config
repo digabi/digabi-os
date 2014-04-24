@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+# Create sources.list for each extra suite we have specified in config/debian-extra-suites
+
+SUITE_CONFIG="config/debian-extra-suites"
+CONFIG_PATH="config/archives"
+
+SUITES="wheezy sid experimental"
+COMPONENTS="main contrib non-free"
+
+if [ -z "${REPOSITORY}" ]
+then
+    REPOSITORY="http://ftp.fi.debian.org/debian"
+fi
+
+for suite in ${SUITES}
+do
+    CFG_FILE="${CONFIG_PATH}/${suite}.list.chroot"
+    if [ -f "${CFG_FILE}" ]
+    then
+        echo "W: Configuration for suite ${suite} already exists, not updating (${CFG_FILE})..."
+    else
+        echo "I: Add sources.list for suite ${suite}..."
+        echo "deb ${REPOSITORY} ${suite} ${COMPONENTS}" >${CFG_FILE}
+    fi
+done
