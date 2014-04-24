@@ -62,7 +62,7 @@
       </property>
     </property>
 -->
-    <property name="plugin-11" type="string" value="launcher">
+    <property name="plugin-9" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="iceweasel.desktop"/>
       </property>
