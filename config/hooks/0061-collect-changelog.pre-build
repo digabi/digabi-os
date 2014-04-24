@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+if [ -f "debian/changelog" ]
+then
+    echo "I: Including debian/changelog to binary."
+    mkdir -p config/includes.binary/usr/share/digabi
+    cp debian/changelog config/includes.binary/usr/share/digabi
+fi
