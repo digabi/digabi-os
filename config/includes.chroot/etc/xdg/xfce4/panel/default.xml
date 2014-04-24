@@ -31,7 +31,6 @@
         <value type="int" value="11"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
-        <value type="int" value="14"/>
       </property>
     </property>
   </property>
@@ -53,17 +52,17 @@
         <value type="string" value="iceweasel.desktop"/>
       </property>
     </property>
-    <property name="plugin-11" type="string" value="launcher">
+    <property name="plugin-10" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="chromium.desktop"/>
       </property>
     </property>
-    <property name="plugin-12" type="string" value="launcher">
+    <property name="plugin-11" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="xfce4-appfinder.desktop"/>
       </property>
     </property>
-    <property name="plugin-13" type="string" value="separator"/>
-    <property name="plugin-14" type="string" value="directorymenu"/>
+    <property name="plugin-12" type="string" value="separator"/>
+    <property name="plugin-13" type="string" value="directorymenu"/>
   </property>
 </channel>
