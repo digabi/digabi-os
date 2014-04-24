@@ -67,11 +67,12 @@ live-image-*.hybrid.iso
 live-image-*.hybrid.iso.zsync
 live-image-*.packages
 
+# These will be added with hook 0050-digabi-repository.pre-config, from custom-packages/digabi-repository
 config/archives/digabi.key.chroot
 config/archives/digabi.key.binary
 config/archives/digabi.list.chroot
 
-# We configure these using config/debian-extra-suites + hook
+# We configure these using 0040-debian-extra-suites.pre-config hook (using $REPOSITORY)
 config/archives/wheezy.list.chroot
 config/archives/sid.list.chroot
 config/archives/experimental.list.chroot
