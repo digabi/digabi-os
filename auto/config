@@ -2,6 +2,26 @@
 
 set -e
 
+# Run pre-config hooks
+PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/*.pre-config)"
+
+if [ -n "${PRE_CONFIG_HOOKS}" ]
+then
+    echo "I: Executing pre-build hooks..."
+fi
+
+for hook in ${PRE_CONFIG_HOOKS}
+do
+    hook_base="$(basename ${hook})"
+    if [ -x "${hook}" ]
+    then
+        echo "I: Executing hook ${hook_base}..."
+        ${hook}
+    else
+        echo "W: Non-executable hook ${hook_base}."
+    fi
+done
+
 ARCHITECTURE="i386"
 #ARCHITECTURE="$(dpkg --print-architecture)"
 
