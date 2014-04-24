@@ -11,17 +11,17 @@ Misc. things to remember.
     if [ -f latest.iso ]; then rm latest.iso ; fi && ln -s `ls -lt digabi-os_*.iso |head -n 1 |awk '{print $9}'` latest.iso
 
 ## Debian changelog
-Create new changelog inside package
+Create new changelog inside package (file `debian/changelog`)
 
-    dch --create -c changelog
+    dch --create
 
 Update changelog (create new version, or modify unreleased)
 
-    dch -c changelog
+    dch
 
 Release
 
-    dch -r --distribution stable -c changelog
+    dch --release --distribution stable
 
 
 ## Install Ruby Gems to user directory

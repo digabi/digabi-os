@@ -13,6 +13,7 @@ then
     echo "E: git: Found untracked files."
 fi
 
+git update-index --refresh
 STAGED="$(git diff-index --quiet --cached HEAD)"
 STAGED_STATUS="$(echo $?)"
 if [ "${STAGED_STATUS}" != "0" ]

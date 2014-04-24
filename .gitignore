@@ -79,3 +79,6 @@ config/archives/experimental.list.chroot
 
 # Ignore changelog
 config/includes.binary/changelog.txt
+
+# Ignore vagrant state file
+.vagrant
