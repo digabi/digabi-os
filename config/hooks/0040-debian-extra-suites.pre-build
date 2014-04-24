@@ -8,13 +8,10 @@ SUITE_CONFIG="config/debian-extra-suites"
 CONFIG_PATH="config/archives"
 COMPONENTS="main contrib non-free" # TODO: Shouldn't be configured here...
 
-if [ -f "config/repository" ]
+if [ -z "${REPOSITORY}" ]
 then
-    REPOSITORY="$(cat config/repository |head -n1)" # TODO: Duplicate of auto/config
-else
     REPOSITORY="http://ftp.fi.debian.org/debian"
 fi
-
 
 if [ -f "${SUITE_CONFIG}" ]
 then
