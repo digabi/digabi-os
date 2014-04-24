@@ -26,7 +26,7 @@ _SOURCE="false"
 ARCHIVE_AREAS="main contrib non-free"
 DISTRIBUTION="jessie"
 if [ -z "${REPOSITORY}" ] ; then
-	REPOSITORY="http://ftp.fi.debian.org/debian/"
+    REPOSITORY="http://ftp.fi.debian.org/debian/"
 fi
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
