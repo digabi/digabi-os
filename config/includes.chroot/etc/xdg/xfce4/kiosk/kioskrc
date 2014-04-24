@@ -1,0 +1,21 @@
+# Limit user access to XFCE4 settings
+#
+# Documentation: <https://wiki.xfce.org/howto/kiosk_mode>
+
+[xfce4-panel]
+CustomizePanel=NONE
+
+[xfce4-session]
+CustomizeSplash=NONE
+CustomizeChooser=NONE
+CustomizeLogout=NONE
+CustomizeCompatibility=ALL
+CustomizeSecurity=NONE
+Shutdown=ALL
+
+[xfdesktop]
+UserMenu=NONE
+CustomizeBackdrop=NONE
+CustomizeDesktopMenu=NONE
+CustomizeWindowlist=NONE
+CustomizeDesktopIcons=NONE
