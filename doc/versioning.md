@@ -18,7 +18,7 @@ First versions, released in Autumn 2013, were numbered as `1.x` and `2.x`.
 
 
 ## Version numbering (year.month.day.revision)
-Since December 2013, new versioning scheme was introduced. Follows Ubuntu pattern: `(year - 2000).(month)`. See file `scripts/version.helper` for technical details.
+Since December 2013, new versioning scheme was introduced. Follows Ubuntu pattern: `(year - 2000).(month)`. See file `scripts/version.helper` for technical details. Version changes when new features are added.
 
  - 13.12 Extinct Western Black Rhinoceros
  - 14.04
