@@ -50,7 +50,4 @@ firmware-realtek
 ttf-mscorefonts-installer
 #endif
 
-# <3
-apt/sid
-
 alsa-utils
