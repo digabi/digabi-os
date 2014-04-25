@@ -1,6 +1,8 @@
 digabi-customization (2.3) UNRELEASED; urgency=low
 
   * Moved autostart file from skel to etc/xdg/autostart.
+  * Renamed digabi configure-xfce to digabi configure-desktop.
+  * Desktop configuration tool checks if XFCE specific binaries have been installed before trying to use them.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 25 Apr 2014 14:39:57 +0300
 
