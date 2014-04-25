@@ -1,0 +1,22 @@
+# GUI packages
+
+# Graphical User Interface
+xserver-xorg-video-all
+xserver-xorg-input-all
+
+dbus-x11
+tango-icon-theme
+gstreamer0.10-alsa
+mousepad
+evince-gtk
+
+
+# GUI, XFCE4
+task-xfce-desktop
+xfce4-power-manager
+xfce4-mixer
+xfce4-terminal
+lxpolkit
+fbxkb
+xfce4-notifyd
+libnotify-bin
