@@ -1,3 +1,9 @@
+digabi-customization (2.3) UNRELEASED; urgency=low
+
+  * Moved autostart file from skel to etc/xdg/autostart.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 25 Apr 2014 14:39:57 +0300
+
 digabi-customization (2.2) stable; urgency=medium
 
   * Fixed invalid path to XFCE configuration autostart.
