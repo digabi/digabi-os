@@ -16,7 +16,7 @@ fi
 echo "I: Add Digabi repository..."
 if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.list" ]
 then
-    cp ${DIGABI_REPOSITORY_PATH}/digabi-list /etc/apt/sources.list.d/digabi.list
+    cp ${DIGABI_REPOSITORY_PATH}/digabi.list /etc/apt/sources.list.d/digabi.list
 else
     wget -qO /etc/apt/sources.list.d/digabi.list https://digabi.fi/debian/digabi.list
 fi
