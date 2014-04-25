@@ -10,11 +10,13 @@ for a in ${ACCOUNTS}
 do
     if [[ "${WHITELISTED}" =~ "$a" ]]
     then
-        echo "I: Shell for user ${a} is whitelisted, leaving untouched"
+        echo "I: Shell for user ${a} is whitelisted, leaving untouched."
     else
-        echo "I: Setting shell for user ${a} to /bin/false"
+        echo "I: Setting shell to /bin/false for user ${a}."
         /usr/bin/chsh ${a} -s /bin/false
-        /usr/bin/passwd -d ${a}
-        /usr/bin/passwd -l ${a}
+        echo "I: Disabling password for user ${a}."
+        /usr/bin/passwd -qd ${a}
+        echo "I: Locking user account ${a}."
+        /usr/bin/passwd -ql ${a}
     fi
 done
