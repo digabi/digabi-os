@@ -71,4 +71,8 @@ collect:
 	$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-config_$(VERSION)$(TAR_EXT) config
 	$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION)$(TAR_EXT) chroot.packages.install chroot.packages.live binary.*
 
-dist:	clean bclean build collect
+get-modules:
+	git submodule init
+	git submodule update
+
+dist:	clean bclean get-modules build collect
