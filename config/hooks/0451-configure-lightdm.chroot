@@ -5,7 +5,7 @@ set -e
 USERNAME="digabi"
 
 # TODO: Add support for different architectures: amd64 etc. (ie. check it, and select path)
-LIGHTDM_SET_BIN="/usr/lib/i386-linux-gnu/lightdm/lightdm-set-defaults"
+LIGHTDM_SET_BIN="/usr/lib/$(uname -m)-linux-gnu/lightdm/lightdm-set-defaults"
 LIGHTDM_GTK_CONF="/etc/lightdm/lightdm-gtk-greeter.conf"
 
 if [ -x "${LIGHTDM_SET_BIN}" ]
