@@ -37,16 +37,7 @@ fbxkb
 xfce4-notifyd
 libnotify-bin
 
-firmware-linux
-
 #if ARCHIVE_AREAS non-free
-firmware-linux-nonfree
-firmware-b43-installer
-firmware-atheros
-firmware-ipw2x00
-firmware-iwlwifi
-firmware-ralink
-firmware-realtek
 ttf-mscorefonts-installer
 #endif
 

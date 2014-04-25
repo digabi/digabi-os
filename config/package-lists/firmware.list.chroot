@@ -1,0 +1,14 @@
+# Firmware packages
+
+firmware-linux
+
+#if ARCHIVE_AREAS non-free
+firmware-linux-nonfree
+firmware-b43-installer
+firmware-atheros
+firmware-ipw2x00
+firmware-iwlwifi
+firmware-ralink
+firmware-realtek
+#endif
+
