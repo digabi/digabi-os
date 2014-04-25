@@ -62,6 +62,7 @@ purge:
 	rm -f config/archives/wheezy.list.chroot
 	rm -f config/archives/sid.list.chroot
 	rm -f config/archives/experimental.list.chroot
+	rm -f config/includes.binary/changelog.txt
 
 collect:
 	mkdir -p $(TARGET)
