@@ -37,8 +37,4 @@ fbxkb
 xfce4-notifyd
 libnotify-bin
 
-#if ARCHIVE_AREAS non-free
-ttf-mscorefonts-installer
-#endif
-
 alsa-utils

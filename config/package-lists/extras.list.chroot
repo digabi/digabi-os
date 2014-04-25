@@ -1,2 +1,8 @@
 # apt, the easier ui for apt-{get,cache}
 apt
+
+# MS fonts (Arial etc.)
+#if ARCHIVE_AREAS non-free
+ttf-mscorefonts-installer
+#endif
+
