@@ -5,11 +5,7 @@ set -e
 CHANGELOG_VERSION="$(dpkg-parsechangelog |grep ^Version: |cut -d' ' -f2)"
 GIT_COMMIT="+$(git rev-parse --short HEAD)"
 TIMESTAMP="+$(date +%Y%m%d%H%M)"
-BRANCH=".$(git branch |sed -n '/\* /s///p')"
-if [ "${BRANCH}" = "(no branch)" ]
-then
-    BRANCH=".nobranch"
-fi
+BRANCH=".$(git branch |sed -n '/\* /s///p' |tr '() /' _)"
 
 if [ -f "$(dirname $0)/../.official" ]
 then
