@@ -7,7 +7,7 @@ set -e
 SUITE_CONFIG="config/debian-extra-suites"
 CONFIG_PATH="config/archives"
 
-SUITES="wheezy sid experimental"
+SUITES="experimental"
 COMPONENTS="main contrib non-free"
 
 if [ -z "${REPOSITORY}" ]
