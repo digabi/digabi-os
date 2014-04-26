@@ -11,7 +11,7 @@ OSR="/etc/os-release"
 VERSION_LIST="/usr/share/digabi/versions.txt"
 
 # Digabi version number
-DIGABI_VERSION="/etc/digabi-version"
+DIGABI_VERSION="$(digabi version)"
 
 if [ ! -f "${DIGABI_VERSION}" ]
 then
