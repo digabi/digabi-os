@@ -12,6 +12,8 @@ set -e
 # Copyright 2014 Ylioppilastutkintolautakunta
 # Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 
+HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; else echo "E: Script helpers (${HELPERS}) not found, exiting." ; exit 1 ; fi
+
 COMMAND="$1"
 if [ "$2" = "--global" ]
 then
