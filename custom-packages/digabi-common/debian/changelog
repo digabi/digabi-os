@@ -1,3 +1,9 @@
+digabi-common (1.3.0) UNRELEASED; urgency=low
+
+  * Including _helpers for scripts.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 26 Apr 2014 12:38:21 +0300
+
 digabi-common (1.2.2) stable; urgency=medium
 
   * Check if config file exists, before sourcing it.
