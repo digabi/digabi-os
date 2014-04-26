@@ -6,7 +6,17 @@ set -e
 
 HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; else echo "E: Script helpers (${HELPERS}) not found, exiting." ; exit 1 ; fi
 
-VERSION_FILE="/etc/digabi-version"
+
+VERSION_FILES="/var/lib/digabi/version /etc/digabi-version"
+
+for f in ${VERSION_FILES}
+do
+    if [ -f "${f}" ]
+    then
+        VERSION_FILE="${f}"
+        break
+    fi
+done
 
 if [ ! -f "${VERSION_FILE}" ]
 then
