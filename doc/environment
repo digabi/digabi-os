@@ -7,3 +7,7 @@
 
 # Use custom APT repository (speeds up the build process)
 #export REPOSITORY="http://apt.mirror/debian"
+
+# Also, remember to configure your git
+#  git config --global user.name "Your Name"
+#  git config --global user.email "your@email.example.invalid"
