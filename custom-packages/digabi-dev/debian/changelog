@@ -1,8 +1,9 @@
-digabi-dev (3.9.2) UNRELEASED; urgency=low
+digabi-dev (3.9.2) stable; urgency=low
 
   * Renamed digabirc to /etc/digabi/dev (now using digabi config -command from digabi-common).
+  * Removed check-iso-contents script. We are moving this logic to live-build hooks.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 26 Apr 2014 12:32:37 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 26 Apr 2014 12:34:32 +0300
 
 digabi-dev (3.9.1) stable; urgency=low
 

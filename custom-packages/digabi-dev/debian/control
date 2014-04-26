@@ -16,7 +16,6 @@ Files: scripts/prepare-linux-source /usr/lib/digabi
  scripts/build-kernel /usr/lib/digabi
  scripts/build-custom-packages /usr/lib/digabi
  scripts/build-package /usr/lib/digabi
- scripts/check-iso-contents /usr/lib/digabi
  data/suid-sgid-whitelist /usr/lib/digabi
  etc/digabi/dev /
  etc/apt-cacher-ng/digabi.conf /
