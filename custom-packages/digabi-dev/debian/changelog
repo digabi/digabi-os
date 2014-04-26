@@ -1,3 +1,9 @@
+digabi-dev (3.9.1) stable; urgency=low
+
+  * Updated path to linux.config.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 26 Apr 2014 12:29:00 +0300
+
 digabi-dev (3.9.0) stable; urgency=low
 
   * Depend on live-build (<<4.0), ie. live-build from wheezy. 4.x breaks currently.
