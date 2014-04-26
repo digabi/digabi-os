@@ -1,0 +1,36 @@
+#!/bin/sh
+
+set -e
+
+# Helper functions to be included in other scripts
+# (c) 2013, 2014 Ylioppilastutkintolautakunta
+# Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+# GPLv3
+
+# TODO: Add support for colors
+# TODO: Print debug output only if DEBUG or _DEBUG is set
+# TODO: Should we die if error? Die if EXIT_ON_ERROR is set?
+
+# To include this file in your scripts in /usr/lib/digabi/scripts:
+# HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; else echo "E: Script helpers (${HELPERS}) not found, exiting." ; exit 1 ; fi
+# TODO: Rewrite all scripts, use full path to _helpers when printing error message (readlink -f)
+
+warning() {
+    echo "W: $@"
+}
+
+error() {
+    echo "E: $@"
+}
+
+debug() {
+    echo "D: $@"
+}
+
+info() {
+    echo "I: $@"
+}
+
+print() {
+    echo "$@"
+}

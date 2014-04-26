@@ -9,6 +9,7 @@ Architecture: all
 Changelog: debian/changelog
 Suggests: digabi-repository
 Files: usr/bin/digabi /
+ usr/lib/digabi/scripts/_helpers /
  usr/lib/digabi/scripts/version /
  usr/lib/digabi/scripts/config /
  etc/bash_completion.d/digabi /

@@ -2,6 +2,8 @@
 
 set -e
 
+HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; else echo "E: Script helpers (${HELPERS}) not found, exiting." ; exit 1 ; fi
+
 COMMAND="$1"
 
 REPO_URL="https://github.com/digabi/digabi-live"
@@ -35,10 +37,10 @@ case "${COMMAND}" in
 		cd ${REPO_PATH}
 
 		git co -b ${BRANCH} ${COMMIT}
-		echo "I: Successfully checked out commit ${COMMIT}, created branch ${BRANCH}."
+		info "Successfully checked out commit ${COMMIT}, created branch ${BRANCH}."
 		;;
 	*)
-		echo "E: Invalid command: ${COMMAND}."
+		error "Invalid command: ${COMMAND}."
 		exit 1
 		;;
 esac

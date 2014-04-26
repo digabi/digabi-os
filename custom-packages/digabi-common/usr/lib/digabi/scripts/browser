@@ -4,6 +4,8 @@ set -e
 
 # Run browser with custom config
 
+HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; else echo "E: Script helpers (${HELPERS}) not found, exiting." ; exit 1 ; fi
+
 BROWSER="$(digabi config get browser-browser)"
 
 if [ -z "${BROWSER}" ]

@@ -7,7 +7,8 @@ Package: digabi-live
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Architecture: all
 Changelog: debian/changelog
-Depends: digabi-common, apt-transport-https, ca-certificates
+Depends: digabi-common
+Recommends: digabi-live-extras
 Suggests: digabi-repository
 Description: Common files for Digabi Live
  TBD

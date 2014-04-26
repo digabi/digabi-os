@@ -12,6 +12,8 @@ set -e
 # Copyright 2014 Ylioppilastutkintolautakunta
 # Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 
+HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; else echo "E: Script helpers (${HELPERS}) not found, exiting." ; exit 1 ; fi
+
 COMMAND="$1"
 if [ "$2" = "--global" ]
 then
@@ -22,28 +24,20 @@ else
     KEY="$2"
 fi
 
-info() {
-    echo "I: $@"
-}
-
-error() {
-    echo "E: $@"
-}
-
 usage() {
     echo "Usage: $0 {get|set|source|conf-file|show} <key> [value]"
 }
 
 if [ -z "${COMMAND}" ]
 then
-    echo "Command is missing..."
+    error "Command is missing..."
     usage
     exit 1
 fi
 
 if [ -z "${KEY}" ]
 then
-    echo "Key is missing..."
+    error "Key is missing..."
     usage
     exit 1
 fi

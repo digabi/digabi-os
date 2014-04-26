@@ -2,14 +2,16 @@
 
 set -e
 
+HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; else echo "E: Script helpers (${HELPERS}) not found, exiting." ; exit 1 ; fi
+
 # TODO: Check if file basename `dirname $0` exists (file which name is same as dir), if, build it
 # TODO: Allow building packages w/ $0 <package-name>
 
 if [ -f "debian/control" ]
 then
-    echo "I: Building package ($(basename ${PWD}))."
-	equivs-build debian/control 1>/dev/null
+    info "Building package ($(basename ${PWD}))."
+    equivs-build debian/control 1>/dev/null
 else
-	echo "E: Package control file debian/control not found. ($PWD)"
-	exit 1
+    error "Package control file debian/control not found. ($PWD)"
+    exit 1
 fi
