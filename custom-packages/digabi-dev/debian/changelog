@@ -1,9 +1,9 @@
-digabi-dev (3.9.3) UNRELEASED; urgency=low
+digabi-dev (3.9.3) stable; urgency=low
 
   * Depend on digabi-common (>= 1.3.0).
-  * Using _helpers in package building scripts.
+  * Using _helpers for all scripts.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 26 Apr 2014 12:53:02 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 26 Apr 2014 12:57:49 +0300
 
 digabi-dev (3.9.2) stable; urgency=low
 
