@@ -63,6 +63,7 @@ purge:
 	rm -f config/archives/sid.list.chroot
 	rm -f config/archives/experimental.list.chroot
 	$(ROOT_CMD) rm -f config/includes.binary/changelog.txt
+	$(ROOT_CMD) rm -f config/includes.chroot/var/lib/digabi/version
 
 collect:
 	mkdir -p $(TARGET)
