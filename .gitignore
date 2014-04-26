@@ -24,7 +24,7 @@ config/chroot
 config/common
 config/packages.chroot
 config/source
-config/includes.chroot/etc/digabi-version
+config/includes.chroot/var/lib/digabi/version
 config/includes.chroot/usr/share/digabi/versions.txt
 config/includes.chroot/root
 
