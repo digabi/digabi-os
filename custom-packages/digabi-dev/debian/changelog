@@ -1,3 +1,9 @@
+digabi-dev (3.9.2) UNRELEASED; urgency=low
+
+  * Renamed digabirc to /etc/digabi/dev (now using digabi config -command from digabi-common).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 26 Apr 2014 12:32:37 +0300
+
 digabi-dev (3.9.1) stable; urgency=low
 
   * Updated path to linux.config.

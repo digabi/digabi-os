@@ -18,7 +18,7 @@ Files: scripts/prepare-linux-source /usr/lib/digabi
  scripts/build-package /usr/lib/digabi
  scripts/check-iso-contents /usr/lib/digabi
  data/suid-sgid-whitelist /usr/lib/digabi
- digabirc /usr/share/doc/digabi-developer/examples
+ etc/digabi/dev /
  etc/apt-cacher-ng/digabi.conf /
 Description: Development tools for Digabi
  Package installs essential build tools for Digabi.
