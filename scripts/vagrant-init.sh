@@ -3,7 +3,7 @@
 set -e
 
 #
-# Initiliaze new Vagrant (Debian wheezy/jessie)
+# Initialiaze new Vagrant (Debian wheezy/jessie)
 #
 DIGABI_REPOSITORY_PATH="/vagrant/custom-packages/digabi-repository"
 
