@@ -33,6 +33,21 @@ else
     wget -qO- https://digabi.fi/debian/digabi.asc | apt-key add -
 fi
 
-echo "I: Install digabi-dev..."
+# If APT source exists, move it as default mirror (fixed problems w/ pbuilder)
+if [ ! -f "/etc/apt/sources.list" ] &&  [ -f "/etc/apt/sources.list.d/jessie.list" ]
+then
+    echo "I: Use jessie.list as sources.list (default mirror)..."
+    mv /etc/apt/sources.list.d/jessie.list /etc/apt/sources.list
+fi
+
+echo "I: Configure APT: do not install recommends..."
+cat << EOF >/etc/apt/apt.conf.d/99-no-recommends
+APT::Install-Recommends "false";
+APT::Install-Suggests "false";
+EOF
+
+echo "I: Update package lists..."
 apt-get -qy update
+
+echo "I: Install digabi-dev..."
 apt-get -qy install digabi-dev
