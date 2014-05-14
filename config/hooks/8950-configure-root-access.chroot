@@ -16,4 +16,6 @@ then
 	echo "I: Setting root password..."
 	echo "root:$(cat ${PASSWORD_FILE})" |chpasswd
 	sed -i 's/^LIVE_USER_DEFAULT_GROUPS=\"/LIVE_USER_DEFAULT_GROUPS=\"wheel /' /etc/live/config/user.conf
+else
+	echo "I: No root password defined."
 fi

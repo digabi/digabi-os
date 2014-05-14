@@ -82,5 +82,5 @@ lb config noauto \
     --mirror-chroot "${REPOSITORY}" \
     --mirror-binary "${DEFAULT_REPOSITORY}" \
     --security "true" \
-    --win32-loader "true" \
+    --win32-loader "false" \
 	"${@}"

@@ -24,7 +24,7 @@ Since December 2013, new versioning scheme was introduced. Follows Ubuntu patter
  - 14.04
 
 Since v14.01 version number has been available in .ISO images, see file 
-`/etc/digabi-version`. In terminal you can use command `digabi 
+`/var/lib/digabi/version`. In terminal you can use command `digabi 
 version` to check version number.
 
 

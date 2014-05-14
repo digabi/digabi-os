@@ -1,0 +1,13 @@
+# config file for digabi-dev
+
+# Where our reprepro repository is located?
+DEV_REPREPRO_BASE="~/digabi-repository"
+
+# Increase version number always when building
+DEV_BUILD_BUMP_VERSION="yes"
+
+# URLs
+DEV_REPOSITORY_BASE_URL="https://github.com/digabi"
+DEV_LIVE_REPOSITORY_URL="${DIGABI_REPOSITORY_BASE_URL}/digabi-live"
+DEV_MISC_REPOSITORY_URL="${DIGABI_REPOSITORY_BASE_URL}/digabi-misc"
+DEV_REPO_REPOSITORY_URL="${DIGABI_REPOSITORY_BASE_URL}/digabi-repository"

@@ -1,0 +1,13 @@
+# Copy this to your dev/build environment & customize, remember to 
+# source before building (add these to your ~/.bashrc)
+
+# Configure Debian developer tools (dch etc.)
+#export DEBFULLNAME="Your Name"
+#export DEBEMAIL="your@email.example.invalid"
+
+# Use custom APT repository (speeds up the build process)
+#export REPOSITORY="http://apt.mirror/debian"
+
+# Also, remember to configure your git
+#  git config --global user.name "Your Name"
+#  git config --global user.email "your@email.example.invalid"

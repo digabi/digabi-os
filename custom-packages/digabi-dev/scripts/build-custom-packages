@@ -5,12 +5,14 @@
 # (c) 2013 Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 # GPLv3
 
+HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; else echo "E: Script helpers (${HELPERS}) not found, exiting." ; exit 1 ; fi
+
 CUSTOM_PACKAGE_DIR="custom-packages"
 
 if [ ! -d "${CUSTOM_PACKAGE_DIR}" ]
 then
-	echo "E: Custom package dir ${CUSTOM_PACKAGE_DIR} not found. Exiting..."
-	exit 1
+    error "Custom package dir ${CUSTOM_PACKAGE_DIR} not found. Exiting..."
+    exit 1
 fi
 
 cd "${CUSTOM_PACKAGE_DIR}"
@@ -24,11 +26,11 @@ do
         debs="$(ls ${pkg}_*_*.deb 2>/dev/null)"
         if [ -z "${debs}" ]
             then
-            echo "W: No debs found for package ${pkg}."
+            warning "No debs found for package ${pkg}."
         else
             for deb in $debs
             do
-                echo "I: Moving file ${deb}..."
+                debug "Moving file ${deb}..."
                 mv "${deb}" ..
             done
         fi

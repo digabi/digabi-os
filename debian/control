@@ -7,7 +7,6 @@ Vcs-Git: git://github.com/digabi/digabi-live.git
 
 Package: digabi-os
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Copyright: <copyright file; defaults to GPL2>
 Changelog: debian/changelog
 Description: Digabi OS
  Meta-package.
