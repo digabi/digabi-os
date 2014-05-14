@@ -13,12 +13,6 @@ then
     /vagrant/scripts/vagrant-local.sh
 fi
 
-if [ -f "/etc/apt/apt.conf" ]
-then
-    echo "I: Remove apt proxy configuration..."
-    rm /etc/apt/apt.conf
-fi
-
 echo "I: Add Digabi repository..."
 if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.list" ]
 then
