@@ -7,6 +7,11 @@ set -e
 #
 DIGABI_REPOSITORY_PATH="/vagrant/custom-packages/digabi-repository"
 
+if [ -x "/vagrant/scripts/vagrant-local.sh" ]
+then
+    /vagrant/scripts/vagrant-local.sh
+fi
+
 if [ -f "/etc/apt/apt.conf" ]
 then
     echo "I: Remove apt proxy configuration..."
