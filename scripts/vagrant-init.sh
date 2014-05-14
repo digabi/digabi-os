@@ -12,7 +12,7 @@ then
     echo "I: Run local Vagrant customization scripts.."
     /vagrant/scripts/vagrant-local.sh
 fi
-exit 0
+
 if [ -f "/etc/apt/apt.conf" ]
 then
     echo "I: Remove apt proxy configuration..."
