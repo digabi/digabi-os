@@ -4,12 +4,25 @@
 #
 # Packages current Vagrantbox as VirtualBox .ova for distributing
 #
+# Usage:
+#  package-buildbox <version>
+#
+#   where <version> = current version of the buildbox
+#
 #
 # (c) 2014 Ylioppilastutkintolautakunta <http://ylioppilastutkinto.fi/>
 # Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 # License: GPLv3
 
 ID_FILE="${PWD}/.vagrant/machines/default/virtualbox/id"
+
+VERSION="$1"
+if [ -z "${VERSION}" ]
+then
+    echo "E: Version not specified, exiting..."
+    exit 1
+fi
+
 
 if [ ! -f "${ID_FILE}" ]
 then
@@ -18,3 +31,20 @@ then
 fi
 
 ID="$(cat ${ID_FILE})"
+
+# TODO: Clean /home/vagrant inside current machine
+# TODO: Package as .ova
+# TODO: Clone, do modifications, package, remove clone ?
+
+TIMESTAMP="$(date +%Y%m%d%H%M%S)"
+EXPORT_FILE="digabi-buildbox_${VERSION}_${TIMESTAMP}.ova"
+
+echo "buildbox-export: ${EXPORT_FILE}"
+
+PRODUCT="Digabi BuildBox"
+PRODUCT_URL="https://digabi.fi/buildbox"
+VENDOR="Ylioppilastutkintolautakunta"
+VENDOR_URL="http://ylioppilastutkinto.fi/"
+DESCRIPTION="${PRODUCT} blah blah blah."
+
+vboxmanage export "${ID}" --output "${EXPORT_FILE}" --vsys 0 --product "${PRODUCT}" --producturl "${PRODUCT_URL}" --vendor "${VENDOR}" --vendorurl "${VENDOR_URL}" --version "${VERSION}" --description "${DESCRIPTION}"
