@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# package-buildbox
+#
+# Packages current Vagrantbox as VirtualBox .ova for distributing
+#
+#
+# (c) 2014 Ylioppilastutkintolautakunta <http://ylioppilastutkinto.fi/>
+# Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+# License: GPLv3
+
+ID_FILE="${PWD}/.vagrant/machines/default/virtualbox/id"
+
+if [ ! -f "${ID_FILE}" ]
+then
+    echo "E: Vagrant machine ID not found (${ID_FILE}), exiting..."
+    exit 1
+fi
+
+ID="$(cat ${ID_FILE})"
