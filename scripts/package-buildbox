@@ -14,32 +14,7 @@
 # Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 # License: GPLv3
 
-ID_FILE="${PWD}/.vagrant/machines/default/virtualbox/id"
-
-VERSION="$1"
-if [ -z "${VERSION}" ]
-then
-    echo "E: Version not specified, exiting..."
-    exit 1
-fi
-
-
-if [ ! -f "${ID_FILE}" ]
-then
-    echo "E: Vagrant machine ID not found (${ID_FILE}), exiting..."
-    exit 1
-fi
-
-ID="$(cat ${ID_FILE})"
-
-# TODO: Clean /home/vagrant inside current machine
-# TODO: Package as .ova
-# TODO: Clone, do modifications, package, remove clone ?
-
-TIMESTAMP="$(date +%Y%m%d%H%M%S)"
-EXPORT_FILE="digabi-buildbox_${VERSION}_${TIMESTAMP}.ova"
-
-echo "buildbox-export: ${EXPORT_FILE}"
+SOURCE_DIR="${PWD}"
 
 PRODUCT="Digabi BuildBox"
 PRODUCT_URL="https://digabi.fi/buildbox"
@@ -47,4 +22,51 @@ VENDOR="Ylioppilastutkintolautakunta"
 VENDOR_URL="http://ylioppilastutkinto.fi/"
 DESCRIPTION="${PRODUCT} blah blah blah."
 
+TEMPDIR="$(mktemp -d digabi-buildbox.XXXXXXXXX)"
+
+if [ -z "${TEMPDIR}" ]
+then
+    echo "E: Temporary directory not created, exiting..."
+    exit 1
+fi
+
+# Clone configuration to temporary directory
+echo "I: Setting up temporary build directory (${TEMPDIR})..."
+cd "${TEMPDIR}"
+git clone "${SOURCE_DIR}" repository
+cd repository
+
+VERSION="$(./scripts/version.helper)"
+
+# Setup Vagrant
+VAGRANTFILE="${PWD}/Vagrantfile"
+if [ ! -f "${VAGRANTFILE}" ]
+then
+    echo "E: Vagrantfile not found, exiting."
+    exit 1
+fi
+
+echo "I: Setting up Vagrantbox..."
+vagrant up
+vagrant ssh -c "apt-get install -y digabi-buildbox digabi-buildbox-app"
+vagrant halt
+
+echo "I: Exporting Vagrantbox as VirtualBox .ova..."
+ID_FILE="${PWD}/.vagrant/machines/default/virtualbox/id"
+ID="$(cat ${ID_FILE})"
+EXPORT_FILE="digabi-buildbox_${VERSION}.ova"
+
+vboxmanage sharedfolder remove "${ID}" vagrant
 vboxmanage export "${ID}" --output "${EXPORT_FILE}" --vsys 0 --product "${PRODUCT}" --producturl "${PRODUCT_URL}" --vendor "${VENDOR}" --vendorurl "${VENDOR_URL}" --version "${VERSION}" --description "${DESCRIPTION}"
+
+if [ -f "${EXPORT_FILE}" ]
+then
+    echo "I: Vagrantbox exported succesfully to ${EXPORT_FILE}."
+    sha1sum "${EXPORT_FILE}"
+    echo "I: Destroy Vagrantbox..."
+    vagrant destroy
+    mv "${EXPORT_FILE}" "${SOURCE_DIR}/"
+fi
+
+cd "${SOURCE_DIR}"
+echo "rm -rf ${TEMPDIR}"
