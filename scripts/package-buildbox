@@ -36,6 +36,10 @@ cd "${TEMPDIR}"
 git clone "${SOURCE_DIR}" repository
 cd repository
 
+echo "I: Updating submodules..."
+git submodule init
+git submodule update
+
 VERSION="$(./scripts/version.helper)"
 
 # Setup Vagrant
