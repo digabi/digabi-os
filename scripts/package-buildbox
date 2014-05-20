@@ -64,9 +64,9 @@ then
     echo "I: Vagrantbox exported succesfully to ${EXPORT_FILE}."
     sha1sum "${EXPORT_FILE}"
     echo "I: Destroy Vagrantbox..."
-    vagrant destroy
+    vagrant destroy -f
     mv "${EXPORT_FILE}" "${SOURCE_DIR}/"
 fi
 
 cd "${SOURCE_DIR}"
-echo "rm -rf ${TEMPDIR}"
+rm -rf "${TEMPDIR}"
