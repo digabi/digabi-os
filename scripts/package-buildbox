@@ -60,7 +60,7 @@ ID_FILE="${PWD}/.vagrant/machines/default/virtualbox/id"
 ID="$(cat ${ID_FILE})"
 EXPORT_FILE="digabi-buildbox_${VERSION}.ova"
 
-vboxmanage sharedfolder remove "${ID}" --name vagrant
+vboxmanage sharedfolder remove "${ID}" --name "/vagrant"
 vboxmanage export "${ID}" --output "${EXPORT_FILE}" --vsys 0 --product "${PRODUCT}" --producturl "${PRODUCT_URL}" --vendor "${VENDOR}" --vendorurl "${VENDOR_URL}" --version "${VERSION}" --description "${DESCRIPTION}"
 
 if [ -f "${EXPORT_FILE}" ]
