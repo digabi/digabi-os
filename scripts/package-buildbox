@@ -52,7 +52,7 @@ fi
 
 echo "I: Setting up Vagrantbox..."
 vagrant up
-vagrant ssh -c "apt-get install -y digabi-buildbox digabi-buildbox-app"
+vagrant ssh -c "sudo apt-get install -y digabi-buildbox digabi-buildbox-app"
 vagrant halt
 
 echo "I: Exporting Vagrantbox as VirtualBox .ova..."
