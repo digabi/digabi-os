@@ -26,10 +26,9 @@ chromium
 chromium-l10n
 
 # Web browser: iceweasel (Firefox)
-# Installing from experimental repository, to get new version
-iceweasel/experimental
-iceweasel-l10n-fi/experimental
-iceweasel-l10n-sv-se/experimental
+iceweasel
+iceweasel-l10n-fi
+iceweasel-l10n-sv-se
 
 # VLC media player
 vlc
