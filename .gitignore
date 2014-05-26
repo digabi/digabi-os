@@ -1,4 +1,5 @@
 *~
+<<<<<<< HEAD
 /.build/
 /binary/
 /cache/
@@ -46,3 +47,5 @@ vagrant/definitions/jessie/preseed.cfg
 build.log
 
 *.tmp
+
+.idea/
