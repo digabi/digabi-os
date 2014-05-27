@@ -1,9 +1,6 @@
 [submodule "custom-packages/digabi-feedback"]
 	path = custom-packages/digabi-feedback
 	url = git://github.com/digabi/digabi-feedback.git
-[submodule "custom-packages/digabi-live-extras"]
-	path = custom-packages/digabi-live-extras
-	url = git://github.com/digabi/digabi-live-extras.git
 [submodule "custom-packages/digabi-repository"]
 	path = custom-packages/digabi-repository
 	url = git://github.com/digabi/digabi-repository.git
