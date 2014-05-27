@@ -12,5 +12,3 @@ do
 	mkdir -p ${_DIRECTORY}
 	chmod 1777 ${_DIRECTORY}
 done
-
-find / -type f -name "*~" -exec rm {} \;
