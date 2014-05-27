@@ -10,23 +10,15 @@ OSR="/etc/os-release"
 # example: 4.0 Extinct Examplespecies
 VERSION_LIST="/usr/share/digabi/versions.txt"
 
-<<<<<<< HEAD:config/hooks/1500-configure-os-release.hook.chroot
-=======
 # Digabi version number
 CURRENT_VERSION="$(digabi version)"
 
->>>>>>> upstream-master:config/hooks/1500-configure-os-release.chroot
 if [ ! -f "${VERSION_LIST}" ]
 then
 	echo "W: No version list available, will not update /etc/os-release"
 	exit 0
 fi
 
-<<<<<<< HEAD:config/hooks/1500-configure-os-release.hook.chroot
-CURRENT_VERSION="$(digabi version)"
-
-=======
->>>>>>> upstream-master:config/hooks/1500-configure-os-release.chroot
 VERSION="$(cat ${VERSION_LIST} |grep ${CURRENT_VERSION})"
 
 CODENAME="$(echo ${VERSION} |cut -d' ' -f2-)"
