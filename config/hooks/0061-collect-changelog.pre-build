@@ -7,5 +7,5 @@ then
     echo "I: Including debian/changelog to binary."
     mkdir -p config/includes.binary
     # TODO: Change \n to \r\n (Windows-style line endings...) ?
-    cp debian/changelog config/includes.binary/changelog.txt
+    cat debian/changelog |sed 's/$/\r/' >config/includes.binary/changelog.txt
 fi
