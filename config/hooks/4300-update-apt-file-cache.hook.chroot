@@ -6,7 +6,7 @@ set -e
 #
 # This allows to use using apt-file out-of-the-box.
 
-. /root/config/binary
+. /live-build/config/binary
 
 if [ -x /usr/bin/apt-file ] && [ "${LB_APT_INDICES}" = "true" ]
 then
