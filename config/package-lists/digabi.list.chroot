@@ -26,7 +26,6 @@ chromium
 chromium-l10n
 
 # Web browser: iceweasel (Firefox)
-# Installing from experimental repository, to get new version
 iceweasel
 iceweasel-l10n-fi
 iceweasel-l10n-sv-se

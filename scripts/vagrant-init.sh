@@ -3,14 +3,14 @@
 set -e
 
 #
-# Initiliaze new Vagrant (Debian wheezy/jessie)
+# Initialiaze new Vagrant (Debian wheezy/jessie)
 #
 DIGABI_REPOSITORY_PATH="/vagrant/custom-packages/digabi-repository"
 
-if [ -f "/etc/apt/apt.conf" ]
+if [ -x "/vagrant/scripts/vagrant-local.sh" ]
 then
-    echo "I: Remove apt proxy configuration..."
-    rm /etc/apt/apt.conf
+    echo "I: Run local Vagrant customization scripts.."
+    /vagrant/scripts/vagrant-local.sh
 fi
 
 echo "I: Add Digabi repository..."
@@ -27,6 +27,21 @@ else
     wget -qO- https://digabi.fi/debian/digabi.asc | apt-key add -
 fi
 
-echo "I: Install digabi-dev..."
+# If APT source exists, move it as default mirror (fixed problems w/ pbuilder)
+if [ ! -f "/etc/apt/sources.list" ] &&  [ -f "/etc/apt/sources.list.d/jessie.list" ]
+then
+    echo "I: Use jessie.list as sources.list (default mirror)..."
+    mv /etc/apt/sources.list.d/jessie.list /etc/apt/sources.list
+fi
+
+echo "I: Configure APT: do not install recommends..."
+cat << EOF >/etc/apt/apt.conf.d/99-no-recommends
+APT::Install-Recommends "false";
+APT::Install-Suggests "false";
+EOF
+
+echo "I: Update package lists..."
 apt-get -qy update
+
+echo "I: Install digabi-dev..."
 apt-get -qy install digabi-dev
