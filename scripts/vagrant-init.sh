@@ -44,4 +44,4 @@ echo "I: Update package lists..."
 apt-get -qy update
 
 echo "I: Install digabi-dev..."
-apt-get -qy install digabi-dev
+apt-get -qy install digabi-dev rsync
