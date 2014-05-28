@@ -8,9 +8,9 @@ imvirt
 dmidecode
 
 # Hardening
-harden-environment
-harden-clients 
-harden-servers
+#harden-environment
+#harden-clients 
+#harden-servers
 
 # AppArmor: limit what apps can do
 # TODO: Configure AppArmor
