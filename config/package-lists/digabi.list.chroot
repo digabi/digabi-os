@@ -22,8 +22,8 @@ libreoffice-math
 libreoffice-voikko
 
 # Web browser: chromium =~ Google Chrome
-chromium
-chromium-l10n
+#chromium
+#chromium-l10n
 
 # Web browser: iceweasel (Firefox)
 iceweasel
