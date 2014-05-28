@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -e
+
+TARGET_FILE="config/includes.chroot/var/lib/digabi/builder"
+TARGET_DIR="$(dirname ${TARGET_FILE})"
+ID_FILE="${HOME}/.digabi/builder-id"
+ID_DIR="$(dirname ${ID_FILE})"
+
+if [ ! -d "${TARGET_DIR}" ]
+then
+    mkdir -p "${TARGET_DIR}"
+fi
+
+if [ ! -f "${ID_FILE}" ]
+then
+    BUILDER_ID="$(head -n1 /dev/urandom |sha1sum |awk '{print $1}')"
+    if [ ! -d "${ID_DIR}" ]
+    then
+        mkdir -p "${ID_DIR}"
+    fi
+    echo "${BUILDER_ID}" >${ID_FILE}
+else
+    BUILDER_ID="$(cat ${ID_FILE})"
+fi
+
+BUILD_HOST="$(hostname -f)"
+
+if [ -x "/usr/bin/lb" ]
+then
+    LB_VERSION="$(/usr/bin/lb --version)"
+else
+    LB_VERSION="N/A"
+fi
+
+echo "ID: ${BUILDER_ID}" >${TARGET_FILE}
+echo "Host: ${BUILD_HOST}" >>${TARGET_FILE}
+echo "Kernel: $(uname -srvm)" >>${TARGET_FILE}
+echo "live-build: ${LB_VERSION}" >>${TARGET_FILE}
