@@ -15,7 +15,7 @@ Files: proprietary/background.svg /usr/share/digabi
 # proprietary/background_1920x1080.png /usr/share/digabi
 # proprietary/background_1920x1200.png /usr/share/digabi
  proprietary/digabi-background.xml /usr/share/digabi
- proprietary/splash.svg.in /usr/share/digabi
+ proprietary/splash.svg /usr/share/digabi
  proprietary/digabi.svg /usr/share/digabi
 # proprietary/digabi_48x48.png /usr/share/digabi
 Description: Digabi Background files.
