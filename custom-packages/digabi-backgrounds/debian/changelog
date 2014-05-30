@@ -1,3 +1,10 @@
+digabi-backgrounds (1.2) unstable; urgency=medium
+
+  * Restored larger bootsplash image.
+  * Renamed bootsplash from splash.svg.in to splash.svg (live-build 4.x style).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 30 May 2014 15:35:18 +0300
+
 digabi-backgrounds (1.1) unstable; urgency=medium
 
   * Resized bootsplash to 640x480.
