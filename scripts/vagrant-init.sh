@@ -43,5 +43,5 @@ EOF
 echo "I: Update package lists..."
 apt-get -qy update
 
-echo "I: Install digabi-dev..."
-apt-get -qy install digabi-dev rsync
+echo "I: Install digabi-dev, rsync..."
+DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-dev rsync
