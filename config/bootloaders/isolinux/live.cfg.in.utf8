@@ -33,7 +33,7 @@ operativsystemet sker på användarens egen risk.
 	endtext
 	linux @LINUX@
 	initrd @INITRD@
-	append @APPEND_LIVE@ locales=sv_SE.UTF-8,sv_FI.UTF-8 keyboard-layouts=se
+	append @APPEND_LIVE@ locales=sv_FI.UTF-8,sv_SE.UTF-8 keyboard-layouts=se
 
 label english
 	menu label ^Use the system in English
