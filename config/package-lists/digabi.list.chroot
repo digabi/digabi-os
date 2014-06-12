@@ -51,9 +51,5 @@ dansguardian
 # proxy, required by dansguardian
 polipo
 
-
-# Install how-can-i-help, so our users could find ways to help Debian (and Digabi)
-how-can-i-help
-
 # custom fonts, ui
 fonts-lato
