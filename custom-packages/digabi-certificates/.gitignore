@@ -1,0 +1,4 @@
+*.log
+*.substvars
+debian/digabi-certificates
+debian/files
