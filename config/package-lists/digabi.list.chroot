@@ -4,6 +4,9 @@
 digabi-live
 digabi-live-extras
 
+# Root CA
+digabi-certificates
+
 # Digabi custom UI
 digabi-customization
 
