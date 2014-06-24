@@ -51,4 +51,4 @@ get-modules:
 	git submodule init
 	git submodule update
 
-dist:	clean bclean get-modules build collect
+dist:	clean get-modules build collect
