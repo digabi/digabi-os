@@ -86,3 +86,6 @@ config/includes.binary/changelog.txt
 
 # Ignore local vagrant provision script
 scripts/vagrant-local.sh
+
+# Ignore local configuration
+config/digabi.local
