@@ -23,6 +23,8 @@ if [ ! -x "`which dpkg-parsechangelog`" ]; then
    exit 2
 fi
 
+DIGABI_DIST_NAME="digabi-os"
+
 # Compute the current DIGABI's version once for all
 DIGABI_NOW="`date --utc '+%Y%m%dT%H%MZ'`"
 DIGABI_TODAY="`date '+%Y%m%d'`"
