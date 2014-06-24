@@ -10,10 +10,23 @@ done
 
 lb clean noauto "${@}"
 
-rm -f config/binary config/bootstrap config/chroot config/common config/source
+rm -f config/binary config/bootstrap config/build config/chroot config/common config/source
 rm -f build.log
 
 # Remove empty directories in config tree
 if ls config/*/ > /dev/null 2>&1 ; then
     rmdir --ignore-fail-on-non-empty config/*/
 fi
+
+# Remove *~ in config tree
+find config -type f -name "*~" -exec rm {} \;
+
+# Remove root password, if configure
+rm -f config/root-password
+
+# Remove repository configuration
+rm -f config/archives/digabi.key.{chroot,binary}
+rm -f config/archives/{digabi,wheezy,sid,experimental}.list.chroot
+
+# Remove build meta
+rm -f config/includes.chroot/var/lib/digabi/{version,build}

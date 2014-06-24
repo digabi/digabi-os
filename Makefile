@@ -48,22 +48,10 @@ build: config
 clean:
 	$(ROOT_CMD) $(LIVE_BUILD) clean --all
 
-bclean:
-	find config -type f -name "*~" -exec rm {} \;
-
 purge:
 	$(ROOT_CMD) $(LIVE_BUILD) clean --all --purge
-	rm -f config/build
-	rm -f config/root-password
 	rm -rf $(CHROOT_PACKAGES)
-	rm -f config/archives/digabi.key.chroot
-	rm -f config/archives/digabi.key.binary
-	rm -f config/archives/digabi.list.chroot
-	rm -f config/archives/wheezy.list.chroot
-	rm -f config/archives/sid.list.chroot
-	rm -f config/archives/experimental.list.chroot
 	$(ROOT_CMD) rm -f config/includes.binary/changelog.txt
-	$(ROOT_CMD) rm -f config/includes.chroot/var/lib/digabi/version
 
 collect:
 	mkdir -p $(TARGET)
@@ -77,4 +65,4 @@ get-modules:
 	git submodule init
 	git submodule update
 
-dist:	clean bclean get-modules build collect
+dist:	clean get-modules build collect
