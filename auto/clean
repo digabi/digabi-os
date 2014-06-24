@@ -12,3 +12,8 @@ lb clean noauto "${@}"
 
 rm -f config/binary config/bootstrap config/chroot config/common config/source
 rm -f build.log
+
+# Remove empty directories in config tree
+if ls config/*/ > /dev/null 2>&1 ; then
+    rmdir --ignore-fail-on-non-empty config/*/
+fi
