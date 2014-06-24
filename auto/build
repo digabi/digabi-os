@@ -47,7 +47,7 @@ else
     fi
 fi
 
-case "$LB_BINARY_IMAGES" in
+case "${LB_BINARY_IMAGES}" in
    iso)
       BUILD_FILENAME_EXT=iso
       BUILD_FILENAME=live-image # FIXME
