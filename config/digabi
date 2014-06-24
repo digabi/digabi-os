@@ -24,6 +24,7 @@ if [ ! -x "`which dpkg-parsechangelog`" ]; then
 fi
 
 DIGABI_DIST_NAME="digabi-os"
+DIGABI_DIST_NAME_SHORT="dos"
 
 # Compute the current DIGABI's version once for all
 DIGABI_NOW="`date --utc '+%Y%m%dT%H%MZ'`"
