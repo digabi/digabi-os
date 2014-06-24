@@ -42,7 +42,8 @@ else
     else
     # this shouldn't reasonably happen (e.g. only if you checkout a
         # tag, remove the tag and then build)
-    fatal "Neither a Git branch nor a tag, exiting."
+    echo "Neither a Git branch nor a tag, exiting."
+    exit 1
     fi
 fi
 
@@ -81,5 +82,6 @@ if time eatmydata lb build noauto ${@} 2>&1 | tee "${BUILD_LOG}" ; then
    mv -i "${BUILD_FILENAME}.${BUILD_FILENAME_EXT}" "${BUILD_DEST_FILENAME}"
    mv -i binary.packages "${BUILD_PACKAGES}"
 else
-   fatal "lb build failed ($?)."
+   echo "lb build failed ($?)."
+   exit 1
 fi
