@@ -65,7 +65,8 @@ case "$LB_BINARY_IMAGES" in
       BUILD_FILENAME=live-image # FIXME
       ;;
    *)
-      fatal "Image type ${LB_BINARY_IMAGES} is not supported."
+      echo "Image type ${LB_BINARY_IMAGES} is not supported."
+      exit 1
       ;;
 esac
 
