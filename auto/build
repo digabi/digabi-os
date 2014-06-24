@@ -47,28 +47,30 @@ else
     fi
 fi
 
-case "${LB_BINARY_IMAGES}" in
-   iso)
-      BUILD_FILENAME_EXT=iso
-      BUILD_FILENAME=live-image # FIXME
-      ;;
-   iso-hybrid)
-      BUILD_FILENAME_EXT=iso
-      BUILD_FILENAME=live-image-${LB_ARCHITECTURE}.hybrid
-      ;;
-   tar)
-      BUILD_FILENAME_EXT=tar.gz
-      BUILD_FILENAME=live-image-tar # FIXME
-      ;;
-   usb-hdd)
-      BUILD_FILENAME_EXT=img
-      BUILD_FILENAME=live-image # FIXME
-      ;;
-   *)
-      echo "Image type ${LB_BINARY_IMAGES} is not supported."
-      exit 1
-      ;;
-esac
+# case "${LB_BINARY_IMAGES}" in
+#    iso)
+#       BUILD_FILENAME_EXT=iso
+#       BUILD_FILENAME=live-image # FIXME
+#       ;;
+#    iso-hybrid)
+#       BUILD_FILENAME_EXT=iso
+#       BUILD_FILENAME=live-image-${LB_ARCHITECTURE}.hybrid
+#       ;;
+#    tar)
+#       BUILD_FILENAME_EXT=tar.gz
+#       BUILD_FILENAME=live-image-tar # FIXME
+#       ;;
+#    usb-hdd)
+#       BUILD_FILENAME_EXT=img
+#       BUILD_FILENAME=live-image # FIXME
+#       ;;
+#    *)
+#       echo "Image type ${LB_BINARY_IMAGES} is not supported."
+#       exit 1
+#       ;;
+# esac
+BUILD_FILENAME_EXT="iso"
+BUILD_FILENAME="live-image-${LB_ARCHITECTURE}"
 
 BUILD_DEST_FILENAME="${BUILD_BASENAME}.${BUILD_FILENAME_EXT}"
 BUILD_MANIFEST="${BUILD_DEST_FILENAME}.list"
