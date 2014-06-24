@@ -5,7 +5,7 @@ Standards-Version: 3.9.2
 
 Package: digabi-dev
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: build-essential, live-build (>= 4.0), git, equivs, devscripts, 
+Depends: build-essential, live-build, git, equivs, devscripts, 
  digabi-common, packaging-dev, debconf-utils, eatmydata, 
  git-buildpackage, time
 Recommends: reprepro, piuparts, apt-cacher-ng, kernel-package,
