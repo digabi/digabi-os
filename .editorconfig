@@ -18,5 +18,9 @@ indent_style = space
 indent_size = 4
 
 [{Makefile}]
-ident_style = tab
+indent_style = tab
+indent_size = 1
+
+[{rules}]
+indent_style = tab
 indent_size = 1
