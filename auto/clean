@@ -2,6 +2,12 @@
 
 set -e
 
+for dir in chroot/{dev/pts,proc,sys,var/lib/dpkg} ; do
+   if mountpoint -q "$dir" ; then
+      umount "$dir"
+   fi
+done
+
 lb clean noauto "${@}"
 
 rm -f config/binary config/bootstrap config/chroot config/common config/source
