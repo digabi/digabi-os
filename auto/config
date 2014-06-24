@@ -2,6 +2,17 @@
 
 set -e
 
+# we require building from git
+if ! git rev-parse --is-inside-work-tree; then
+    echo "${PWD} is not a Git tree. Exiting."
+    exit 1
+fi
+
+. config/digabi
+if [ -e config/digabi.local ] ; then
+   . config/digabi.local
+fi
+
 # Run pre-config hooks
 PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/*.pre-config)"
 
