@@ -1,0 +1,30 @@
+#!/bin/sh
+
+DEVICE="$1"
+
+if [ -z "${DEVICE}" ]
+then
+    echo "E: Device not specified, exiting."
+    exit 1
+fi
+
+if [ ! -e "${DEVICE}" ]
+then
+    echo "E: Device ${DEVICE} not found, exiting..."
+    exit 1
+fi
+
+IMAGE="${2-dist/latest.iso}"
+if [ ! -f "${IMAGE}" ]
+then
+    echo "E: Source image ${IMAGE} not found, exiting..."
+    exit 1
+fi
+SOURCE="$(readlink -f ${IMAGE})"
+
+SHORT_SOURCE="$(basename ${SOURCE})"
+echo "I: Creating USB stick (device ${DEVICE}) from image ${SHORT_SOURCE}..."
+
+dd if=${SOURCE} of=${DEVICE} bs=16M
+
+echo "I: Done."
