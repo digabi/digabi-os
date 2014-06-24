@@ -40,12 +40,12 @@ purge:
 	$(ROOT_CMD) rm -f config/includes.binary/changelog.txt
 
 collect:
-	mkdir -p $(TARGET)
-	mv $(ISO_FILE) $(TARGET)/$(FILENAME_PREFIX)_$(VERSION).iso
-	mv build.log $(TARGET)/$(FILENAME_PREFIX)-build_$(VERSION).log
-	xz $(TARGET)/$(FILENAME_PREFIX)-build_$(VERSION).log
-	$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-config_$(VERSION)$(TAR_EXT) config
-	$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION)$(TAR_EXT) chroot.packages.install chroot.packages.live $(BUILD_PREFIX).*
+	#mkdir -p $(TARGET)
+	#mv $(ISO_FILE) $(TARGET)/$(FILENAME_PREFIX)_$(VERSION).iso
+	#mv build.log $(TARGET)/$(FILENAME_PREFIX)-build_$(VERSION).log
+	#xz $(TARGET)/$(FILENAME_PREFIX)-build_$(VERSION).log
+	#$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-config_$(VERSION)$(TAR_EXT) config
+	#$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION)$(TAR_EXT) chroot.packages.install chroot.packages.live $(BUILD_PREFIX).*
 
 get-modules:
 	git submodule init
