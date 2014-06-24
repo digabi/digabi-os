@@ -30,3 +30,6 @@ rm -f config/archives/{digabi,wheezy,sid,experimental}.list.chroot
 
 # Remove build meta
 rm -f config/includes.chroot/var/lib/digabi/{version,build}
+
+# Remove custom packages
+rm -rf config/packages.chroot

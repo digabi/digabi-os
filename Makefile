@@ -24,24 +24,11 @@ BUILD_PREFIX = live-image-$(ARCH)
 ISO_FILE = $(BUILD_PREFIX).hybrid.iso
 FILENAME_PREFIX = digabi-os
 
-CHROOT_PACKAGES = config/packages.chroot
-
 all:	config build
 
 config:	clean
 	$(LIVE_BUILD) config
 
-$(CHROOT_PACKAGES):
-	mkdir -p $(CHROOT_PACKAGES)
-	digabi build-custom-packages
-
-	#for pkg in $(shell cat config/package-lists/digabi.list.chroot |grep ^digabi |xargs)
-	#do
-	#	mv custom-packages/$(pkg)_*_*.deb $(CHROOT_PACKAGES)/
-	#done
-	# TODO: List packages we need (cat config/package-lists/digabi.list.chroot |grep ^digabi |xargs)
-	# TODO: For $pkg in $packages
-	
 build: config
 	$(ROOT_CMD) $(LIVE_BUILD) build |tee build.log
 
@@ -50,7 +37,6 @@ clean:
 
 purge:
 	$(ROOT_CMD) $(LIVE_BUILD) clean --all --purge
-	rm -rf $(CHROOT_PACKAGES)
 	$(ROOT_CMD) rm -f config/includes.binary/changelog.txt
 
 collect:
@@ -65,4 +51,4 @@ get-modules:
 	git submodule init
 	git submodule update
 
-dist:	clean get-modules build collect
+dist:	clean bclean get-modules build collect
