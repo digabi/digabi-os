@@ -2,6 +2,8 @@
 
 set -e
 
+umask 022
+
 BUILD_VERSION="${1}"
 case "${BUILD_VERSION}" in
     dev*)
