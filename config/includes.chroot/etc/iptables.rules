@@ -28,6 +28,7 @@
 -A digabi-output -p tcp -m tcp --dport 8010 -s 127.0.0.0/8 -d 127.0.0.0/8 -j ACCEPT -m comment --comment "Allow access from browser to Node.js."
 -A digabi-output -p tcp -m tcp --dport 7910 -s 127.0.0.0/8 -d 127.0.0.0/8 -j ACCEPT -m comment --comment "Allow access from browser to test Node.js."
 -A digabi-output -p tcp -m tcp --dport 80 -s 10.10.0.0/16 -d 10.10.0.1/32 -j ACCEPT -m comment --comment "Allow Node.js to Exam server access."
+-A digabi-output -p tcp -m tcp --dport 443 -s 10.10.0.0/16 -d 10.10.0.1/32 -j ACCEPT -m comment --comment "Allow Node.js to Exam server SSL access."
 #-A digabi-output -p tcp -m tcp --dport 80 -m owner --uid-owner proxy -j ACCEPT -m comment --comment "Allow HTTP for user proxy."
 #-A digabi-output -p tcp -m tcp --dport 443 -m owner --uid-owner proxy -j ACCEPT -m comment --comment "Allow HTTPS for user proxy."
 -A digabi-output -p tcp -m tcp --dport 80 -j ACCEPT -m comment --comment "Allow HTTP."
