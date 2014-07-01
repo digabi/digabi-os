@@ -7,5 +7,6 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: digabi-common, openssh-server
 Changelog: debian/changelog
 Files: authorized_keys /root/.ssh
+ usr/lib/digabi/scripts /
 Description: Debug features for Digabi OS.
  xx

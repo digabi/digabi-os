@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+TEMPFILE="$(mktemp digabi-os-debug.XXXXXXXX.tar.xz)"
+FILES="/var/log/Xorg.0.log /var/log/syslog /var/log/auth.log /var/lib/digabi/version"
+
+###
+_FILES=""
+for f in ${FILES}
+do
+    if [ -r "${f}" ]
+    then
+	echo "I: Adding file ${f}."
+        _FILES="${_FILES} ${f}"
+    else
+        echo "W: Can't open ${f}, skipping."
+    fi
+done
+
+TAR_BIN="/bin/tar"
+TAR_FLAGS="cJf"
+
+${TAR_BIN} ${TAR_FLAGS} ${TEMPFILE} ${_FILES} 2>/dev/null
+
+echo "I: Debug data collected to ${TEMPFILE}."
