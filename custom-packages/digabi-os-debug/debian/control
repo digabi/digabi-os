@@ -4,7 +4,7 @@ Standards-Version: 3.9.2
 
 Package: digabi-os-debug
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: digabi-common, openssh-server
+Depends: digabi-common, openssh-server, digabi-feedback
 Changelog: debian/changelog
 Files: authorized_keys /root/.ssh
  usr/lib/digabi/scripts/debug /

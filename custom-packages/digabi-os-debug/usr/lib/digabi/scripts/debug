@@ -2,7 +2,8 @@
 
 set -e
 
-TEMPFILE="$(mktemp digabi-os-debug.XXXXXXXX.tar.xz)"
+TEMPFILE="$(mktemp digabi-os-debug.XXXXXXXX.tar.gz)"
+_FB_TEMP="$(mktemp)"
 FILES="/var/log/Xorg.0.log /var/log/syslog /var/log/auth.log /var/lib/digabi/version"
 
 ###
@@ -19,9 +20,12 @@ do
 done
 
 TAR_BIN="/bin/tar"
-TAR_FLAGS="cJf"
+TAR_FLAGS="czf"
 
-${TAR_BIN} ${TAR_FLAGS} ${TEMPFILE} ${_FILES} 2>/dev/null
+digabi collect-feedback >${_FB_TEMP}
+${TAR_BIN} ${TAR_FLAGS} ${TEMPFILE} ${_FILES} ${_FB_TEMP} 2>/dev/null
 chmod ugo+r ${TEMPFILE}
+
+rm -f ${_FB_TEMP}
 
 echo "I: Debug data collected to ${TEMPFILE}."
