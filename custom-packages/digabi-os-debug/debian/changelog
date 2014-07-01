@@ -1,3 +1,15 @@
+digabi-os-debug (1.4) UNRELEASED; urgency=medium
+
+  * Add chmod ugo+r for log package (by default file is owned by root).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 01 Jul 2014 11:11:53 +0300
+
+digabi-os-debug (1.3) unstable; urgency=medium
+
+  * Allow users to run digabi debug with sudo.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 01 Jul 2014 11:08:46 +0300
+
 digabi-os-debug (1.2) unstable; urgency=medium
 
   * Disable starting openssh-server on boot at runlevel 2 (= start at levels 3, 4, 5). 

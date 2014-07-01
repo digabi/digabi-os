@@ -22,5 +22,6 @@ TAR_BIN="/bin/tar"
 TAR_FLAGS="cJf"
 
 ${TAR_BIN} ${TAR_FLAGS} ${TEMPFILE} ${_FILES} 2>/dev/null
+chmod ugo+r ${TEMPFILE}
 
 echo "I: Debug data collected to ${TEMPFILE}."

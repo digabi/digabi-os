@@ -8,6 +8,7 @@ Depends: digabi-common, openssh-server
 Changelog: debian/changelog
 Files: authorized_keys /root/.ssh
  usr/lib/digabi/scripts/debug /
+ etc/sudoers.d/digabi-os-debug /
 Description: Debug features for Digabi OS.
  xx
 File: postinst
