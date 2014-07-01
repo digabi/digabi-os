@@ -1,3 +1,9 @@
+digabi-os-debug (1.2) unstable; urgency=medium
+
+  * Disable starting openssh-server on boot at runlevel 2 (= start at levels 3, 4, 5). 
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 01 Jul 2014 10:57:07 +0300
+
 digabi-os-debug (1.1) unstable; urgency=medium
 
   * Adding command digabi debug to collect debug information into single archive.
