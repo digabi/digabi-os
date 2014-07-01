@@ -1,0 +1,10 @@
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+
+Package: digabi-os-debug
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Depends: digabi-common
+Changelog: debian/changelog
+Description: Debug features for Digabi OS.
+ xx
