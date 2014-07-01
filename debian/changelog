@@ -1,7 +1,10 @@
-digabi-os (14.05a1) UNRELEASED; urgency=low
+digabi-os (14.06a1) UNRELEASED; urgency=low
 
   * Upgraded GeoGebra to 4.4, using package from upstream.
   * Added digabi-feedback client.
+  * Added digabi-os-debug for easy debug data collecting.
+  * Added Ylioppilastutkintolautakunta Root CA (root certificate).
+  * 
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 23 Apr 2014 23:54:40 +0300
 
