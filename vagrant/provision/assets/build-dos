@@ -1,0 +1,146 @@
+#!/bin/sh
+
+# This script is used by both our Vagrant and Jenkins -based build environments.
+
+set -e
+
+TMPFS_SIZE_MB=6144 # 6 GB
+TMPFS_SIZE_BYTES=$(($TMPFS_SIZE_MB * 1024 * 1024))
+
+as_root_do() {
+	sudo \
+		${RSYNC_PROXY:+RSYNC_PROXY="$RSYNC_PROXY"} \
+		${http_proxy:+http_proxy="$http_proxy"} \
+		${https_proxy:+https_proxy="$https_proxy"} \
+		${ftp_proxy:+ftp_proxy="$ftp_proxy"} \
+		${no_proxy:+no_proxy="$no_proxy"} \
+		${JENKINS_URL:+JENKINS_URL="$JENKINS_URL"} \
+		${MKSQUASHFS_OPTIONS:+MKSQUASHFS_OPTIONS="$MKSQUASHFS_OPTIONS"} \
+		"$@"
+}
+
+usable_memory() {
+	free -b | awk '/cache:/ { print $4 }'
+}
+
+bootstrap_stage_is_ok() {
+	[ -d "$1" ] || return 1
+	[ "$(sudo du -sm $1 | cut -f1)" -ge 100 ] || return 1
+	for dir in bin dev etc lib proc root sbin sys usr var; do
+		[ -d "$1/$dir" ] || return 1
+	done
+	return 0
+}
+
+cleanup() {
+	[ -n "$BUILD_DIR" ] || return 0
+	cd /
+	mounts=$(mount | grep -E "^[^[:space:]]+ on $BUILD_DIR" | \
+		awk '{print $3}' | sort -r)
+	[ -n "$mounts" ] && sudo umount $mounts
+	[ -d "$TMPFS_DIR" ] && ( sudo umount $TMPFS_DIR ; rmdir $TMPFS_DIR )
+	[ -d "$BUILD_DIR" ] && sudo rm -rf $BUILD_DIR
+}
+
+trap cleanup EXIT
+
+if [ "$DIGABI_RAM_BUILD" ]; then
+	if [ "$(usable_memory)" -lt "$TMPFS_SIZE_BYTES" ]; then
+		echo "Not enough memory available for an in-memory build. Aborting." >&2
+		exit 1
+	fi
+fi
+
+if [ -n "$JENKINS_URL" ]; then
+	# Build triggered by Jenkins
+	if [ -z "$WORKSPACE" ]; then
+		echo "WORKSPACE environment variable is not set. Aborting." >&2
+	fi
+	if mountpoint -q /srv/www; then
+		ARTIFACTS_DIR=/srv/www/"$JOB_NAME"
+	else
+		echo "Shared directory is not available, saving artifacts in workspace." >&2
+		ARTIFACTS_DIR="$WORKSPACE"
+	fi
+	if [ -z "$GIT_BRANCH" ]; then
+		echo "GIT_BRANCH environment variable is not set. Aborting." >&2
+	fi
+	if [ -z "$GIT_COMMIT" ]; then
+		echo "GIT_COMMIT environment variable is not set. Aborting." >&2
+	fi
+	REV="${GIT_BRANCH##origin/}"
+	COMMIT="$GIT_COMMIT"
+else
+	# Build triggered by Vagrant
+	WORKSPACE=/home/vagrant/digabi-os
+	ARTIFACTS_DIR=/vagrant
+	COMMIT="$(git --git-dir=/digabi-os.git rev-parse --verify HEAD)"
+	if git --git-dir=/digabi-os.git symbolic-ref HEAD >/dev/null 2>&1; then
+		# We are building from a branch
+		REV="${1:-$(git --git-dir=/digabi-os.git name-rev --name-only HEAD)}"
+	else
+		# We are (hopefully) building from a tag
+		if ! REV="${1:-$(git --git-dir=/digabi-os.git describe --tags --exact-match ${COMMIT})}"; then
+			echo "It seems we are building from an untagged detached HEAD. Aborting." >&2
+			exit 1
+		fi
+	fi
+	test -d "$WORKSPACE" || git clone /digabi-os.git "$WORKSPACE"
+	cd "$WORKSPACE"
+	git fetch origin
+fi
+
+cd "$WORKSPACE"
+git checkout --force "$REV"
+git reset --hard "$COMMIT"
+
+install -m 0755 -d "$ARTIFACTS_DIR"
+
+if [ "$DIGABI_CLEAN_BUILD" ]; then
+	as_root_do lb clean --all
+	sudo rm -rf /var/cache/stages_bootstrap
+fi
+./build-wiki
+
+BUILD_DIR=$(mktemp -d /tmp/digabi-build.XXXXXXXX)
+if [ "$DIGABI_RAM_BUILD" ]; then
+	TMPFS_DIR=$(mktemp -d /tmp/tmpfs.XXXXXXXX)
+	as_root_do mount -t tmpfs -o "noatime,size=${TMPFS_SIZE_BYTES},mode=0770,uid=root,gid=${USER}" tmpfs "$TMPFS_DIR"
+	as_root_do mount -t aufs -o "noatime,noxino,dirs=$TMPFS_DIR=rw:${WORKSPACE}/=rr+wh" aufs "$BUILD_DIR"
+else
+	as_root_do rsync -a "$WORKSPACE"/ "$BUILD_DIR"/
+fi
+
+cd "$BUILD_DIR"
+as_root_do lb config --cache-packages false
+
+if [ "$DIGABI_BOOTSTRAP_CACHE" ] && \
+    bootstrap_stage_is_ok /var/cache/stages_bootstrap; then
+	# restore bootstrap stage and make live-build use it
+	sudo mkdir -p "$BUILD_DIR"/cache/stages_bootstrap
+	sudo mount --bind /var/cache/stages_bootstrap \
+		"$BUILD_DIR"/cache/stages_bootstrap
+	sudo touch "$BUILD_DIR"/.stage/bootstrap
+	sudo touch "$BUILD_DIR"/.stage/bootstrap_cache.save
+fi
+
+as_root_do lb build
+
+if [ -n "$JENKINS_URL" ]; then
+	ISO=$(ls *.iso)
+	for file in digabi-*; do
+		sha512sum "$file" >> "$ISO.shasum"
+	done
+	echo "FIXME: gpg signing"
+	#gpg --batch --detach-sign --armor "$ISO.shasum"
+fi
+
+mv -f digabi-* "$ARTIFACTS_DIR"
+
+if [ "$DIGABI_BOOTSTRAP_CACHE" ] && \
+    ! sudo umount "$BUILD_DIR"/cache/stages_bootstrap 2>/dev/null; then
+	# the cached bootstrap stage wasn't used (maybe it hadn't been
+	# cached yet?) so we save the good one from the current build.
+	sudo rsync -a --delete "$BUILD_DIR"/cache/stages_bootstrap/ \
+		/var/cache/stages_bootstrap
+fi

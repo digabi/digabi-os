@@ -48,7 +48,7 @@ APT::Install-Recommends "false";
 APT::Install-Suggests "false";
 EOF
 
-
+install -o root -g root -m 755 /vagrant/provision/assets/build-dos /usr/local/bin
 
 echo "I: Update package lists..."
 apt-get -qy update
