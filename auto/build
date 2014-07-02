@@ -21,6 +21,11 @@ fi
 # get LB_ARCHITECTURE and LB_DISTRIBUTION
 . config/bootstrap
 
+if [ -z "${LB_ARCHITECTURE}" ]
+then
+    LB_ARCHITECTURE="i386"
+fi
+
 # get git branch or tag so we can set the basename appropriately, i.e.:
 # * if we build from a tag:    ${DIGABI_DIST_NAME}-$ARCH-$TAG.iso
 # * if we build from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$DATE.iso
@@ -68,7 +73,7 @@ fi
 #       exit 1
 #       ;;
 # esac
-BUILD_FILENAME_EXT="iso"
+BUILD_FILENAME_EXT="hybrid.iso"
 BUILD_FILENAME="live-image-${LB_ARCHITECTURE}"
 
 BUILD_DEST_FILENAME="${BUILD_BASENAME}.${BUILD_FILENAME_EXT}"
