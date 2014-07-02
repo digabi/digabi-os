@@ -1,59 +1,90 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
-BUILD_VERSION="${1}"
-case "${BUILD_VERSION}" in
-    dev*)
-        BUILD_VERSION="dev"
-        shift 1
-        ;;
-    dist*)
-        BUILD_VERSION="dist"
-        shift 1
-        ;;
-    *)
-        BUILD_VERSION="dev"
-esac
+umask 022
 
-VERSION="$(${PWD}/scripts/version.helper ${BUILD_VERSION})"
-echo "I: Building version ${VERSION}..."
-
-PRE_BUILD_HOOKS="$(ls ${PWD}/config/hooks/*.pre-build)"
-POST_BUILD_HOOKS="$(ls ${PWD}/config/hooks/*.post-build)"
-
-if [ -n "${PRE_BUILD_HOOKS}" ]
-then
-    echo "I: Executing pre-build hooks..."
+# we require building from git
+if ! git rev-parse --is-inside-work-tree; then
+    echo "${PWD} is not a Git tree. Exiting."
+    exit 1
 fi
 
-for hook in ${PRE_BUILD_HOOKS}
-do
-    hook_base="$(basename ${hook})"
-    if [ -x "${hook}" ]
-    then
-        echo "I: Executing hook ${hook_base}..."
-        ${hook}
-    else
-        echo "W: Non-executable hook ${hook_base}."
-    fi
-done
-
-lb build noauto "${@}" 2>&1
-
-if [ -n "${POST_BUILD_HOOKS}" ]
-then
-    echo "I: Executing post-build hooks..."
+. config/digabi
+if [ -e config/digabi.local ] ; then
+   . config/digabi.local
 fi
 
-for hook in ${POST_BUILD_HOOKS}
-do
-    hook_base="$(basename ${hook})"
-    if [ -x "${hook}" ]
-    then
-        echo "I: Executing hook ${hook_base}..."
-        ${hook}
+# get LB_BINARY_IMAGES
+. config/binary
+
+# get LB_ARCHITECTURE and LB_DISTRIBUTION
+. config/bootstrap
+
+# get git branch or tag so we can set the basename appropriately, i.e.:
+# * if we build from a tag:    ${DIGABI_DIST_NAME}-$ARCH-$TAG.iso
+# * if we build from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$DATE.iso
+# * if Jenkins builds from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$TIME-$COMMIT.iso
+if GIT_REF="$(git symbolic-ref HEAD)"; then
+    GIT_BRANCH="${GIT_REF#refs/heads/}"
+    CLEAN_GIT_BRANCH=$(echo "$GIT_BRANCH" | sed 's,/,_,g')
+    if [ -n "${JENKINS_URL}" ]; then
+        GIT_SHORT_ID="$(git rev-parse --short HEAD)"
+        BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_BRANCH}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
     else
-        echo "W: Non-executable hook ${hook_base}."
+        BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_BRANCH}-${DIGABI_VERSION}-${DIGABI_TODAY}"
     fi
-done
+else
+    GIT_CURRENT_COMMIT="$(git rev-parse HEAD)"
+    if GIT_TAG="$(git describe --tags --exact-match ${GIT_CURRENT_COMMIT})"; then
+        CLEAN_GIT_TAG=$(echo "$GIT_TAG" | sed -e 's,/,_,g' -e 's,-rc,~rc,')
+    BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_TAG}"
+    else
+    # this shouldn't reasonably happen (e.g. only if you checkout a
+        # tag, remove the tag and then build)
+    echo "Neither a Git branch nor a tag, exiting."
+    exit 1
+    fi
+fi
+
+# case "${LB_BINARY_IMAGES}" in
+#    iso)
+#       BUILD_FILENAME_EXT=iso
+#       BUILD_FILENAME=live-image # FIXME
+#       ;;
+#    iso-hybrid)
+#       BUILD_FILENAME_EXT=iso
+#       BUILD_FILENAME=live-image-${LB_ARCHITECTURE}.hybrid
+#       ;;
+#    tar)
+#       BUILD_FILENAME_EXT=tar.gz
+#       BUILD_FILENAME=live-image-tar # FIXME
+#       ;;
+#    usb-hdd)
+#       BUILD_FILENAME_EXT=img
+#       BUILD_FILENAME=live-image # FIXME
+#       ;;
+#    *)
+#       echo "Image type ${LB_BINARY_IMAGES} is not supported."
+#       exit 1
+#       ;;
+# esac
+BUILD_FILENAME_EXT="iso"
+BUILD_FILENAME="live-image-${LB_ARCHITECTURE}"
+
+BUILD_DEST_FILENAME="${BUILD_BASENAME}.${BUILD_FILENAME_EXT}"
+BUILD_MANIFEST="${BUILD_DEST_FILENAME}.list"
+BUILD_PACKAGES="${BUILD_DEST_FILENAME}.packages"
+BUILD_LOG="${BUILD_DEST_FILENAME}.buildlog"
+
+echo "Building ${LB_BINARY_IMAGES} image ${BUILD_BASENAME}..."
+set -o pipefail
+if time lb build noauto ${@} 2>&1 | tee "${BUILD_LOG}" ; then
+   echo "Image was successfully created"
+   echo "Renaming generated files..."
+   mv -i "${BUILD_FILENAME}.${BUILD_FILENAME_EXT}" "${BUILD_DEST_FILENAME}"
+   mv -i binary.packages "${BUILD_PACKAGES}"
+else
+   echo "lb build failed ($?)."
+   exit 1
+fi

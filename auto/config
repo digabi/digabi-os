@@ -2,6 +2,17 @@
 
 set -e
 
+# we require building from git
+if ! git rev-parse --is-inside-work-tree; then
+    echo "${PWD} is not a Git tree. Exiting."
+    exit 1
+fi
+
+. config/digabi
+if [ -e config/digabi.local ] ; then
+   . config/digabi.local
+fi
+
 # Run pre-config hooks
 PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/*.pre-config)"
 
@@ -23,22 +34,6 @@ do
 done
 
 ARCHITECTURE="i386"
-#ARCHITECTURE="$(dpkg --print-architecture)"
-
-#case "${ARCHITECTURE}" in
-#    amd64)
-#        _LINUX_FLAVOURS="amd64"
-#        _SOURCE="false"
-#        ;;
-#    i386)
-#        _LINUX_FLAVOURS="486 686-pae"
-#        _SOURCE="false"
-#        ;;
-#    *)
-#	_LINUX_FLAVOURS="686-pae"
-#	_SOURCE="false"
-#esac
-
 _LINUX_FLAVOURS="686-pae"
 #_LINUX_FLAVOURS="ytl"
 _SOURCE="false"
@@ -53,7 +48,7 @@ fi
 
 BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
-ISO_VOLUME="dos-$(./scripts/version.helper notime nobuild shortver |cut -b-27)"
+ISO_VOLUME="${DIGABI_DIST_NAME_SHORT}-$(./scripts/version.helper notime nobuild shortver |cut -b-27)"
 
 #if [ -z "${APT_PROXY}" ]
 #then
