@@ -100,7 +100,6 @@ if [ "$DIGABI_CLEAN_BUILD" ]; then
 	as_root_do lb clean --all
 	sudo rm -rf /var/cache/stages_bootstrap
 fi
-./build-wiki
 
 BUILD_DIR=$(mktemp -d /tmp/digabi-build.XXXXXXXX)
 if [ "$DIGABI_RAM_BUILD" ]; then
