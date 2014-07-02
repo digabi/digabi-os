@@ -11,27 +11,29 @@ require 'vagrant_version'
 require 'vagrant_verified_download'
 require 'digabi_build_settings'
 
+
+# From Tails:
+if ENV['DIGABI_RAM_BUILD']
+  mem_size = VM_MEMORY_FOR_RAM_BUILDS
+else
+  mem_size = VM_MEMORY_FOR_DISK_BUILDS
+end
+cpus = ENV['DIGABI_BUILD_CPUS']
+
 if vagrant_old
   # FIXME, do we even need this?
+  raise 'FIXME: Using Vagrant 1.x'
 else
   Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "debian-jessie"
     config.vm.box_url = "http://cdn.ypcs.fi/pub/debian-jessie-240414.box"
 
     # config.vm.network :forwarded_port, guest: 80, host: 8080
-
     # config.vm.network :private_network, ip: "192.168.33.10"
-
     # config.vm.network :public_network
-
     # config.ssh.forward_agent = true
-
     # config.vm.synced_folder "../data", "/vagrant_data"
 
-    # Provider-specific configuration so you can fine-tune various
-    # backing providers for Vagrant. These expose provider-specific options.
-    # Example for VirtualBox:
-    #
     # config.vm.provider :virtualbox do |vb|
     #   # Don't boot with headless mode
     #   vb.gui = true
@@ -42,6 +44,11 @@ else
     #
 
     config.vm.provision "shell", path: "scripts/vagrant-init.sh"
-    
+    config.vm.synced_folder '../.git', '/digabi-os.git'
+
+    config.vm.provider :virtualbox do |vb|
+      vb.customize ['modifyvm', :id, '--memory', mem_size]
+      vb.customize ['modifyvm', :id, '--cpus', cpus] unless cpus.nil?
+    end
   end
 end
