@@ -25,6 +25,7 @@ fi
 # * if we build from a tag:    ${DIGABI_DIST_NAME}-$ARCH-$TAG.iso
 # * if we build from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$DATE.iso
 # * if Jenkins builds from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$TIME-$COMMIT.iso
+# * else: ${DIGABI_DIST_NAME}-$ARCH-$VERSION-$TIME-$COMMIT
 if GIT_REF="$(git symbolic-ref HEAD)"; then
     GIT_BRANCH="${GIT_REF#refs/heads/}"
     CLEAN_GIT_BRANCH=$(echo "$GIT_BRANCH" | sed 's,/,_,g')
@@ -40,10 +41,8 @@ else
         CLEAN_GIT_TAG=$(echo "$GIT_TAG" | sed -e 's,/,_,g' -e 's,-rc,~rc,')
     BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_TAG}"
     else
-    # this shouldn't reasonably happen (e.g. only if you checkout a
-        # tag, remove the tag and then build)
-    echo "Neither a Git branch nor a tag, exiting."
-    exit 1
+        GIT_SHORT_ID="$(git rev-parse --short HEAD)"
+        BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
     fi
 fi
 
