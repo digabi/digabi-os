@@ -1,7 +1,6 @@
 #!/bin/sh
 
 #
-# Tails: The Amnesic Incognito Live System
 # Copyright © 2012 Tails developers <tails@boum.org>
 # Copyright © 2014 Ylioppilastutkintolautakunta <digabi@ylioppilastutkinto.fi>
 #
@@ -81,18 +80,14 @@ git-dch \
    || fatal "git-dch failed."
 
 # cleanup some parts of the changelog
-perl -pi'' -e 's/\A  \[ IkiWiki::Plugin::po::change \]\n//' debian/changelog
-perl -pi'' -e 's/\A  \* update[d]? PO file[s]?[.]?\n//' debian/changelog
 perl -pi'' -e 's/\A  \* \n//' debian/changelog
 perl -pi'' -e 's/\A  \[ 127\.0\.0\.1 \]\n//' debian/changelog
 perl -pi'' -e 's/\A  \[ digabi \]\n//' debian/changelog
 perl -pi'' -e 's/\A  \[ anonym \]\n//' debian/changelog
-perl -pi'' -e 's/\A  \[ T\(A\)ILS developers \]\n//' debian/changelog
-perl -pi'' -e 's/\A  \[ Tails developers \]\n//' debian/changelog
-perl -pi'' -e 's/\A  \[ Tails \]\n//' debian/changelog
+perl -pi'' -e 's/\A  \[ Digabi OS developers \]\n//' debian/changelog
+perl -pi'' -e 's/\A  \[ Digabi \]\n//' debian/changelog
 perl -pi'' -e 's/\A  \* Added a comment\n//' debian/changelog
 perl -pi'' -e 's/\A  \* Added a comment:.*\n//' debian/changelog
-perl -pi'' -e 's/\A  \* Remove spam\.\n//' debian/changelog
 perl -pi'' -e 's/\A  \* todo\+\+\n//i' debian/changelog
 perl -pi'' -e 's/\A  \* todo--\n//i' debian/changelog
 perl -pi'' -e 's/\A  \* TODO update[.]?\n//i' debian/changelog

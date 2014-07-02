@@ -4,6 +4,8 @@
 digabi-live
 digabi-live-extras
 
+digabi-os-debug
+
 # Root CA
 digabi-certificates
 

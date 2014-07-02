@@ -1,0 +1,23 @@
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+
+Package: digabi-os-debug
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Depends: digabi-common, openssh-server, digabi-feedback
+Changelog: debian/changelog
+Files: authorized_keys /root/.ssh
+ usr/lib/digabi/scripts/debug /
+ etc/sudoers.d/digabi-os-debug /
+Description: Debug features for Digabi OS.
+ xx
+File: postinst
+ #!/bin/sh
+ set -e
+ 
+ update-rc.d ssh disable 2
+File: prerm
+ #!/bin/sh
+ set -e
+ 
+ update-rc.d ssh enable 2
