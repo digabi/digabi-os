@@ -21,6 +21,10 @@ indent_size = 4
 indent_style = tab
 indent_size = 1
 
-[{rules}]
+[{debian/rules}]
 indent_style = tab
 indent_size = 1
+
+[{debian/changelog}]
+indent_style = space
+indent_size = 2
