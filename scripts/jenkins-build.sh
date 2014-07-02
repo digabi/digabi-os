@@ -48,4 +48,4 @@ trap cleanup EXIT
 
 echo "HTTP_PROXY=${proxy}/ HTTPS_PROXY=${proxy}/ http_proxy=${proxy}/ https_proxy=${proxy}/" > config/environment.chroot
 
-vagrant ssh -c "sudo rsync -Pav --delete /vagrant/ /home/vagrant/build-live/ && mkdir -p /home/vagrant/build-live/config/includes.chroot/etc/apt/apt.conf.d/ && cp /etc/apt/apt.conf.d/01proxy /home/vagrant/build-live/config/includes.chroot/etc/apt/apt.conf.d/ && REPOSITORY=http://${renki_ip}/debian/ make -C /home/vagrant/build-live/ dist && rsync -Pav --delete /home/vagrant/build-live/dist/ /vagrant/dist/"
+vagrant ssh -c "sudo rsync -Pav --delete /vagrant/ /home/vagrant/build-live/ && REPOSITORY=http://${renki_ip}/debian/ make -C /home/vagrant/build-live/ dist && rsync -Pav --delete /home/vagrant/build-live/dist/ /vagrant/dist/"
