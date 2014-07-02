@@ -9,7 +9,7 @@ $:.unshift File.expand_path('../lib', __FILE__)
 
 require 'vagrant_version'
 require 'vagrant_verified_download'
-
+require 'digabi_build_settings'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "debian-jessie"
