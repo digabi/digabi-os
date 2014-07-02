@@ -3,7 +3,8 @@
 # vi: set ft=ruby :
 #
 # Tails: The Amnesic Incognito Live System
-# Copyright © 2012 Tails developers <tails@boum.org>
+# Copyright © 2012 Tails developers <digabi@boum.org>
+# Copyright © 2014 Digabi developers <digabi@ylioppilastutkinto.fi>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,7 +14,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# GNU General Public License for more dedigabi.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -24,7 +25,7 @@ require 'vagrant'
 require 'uri'
 
 $:.unshift File.expand_path('../vagrant/lib', __FILE__)
-require 'tails_build_settings'
+require 'digabi_build_settings'
 require 'vagrant_version'
 
 # Path to the directory which holds our Vagrantfile
@@ -34,13 +35,13 @@ VAGRANT_PATH = File.expand_path('../vagrant', __FILE__)
 STABLE_BRANCH_NAMES = ['stable', 'testing']
 
 # Environment variables that will be exported to the build script
-EXPORTED_VARIABLES = ['http_proxy', 'MKSQUASHFS_OPTIONS', 'TAILS_RAM_BUILD', 'TAILS_CLEAN_BUILD', 'TAILS_BOOTSTRAP_CACHE']
+EXPORTED_VARIABLES = ['http_proxy', 'MKSQUASHFS_OPTIONS', 'DIGABI_RAM_BUILD', 'DIGABI_CLEAN_BUILD', 'DIGABI_BOOTSTRAP_CACHE']
 
 # Let's save the http_proxy set before playing with it
 EXTERNAL_HTTP_PROXY = ENV['http_proxy']
 
 # In-VM proxy URL
-INTERNEL_HTTP_PROXY = "http://#{VIRTUAL_MACHINE_HOSTNAME}:3142"
+INTERNAL_HTTP_PROXY = "http://#{VIRTUAL_MACHINE_HOSTNAME}:3142"
 
 def primary_vm
   env = Vagrant::Environment.new(:cwd => VAGRANT_PATH, :ui_class => Vagrant::UI::Basic)
@@ -124,7 +125,7 @@ task :parse_build_options do
   cpus = system_cpus
   options += "cpus=#{cpus} " if cpus
 
-  options += ENV['TAILS_BUILD_OPTIONS'] if ENV['TAILS_BUILD_OPTIONS']
+  options += ENV['DIGABI_BUILD_OPTIONS'] if ENV['DIGABI_BUILD_OPTIONS']
   options.split(' ').each do |opt|
     case opt
     # Memory build settings
@@ -132,20 +133,20 @@ task :parse_build_options do
       unless vm_running? || enough_free_memory?
         abort "Not enough free memory to do an in-memory build. Aborting."
       end
-      ENV['TAILS_RAM_BUILD'] = '1'
+      ENV['DIGABI_RAM_BUILD'] = '1'
     when 'noram'
-      ENV['TAILS_RAM_BUILD'] = nil
+      ENV['DIGABI_RAM_BUILD'] = nil
     # Bootstrap cache settings
     when 'cache'
-      ENV['TAILS_BOOTSTRAP_CACHE'] = '1'
+      ENV['DIGABI_BOOTSTRAP_CACHE'] = '1'
     when 'nocache'
-      ENV['TAILS_BOOTSTRAP_CACHE'] = nil
+      ENV['DIGABI_BOOTSTRAP_CACHE'] = nil
     # HTTP proxy settings
     when 'extproxy'
-      abort "No HTTP proxy set, but one is required by TAILS_BUILD_OPTIONS. Aborting." unless EXTERNAL_HTTP_PROXY
+      abort "No HTTP proxy set, but one is required by DIGABI_BUILD_OPTIONS. Aborting." unless EXTERNAL_HTTP_PROXY
       ENV['http_proxy'] = EXTERNAL_HTTP_PROXY
     when 'vmproxy'
-      ENV['http_proxy'] = INTERNEL_HTTP_PROXY
+      ENV['http_proxy'] = INTERNAL_HTTP_PROXY
     when 'noproxy'
       ENV['http_proxy'] = nil
     # SquashFS compression settings
@@ -155,20 +156,20 @@ task :parse_build_options do
       ENV['MKSQUASHFS_OPTIONS'] = nil
     # Clean-up settings
     when 'cleanall'
-      ENV['TAILS_CLEAN_BUILD'] = '1'
+      ENV['DIGABI_CLEAN_BUILD'] = '1'
     # Virtual CPUs settings
     when /cpus=(\d+)/
-      ENV['TAILS_BUILD_CPUS'] = $1
+      ENV['DIGABI_BUILD_CPUS'] = $1
     # Git settings
     when 'ignorechanges'
-      ENV['TAILS_BUILD_IGNORE_CHANGES'] = '1'
+      ENV['DIGABI_BUILD_IGNORE_CHANGES'] = '1'
     end
   end
 end
 
 task :ensure_clean_repository do
   unless `git status --porcelain`.empty?
-    if ENV['TAILS_BUILD_IGNORE_CHANGES']
+    if ENV['DIGABI_BUILD_IGNORE_CHANGES']
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^        /, '')
 
         You have uncommited changes in the Git repository. They will
@@ -179,10 +180,10 @@ task :ensure_clean_repository do
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^        /, '')
 
         You have uncommited changes in the Git repository. Due to limitations
-        of the build system, you need to commit them before building Tails.
+        of the build system, you need to commit them before building Digabi.
 
-        If you don't care about those changes and want to build Tails nonetheless,
-        please add `ignorechanges` to the TAILS_BUILD_OPTIONS environment
+        If you don't care about those changes and want to build Digabi nonetheless,
+        please add `ignorechanges` to the DIGABI_BUILD_OPTIONS environment
         variable.
 
       END_OF_MESSAGE
@@ -211,7 +212,7 @@ task :validate_http_proxy do
   end
 end
 
-desc 'Build Tails'
+desc 'Build Digabi'
 task :build => ['parse_build_options', 'ensure_clean_repository', 'validate_http_proxy', 'vm:up'] do
   exported_env = EXPORTED_VARIABLES.select { |k| ENV[k] }.
                   collect { |k| "#{k}='#{ENV[k]}'" }.join(' ')
@@ -220,13 +221,13 @@ task :build => ['parse_build_options', 'ensure_clean_repository', 'validate_http
   else
     chan = primary_vm.communicate
   end
-  status = chan.execute("#{exported_env} build-tails",
+  status = chan.execute("#{exported_env} build-digabi",
                                           :error_check => false) do |fd, data|
     (fd == :stdout ? $stdout : $stderr).write data
   end
 
   # Move build products to the current directory
-  FileUtils.mv Dir.glob("#{VAGRANT_PATH}/tails-*"),
+  FileUtils.mv Dir.glob("#{VAGRANT_PATH}/digabi-*"),
                File.expand_path('..', __FILE__), :force => true
 
   exit status
@@ -238,19 +239,19 @@ namespace :vm do
     case primary_vm_state
     when :not_created
       # Do not use non-existant in-VM proxy to download the basebox
-      if ENV['http_proxy'] == INTERNEL_HTTP_PROXY
+      if ENV['http_proxy'] == INTERNAL_HTTP_PROXY
         ENV['http_proxy'] = nil
         restore_internal_proxy = true
       end
 
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^      /, '')
 
-        This is the first time that the Tails builder virtual machine is
+        This is the first time that the Digabi builder virtual machine is
         started. The virtual machine template is about 300 MB to download,
         so the process might take some time.
 
         Please remember to shut the virtual machine down once your work on
-        Tails is done:
+        Digabi is done:
 
             $ rake vm:halt
 
@@ -258,25 +259,25 @@ namespace :vm do
     when :poweroff
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^      /, '')
 
-        Starting Tails builder virtual machine. This might take a short while.
-        Please remember to shut it down once your work on Tails is done:
+        Starting Digabi builder virtual machine. This might take a short while.
+        Please remember to shut it down once your work on Digabi is done:
 
             $ rake vm:halt
 
       END_OF_MESSAGE
     when :running
-      if ENV['TAILS_RAM_BUILD'] && current_vm_memory < VM_MEMORY_FOR_RAM_BUILDS
+      if ENV['DIGABI_RAM_BUILD'] && current_vm_memory < VM_MEMORY_FOR_RAM_BUILDS
         $stderr.puts <<-END_OF_MESSAGE.gsub(/^          /, '')
 
           The virtual machine is not currently set with enough memory to
           perform an in-memory build. Either remove the `ram` option from
-          the TAILS_BUILD_OPTIONS environment variable, or shut the
+          the DIGABI_BUILD_OPTIONS environment variable, or shut the
           virtual machine down using `rake vm:halt` before trying again.
 
         END_OF_MESSAGE
         abort 'Not enough memory for the virtual machine to run an in-memory build. Aborting.'
       end
-      if ENV['TAILS_BUILD_CPUS'] && current_vm_cpus != ENV['TAILS_BUILD_CPUS'].to_i
+      if ENV['DIGABI_BUILD_CPUS'] && current_vm_cpus != ENV['DIGABI_BUILD_CPUS'].to_i
         $stderr.puts <<-END_OF_MESSAGE.gsub(/^          /, '')
 
           The virtual machine is currently running with #{current_vm_cpus}
@@ -292,7 +293,7 @@ namespace :vm do
     result = env.cli('up')
     abort "'vagrant up' failed" unless result
 
-    ENV['http_proxy'] = INTERNEL_HTTP_PROXY if restore_internal_proxy
+    ENV['http_proxy'] = INTERNAL_HTTP_PROXY if restore_internal_proxy
   end
 
   desc 'Stop the build virtual machine'
