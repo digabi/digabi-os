@@ -123,6 +123,8 @@ if [ "$DIGABI_BOOTSTRAP_CACHE" ] && \
 	sudo touch "$BUILD_DIR"/.stage/bootstrap_cache.save
 fi
 
+git submodule init
+git submodule update
 as_root_do lb build
 
 if [ -n "$JENKINS_URL" ]; then
