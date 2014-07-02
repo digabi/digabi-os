@@ -1,3 +1,9 @@
+digabi-dev (4.0.2) stable; urgency=medium
+
+  * Removed eatmydata from Depends:. 
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 02 Jul 2014 15:22:10 +0300
+
 digabi-dev (4.0.1) stable; urgency=medium
 
   * Do not specify live-build version in Depends:.
