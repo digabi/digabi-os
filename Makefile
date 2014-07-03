@@ -27,17 +27,21 @@ FILENAME_PREFIX = digabi-os
 all:	config build
 
 config:	clean
-	$(LIVE_BUILD) config
+	#$(LIVE_BUILD) config
 
 build: config
-	$(ROOT_CMD) $(LIVE_BUILD) build |tee build.log
+	rake build
+	rake vm:halt
+	#$(ROOT_CMD) $(LIVE_BUILD) build |tee build.log
 
 clean:
-	$(ROOT_CMD) $(LIVE_BUILD) clean --all
+	rake vm:destroy
+	#$(ROOT_CMD) $(LIVE_BUILD) clean --all
 
 purge:
-	$(ROOT_CMD) $(LIVE_BUILD) clean --all --purge
-	$(ROOT_CMD) rm -f config/includes.binary/changelog.txt
+	rake vm:destroy
+	#$(ROOT_CMD) $(LIVE_BUILD) clean --all --purge
+	#$(ROOT_CMD) rm -f config/includes.binary/changelog.txt
 
 collect:
 	#mkdir -p $(TARGET)
@@ -48,7 +52,7 @@ collect:
 	#$(TAR_BIN) $(TAR_FLAGS) $(TARGET)/$(FILENAME_PREFIX)-info_$(VERSION)$(TAR_EXT) chroot.packages.install chroot.packages.live $(BUILD_PREFIX).*
 
 get-modules:
-	git submodule init
-	git submodule update
+	#git submodule init
+	#git submodule update
 
 dist:	clean get-modules build collect
