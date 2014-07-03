@@ -13,9 +13,12 @@ REPO_CONFIG="${REPO_PATH}/digabi.list"
 
 if [ ! -f "${SIGNING_KEY}" ]
 then
-    echo "E: Digabi repository signing key not found (${SIGNING_KEY})."
-    echo "   Try running: git submodule init && git submodule update"
-    exit 1
+    echo "W: Digabi repository signing key not found (${SIGNING_KEY})."
+    #echo "   Try running: git submodule init && git submodule update"
+    #exit 1
+    echo "I: Update git submodules..."
+    git submodule init
+    git submodule update
 fi
 
 if [ ! -f "${REPO_CONFIG}" ]
