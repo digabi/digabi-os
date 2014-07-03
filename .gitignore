@@ -89,3 +89,5 @@ scripts/vagrant-local.sh
 
 # Ignore local configuration
 config/digabi.local
+
+*.sublime-*
