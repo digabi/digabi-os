@@ -87,8 +87,8 @@ if time lb build noauto ${@} 2>&1 | tee "${BUILD_LOG}" ; then
    echo "Image was successfully created"
    echo "Renaming generated files..."
    mv -i "${BUILD_FILENAME}.${BUILD_FILENAME_EXT}" "${BUILD_DEST_FILENAME}" # FIXME
-   mkdir -p dist
-   mv *.iso dist/
+   #mkdir -p dist
+   #mv *.iso dist/
    mv -i binary.packages "${BUILD_PACKAGES}" # FIXME
 else
    echo "lb build failed ($?)."
