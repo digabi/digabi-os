@@ -81,7 +81,7 @@ else
 	else
 		# We are (hopefully) building from a tag
 		if ! REV="${1:-$(git --git-dir=/digabi-os.git describe --tags --exact-match ${COMMIT})}"; then
-			REV="detached"
+			REV="${COMMIT}"
 			#echo "It seems we are building from an untagged detached HEAD. Aborting." >&2
 			#exit 1
 		fi
