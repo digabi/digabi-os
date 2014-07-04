@@ -91,3 +91,6 @@ scripts/vagrant-local.sh
 config/digabi.local
 
 *.sublime-*
+
+*.iso
+*.iso.*
