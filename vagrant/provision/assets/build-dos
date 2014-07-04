@@ -81,8 +81,9 @@ else
 	else
 		# We are (hopefully) building from a tag
 		if ! REV="${1:-$(git --git-dir=/digabi-os.git describe --tags --exact-match ${COMMIT})}"; then
-			echo "It seems we are building from an untagged detached HEAD. Aborting." >&2
-			exit 1
+			REV="detached"
+			#echo "It seems we are building from an untagged detached HEAD. Aborting." >&2
+			#exit 1
 		fi
 	fi
 	test -d "$WORKSPACE" || git clone /digabi-os.git "$WORKSPACE"
