@@ -7,8 +7,8 @@ PROXY_HOST="ci.local"
 CPUS="4"
 
 cleanup() {
-#    rake vm:halt
-    rake vm:destroy
+    rake vm:halt
+#    rake vm:destroy
 }
 
 mdns_resolve() {
@@ -39,4 +39,4 @@ trap cleanup EXIT
 # TODO: Use specified repository
 
 # Build image
-http_proxy="${PROXY}" DIGABI_BUILD_OPTIONS="noram cpus=${CPUS}" rake build ; rake vm:halt
+http_proxy="${PROXY}" DIGABI_BUILD_OPTIONS="cpus=${CPUS} ignorechanges" rake build
