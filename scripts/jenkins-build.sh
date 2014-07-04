@@ -36,7 +36,7 @@ PROXY="http://${PROXY_IP}:3128/"
 
 trap cleanup EXIT
 
-# TODO: Use specified repository
+# TODO: Use specified repository when building image
 
 # Build image
 http_proxy="${PROXY}" DIGABI_BUILD_OPTIONS="cpus=${CPUS} ignorechanges" rake build
