@@ -41,7 +41,7 @@ _SOURCE="false"
 ARCHIVE_AREAS="main contrib non-free"
 DISTRIBUTION="jessie"
 
-DEFAULT_REPOSITORY="http://ftp.fi.debian.org/debian/"
+DEFAULT_DEBIAN_MIRROR="http://ftp.fi.debian.org/debian/"
 if [ -z "${DEBIAN_MIRROR}" ] ; then
     DEBIAN_MIRROR="${DEFAULT_DEBIAN_MIRROR}"
 fi
