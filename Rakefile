@@ -269,6 +269,11 @@ namespace :vm do
         restore_internal_proxy = true
       end
 
+      if ENV['DEBIAN_MIRROR'] != nil
+        mirror = ENV['DEBIAN_MIRROR']
+        $stderr.puts "Using custom Debian mirror: #{mirror}"
+      end
+
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^      /, '')
 
         This is the first time that the Digabi builder virtual machine is
