@@ -45,8 +45,9 @@ fi
 if [ -n "${DEBIAN_MIRROR}" ]
 then
     echo "I: Configuring custom Debian mirror: ${DEBIAN_MIRROR}..."
-    _DEBMIR="$(echo ${DEBIAN_MIRROR} |sed 's/\./\\./g' |sed 's/\//\\\//g')"
-    sed -i "s/http\:\/\/ftp\.[[:alpha:]][[:alpha:]]\.debian\.org\/debian\/${_DEBMIR}/g" /etc/apt/sources.list
+    #_DEBMIR="$(echo ${DEBIAN_MIRROR} |sed 's/\./\\./g' |sed 's/\//\\\//g')"
+    #sed -i "s/http\:\/\/ftp\.[[:alpha:]][[:alpha:]]\.debian\.org\/debian\/${_DEBMIR}/g" /etc/apt/sources.list
+    sed -i "s,http://ftp.[[:alpha:]][[:alpha:]].debian.org/debian,${DEBIAN_MIRROR},g" /etc/apt/sources.list
 else
     echo "I: Using pre-configured Debian mirror."
 fi
