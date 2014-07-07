@@ -57,7 +57,7 @@ config/archives/experimental.list.chroot
 config/includes.binary/changelog.txt
 
 # Ignore vagrant state file
-.vagrant
+vagrant/.vagrant
 
 # Ignore local vagrant provision script
 scripts/vagrant-local.sh
