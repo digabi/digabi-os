@@ -3,7 +3,7 @@
 # vi: set ft=ruby :
 #
 # Tails: The Amnesic Incognito Live System
-# Copyright © 2012 Tails developers <digabi@boum.org>
+# Copyright © 2012 Tails developers <tails@boum.org>
 # Copyright © 2014 Digabi developers <digabi@ylioppilastutkinto.fi>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,7 +14,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more dedigabi.
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -183,9 +183,9 @@ task :ensure_clean_repository do
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^        /, '')
 
         You have uncommited changes in the Git repository. Due to limitations
-        of the build system, you need to commit them before building Digabi.
+        of the build system, you need to commit them before building Digabi OS.
 
-        If you don't care about those changes and want to build Digabi nonetheless,
+        If you don't care about those changes and want to build Digabi OS nonetheless,
         please add `ignorechanges` to the DIGABI_BUILD_OPTIONS environment
         variable.
 
@@ -271,12 +271,12 @@ namespace :vm do
 
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^      /, '')
 
-        This is the first time that the Digabi builder virtual machine is
+        This is the first time that the Digabi OS builder virtual machine is
         started. The virtual machine template is about 300 MB to download,
         so the process might take some time.
 
         Please remember to shut the virtual machine down once your work on
-        Digabi is done:
+        Digabi OS is done:
 
             $ rake vm:halt
 
@@ -284,8 +284,8 @@ namespace :vm do
     when :poweroff
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^      /, '')
 
-        Starting Digabi builder virtual machine. This might take a short while.
-        Please remember to shut it down once your work on Digabi is done:
+        Starting Digabi OS builder virtual machine. This might take a short while.
+        Please remember to shut it down once your work on Digabi OS is done:
 
             $ rake vm:halt
 
