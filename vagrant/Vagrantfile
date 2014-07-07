@@ -43,7 +43,7 @@ else
     # end
     #
 
-    config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' /vagrant/provision/setup-dos-builder"
+    config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' /vagrant/provision/setup-dos-builder"
     config.vm.synced_folder '../.git', '/digabi-os.git'
 
     config.vm.provider :virtualbox do |vb|
