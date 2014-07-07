@@ -260,18 +260,13 @@ end
 
 namespace :vm do
   desc 'Start the build virtual machine'
-  task :up => ['parse_build_options', 'validate_http_proxy'] do
+  task :up => ['parse_build_options', 'validate_http_proxy', 'validate_debian_mirror'] do
     case primary_vm_state
     when :not_created
       # Do not use non-existant in-VM proxy to download the basebox
       if ENV['http_proxy'] == INTERNAL_HTTP_PROXY
         ENV['http_proxy'] = nil
         restore_internal_proxy = true
-      end
-
-      if ENV['DEBIAN_MIRROR'] != nil
-        mirror = ENV['DEBIAN_MIRROR']
-        $stderr.puts "Using custom Debian mirror: #{mirror}"
       end
 
       $stderr.puts <<-END_OF_MESSAGE.gsub(/^      /, '')
