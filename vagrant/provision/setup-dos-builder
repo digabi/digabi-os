@@ -42,7 +42,11 @@ then
     mv /etc/apt/sources.list.d/jessie.list /etc/apt/sources.list
 fi
 
-# TODO: Use custom repository if DEBIAN_MIRROR specified
+if [ -n "${DEBIAN_MIRROR}" ]
+then
+    echo "I: Using custom Debian mirror: ${DEBIAN_MIRROR}..."
+    sed -i "s/ftp\.[[:alpha:]][[:alpha:]]\.debian\.org/${DEBIAN_MIRROR}/g" /etc/apt/sources.list
+fi
 
 echo "I: Configure APT: do not install recommends..."
 cat << EOF >/etc/apt/apt.conf.d/99-no-recommends
