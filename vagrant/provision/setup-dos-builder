@@ -42,6 +42,8 @@ then
     mv /etc/apt/sources.list.d/jessie.list /etc/apt/sources.list
 fi
 
+# TODO: Use custom repository if DEBIAN_MIRROR specified
+
 echo "I: Configure APT: do not install recommends..."
 cat << EOF >/etc/apt/apt.conf.d/99-no-recommends
 APT::Install-Recommends "false";
