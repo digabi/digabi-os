@@ -28,6 +28,8 @@ mdns_resolve() {
     exit 42
 }
 
+rm -rf dist
+
 
 REPOSITORY_IP="$(mdns_resolve ${REPOSITORY_HOST})"
 PROXY_IP="$(mdns_resolve ${PROXY_HOST})"
