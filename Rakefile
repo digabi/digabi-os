@@ -354,7 +354,7 @@ namespace :basebox do
   task :create_preseed_cfg => 'validate_http_proxy' do
     require 'erb'
 
-    preseed_cfg_path = File.expand_path('../vagrant/definitions/squeeze/preseed.cfg', __FILE__)
+    preseed_cfg_path = File.expand_path('../vagrant/definitions/jessie/preseed.cfg', __FILE__)
     template = ERB.new(File.read("#{preseed_cfg_path}.erb"))
     File.open(preseed_cfg_path, 'w') do |f|
       f.write template.result
