@@ -1,21 +1,10 @@
 *~
 binary/
-binary*.iso
-binary*.img
-binary*.tar*
-binary*.contents
-binary*.packages
-binary*.zsync
 
 .build/
-build.log
-
 cache/
-
 chroot/
-chroot.files
-chroot.packages.*
-chroot.tmp
+source/
 
 config/binary
 config/bootstrap
@@ -28,17 +17,6 @@ config/includes.chroot/var/lib/digabi/builder
 config/includes.chroot/var/lib/digabi/version
 config/includes.chroot/usr/share/digabi/versions.txt
 config/includes.chroot/root
-
-source/
-source*.iso
-source*.img
-source*.tar*
-source*.contents
-source*.packages
-source*.zsync
-
-digabi-livecd-*.iso
-digabi-livecd_config-*.tar.xz
 
 .lock
 
@@ -53,10 +31,7 @@ _site
 
 tmp/
 
-config/includes.chroot/opt/sw
 config/includes.chroot/etc/skel
-
-.official
 
 local/live-build
 config/root-password
@@ -96,3 +71,4 @@ config/digabi.local
 *.iso.*
 
 vagrant/definitions/jessie/preseed.cfg
+build.log
