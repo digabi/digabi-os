@@ -40,3 +40,6 @@ trap cleanup EXIT
 
 # Build image
 DEBIAN_MIRROR="http://${REPOSITORY_IP}/debian" http_proxy="${PROXY}" DIGABI_BUILD_OPTIONS="cpus=${CPUS} ignorechanges noram" rake build
+
+mkdir -p dist
+mv digabi-os-* dist/
