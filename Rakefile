@@ -226,7 +226,7 @@ task :validate_debian_mirror do
     end
 
 
-    if ['localhost', '[::1]'].include?(proxy_host) || proxy_host.start_with?('127.0.0.')
+    if ['localhost', '[::1]'].include?(mirror_host) || mirror_host.start_with?('127.0.0.')
       abort 'Using a Debian mirror listening on the loopback is doomed to fail. Aborting.'
     end
 
