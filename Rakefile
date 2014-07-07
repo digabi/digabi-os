@@ -341,6 +341,13 @@ namespace :vm do
     result = env.cli('destroy', '--force')
     abort "'vagrant destroy' failed" unless result
   end
+
+  desc 'Open SSH connection to virtual machine'
+  task :ssh do
+    env = Vagrant::Environment.new(:cwd => VAGRANT_PATH, :ui_class => Vagrant::UI::Basic)
+    result = env.cli('ssh')
+    abort "'vagrant ssh' failed" unless result
+  end
 end
 
 namespace :basebox do
