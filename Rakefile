@@ -44,7 +44,7 @@ EXTERNAL_HTTP_PROXY = ENV['http_proxy']
 INTERNAL_HTTP_PROXY = "http://#{VIRTUAL_MACHINE_HOSTNAME}:3142"
 
 # Custom Debian mirror
-DEBIAN_MIRROR = ENV['DEBIAN_MIRROR']
+#DEBIAN_MIRROR = ENV['DEBIAN_MIRROR']
 
 def primary_vm
   env = Vagrant::Environment.new(:cwd => VAGRANT_PATH, :ui_class => Vagrant::UI::Basic)
