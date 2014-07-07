@@ -10,9 +10,9 @@ CONFIG_PATH="config/archives"
 SUITES=""
 COMPONENTS="main contrib non-free"
 
-if [ -z "${REPOSITORY}" ]
+if [ -z "${DEBIAN_MIRROR}" ]
 then
-    REPOSITORY="http://ftp.fi.debian.org/debian"
+    DEBIAN_MIRROR="http://ftp.fi.debian.org/debian"
 fi
 
 for suite in ${SUITES}
@@ -23,6 +23,6 @@ do
         echo "W: Configuration for suite ${suite} already exists, not updating (${CFG_FILE})..."
     else
         echo "I: Add sources.list for suite ${suite}..."
-        echo "deb ${REPOSITORY} ${suite} ${COMPONENTS}" |tee ${CFG_FILE}
+        echo "deb ${DEBIAN_MIRROR} ${suite} ${COMPONENTS}" |tee ${CFG_FILE}
     fi
 done
