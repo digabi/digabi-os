@@ -216,11 +216,11 @@ task :validate_http_proxy do
 end
 
 task :validate_debian_mirror do
-  if ENV['debian_mirror']
-    mirror_host = URI.parse(ENV['debian_mirror']).host
+  if ENV['DEBIAN_MIRROR']
+    mirror_host = URI.parse(ENV['DEBIAN_MIRROR']).host
 
     if mirror_host.nil?
-      ENV['debian_mirror'] = nil
+      ENV['DEBIAN_MIRROR'] = nil
       $stderr.puts "Ignoring invalid Debian mirror"
       return
     end
@@ -230,7 +230,7 @@ task :validate_debian_mirror do
       abort 'Using a Debian mirror listening on the loopback is doomed to fail. Aborting.'
     end
 
-    $stderr.puts "Using Debian mirror: #{ENV['debian_mirror']}"
+    $stderr.puts "Using Debian mirror: #{ENV['DEBIAN_MIRROR']}"
   else
     $stderr.puts "No Debian mirror set."
   end
