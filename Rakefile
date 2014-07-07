@@ -35,13 +35,16 @@ VAGRANT_PATH = File.expand_path('../vagrant', __FILE__)
 STABLE_BRANCH_NAMES = ['stable', 'testing']
 
 # Environment variables that will be exported to the build script
-EXPORTED_VARIABLES = ['http_proxy', 'MKSQUASHFS_OPTIONS', 'DIGABI_RAM_BUILD', 'DIGABI_CLEAN_BUILD', 'DIGABI_BOOTSTRAP_CACHE']
+EXPORTED_VARIABLES = ['http_proxy', 'DEBIAN_MIRROR', 'MKSQUASHFS_OPTIONS', 'DIGABI_RAM_BUILD', 'DIGABI_CLEAN_BUILD', 'DIGABI_BOOTSTRAP_CACHE']
 
 # Let's save the http_proxy set before playing with it
 EXTERNAL_HTTP_PROXY = ENV['http_proxy']
 
 # In-VM proxy URL
 INTERNAL_HTTP_PROXY = "http://#{VIRTUAL_MACHINE_HOSTNAME}:3142"
+
+# Custom Debian mirror
+DEBIAN_MIRROR = ENV['DEBIAN_MIRROR']
 
 def primary_vm
   env = Vagrant::Environment.new(:cwd => VAGRANT_PATH, :ui_class => Vagrant::UI::Basic)
@@ -212,10 +215,32 @@ task :validate_http_proxy do
   end
 end
 
+task :validate_debian_mirror do
+  if ENV['debian_mirror']
+    mirror_host = URI.parse(ENV['debian_mirror']).host
+
+    if mirror_host.nil?
+      ENV['debian_mirror'] = nil
+      $stderr.puts "Ignoring invalid Debian mirror"
+      return
+    end
+
+
+    if ['localhost', '[::1]'].include?(proxy_host) || proxy_host.start_with?('127.0.0.')
+      abort 'Using a Debian mirror listening on the loopback is doomed to fail. Aborting.'
+    end
+
+    $stderr.puts "Using Debian mirror: #{ENV['debian_mirror']}"
+  else
+    $stderr.puts "No Debian mirror set."
+  end
+end
+
 desc 'Build Digabi'
-task :build => ['parse_build_options', 'ensure_clean_repository', 'validate_http_proxy', 'vm:up'] do
+task :build => ['parse_build_options', 'ensure_clean_repository', 'validate_http_proxy', 'validate_debian_mirror', 'vm:up'] do
   exported_env = EXPORTED_VARIABLES.select { |k| ENV[k] }.
                   collect { |k| "#{k}='#{ENV[k]}'" }.join(' ')
+  $stderr.puts exported_env
   if vagrant_old
     chan = primary_vm.channel
   else
