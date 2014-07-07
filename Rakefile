@@ -372,19 +372,19 @@ namespace :basebox do
       env = Vagrant::Environment.new(:ui_class => Vagrant::UI::Basic)
 
       Process.fork do
-        env.cli('basebox', 'build', 'squeeze')
+        env.cli('basebox', 'build', 'jessie')
       end
       Process.wait
       abort "Building the basebox failed (exit code: #{$?.exitstatus})." if $?.exitstatus != 0
 
       Process.fork do
-        env.cli('basebox', 'validate', 'squeeze')
+        env.cli('basebox', 'validate', 'jessie')
       end
       Process.wait
       abort "Validating the basebox failed (exit code: #{$?.exitstatus})." if $?.exitstatus != 0
 
       Process.fork do
-        env.cli('basebox', 'export', 'squeeze')
+        env.cli('basebox', 'export', 'jessie')
       end
       Process.wait
       abort "Exporting the basebox failed (exit code: #{$?.exitstatus})." if $?.exitstatus != 0
