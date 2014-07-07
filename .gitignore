@@ -94,3 +94,5 @@ config/digabi.local
 
 *.iso
 *.iso.*
+
+vagrant/definitions/jessie/preseed.cfg
