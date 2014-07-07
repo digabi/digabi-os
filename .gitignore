@@ -1,7 +1,6 @@
 *~
-binary/
-
 .build/
+binary/
 cache/
 chroot/
 source/
