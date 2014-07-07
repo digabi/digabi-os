@@ -240,7 +240,7 @@ desc 'Build Digabi'
 task :build => ['parse_build_options', 'ensure_clean_repository', 'validate_http_proxy', 'validate_debian_mirror', 'vm:up'] do
   exported_env = EXPORTED_VARIABLES.select { |k| ENV[k] }.
                   collect { |k| "#{k}='#{ENV[k]}'" }.join(' ')
-  $stderr.puts exported_env
+
   if vagrant_old
     chan = primary_vm.channel
   else
