@@ -28,6 +28,8 @@ else
     config.vm.box = "debian-jessie"
     config.vm.box_url = "http://cdn.ypcs.fi/pub/debian-jessie-240414.box"
 
+    # TODO: If in dev environment, use <http://ci.local/pub/Debian-testing-amd64-netboot.box>
+
     # config.vm.network :forwarded_port, guest: 80, host: 8080
     # config.vm.network :private_network, ip: "192.168.33.10"
     # config.vm.network :public_network
