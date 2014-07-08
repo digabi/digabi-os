@@ -1,0 +1,50 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          <NAME>
+# Required-Start:    $local_fs $network $named $time $syslog
+# Required-Stop:     $local_fs $network $named $time $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Description:       <DESCRIPTION>
+### END INIT INFO
+
+set -e
+
+NAME="digabi-firewall"
+SCRIPT="/usr/bin/digabi firewall compile"
+RUNAS="root"
+RULEFILE="/etc/iptables.rules"
+
+PIDFILE="/var/run/${NAME}.pid"
+LOGFILE="/var/log/${NAME}.log"
+ 
+start() {
+    if [ ! -f "${RULEFILE}" ] || [ -w "${RULEFILE}" ]
+    then
+        ${SCRIPT} >${RULEFILE}
+    else
+        echo "Error: Can't write rules to ${RULEFILE}"
+        return 1
+    fi
+  
+  return 0
+}
+ 
+stop() {
+    return 0
+}
+ 
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  restart)
+    stop
+    start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+esac
