@@ -1,4 +1,10 @@
-digabi-customization (2.4) UNRELEASED; urgency=medium
+digabi-customization (2.5) unstable; urgency=medium
+
+  * Depends: desktop-base.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 14:54:44 +0300
+
+digabi-customization (2.4) unstable; urgency=medium
 
   * Added fonts-lato to requirements.
 

@@ -6,7 +6,7 @@ Standards-Version: 3.9.2
 Package: digabi-customization
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: digabi-common, plymouth-themes-digabi, digabi-backgrounds,
- fonts-lato
+ fonts-lato, desktop-base
 Architecture: all
 Changelog: debian/changelog
 Files: usr/lib/digabi/scripts/configure-desktop /
