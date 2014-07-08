@@ -1,3 +1,9 @@
+digabi-firewall (1.5.3) unstable; urgency=medium
+
+  * Allow outgoing DNS. 
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 14:01:42 +0300
+
 digabi-firewall (1.5.2) unstable; urgency=medium
 
   * Check user id when running init script, fail if non-root.
