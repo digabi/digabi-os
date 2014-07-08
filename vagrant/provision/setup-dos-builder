@@ -13,8 +13,17 @@ then
     /vagrant/scripts/vagrant-local.sh
 fi
 
+#
+# Prefer IPv4 over IPv6
+#
+echo "I: Prefer IPv4 over IPv6..."
+sed -i -e 's/#\(precedence ::ffff:.*100\)/\1/' /etc/gai.conf
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+
+#
 # Do not use virtual machine proxy before apt-cacher-ng is installed
-# From Tails
+# (From Tails)
+#
 if [ "$http_proxy" = "http://$(hostname -f):3142" ] &&
    ! [ -f /etc/apt-cacher-ng/acng.conf ]; then
     LOCAL_HTTP_PROXY="$http_proxy"
