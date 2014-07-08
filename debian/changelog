@@ -1,3 +1,9 @@
+digabi-os (14.07a3) stable; urgency=medium
+
+  * Rebranded project as Digabi OS (was Digabi Live).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 20:40:54 +0300
+
 digabi-os (14.07a2) stable; urgency=medium
 
   * Using Replaces instead of Conflicts.
