@@ -24,6 +24,7 @@ start() {
     if [ ! -f "${RULEFILE}" ] || [ -w "${RULEFILE}" ] && [ -w "$(dirname ${RULEFILE})" ]
     then
         ${SCRIPT} firewall compile save
+        iptables-restore <"${RULEFILE}"
     else
         echo "Error: Can't write firewall rules to ${RULEFILE}"
         return 1
