@@ -7,6 +7,14 @@ Vcs-Git: git://github.com/digabi/digabi-live.git
 
 Package: digabi-os
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Depends: iceweasel, iceweasel-l10n-fi, iceweasel-l10n-sv-se,
+ vlc, 
+ geogebra44, maxima, wxmaxima,
+ wine,
+ pinta, gimp, inkscape,
+ libreoffice, libreoffice-gtk, libreoffice-l10n-fi, libreoffice-l10n-sv, 
+ libreoffice-math, libreoffice-voikko
+Conflicts: digabi-live
 Changelog: debian/changelog
 Description: Digabi OS
- Meta-package.
+ Installs all MEB approved apps.

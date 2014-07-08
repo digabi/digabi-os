@@ -1,12 +1,18 @@
-digabi-os (14.06a1) UNRELEASED; urgency=low
+digabi-os (14.07a1) stable; urgency=medium
+
+  * Added Conflicts: digabi-live.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 09:48:46 +0300
+
+digabi-os (14.06a1) stable; urgency=low
 
   * Upgraded GeoGebra to 4.4, using package from upstream.
   * Added digabi-feedback client.
   * Added digabi-os-debug for easy debug data collecting.
   * Added Ylioppilastutkintolautakunta Root CA (root certificate).
-  * 
+  * Install approved apps via digabi-os package (instead of specifying them in config/package-lists/digabi.list)
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 23 Apr 2014 23:54:40 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 09:46:16 +0300
 
 digabi-os (1.0) stable; urgency=low
 
