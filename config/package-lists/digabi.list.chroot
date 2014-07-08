@@ -1,7 +1,7 @@
 # Digabi customizations (apps, ui)
 
 # digabi-live
-digabi-live
+digabi-os
 digabi-live-extras
 
 digabi-os-debug
@@ -17,39 +17,6 @@ digabi-customization
 # privacy policy: <https://digabi.fi/tekniikka/digabi-os/rekisteriseloste/>)
 # source: <https://github.com/digabi/digabi-feedback>
 digabi-feedback
-
-# LibreOffice office suite
-libreoffice
-libreoffice-gtk
-libreoffice-l10n-fi
-libreoffice-l10n-sv
-libreoffice-math
-libreoffice-voikko
-
-# Web browser: chromium =~ Google Chrome
-#chromium
-#chromium-l10n
-
-# Web browser: iceweasel (Firefox)
-iceweasel
-iceweasel-l10n-fi
-iceweasel-l10n-sv-se
-
-# VLC media player
-vlc
-
-# Math
-geogebra44
-maxima
-wxmaxima
-
-# Wine, providing support for Windows apps
-wine
-
-# Graphics
-pinta
-gimp
-inkscape
 
 # content filtering
 dansguardian
