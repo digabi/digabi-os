@@ -1,3 +1,9 @@
+digabi-os (14.07a2) stable; urgency=medium
+
+  * Using Replaces instead of Conflicts.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 16:14:34 +0300
+
 digabi-os (14.07a1) stable; urgency=medium
 
   * Added Conflicts: digabi-live.
