@@ -23,6 +23,7 @@ Files: usr/lib/digabi/scripts/firewall /
  etc/digabi/firewall.d/8999-return-digabi-tables.conf /
  etc/digabi/firewall.d/9000-log-and-reject.conf /
  etc/digabi/firewall.d/9999-commit.conf /
+ etc/ip6tables.rules /
 Description: Digabi Firewall is very simple firewall implementation.
  Configuration: add files to /etc/digabi/firewall.d/*.conf.
 File: postinst

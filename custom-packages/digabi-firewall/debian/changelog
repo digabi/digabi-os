@@ -1,3 +1,9 @@
+digabi-firewall (1.5.5) unstable; urgency=medium
+
+  * Added stub for ip6tables rules, block IPv6.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 14:07:27 +0300
+
 digabi-firewall (1.5.4) unstable; urgency=medium
 
   * Do not allow SSH in.
