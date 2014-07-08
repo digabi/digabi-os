@@ -10,6 +10,11 @@ Files: usr/lib/digabi/scripts/firewall /
  etc/digabi/firewall.d/README /
  etc/digabi/firewall.d/0000-initialize-tables.conf /
  etc/digabi/firewall.d/0001-add-digabi-tables.conf /
+ etc/digabi/firewall.d/0200-allow-existing-connections.conf /
+ etc/digabi/firewall.d/0210-allow-dhcp.conf /
+ etc/digabi/firewall.d/0250-allow-ping.conf /
+ etc/digabi/firewall.d/0500-forward-traffic-to-digabi-tables.conf /
+ etc/digabi/firewall.d/9000-log-and-reject.conf /
  etc/digabi/firewall.d/9999-commit.conf /
 Description: Digabi Firewall is very simple firewall implementation.
  Configuration: add files to /etc/digabi/firewall.d/*.conf.
