@@ -45,8 +45,8 @@ Run `rake -T` if you want to see available tasks.
 
 ## Old
 
-    git clone https://github.com/digabi/digabi-os.git
-    cd digabi-live
+    git clone https://github.com/digabi/digabi-os.git digabi-os
+    cd digabi-os
     git submodule init && git submodule update
     make dist
 
