@@ -11,7 +11,7 @@
 set -e
 
 NAME="digabi-firewall"
-SCRIPT="/usr/bin/digabi firewall compile"
+SCRIPT="/usr/bin/digabi"
 RUNAS="root"
 RULEFILE="/etc/iptables.rules"
 
@@ -23,7 +23,7 @@ LOGFILE="/var/log/${NAME}.log"
 start() {
     if [ ! -f "${RULEFILE}" ] || [ -w "${RULEFILE}" ] && [ -w "$(dirname ${RULEFILE})" ]
     then
-        ${SCRIPT} >${RULEFILE}
+        ${SCRIPT} firewall compile save
     else
         echo "Error: Can't write firewall rules to ${RULEFILE}"
         return 1
