@@ -1,27 +1,19 @@
 # Digabi customizations (apps, ui)
 
-# digabi-live
+# MEB approved packages
 digabi-os
-#digabi-live-extras
 
+# Simple firewall app
+digabi-firewall
+
+# Debugging tools
 digabi-os-debug
 
-# Root CA
+# MEB Root CA
 digabi-certificates
 
-# Digabi custom UI
+# Backgrounds etc.
 digabi-customization
 
 # Feedback client
-# see details: <https://digabi.fi/tekniikka/digabi-os/laitteistotuki/>
-# privacy policy: <https://digabi.fi/tekniikka/digabi-os/rekisteriseloste/>)
-# source: <https://github.com/digabi/digabi-feedback>
 digabi-feedback
-
-
-digabi-firewall
-
-# content filtering
-#dansguardian
-# proxy, required by dansguardian
-#polipo
