@@ -18,6 +18,9 @@ digabi-customization
 # source: <https://github.com/digabi/digabi-feedback>
 digabi-feedback
 
+
+digabi-firewall
+
 # content filtering
 #dansguardian
 # proxy, required by dansguardian
