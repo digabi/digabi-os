@@ -34,8 +34,8 @@ Our official images are published via [SourceForge](http://sourceforge.net/proje
 ## New
 New build system (copied from [Tails](https://tails.boum.org/)) uses Ruby Rake for running tasks. To build new image, run
 
-    git clone https://github.com/digabi/digabi-os.git
-    cd digabi-live
+    git clone https://github.com/digabi/digabi-os.git digabi-os
+    cd digabi-os
     rake build ; rake vm:halt
 
 After build you can find image in current directory (`digabi-*.iso`).
@@ -75,5 +75,5 @@ some `digabi-*` packages), and when otherwise noted.
 ## Contact
  * [The Matriculation Examination Board of Finland](http://www.ylioppilastutkinto.fi/), PB50, 00581 Helsinki, Finland
  * Project website: [digabi.fi](http://digabi.fi/)
- * [github.com/digabi/digabi-live](https://github.com/digabi/digabi-os)
+ * [github.com/digabi/digabi-os](https://github.com/digabi/digabi-os)
  * email: [digabi@ylioppilastutkinto.fi](mailto:digabi@ylioppilastutkinto.fi)
