@@ -19,6 +19,6 @@ digabi-customization
 digabi-feedback
 
 # content filtering
-dansguardian
+#dansguardian
 # proxy, required by dansguardian
-polipo
+#polipo
