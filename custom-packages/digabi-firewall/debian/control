@@ -7,6 +7,10 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: digabi-common
 Changelog: debian/changelog
 Files: usr/lib/digabi/scripts/firewall /
+ etc/network/if-post-down.d/ip6tablessave /
+ etc/network/if-post-down.d/iptablessave /
+ etc/network/if-pre-up.d/ip6tablesload /
+ etc/network/if-pre-up.d/iptablesload /
  etc/digabi/firewall.d/README /
  etc/digabi/firewall.d/0000-initialize-tables.conf /
  etc/digabi/firewall.d/0001-add-digabi-tables.conf /
