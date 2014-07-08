@@ -1,4 +1,10 @@
-digabi-firewall (1.1) UNRELEASED; urgency=medium
+digabi-firewall (1.2) unstable; urgency=medium
+
+  * Change permissions for /etc/digabi/firewall.d: owner root:root, chmod 0700.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 13:16:00 +0300
+
+digabi-firewall (1.1) unstable; urgency=medium
 
   * Added pre-up/post-down script for networking.
   * Added init script for digabi-firewall.

@@ -27,10 +27,10 @@ Description: Digabi Firewall is very simple firewall implementation.
 File: postinst
  #!/bin/sh
  set -e
-
+ chown root:root /etc/digabi/firewall.d
+ chmod 0700 /etc/digabi/firewall.d
  update-rc.d digabi-firewall defaults
 File: prerm
  #!/bin/sh
  set -e
-
  update-rc.d digabi-firewall remove
