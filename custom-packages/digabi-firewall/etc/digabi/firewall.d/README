@@ -1,0 +1,11 @@
+digabi-firewall
+===================
+
+Configuration for digabi-firewall.
+
+Compile using `digabi firewall compile`.
+
+Configuration: these configuration files will create new 
+/etc/iptables.rules, which will be enabled at boot time. If 
+configuration file has execution bit (+x), compilation script will run 
+it & add its output, instead of the file itself.

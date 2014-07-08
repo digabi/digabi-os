@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+COMMAND="$1"
+
+if [ -z "${COMMAND}" ]
+then
+    COMMAND="compile"
+fi
+
+CONFIG_DIR="/etc/digabi/firewall.d"
+
+FILES="$(ls ${CONFIG_DIR}/*.conf)"
+
+case "${COMMAND}" in
+    compile)
+        TEMPFILE="$(mktemp)"
+        for f in ${FILES}
+        do
+            echo "I: Adding firewall configuration: ${f}..." >&2
+            if [ -x "${f}" ]
+            then
+                ${f} >>${TEMPFILE}
+            else
+                cat "${f}" >>${TEMPFILE}
+            fi
+        done
+        cat "${TEMPFILE}"
+    ;;
+    *)
+        echo "E: Invalid command: ${COMMAND}"
+        exit 1
+    ;;
+esac

@@ -1,0 +1,12 @@
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+
+Package: digabi-firewall
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Depends: digabi-common
+Changelog: debian/changelog
+Files: usr/lib/digabi/scripts/firewall /
+ etc/digabi/firewall.d/0000-initialize-tables.conf /
+Description: Digabi Firewall is very simple firewall implementation.
+ Configuration: add files to /etc/digabi/firewall.d/*.conf.
