@@ -1,10 +1,10 @@
-PRETTY_NAME="Digabi Live 0.0 (Unconfigured Umbrella Bird)"
-NAME="Digabi Live"
+PRETTY_NAME="Digabi OS 0.0 (Unconfigured Umbrella Bird)"
+NAME="Digabi OS"
 VERSION_ID="0.0"
 VERSION="0.0 (Unconfigured Umbrella Bird)"
 ID=digabi
 ID_LIKE=debian
 ANSI_COLOR="1;32"
-HOME_URL="http://digabi.fi/"
-SUPPORT_URL="http://digabi.fi/"
-BUG_REPORT_URL="http://digabi.fi/"
+HOME_URL="https://digabi.fi/"
+SUPPORT_URL="https://digabi.fi/"
+BUG_REPORT_URL="https://digabi.fi/"

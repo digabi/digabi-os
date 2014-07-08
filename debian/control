@@ -2,8 +2,8 @@ Section: misc
 Priority: optional
 Homepage: https://digabi.fi/os
 Standards-Version: 3.9.2
-Vcs-Browser: https://github.com/digabi/digabi-live
-Vcs-Git: git://github.com/digabi/digabi-live.git
+Vcs-Browser: https://github.com/digabi/digabi-os
+Vcs-Git: git://github.com/digabi/digabi-os.git
 
 Package: digabi-os
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>

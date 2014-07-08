@@ -6,8 +6,8 @@ HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; 
 
 COMMAND="$1"
 
-REPO_URL="https://github.com/digabi/digabi-live"
-REPO_PATH="digabi-live"
+REPO_URL="https://github.com/digabi/digabi-os"
+REPO_PATH="digabi-os"
 
 # TODO: If currently in digabi-live, do not clone (use current dir)
 # TODO: Check that git repo is right one (first commit?)

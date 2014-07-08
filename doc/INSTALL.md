@@ -13,11 +13,11 @@ Might also work on Ubuntu, but not tested. There will also be a Vagrant box that
 ## Checkout config from git
 Clone from our GitHub repository:
 
-    git clone https://github.com/digabi/digabi-live.git digabi-live
+    git clone https://github.com/digabi/digabi-os.git digabi-os
 
 Fetch submodules
 
-    cd digabi-live
+    cd digabi-os
     git submodule init
     git submodule update
 
