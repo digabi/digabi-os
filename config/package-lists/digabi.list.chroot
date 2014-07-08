@@ -55,6 +55,3 @@ inkscape
 dansguardian
 # proxy, required by dansguardian
 polipo
-
-# custom fonts, ui
-fonts-lato

@@ -1,10 +1,16 @@
-digabi-customization (2.3) UNRELEASED; urgency=low
+digabi-customization (2.4) UNRELEASED; urgency=medium
+
+  * Added fonts-lato to requirements.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 09:41:01 +0300
+
+digabi-customization (2.3) stable; urgency=low
 
   * Moved autostart file from skel to etc/xdg/autostart.
   * Renamed digabi configure-xfce to digabi configure-desktop.
   * Desktop configuration tool checks if XFCE specific binaries have been installed before trying to use them.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 25 Apr 2014 14:39:57 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 09:40:52 +0300
 
 digabi-customization (2.2) stable; urgency=medium
 
