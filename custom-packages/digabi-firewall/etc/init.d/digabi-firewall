@@ -19,20 +19,15 @@ PIDFILE="/var/run/${NAME}.pid"
 LOGFILE="/var/log/${NAME}.log"
 
 [ -x "${SCRIPT}" ] || exit 0
- 
+
+[ "$(id -u)" = "0" ] || exit 1
+
 start() {
-    if [ ! -f "${RULEFILE}" ] || [ -w "${RULEFILE}" ] && [ -w "$(dirname ${RULEFILE})" ]
-    then
-        ${SCRIPT} firewall compile save
-        iptables-restore <"${RULEFILE}"
-    else
-        echo "Error: Can't write firewall rules to ${RULEFILE}"
-        return 1
-    fi
-  
-  return 0
+    ${SCRIPT} firewall compile save
+    iptables-restore <"${RULEFILE}"
+    return 0
 }
- 
+
 stop() {
     return 0
 }

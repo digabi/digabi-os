@@ -1,3 +1,9 @@
+digabi-firewall (1.5.2) unstable; urgency=medium
+
+  * Check user id when running init script, fail if non-root.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 13:39:46 +0300
+
 digabi-firewall (1.5.1) unstable; urgency=medium
 
   * Enable firewall on boot.
