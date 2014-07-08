@@ -1,3 +1,9 @@
+digabi-firewall (1.5.0) unstable; urgency=medium
+
+  * Added default rule for ssh: allow incoming connections.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 13:30:37 +0300
+
 digabi-firewall (1.4) unstable; urgency=medium
 
   * Require root user.
