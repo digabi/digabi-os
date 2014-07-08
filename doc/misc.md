@@ -10,6 +10,12 @@ Misc. things to remember.
 ## Tool for symlinking latest .ISO (for website, for VirtualBox testing)
     if [ -f latest.iso ]; then rm latest.iso ; fi && ln -s `ls -lt digabi-os_*.iso |head -n 1 |awk '{print $9}'` latest.iso
 
+
+## Development builds
+
+    http_proxy="http://cimonitor:3128/" DIGABI_BUILD_OPTIONS="ignorechanges noram cpus=4" rake build ; rake vm:halt
+
+
 ## Debian changelog
 Create new changelog inside package (file `debian/changelog`)
 
