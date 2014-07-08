@@ -1,6 +1,6 @@
-digabi-firewall (1.0) UNRELEASED; urgency=medium
+digabi-firewall (1.0) unstable; urgency=medium
 
   * Initial release.
   * Includes simple rules for traffic filtering.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 11:35:24 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 12:36:44 +0300
