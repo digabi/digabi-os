@@ -1,6 +1,7 @@
 digabi-firewall (1.1) UNRELEASED; urgency=medium
 
   * Added pre-up/post-down script for networking.
+  * Added init script for digabi-firewall.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 12:57:40 +0300
 

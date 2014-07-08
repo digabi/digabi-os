@@ -7,6 +7,7 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: digabi-common
 Changelog: debian/changelog
 Files: usr/lib/digabi/scripts/firewall /
+ etc/init.d/digabi-firewall /
  etc/network/if-post-down.d/ip6tablessave /
  etc/network/if-post-down.d/iptablessave /
  etc/network/if-pre-up.d/ip6tablesload /
@@ -23,3 +24,13 @@ Files: usr/lib/digabi/scripts/firewall /
  etc/digabi/firewall.d/9999-commit.conf /
 Description: Digabi Firewall is very simple firewall implementation.
  Configuration: add files to /etc/digabi/firewall.d/*.conf.
+File: postinst
+ #!/bin/sh
+ set -e
+
+ update-rc.d digabi-firewall defaults
+File: prerm
+ #!/bin/sh
+ set -e
+
+ update-rc.d digabi-firewall remove
