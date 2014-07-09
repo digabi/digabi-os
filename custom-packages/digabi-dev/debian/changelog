@@ -1,3 +1,9 @@
+digabi-dev (4.0.6) stable; urgency=medium
+
+  * Do not use HTTP proxy.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Jul 2014 16:18:50 +0300
+
 digabi-dev (4.0.5) stable; urgency=medium
 
   * Added digabi os command.

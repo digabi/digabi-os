@@ -10,10 +10,6 @@ TMPFS_SIZE_BYTES=$(($TMPFS_SIZE_MB * 1024 * 1024))
 as_root_do() {
 	sudo \
 		${RSYNC_PROXY:+RSYNC_PROXY="$RSYNC_PROXY"} \
-		${http_proxy:+http_proxy="$http_proxy"} \
-		${https_proxy:+https_proxy="$https_proxy"} \
-		${ftp_proxy:+ftp_proxy="$ftp_proxy"} \
-		${no_proxy:+no_proxy="$no_proxy"} \
 		${DEBIAN_MIRROR:+DEBIAN_MIRROR="$DEBIAN_MIRROR"} \
 		${JENKINS_URL:+JENKINS_URL="$JENKINS_URL"} \
 		${MKSQUASHFS_OPTIONS:+MKSQUASHFS_OPTIONS="$MKSQUASHFS_OPTIONS"} \
