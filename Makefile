@@ -40,9 +40,9 @@ all:	build
 _configure_env:
 	# TODO: Check if already exists & re-use?
 	# TODO: Export variables? (DEBIAN_MIRROR, http_proxy, et. all); save as config/digabi.local
-	TEMPFILE = $(shell /bin/mktemp $(BUILDER)/digabi.local.XXXXXXX.tmp)
+	#TEMPFILE = $(shell /bin/mktemp $(BUILDER)/digabi.local.XXXXXXX.tmp)
 	# TODO: Create digabi.local, copy from /vagrant
-	echo "DIGABI_MIRROR=$(DIGABI_MIRROR)"
+	#echo "DIGABI_MIRROR=$(DIGABI_MIRROR)"
 
 	$(MAKE) -C $(BUILDER) run COMMAND='git clone $(GIT_REPOSITORY) $(BUILD_DIR)'
 
