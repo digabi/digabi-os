@@ -33,3 +33,14 @@ File: postinst
  
  cd "${LIVE_BUILD}"
  patch -p1 </usr/share/digabi-dev/hacks/fix-live-build-isohdpfx.bin-path-syslinux-6.03.patch
+File: prerm
+ #!/bin/sh
+ set -e
+ LIVE_BUILD="/usr/lib/live/build"
+ if [ ! -d "${LIVE_BUILD}" ]
+ then
+    exit 0
+ fi
+ 
+ cd "${LIVE_BUILD}"
+ patch -p1 -R </usr/share/digabi-dev/hacks/fix-live-build-isohdpfx.bin-path-syslinux-6.03.patch
