@@ -79,3 +79,5 @@ lb config noauto \
     --security "true" \
     --win32-loader "false" \
 	"${@}"
+
+echo "LB_ARCHITECTURE=${ARCHITECTURE}" >>config/bootstrap
