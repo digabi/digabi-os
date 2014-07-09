@@ -246,7 +246,7 @@ task :build => ['parse_build_options', 'ensure_clean_repository', 'validate_http
   else
     chan = primary_vm.communicate
   end
-  status = chan.execute("#{exported_env} build-dos",
+  status = chan.execute("#{exported_env} /usr/bin/digabi os build",
                                           :error_check => false) do |fd, data|
     (fd == :stdout ? $stdout : $stderr).write data
   end

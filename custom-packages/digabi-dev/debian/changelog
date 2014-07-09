@@ -1,3 +1,10 @@
+digabi-dev (4.0.5) stable; urgency=medium
+
+  * Added digabi os command.
+  * If file exists in ${SCRIPT_PATH}/_os/, run it if no build-in command in digabi os.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Jul 2014 13:57:33 +0300
+
 digabi-dev (4.0.4) stable; urgency=medium
 
   * Added prerm script for removing hack on uninstall.

@@ -16,6 +16,8 @@ Files: scripts/prepare-linux-source /usr/lib/digabi
  scripts/build-kernel /usr/lib/digabi
  scripts/build-custom-packages /usr/lib/digabi
  scripts/build-package /usr/lib/digabi
+ scripts/os /usr/lib/digabi
+ scripts/_os/build /usr/lib/digabi
  etc/digabi/dev /
  etc/apt-cacher-ng/digabi.conf /
  hacks/fix-live-build-isohdpfx.bin-path-syslinux-6.03.patch /usr/share/digabi-dev
