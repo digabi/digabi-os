@@ -1,3 +1,9 @@
+digabi-dev (4.0.3) stable; urgency=medium
+
+  * Added ugly hack to fix live-build toolset (binary_iso script) for Syslinux 6.03 (which is now included in Digabi repository).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Jul 2014 12:10:16 +0300
+
 digabi-dev (4.0.2) stable; urgency=medium
 
   * Removed eatmydata from Depends:. 
