@@ -37,16 +37,15 @@ ARTIFACTS_DIR = dist
 
 all:	build
 
-_configure_env:
+_configure-env:
 	# TODO: Check if already exists & re-use?
 	# TODO: Export variables? (DEBIAN_MIRROR, http_proxy, et. all); save as config/digabi.local
 	#TEMPFILE = $(shell /bin/mktemp $(BUILDER)/digabi.local.XXXXXXX.tmp)
 	# TODO: Create digabi.local, copy from /vagrant
 	#echo "DIGABI_MIRROR=$(DIGABI_MIRROR)"
+	$(MAKE) -C $(BUILDER) run COMMAND='if [ ! -d "$(BUILD_DIR)/.git" ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git fetch --all ; fi'
 
-	$(MAKE) -C $(BUILDER) run COMMAND='git clone $(GIT_REPOSITORY) $(BUILD_DIR)'
-
-config:	clean _configure_env
+config:	clean _configure-env
 	$(MAKE) -C $(BUILDER) run COMMAND='cd $(BUILD_DIR) && $(ROOT_CMD) lb config'
 	#$(LIVE_BUILD) config
 
