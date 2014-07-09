@@ -63,7 +63,9 @@ purge:
 	$(MAKE) -C $(BUILDER) destroy
 
 collect: build
-	$(MAKE) -C $(BUILDER) run COMMAND='if [ -d "$(BUILD_DIR)/$(ARTIFACTS_DIR)" ] ; then cd $(BUILD_DIR) ; rsync -avh $(ARTIFACTS_DIR) /vagrant/ ; fi'
+	$(MAKE) -C $(BUILDER) run COMMAND='if [ -d "$(BUILD_DIR)/$(ARTIFACTS_DIR)" ] ; then cd $(BUILD_DIR) ; rsync -avh $(ARTIFACTS_DIR) /$(BUILDER)/ ; fi'
+	mkdir -p $(ARTIFACTS_DIR)
+	mv $(BUILDER)/$(ARTIFACTS_DIR)/* $(ARTIFACTS_DIR)/
 
 dist:	collect
 	echo "TODO	"
