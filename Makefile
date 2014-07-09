@@ -46,7 +46,7 @@ _configure-env:
 	#$(MAKE) -C $(BUILDER) run COMMAND='if [ ! -d "$(BUILD_DIR)/.git" ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git fetch --all ; fi'
 
 config:	clean _configure-env
-	$(MAKE) -C $(BUILDER) run COMMAND='cd $(BUILD_DIR) && $(ROOT_CMD) lb config'
+	#$(MAKE) -C $(BUILDER) run COMMAND='cd $(BUILD_DIR) && $(ROOT_CMD) lb config'
 	#$(LIVE_BUILD) config
 
 build: config
@@ -55,16 +55,18 @@ build: config
 	$(MAKE) -C $(BUILDER) run COMMAND='/usr/bin/digabi os build'
 
 clean:
-	$(MAKE) -C $(BUILDER) run COMMAND='sudo rm -rf $(BUILD_DIR)'
+	#$(MAKE) -C $(BUILDER) run COMMAND='sudo rm -rf $(BUILD_DIR)'
 	#$(MAKE) -C vagrant ssh
 
 purge:
 	$(MAKE) -C $(BUILDER) destroy
 
 collect: build
-	$(MAKE) -C $(BUILDER) run COMMAND='if [ -d "$(BUILD_DIR)/$(ARTIFACTS_DIR)" ] ; then cd $(BUILD_DIR) ; rsync -avh $(ARTIFACTS_DIR) /$(BUILDER)/ ; fi'
+	#$(MAKE) -C $(BUILDER) run COMMAND='if [ -d "$(BUILD_DIR)/$(ARTIFACTS_DIR)" ] ; then cd $(BUILD_DIR) ; rsync -avh $(ARTIFACTS_DIR) /$(BUILDER)/ ; fi'
+	#mkdir -p $(ARTIFACTS_DIR)
+	#mv $(BUILDER)/$(ARTIFACTS_DIR)/* $(ARTIFACTS_DIR)/
 	mkdir -p $(ARTIFACTS_DIR)
-	mv $(BUILDER)/$(ARTIFACTS_DIR)/* $(ARTIFACTS_DIR)/
+	mv $(BUILDER)/digabi-os-* $(ARTIFACTS_DIR)/
 
 dist:	collect
 	echo "TODO	"
