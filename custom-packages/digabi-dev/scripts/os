@@ -6,6 +6,12 @@ HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; 
 
 COMMAND="$1"
 
+if [ -z "${COMMAND}" ]
+then
+    echo "Usage: $0 <command>"
+    exit 1
+fi
+
 REPO_URL="https://github.com/digabi/digabi-os"
 REPO_PATH="digabi-os"
 
@@ -40,10 +46,10 @@ case "${COMMAND}" in
 		info "Successfully checked out commit ${COMMIT}, created branch ${BRANCH}."
 		;;
 	*)
-	    SCRIPT_PATH="$(dirname $0)/_os"
-	    if [ -x "${SCRIPT_PATH}/${COMMAND}" ]
+	    CMD="$(dirname $(readlink -f $0))/_os/${COMMAND}"
+	    if [ -x "${CMD}" ]
 	    then
-	        ${SCRIPT_PATH}/${COMMAND} $@
+		${CMD} $@
 	    else
 	   		error "Invalid command: ${COMMAND}."
 	    	exit 1
