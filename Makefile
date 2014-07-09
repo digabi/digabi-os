@@ -37,7 +37,10 @@ ARTIFACTS_DIR = dist
 
 all:	build
 
-_configure-env:
+environment:
+	$(MAKE) -C $(BUILDER) up
+	$(MAKE) -C $(BUILDER) provision
+	$(MAKE) -C $(BUILDER) halt
 	# TODO: Check if already exists & re-use?
 	# TODO: Export variables? (DEBIAN_MIRROR, http_proxy, et. all); save as config/digabi.local
 	#TEMPFILE = $(shell /bin/mktemp $(BUILDER)/digabi.local.XXXXXXX.tmp)
@@ -45,7 +48,7 @@ _configure-env:
 	#echo "DIGABI_MIRROR=$(DIGABI_MIRROR)"
 	#$(MAKE) -C $(BUILDER) run COMMAND='if [ ! -d "$(BUILD_DIR)/.git" ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git fetch --all ; fi'
 
-config:	clean _configure-env
+config:	clean environment
 	#$(MAKE) -C $(BUILDER) run COMMAND='cd $(BUILD_DIR) && $(ROOT_CMD) lb config'
 	#$(LIVE_BUILD) config
 
@@ -75,5 +78,8 @@ custom-packages:
 	cd custom-packages
 	# TODO
 	cd ..
+
+buildbox: clean environment
+	# TODO
 
 .PHONY: custom-packages

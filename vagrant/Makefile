@@ -19,6 +19,9 @@ _init-vm: up
 	# TODO: Configure VM (memory, cpu, ...)
 	#vagrant up
 
+provision: _init-vm
+	vagrant provision
+
 run: _init-vm
 	vagrant ssh -c '$(COMMAND)'
 
