@@ -96,5 +96,6 @@ custom-packages:
 # Export builder as VirtualBox Machine Image
 buildbox: clean environment
 	# TODO
+	# TODO: Modify VM: remove VT-X, PAE et. all
 
 .PHONY: custom-packages
