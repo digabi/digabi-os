@@ -51,6 +51,8 @@ else
     config.vm.provider :virtualbox do |vb|
       vb.customize ['modifyvm', :id, '--memory', mem_size]
       vb.customize ['modifyvm', :id, '--cpus', cpus] unless cpus.nil?
+      vb.customize ['modifyvm'] :id, '--ioapic', 'on']
+      vb.customize ['modifyvm'] :id, '--nictype1', 'virtio']
     end
   end
 end
