@@ -1,3 +1,9 @@
+digabi-dev (4.0.9) stable; urgency=medium
+
+  * Simplify build script.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Jul 2014 17:16:02 +0300
+
 digabi-dev (4.0.8) stable; urgency=medium
 
   * Do not use HTTP proxy.

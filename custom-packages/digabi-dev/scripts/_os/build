@@ -72,17 +72,19 @@ else
 	WORKSPACE=/home/vagrant/digabi-os
 	ARTIFACTS_DIR=/vagrant
 	COMMIT="$(git --git-dir=/digabi-os.git rev-parse --verify HEAD)"
-	if git --git-dir=/digabi-os.git symbolic-ref HEAD >/dev/null 2>&1; then
-		# We are building from a branch
-		REV="${1:-$(git --git-dir=/digabi-os.git name-rev --name-only HEAD)}"
-	else
-		# We are (hopefully) building from a tag
-		if ! REV="${1:-$(git --git-dir=/digabi-os.git describe --tags --exact-match ${COMMIT})}"; then
-			REV="${COMMIT}"
-			#echo "It seems we are building from an untagged detached HEAD. Aborting." >&2
-			#exit 1
-		fi
-	fi
+#	if git --git-dir=/digabi-os.git symbolic-ref HEAD >/dev/null 2>&1; then
+#		# We are building from a branch
+#		REV="${1:-$(git --git-dir=/digabi-os.git name-rev --name-only HEAD)}"
+#	else
+#		# We are (hopefully) building from a tag
+#		if ! REV="${1:-$(git --git-dir=/digabi-os.git describe --tags --exact-match ${COMMIT})}"; then
+#			REV="${COMMIT}"
+#			#echo "It seems we are building from an untagged detached HEAD. Aborting." >&2
+#			#exit 1
+#		fi
+#	fi
+	REV="${COMMIT}"
+
 	test -d "$WORKSPACE" || git clone /digabi-os.git "$WORKSPACE"
 	cd "$WORKSPACE"
 	git fetch origin
