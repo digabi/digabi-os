@@ -44,13 +44,6 @@ else
     wget -qO- https://digabi.fi/debian/digabi.asc | apt-key add -
 fi
 
-# If APT source exists, move it as default mirror (fixed problems w/ pbuilder)
-if [ ! -f "/etc/apt/sources.list" ] &&  [ -f "/etc/apt/sources.list.d/jessie.list" ]
-then
-    echo "I: Use jessie.list as sources.list (default mirror)..."
-    mv /etc/apt/sources.list.d/jessie.list /etc/apt/sources.list
-fi
-
 if [ -n "${DEBIAN_MIRROR}" ]
 then
     echo "I: Configuring custom Debian mirror: ${DEBIAN_MIRROR}..."
