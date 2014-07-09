@@ -43,7 +43,7 @@ _configure-env:
 	#TEMPFILE = $(shell /bin/mktemp $(BUILDER)/digabi.local.XXXXXXX.tmp)
 	# TODO: Create digabi.local, copy from /vagrant
 	#echo "DIGABI_MIRROR=$(DIGABI_MIRROR)"
-	$(MAKE) -C $(BUILDER) run COMMAND='if [ ! -d "$(BUILD_DIR)/.git" ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git fetch --all ; fi'
+	#$(MAKE) -C $(BUILDER) run COMMAND='if [ ! -d "$(BUILD_DIR)/.git" ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git fetch --all ; fi'
 
 config:	clean _configure-env
 	$(MAKE) -C $(BUILDER) run COMMAND='cd $(BUILD_DIR) && $(ROOT_CMD) lb config'
@@ -52,7 +52,7 @@ config:	clean _configure-env
 build: config
 	# TODO: Check if uncommitted changes (git)
 	# TODO: Allow specifying COMMIT=xx => if COMMIT != "" > run cd builddir & git co ...
-	$(MAKE) -C $(BUILDER) run COMMAND='cd $(BUILD_DIR) && $(ROOT_CMD) lb build && mkdir -p dist && mv digabi-os-* dist/'
+	$(MAKE) -C $(BUILDER) run COMMAND='/usr/bin/digabi os build'
 
 clean:
 	$(MAKE) -C $(BUILDER) run COMMAND='sudo rm -rf $(BUILD_DIR)'
