@@ -71,3 +71,5 @@ config/digabi.local
 
 vagrant/definitions/jessie/preseed.cfg
 build.log
+
+*.tmp
