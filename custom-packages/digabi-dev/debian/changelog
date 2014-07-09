@@ -1,8 +1,20 @@
-digabi-dev (4.0.6) stable; urgency=medium
+digabi-dev (4.0.8) stable; urgency=medium
 
   * Do not use HTTP proxy.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Jul 2014 16:18:50 +0300
+
+digabi-dev (4.0.7) stable; urgency=medium
+
+  * Fixed invalid syntax.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Jul 2014 15:28:04 +0300
+
+digabi-dev (4.0.6) stable; urgency=medium
+
+  * Disabled syslinux hack temporarily.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Jul 2014 15:15:02 +0300
 
 digabi-dev (4.0.5) stable; urgency=medium
 
