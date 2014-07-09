@@ -1,0 +1,21 @@
+diff -u build.orig/binary_iso build/binary_iso
+--- build.orig/binary_iso	2014-07-09 11:59:15.977427775 +0300
++++ build/binary_iso	2014-07-09 12:00:24.442777703 +0300
+@@ -57,7 +57,7 @@
+ 
+ if [ "${LIVE_IMAGE_TYPE}" = "iso-hybrid" ]
+ then
+-	Check_package chroot/usr/lib/syslinux/isohdpfx.bin syslinux-common
++	Check_package chroot/usr/lib/syslinux/mbr/isohdpfx.bin syslinux-common
+ fi
+ 
+ # Restoring cache
+@@ -78,7 +78,7 @@
+ # Handle xorriso live-build specific options
+ if [ "${LIVE_IMAGE_TYPE}" = "iso-hybrid" ]
+ then
+-	XORRISO_OPTIONS="${XORRISO_OPTIONS} -isohybrid-mbr /usr/lib/syslinux/isohdpfx.bin -partition_offset 16"
++	XORRISO_OPTIONS="${XORRISO_OPTIONS} -isohybrid-mbr /usr/lib/syslinux/mbr/isohdpfx.bin -partition_offset 16"
+ fi
+ 
+ if [ "${_QUIET}" = "true" ]
