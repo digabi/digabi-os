@@ -1,3 +1,9 @@
+digabi-backgrounds (1.4) unstable; urgency=medium
+
+  * Bump version number.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Jul 2014 18:09:15 +0300
+
 digabi-backgrounds (1.3) unstable; urgency=medium
 
   * Updated distribution name (Digabi Live > Digabi OS).
