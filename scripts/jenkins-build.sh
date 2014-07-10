@@ -39,7 +39,7 @@ trap cleanup EXIT
 
 # TODO: Use specified repository when building image
 
-if [ -n "${DEBIAN_MIRROR}" ]
+if [ -z "${DEBIAN_MIRROR}" ]
 then
     DEBIAN_MIRROR="http://${REPOSITORY_IP}/debian"
 fi
