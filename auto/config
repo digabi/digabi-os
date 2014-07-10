@@ -33,7 +33,13 @@ do
     fi
 done
 
-ARCHITECTURE="i386"
+if [ -n "${ARCH}" ]
+then
+    ARCHITECTURE="${ARCH}"
+else
+    ARCHITECTURE="i386"
+fi
+
 _LINUX_FLAVOURS="686-pae"
 #_LINUX_FLAVOURS="ytl"
 _SOURCE="false"
