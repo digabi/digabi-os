@@ -1,3 +1,9 @@
+digabi-dev (4.0.10) stable; urgency=medium
+
+  * Added support for ${BUILD_TAG}.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 14:03:33 +0300
+
 digabi-dev (4.0.9) stable; urgency=medium
 
   * Simplify build script.
