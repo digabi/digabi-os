@@ -9,8 +9,13 @@ HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; 
 
 if [ -f "debian/control" ]
 then
-    info "Building package ($(basename ${PWD}))."
-    equivs-build debian/control 1>/dev/null
+    if [ -f "debian/equivs" ]
+    then
+        info "Building equivs-managed package ($(basename ${PWD}))."
+        equivs-build debian/control 1>/dev/null
+    else
+        warning "Package created with non-supported tools, skipping ($(basename ${PWD}))."
+    fi
 else
     error "Package control file debian/control not found. ($PWD)"
     exit 1
