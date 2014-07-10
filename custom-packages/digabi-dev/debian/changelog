@@ -1,3 +1,10 @@
+digabi-dev (4.0.12) stable; urgency=medium
+
+  * Updated custom package building scripts.
+  * Added support for equivs-built packages.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 21:33:46 +0300
+
 digabi-dev (4.0.11) stable; urgency=medium
 
   * Added support for ${ARCH}.
