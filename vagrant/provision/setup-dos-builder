@@ -81,7 +81,7 @@ if [ "${SNAPSHOT}" = "true" ]
 then
     echo "I: Using Debian snapshots, ignore APT Check-Valid-Until..."
     cat << EOF >/etc/apt/apt.conf.d/99-snapshots
-APT::Acquire::Check-Valid-Until "false";
+Acquire::Check-Valid-Until "false";
 EOF
 fi
 
