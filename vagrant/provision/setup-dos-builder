@@ -2,6 +2,19 @@
 
 set -e
 
+contains() {
+    string="$1"
+    substring="$2"
+    if test "${string#*$substring}" != "$string"
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+
+SNAPSHOT="false"
+
 #
 # Initialiaze new Vagrant (Debian wheezy/jessie)
 #
@@ -47,6 +60,10 @@ fi
 if [ -n "${DEBIAN_MIRROR}" ]
 then
     echo "I: Configuring custom Debian mirror: ${DEBIAN_MIRROR}..."
+    if contains "${DEBIAN_MIRROR}" "snapshot.debian.net"
+    then
+        SNAPSHOT="true"
+    fi
     echo "deb ${DEBIAN_MIRROR} jessie main contrib non-free" >/etc/apt/sources.list
     echo "deb http://security.debian.org/ jessie/updates main contrib non-free" >>/etc/apt/sources.list
 #    sed -ir "s,http://(ftp.[[:alpha:]][[:alpha:]].debian.org|http.debian.net)/debian(/)?,${DEBIAN_MIRROR},g" /etc/apt/sources.list
@@ -59,6 +76,14 @@ cat << EOF >/etc/apt/apt.conf.d/99-no-recommends
 APT::Install-Recommends "false";
 APT::Install-Suggests "false";
 EOF
+
+if [ "${SNAPSHOT}" = "true" ]
+then
+    echo "I: Using Debian snapshots, ignore APT Check-Valid-Until..."
+    cat << EOF >/etc/apt/apt.conf.d/99-snapshots
+APT::Acquire::Check-Valid-Until "false";
+EOF
+fi
 
 #install -o root -g root -m 755 /vagrant/provision/assets/build-dos /usr/local/bin
 
