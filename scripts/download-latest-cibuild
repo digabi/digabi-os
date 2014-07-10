@@ -2,7 +2,10 @@
 
 set -e
 
-CI_HOST=""
+if [ -z "${CI_HOST}" ]
+then
+    CI_HOST="http://cimonitor"
+fi
 
 if [ -z "${JOB}" ]
 then
@@ -10,7 +13,7 @@ then
 fi
 FILENAME_XPATH="[ends-with%28.,%27iso%27%29]/text%28%29"
 
-URL_BASE="http://cimonitor/job/$(echo ${JOB} |sed 's/ /%20/g')/lastSuccessfulBuild"
+URL_BASE="${CI_HOST}/job/$(echo ${JOB} |sed 's/ /%20/g')/lastSuccessfulBuild"
 ISO_NAME="$(wget -qO- ${URL_BASE}/api/xml?xpath=//fileName${FILENAME_XPATH})"
 
 URL="${URL_BASE}/artifact/dist/${ISO_NAME}"
