@@ -31,23 +31,8 @@ image is quite easy:
 
 Our official images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
 
-## New
-New build system (copied from [Tails](https://tails.boum.org/)) uses Ruby Rake for running tasks. To build new image, run
-
     git clone https://github.com/digabi/digabi-os.git digabi-os
     cd digabi-os
-    rake build ; rake vm:halt
-
-After build you can find image in current directory (`digabi-*.iso`).
-
-Run `rake -T` if you want to see available tasks.
-
-
-## Old
-
-    git clone https://github.com/digabi/digabi-os.git digabi-os
-    cd digabi-os
-    git submodule init && git submodule update
     make dist
 
 After building, image can be found in `dist/` directory.
