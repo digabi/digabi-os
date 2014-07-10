@@ -41,7 +41,7 @@ trap cleanup EXIT
 
 if [ -n "${DEBIAN_MIRROR}" ]
 then
-    DEBIAN_MIRROR="http://$(REPOSITORY_IP}/debian"
+    DEBIAN_MIRROR="http://${REPOSITORY_IP}/debian"
 fi
 
 make dist DEBIAN_MIRROR="${DEBIAN_MIRROR}" http_proxy="${PROXY}" DIGABI_BUILD_OPTIONS="cpus=${CPUS} ignorechanges noram" BUILD_TAG="${BUILD_TAG}"
