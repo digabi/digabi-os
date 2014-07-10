@@ -34,6 +34,7 @@ else
 fi
 
 GIT_COMMIT="$(git rev-parse HEAD)"
+BUILD_TIMESTAMP="$(date +%s)"
 
 echo "Builder-ID: ${BUILDER_ID}" >${TARGET_FILE}
 echo "Builder-Host: ${BUILD_HOST}" >>${TARGET_FILE}
@@ -42,4 +43,5 @@ echo "" >>${TARGET_FILE}
 echo "live-build: ${LB_VERSION}" >>${TARGET_FILE}
 echo "" >>${TARGET_FILE}
 echo "Build-Tag: ${BUILD_TAG}" >>${TARGET_FILE}
+echo "Build-Timestamp: ${BUILD_TIMESTAMP}" >>${TARGET_FILE}
 echo "Build-Git-Commit: ${GIT_COMMIT}" >>${TARGET_FILE}
