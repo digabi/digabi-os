@@ -40,8 +40,6 @@ else
     ARCHITECTURE="i386"
 fi
 
-_LINUX_FLAVOURS="686-pae"
-#_LINUX_FLAVOURS="ytl"
 _SOURCE="false"
 
 ARCHIVE_AREAS="main contrib non-free"
@@ -67,7 +65,6 @@ lb config noauto \
     --architecture "${ARCHITECTURE}" \
     --archive-areas "${ARCHIVE_AREAS}" \
     --distribution "${DISTRIBUTION}" \
-    --linux-flavour "${_LINUX_FLAVOURS}" \
     --linux-packages "linux-image" \
     --apt-indices "false" \
     --apt-recommends "false" \
