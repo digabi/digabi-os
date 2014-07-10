@@ -102,8 +102,10 @@ contains() {
 if contains "${DEBIAN_MIRROR}" "snapshot.debian.org"
 then
     echo "I: Using Debian snapshots, ignore APT Check-Valid-Until..."
+    mkdir -p config/includes.bootstrap/etc/apt/apt.conf.d
     mkdir -p config/includes.chroot/etc/apt/apt.conf.d
-    cat << EOF >config/includes.chroot/etc/apt/apt.conf.d/99-snapshots
+    cat << EOF >config/includes.bootstrap/etc/apt/apt.conf.d/99-snapshots
 Acquire::Check-Valid-Until "false";
 EOF
+    cp config/includes.bootstrap/etc/apt/apt.conf.d/99-snapshots config/includes.bootstrap/etc/apt/apt.conf.d/99-snapshots
 fi
