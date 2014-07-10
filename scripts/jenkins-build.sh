@@ -44,4 +44,9 @@ then
     DEBIAN_MIRROR="http://${REPOSITORY_IP}/debian"
 fi
 
-make dist DEBIAN_MIRROR="${DEBIAN_MIRROR}" http_proxy="${PROXY}" DIGABI_BUILD_OPTIONS="cpus=${CPUS} ignorechanges noram" BUILD_TAG="${BUILD_TAG}"
+if [ -z "${ARCH}" ]
+then
+    ARCH="i386"
+fi
+
+make dist ARCH="${ARCH}" DEBIAN_MIRROR="${DEBIAN_MIRROR}" http_proxy="${PROXY}" BUILD_TAG="${BUILD_TAG}"
