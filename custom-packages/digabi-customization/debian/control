@@ -5,8 +5,8 @@ Standards-Version: 3.9.2
 
 Package: digabi-customization
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: digabi-common, plymouth-themes-digabi, digabi-backgrounds,
- fonts-lato, desktop-base
+Depends: digabi-common, digabi-backgrounds,
+ fonts-lato, desktop-base, plymouth, plymouth-drm, plymouth-themes
 Architecture: all
 Changelog: debian/changelog
 Files: usr/lib/digabi/scripts/configure-desktop /
@@ -16,11 +16,29 @@ Description: Customizations for Digabi project.
 File: postinst
  #!/bin/sh -e
  set -e
+ 
+ PLYMOUTH_BIN="/usr/sbin/plymouth-set-default-theme"
+ PLYMOUTH_THEME="glow"
+ 
  update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/digabi/proprietary/background.svg 100
  update-alternatives --install /usr/share/images/desktop-base/desktop-background.xml desktop-background.xml /usr/share/digabi/proprietary/digabi-background.xml 100
  update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/digabi/proprietary/digabi.svg 100
  update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-splash desktop-splash /usr/share/digabi/proprietary/background.svg 100
  update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-grub desktop-grub /usr/share/digabi/proprietary/background.svg 100
+ 
+ if [ ! -x "${PLYMOUTH_BIN}" ]
+ then
+     echo "W: Plymouth not found."
+     exit 0
+ fi
+ 
+ if [ ! -d "/usr/share/plymouth/themes/${PLYMOUTH_THEME}" ]
+ then
+     echo "W: Plymouth theme ${PLYMOUTH_THEME} not found."
+     exit 0
+ fi
+ 
+ ${PLYMOUTH_BIN} ${PLYMOUTH_THEME}
 File: prerm
  #!/bin/sh -e
  set -e

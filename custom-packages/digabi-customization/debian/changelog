@@ -1,9 +1,16 @@
-digabi-customization (2.6) UNRELEASED; urgency=medium
+digabi-customization (2.7) unstable; urgency=medium
+
+  * Install plymouth, plymouth-themes.
+  * Configure plymouth: use glow theme.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 14:53:13 +0300
+
+digabi-customization (2.6) unstable; urgency=medium
 
   * Set XFCE icon size 48x48.
   * Use XFCE theme Xfce-redmondxp.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 14:29:48 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 14:52:15 +0300
 
 digabi-customization (2.5) unstable; urgency=medium
 
