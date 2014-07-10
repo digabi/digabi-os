@@ -84,3 +84,26 @@ lb config noauto \
 	"${@}"
 
 echo "LB_ARCHITECTURE=${ARCHITECTURE}" >>config/bootstrap
+
+#
+# If we are building from snapshot.debian.org, ignore Valid-Until header in Release files
+#
+contains() {
+    string="$1"
+    substring="$2"
+    if test "${string#*$substring}" != "$string"
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+
+if contains "${DEBIAN_MIRROR}" "snapshot.debian.org"
+then
+    echo "I: Using Debian snapshots, ignore APT Check-Valid-Until..."
+    mkdir -p config/includes.chroot/etc/apt/apt.conf.d
+    cat << EOF >config/includes.chroot/etc/apt/apt.conf.d/99-snapshots
+Acquire::Check-Valid-Until "false";
+EOF
+fi
