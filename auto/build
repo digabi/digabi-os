@@ -21,10 +21,25 @@ fi
 # get LB_ARCHITECTURE and LB_DISTRIBUTION
 . config/bootstrap
 
-if [ -z "${LB_ARCHITECTURE}" ]
+# Run pre-build hooks
+PRE_BUILD_HOOKS="$(ls ${PWD}/config/hooks/*.pre-build)"
+
+if [ -n "${PRE_BUILD_HOOKS}" ]
 then
-    LB_ARCHITECTURE="i386"
+    echo "I: Executing pre-build hooks..."
 fi
+
+for hook in ${PRE_BUILD_HOOKS}
+do
+    hook_base="$(basename ${hook})"
+    if [ -x "${hook}" ]
+    then
+        echo "I: Executing hook ${hook_base}..."
+        ${hook}
+    else
+        echo "W: Non-executable hook ${hook_base}."
+    fi
+done
 
 # get git branch or tag so we can set the basename appropriately, i.e.:
 # * if we build from a tag:    ${DIGABI_DIST_NAME}-$ARCH-$TAG.iso
