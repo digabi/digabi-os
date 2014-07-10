@@ -37,3 +37,4 @@ echo "ID: ${BUILDER_ID}" >${TARGET_FILE}
 echo "Host: ${BUILD_HOST}" >>${TARGET_FILE}
 echo "Kernel: $(uname -srvm)" >>${TARGET_FILE}
 echo "live-build: ${LB_VERSION}" >>${TARGET_FILE}
+echo "Build: ${BUILD_TAG}" >>${TARGET_FILE}
