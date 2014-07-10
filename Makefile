@@ -13,7 +13,7 @@
 #VERSION = $(shell ./scripts/version.helper)
 #TARGET = dist/$(VERSION)
 
-ARCH = i386
+ARCH ?= i386
 
 DEBIAN_MIRROR ?= http://http.debian.net/debian
 #DIGABI_BUILD_CPUS ?= $(shell ...)
