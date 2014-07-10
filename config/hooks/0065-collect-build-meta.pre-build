@@ -2,7 +2,7 @@
 
 set -e
 
-TARGET_FILE="config/includes.chroot/var/lib/digabi/builder"
+TARGET_FILE="config/includes.chroot/var/lib/digabi/build"
 TARGET_DIR="$(dirname ${TARGET_FILE})"
 ID_FILE="${HOME}/.digabi/builder-id"
 ID_DIR="$(dirname ${ID_FILE})"
@@ -33,8 +33,8 @@ else
     LB_VERSION="N/A"
 fi
 
-echo "ID: ${BUILDER_ID}" >${TARGET_FILE}
-echo "Host: ${BUILD_HOST}" >>${TARGET_FILE}
-echo "Kernel: $(uname -srvm)" >>${TARGET_FILE}
+echo "Builder-ID: ${BUILDER_ID}" >${TARGET_FILE}
+echo "Builder-Host: ${BUILD_HOST}" >>${TARGET_FILE}
+echo "Builder-Kernel: $(uname -srvm)" >>${TARGET_FILE}
 echo "live-build: ${LB_VERSION}" >>${TARGET_FILE}
 echo "Build: ${BUILD_TAG}" >>${TARGET_FILE}
