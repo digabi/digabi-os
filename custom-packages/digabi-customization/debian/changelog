@@ -1,3 +1,10 @@
+digabi-customization (2.6) UNRELEASED; urgency=medium
+
+  * Set XFCE icon size 48x48.
+  * Use XFCE theme Xfce-redmondxp.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 14:29:48 +0300
+
 digabi-customization (2.5) unstable; urgency=medium
 
   * Depends: desktop-base.
