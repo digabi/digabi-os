@@ -64,7 +64,7 @@ provision: environment
 build: config
 	# TODO: Check if uncommitted changes (git)
 	# TODO: Allow specifying COMMIT=xx => if COMMIT != "" > run cd builddir & git co ...
-	$(BUILDER_DO) run COMMAND='/usr/bin/digabi os build'
+	$(BUILDER_DO) run COMMAND='DEBIAN_MIRROR="$(DEBIAN_MIRROR)" /usr/bin/digabi os build'
 
 # Clean build environment
 clean:
