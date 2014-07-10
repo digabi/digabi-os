@@ -10,7 +10,7 @@ MENU_ICON="/usr/share/digabi/proprietary/digabi.svg"
 # Configure XFCE4 settings
 XFCONF_BIN="/usr/bin/xfconf-query"
 XFCONF_FLAGS="-n"
-XFWM_THEME="Xfce-4.6"
+XFWM_THEME="Xfce-redmondxp"
 
 if [ -x "${XFCONF_BIN}" ]
 then
@@ -46,8 +46,8 @@ ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/s
 # Hide trash
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-trash" -t "bool" -s "false"
 
-# Resize icons (64x64)
-#${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/icon-size" -t "int" -s 64
+# Resize icons (48x48)
+${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/icon-size" -t "int" -s 48
 
 # Hide window list
 ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/windowlist-menu/show" -t "bool" -s "false"
