@@ -2,7 +2,10 @@
 
 CI_HOST=""
 
-JOB="digabi-os build"
+if [ -z "${JOB}" ]
+then
+    JOB="digabi-os build"
+fi
 FILENAME_XPATH="[ends-with%28.,%27iso%27%29]/text%28%29"
 
 URL_BASE="http://cimonitor/job/$(echo ${JOB} |sed 's/ /%20/g')/lastSuccessfulBuild"
