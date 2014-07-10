@@ -1,0 +1,19 @@
+#!/bin/sh
+
+CI_HOST=""
+
+JOB="digabi-os build"
+FILENAME_XPATH="[ends-with%28.,%27iso%27%29]/text%28%29"
+
+URL_BASE="http://cimonitor/job/$(echo ${JOB} |sed 's/ /%20/g')/lastSuccessfulBuild"
+ISO_NAME="$(wget -qO- ${URL_BASE}/api/xml?xpath=//fileName${FILENAME_XPATH})"
+
+URL="${URL_BASE}/artifact/dist/${ISO_NAME}"
+
+if [ -f "${ISO_NAME}" ]
+then
+    echo "E: Target file ${ISO_NAME} already exists, cancelling download."
+    exit 1
+fi
+
+wget -O "${ISO_NAME}" "${URL}"
