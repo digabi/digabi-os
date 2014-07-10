@@ -21,13 +21,69 @@ DIGABI_SCRIPT_LIBRARY="/usr/lib/digabi/scripts"
 
 COMMAND_FILE="${DIGABI_SCRIPT_LIBRARY}/${COMMAND}"
 
+_list_commands() {
+    DIR="$1"
+    CMDS=""
+    ls --ignore=_* "${DIR}" 2>/dev/null
+
+    DIRS="$(ls -d ${DIR}/_*/ 2>/dev/null)"
+    if [ -z "${DIRS}" ]
+    then
+        return
+    fi
+
+    for d in ${DIRS}
+    do
+        echo "$(basename ${d} |cut -b2-)"
+        #_list_commands "${d}"
+    done
+}
+
+_available_commands() {
+    SCRIPT_DIR="$1"
+    CMD="$2"
+
+    if [ -z "${CMD}" ]
+    then
+        echo "Available commands:"
+    else
+        echo "Available subcommands for command ${CMD}"
+    fi
+
+    _list_commands "${SCRIPT_DIR}" |xargs
+}
+
 if [ -x "${COMMAND_FILE}" ]
 then
 	exec "${COMMAND_FILE}" "$@"
+elif [ -d "${DIGABI_SCRIPT_LIBRARY}/_${COMMAND}" ]
+then
+    SUBCMD="${1}"
+
+    if [ -z "${SUBCMD}" ]
+    then
+        echo "FIXME"
+        exit 1
+    fi
+
+    if [ "${SUBCMD}" = "help" ]
+    then
+        _available_commands "${DIGABI_SCRIPT_LIBRARY}/_${COMMAND}" "${COMMAND}"
+        exit 0
+    fi
+
+    if [ -x "${DIGABI_SCRIPT_LIBRARY}/_${COMMAND}/${SUBCMD}" ]
+    then
+        shift
+        exec "${DIGABI_SCRIPT_LIBRARY}/_${COMMAND}/${SUBCMD}" $@
+    else
+        echo "Invalid command: ${COMMAND} ${SUBCMD}"
+        exit 1
+    fi
 elif [ "${COMMAND}" = "help" ]
 then
-	echo "Available commands:"
-	ls "${DIGABI_SCRIPT_LIBRARY}"
+	_available_commands "${DIGABI_SCRIPT_LIBRARY}"
+    exit 0
 else
 	echo "Invalid command: ${COMMAND}, exiting..."
 	exit 1
