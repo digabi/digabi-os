@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Helper for testing ISO images
+#
+# Usage: test-iso-virtualbox <path/to/isofile.iso>
+
+
+VM_NAME="Digabi OS"
+
+VBOX="/usr/bin/vboxmanage"
+ISO_IMAGE="$1"
+
+if [ -z "${ISO_IMAGE}" ]
+then
+    ISO_IMAGE="latest.iso"
+fi
+
+if [ ! -r "${ISO_IMAGE}" ]
+then
+    echo "E: ISO image file doesn't exist: ${ISO_IMAGE}"
+    exit 1
+fi
+
+_STATE="$(${VBOX} showvminfo "${VM_NAME}" --machinereadable |grep ^VMState= |cut -d= -f2)"
+
+if [ "${_STATE}" = "\"running\"" ]
+then
+    echo "I: Powering off virtual machine..."
+    ${VBOX} controlvm "${VM_NAME}" poweroff
+fi
+
+echo "I: Attaching ISO as DVD drive..."
+${VBOX} storageattach "${VM_NAME}" --storagectl "IDE" --port 1 --device 0 --type "dvddrive" --medium "${ISO_IMAGE}"
+
+echo "I: Starting virtual machine..."
+${VBOX} startvm "${VM_NAME}"
+
