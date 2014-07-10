@@ -22,7 +22,7 @@ do
     if [ -d "${pkg}" ]
     then
         cd "${pkg}"
-        digabi build-package
+        digabi os build-package
         debs="$(ls ${pkg}_*_*.deb 2>/dev/null)"
         if [ -z "${debs}" ]
             then
