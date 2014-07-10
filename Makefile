@@ -90,10 +90,8 @@ dist:	collect
 	echo "TODO	"
 
 # Build custom packages defined in ./custom-packages/*
-custom-packages:
-	cd custom-packages
-	# TODO
-	cd ..
+custom-packages: environment
+	$(BUILDER_DO) run COMMAND='BUILD_TAG="$(BUILD_TAG)" digabi os build-packages'
 
 # Export builder as VirtualBox Machine Image
 buildbox: clean environment
