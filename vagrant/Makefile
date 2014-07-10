@@ -23,7 +23,11 @@ provision: _init-vm
 	vagrant provision
 
 run: _init-vm
+ifndef COMMAND
+	vagrant ssh
+else
 	vagrant ssh -c '$(COMMAND)'
+endif
 
 up:
 	vagrant up

@@ -98,4 +98,7 @@ buildbox: clean environment
 	# TODO
 	# TODO: Modify VM: remove VT-X, PAE et. all
 
+debug: environment
+	$(BUILDER_DO) run
+
 .PHONY: custom-packages
