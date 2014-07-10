@@ -47,6 +47,7 @@ fi
 if [ -n "${DEBIAN_MIRROR}" ]
 then
     echo "I: Configuring custom Debian mirror: ${DEBIAN_MIRROR}..."
+    echo sed -ir "s,http://(ftp.[[:alpha:]][[:alpha:]].debian.org|http.debian.net)/debian(/)?,${DEBIAN_MIRROR},g" /etc/apt/sources.list
     sed -ir "s,http://(ftp.[[:alpha:]][[:alpha:]].debian.org|http.debian.net)/debian(/)?,${DEBIAN_MIRROR},g" /etc/apt/sources.list
 else
     echo "I: Using pre-configured Debian mirror."
