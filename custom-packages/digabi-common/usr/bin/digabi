@@ -24,6 +24,9 @@ COMMAND_FILE="${DIGABI_SCRIPT_LIBRARY}/${COMMAND}"
 if [ -x "${COMMAND_FILE}" ]
 then
 	exec "${COMMAND_FILE}" "$@"
+elif [ -d "${DIGABI_SCRIPT_LIBRARY}/_${COMMAND}" ]
+then
+    exec "$0" $@
 elif [ "${COMMAND}" = "help" ]
 then
 	echo "Available commands:"
