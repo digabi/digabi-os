@@ -36,3 +36,10 @@ App looks for `upstream` remote, if that is missing, `origin`. If this
 looks like GitHub repository, you can manage issues.
 
     ghi --help
+
+
+## SourceForge
+
+    sftp user,digabi@frs.sf.net
+    cd /home/frs/project/d/di/digabi
+    ...
