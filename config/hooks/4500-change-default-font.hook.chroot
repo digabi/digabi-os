@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+CONFIG_FILE="/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml"
+FONT_NAME="Lato"
+FONT_DIR="/usr/share/fonts/truetype/lato"
+
+if [ ! -d "${FONT_DIR}" ]
+then
+    echo "I: Font directory for font ${FONT_NAME} not found."
+    exit 0
+fi
+
+if [ -w "${CONFIG_FILE}" ]
+then
+    echo "I: Using ${FONT_NAME} as default font."
+    sed -i "s/Sans 10/${FONT_NAME} 10/g" "${CONFIG_FILE}"
+else
+    echo "W: Configuration file ${CONFIG_FILE} is not writable by user, default font not changed."
+    exit 0
+fi
