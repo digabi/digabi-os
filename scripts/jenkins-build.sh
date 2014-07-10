@@ -39,4 +39,4 @@ trap cleanup EXIT
 
 # TODO: Use specified repository when building image
 
-make dist DEBIAN_MIRROR="http://${REPOSITORY_IP}/debian" http_proxy="${PROXY}" DIGABI_BUILD_OPTIONS="cpus=${CPUS} ignorechanges noram"
+make dist DEBIAN_MIRROR="http://${REPOSITORY_IP}/debian" http_proxy="${PROXY}" DIGABI_BUILD_OPTIONS="cpus=${CPUS} ignorechanges noram" BUILD_TAG="${BUILD_TAG}"
