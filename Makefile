@@ -91,6 +91,7 @@ dist:	collect
 
 # Build custom packages defined in ./custom-packages/*
 custom-packages: environment
+	# TODO: chdir to repo, run build cmd
 	$(BUILDER_DO) run COMMAND='BUILD_TAG="$(BUILD_TAG)" digabi os build-packages'
 
 # Export builder as VirtualBox Machine Image
