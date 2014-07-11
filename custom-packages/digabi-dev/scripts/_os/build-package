@@ -15,6 +15,7 @@ then
         equivs-build debian/control 1>/dev/null
     else
         warning "Package created with non-supported tools, skipping ($(basename ${PWD}))."
+        exit 0
     fi
 else
     error "Package control file debian/control not found. ($PWD)"
