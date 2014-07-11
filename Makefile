@@ -22,7 +22,7 @@ HTTP_PROXY ?=
 
 BUILD_TAG ?= N/A
 
-REPOSITORY_DIR ?= custom-packages/digabi-repository
+REPOSITORY = custom-packages/digabi-repository
 REPOSITORY_SUITE ?= sid
 
 #
@@ -37,6 +37,7 @@ ARTIFACTS_DIR = dist
 
 # Helper for running targets in another Makefile (default: vagrant/Makefile)
 BUILDER_DO  = $(MAKE) -C $(BUILDER)
+REPOSITORY_DO = $(MAKE) -C $(REPOSITORY)
 
 #
 # Targets
@@ -104,10 +105,10 @@ custom-packages: environment
 publish-packages: custom-packages
 	git submodule init
 	git submodule update
-	cd $(REPOSITORY_DIR)
-	tools/sync from-server
-	reprepro includedeb $(REPOSITORY_SUITE) $(BUILDER)/dist/*.deb
-	tools/sync to-server
+	$(REPOSITORY_DO) sync-from-server
+	# TODO: Foreach *.deb $(BUILDER_DO) add-package DEB=$(DEB)
+	for deb in $(ARTIFACTS_DIR)/*.deb ; do $(REPOSITORY_DO) add-package DEB="$$(readlink -f $${deb})" ; done
+	$(REPOSITORY_DO) sync-to-server
 
 # Export builder as VirtualBox Machine Image
 buildbox: clean environment
