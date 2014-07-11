@@ -13,7 +13,6 @@ Suggests: pastebinit, vim, vim-scripts, apt-file
 Architecture: all
 Changelog: debian/changelog
 Files: scripts/_os/prepare-linux-source /usr/lib/digabi
- scripts/_os/_helpers /usr/lib/digabi
  scripts/_os/build-kernel /usr/lib/digabi
  scripts/_os/build-custom-packages /usr/lib/digabi
  scripts/_os/build-package /usr/lib/digabi
@@ -23,9 +22,13 @@ Files: scripts/_os/prepare-linux-source /usr/lib/digabi
  hacks/fix-live-build-isohdpfx.bin-path-syslinux-6.03.patch /usr/share/digabi-dev
 Description: Development tools for Digabi
  Package installs essential build tools for Digabi.
-#File: postinst
-# #!/bin/sh
-# set -e
+File: postinst
+ #!/bin/sh
+ set -e
+ if [ -f "/usr/lib/digabi/scripts/_helpers" ]
+ then
+     ln -s /usr/lib/digabi/scripts/_helpers /usr/lib/digabi/scripts/_os/_helpers
+ fi
 # LIVE_BUILD="/usr/lib/live/build"
 # if [ ! -d "${LIVE_BUILD}" ]
 # then
