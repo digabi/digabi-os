@@ -51,4 +51,4 @@ then
     ARCH="i386"
 fi
 
-make custom-packages ARCH="$(ARCH)" DEBIAN_MIRROR="${DEBIAN_MIRROR}"
+make publish-packages ARCH="$(ARCH)" DEBIAN_MIRROR="${DEBIAN_MIRROR}"
