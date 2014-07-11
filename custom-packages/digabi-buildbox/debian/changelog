@@ -1,5 +1,6 @@
-digabi-buildbox (1.0) UNRELEASED; urgency=medium
+digabi-buildbox (1.0) unstable; urgency=medium
 
   * Initial release.
+  * Added lots of packages from digabi-dev.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Jul 2014 14:23:34 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Jul 2014 14:30:13 +0300
