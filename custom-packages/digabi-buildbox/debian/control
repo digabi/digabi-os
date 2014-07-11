@@ -5,7 +5,9 @@ Standards-Version: 3.9.2
 
 Package: digabi-buildbox
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: digabi-common, digabi-dev
+Depends: digabi-common, digabi-dev, build-essential, live-build, equivs, 
+ packaging-dev, debconf-utils, git-buildpackage, time, kernel-package, 
+ gcc-4.8-plugin-dev, libncurses5-dev, python-six, lintian
 Changelog: debian/changelog
 Description: Required packages for Digabi OS build environment.
  This package installs packages required for building Digabi OS.
