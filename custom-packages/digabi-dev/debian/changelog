@@ -1,3 +1,9 @@
+digabi-dev (4.0.17) stable; urgency=medium
+
+  * Added mode change for build-custom-packages: do not fail if no *.debs found.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Jul 2014 10:09:06 +0300
+
 digabi-dev (4.0.16) stable; urgency=medium
 
   * Updated digabi os build-custom-packages: tell if package building fails. 
