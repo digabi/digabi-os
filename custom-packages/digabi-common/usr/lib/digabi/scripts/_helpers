@@ -24,7 +24,10 @@ error() {
 }
 
 debug() {
-    echo "D: $@"
+    if [ -n "${DEBUG}" ]
+    then
+        echo "D: $@"
+    fi
 }
 
 info() {
