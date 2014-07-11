@@ -109,7 +109,7 @@ publish-packages: custom-packages
 	git submodule update
 	$(REPOSITORY_DO) sync-from-server
 	# TODO: Foreach *.deb $(BUILDER_DO) add-package DEB=$(DEB)
-	for deb in $(ARTIFACTS_DIR)/*.deb ; do $(REPOSITORY_DO) add-package DEB="$$(readlink -f $${deb})" ; done
+	for deb in $(ARTIFACTS_DIR)/*.deb ; do $(REPOSITORY_DO) add-package DEB="\"$$(readlink -f $${deb})\"" ; done
 	$(REPOSITORY_DO) sync-to-server
 
 # Export builder as VirtualBox Machine Image
