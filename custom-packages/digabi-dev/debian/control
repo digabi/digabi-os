@@ -13,6 +13,7 @@ Suggests: pastebinit, vim, vim-scripts, apt-file
 Architecture: all
 Changelog: debian/changelog
 Files: scripts/_os/prepare-linux-source /usr/lib/digabi
+ scripts/_os/_helpers /usr/lib/digabi
  scripts/_os/build-kernel /usr/lib/digabi
  scripts/_os/build-custom-packages /usr/lib/digabi
  scripts/_os/build-package /usr/lib/digabi

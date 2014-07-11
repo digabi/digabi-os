@@ -1,3 +1,9 @@
+digabi-dev (4.0.13) stable; urgency=medium
+
+  * Added symlink to _helpers.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Jul 2014 09:32:40 +0300
+
 digabi-dev (4.0.12) stable; urgency=medium
 
   * Updated custom package building scripts.
