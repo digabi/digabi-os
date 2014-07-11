@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Build all custom packages
 #
 # (c) 2013 Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
@@ -22,8 +24,13 @@ do
     if [ -d "${pkg}" ]
     then
         cd "${pkg}"
-        `digabi os build-package` || warning "Didn't build ${pkg}."
-        debs="$(ls ${pkg}_*_*.deb 2>/dev/null)"
+
+        digabi os build-package || warning "Didn't build ${pkg}."
+
+        set +e
+        debs="$(ls ${pkg}_*_*.deb)"
+        set -e
+
         if [ -z "${debs}" ]
             then
             warning "No debs found for package ${pkg}."
@@ -39,4 +46,3 @@ do
 done
 
 cd ..
-
