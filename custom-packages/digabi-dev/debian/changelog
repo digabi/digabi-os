@@ -1,3 +1,9 @@
+digabi-dev (4.0.18) stable; urgency=medium
+
+  * Removed warning from build-custom-packages when build-package fails.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Jul 2014 10:11:28 +0300
+
 digabi-dev (4.0.17) stable; urgency=medium
 
   * Added mode change for build-custom-packages: do not fail if no *.debs found.

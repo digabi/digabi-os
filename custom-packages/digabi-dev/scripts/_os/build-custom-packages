@@ -25,7 +25,7 @@ do
     then
         cd "${pkg}"
 
-        digabi os build-package || warning "Didn't build ${pkg}."
+        digabi os build-package
 
         set +e
         debs="$(ls ${pkg}_*_*.deb)"
