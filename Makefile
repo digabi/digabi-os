@@ -92,7 +92,9 @@ dist:	collect
 # Build custom packages defined in ./custom-packages/*
 custom-packages: environment
 	# TODO: chdir to repo, run build cmd
-	$(BUILDER_DO) run COMMAND='BUILD_TAG="$(BUILD_TAG)" digabi os build-packages'
+	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then cd $(BUILD_DIR) ; git pull ; else git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; fi'
+	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
+	$(BUILDER_DO) run COMMAND='rsync -avh $(BUILD_DIR)/custom-packages/*.deb /$(BUILDER)/$(ARTIFACTS_DIR)'
 
 # Export builder as VirtualBox Machine Image
 buildbox: clean environment
