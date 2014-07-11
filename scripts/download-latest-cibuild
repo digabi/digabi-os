@@ -7,9 +7,22 @@ then
     CI_HOST="http://cimonitor"
 fi
 
+if [ -z "${ARCH}" ]
+then
+    ARCH="i386"
+fi
+
 if [ -z "${JOB}" ]
 then
-    JOB="digabi-os build"
+    if [ "${ARCH}" = "i386" ]
+    then
+        JOB="digabi-os build"
+    elif [ "${ARCH}" = "amd64" ]
+    then
+        JOB="digabi-os build 64bit"
+    else
+        echo "E: Invalid architecture."
+    fi
 fi
 FILENAME_XPATH="[ends-with%28.,%27iso%27%29]/text%28%29"
 
