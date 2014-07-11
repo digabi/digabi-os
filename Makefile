@@ -62,9 +62,11 @@ config:	clean environment
 	#$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && $(ROOT_CMD) lb config'
 	#$(LIVE_BUILD) config
 
-# Provision buildbox
-provision: environment
+halt:
 	$(BUILDER_DO) halt
+
+# Provision buildbox
+provision: environment halt
 
 # Build new image
 build: config
