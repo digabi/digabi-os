@@ -38,9 +38,14 @@ File: postinst
 # 
 # cd "${LIVE_BUILD}"
 # patch -p1 </usr/share/digabi-dev/hacks/fix-live-build-isohdpfx.bin-path-syslinux-6.03.patch
-#File: prerm
-# #!/bin/sh
-# set -e
+File: prerm
+ #!/bin/sh
+ set -e
+ 
+ if [ -e "/usr/lib/digabi/scripts/_os/_helpers" ]
+ then
+     rm /usr/lib/digabi/scripts/_os/_helpers
+ fi
 # LIVE_BUILD="/usr/lib/live/build"
 # if [ ! -d "${LIVE_BUILD}" ]
 # then
