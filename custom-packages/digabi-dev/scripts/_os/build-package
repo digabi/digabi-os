@@ -9,6 +9,11 @@ HELPERS="$(dirname $0)/_helpers" ; if [ -f "${HELPERS}" ] ; then . ${HELPERS} ; 
 
 if [ -f "debian/control" ]
 then
+    if [ -x "debian/prepare-build" ]
+    then
+        info "Running debian/prepare-build for package ($(basename ${PWD}))."
+        ./debian/prepare-build
+    fi
     if [ -f "debian/equivs" ]
     then
         info "Building equivs-managed package ($(basename ${PWD}))."

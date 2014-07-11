@@ -1,3 +1,9 @@
+digabi-dev (4.0.15) stable; urgency=medium
+
+  * Added support for debian/prepare-build scripts that prepare package for automated building.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Jul 2014 09:49:27 +0300
+
 digabi-dev (4.0.14) stable; urgency=medium
 
   * Removed isohdpfx.bin patch. 
