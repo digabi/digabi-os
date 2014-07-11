@@ -22,6 +22,9 @@ HTTP_PROXY ?=
 
 BUILD_TAG ?= N/A
 
+REPOSITORY_DIR ?= custom-packages/digabi-repository
+REPOSITORY_SUITE ?= sid
+
 #
 # Other configuration
 #
@@ -95,9 +98,16 @@ custom-packages: environment
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then cd $(BUILD_DIR) ; git pull ; else git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; fi'
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
 	$(BUILDER_DO) run COMMAND='rsync -avh $(BUILD_DIR)/custom-packages/*.deb /$(BUILDER)/$(ARTIFACTS_DIR)'
+	mkdir -p $(ARTIFACTS_DIR)
+	mv $(BUILDER)/$(ARTIFACTS_DIR)/*.deb $(ARTIFACTS_DIR)/
 
 publish-packages: custom-packages
-	# TODO
+	git submodule init
+	git submodule update
+	cd $(REPOSITORY_DIR)
+	tools/sync from-server
+	reprepro includedeb $(REPOSITORY_SUITE) $(BUILDER)/dist/*.deb
+	tools/sync to-server
 
 # Export builder as VirtualBox Machine Image
 buildbox: clean environment
