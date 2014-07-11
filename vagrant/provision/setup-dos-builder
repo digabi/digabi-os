@@ -43,18 +43,23 @@ if [ "$http_proxy" = "http://$(hostname -f):3142" ] &&
     http_proxy=''
 fi
 
-echo "I: Add Digabi repository..."
-if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.list" ]
+if [ -f "/etc/apt/sources.list.d/digabi.list" ]
 then
-    cp ${DIGABI_REPOSITORY_PATH}/digabi.list /etc/apt/sources.list.d/digabi.list
+    echo "I: Digabi repository already configured, skipping configuration..."
 else
-    wget -qO /etc/apt/sources.list.d/digabi.list https://digabi.fi/debian/digabi.list
-fi
-if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.asc" ]
-then
-    apt-key add ${DIGABI_REPOSITORY_PATH}/digabi.asc
-else
-    wget -qO- https://digabi.fi/debian/digabi.asc | apt-key add -
+    echo "I: Add Digabi repository..."
+    if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.list" ]
+    then
+        cp ${DIGABI_REPOSITORY_PATH}/digabi.list /etc/apt/sources.list.d/digabi.list
+    else
+        wget -qO /etc/apt/sources.list.d/digabi.list https://digabi.fi/debian/digabi.list
+    fi
+    if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.asc" ]
+    then
+        apt-key add ${DIGABI_REPOSITORY_PATH}/digabi.asc
+    else
+        wget -qO- https://digabi.fi/debian/digabi.asc | apt-key add -
+    fi
 fi
 
 if [ -n "${DEBIAN_MIRROR}" ]
