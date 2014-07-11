@@ -96,6 +96,9 @@ custom-packages: environment
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
 	$(BUILDER_DO) run COMMAND='rsync -avh $(BUILD_DIR)/custom-packages/*.deb /$(BUILDER)/$(ARTIFACTS_DIR)'
 
+publish-packages: custom-packages
+	# TODO
+
 # Export builder as VirtualBox Machine Image
 buildbox: clean environment
 	# TODO
