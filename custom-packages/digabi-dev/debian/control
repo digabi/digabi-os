@@ -19,7 +19,6 @@ Files: scripts/_os/prepare-linux-source /usr/lib/digabi
  scripts/_os/build /usr/lib/digabi
  etc/digabi/dev /
  etc/apt-cacher-ng/digabi.conf /
- hacks/fix-live-build-isohdpfx.bin-path-syslinux-6.03.patch /usr/share/digabi-dev
 Description: Development tools for Digabi
  Package installs essential build tools for Digabi.
 File: postinst
@@ -29,15 +28,6 @@ File: postinst
  then
      ln -s /usr/lib/digabi/scripts/_helpers /usr/lib/digabi/scripts/_os/_helpers
  fi
-# LIVE_BUILD="/usr/lib/live/build"
-# if [ ! -d "${LIVE_BUILD}" ]
-# then
-#    echo "Failure: live-build not installed?"
-#    exit 1
-# fi
-# 
-# cd "${LIVE_BUILD}"
-# patch -p1 </usr/share/digabi-dev/hacks/fix-live-build-isohdpfx.bin-path-syslinux-6.03.patch
 File: prerm
  #!/bin/sh
  set -e
@@ -46,11 +36,3 @@ File: prerm
  then
      rm /usr/lib/digabi/scripts/_os/_helpers
  fi
-# LIVE_BUILD="/usr/lib/live/build"
-# if [ ! -d "${LIVE_BUILD}" ]
-# then
-#    exit 0
-# fi
-# 
-# cd "${LIVE_BUILD}"
-# patch -p1 -R </usr/share/digabi-dev/hacks/fix-live-build-isohdpfx.bin-path-syslinux-6.03.patch

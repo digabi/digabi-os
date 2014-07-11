@@ -1,3 +1,9 @@
+digabi-dev (4.0.14) stable; urgency=medium
+
+  * Removed isohdpfx.bin patch. 
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 11 Jul 2014 09:36:43 +0300
+
 digabi-dev (4.0.13) stable; urgency=medium
 
   * Added symlink to _helpers.
