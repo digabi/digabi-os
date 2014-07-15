@@ -36,9 +36,7 @@ done
 # Check if ARCH variable has been defined, if not, use build system architecture as default
 if [ -n "${ARCH}" ]
 then
-    ARCHITECTURE="${ARCH}"
-else
-    ARCHITECTURE="$(dpkg --print-architecture)"
+    ARCH="$(dpkg --print-architecture)"
 fi
 
 _SOURCE="false"
@@ -72,7 +70,7 @@ lb config noauto \
     --apt-indices "false" \
     --apt-recommends "false" \
     --apt-source-archives "${_SOURCE}" \
-    --architecture "${ARCHITECTURE}" \
+    --architecture "${ARCH}" \
     --archive-areas "${ARCHIVE_AREAS}" \
     --binary-filesystem "${BINARY_FILESYSTEM}" \
     --binary-image "${BINARY_IMAGE}" \
@@ -96,7 +94,7 @@ lb config noauto \
     --win32-loader "false" \
 	"${@}"
 
-echo "LB_ARCHITECTURE=${ARCHITECTURE}" >>config/bootstrap
+echo "LB_ARCHITECTURE=${ARCH}" >>config/bootstrap
 
 #
 # If we are building from snapshot.debian.org, ignore Valid-Until header in Release files
