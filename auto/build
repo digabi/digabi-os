@@ -66,7 +66,21 @@ else
     fi
 fi
 
-BUILD_FILENAME_EXT="hybrid.iso"
+case "${LB_BINARY_IMAGES}" in
+    iso)
+        BUILD_FILENAME_EXT="iso"
+    ;;
+    iso-hybrid)
+        BUILD_FILENAME_EXT="hybrid.iso"
+    ;;
+    hdd)
+        BUILD_FILENAME_EXT="img"
+    ;;
+    *)
+        echo "E: Unsupported image format: ${LB_BINARY_IMAGES}."
+        exit 1
+    ;;
+esac
 BUILD_FILENAME="live-image-${LB_ARCHITECTURE}"
 
 BUILD_DEST_FILENAME="${BUILD_BASENAME}.${BUILD_FILENAME_EXT}"
