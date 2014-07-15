@@ -76,7 +76,7 @@ lb config noauto \
     --architecture "${ARCH}" \
     --archive-areas "${ARCHIVE_AREAS}" \
     --binary-filesystem "${BINARY_FILESYSTEM}" \
-    --binary-image "${BINARY_IMAGES}" \
+    --binary-images "${BINARY_IMAGES}" \
     --bootappend-live "${BOOTAPPEND_LIVE}" \
     --clean \
     --distribution "${DISTRIBUTION}" \
