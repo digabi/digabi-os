@@ -87,7 +87,7 @@ lb config noauto \
     --security "true" \
     --win32-loader "false" \
     --binary-image "${BINARY_IMAGE" \
-    --binary-filesystem "${BINARY_FILESYSTEM}
+    --binary-filesystem "${BINARY_FILESYSTEM} \
     --hdd-label "${HDD_LABEL} \
     --hdd-size "${HDD_SIZE}" \
 	"${@}"
