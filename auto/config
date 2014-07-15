@@ -54,6 +54,9 @@ BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
 ISO_VOLUME="${DIGABI_DIST_NAME_SHORT}-$(./scripts/version.helper notime nobuild shortver |cut -b-27)"
 
+
+BINARY_IMAGE="hdd"
+
 #if [ -z "${APT_PROXY}" ]
 #then
 #    APT_PROXY="http://localhost:3142/"
@@ -81,6 +84,7 @@ lb config noauto \
     --mirror-binary "${DEFAULT_DEBIAN_MIRROR}" \
     --security "true" \
     --win32-loader "false" \
+    --binary-image "${BINARY_IMAGE" \
 	"${@}"
 
 echo "LB_ARCHITECTURE=${ARCHITECTURE}" >>config/bootstrap
