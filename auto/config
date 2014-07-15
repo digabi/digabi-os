@@ -42,9 +42,7 @@ else
 fi
 
 _SOURCE="false"
-
 ARCHIVE_AREAS="main contrib non-free"
-
 
 if [ -z "${DISTRIBUTION}" ]
 then
@@ -77,7 +75,7 @@ lb config noauto \
     --architecture "${ARCHITECTURE}" \
     --archive-areas "${ARCHIVE_AREAS}" \
     --binary-filesystem "${BINARY_FILESYSTEM}" \
-    --binary-image "${BINARY_IMAGE" \
+    --binary-image "${BINARY_IMAGE}" \
     --bootappend-live "${BOOTAPPEND_LIVE}" \
     --clean \
     --distribution "${DISTRIBUTION}" \
