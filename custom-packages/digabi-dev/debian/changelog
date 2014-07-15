@@ -1,3 +1,9 @@
+digabi-dev (4.1.1) stable; urgency=medium
+
+  * Added support for BINARY_IMAGES environment variable when building new images.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 15 Jul 2014 14:01:01 +0300
+
 digabi-dev (4.1.0) stable; urgency=medium
 
   * Added jenkins build scripts under digabi os.
