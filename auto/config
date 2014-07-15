@@ -78,6 +78,7 @@ lb config noauto \
     --binary-filesystem "${BINARY_FILESYSTEM}" \
     --binary-images "${BINARY_IMAGES}" \
     --bootappend-live "${BOOTAPPEND_LIVE}" \
+    --checksums "sha512" \
     --clean \
     --distribution "${DISTRIBUTION}" \
     --hdd-label "${HDD_LABEL}" \
