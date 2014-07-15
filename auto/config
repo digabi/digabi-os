@@ -58,8 +58,11 @@ ISO_VOLUME="${DIGABI_DIST_NAME_SHORT}-$(./scripts/version.helper notime nobuild 
 
 HDD_LABEL="${DIGABI_DIST_NAME}"
 HDD_SIZE="1024" # MB
-BINARY_IMAGE="hdd"
 BINARY_FILESYSTEM="fat32"
+if [ -z "${BINARY_IMAGES}" ]
+then
+    BINARY_IMAGES="iso-hybrid"
+fi
 
 #if [ -z "${APT_PROXY}" ]
 #then
@@ -73,7 +76,7 @@ lb config noauto \
     --architecture "${ARCH}" \
     --archive-areas "${ARCHIVE_AREAS}" \
     --binary-filesystem "${BINARY_FILESYSTEM}" \
-    --binary-image "${BINARY_IMAGE}" \
+    --binary-image "${BINARY_IMAGES}" \
     --bootappend-live "${BOOTAPPEND_LIVE}" \
     --clean \
     --distribution "${DISTRIBUTION}" \
