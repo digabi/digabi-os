@@ -59,7 +59,7 @@ else
     GIT_CURRENT_COMMIT="$(git rev-parse HEAD)"
     if GIT_TAG="$(git describe --tags --exact-match ${GIT_CURRENT_COMMIT})"; then
         CLEAN_GIT_TAG=$(echo "$GIT_TAG" | sed -e 's,/,_,g' -e 's,-rc,~rc,')
-    BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_TAG}"
+        BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_TAG}"
     else
         GIT_SHORT_ID="$(git rev-parse --short HEAD)"
         BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
@@ -77,11 +77,11 @@ BUILD_LOG="${BUILD_DEST_FILENAME}.buildlog"
 echo "Building ${LB_BINARY_IMAGES} image ${BUILD_BASENAME}..."
 set -o pipefail
 if time lb build noauto ${@} 2>&1 | tee "${BUILD_LOG}" ; then
-   echo "Image was successfully created"
-   echo "Renaming generated files..."
-   mv -i "${BUILD_FILENAME}.${BUILD_FILENAME_EXT}" "${BUILD_DEST_FILENAME}" # FIXME
-   mv -i "${BUILD_FILENAME}.packages" "${BUILD_PACKAGES}" # FIXME
+    echo "Image was successfully created"
+    echo "Renaming generated files..."
+    mv -i "${BUILD_FILENAME}.${BUILD_FILENAME_EXT}" "${BUILD_DEST_FILENAME}" # FIXME
+    mv -i "${BUILD_FILENAME}.packages" "${BUILD_PACKAGES}" # FIXME
 else
-   echo "lb build failed ($?)."
-   exit 1
+    echo "lb build failed ($?)."
+    exit 1
 fi
