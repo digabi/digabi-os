@@ -65,31 +65,31 @@ BINARY_FILESYSTEM="fat32"
 #fi
 
 lb config noauto \
-    --clean \
-    --ignore-system-defaults \
-    --architecture "${ARCHITECTURE}" \
-    --archive-areas "${ARCHIVE_AREAS}" \
-    --distribution "${DISTRIBUTION}" \
-    --linux-packages "linux-image" \
     --apt-indices "false" \
     --apt-recommends "false" \
-    --bootappend-live "${BOOTAPPEND_LIVE}" \
-    --iso-volume "${ISO_VOLUME}" \
-    --iso-publisher "${ISO_PUBLISHER}" \
-    --memtest "none" \
-    --source "${_SOURCE}" \
     --apt-source-archives "${_SOURCE}" \
-    --parent-mirror-bootstrap "${DEBIAN_MIRROR}" \
-    --parent-mirror-binary "${DEBIAN_MIRROR}" \
-    --mirror-bootstrap "${DEBIAN_MIRROR}" \
-    --mirror-chroot "${DEBIAN_MIRROR}" \
-    --mirror-binary "${DEFAULT_DEBIAN_MIRROR}" \
-    --security "true" \
-    --win32-loader "false" \
-    --binary-image "${BINARY_IMAGE" \
+    --architecture "${ARCHITECTURE}" \
+    --archive-areas "${ARCHIVE_AREAS}" \
     --binary-filesystem "${BINARY_FILESYSTEM}" \
+    --binary-image "${BINARY_IMAGE" \
+    --bootappend-live "${BOOTAPPEND_LIVE}" \
+    --clean \
+    --distribution "${DISTRIBUTION}" \
     --hdd-label "${HDD_LABEL}" \
     --hdd-size "${HDD_SIZE}" \
+    --ignore-system-defaults \
+    --iso-publisher "${ISO_PUBLISHER}" \
+    --iso-volume "${ISO_VOLUME}" \
+    --linux-packages "linux-image" \
+    --memtest "none" \
+    --mirror-binary "${DEFAULT_DEBIAN_MIRROR}" \
+    --mirror-bootstrap "${DEBIAN_MIRROR}" \
+    --mirror-chroot "${DEBIAN_MIRROR}" \
+    --parent-mirror-binary "${DEBIAN_MIRROR}" \
+    --parent-mirror-bootstrap "${DEBIAN_MIRROR}" \
+    --security "true" \
+    --source "${_SOURCE}" \
+    --win32-loader "false" \
 	"${@}"
 
 echo "LB_ARCHITECTURE=${ARCHITECTURE}" >>config/bootstrap
