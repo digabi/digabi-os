@@ -37,7 +37,7 @@ if [ -n "${ARCH}" ]
 then
     ARCHITECTURE="${ARCH}"
 else
-    ARCHITECTURE="i386"
+    ARCHITECTURE="$(dpkg --print-architecture)"
 fi
 
 _SOURCE="false"
