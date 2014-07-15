@@ -33,6 +33,7 @@ do
     fi
 done
 
+# Check if ARCH variable has been defined, if not, use build system architecture as default
 if [ -n "${ARCH}" ]
 then
     ARCHITECTURE="${ARCH}"
@@ -43,7 +44,12 @@ fi
 _SOURCE="false"
 
 ARCHIVE_AREAS="main contrib non-free"
-DISTRIBUTION="jessie"
+
+
+if [ -z "${DISTRIBUTION}" ]
+then
+    DISTRIBUTION="jessie"
+fi
 
 DEFAULT_DEBIAN_MIRROR="http://ftp.fi.debian.org/debian/"
 if [ -z "${DEBIAN_MIRROR}" ] ; then
