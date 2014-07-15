@@ -27,6 +27,7 @@ mdns_resolve() {
     exit 42
 }
 
+rm -rf dist
 
 
 REPOSITORY_IP="$(mdns_resolve ${REPOSITORY_HOST})"
