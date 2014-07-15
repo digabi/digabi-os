@@ -55,6 +55,7 @@ ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppi
 ISO_VOLUME="${DIGABI_DIST_NAME_SHORT}-$(./scripts/version.helper notime nobuild shortver |cut -b-27)"
 
 HDD_LABEL="${DIGABI_DIST_NAME}"
+HDD_SIZE="1024" # MB
 BINARY_IMAGE="hdd"
 BINARY_FILESYSTEM="fat32"
 
@@ -88,6 +89,7 @@ lb config noauto \
     --binary-image "${BINARY_IMAGE" \
     --binary-filesystem "${BINARY_FILESYSTEM}
     --hdd-label "${HDD_LABEL} \
+    --hdd-size "${HDD_SIZE}" \
 	"${@}"
 
 echo "LB_ARCHITECTURE=${ARCHITECTURE}" >>config/bootstrap
