@@ -34,7 +34,7 @@ do
 done
 
 # Check if ARCH variable has been defined, if not, use build system architecture as default
-if [ -n "${ARCH}" ]
+if [ -z "${ARCH}" ]
 then
     ARCH="$(dpkg --print-architecture)"
 fi
