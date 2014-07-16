@@ -66,23 +66,25 @@ else
     fi
 fi
 
-# case "${LB_BINARY_IMAGES}" in
-#     iso)
-#         BUILD_FILENAME_EXT="iso"
-#     ;;
-#     iso-hybrid)
-#         BUILD_FILENAME_EXT="hybrid.iso"
-#     ;;
-#     hdd)
-#         BUILD_FILENAME_EXT="img"
-#     ;;
-#     *)
-#         echo "E: Unsupported image format: ${LB_BINARY_IMAGES}."
-#         exit 1
-#     ;;
-# esac
-BUILD_FILENAME_EXT="img"
-BUILD_FILENAME="live-image-${LB_ARCHITECTURE}"
+BUILD_FILENAME="${LB_IMAGE_NAME}-${LB_ARCHITECTURE}"
+case "${LB_BINARY_IMAGES}" in
+    iso)
+        BUILD_FILENAME_EXT="iso"
+        BUILD_FILENAME_FULL="${BUILD_FILENAME}.${BUILD_FILENAME_EXT}"
+    ;;
+    iso-hybrid)
+        BUILD_FILENAME_EXT="hybrid.iso"
+        BUILD_FILENAME_FULL="${BUILD_FILENAME}.${BUILD_FILENAME_EXT}"
+    ;;
+    hdd)
+        BUILD_FILENAME_EXT="img"
+        BUILD_FILENAME_FULL="${BUILD_FILENAME}"
+    ;;
+    *)
+        echo "E: Unsupported image format: ${LB_BINARY_IMAGES}."
+        exit 1
+    ;;
+esac
 
 BUILD_DEST_FILENAME="${BUILD_BASENAME}.${BUILD_FILENAME_EXT}"
 BUILD_MANIFEST="${BUILD_DEST_FILENAME}.list"
@@ -96,7 +98,7 @@ if time lb build noauto ${@} 2>&1 | tee "${BUILD_LOG}" ; then
     echo "Renaming generated files..."
     ls
     #mv -i "${BUILD_FILENAME}.${BUILD_FILENAME_EXT}" "${BUILD_DEST_FILENAME}" # FIXME
-    mv -i "${BUILD_FILENAME}" "${BUILD_DEST_FILENAME}" # FIXME
+    mv -i "${BUILD_FILENAME_FULL}" "${BUILD_DEST_FILENAME}" # FIXME
     mv -i "${BUILD_FILENAME}.packages" "${BUILD_PACKAGES}" # FIXME
 else
     echo "lb build failed ($?)."
