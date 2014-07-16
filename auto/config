@@ -56,6 +56,11 @@ BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
 ISO_VOLUME="${DIGABI_DIST_NAME_SHORT}-$(./scripts/version.helper notime nobuild shortver |cut -b-27)"
 
+if [ -z "${IMAGE_NAME}" ]
+then
+    IMAGE_NAME="${DIGABI_DIST_NAME_SHORT}"
+fi    
+
 HDD_LABEL="${DIGABI_DIST_NAME}"
 HDD_SIZE="1024" # MB
 BINARY_FILESYSTEM="fat32"
@@ -84,6 +89,7 @@ lb config noauto \
     --hdd-label "${HDD_LABEL}" \
     --hdd-size "${HDD_SIZE}" \
     --ignore-system-defaults \
+    --image-name "${IMAGE_NAME}" \
     --iso-publisher "${ISO_PUBLISHER}" \
     --iso-volume "${ISO_VOLUME}" \
     --linux-packages "linux-image" \
@@ -99,6 +105,7 @@ lb config noauto \
 	"${@}"
 
 echo "LB_ARCHITECTURE=${ARCH}" >>config/bootstrap
+echo "LB_BINARY_IMAGES=${BINARY_IMAGES}" >>config/binary
 
 #
 # If we are building from snapshot.debian.org, ignore Valid-Until header in Release files
