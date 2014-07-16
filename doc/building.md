@@ -38,6 +38,8 @@ Following assumes that you have vagrant & VirtualBox installed:
 
     git clone https://github.com/digabi/digabi-os digabi-os
     cd digabi-os
+    export ROOT_PASSWORD="my-super-secret-password"
     export DEBIAN_MIRROR="http://my-local-mirror.example.com/debian"
     export ARCH="i386"
+    export BINARY_IMAGES="hdd"
     make build
