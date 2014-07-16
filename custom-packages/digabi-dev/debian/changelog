@@ -1,3 +1,9 @@
+digabi-dev (4.1.2) stable; urgency=medium
+
+  * Allow specifying ROOT_PASSWORD when building images.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 16 Jul 2014 16:26:01 +0300
+
 digabi-dev (4.1.1) stable; urgency=medium
 
   * Added support for BINARY_IMAGES environment variable when building new images.
