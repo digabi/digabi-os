@@ -25,6 +25,9 @@ mirror](https://www.debian.org/mirror/ftpmirror).
     - `DEBIAN_MIRROR` allows you to use custom Debian mirror for your build (local mirror, Debian snapshot etc.)
     - `ARCH` allows you to specify build architecture (`i386`, `amd64`, others in future)
     - `http_proxy` allows you to specify HTTP proxy for the build (FIXME)
+    - `BINARY_IMAGES` allows you to select which imagetype to use for 
+    output (`iso-hybrid`=ISO w/ USB support, `iso` = regular ISO, `hdd` 
+    = USB/HDD image)
 
 
 ## Do the build
