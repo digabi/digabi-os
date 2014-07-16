@@ -6,4 +6,4 @@ set -ex
 
 trap cleanup EXIT
 
-make dist ARCH="${ARCH}" DEBIAN_MIRROR="${DEBIAN_MIRROR}" http_proxy="${PROXY}" BUILD_TAG="${BUILD_TAG}"
+make dist ROOT_PASSWORD="${ROOT_PASSWORD}" ARCH="${ARCH}" DEBIAN_MIRROR="${DEBIAN_MIRROR}" http_proxy="${PROXY}" BUILD_TAG="${BUILD_TAG}"

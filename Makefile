@@ -19,6 +19,7 @@ DEBIAN_MIRROR ?= http://http.debian.net/debian
 #DIGABI_BUILD_CPUS ?= $(shell ...)
 DIGABI_RAM_BUILD ?= 0
 HTTP_PROXY ?= 
+ROOT_PASSWORD ?=
 
 BUILD_TAG ?= N/A
 
