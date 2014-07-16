@@ -106,6 +106,7 @@ lb config noauto \
 
 echo "LB_ARCHITECTURE=${ARCH}" >>config/bootstrap
 echo "LB_BINARY_IMAGES=${BINARY_IMAGES}" >>config/binary
+echo "LB_IMAGE_NAME=${IMAGE_NAME}" >>config/binary
 
 #
 # If we are building from snapshot.debian.org, ignore Valid-Until header in Release files
