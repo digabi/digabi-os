@@ -28,6 +28,8 @@ mirror](https://www.debian.org/mirror/ftpmirror).
     - `BINARY_IMAGES` allows you to select which imagetype to use for 
     output (`iso-hybrid`=ISO w/ USB support, `iso` = regular ISO, `hdd` 
     = USB/HDD image)
+    - `ROOT_PASSWORD` sets the password for root user (and adds live 
+    user to group `wheel` so he/she can use `su`)
 
 
 ## Do the build
