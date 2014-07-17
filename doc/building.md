@@ -1,5 +1,4 @@
 # Building Digabi OS
-================================================
 
 See `doc/INSTALL.md` for prerequisites.
 
