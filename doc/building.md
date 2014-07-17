@@ -34,6 +34,14 @@ mirror](https://www.debian.org/mirror/ftpmirror).
     - `COMMIT` builds specific commit
 
 
+### Adding new customization variables
+
+ 1. Add default value to `Makefile`
+ 2. Add value handling to `digabi-dev/scripts/_os/build`
+ 3. (do something w/ the value, in `auto/config`, `auto/build`, hooks, 
+ ...)
+ 4. Add Jenkins support to `digabi-dev/scripts/_os/jenkins-build`
+
 ## Do the build
 
 Following assumes that you have vagrant & VirtualBox installed:
