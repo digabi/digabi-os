@@ -1,3 +1,9 @@
+digabi-customization (2.8) unstable; urgency=medium
+
+  * Updated UI: added shadows, transparency etc.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 17 Jul 2014 11:53:40 +0300
+
 digabi-customization (2.7) unstable; urgency=medium
 
   * Install plymouth, plymouth-themes.
