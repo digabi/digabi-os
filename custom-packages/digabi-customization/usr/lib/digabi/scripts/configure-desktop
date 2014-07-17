@@ -70,4 +70,7 @@ then
 
     # Toggle compositing on
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/use_compositing" -t "bool" -s "true"
+
+    # Blink urgent windows
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/urgent_blink" -t "bool" -s "true"
 fi
