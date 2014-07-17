@@ -41,6 +41,8 @@ mirror](https://www.debian.org/mirror/ftpmirror).
  3. (do something w/ the value, in `auto/config`, `auto/build`, hooks, 
  ...)
  4. Add Jenkins support to `digabi-dev/scripts/_os/jenkins-build`
+ 5. Add new option to Jenkins job `digabi-os EXPERIMENTAL` 
+ (parameterized build) (optional)
 
 ## Do the build
 
