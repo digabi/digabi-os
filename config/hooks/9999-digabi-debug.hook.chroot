@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -ex
+
+if [ "${DIGABI_DEBUG}" != "1" ]
+then
+    echo "I: Debug mode not enabled."
+    exit 0
+fi
+
+echo "I: Debug mode enabled."
+
+# TODO: Update config/bootloaders/isolinux/isolinux.cfg (allow custom parameters etc.)
+# TODO: Check that root user has password (if not, set password "debug")
