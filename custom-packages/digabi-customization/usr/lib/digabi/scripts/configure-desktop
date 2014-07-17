@@ -76,6 +76,10 @@ then
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/show_frame_shadow" -t "bool" -s "true"
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/show_popup_shadow" -t "bool" -s "true"
 
+    # Transparent window when moving or resizing
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/move_opacity" -t "int" -s 90
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/resize_opacity" -t "int" -s 90
+
     # Blink urgent windows
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/urgent_blink" -t "bool" -s "true"
 fi
