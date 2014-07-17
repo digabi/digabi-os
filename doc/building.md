@@ -1,4 +1,4 @@
-# Building Digabi-Live
+# Building Digabi OS
 ================================================
 
 See `doc/INSTALL.md` for prerequisites.
