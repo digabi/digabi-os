@@ -84,5 +84,6 @@ then
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/urgent_blink" -t "bool" -s "true"
 
     # Antialiasing
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/HintStyle" -t "string" -s "hint"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/Antialias" -t "int" -s 1
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/HintStyle" -t "string" -s "hintmedium"
 fi
