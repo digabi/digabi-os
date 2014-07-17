@@ -22,7 +22,9 @@
     </property>
   </property>
   <property name="plugins" type="empty">
-    <property name="plugin-1" type="string" value="applicationsmenu"/>
+    <property name="plugin-1" type="string" value="applicationsmenu">
+        <property name="show-tooltips" type="bool" value="true"/>
+    </property>
     <property name="plugin-2" type="string" value="actions"/>
     <property name="plugin-3" type="string" value="tasklist"/>
     <property name="plugin-10" type="string" value="separator">
