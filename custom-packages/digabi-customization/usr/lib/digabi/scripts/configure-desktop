@@ -67,4 +67,7 @@ then
 
     # Show shutdown button instead of logout window
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-2/first-action" -t "int" -s 3
+
+    # Toggle compositing on
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/use_compositing" -t "bool" -s "true"
 fi
