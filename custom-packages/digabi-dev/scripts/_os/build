@@ -52,47 +52,16 @@ if [ "$DIGABI_RAM_BUILD" ]; then
 	fi
 fi
 
-if [ -n "$JENKINS_URL" ]; then
-	# Build triggered by Jenkins
-	if [ -z "$WORKSPACE" ]; then
-		echo "WORKSPACE environment variable is not set. Aborting." >&2
-	fi
-	if mountpoint -q /srv/www; then
-		ARTIFACTS_DIR=/srv/www/"$JOB_NAME"
-	else
-		echo "Shared directory is not available, saving artifacts in workspace." >&2
-		ARTIFACTS_DIR="$WORKSPACE"
-	fi
-	if [ -z "$GIT_BRANCH" ]; then
-		echo "GIT_BRANCH environment variable is not set. Aborting." >&2
-	fi
-	if [ -z "$GIT_COMMIT" ]; then
-		echo "GIT_COMMIT environment variable is not set. Aborting." >&2
-	fi
-	REV="${GIT_BRANCH##origin/}"
-	COMMIT="$GIT_COMMIT"
-else
-	# Build triggered by Vagrant
-	WORKSPACE=/home/vagrant/digabi-os
-	ARTIFACTS_DIR=/vagrant
-	COMMIT="$(git --git-dir=/digabi-os.git rev-parse --verify HEAD)"
-#	if git --git-dir=/digabi-os.git symbolic-ref HEAD >/dev/null 2>&1; then
-#		# We are building from a branch
-#		REV="${1:-$(git --git-dir=/digabi-os.git name-rev --name-only HEAD)}"
-#	else
-#		# We are (hopefully) building from a tag
-#		if ! REV="${1:-$(git --git-dir=/digabi-os.git describe --tags --exact-match ${COMMIT})}"; then
-#			REV="${COMMIT}"
-#			#echo "It seems we are building from an untagged detached HEAD. Aborting." >&2
-#			#exit 1
-#		fi
-#	fi
-	REV="${COMMIT}"
+# Build triggered by Vagrant
+WORKSPACE=/home/vagrant/digabi-os
+ARTIFACTS_DIR=/vagrant
+COMMIT="$(git --git-dir=/digabi-os.git rev-parse --verify HEAD)"
 
-	test -d "$WORKSPACE" || git clone /digabi-os.git "$WORKSPACE"
-	cd "$WORKSPACE"
-	git fetch origin
-fi
+REV="${COMMIT}"
+
+test -d "$WORKSPACE" || git clone /digabi-os.git "$WORKSPACE"
+cd "$WORKSPACE"
+git fetch origin
 
 cd "$WORKSPACE"
 git checkout --force "$REV"
