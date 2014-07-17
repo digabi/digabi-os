@@ -82,4 +82,7 @@ then
 
     # Blink urgent windows
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/urgent_blink" -t "bool" -s "true"
+
+    # Antialiasing
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/HintStyle" -t "string" -s "hintfull"
 fi
