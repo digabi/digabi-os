@@ -32,7 +32,7 @@ build system:
  USB/HDD image)
  - `ROOT_PASSWORD` sets the password for root user (and adds live user 
  to group `wheel` so he/she can use `su`)
- - `DIGABI_DEBUG` (=true) enables `9999-digabi-debug.hook.chroot`
+ - `DIGABI_DEBUG` (=true) enables `0001-digabi-debug.hook.chroot`
  - `COMMIT` builds specific commit
 
 
