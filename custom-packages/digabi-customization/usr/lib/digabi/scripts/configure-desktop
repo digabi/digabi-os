@@ -71,6 +71,11 @@ then
     # Toggle compositing on
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/use_compositing" -t "bool" -s "true"
 
+    # Show shadows
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/show_dock_shadow" -t "bool" -s "true"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/show_frame_shadow" -t "bool" -s "true"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/show_popup_shadow" -t "bool" -s "true"
+
     # Blink urgent windows
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/urgent_blink" -t "bool" -s "true"
 fi
