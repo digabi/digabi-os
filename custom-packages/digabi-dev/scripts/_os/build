@@ -55,7 +55,11 @@ fi
 # Build triggered by Vagrant
 WORKSPACE=/home/vagrant/digabi-os
 ARTIFACTS_DIR=/vagrant
-COMMIT="$(git --git-dir=/digabi-os.git rev-parse --verify HEAD)"
+
+if [ -z "${COMMIT] "]
+then
+	COMMIT="$(git --git-dir=/digabi-os.git rev-parse --verify HEAD)"
+fi
 
 REV="${COMMIT}"
 
