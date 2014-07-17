@@ -9,8 +9,6 @@ then
 fi
 
 echo "I: Debug mode enabled."
-
-# TODO: Update config/bootloaders/isolinux/isolinux.cfg (allow custom parameters etc.)
 # TODO: Check that root user has password (if not, set password "debug")
 
 ISOLINUX_CFG="/root/config/bootloaders/isolinux/isolinux.cfg"
