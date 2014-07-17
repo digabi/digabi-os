@@ -2,7 +2,7 @@
 
 set -ex
 
-if [ "${DIGABI_DEBUG}" != "1" ]
+if [ "${DIGABI_DEBUG}" != "true" ]
 then
     echo "I: Debug mode not enabled."
     exit 0
