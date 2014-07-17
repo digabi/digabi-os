@@ -6,7 +6,8 @@ Standards-Version: 3.9.2
 Package: digabi-customization
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: digabi-common, digabi-backgrounds,
- fonts-lato, desktop-base, plymouth, plymouth-drm, plymouth-themes
+ fonts-lato, desktop-base, plymouth, plymouth-drm, plymouth-themes,
+ ambiance-radiance-colors
 Architecture: all
 Changelog: debian/changelog
 Files: usr/lib/digabi/scripts/configure-desktop /

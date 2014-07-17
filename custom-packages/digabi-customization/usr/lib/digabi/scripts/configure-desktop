@@ -10,7 +10,7 @@ MENU_ICON="/usr/share/digabi/proprietary/digabi.svg"
 # Configure XFCE4 settings
 XFCONF_BIN="/usr/bin/xfconf-query"
 XFCONF_FLAGS="-n"
-XFWM_THEME="Xfce-redmondxp"
+XFWM_THEME="Radiance-Orange"
 
 if [ -x "${XFCONF_BIN}" ]
 then
@@ -84,5 +84,5 @@ then
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/urgent_blink" -t "bool" -s "true"
 
     # Antialiasing
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/HintStyle" -t "string" -s "hintfull"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/HintStyle" -t "string" -s "hint"
 fi
