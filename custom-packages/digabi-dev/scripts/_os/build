@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# This script is used by both our Vagrant and Jenkins -based build environments.
-
 set -e
 
 TMPFS_SIZE_MB=6144 # 6 GB
