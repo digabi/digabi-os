@@ -21,17 +21,20 @@ mirror](https://www.debian.org/mirror/ftpmirror).
 ## Customize build
 
 ### Environment variables
+Currently following configuration variables have been defined in the 
+build system:
 
-    - `DEBIAN_MIRROR` allows you to use custom Debian mirror for your build (local mirror, Debian snapshot etc.)
-    - `ARCH` allows you to specify build architecture (`i386`, `amd64`, others in future)
-    - `http_proxy` allows you to specify HTTP proxy for the build (FIXME)
-    - `BINARY_IMAGES` allows you to select which imagetype to use for 
-    output (`iso-hybrid`=ISO w/ USB support, `iso` = regular ISO, `hdd` 
-    = USB/HDD image)
-    - `ROOT_PASSWORD` sets the password for root user (and adds live 
-    user to group `wheel` so he/she can use `su`)
-    - `DIGABI_DEBUG` (=true) enables `9999-digabi-debug.hook.chroot`
-    - `COMMIT` builds specific commit
+ - `DEBIAN_MIRROR` allows you to use custom Debian mirror for your build 
+ (local mirror, Debian snapshot etc.)
+ - `ARCH` allows you to specify build architecture (`i386`, `amd64`, others in future)
+ - `http_proxy` allows you to specify HTTP proxy for the build (FIXME)
+ - `BINARY_IMAGES` allows you to select which imagetype to use for 
+ output (`iso-hybrid`=ISO w/ USB support, `iso` = regular ISO, `hdd` = 
+ USB/HDD image)
+ - `ROOT_PASSWORD` sets the password for root user (and adds live user 
+ to group `wheel` so he/she can use `su`)
+ - `DIGABI_DEBUG` (=true) enables `9999-digabi-debug.hook.chroot`
+ - `COMMIT` builds specific commit
 
 
 ### Adding new customization variables
