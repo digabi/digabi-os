@@ -4,17 +4,18 @@ set -e
 
 # Change root password, if user has specified one
 
-PASSWORD_FILE="/root/config/root-password"
+#PASSWORD_FILE="/root/config/root-password"
+
 
 # Add group wheel, and limit su (user must be in wheel group in order to su)
 echo "I: Add wheel group, and limit su access."
 addgroup --system wheel
 sed -i 's/^# auth       required   pam_wheel.so/auth	required	pam_wheel.so/' /etc/pam.d/su
 
-if [ -f "${PASSWORD_FILE}" ]
+if [ -n "${ROOT_PASSWORD}" ]
 then
 	echo "I: Setting root password..."
-	echo "root:$(cat ${PASSWORD_FILE})" |chpasswd
+	echo "root:${ROOT_PASSWORD}" |chpasswd
 	sed -i 's/^LIVE_USER_DEFAULT_GROUPS=\"/LIVE_USER_DEFAULT_GROUPS=\"wheel /' /etc/live/config/user.conf
 else
 	echo "I: No root password defined."
