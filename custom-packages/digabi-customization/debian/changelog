@@ -1,3 +1,11 @@
+digabi-customization (2.10) unstable; urgency=medium
+
+  * Fixed antialiasing setting.
+  * Use theme for XFCE & XFWM.
+  * Use Smoke theme for notifications.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 17 Jul 2014 17:32:38 +0300
+
 digabi-customization (2.9) unstable; urgency=medium
 
   * Added Depends: ambiance-radiance-colors (third-party package, GPLv2).
