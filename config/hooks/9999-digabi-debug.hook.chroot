@@ -23,3 +23,6 @@ then
 else
     echo "W: Isolinux config not found, not updating."
 fi
+
+echo "I: Installing openssh-server..."
+apt-get -y install openssh-server
