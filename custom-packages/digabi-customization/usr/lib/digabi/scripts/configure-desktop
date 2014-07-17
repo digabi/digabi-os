@@ -14,57 +14,57 @@ XFWM_THEME="Xfce-redmondxp"
 
 if [ -x "${XFCONF_BIN}" ]
 then
-# Single color
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color-style" -t "int" -s 0
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/color-style" -t "int" -s 0
+    # Single color
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color-style" -t "int" -s 0
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/color-style" -t "int" -s 0
 
-# Color from background.svg
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color1" -t "uint" -s 9509 -t "uint" -s 17733 -t "uint" -s 29298 -t "uint" -s 65535
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/color1" -t "uint" -s 9509 -t "uint" -s 17733 -t "uint" -s 29298 -t "uint" -s 65535
+    # Color from background.svg
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/color1" -t "uint" -s 9509 -t "uint" -s 17733 -t "uint" -s 29298 -t "uint" -s 65535
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/color1" -t "uint" -s 9509 -t "uint" -s 17733 -t "uint" -s 29298 -t "uint" -s 65535
 
-# Centered
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-style" -t "int" -s 0
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/image-style" -t "int" -s 0
+    # Centered
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-style" -t "int" -s 0
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/image-style" -t "int" -s 0
 
-# Our custom image
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-path" -t "string" -s "${BACKGROUND_IMAGE}"
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/last-image" -t "string" -s "${BACKGROUND_IMAGE}"
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/last-single-image" -t "string" -s "${BACKGROUND_IMAGE}"
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/image-path" -t "string" -s "${BACKGROUND_IMAGE}"
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/last-image" -t "string" -s "${BACKGROUND_IMAGE}"
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/last-single-image" -t "string" -s "${BACKGROUND_IMAGE}"
+    # Our custom image
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/image-path" -t "string" -s "${BACKGROUND_IMAGE}"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/last-image" -t "string" -s "${BACKGROUND_IMAGE}"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor0/last-single-image" -t "string" -s "${BACKGROUND_IMAGE}"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/image-path" -t "string" -s "${BACKGROUND_IMAGE}"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/last-image" -t "string" -s "${BACKGROUND_IMAGE}"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/backdrop/screen0/monitor1/last-single-image" -t "string" -s "${BACKGROUND_IMAGE}"
 
-# Hide filesystem from desktop
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-filesystem" -t "bool" -s "false"
+    # Hide filesystem from desktop
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-filesystem" -t "bool" -s "false"
 
-# Hide home
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-home" -t "bool" -s "false"
+    # Hide home
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-home" -t "bool" -s "false"
 
-# Hide removable drives
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-removable" -t "bool" -s "false"
+    # Hide removable drives
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-removable" -t "bool" -s "false"
 
-# Hide trash
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-trash" -t "bool" -s "false"
+    # Hide trash
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/file-icons/show-trash" -t "bool" -s "false"
 
-# Resize icons (48x48)
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/icon-size" -t "int" -s 48
+    # Resize icons (48x48)
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/desktop-icons/icon-size" -t "int" -s 48
 
-# Hide window list
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/windowlist-menu/show" -t "bool" -s "false"
+    # Hide window list
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-desktop" -p "/windowlist-menu/show" -t "bool" -s "false"
 
-# Set custom image for menu
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-1/button-icon" -t "string" -s "${MENU_ICON}"
+    # Set custom image for menu
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-1/button-icon" -t "string" -s "${MENU_ICON}"
 
-# Hide suspend & hibernate from log-out window
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowSuspend" -t "bool" -s "false"
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowHibernate" -t "bool" -s "false"
+    # Hide suspend & hibernate from log-out window
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowSuspend" -t "bool" -s "false"
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowHibernate" -t "bool" -s "false"
 
-# Set default theme
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/theme" -t "string" -s "${XFWM_THEME}"
+    # Set default theme
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/theme" -t "string" -s "${XFWM_THEME}"
 
-# Set workspace count
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/workspace_count" -t "int" -s 1
+    # Set workspace count
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/workspace_count" -t "int" -s 1
 
-# Show shutdown button instead of logout window
-${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-2/first-action" -t "int" -s 3
+    # Show shutdown button instead of logout window
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-2/first-action" -t "int" -s 3
 fi
