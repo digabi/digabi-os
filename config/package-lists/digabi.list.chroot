@@ -6,7 +6,7 @@ digabi-os
 # Simple firewall app
 digabi-firewall
 
-# Debugging tools
+# Debugging tools (TODO: Remove this)
 digabi-os-debug
 
 # MEB Root CA
