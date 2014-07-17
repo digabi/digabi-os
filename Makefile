@@ -27,8 +27,8 @@ REPOSITORY = custom-packages/digabi-repository
 REPOSITORY_SUITE ?= sid
 BINARY_IMAGES ?= iso-hybrid
 
-# Enable debugging?
-DIGABI_DEBUG ?= 0
+# Enable debugging? (If true, runs debug hooks when building)
+DIGABI_DEBUG ?= false
 
 #
 # Other configuration
