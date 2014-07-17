@@ -104,15 +104,6 @@ git submodule init
 git submodule update
 as_root_do lb build
 
-if [ -n "$JENKINS_URL" ]; then
-	ISO=$(ls *.iso)
-	for file in digabi-*; do
-		sha512sum "$file" >> "$ISO.shasum"
-	done
-	echo "FIXME: gpg signing"
-	#gpg --batch --detach-sign --armor "$ISO.shasum"
-fi
-
 mv -f digabi-* "$ARTIFACTS_DIR"
 
 if [ "$DIGABI_BOOTSTRAP_CACHE" ] && \
