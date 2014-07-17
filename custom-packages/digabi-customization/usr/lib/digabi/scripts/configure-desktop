@@ -86,4 +86,7 @@ then
     # Antialiasing
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/Antialias" -t "int" -s 1
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/HintStyle" -t "string" -s "hintmedium"
+
+    # Prettier notifications
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-notifyd" -p "/xfce4-notifyd/theme" -t "string" -s "Smoke"
 fi
