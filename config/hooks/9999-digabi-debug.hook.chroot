@@ -12,3 +12,11 @@ echo "I: Debug mode enabled."
 
 # TODO: Update config/bootloaders/isolinux/isolinux.cfg (allow custom parameters etc.)
 # TODO: Check that root user has password (if not, set password "debug")
+
+ISOLINUX_CFG="/root/config/bootloaders/isolinux/isolinux.cfg"
+
+echo "I: Allow boot option customization..."
+sed -i 's/prompt 0/prompt 1/g' ${ISOLINUX_CFG}
+sed -i 's/noescape 1/noescape 0/g' ${ISOLINUX_CFG}
+sed -i 's/implicit 0/implicit 1/g' ${ISOLINUX_CFG}
+sed -i 's/allowoptions 0/allowoptions 1/g' ${ISOLINUX_CFG}
