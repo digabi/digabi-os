@@ -92,7 +92,7 @@ lb config noauto \
     --image-name "${IMAGE_NAME}" \
     --iso-publisher "${ISO_PUBLISHER}" \
     --iso-volume "${ISO_VOLUME}" \
-    --linux-packages "linux-image" \
+    --linux-packages "linux-image linux-headers" \
     --memtest "none" \
     --mirror-binary "${DEFAULT_DEBIAN_MIRROR}" \
     --mirror-bootstrap "${DEBIAN_MIRROR}" \

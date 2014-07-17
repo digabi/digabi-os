@@ -4,3 +4,5 @@
 ttf-mscorefonts-installer
 #endif
 
+virtualbox-guest-dkms
+virtualbox-guest-utils
