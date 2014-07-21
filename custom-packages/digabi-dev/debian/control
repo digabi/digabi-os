@@ -16,7 +16,6 @@ Files: scripts/_os/prepare-linux-source /usr/lib/digabi
  scripts/_os/build-kernel /usr/lib/digabi
  scripts/_os/build-custom-packages /usr/lib/digabi
  scripts/_os/build-package /usr/lib/digabi
- scripts/_os/build /usr/lib/digabi
  scripts/_os/_jenkins /usr/lib/digabi
  scripts/_os/jenkins-build /usr/lib/digabi
  scripts/_os/jenkins-build-packages /usr/lib/digabi

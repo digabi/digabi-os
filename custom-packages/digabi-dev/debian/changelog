@@ -1,3 +1,9 @@
+digabi-dev (4.1.4) stable; urgency=medium
+
+  * Removed digabi os build command (building is now done w/ Makefile, auto/build, jenkins-build.sh).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 21 Jul 2014 11:47:36 +0300
+
 digabi-dev (4.1.3) stable; urgency=medium
 
   * Updated build command.
