@@ -57,8 +57,9 @@ environment:
 
 
 # Clean build environment
-clean:
-	# FIXME
+clean: environment
+	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
+	
 
 # Remove builder (destroys virtual machine)
 purge:
@@ -85,9 +86,6 @@ config:	clean environment
 	rm $(TMP)
 
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && lb config'
-
-cli: config
-	$(BUILDER_DO) run
 
 halt:
 	$(BUILDER_DO) halt
