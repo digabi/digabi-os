@@ -59,8 +59,6 @@ environment:
 
 # Configure build environment
 config:	clean environment
-	#$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && $(ROOT_CMD) lb config'
-	#$(LIVE_BUILD) config
 
 halt:
 	$(BUILDER_DO) halt
@@ -70,8 +68,6 @@ provision: environment halt
 
 # Build new image
 build: config
-	# TODO: Check if uncommitted changes (git)
-	# TODO: Allow specifying COMMIT=xx => if COMMIT != "" > run cd builddir & git co ...
 	$(BUILDER_DO) run COMMAND='COMMIT="$(COMMIT)" DIGABI_DEBUG="$(DIGABI_DEBUG)" ROOT_PASSWORD="$(ROOT_PASSWORD)" BINARY_IMAGES="$(BINARY_IMAGES)" ARCH="$(ARCH)" DEBIAN_MIRROR="$(DEBIAN_MIRROR)" BUILD_TAG="$(BUILD_TAG)" /usr/bin/digabi os build'
 
 # Clean build environment
