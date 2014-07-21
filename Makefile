@@ -69,13 +69,13 @@ config:	clean environment
 	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX.tmp))
 
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
-	echo COMMIT=$(COMMIT) >>$(TMP)
-	echo ROOT_PASSWORD=$(ROOT_PASSWORD) >>$(TMP)
-	echo BINARY_IMAGES=$(BINARY_IMAGES) >>$(TMP)
-	echo ARCH=$(ARCH) >>$(TMP)
-	echo DEBIAN_MIRROR=$(DEBIAN_MIRROR) >>$(TMP)
-	echo DIGABI_DEBUG=$(DIGABI_DEBUG) >>$(TMP)
-	echo BUILD_TAG=$(BUILD_TAG) >>$(TMP)
+	echo 'COMMIT="$(COMMIT)"' >>$(TMP)
+	echo 'ROOT_PASSWORD="$(ROOT_PASSWORD)"' >>$(TMP)
+	echo 'BINARY_IMAGES="$(BINARY_IMAGES)"' >>$(TMP)
+	echo 'ARCH="$(ARCH)"' >>$(TMP)
+	echo 'DEBIAN_MIRROR="$(DEBIAN_MIRROR)"' >>$(TMP)
+	echo 'DIGABI_DEBUG="$(DIGABI_DEBUG)"' >>$(TMP)
+	echo 'BUILD_TAG="$(BUILD_TAG)"' >>$(TMP)
 
 	$(BUILDER_DO) run COMMAND='if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout HEAD ; fi'
 	$(BUILDER_DO) run COMMAND='cp /$(BUILDER)/$(shell basename $(TMP)) $(BUILD_CONFIG)'
