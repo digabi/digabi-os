@@ -57,6 +57,14 @@ environment:
 	$(BUILDER_DO) up
 	$(BUILDER_DO) provision
 
+# Clean build environment
+clean:
+	# FIXME
+
+# Remove builder (destroys virtual machine)
+purge:
+	$(BUILDER_DO) destroy
+
 # Configure build environment
 config:	clean environment
 
@@ -69,14 +77,6 @@ provision: environment halt
 # Build new image
 build: config
 	$(BUILDER_DO) run COMMAND='COMMIT="$(COMMIT)" DIGABI_DEBUG="$(DIGABI_DEBUG)" ROOT_PASSWORD="$(ROOT_PASSWORD)" BINARY_IMAGES="$(BINARY_IMAGES)" ARCH="$(ARCH)" DEBIAN_MIRROR="$(DEBIAN_MIRROR)" BUILD_TAG="$(BUILD_TAG)" /usr/bin/digabi os build'
-
-# Clean build environment
-clean:
-	# FIXME
-
-# Remove builder (destroys virtual machine)
-purge:
-	$(BUILDER_DO) destroy
 
 # Collect build artifacts (.ISO) to dist/
 collect: build
