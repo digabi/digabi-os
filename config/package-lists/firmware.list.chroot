@@ -10,5 +10,6 @@ firmware-ipw2x00
 firmware-iwlwifi
 firmware-ralink
 firmware-realtek
+broadcom-sta-dkms
 #endif
 
