@@ -78,6 +78,7 @@ config:	clean environment
 	echo 'BUILD_TAG="$(BUILD_TAG)"' >>$(TMP)
 
 	$(BUILDER_DO) run COMMAND='if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout HEAD ; fi'
+	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && git submodule init && git submodule update'
 	$(BUILDER_DO) run COMMAND='cp /$(BUILDER)/$(shell basename $(TMP)) $(BUILD_CONFIG)'
 
 	rm $(TMP)
