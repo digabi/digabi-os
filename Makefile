@@ -82,6 +82,8 @@ config:	clean environment
 
 	rm $(TMP)
 
+	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && lb config'
+
 halt:
 	$(BUILDER_DO) halt
 
