@@ -35,6 +35,9 @@ BUILD_DIR = digabi-os
 BUILDER = vagrant
 GIT_REPOSITORY = /digabi-os.git
 ARTIFACTS_DIR = dist
+CONFIG_FILE = digabi.local
+
+BUILD_CONFIG = $(BUILD_DIR)/config/$(CONFIG_FILE)
 
 # Helper for running targets in another Makefile (default: vagrant/Makefile)
 BUILDER_DO  = $(MAKE) -C $(BUILDER)
@@ -52,6 +55,7 @@ environment:
 	$(BUILDER_DO) up
 	$(BUILDER_DO) provision
 
+
 # Clean build environment
 clean:
 	# FIXME
@@ -62,6 +66,21 @@ purge:
 
 # Configure build environment
 config:	clean environment
+	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX.tmp))
+
+	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
+	echo COMMIT=$(COMMIT) >>$(TMP)
+	echo ROOT_PASSWORD=$(ROOT_PASSWORD) >>$(TMP)
+	echo BINARY_IMAGES=$(BINARY_IMAGES) >>$(TMP)
+	echo ARCH=$(ARCH) >>$(TMP)
+	echo DEBIAN_MIRROR=$(DEBIAN_MIRROR) >>$(TMP)
+	echo DIGABI_DEBUG=$(DIGABI_DEBUG) >>$(TMP)
+	echo BUILD_TAG=$(BUILD_TAG) >>$(TMP)
+
+	$(BUILDER_DO) run COMMAND='if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout HEAD ; fi'
+	$(BUILDER_DO) run COMMAND='cp /$(BUILDER)/$(shell basename $(TMP)) $(BUILD_CONFIG)'
+
+	rm $(TMP)
 
 halt:
 	$(BUILDER_DO) halt
@@ -71,10 +90,7 @@ provision: environment halt
 
 # Build new image
 build: config
-	BUILD_ENV = COMMIT="$(COMMIT)" DIGABI_DEBUG="$(DIGABI_DEBUG)" ROOT_PASSWORD="$(ROOT_PASSWORD)" BINARY_IMAGES="$(BINARY_IMAGES)" ARCH="$(ARCH)" DEBIAN_MIRROR="$(DEBIAN_MIRROR)" BUILD_TAG="$(BUILD_TAG)"
-	$(BUILDER_DO) run COMMAND='if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout HEAD'
-	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && $(BUILD_ENV) lb config'
-	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && $(BUILD_ENV) sudo -E lb build ; mv digabi-* /$(BUILDER)/'
+	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
 
 # Collect build artifacts (.ISO) to dist/
 collect: build
