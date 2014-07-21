@@ -85,6 +85,9 @@ config:	clean environment
 
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && lb config'
 
+cli: config
+	$(BUILDER_DO) run
+
 halt:
 	$(BUILDER_DO) halt
 
