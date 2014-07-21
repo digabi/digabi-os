@@ -39,7 +39,7 @@ build system:
 ### Adding new customization variables
 
  1. Add default value to `Makefile`
- 2. Add value handling to `digabi-dev/scripts/_os/build`
+ 2. Export value in Makefile:config
  3. (do something w/ the value, in `auto/config`, `auto/build`, hooks, 
  ...)
  4. Add Jenkins support to `digabi-dev/scripts/_os/jenkins-build`
