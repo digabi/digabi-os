@@ -2,7 +2,7 @@
 
 set -e
 
-PROVISION_CHECKSUM="$(md5sum $0)"
+PROVISION_CHECKSUM="$(md5sum $0 |awk '{print $1}')"
 PROVISION_STATEFILE="/root/.vagrant_provision_id"
 
 if [ -f "${PROVISION_STATEFILE}" ]
