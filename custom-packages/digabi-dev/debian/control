@@ -8,7 +8,8 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Depends: build-essential, live-build, git, equivs, devscripts, 
  digabi-common, packaging-dev, debconf-utils, git-buildpackage, time
 Recommends: reprepro, piuparts, apt-cacher-ng, kernel-package,
- gcc-4.8-plugin-dev, libncurses5-dev, python-six, lintian, editorconfig
+ gcc-4.8-plugin-dev, libncurses5-dev, python-six, lintian, editorconfig,
+ multipath-tools
 Suggests: pastebinit, vim, vim-scripts, apt-file
 Architecture: all
 Changelog: debian/changelog

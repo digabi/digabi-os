@@ -1,3 +1,9 @@
+digabi-dev (4.1.5) stable; urgency=medium
+
+  * Added multipath-tools to Suggests. Multipath tools help debugging USB-HDD images, ie. allow easy handling of multiple partitions in .img files.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 21 Jul 2014 15:49:43 +0300
+
 digabi-dev (4.1.4) stable; urgency=medium
 
   * Removed digabi os build command (building is now done w/ Makefile, auto/build, jenkins-build.sh).
