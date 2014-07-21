@@ -1,0 +1,73 @@
+#!/bin/sh
+
+set -e
+
+# Check that author details are ok (not root, not vagrant)
+
+# Original script: <http://stackoverflow.com/a/9629729/899560>
+
+# Config
+INVALID_NAME_EQUALS="root Vagrant"
+INVALID_NAME_CONTAINS=""
+INVALID_EMAIL_CONTAINS="localhost vagrantup.com"
+INVALID_EMAIL_EQUALS=""
+# Script
+
+AUTHOR=$(git var GIT_AUTHOR_IDENT) || exit 1
+NAME=$(printf '%s\n' "${AUTHOR}" | sed -n 's/^\(.*\) <.*$/\1/p')
+EMAIL=$(printf '%s\n' "${AUTHOR}" | sed -n 's/^.* <\(.*\)> .*$/\1/p')
+
+if [ -n "$1" ]
+then
+    NAME="$1"
+fi
+
+if [ -n "$2" ]
+then
+    EMAIL="$2"
+fi
+
+contains() {
+    string="$1"
+    substring="$2"
+    if test "${string#*$substring}" != "$string"
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+
+equals() {
+    if [ "${1}" = "${2}" ]
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+
+fail() {
+    echo "Invalid author details: $@"
+    exit 1
+}
+
+for name in ${INVALID_NAME_CONTAINS}
+do
+    contains "${NAME}" "${name}" && echo "Invalid author name: ${name}" && exit 1
+done
+
+for name in ${INVALID_NAME_EQUALS}
+do
+    equals "${NAME}" "${name}" && echo "Invalid author name: ${name}" && exit 1
+done
+
+for email in ${INVALID_EMAIL_CONTAINS}
+do
+    contains "${EMAIL}" "${email}" && echo "Invalid author e-mail: ${email}" && exit 1
+done
+
+for email in ${INVALID_EMAIL_EQUALS}
+do
+    equals "${EMAIL}" "${email}" && echo "Invalid author e-mail: ${email}" && exit 1
+done
