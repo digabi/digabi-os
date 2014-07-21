@@ -102,7 +102,7 @@ collect: build
 
 # Build image & collect results
 dist:	collect
-	echo "TODO	"
+	echo "TODO"
 
 # Build custom packages defined in ./custom-packages/*
 custom-packages: environment
