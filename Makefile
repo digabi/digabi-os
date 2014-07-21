@@ -56,12 +56,6 @@ all:	build
 environment:
 	$(BUILDER_DO) up
 	$(BUILDER_DO) provision
-	# TODO: Check if already exists & re-use?
-	# TODO: Export variables? (DEBIAN_MIRROR, http_proxy, et. all); save as config/digabi.local
-	#TEMPFILE = $(shell /bin/mktemp $(BUILDER)/digabi.local.XXXXXXX.tmp)
-	# TODO: Create digabi.local, copy from /vagrant
-	#echo "DIGABI_MIRROR=$(DIGABI_MIRROR)"
-	#$(BUILDER_DO) run COMMAND='if [ ! -d "$(BUILD_DIR)/.git" ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git fetch --all ; fi'
 
 # Configure build environment
 config:	clean environment
