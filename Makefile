@@ -72,8 +72,7 @@ build: config
 
 # Clean build environment
 clean:
-	#$(BUILDER_DO) run COMMAND='sudo rm -rf $(BUILD_DIR)'
-	#$(MAKE) -C vagrant ssh
+	# FIXME
 
 # Remove builder (destroys virtual machine)
 purge:
@@ -81,9 +80,6 @@ purge:
 
 # Collect build artifacts (.ISO) to dist/
 collect: build
-	#$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)/$(ARTIFACTS_DIR)" ] ; then cd $(BUILD_DIR) ; rsync -avh $(ARTIFACTS_DIR) /$(BUILDER)/ ; fi'
-	#mkdir -p $(ARTIFACTS_DIR)
-	#mv $(BUILDER)/$(ARTIFACTS_DIR)/* $(ARTIFACTS_DIR)/
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/digabi-os-* $(ARTIFACTS_DIR)/
 
@@ -93,7 +89,6 @@ dist:	collect
 
 # Build custom packages defined in ./custom-packages/*
 custom-packages: environment
-	# TODO: chdir to repo, run build cmd
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then cd $(BUILD_DIR) ; git pull ; else git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; fi'
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
 	$(BUILDER_DO) run COMMAND='rsync -avh $(BUILD_DIR)/custom-packages/*.deb /$(BUILDER)/$(ARTIFACTS_DIR)'
@@ -104,13 +99,11 @@ publish-packages: custom-packages
 	git submodule init
 	git submodule update
 	$(REPOSITORY_DO) sync-from-server
-	# TODO: Foreach *.deb $(BUILDER_DO) add-package DEB=$(DEB)
 	for deb in $(ARTIFACTS_DIR)/*.deb ; do $(REPOSITORY_DO) add-package DEB="\"$$(readlink -f $${deb})\"" ; done
 	$(REPOSITORY_DO) sync-to-server
 
 # Export builder as VirtualBox Machine Image
 buildbox: clean environment
-	# TODO
 	# TODO: Modify VM: remove VT-X, PAE et. all
 
 debug: environment
