@@ -8,7 +8,7 @@ PROVISION_STATEFILE="/root/.vagrant_provision_id"
 if [ -f "${PROVISION_STATEFILE}" ]
 then
     OLD_STATE="$(cat ${PROVISION_STATEFILE})"
-    if [ "${OLD_STATE}" = "${PROVISION_CHECKSUM" ]
+    if [ "${OLD_STATE}" = "${PROVISION_CHECKSUM}" ]
     then
         echo "I: Already provisioned w/ ${PROVISION_CHECKSUM}, skipping..."
         exit 0
