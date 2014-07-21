@@ -8,11 +8,6 @@
 # Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 #
 
-#LIVE_BUILD = lb
-
-#VERSION = $(shell ./scripts/version.helper)
-#TARGET = dist/$(VERSION)
-
 ARCH ?= i386
 
 DEBIAN_MIRROR ?= http://http.debian.net/debian
