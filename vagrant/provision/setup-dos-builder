@@ -2,6 +2,19 @@
 
 set -e
 
+PROVISION_CHECKSUM="$(md5sum $0)"
+PROVISION_STATEFILE="/root/.vagrant_provision_id"
+
+if [ -f "${PROVISION_STATEFILE}" ]
+then
+    OLD_STATE="$(cat ${PROVISION_STATEFILE})"
+    if [ "${OLD_STATE}" = "${PROVISION_CHECKSUM" ]
+    then
+        echo "I: Already provisioned w/ ${PROVISION_CHECKSUM}, skipping..."
+        exit 0
+    fi
+fi
+
 contains() {
     string="$1"
     substring="$2"
@@ -112,3 +125,6 @@ DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
 
 echo "I: Install digabi-dev, rsync..."
 DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-buildbox rsync
+
+echo "I: Saving provisioning state..."
+echo "${PROVISION_CHECKSUM}" >${PROVISION_STATEFILE}
