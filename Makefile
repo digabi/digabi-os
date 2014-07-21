@@ -71,7 +71,10 @@ provision: environment halt
 
 # Build new image
 build: config
-	$(BUILDER_DO) run COMMAND='COMMIT="$(COMMIT)" DIGABI_DEBUG="$(DIGABI_DEBUG)" ROOT_PASSWORD="$(ROOT_PASSWORD)" BINARY_IMAGES="$(BINARY_IMAGES)" ARCH="$(ARCH)" DEBIAN_MIRROR="$(DEBIAN_MIRROR)" BUILD_TAG="$(BUILD_TAG)" /usr/bin/digabi os build'
+	BUILD_ENV = 'COMMIT="$(COMMIT)" DIGABI_DEBUG="$(DIGABI_DEBUG)" ROOT_PASSWORD="$(ROOT_PASSWORD)" BINARY_IMAGES="$(BINARY_IMAGES)" ARCH="$(ARCH)" DEBIAN_MIRROR="$(DEBIAN_MIRROR)" BUILD_TAG="$(BUILD_TAG)"'
+	$(BUILDER_DO) run COMMAND='if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout HEAD'
+	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && $(BUILD_ENV) lb config'
+	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && sudo $(BUILD_ENV) lb build'
 
 # Collect build artifacts (.ISO) to dist/
 collect: build
