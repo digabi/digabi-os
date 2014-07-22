@@ -17,6 +17,6 @@ fi
 
 if [ -f "${LIGHTDM_GTK_CONF}" ]
 then
-	echo "TODO: sed -i ..."
+    sed -i "s,background=\(.*\),background=/usr/share/digabi/proprietary/background.svg,g" "${LIGHTDM_GTK_CONF}"
 	# TODO: [greeter] / background, show-language-selector=true
 fi
