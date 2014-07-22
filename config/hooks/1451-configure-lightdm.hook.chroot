@@ -18,5 +18,6 @@ fi
 if [ -f "${LIGHTDM_GTK_CONF}" ]
 then
     sed -i "s,background=\(.*\),background=/usr/share/digabi/proprietary/background.svg,g" "${LIGHTDM_GTK_CONF}"
+    echo "show-clock=true" >>${LIGHTDM_GTK_CONF}
 	# TODO: [greeter] / background, show-language-selector=true
 fi
