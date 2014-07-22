@@ -7,7 +7,13 @@ PROXY_HOST="ci.local"
 CPUS="4"
 
 cleanup() {
-    make halt
+    if [ "${JENKINS_REUSE_VAGRANT}" = "true" ]
+    then
+        make clean
+        make halt
+    else
+        make purge
+    fi
 }
 
 mdns_resolve() {
