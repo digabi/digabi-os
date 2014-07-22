@@ -1,2 +1,0 @@
-# To enable åäö support in syslinux:
-iconv -f utf-8 -t cp437 filewithumlauts.cfg.utf8 |tee filewithumlauts.cfg
