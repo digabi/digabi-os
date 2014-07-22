@@ -1,0 +1,5 @@
+#!/bin/sh
+set -ex
+
+echo "I: Copy config/bootloaders/syslinux to config/bootloaders/isolinux..."
+cp -R config/bootloaders/syslinux config/bootloaders/isolinux

@@ -12,9 +12,11 @@ config/chroot
 config/common
 config/packages.chroot
 config/source
-config/includes.chroot/var/lib/digabi/builder
-config/includes.chroot/var/lib/digabi/version
-config/includes.chroot/usr/share/digabi/versions.txt
+
+config/bootloaders/isolinux
+config/includes.chroot/var/lib/digabi/builder 
+config/includes.chroot/var/lib/digabi/version 
+config/includes.chroot/usr/share/digabi/versions.txt 
 config/includes.chroot/root
 
 .lock
