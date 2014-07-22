@@ -26,8 +26,17 @@ if vagrant_old
 else
   Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "debian-jessie64"
+
+    # vagrant-debian-jessie64.box
+    #
+    # SHA256: 0ca8a38a5f48021c9d0a644b0f03c364b9cb4a87aa1c8727d068c1492449e0f9
+    # Size: 268M
+    #
+    # Box also available at:
+    #  - https://digabi.fi/dev-downloads/vagrant-debian-jessie64.box
+    #  - http://sourceforge.net/projects/digabi/files/tools/vagrant-debian-jessie64.box/download
+    #
     config.vm.box_url = "http://cdn.ypcs.fi/pub/vagrant-debian-jessie64.box"
-    # Box also available at: https://digabi.fi/dev-downloads/vagrant-debian-jessie64.box (but using CDN for now...)
 
     # TODO: If in dev environment, use <http://ci.local/pub/Debian-testing-amd64-netboot.box>
 
