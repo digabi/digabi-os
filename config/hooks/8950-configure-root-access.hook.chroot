@@ -12,14 +12,6 @@ echo "I: Add wheel group, and limit su access."
 addgroup --system wheel
 sed -i 's/^# auth       required   pam_wheel.so/auth	required	pam_wheel.so/' /etc/pam.d/su
 
-if [ -z "${ROOT_PASSWORD}" ]
-then
-    if [ -r "/root/config/digabi.local" ]
-    then
-        . /root/config/digabi.local
-    fi
-fi
-
 if [ -n "${ROOT_PASSWORD}" ]
 then
 	echo "I: Setting root password..."
