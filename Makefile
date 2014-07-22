@@ -15,7 +15,7 @@ DEBIAN_MIRROR ?= http://http.debian.net/debian
 DIGABI_RAM_BUILD ?= 0
 HTTP_PROXY ?= 
 ROOT_PASSWORD ?=
-COMMIT ?=
+COMMIT ?= HEAD
 
 BUILD_TAG ?= N/A
 
@@ -78,7 +78,7 @@ config:	clean environment
 	echo 'DIGABI_DEBUG="$(DIGABI_DEBUG)"' >>$(TMP)
 	echo 'BUILD_TAG="$(BUILD_TAG)"' >>$(TMP)
 
-	$(BUILDER_DO) run COMMAND='if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout HEAD ; fi'
+	$(BUILDER_DO) run COMMAND='if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && git submodule init && git submodule update'
 
 	$(BUILDER_DO) run COMMAND='cat /$(BUILDER)/$(shell basename $(TMP)) >> $(BUILD_CONFIG)'
