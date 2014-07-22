@@ -9,8 +9,6 @@ Architecture: all
 Copyright: debian/copyright
 Changelog: debian/changelog
 Files: proprietary/background.svg /usr/share/digabi
- proprietary/background_1024x768.svg /usr/share/digabi
- proprietary/background_1280x1024.svg /usr/share/digabi
  proprietary/background_1600x1200.svg /usr/share/digabi
  proprietary/background_1920x1080.svg /usr/share/digabi
  proprietary/background_1920x1200.svg /usr/share/digabi
