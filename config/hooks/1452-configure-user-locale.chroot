@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+XSESSIONRC="/etc/skel/.xsessionrc"
+
+echo "I: Configuring .xsessionrc to read ~/.dmrc..."
+cat << EOF >>${XSESSIONRC}
+if [ -f "${HOME}/.dmrc" ]
+then
+    _LOCALE="$(sed -n '/^Language=\(.*\)$/s//\1/p' ${HOME}/.dmrc)"
+    if [ -n "\${_LOCALE}" ]
+    then
+        export LANG="\${_LOCALE}"
+        export LC_ALL="\${_LOCALE}"
+    fi
+fi
+EOF
