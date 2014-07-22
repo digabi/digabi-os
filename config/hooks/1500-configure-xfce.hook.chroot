@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+
+echo "I: Configure XFCE panel migration..."
+echo 'export XFCE_PANEL_MIGRATE_DEFAULT="please"' >>/etc/skel/.xsessionrc
