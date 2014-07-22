@@ -11,17 +11,17 @@ fi
 echo "I: Debug mode enabled."
 # TODO: Check that root user has password (if not, set password "debug")
 
-ISOLINUX_CFG="/root/config/bootloaders/isolinux/isolinux.cfg"
+SYSLINUX_CFG="/root/config/bootloaders/syslinux/syslinux.cfg"
 
-if [ -f "${ISOLINUX_CFG}" ]
+if [ -f "${SYSLINUX_CFG}" ]
 then
     echo "I: Allow boot option customization..."
-    sed -i 's/prompt 0/prompt 1/g' ${ISOLINUX_CFG}
-    sed -i 's/noescape 1/noescape 0/g' ${ISOLINUX_CFG}
-    sed -i 's/implicit 0/implicit 1/g' ${ISOLINUX_CFG}
-    sed -i 's/allowoptions 0/allowoptions 1/g' ${ISOLINUX_CFG}
+    sed -i 's/prompt 0/prompt 1/g' ${SYSLINUX_CFG}
+    sed -i 's/noescape 1/noescape 0/g' ${SYSLINUX_CFG}
+    sed -i 's/implicit 0/implicit 1/g' ${SYSLINUX_CFG}
+    sed -i 's/allowoptions 0/allowoptions 1/g' ${SYSLINUX_CFG}
 else
-    echo "W: Isolinux config not found, not updating."
+    echo "W: Syslinux config not found, not updating."
 fi
 
 echo "I: Installing digabi-os-debug..."
