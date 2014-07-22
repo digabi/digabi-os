@@ -27,6 +27,7 @@ else
   Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "debian-jessie64"
     config.vm.box_url = "http://cdn.ypcs.fi/pub/vagrant-debian-jessie64.box"
+    # Box also available at: https://digabi.fi/dev-downloads/vagrant-debian-jessie64.box (but using CDN for now...)
 
     # TODO: If in dev environment, use <http://ci.local/pub/Debian-testing-amd64-netboot.box>
 
