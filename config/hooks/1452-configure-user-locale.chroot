@@ -3,7 +3,7 @@ set -e
 
 XSESSIONRC="/etc/skel/.xsessionrc"
 
-echo "I: Configure .xsessionrc to read ~/.dmrc..."
+echo "I: Configuring .xsessionrc to read ~/.dmrc..."
 cat << EOF >>${XSESSIONRC}
 if [ -f "${HOME}/.dmrc" ]
 then
