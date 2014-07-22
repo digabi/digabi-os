@@ -1,7 +1,0 @@
-label start
-	menu label ^OK
-	menu default
-
-	linux @LINUX@
-	initrd @INITRD@
-	append @APPEND_LIVE@
