@@ -121,7 +121,7 @@ if [ "$LOCAL_HTTP_PROXY" ]; then
 fi
 
 echo "I: Upgrade build system..."
-DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -qy upgrade
 
 echo "I: Install digabi-dev, rsync..."
 DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-buildbox rsync
