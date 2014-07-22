@@ -4,7 +4,6 @@
 
 REPOSITORY_HOST="renki.local"
 PROXY_HOST="ci.local"
-CPUS="4"
 
 cleanup() {
     make halt
