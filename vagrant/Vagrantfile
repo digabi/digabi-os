@@ -38,23 +38,6 @@ else
     #
     config.vm.box_url = "http://cdn.ypcs.fi/pub/vagrant-debian-jessie64.box"
 
-    # TODO: If in dev environment, use <http://ci.local/pub/Debian-testing-amd64-netboot.box>
-
-    # config.vm.network :forwarded_port, guest: 80, host: 8080
-    # config.vm.network :private_network, ip: "192.168.33.10"
-    # config.vm.network :public_network
-    # config.ssh.forward_agent = true
-    # config.vm.synced_folder "../data", "/vagrant_data"
-
-    # config.vm.provider :virtualbox do |vb|
-    #   # Don't boot with headless mode
-    #   vb.gui = true
-    #
-    #   # Use VBoxManage to customize the VM. For example to change memory:
-    #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-    # end
-    #
-
     config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' /vagrant/provision/setup-dos-builder"
     config.vm.synced_folder '../.git', '/digabi-os.git'
 
