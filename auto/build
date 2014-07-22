@@ -90,6 +90,7 @@ BUILD_DEST_FILENAME="${BUILD_BASENAME}.${BUILD_FILENAME_EXT}"
 BUILD_MANIFEST="${BUILD_DEST_FILENAME}.list"
 BUILD_PACKAGES="${BUILD_DEST_FILENAME}.packages"
 BUILD_LOG="${BUILD_DEST_FILENAME}.buildlog"
+BUILD_CONFIG="${BUILD_DEST_FILENAME}.config.tar.xz"
 
 echo "Building ${LB_BINARY_IMAGES} image ${BUILD_BASENAME}..."
 set -o pipefail
@@ -100,6 +101,7 @@ if time lb build noauto ${@} 2>&1 | tee "${BUILD_LOG}" ; then
     #mv -i "${BUILD_FILENAME}.${BUILD_FILENAME_EXT}" "${BUILD_DEST_FILENAME}" # FIXME
     mv -i "${BUILD_FILENAME_FULL}" "${BUILD_DEST_FILENAME}" # FIXME
     mv -i "${BUILD_FILENAME}.packages" "${BUILD_PACKAGES}" # FIXME
+    tar -cJf "${BUILD_CONFIG}" config
 else
     echo "lb build failed ($?)."
     exit 1
