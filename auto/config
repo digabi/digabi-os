@@ -8,10 +8,12 @@ if ! git rev-parse --is-inside-work-tree; then
     exit 1
 fi
 
+set -a
 . config/digabi
 if [ -e config/digabi.local ] ; then
    . config/digabi.local
 fi
+set +a
 
 # Run pre-config hooks
 PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/*.pre-config)"

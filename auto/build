@@ -10,10 +10,12 @@ if ! git rev-parse --is-inside-work-tree; then
     exit 1
 fi
 
+set -a
 . config/digabi
 if [ -e config/digabi.local ] ; then
    . config/digabi.local
 fi
+set +a
 
 # get LB_BINARY_IMAGES
 . config/binary
