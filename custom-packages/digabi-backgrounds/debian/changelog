@@ -1,3 +1,9 @@
+digabi-backgrounds (1.6) unstable; urgency=medium
+
+  * Enabled installation of resized background images (different image ratios).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 22 Jul 2014 09:34:24 +0300
+
 digabi-backgrounds (1.5) unstable; urgency=medium
 
   * Updated background: added gradient layer.
