@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -xe
+
+. $(dirname $0)/_jenkins
+
+cd vagrant
+
+rm -f *.box
+
+vagrant up --provision
+vagrant halt
+vagrant package --output "basebox-$(date +%F).box"
+vagrant destroy -f
