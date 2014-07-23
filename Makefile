@@ -39,6 +39,8 @@ CONFIG_FILE = digabi.local
 
 BUILD_CONFIG = $(BUILD_DIR)/config/$(CONFIG_FILE)
 
+CMD_ENV = set -ex
+
 # Helper for running targets in another Makefile (default: vagrant/Makefile)
 BUILDER_DO  = $(MAKE) -C $(BUILDER)
 REPOSITORY_DO = $(MAKE) -C $(REPOSITORY)
@@ -78,10 +80,10 @@ config:	clean environment
 	echo 'DIGABI_DEBUG="$(DIGABI_DEBUG)"' >>$(TMP)
 	echo 'BUILD_TAG="$(BUILD_TAG)"' >>$(TMP)
 
-	$(BUILDER_DO) run COMMAND='if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
-	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && git submodule init && git submodule update'
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update'
 
-	$(BUILDER_DO) run COMMAND='cat /$(BUILDER)/$(shell basename $(TMP)) >> $(BUILD_CONFIG)'
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cat /$(BUILDER)/$(shell basename $(TMP)) >> $(BUILD_CONFIG)'
 
 	rm $(TMP)
 
@@ -95,7 +97,7 @@ provision: environment halt
 
 # Build new image
 build: config
-	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
 
 # Collect build artifacts (.ISO) to dist/
 collect: build
@@ -108,9 +110,9 @@ dist:	collect
 
 # Build custom packages defined in ./custom-packages/*
 custom-packages: environment
-	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then cd $(BUILD_DIR) ; git pull ; else git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; fi'
-	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
-	$(BUILDER_DO) run COMMAND='rsync -avh $(BUILD_DIR)/custom-packages/*.deb /$(BUILDER)/$(ARTIFACTS_DIR)'
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; if [ -d "$(BUILD_DIR)" ] ; then cd $(BUILD_DIR) ; git pull ; else git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; fi'
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; rsync -avh $(BUILD_DIR)/custom-packages/*.deb /$(BUILDER)/$(ARTIFACTS_DIR)'
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/$(ARTIFACTS_DIR)/*.deb $(ARTIFACTS_DIR)/
 
