@@ -16,7 +16,15 @@ fi
 mkdir -p config
 for target in ${DIGABI_BUILD_TARGET}
 do
-    cp -R target/${target}/* config/
+    SOURCE_DIR="target/${target}"
+    if [ -d "${SOURCE_DIR}" ]
+    then
+        echo "I: Adding ${SOURCE_DIR} configuration..."
+        cp -R "${SOURCE_DIR}/*" config/
+    else
+        echo "E: Missing build target configuration: ${target}."
+        exit 1
+    fi
 done
 
 set -a
