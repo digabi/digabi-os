@@ -8,6 +8,10 @@ if ! git rev-parse --is-inside-work-tree; then
     exit 1
 fi
 
+if [ -r target/default/digabi.local ]
+then
+    . target/default/digabi.local
+fi
 if [ -z "${DIGABI_BUILD_TARGET}" ]
 then
     DIGABI_BUILD_TARGET="default"
