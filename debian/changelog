@@ -1,11 +1,17 @@
-digabi-os (14.07a4) UNRELEASED; urgency=medium
+digabi-os (14.07a5) stable; urgency=medium
+
+  * Using same config tree for server+client. 
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 23 Jul 2014 14:23:54 +0300
+
+digabi-os (14.07a4) stable; urgency=medium
 
   * Removed XFCE bottom panel.
   * Added xfce4-xkb-panel for easy keyboard layout changing.
   * Updated locale configuration (fi_FI, sv_FI, sv_SE, en_US).
   * Moved package dependencies back to live-config lists.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 13:08:33 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 23 Jul 2014 14:23:31 +0300
 
 digabi-os (14.07a3) stable; urgency=medium
 
