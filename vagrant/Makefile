@@ -30,7 +30,7 @@ else
 endif
 
 up:
-	vagrant up
+	vagrant up dosbuild
 
 halt:
 	vagrant halt
