@@ -54,12 +54,14 @@ all:	build
 
 # Initialize new builder
 environment:
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) up
 	$(BUILDER_DO) provision
 
 
 # Clean build environment
 clean: environment
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
 	
 
@@ -69,6 +71,7 @@ purge:
 
 # Configure build environment
 config:	clean environment
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX.tmp))
 
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
@@ -90,6 +93,7 @@ config:	clean environment
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && lb config'
 
 halt:
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) halt
 
 # Provision buildbox
@@ -97,19 +101,23 @@ provision: environment halt
 
 # Build new image
 build: config
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
 
 # Collect build artifacts (.ISO) to dist/
 collect: build
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/digabi-os-* $(ARTIFACTS_DIR)/
 
 # Build image & collect results
 dist:	collect
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	echo "TODO"
 
 # Build custom packages defined in ./custom-packages/*
 custom-packages: environment
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; if [ -d "$(BUILD_DIR)" ] ; then cd $(BUILD_DIR) ; git pull ; else git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; fi'
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; rsync -avh $(BUILD_DIR)/custom-packages/*.deb /$(BUILDER)/$(ARTIFACTS_DIR)'
@@ -117,6 +125,7 @@ custom-packages: environment
 	mv $(BUILDER)/$(ARTIFACTS_DIR)/*.deb $(ARTIFACTS_DIR)/
 
 publish-packages: custom-packages
+	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	git submodule init
 	git submodule update
 	$(REPOSITORY_DO) sync-from-server
