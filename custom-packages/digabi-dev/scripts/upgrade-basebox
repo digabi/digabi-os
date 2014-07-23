@@ -29,7 +29,7 @@ vagrant up
 vagrant ssh -c 'sudo apt-get update && sudo DEBIAN_FRONTEND="noninteractive" apt-get -y dist-upgrade && sudo apt-get autoremove && sudo apt-get clean'
 vagrant package --output "${BOXNAME}.box"
 mv "${BOXNAME}.box" "${CURDIR}/"
-vagrant destroy
+vagrant destroy -f
 
 # TODO: vagrant package ...
 
