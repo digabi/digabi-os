@@ -8,7 +8,7 @@ cd vagrant
 
 rm -f *.box
 
-vagrant up --provision
+vagrant up
 vagrant halt
 vagrant package --output "basebox-$(date +%Y%m%d%H%M%S).box"
 vagrant destroy -f
