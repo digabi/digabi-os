@@ -3,6 +3,7 @@ digabi-os (14.07a4) UNRELEASED; urgency=medium
   * Removed XFCE bottom panel.
   * Added xfce4-xkb-panel for easy keyboard layout changing.
   * Updated locale configuration (fi_FI, sv_FI, sv_SE, en_US).
+  * Moved package dependencies back to live-config lists.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 13:08:33 +0300
 
