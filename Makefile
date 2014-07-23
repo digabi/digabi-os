@@ -39,7 +39,7 @@ CONFIG_FILE = digabi.local
 
 BUILD_CONFIG = $(BUILD_DIR)/config/$(CONFIG_FILE)
 
-CMD_ENV = set -ex
+VM_ENVIRONMENT ?= set -ex
 
 # Helper for running targets in another Makefile (default: vagrant/Makefile)
 BUILDER_DO  = $(MAKE) -C $(BUILDER)
