@@ -48,23 +48,25 @@ done
 # * if we build from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$DATE.iso
 # * if Jenkins builds from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$TIME-$COMMIT.iso
 # * else: ${DIGABI_DIST_NAME}-$ARCH-$VERSION-$TIME-$COMMIT
+_DIGABI_TARGET="$(echo ${DIGABI_BUILD_TARGET} |sed 's/\ /\+/g')"
+
 if GIT_REF="$(git symbolic-ref HEAD)"; then
     GIT_BRANCH="${GIT_REF#refs/heads/}"
     CLEAN_GIT_BRANCH=$(echo "$GIT_BRANCH" | sed 's,/,_,g')
     if [ -n "${JENKINS_URL}" ]; then
         GIT_SHORT_ID="$(git rev-parse --short HEAD)"
-        BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_BRANCH}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
+        BUILD_BASENAME="${DIGABI_DIST_NAME}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${CLEAN_GIT_BRANCH}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
     else
-        BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_BRANCH}-${DIGABI_VERSION}-${DIGABI_TODAY}"
+        BUILD_BASENAME="${DIGABI_DIST_NAME}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${CLEAN_GIT_BRANCH}-${DIGABI_VERSION}-${DIGABI_TODAY}"
     fi
 else
     GIT_CURRENT_COMMIT="$(git rev-parse HEAD)"
     if GIT_TAG="$(git describe --tags --exact-match ${GIT_CURRENT_COMMIT})"; then
         CLEAN_GIT_TAG=$(echo "$GIT_TAG" | sed -e 's,/,_,g' -e 's,-rc,~rc,')
-        BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${CLEAN_GIT_TAG}"
+        BUILD_BASENAME="${DIGABI_DIST_NAME}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${CLEAN_GIT_TAG}"
     else
         GIT_SHORT_ID="$(git rev-parse --short HEAD)"
-        BUILD_BASENAME="${DIGABI_DIST_NAME}-${LB_ARCHITECTURE}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
+        BUILD_BASENAME="${DIGABI_DIST_NAME}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
     fi
 fi
 
