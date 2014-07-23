@@ -22,6 +22,7 @@ BUILD_TAG ?= N/A
 REPOSITORY = custom-packages/digabi-repository
 REPOSITORY_SUITE ?= sid
 BINARY_IMAGES ?= iso-hybrid
+DIGABI_BUILD_TARGET ?= default
 
 # Enable debugging? (If true, runs debug hooks when building)
 DIGABI_DEBUG ?= false
@@ -37,7 +38,7 @@ GIT_REPOSITORY = /digabi-os.git
 ARTIFACTS_DIR = dist
 CONFIG_FILE = digabi.local
 
-BUILD_CONFIG = $(BUILD_DIR)/config/$(CONFIG_FILE)
+BUILD_CONFIG = $(BUILD_DIR)/target/default/$(CONFIG_FILE)
 
 VM_ENVIRONMENT ?= set -ex
 
@@ -83,6 +84,7 @@ config:	clean environment
 	echo 'DEBIAN_MIRROR="$(DEBIAN_MIRROR)"' >>$(TMP)
 	echo 'DIGABI_DEBUG="$(DIGABI_DEBUG)"' >>$(TMP)
 	echo 'BUILD_TAG="$(BUILD_TAG)"' >>$(TMP)
+	echo 'DIGABI_BUILD_TARGET="$(DIGABI_BUILD_TARGET)"' >>$(TMP)
 
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update'
