@@ -21,6 +21,7 @@ Files: scripts/_os/prepare-linux-source /usr/lib/digabi
  scripts/_os/jenkins-build /usr/lib/digabi
  scripts/_os/jenkins-build-packages /usr/lib/digabi
  scripts/_os/jenkins-publish-packages /usr/lib/digabi
+ scripts/upgrade-basebox /usr/lib/digabi
  etc/digabi/dev /
  etc/apt-cacher-ng/digabi.conf /
 Description: Development tools for Digabi

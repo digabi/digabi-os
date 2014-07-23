@@ -1,3 +1,9 @@
+digabi-dev (4.2.0) stable; urgency=medium
+
+  * Added upgrade-basebox command for automated Vagrantbox updates.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 23 Jul 2014 11:46:08 +0300
+
 digabi-dev (4.1.5) stable; urgency=medium
 
   * Added multipath-tools to Suggests. Multipath tools help debugging USB-HDD images, ie. allow easy handling of multiple partitions in .img files.

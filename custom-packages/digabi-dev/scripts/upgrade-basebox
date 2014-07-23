@@ -1,0 +1,41 @@
+#!/bin/sh
+
+set -ex
+
+# Upgrade basebox
+
+BASEBOX="$1"
+BOXNAME="${BASEBOX}_$(date +%F)"
+
+if [ -z "${BASEBOX}" ]
+then
+    echo "Usage: $0 <basebox>"
+    exit 1
+fi
+
+CURDIR="${PWD}"
+TEMPDIR="$(mktemp -d)"
+if [ -z "${TEMPDIR}" ]
+then
+    echo "Tempdir creation failed."
+    exit 1
+fi
+
+
+cd "${TEMPDIR}"
+
+vagrant init "${BASEBOX}"
+vagrant up
+vagrant ssh -c 'sudo apt-get update && sudo DEBIAN_FRONTEND="noninteractive" apt-get -y dist-upgrade && sudo apt-get autoremove && sudo apt-get clean'
+vagrant package --output "${BOXNAME}.box"
+mv "${BOXNAME}.box" "${CURDIR}/"
+vagrant destroy
+
+# TODO: vagrant package ...
+
+cd "${PWD}"
+
+if [ -d "${TEMPDIR}" ]
+then
+    rm -rf "${TEMPDIR}"
+fi
