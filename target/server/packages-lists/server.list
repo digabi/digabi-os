@@ -3,3 +3,5 @@ openssh-server
 nodejs
 default-jre
 isc-dhcp-server
+avahi-daemon
+nginx
