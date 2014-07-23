@@ -48,9 +48,10 @@ REPOSITORY_DO = $(MAKE) -C $(REPOSITORY)
 #
 # Targets
 #
+.DEFAULT_GOAL = dist
 
 # Default target
-all:	build
+all:	dist
 
 # Initialize new builder
 environment:
