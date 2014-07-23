@@ -28,6 +28,11 @@ then
     DIGABI_BUILD_TARGET="default"
 fi
 
+if ! contains "${DIGABI_BUILD_TARGET}" default
+then
+    DIGABI_BUILD_TARGET="default ${DIGABI_BUILD_TARGET}"
+fi
+
 CONFIG_DIR="./config"
 mkdir -p "${CONFIG_DIR}"
 
