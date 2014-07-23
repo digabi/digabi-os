@@ -1,7 +1,11 @@
-postgresql
-openssh-server
+nginx
 nodejs
 default-jre
+
+postgresql
+postgresql-contrib
+
+openssh-server
+
 isc-dhcp-server
 avahi-daemon
-nginx
