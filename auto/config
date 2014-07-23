@@ -13,14 +13,16 @@ then
     DIGABI_BUILD_TARGET="default"
 fi
 
-mkdir -p config
+CONFIG_DIR="./config"
+mkdir -p "${CONFIG_DIR}"
+
 for target in ${DIGABI_BUILD_TARGET}
 do
-    SOURCE_DIR="target/${target}"
+    SOURCE_DIR="./target/${target}"
     if [ -d "${SOURCE_DIR}" ]
     then
         echo "I: Adding ${SOURCE_DIR} configuration..."
-        cp -R "${SOURCE_DIR}/*" config/
+        rsync -av "${SOURCE_DIR}/" "${CONFIG_DIR}/"
     else
         echo "E: Missing build target configuration: ${target}."
         exit 1
