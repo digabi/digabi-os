@@ -34,7 +34,7 @@ endif
 
 up:
 	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	vagrant up dosbuild
+	vagrant up
 
 halt:
 	@echo Making $@. The prerequisites are $^. Of those, $? are newer than $@.
