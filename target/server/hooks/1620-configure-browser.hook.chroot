@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+HOMEPAGE="http://localhost/static/ktp/"
+
+if [ ! -d "/etc/iceweasel/profile" ]
+then
+    mkdir -p /etc/iceweasel/profile
+fi
+
+echo "user_pref(\"browser.download.lastDir\", \"/media/usb1\");" >> /etc/iceweasel/profile/prefs.js
+echo "user_pref(\"browser.download.useDownloadDir\", false);" >> /etc/iceweasel/profile/prefs.js
+echo "user_pref(\"browser.startup.homepage\", \"${HOMEPAGE}\");" >>/etc/iceweasel/profile/prefs.js
