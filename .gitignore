@@ -1,27 +1,15 @@
 *~
-.build/
-binary/
-cache/
-chroot/
-source/
+/.build/
+/binary/
+/cache/
+/chroot/
+/source/
 
-config/binary
-config/bootstrap
-config/build
-config/chroot
-config/common
-config/packages.chroot
-config/source
-
-config/bootloaders/isolinux
-config/includes.chroot/var/lib/digabi/builder 
-config/includes.chroot/var/lib/digabi/version 
-config/includes.chroot/usr/share/digabi/versions.txt 
-config/includes.chroot/root
+/config
 
 .lock
 
-dist
+/dist
 *.md5sum
 *.asc
 
@@ -32,10 +20,8 @@ _site
 
 tmp/
 
-config/includes.chroot/etc/skel
 
 local/live-build
-config/root-password
 
 # After live-build 4.x
 live-image-*.contents
@@ -44,27 +30,11 @@ live-image-*.hybrid.iso
 live-image-*.hybrid.iso.zsync
 live-image-*.packages
 
-# These will be added with hook 0050-digabi-repository.pre-config, from custom-packages/digabi-repository
-config/archives/digabi.key.chroot
-config/archives/digabi.key.binary
-config/archives/digabi.list.chroot
-
-# We configure these using 0040-debian-extra-suites.pre-config hook (using $REPOSITORY)
-config/archives/wheezy.list.chroot
-config/archives/sid.list.chroot
-config/archives/experimental.list.chroot
-
-# Ignore changelog
-config/includes.binary/changelog.txt
-
 # Ignore vagrant state file
 vagrant/.vagrant
 
 # Ignore local vagrant provision script
 scripts/vagrant-local.sh
-
-# Ignore local configuration
-config/digabi.local
 
 *.sublime-*
 
