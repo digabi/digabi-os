@@ -8,6 +8,17 @@ if ! git rev-parse --is-inside-work-tree; then
     exit 1
 fi
 
+if [ -z "${DIGABI_BUILD_TARGET}" ]
+then
+    DIGABI_BUILD_TARGET="default"
+fi
+
+mkdir -p config
+for target in ${DIGABI_BUILD_TARGET}
+do
+    cp -R target/${target}/* config/
+done
+
 set -a
 . config/digabi
 if [ -e config/digabi.local ] ; then
