@@ -1,5 +1,12 @@
 #!/bin/sh
 set -ex
 
-echo "I: Copy config/bootloaders/syslinux to config/bootloaders/isolinux..."
-cp -R config/bootloaders/syslinux config/bootloaders/isolinux
+BOOTLOADERS_DIR="config/bootloaders"
+
+if [ -d "${BOOTLOADERS_DIR}/syslinux" ]
+then
+    echo "I: Copy ${BOOTLOADERS_DIR}/syslinux to ${BOOTLOADERS_DIR}/isolinux..."
+    cp -R ${BOOTLOADERS_DIR}/syslinux ${BOOTLOADERS_DIR}/isolinux
+else
+    echo "W: Configuration for syslinux not found."
+fi
