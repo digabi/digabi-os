@@ -9,3 +9,5 @@ openssh-server
 
 isc-dhcp-server
 avahi-daemon
+
+usbmount
