@@ -6,9 +6,17 @@ set -e
 # don't use sync but flush (except for HFS+)
 # use digabi user
 
-sed -i \
-    -e 's/^FILESYSTEMS=.*/FILESYSTEMS="vfat hfsplus"/' \
-    -e '/^MOUNTOPTIONS/s/sync,//' \
-    -e '/^MOUNTOPTIONS/s/OPTIONS="/OPTIONS="uid=digabi,/' \
-    -e 's/^FS_MOUNTOPTIONS=.*/FS_MOUNTOPTIONS="-fstype=vfat,sync -fstype=hfsplus,sync"/' \
-    /etc/usbmount/usbmount.conf
+USBMOUNT_CONF="/etc/usbmount/usbmount.conf"
+
+if [ -w "${USBMOUNT_CONF}" ]
+then
+    echo "I: Configuring usbmount."
+    sed -i \
+        -e 's/^FILESYSTEMS=.*/FILESYSTEMS="vfat hfsplus"/' \
+        -e '/^MOUNTOPTIONS/s/sync,//' \
+        -e '/^MOUNTOPTIONS/s/OPTIONS="/OPTIONS="uid=digabi,/' \
+        -e 's/^FS_MOUNTOPTIONS=.*/FS_MOUNTOPTIONS="-fstype=vfat,sync -fstype=hfsplus,sync"/' \
+        "${USBMOUNT_CONF}"
+else
+    echo "W: usbmount config not found, not configuring."
+fi
