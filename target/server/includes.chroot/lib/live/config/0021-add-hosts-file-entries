@@ -1,9 +1,0 @@
-#!/bin/sh
-
-grep -q dbvip /etc/hosts || {
-    cat >> /etc/hosts <<- EOF
-    10.10.0.10      dbvip dbvip.local
-    10.10.0.1       koetilapalvelin1 koetilapalvelin1.local
-    10.10.0.2       koetilapalvelin2 koetilapalvelin2.local
-    EOF
-}
