@@ -95,7 +95,7 @@ if [ -z "${DEBIAN_MIRROR}" ] ; then
     DEBIAN_MIRROR="${DEFAULT_DEBIAN_MIRROR}"
 fi
 
-BOOTAPPEND_LIVE="boot=live config quiet splash security=apparmor"
+BOOTAPPEND_LIVE="boot=live config security=apparmor"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
 ISO_VOLUME="${DIGABI_DIST_NAME_SHORT}-$(./scripts/version.helper notime nobuild shortver |cut -b-27)"
 
