@@ -9,6 +9,8 @@ cd vagrant
 rm -f *.box
 
 vagrant up
+vagrant ssh -c 'sudo apt-get clean'
+vagrant ssh -c 'sudo dd if=/dev/zero of=/EMPTY bs=1M ; sudo rm -f /EMPTY'
 vagrant halt
 vagrant package --output "basebox-$(date +%Y%m%d%H%M%S).box"
 vagrant destroy -f
