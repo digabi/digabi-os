@@ -22,13 +22,28 @@ menu tabmsgrow 18
 
 menu title Digabi OS
 
-label start
-    menu label ^OK
+label pc
+    menu label ^PC
     menu default
+
 
     linux @LINUX@
     initrd @INITRD@
-    append @APPEND_LIVE@
+    append @APPEND_LIVE@ quiet splash
+
+label macbook
+    menu label ^Macbook
+
+    linux @LINUX@
+    initrd @INITRD@
+    append @APPEND_LIVE@ text nomodeset
+
+label chromebook
+    menu label ^Chromebook
+
+    linux @LINUX@
+    initrd @INITRD@
+    append @APPEND_LIVE@ text mem=1G
 
 menu tabmsg Press ENTER to boot
 menu clear
