@@ -11,10 +11,8 @@ require 'vagrant_version'
 require 'vagrant_verified_download'
 require 'digabi_build_settings'
 
-
-# From Tails:
 if ENV['DIGABI_BUILD_MEM']
-  mem_size = DIGABI_BUILD_MEM
+  mem_size = ENV['DIGABI_BUILD_MEM']
 elsif ENV['DIGABI_RAM_BUILD']
   mem_size = VM_MEMORY_FOR_RAM_BUILDS
 else
