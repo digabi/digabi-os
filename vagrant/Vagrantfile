@@ -19,6 +19,7 @@ else
   mem_size = VM_MEMORY_FOR_DISK_BUILDS
 end
 cpus = ENV['DIGABI_BUILD_CPUS']
+mem_size = ENV['DIGABI_BUILD_MEM'] unless ENV['DIGABI_BUILD_CPUS'].nil?
 
 if vagrant_old
   # FIXME, do we even need this?
