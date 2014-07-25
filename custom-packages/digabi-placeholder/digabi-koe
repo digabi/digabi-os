@@ -2,7 +2,7 @@ Section: misc
 Priority: optional
 Standards-Version: 3.9.2
 
-Package: digabi-ktp
+Package: digabi-koe
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Version: 0.0.1
 Architecture: all
