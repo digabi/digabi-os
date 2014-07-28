@@ -24,17 +24,13 @@ then
 	exit 1
 fi
 
+. ${VERSION_FILE}
+
 SHORT="$1"
 
-
-if [ "x${SHORT}" = "xshort" ]
+if [ -z "${SHORT}" ]
 then
-	VERSION="$(cat ${VERSION_FILE} |cut -d+ -f1)"
-	GIT_COMMIT="$(cat ${VERSION_FILE} |cut -d- -f2 |cut -d_ -f1)"
-	echo "${VERSION}"
-	echo "${GIT_COMMIT}"
+    echo "${DIGABI_VERSION_FULL}"
 else
-	VERSION="$(cat ${VERSION_FILE})"
-	echo "Digabi Live ${VERSION}"
+    echo "${DIGABI_VERSION}"
 fi
-
