@@ -22,7 +22,7 @@ File: postinst
  PLYMOUTH_THEME="glow"
  
  update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/digabi/proprietary/background.svg 100
- update-alternatives --install /usr/share/images/desktop-base/desktop-background.xml desktop-background.xml /usr/share/digabi/proprietary/digabi-background.xml 100
+# update-alternatives --install /usr/share/images/desktop-base/desktop-background.xml desktop-background.xml /usr/share/digabi/proprietary/digabi-background.xml 100
  update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/digabi/proprietary/digabi.svg 100
  update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-splash desktop-splash /usr/share/digabi/proprietary/background.svg 100
  update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-grub desktop-grub /usr/share/digabi/proprietary/background.svg 100

@@ -1,3 +1,9 @@
+digabi-customization (2.12) unstable; urgency=medium
+
+  * Disabled setting desktop-background.xml.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 28 Jul 2014 10:12:10 +0300
+
 digabi-customization (2.11) unstable; urgency=medium
 
   * Added fonts-liberation to Depends.
