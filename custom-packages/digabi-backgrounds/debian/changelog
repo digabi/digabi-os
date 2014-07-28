@@ -1,3 +1,9 @@
+digabi-backgrounds (1.7) unstable; urgency=medium
+
+  * Added @VERSION@ to background svgs (will be replaced at build time).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 28 Jul 2014 10:05:11 +0300
+
 digabi-backgrounds (1.6) unstable; urgency=medium
 
   * Enabled installation of resized background images (different image ratios).
