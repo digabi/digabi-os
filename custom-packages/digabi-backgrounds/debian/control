@@ -9,10 +9,10 @@ Architecture: all
 Copyright: debian/copyright
 Changelog: debian/changelog
 Files: proprietary/background.svg /usr/share/digabi
- proprietary/background_1600x1200.svg /usr/share/digabi
- proprietary/background_1920x1080.svg /usr/share/digabi
- proprietary/background_1920x1200.svg /usr/share/digabi
- proprietary/digabi-background.xml /usr/share/digabi
  proprietary/splash.svg /usr/share/digabi
  proprietary/digabi.svg /usr/share/digabi
+# proprietary/background_1600x1200.svg /usr/share/digabi
+# proprietary/background_1920x1080.svg /usr/share/digabi
+# proprietary/background_1920x1200.svg /usr/share/digabi
+# proprietary/digabi-background.xml /usr/share/digabi
 Description: Digabi Background files.
