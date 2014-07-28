@@ -70,6 +70,35 @@ else
     fi
 fi
 
+VERSION_META="config/includes.chroot/var/lib/digabi/version"
+VERSION_DIR="$(dirname ${VERSION_META})"
+
+if [ ! -d "${VERSION_DIR}" ]
+then
+    mkdir -p "${VERSION_DIR}"
+fi
+
+
+GIT_SHORT_ID="(git rev-parse --short HEAD)"
+if GIT_TAG="$(git describe --tags --exact-match ${GIT_CURRENT_COMMIT})"
+then
+    CLEAN_GIT_TAG="_$(echo "$GIT_TAG" | sed -e 's,/,_,g' -e 's,-rc,~rc,')"
+else
+    CLEAN_GIT_TAG=""
+fi
+DIGABI_VERSION_FULL="${DIGABI_VERSION}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${GIT_SHORT_ID}${CLEAN_GIT_TAG}"
+
+cat >> ${VERSION_META} <<EOF
+DIGABI_VERSION="${DIGABI_VERSION}"
+DIGABI_DIST_NAME="${DIGABI_DIST_NAME}"
+DIGABI_ARCH="${LB_ARCHITECTURE}"
+DIGABI_TARGET="${_DIGABI_TARGET}"
+DIGABI_NOW="${DIGABI_NOW}"
+DIGABI_IMAGE="${LB_BINARY_IMAGES}"
+DIGABI_GIT_SHORT_ID="${GIT_SHORT_ID}"
+DIGABI_VERSION_FULL="${DIGABI_VERSION_FULL}"
+EOF
+
 BUILD_FILENAME="${LB_IMAGE_NAME}-${LB_ARCHITECTURE}"
 case "${LB_BINARY_IMAGES}" in
     iso)
