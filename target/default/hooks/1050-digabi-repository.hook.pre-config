@@ -33,3 +33,4 @@ cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.binary"
 
 echo "I: Copying Digabi repository config..."
 cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.chroot"
+cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.binary"
