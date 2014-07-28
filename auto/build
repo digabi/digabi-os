@@ -43,32 +43,7 @@ do
     fi
 done
 
-# get git branch or tag so we can set the basename appropriately, i.e.:
-# * if we build from a tag:    ${DIGABI_DIST_NAME}-$ARCH-$TAG.iso
-# * if we build from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$DATE.iso
-# * if Jenkins builds from a branch: ${DIGABI_DIST_NAME}-$ARCH-$BRANCH-$VERSION-$TIME-$COMMIT.iso
-# * else: ${DIGABI_DIST_NAME}-$ARCH-$VERSION-$TIME-$COMMIT
 _DIGABI_TARGET="$(echo ${DIGABI_BUILD_TARGET} |sed 's/\ /\+/g')"
-
-if GIT_REF="$(git symbolic-ref HEAD)"; then
-    GIT_BRANCH="${GIT_REF#refs/heads/}"
-    CLEAN_GIT_BRANCH=$(echo "$GIT_BRANCH" | sed 's,/,_,g')
-    if [ -n "${JENKINS_URL}" ]; then
-        GIT_SHORT_ID="$(git rev-parse --short HEAD)"
-        BUILD_BASENAME="${DIGABI_DIST_NAME}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${CLEAN_GIT_BRANCH}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
-    else
-        BUILD_BASENAME="${DIGABI_DIST_NAME}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${CLEAN_GIT_BRANCH}-${DIGABI_VERSION}-${DIGABI_TODAY}"
-    fi
-else
-    GIT_CURRENT_COMMIT="$(git rev-parse HEAD)"
-    if GIT_TAG="$(git describe --tags --exact-match ${GIT_CURRENT_COMMIT})"; then
-        CLEAN_GIT_TAG=$(echo "$GIT_TAG" | sed -e 's,/,_,g' -e 's,-rc,~rc,')
-        BUILD_BASENAME="${DIGABI_DIST_NAME}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${CLEAN_GIT_TAG}"
-    else
-        GIT_SHORT_ID="$(git rev-parse --short HEAD)"
-        BUILD_BASENAME="${DIGABI_DIST_NAME}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${DIGABI_VERSION}-${DIGABI_NOW}-${GIT_SHORT_ID}"
-    fi
-fi
 
 VERSION_META="config/includes.chroot/var/lib/digabi/version"
 VERSION_DIR="$(dirname ${VERSION_META})"
@@ -78,7 +53,6 @@ then
     mkdir -p "${VERSION_DIR}"
 fi
 
-
 GIT_SHORT_ID="$(git rev-parse --short HEAD)"
 if GIT_TAG="$(git describe --tags --exact-match ${GIT_CURRENT_COMMIT})"
 then
@@ -87,6 +61,7 @@ else
     CLEAN_GIT_TAG=""
 fi
 DIGABI_VERSION_FULL="${DIGABI_VERSION}-${_DIGABI_TARGET}-${LB_ARCHITECTURE}-${GIT_SHORT_ID}${CLEAN_GIT_TAG}"
+BUILD_BASENAME="${DIGABI_DIST_NAME}-${DIGABI_VERSION_FULL}"
 
 cat >> ${VERSION_META} <<EOF
 DIGABI_VERSION="${DIGABI_VERSION}"
