@@ -107,7 +107,7 @@ if [ -z "${DEBIAN_MIRROR}" ] ; then
     DEBIAN_MIRROR="${DEFAULT_DEBIAN_MIRROR}"
 fi
 
-BOOTAPPEND_LIVE="boot=live config security=apparmor"
+BOOTAPPEND_LIVE="boot=live config security=apparmor ${DIGABI_APPEND}"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
 ISO_VOLUME="${DIGABI_DIST_NAME_SHORT}-${DIGABI_FULL_VERSION}"
 
