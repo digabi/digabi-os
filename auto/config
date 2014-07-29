@@ -49,6 +49,18 @@ do
     fi
 done
 
+echo "I: Combine config/digabi configurations..."
+# Remove current config/digabi
+rm -f ${CONFIG_DIR}/digabi
+for target in ${DIGABI_BUILD_TARGET}
+do
+    SOURCE_FILE="./target/${target}/digabi"
+    if [ -f "${SOURCE_FILE}" ]
+    then
+        cat "${SOURCE_FILE}" >>${CONFIG_DIR}/digabi
+    fi
+done
+
 set -a
 . config/digabi
 if [ -e config/digabi.local ] ; then
