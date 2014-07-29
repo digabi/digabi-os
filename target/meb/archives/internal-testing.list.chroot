@@ -2,4 +2,4 @@
 # Custom Digabi repository that currently includes non-public apps etc.
 #
 
-deb http://renki.local/debian jessie main contrib non-free
+deb http://ci.local/debian jessie main contrib non-free
