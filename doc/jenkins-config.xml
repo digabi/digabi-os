@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<matrix-project plugin="matrix-project@1.2">
+  <actions/>
+  <description>Build all Digabi OS variants&#xd;
+&#xd;
+First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if successful, build other variants.</description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>-1</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>ROOT_PASSWORD</name>
+          <description>Root password for this image.</description>
+          <defaultValue>oh-hello-i-need-root</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>DIGABI_DEBUG</name>
+          <description>Is this a debug build? If yes, run 0001-digabi-debug.chroot.hook.</description>
+          <defaultValue>false</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>DEBIAN_MIRROR</name>
+          <description>Which Debian mirror we want to use for Vagrant provisioning + building the image? Default is none = use the one specified in jenkins-build.sh.</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>DIGABI_BUILD_CPUS</name>
+          <description>How many CPUs should we use for the Vagrantbox?</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>4</string>
+              <string>8</string>
+              <string>1</string>
+              <string>2</string>
+              <string>16</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>DIGABI_BUILD_MEM</name>
+          <description>How much memory should we use for the Vagrantbox?</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>8192</string>
+              <string>4096</string>
+              <string>2048</string>
+              <string>1024</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.plugins.matrix__configuration__parameter.MatrixCombinationsParameterDefinition plugin="matrix-combinations-parameter@1.0.7">
+          <name>MATRIX_COMBINATIONS</name>
+          <description>Which combinations you would like to build?</description>
+        </hudson.plugins.matrix__configuration__parameter.MatrixCombinationsParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>COMMIT</name>
+          <description>Git commit we want to build. By default builds HEAD. Support for this added in 83df634.</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <hudson.plugins.promoted__builds.JobPropertyImpl plugin="promoted-builds@2.17">
+      <activeProcessNames>
+        <string>Working build (client, server)</string>
+      </activeProcessNames>
+    </hudson.plugins.promoted__builds.JobPropertyImpl>
+    <hudson.plugins.throttleconcurrents.ThrottleJobProperty plugin="throttle-concurrents@1.8.3">
+      <maxConcurrentPerNode>4</maxConcurrentPerNode>
+      <maxConcurrentTotal>0</maxConcurrentTotal>
+      <throttleEnabled>true</throttleEnabled>
+      <throttleOption>project</throttleOption>
+      <matrixOptions>
+        <throttleMatrixBuilds>true</throttleMatrixBuilds>
+        <throttleMatrixConfigurations>true</throttleMatrixConfigurations>
+      </matrixOptions>
+    </hudson.plugins.throttleconcurrents.ThrottleJobProperty>
+    <hudson.plugins.disk__usage.DiskUsageProperty plugin="disk-usage@0.23"/>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/digabi/digabi-os.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <browser class="hudson.plugins.git.browser.FisheyeGitRepositoryBrowser">
+      <url></url>
+    </browser>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <quietPeriod>30</quietPeriod>
+  <assignedNode>dos</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>true</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H 3 * * *</spec>
+    </hudson.triggers.TimerTrigger>
+    <hudson.triggers.SCMTrigger>
+      <spec>H/5 * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>true</concurrentBuild>
+  <axes>
+    <hudson.matrix.TextAxis>
+      <name>ARCH</name>
+      <values>
+        <string>amd64</string>
+        <string>i386</string>
+      </values>
+    </hudson.matrix.TextAxis>
+    <hudson.matrix.TextAxis>
+      <name>DIGABI_BUILD_TARGET</name>
+      <values>
+        <string>default</string>
+        <string>client meb</string>
+        <string>server meb</string>
+      </values>
+    </hudson.matrix.TextAxis>
+    <hudson.matrix.TextAxis>
+      <name>BINARY_IMAGES</name>
+      <values>
+        <string>hdd</string>
+        <string>iso-hybrid</string>
+      </values>
+    </hudson.matrix.TextAxis>
+  </axes>
+  <combinationFilter>!(BINARY_IMAGES==&quot;hdd&quot;)</combinationFilter>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>cleanup() {
+    make purge
+}
+trap cleanup EXIT
+
+sed -i &apos;s/config\.vm\.box\ =\ &quot;debian-jessie64&quot;/config\.vm\.box\ =\ &quot;dos-builder&quot;/&apos; vagrant/Vagrantfile
+custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>dist/*</artifacts>
+      <latestOnly>false</latestOnly>
+      <allowEmptyArchive>false</allowEmptyArchive>
+    </hudson.tasks.ArtifactArchiver>
+    <hudson.tasks.Fingerprinter>
+      <targets>dist/*</targets>
+      <recordBuildArtifacts>false</recordBuildArtifacts>
+    </hudson.tasks.Fingerprinter>
+    <com.flowdock.jenkins.FlowdockNotifier plugin="jenkins-flowdock-plugin@1.1.3">
+      <flowToken>FIXME</flowToken>
+      <notificationTags>jenkins, dos</notificationTags>
+      <chatNotification>false</chatNotification>
+      <notifyMap>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>NOT_BUILT</com.flowdock.jenkins.BuildResult>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>FAILURE</com.flowdock.jenkins.BuildResult>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>UNSTABLE</com.flowdock.jenkins.BuildResult>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>SUCCESS</com.flowdock.jenkins.BuildResult>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>ABORTED</com.flowdock.jenkins.BuildResult>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>FIXED</com.flowdock.jenkins.BuildResult>
+          <boolean>true</boolean>
+        </entry>
+      </notifyMap>
+      <notifySuccess>true</notifySuccess>
+      <notifyFailure>false</notifyFailure>
+      <notifyFixed>true</notifyFixed>
+      <notifyUnstable>false</notifyUnstable>
+      <notifyAborted>false</notifyAborted>
+      <notifyNotBuilt>false</notifyNotBuilt>
+    </com.flowdock.jenkins.FlowdockNotifier>
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.24">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs>
+            <hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
+              <filter>(DIGABI_BUILD_TARGET==&quot;client meb&quot; &amp;&amp; ARCH==&quot;amd64&quot; &amp;&amp; BINARY_IMAGES=&quot;iso-hybrid&quot;)</filter>
+            </hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
+            <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+              <properties>ISO_URL=&quot;http://ci.local/job/digabi-os/ARCH=amd64,BINARY_IMAGES=iso-hybrid,DIGABI_BUILD_TARGET=client+meb/&quot;</properties>
+            </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+          </configs>
+          <projects>Remaster koe</projects>
+          <condition>SUCCESS</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs>
+            <hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
+              <filter>(DIGABI_BUILD_TARGET==&quot;server+meb&quot; &amp;&amp; ARCH==&quot;amd64&quot; &amp;&amp; BINARY_IMAGES=&quot;iso-hybrid&quot;)</filter>
+            </hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
+          </configs>
+          <projects>Remaster ktp</projects>
+          <condition>ALWAYS</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+      </configs>
+    </hudson.plugins.parameterizedtrigger.BuildTrigger>
+  </publishers>
+  <buildWrappers>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.5.11"/>
+  </buildWrappers>
+  <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
+    <runSequentially>true</runSequentially>
+    <touchStoneCombinationFilter>(ARCH==&quot;amd64&quot; &amp;&amp; BINARY_IMAGES==&quot;iso-hybrid&quot;) &amp;&amp; (DIGABI_BUILD_TARGET==&quot;client meb&quot; || DIGABI_BUILD_TARGET==&quot;server meb&quot;)</touchStoneCombinationFilter>
+    <touchStoneResultCondition>
+      <name>SUCCESS</name>
+      <ordinal>0</ordinal>
+      <color>BLUE</color>
+      <completeBuild>true</completeBuild>
+    </touchStoneResultCondition>
+  </executionStrategy>
+</matrix-project>
