@@ -95,13 +95,12 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-    <browser class="hudson.plugins.git.browser.FisheyeGitRepositoryBrowser">
-      <url></url>
+    <browser class="hudson.plugins.git.browser.GithubWeb">
+      <url>https://github.com/digabi/digabi-os</url>
     </browser>
     <submoduleCfg class="list"/>
     <extensions/>
   </scm>
-  <quietPeriod>30</quietPeriod>
   <assignedNode>dos</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
@@ -208,7 +207,7 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
               <filter>(DIGABI_BUILD_TARGET==&quot;client meb&quot; &amp;&amp; ARCH==&quot;amd64&quot; &amp;&amp; BINARY_IMAGES=&quot;iso-hybrid&quot;)</filter>
             </hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>ISO_URL=&quot;http://ci.local/job/digabi-os/ARCH=amd64,BINARY_IMAGES=iso-hybrid,DIGABI_BUILD_TARGET=client+meb/&quot;</properties>
+              <properties>ISO_URL=&quot;http://ci.local/job/digabi-os/ARCH=amd64,BINARY_IMAGES=iso-hybrid,DIGABI_BUILD_TARGET=client%20meb/&quot;</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>Remaster koe</projects>
@@ -218,7 +217,7 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
-              <filter>(DIGABI_BUILD_TARGET==&quot;server+meb&quot; &amp;&amp; ARCH==&quot;amd64&quot; &amp;&amp; BINARY_IMAGES=&quot;iso-hybrid&quot;)</filter>
+              <filter>(DIGABI_BUILD_TARGET==&quot;server meb&quot; &amp;&amp; ARCH==&quot;amd64&quot; &amp;&amp; BINARY_IMAGES=&quot;iso-hybrid&quot;)</filter>
             </hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
           </configs>
           <projects>Remaster ktp</projects>
