@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -ex
+
+BACKGROUND_FILE="/usr/share/digabi/proprietary/background.svg"
+OLD_COLOR="#254572"
+NEW_COLOR="#722b25"
+
+
+if [ -w "${BACKGROUND_FILE}" ]
+then
+    echo "I: Replacing background color ${OLD_COLOR} with ${NEW_COLOR}."
+    sed -i "s,${OLD_COLOR},${NEW_COLOR},g" "${BACKGROUND_FILE}"
+else
+    echo "W: Background file not found, not replacing bgcolor."
+    exit 0
+fi
