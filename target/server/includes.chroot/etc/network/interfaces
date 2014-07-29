@@ -1,0 +1,14 @@
+#
+# Network configuration
+#
+
+auto lo
+iface lo inet loopback
+
+allow-hotplug eth0
+iface eth0 inet static
+    address 10.10.0.1
+    netmask 255.255.0.0
+
+allow-hotplug eth1
+iface eth1 inet dhcp
