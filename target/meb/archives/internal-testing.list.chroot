@@ -1,0 +1,5 @@
+#
+# Custom Digabi repository that currently includes non-public apps etc.
+#
+
+deb http://ci.local/debian jessie main contrib non-free
