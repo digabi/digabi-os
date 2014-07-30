@@ -35,6 +35,7 @@ build system:
  - `DIGABI_DEBUG` (=true) enables `0001-digabi-debug.hook.chroot`
  - `COMMIT` builds specific commit
  - `DIGABI_BUILD_TARGET` which configurations we'd like to use for building? (choices: `default`, `server`, `client`)
+ - `VAGRANT_PROVIDER` which provider to use for building? (choices: `virtualbox`, optionally: `vmware_workstation`)
 
 In `Makefile:config` these will be saved to the build system, to file `config/digabi.local`, which is read by `auto/config` & `auto/build`. This file overrides environment variables defined in the build system. Ie. if you build Digabi OS manually, you should put your variables to this file.
 
