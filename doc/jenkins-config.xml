@@ -64,7 +64,7 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.ChoiceParameterDefinition>
-          <name>VAGRANT_PROVIDER</name>
+          <name>VAGRANT_DEFAULT_PROVIDER</name>
           <description>What VM provider should we use with Vagrant?</description>
           <choices class="java.util.Arrays$ArrayList">
             <a class="string-array">
@@ -138,6 +138,8 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
       <name>DIGABI_BUILD_TARGET</name>
       <values>
         <string>default</string>
+        <string>client</string>
+        <string>server</string>
         <string>client meb</string>
         <string>server meb</string>
       </values>
@@ -233,7 +235,7 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
             </hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
           </configs>
           <projects>Remaster ktp</projects>
-          <condition>ALWAYS</condition>
+          <condition>SUCCESS</condition>
           <triggerWithNoParameters>false</triggerWithNoParameters>
         </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
       </configs>
