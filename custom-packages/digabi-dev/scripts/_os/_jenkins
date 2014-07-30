@@ -2,8 +2,14 @@
 # Common parts for running Jenkins builds
 #
 
-REPOSITORY_HOST="renki.local"
-PROXY_HOST="ci.local"
+if [ -z "${REPOSITORY_HOST}" ]
+then
+    REPOSITORY_HOST="renki.local"
+fi
+if [ -z "${PROXY_HOST}" ]
+then
+    PROXY_HOST="ci.local"
+fi
 
 cleanup() {
     if [ "${JENKINS_REUSE_VAGRANT}" = "true" ]
