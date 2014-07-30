@@ -9,7 +9,7 @@ trap cleanup EXIT
 if [ -n "${VAGRANT_BASEBOX}" ]
 then
     sed -i "s/config\.vm\.box\ =\ \"debian-jessie64\"/config\.vm\.box\ =\ \"${VAGRANT_BASEBOX}\"/" vagrant/Vagrantfile
-elif [ "${VAGRANT_PROVIDER}" = "vmware_workstation" ]
+elif [ "${VAGRANT_DEFAULT_PROVIDER}" = "vmware_workstation" ]
 then
     sed -i 's/config\.vm\.box\ =\ "debian-jessie64"/config\.vm\.box\ =\ "vmware-debian-jessie64"/' vagrant/Vagrantfile
 fi
