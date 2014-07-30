@@ -111,6 +111,7 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
     <submoduleCfg class="list"/>
     <extensions/>
   </scm>
+  <quietPeriod>30</quietPeriod>
   <assignedNode>dos</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
