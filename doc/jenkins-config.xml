@@ -68,8 +68,8 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
           <description>What VM provider should we use with Vagrant?</description>
           <choices class="java.util.Arrays$ArrayList">
             <a class="string-array">
-              <string>virtualbox</string>
               <string>vmware_workstation</string>
+              <string>virtualbox</string>
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
@@ -81,7 +81,7 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
       </activeProcessNames>
     </hudson.plugins.promoted__builds.JobPropertyImpl>
     <hudson.plugins.throttleconcurrents.ThrottleJobProperty plugin="throttle-concurrents@1.8.3">
-      <maxConcurrentPerNode>4</maxConcurrentPerNode>
+      <maxConcurrentPerNode>6</maxConcurrentPerNode>
       <maxConcurrentTotal>0</maxConcurrentTotal>
       <throttleEnabled>true</throttleEnabled>
       <throttleOption>project</throttleOption>
@@ -153,20 +153,14 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
   <combinationFilter>!(BINARY_IMAGES==&quot;hdd&quot;)</combinationFilter>
   <builders>
     <hudson.tasks.Shell>
-      <command>cleanup() {
-    make purge
-}
-trap cleanup EXIT
-
-export REPOSITORY_HOST=&quot;ci.ylioppilastutkinto-offline.fi&quot;
+      <command>export REPOSITORY_HOST=&quot;ci.ylioppilastutkinto-offline.fi&quot;
 export PROXY_HOST=&quot;cimonitor.ylioppilastutkinto-offline.fi&quot;
 
-if [ &quot;${VAGRANT_PROVIDER}&quot; = &quot;vmware_workstation&quot; ]
+if [ &quot;${VAGRANT_PROVIDER}&quot; = &quot;virtualbox&quot; ]
 then
-    sed -i &apos;s/config\.vm\.box\ =\ &quot;debian-jessie64&quot;/config\.vm\.box\ =\ &quot;vmware-debian-jessie64&quot;/&apos; vagrant/Vagrantfile
-else
-    sed -i &apos;s/config\.vm\.box\ =\ &quot;debian-jessie64&quot;/config\.vm\.box\ =\ &quot;dos-builder&quot;/&apos; vagrant/Vagrantfile
+	VAGRANT_BASEBOX=&quot;dos-builder&quot;
 fi
+
 custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
     </hudson.tasks.Shell>
   </builders>
@@ -249,7 +243,7 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
     <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.5.11"/>
   </buildWrappers>
   <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
-    <runSequentially>true</runSequentially>
+    <runSequentially>false</runSequentially>
     <touchStoneCombinationFilter>(ARCH==&quot;amd64&quot; &amp;&amp; BINARY_IMAGES==&quot;iso-hybrid&quot;) &amp;&amp; (DIGABI_BUILD_TARGET==&quot;client meb&quot; || DIGABI_BUILD_TARGET==&quot;server meb&quot;)</touchStoneCombinationFilter>
     <touchStoneResultCondition>
       <name>SUCCESS</name>
