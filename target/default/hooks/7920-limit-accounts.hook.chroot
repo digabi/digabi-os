@@ -3,6 +3,16 @@
 set -e
 
 WHITELISTED="root nobody"
+
+WHITELIST_D="/etc/digabi/whitelisted-users.d"
+if [ -d "${WHITELIST_D}" ]
+then
+    for f in `ls ${WHITELIST_D}/*.conf`
+    do
+        WHITELISTED="${WHITELISTED} $(cat ${f} |grep -v ^# |xargs)"
+    done 
+fi
+
 ACCOUNTS="$(cat /etc/passwd |cut -d: -f1)"
 
 echo "I: Remove unnecessary shells..."
