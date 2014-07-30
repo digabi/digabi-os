@@ -47,5 +47,10 @@ else
       vb.customize ['modifyvm', :id, '--ioapic', 'on']
       vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
     end
+
+    config.vm.provider :vmware_workstation do |vmw|
+      vmw.vmx['memsize'] = mem_size
+      vmw.vmx['numvcpus'] = cpus unless cpus.nil?
+    end
   end
 end
