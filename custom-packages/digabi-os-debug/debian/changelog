@@ -1,3 +1,9 @@
+digabi-os-debug (1.7) unstable; urgency=medium
+
+  * Added terminator to Depends: (we want multiple terminals inside one window).
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 30 Jul 2014 10:05:09 +0300
+
 digabi-os-debug (1.6) unstable; urgency=medium
 
   * Added allow rule for digabi-firewall: 22/tcp in.
