@@ -63,6 +63,16 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
           <description>Git commit we want to build. By default builds HEAD. Support for this added in 83df634.</description>
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>VAGRANT_PROVIDER</name>
+          <description>What VM provider should we use with Vagrant?</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>virtualbox</string>
+              <string>vmware_workstation</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
     <hudson.plugins.promoted__builds.JobPropertyImpl plugin="promoted-builds@2.17">
@@ -148,7 +158,15 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
 }
 trap cleanup EXIT
 
-sed -i &apos;s/config\.vm\.box\ =\ &quot;debian-jessie64&quot;/config\.vm\.box\ =\ &quot;dos-builder&quot;/&apos; vagrant/Vagrantfile
+export REPOSITORY_HOST=&quot;ci.ylioppilastutkinto-offline.fi&quot;
+export PROXY_HOST=&quot;cimonitor.ylioppilastutkinto-offline.fi&quot;
+
+if [ &quot;${VAGRANT_PROVIDER}&quot; = &quot;vmware_workstation&quot; ]
+then
+    sed -i &apos;s/config\.vm\.box\ =\ &quot;debian-jessie64&quot;/config\.vm\.box\ =\ &quot;vmware-debian-jessie64&quot;/&apos; vagrant/Vagrantfile
+else
+    sed -i &apos;s/config\.vm\.box\ =\ &quot;debian-jessie64&quot;/config\.vm\.box\ =\ &quot;dos-builder&quot;/&apos; vagrant/Vagrantfile
+fi
 custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
     </hudson.tasks.Shell>
   </builders>
