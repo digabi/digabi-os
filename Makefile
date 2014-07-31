@@ -32,7 +32,8 @@ DIGABI_DEBUG ?= false
 #
 
 ROOT_CMD = sudo
-BUILD_DIR = digabi-os
+BUILD_DIR = digabi-os.$(BUILD_NUMBER)
+BUILD_NUMBER ?= unknown
 BUILDER = vagrant
 GIT_REPOSITORY = /digabi-os.git
 ARTIFACTS_DIR = dist
