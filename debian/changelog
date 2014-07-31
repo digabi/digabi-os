@@ -1,8 +1,16 @@
-digabi-os (14.07a6) UNRELEASED; urgency=medium
+digabi-os (14.08a1) UNRELEASED; urgency=medium
+
+  * TODO.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 31 Jul 2014 12:19:47 +0300
+
+digabi-os (14.07a6) stable; urgency=medium
 
   * Added placeholder packages for digabi-koe, digabi-koetilanpalvelin.
+  * Using new firewall (digabi-firewall) for easy customization.
+  * Server & client images are based on same config tree.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 28 Jul 2014 12:16:31 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 31 Jul 2014 12:19:44 +0300
 
 digabi-os (14.07a5) stable; urgency=medium
 
