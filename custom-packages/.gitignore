@@ -2,3 +2,4 @@
 *.changes
 *.dsc
 *.xz
+*.build
