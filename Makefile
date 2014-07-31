@@ -89,7 +89,7 @@ $(STAGE)/config:	clean $(STAGE)/environment
 	echo 'DEBIAN_MIRROR="$(DEBIAN_MIRROR)"' >>$(TMP)
 	echo 'DIGABI_DEBUG="$(DIGABI_DEBUG)"' >>$(TMP)
 	echo 'BUILD_TAG="$(BUILD_TAG)"' >>$(TMP)
-	echo 'BUILD_NUMBER=$(BUILD_NUMBER)"' >>$(TMP)
+	echo 'BUILD_NUMBER="$(BUILD_NUMBER)"' >>$(TMP)
 	echo 'DIGABI_BUILD_TARGET="$(DIGABI_BUILD_TARGET)"' >>$(TMP)
 
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
