@@ -65,15 +65,18 @@ $(STAGE)/environment:
 clean: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
-	
+	mkdir -p $(STAGE)
+	rm -f $(STAGE)/build
+	touch $(STAGE)/clean
 
 # Remove builder (destroys virtual machine)
 purge:
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) destroy
 	rm -rf $(STAGE)
 
 # Configure build environment
-config:	clean $(STAGE)/environment
+$(STAGE)/config:	clean $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX.tmp))
 
@@ -95,21 +98,36 @@ config:	clean $(STAGE)/environment
 	rm $(TMP)
 
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && lb config'
+	mkdir -p $(STAGE)
+	touch $(STAGE)/config
+	rm -f $(STAGE)/build $(STAGE)/clean
 
-halt:
+config: $(STAGE)/config
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
+
+$(STAGE)/halt:
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) halt
+	mkdir -p $(STAGE)
+	touch $(STAGE)/halt
+
+halt: $(STAGE)/halt
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 # Provision buildbox
 provision: $(STAGE)/environment halt
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 # Build new image
-build: config
+$(STAGE)/build: $(STAGE)/config
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
 	rm -f $(STAGE)/collect
+
+build: $(STAGE)/build
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 # Collect build artifacts (.ISO) to dist/
 $(STAGE)/collect: build
@@ -121,7 +139,6 @@ $(STAGE)/collect: build
 # Build image & collect results
 dist:	$(STAGE)/collect
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	echo "TODO"
 
 # Build custom packages defined in ./custom-packages/*
 $(STAGE)/custom-packages: $(STAGE)/environment
@@ -144,9 +161,12 @@ publish-packages: $(STAGE)/custom-packages
 
 # Export builder as VirtualBox Machine Image
 buildbox: clean $(STAGE)/environment
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	# TODO: Modify VM: remove VT-X, PAE et. all
 
 debug: $(STAGE)/environment
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run
 
 .PHONY: custom-packages
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
