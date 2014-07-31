@@ -7,7 +7,7 @@
 /source/
 
 /config
-/.stage/
+.stage/
 
 .lock
 
