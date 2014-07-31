@@ -77,7 +77,8 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
     </hudson.model.ParametersDefinitionProperty>
     <hudson.plugins.promoted__builds.JobPropertyImpl plugin="promoted-builds@2.17">
       <activeProcessNames>
-        <string>Working build (client, server)</string>
+        <string>Full system working (client, server, boot test), manually tested</string>
+        <string>Client+server build successful</string>
       </activeProcessNames>
     </hudson.plugins.promoted__builds.JobPropertyImpl>
     <hudson.plugins.throttleconcurrents.ThrottleJobProperty plugin="throttle-concurrents@1.8.3">
@@ -126,7 +127,7 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
       <ignorePostCommitHooks>false</ignorePostCommitHooks>
     </hudson.triggers.SCMTrigger>
   </triggers>
-  <concurrentBuild>true</concurrentBuild>
+  <concurrentBuild>false</concurrentBuild>
   <axes>
     <hudson.matrix.TextAxis>
       <name>ARCH</name>
