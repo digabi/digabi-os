@@ -16,17 +16,23 @@ BOX_CHECKSUM = '0ca8a38a5f48021c9d0a644b0f03c364b9cb4a87aa1c8727d068c1492449e0f9
 
 VAGRANT_DEFAULT_PROVIDER ?= virtualbox
 
-_init-vm: up
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	#vagrant halt
-	# TODO: Configure VM (memory, cpu, ...)
-	#vagrant up
+STAGE ?= .stage
 
-provision: _init-vm
+$(STAGE)/init-vm: up
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	vagrant provision
 
-run: _init-vm
+	vagrant up --provider=$(VAGRANT_DEFAULT_PROVIDER) --provision
+
+	mkdir -p $(STAGE)
+	touch $(STAGE)/init-vm
+
+$(STAGE)/provision: $(STAGE)/init-vm
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
+	vagrant up --provision
+	mkdir -p $(STAGE)
+	touch $(STAGE)/provision
+
+run: $(STAGE)/init-vm up
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 ifndef COMMAND
 	vagrant ssh
@@ -34,9 +40,9 @@ else
 	vagrant ssh -c '$(COMMAND)'
 endif
 
-up:
+up: $(STAGE)/init-vm
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	vagrant up --provider=$(VAGRANT_DEFAULT_PROVIDER)
+	vagrant up --no-provision
 
 halt:
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
@@ -45,6 +51,7 @@ halt:
 destroy:
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	vagrant destroy -f
+	rm -rf $(STAGE)
 
 create-basebox: halt
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
