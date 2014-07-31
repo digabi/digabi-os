@@ -109,6 +109,7 @@ build: config
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
+	rm -f $(STAGE)/collect
 
 # Collect build artifacts (.ISO) to dist/
 $(STAGE)/collect: build
