@@ -107,12 +107,15 @@ provision: $(STAGE)/environment halt
 build: config
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
+	mkdir -p $(STAGE)
+	touch $(STAGE)/build
 
 # Collect build artifacts (.ISO) to dist/
 collect: build
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/digabi-os-* $(ARTIFACTS_DIR)/
+	touch $(STAGE)/collect
 
 # Build image & collect results
 dist:	collect
@@ -120,15 +123,17 @@ dist:	collect
 	echo "TODO"
 
 # Build custom packages defined in ./custom-packages/*
-custom-packages: $(STAGE)/environment
+$(STAGE)/custom-packages: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; if [ -d "$(BUILD_DIR)" ] ; then cd $(BUILD_DIR) ; git pull ; else git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; fi'
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; rsync -avh $(BUILD_DIR)/custom-packages/*.deb /$(BUILDER)/$(ARTIFACTS_DIR)'
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/$(ARTIFACTS_DIR)/*.deb $(ARTIFACTS_DIR)/
+	mkdir -p $(STAGE)
+	touch $(STAGE)/custom-packages
 
-publish-packages: custom-packages
+publish-packages: $(STAGE)/custom-packages
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	git submodule init
 	git submodule update
