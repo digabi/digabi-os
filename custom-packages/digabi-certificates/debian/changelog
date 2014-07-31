@@ -1,3 +1,9 @@
+digabi-certificates (0.2) unstable; urgency=medium
+
+  * Run update-ca-certificates in postinst.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 31 Jul 2014 09:30:21 +0300
+
 digabi-certificates (0.1) unstable; urgency=low
 
   * Initial Release.
