@@ -46,23 +46,23 @@ VM_ENVIRONMENT ?= set -ex
 BUILDER_DO  = $(MAKE) -C $(BUILDER)
 REPOSITORY_DO = $(MAKE) -C $(REPOSITORY)
 
+STAGE = .stage
+
 #
 # Targets
 #
 .DEFAULT_GOAL = dist
 
-# Default target
-all:	dist
-
-# Initialize new builder
-environment:
+$(STAGE)/environment:
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) up
 	$(BUILDER_DO) provision
+	mkdir -p $(STAGE)
+	touch $(STAGE)/environment
 
 
 # Clean build environment
-clean: environment
+clean: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
 	
@@ -70,9 +70,10 @@ clean: environment
 # Remove builder (destroys virtual machine)
 purge:
 	$(BUILDER_DO) destroy
+	rm -rf $(STAGE)
 
 # Configure build environment
-config:	clean environment
+config:	clean $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX.tmp))
 
@@ -100,7 +101,7 @@ halt:
 	$(BUILDER_DO) halt
 
 # Provision buildbox
-provision: environment halt
+provision: $(STAGE)/environment halt
 
 # Build new image
 build: config
@@ -119,7 +120,7 @@ dist:	collect
 	echo "TODO"
 
 # Build custom packages defined in ./custom-packages/*
-custom-packages: environment
+custom-packages: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; if [ -d "$(BUILD_DIR)" ] ; then cd $(BUILD_DIR) ; git pull ; else git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; fi'
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update && BUILD_TAG="$(BUILD_TAG)" digabi os build-custom-packages'
@@ -136,10 +137,10 @@ publish-packages: custom-packages
 	$(REPOSITORY_DO) sync-to-server
 
 # Export builder as VirtualBox Machine Image
-buildbox: clean environment
+buildbox: clean $(STAGE)/environment
 	# TODO: Modify VM: remove VT-X, PAE et. all
 
-debug: environment
+debug: $(STAGE)/environment
 	$(BUILDER_DO) run
 
 .PHONY: custom-packages
