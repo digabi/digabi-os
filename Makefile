@@ -111,14 +111,14 @@ build: config
 	touch $(STAGE)/build
 
 # Collect build artifacts (.ISO) to dist/
-collect: build
+$(STAGE)/collect: build
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/digabi-os-* $(ARTIFACTS_DIR)/
 	touch $(STAGE)/collect
 
 # Build image & collect results
-dist:	collect
+dist:	$(STAGE)/collect
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	echo "TODO"
 
