@@ -38,11 +38,15 @@ mdns_resolve() {
     exit 42
 }
 
+dns_resolve() {
+    host "$1" | awk '/has address/ {print $4; exit}'
+}
+
 rm -rf dist
 
 
-REPOSITORY_IP="$(mdns_resolve ${REPOSITORY_HOST})"
-PROXY_IP="$(mdns_resolve ${PROXY_HOST})"
+REPOSITORY_IP="$(dns_resolve ${REPOSITORY_HOST})"
+PROXY_IP="$(dns_resolve ${PROXY_HOST})"
 
 PROXY="http://${PROXY_IP}:3128/"
 
