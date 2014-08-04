@@ -50,10 +50,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :vmware_workstation do |vmw|
     vmw.vmx['memsize'] = mem_size
     vmw.vmx['numvcpus'] = cpus unless cpus.nil?
-    
-    if network_type:
-      vmw.vmx['ethernet0.connectionType'] = network_type
-      vmw.vmx['ethernet0.linkStatePropagation.enable'] = 'TRUE'
-    end
   end
 end
