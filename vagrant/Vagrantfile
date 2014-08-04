@@ -23,6 +23,10 @@ if ENV['DIGABI_NETWORK_TYPE']
   network_type = ENV['DIGABI_NETWORK_TYPE']
 end
 
+if ENV['DIGABI_NETWORK_HOST_DEV']
+  network_host_dev = ENV['DIGABI_NETWORK_HOST_DEV']
+end
+
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "debian-jessie64"
 
@@ -39,6 +43,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' /vagrant/provision/setup-dos-builder"
   config.vm.synced_folder '../.git', '/digabi-os.git'
+
+  if network_type == 'bridged'
+    if network_host_dev
+      config.vm.network "public_network", bridge: network_host_dev
+    else
+      config.vm.network "public_network"    
+    end
+  else
+    config.vm.network "private_network", type: "dhcp"
+  end
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ['modifyvm', :id, '--memory', mem_size]
