@@ -51,6 +51,8 @@ else
     config.vm.provider :vmware_workstation do |vmw|
       vmw.vmx['memsize'] = mem_size
       vmw.vmx['numvcpus'] = cpus unless cpus.nil?
+      vmw.vmx['ethernet0.connectionType'] = 'bridged'
+      vmw.vmx['ethernet0.linkStatePropagation.enable'] = 'FALSE'
     end
   end
 end
