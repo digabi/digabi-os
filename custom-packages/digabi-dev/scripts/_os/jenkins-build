@@ -6,12 +6,4 @@ set -ex
 
 trap cleanup EXIT
 
-if [ -n "${VAGRANT_BASEBOX}" ]
-then
-    sed -i "s/config\.vm\.box\ =\ \"debian-jessie64\"/config\.vm\.box\ =\ \"${VAGRANT_BASEBOX}\"/" vagrant/Vagrantfile
-elif [ "${VAGRANT_DEFAULT_PROVIDER}" = "vmware_workstation" ]
-then
-    sed -i 's/config\.vm\.box\ =\ "debian-jessie64"/config\.vm\.box\ =\ "vmware-debian-jessie64"/' vagrant/Vagrantfile
-fi
-
 make dist DIGABI_BUILD_TARGET="${DIGABI_BUILD_TARGET}" DIGABI_DEBUG="${DIGABI_DEBUG}" COMMIT="${COMMIT}" ROOT_PASSWORD="${ROOT_PASSWORD}" ARCH="${ARCH}" DEBIAN_MIRROR="${DEBIAN_MIRROR}" http_proxy="${PROXY}" BUILD_TAG="${BUILD_TAG}"
