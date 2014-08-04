@@ -20,6 +20,10 @@ else
 end
 cpus = ENV['DIGABI_BUILD_CPUS']
 
+if ENV['DIGABI_NETWORK_TYPE']
+  network_type = ENV['DIGABI_NETWORK_TYPE']
+end
+
 if vagrant_old
   # FIXME, do we even need this?
   raise 'FIXME: Using Vagrant 1.x'
@@ -51,8 +55,11 @@ else
     config.vm.provider :vmware_workstation do |vmw|
       vmw.vmx['memsize'] = mem_size
       vmw.vmx['numvcpus'] = cpus unless cpus.nil?
-      vmw.vmx['ethernet0.connectionType'] = 'bridged'
-      vmw.vmx['ethernet0.linkStatePropagation.enable'] = 'FALSE'
+      
+      if network_type:
+        vmw.vmx['ethernet0.connectionType'] = network_type
+        vmw.vmx['ethernet0.linkStatePropagation.enable'] = 'TRUE'
+      end
     end
   end
 end
