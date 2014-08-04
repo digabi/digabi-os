@@ -7,7 +7,6 @@ VAGRANTFILE_API_VERSION = "2"
 # Add vagrant/lib to Ruby path
 $:.unshift File.expand_path('../lib', __FILE__)
 
-require 'vagrant_version'
 require 'vagrant_verified_download'
 require 'digabi_build_settings'
 
@@ -24,42 +23,37 @@ if ENV['DIGABI_NETWORK_TYPE']
   network_type = ENV['DIGABI_NETWORK_TYPE']
 end
 
-if vagrant_old
-  # FIXME, do we even need this?
-  raise 'FIXME: Using Vagrant 1.x'
-else
-  Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    config.vm.box = "debian-jessie64"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "debian-jessie64"
 
-    # vagrant-debian-jessie64.box
-    #
-    # SHA256: 0ca8a38a5f48021c9d0a644b0f03c364b9cb4a87aa1c8727d068c1492449e0f9
-    # Size: 268M
-    #
-    # Box also available at:
-    #  - https://digabi.fi/dev-downloads/vagrant-debian-jessie64.box
-    #  - http://sourceforge.net/projects/digabi/files/tools/vagrant-debian-jessie64.box/download
-    #
-    config.vm.box_url = "http://cdn.ypcs.fi/pub/vagrant-debian-jessie64.box"
+  # vagrant-debian-jessie64.box
+  #
+  # SHA256: 0ca8a38a5f48021c9d0a644b0f03c364b9cb4a87aa1c8727d068c1492449e0f9
+  # Size: 268M
+  #
+  # Box also available at:
+  #  - https://digabi.fi/dev-downloads/vagrant-debian-jessie64.box
+  #  - http://sourceforge.net/projects/digabi/files/tools/vagrant-debian-jessie64.box/download
+  #
+  config.vm.box_url = "http://cdn.ypcs.fi/pub/vagrant-debian-jessie64.box"
 
-    config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' /vagrant/provision/setup-dos-builder"
-    config.vm.synced_folder '../.git', '/digabi-os.git'
+  config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' /vagrant/provision/setup-dos-builder"
+  config.vm.synced_folder '../.git', '/digabi-os.git'
 
-    config.vm.provider :virtualbox do |vb|
-      vb.customize ['modifyvm', :id, '--memory', mem_size]
-      vb.customize ['modifyvm', :id, '--cpus', cpus] unless cpus.nil?
-      vb.customize ['modifyvm', :id, '--ioapic', 'on']
-      vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
-    end
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ['modifyvm', :id, '--memory', mem_size]
+    vb.customize ['modifyvm', :id, '--cpus', cpus] unless cpus.nil?
+    vb.customize ['modifyvm', :id, '--ioapic', 'on']
+    vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
+  end
 
-    config.vm.provider :vmware_workstation do |vmw|
-      vmw.vmx['memsize'] = mem_size
-      vmw.vmx['numvcpus'] = cpus unless cpus.nil?
-      
-      if network_type:
-        vmw.vmx['ethernet0.connectionType'] = network_type
-        vmw.vmx['ethernet0.linkStatePropagation.enable'] = 'TRUE'
-      end
+  config.vm.provider :vmware_workstation do |vmw|
+    vmw.vmx['memsize'] = mem_size
+    vmw.vmx['numvcpus'] = cpus unless cpus.nil?
+    
+    if network_type:
+      vmw.vmx['ethernet0.connectionType'] = network_type
+      vmw.vmx['ethernet0.linkStatePropagation.enable'] = 'TRUE'
     end
   end
 end
