@@ -13,3 +13,5 @@ isc-dhcp-server
 avahi-daemon
 
 usbmount
+
+ntp
