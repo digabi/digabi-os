@@ -19,3 +19,5 @@ usbutils
 alsa-utils
 console-data
 less
+
+xdg-utils
