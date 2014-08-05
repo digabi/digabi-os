@@ -30,14 +30,15 @@ end
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "debian-jessie64"
 
-  # vagrant-debian-jessie64.box
+  # SHA256s for Vagrantboxes:
   #
-  # SHA256: 0ca8a38a5f48021c9d0a644b0f03c364b9cb4a87aa1c8727d068c1492449e0f9
-  # Size: 268M
+  # vagrant-debian-jessie64.box             0ca8a38a5f48021c9d0a644b0f03c364b9cb4a87aa1c8727d068c1492449e0f9
+  # vmware_workstation-debian-jessie64.box  4e84d792ad7ebe7ecf18bed274d1eee2cfbd2a01ea73e382c27f224e1f7648ca
+  # vmware_fusion-debian-jessie64.box       fcc9219f45973d8d82768ca0b443b627adf9583400af836a307bd103c9480d2c
   #
-  # Box also available at:
-  #  - https://digabi.fi/dev-downloads/vagrant-debian-jessie64.box
-  #  - http://sourceforge.net/projects/digabi/files/tools/vagrant-debian-jessie64.box/download
+  # Boxes also available at:
+  #  - https://digabi.fi/dev-downloads/
+  #  - http://sourceforge.net/projects/digabi/files/tools/
   #
   config.vm.box_url = "http://cdn.ypcs.fi/pub/vagrant-debian-jessie64.box"
 
