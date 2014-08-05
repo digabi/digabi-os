@@ -37,7 +37,7 @@ run: $(STAGE)/init-vm up
 ifndef COMMAND
 	vagrant ssh
 else
-	vagrant ssh -c '$(COMMAND)'
+	vagrant ssh -c '$(COMMAND)' -- -n
 endif
 
 up: $(STAGE)/init-vm
