@@ -1,6 +1,6 @@
 digabi-os (14.08a1) UNRELEASED; urgency=medium
 
-  * TODO.
+  * Added updated feedback client (digabi-feedback).
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 31 Jul 2014 12:19:47 +0300
 
