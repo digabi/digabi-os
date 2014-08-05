@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<matrix-project plugin="matrix-project@1.2">
+<matrix-project plugin="matrix-project@1.3">
   <actions/>
   <description>Build all Digabi OS variants&#xd;
 &#xd;
@@ -73,6 +73,28 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>VAGRANT_LOG</name>
+          <description>Level of Vagrant logging. (default: info)</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>info</string>
+              <string>debug</string>
+              <string>warn</string>
+              <string>error</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>DIGABI_NETWORK_TYPE</name>
+          <description>What kind of network we want to use? NAT, bridged, ...</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>bridged</string>
+              <string>default</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
     <hudson.plugins.promoted__builds.JobPropertyImpl plugin="promoted-builds@2.17">
@@ -93,7 +115,7 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
     </hudson.plugins.throttleconcurrents.ThrottleJobProperty>
     <hudson.plugins.disk__usage.DiskUsageProperty plugin="disk-usage@0.23"/>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.4">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -128,6 +150,7 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
     </hudson.triggers.SCMTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>/data/jenkins/digabios-workspace</customWorkspace>
   <axes>
     <hudson.matrix.TextAxis>
       <name>ARCH</name>
@@ -154,11 +177,12 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
       </values>
     </hudson.matrix.TextAxis>
   </axes>
-  <combinationFilter>!(BINARY_IMAGES==&quot;hdd&quot;)</combinationFilter>
+  <combinationFilter>!(BINARY_IMAGES==&quot;hdd&quot;) &amp;&amp; !(ARCH==&quot;i386&quot;)</combinationFilter>
   <builders>
     <hudson.tasks.Shell>
       <command>export REPOSITORY_HOST=&quot;ci.ylioppilastutkinto-offline.fi&quot;
 export PROXY_HOST=&quot;cimonitor.ylioppilastutkinto-offline.fi&quot;
+export DIGABI_NETWORK_HOST_DEV=&quot;em1&quot;
 
 if [ &quot;${VAGRANT_PROVIDER}&quot; = &quot;virtualbox&quot; ]
 then
@@ -173,6 +197,8 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
       <artifacts>dist/*</artifacts>
       <latestOnly>false</latestOnly>
       <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <defaultExcludes>true</defaultExcludes>
     </hudson.tasks.ArtifactArchiver>
     <hudson.tasks.Fingerprinter>
       <targets></targets>
@@ -188,14 +214,6 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
           <boolean>false</boolean>
         </entry>
         <entry>
-          <com.flowdock.jenkins.BuildResult>FAILURE</com.flowdock.jenkins.BuildResult>
-          <boolean>false</boolean>
-        </entry>
-        <entry>
-          <com.flowdock.jenkins.BuildResult>UNSTABLE</com.flowdock.jenkins.BuildResult>
-          <boolean>false</boolean>
-        </entry>
-        <entry>
           <com.flowdock.jenkins.BuildResult>SUCCESS</com.flowdock.jenkins.BuildResult>
           <boolean>true</boolean>
         </entry>
@@ -207,15 +225,23 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
           <com.flowdock.jenkins.BuildResult>FIXED</com.flowdock.jenkins.BuildResult>
           <boolean>true</boolean>
         </entry>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>FAILURE</com.flowdock.jenkins.BuildResult>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>UNSTABLE</com.flowdock.jenkins.BuildResult>
+          <boolean>false</boolean>
+        </entry>
       </notifyMap>
       <notifySuccess>true</notifySuccess>
-      <notifyFailure>false</notifyFailure>
+      <notifyFailure>true</notifyFailure>
       <notifyFixed>true</notifyFixed>
       <notifyUnstable>false</notifyUnstable>
       <notifyAborted>false</notifyAborted>
       <notifyNotBuilt>false</notifyNotBuilt>
     </com.flowdock.jenkins.FlowdockNotifier>
-    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.24">
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.25">
       <configs>
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
@@ -244,7 +270,7 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
     </hudson.plugins.parameterizedtrigger.BuildTrigger>
   </publishers>
   <buildWrappers>
-    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.5.11"/>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.5.14"/>
   </buildWrappers>
   <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
     <runSequentially>false</runSequentially>
