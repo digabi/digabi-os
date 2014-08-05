@@ -62,8 +62,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provider :vmware_workstation do |vmw, override|
-    override.vm.box = "vmware-debian-jessie64"
-    override.vm.box_url = "http://cdn.ypcs.fi/pub/vagrant-debian-jessie64-vmware.box"
+    override.vm.box = "vmware_workstation-debian-jessie64"
+    override.vm.box_url = "http://cdn.ypcs.fi/pub/vmware_workstation-vagrant-debian-jessie64.box"
+    vmw.vmx['memsize'] = mem_size
+    vmw.vmx['numvcpus'] = cpus unless cpus.nil?
+  end
+
+  config.vm.provider :vmware_fusion do |vmw, override|
+    override.vm.box = "vmware_fusion-debian-jessie64"
+    override.vm.box_url = "http://cdn.ypcs.fi/pub/vmware_fusion-vagrant-debian-jessie64.box"
     vmw.vmx['memsize'] = mem_size
     vmw.vmx['numvcpus'] = cpus unless cpus.nil?
   end
