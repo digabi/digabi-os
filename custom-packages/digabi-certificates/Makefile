@@ -12,3 +12,5 @@ install:
 	mkdir -p $(DESTDIR)/$(LOCALCERTSDIR); \
 	$(MAKE) -C local install LOCALCERTSDIR=$(DESTDIR)/$(LOCALCERTSDIR)
 
+deb:
+	debuild -us -uc
