@@ -75,7 +75,7 @@ clean: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
 	mkdir -p $(STAGE)
-	rm -f $(STAGE)/build
+	rm -f $(STAGE)/build $(STAGE)/config
 	touch $(STAGE)/clean
 
 # Remove builder (destroys virtual machine)
