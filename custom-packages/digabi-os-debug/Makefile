@@ -1,3 +1,3 @@
 deb:
-    touch authorized_keys
+	touch authorized_keys
 	equivs-build debian/control
