@@ -15,11 +15,11 @@ evince-gtk
 task-xfce-desktop
 xfce4-power-manager
 xfce4-mixer
-xfce4-terminal
 fbxkb
 xfce4-notifyd
 libnotify-bin
 xfce4-xkb-plugin
+terminator
 
 iceweasel
 iceweasel-l10n-fi
