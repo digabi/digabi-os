@@ -42,7 +42,7 @@ do
     if [ -d "${SOURCE_DIR}" ]
     then
         echo "I: Adding ${SOURCE_DIR} configuration..."
-        rsync --exclude=*~ -av "${SOURCE_DIR}/" "${CONFIG_DIR}/"
+        rsync --exclude=*~ -cav "${SOURCE_DIR}/" "${CONFIG_DIR}/"
     else
         echo "E: Missing build target configuration: ${target}."
         exit 1
