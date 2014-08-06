@@ -3,7 +3,7 @@
 set -e
 
 # Configure browser homepage
-HOMEPAGE="http://demo.digabi.fi/"
+HOMEPAGE="https://digabi.fi/"
 
 if [ ! -d "/etc/iceweasel/profile" ]
 then
