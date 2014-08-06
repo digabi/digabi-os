@@ -40,6 +40,4 @@ looks like GitHub repository, you can manage issues.
 
 ## SourceForge
 
-    sftp user,digabi@frs.sf.net
-    cd /home/frs/project/d/di/digabi
-    ...
+    sftp user,digabi@frs.sf.net:/home/frs/project/d/di/digabi
