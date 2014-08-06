@@ -54,6 +54,14 @@ STAGE = .stage
 #
 .DEFAULT_GOAL = dist
 
+
+ifeq ($(OS),Linux)
+	MKTEMP := mktemp
+else
+	MKTEMP := mktemp -t
+endif
+
+
 $(STAGE)/environment:
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) up
@@ -79,7 +87,7 @@ purge:
 # Configure build environment
 $(STAGE)/config:	clean $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX.tmp))
+	$(eval TMP := $(shell $(MKTEMP) $(BUILDER)/$(CONFIG_FILE).XXXXXX.tmp))
 
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
 	echo 'COMMIT="$(COMMIT)"' >>$(TMP)
