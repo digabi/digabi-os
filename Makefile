@@ -55,8 +55,8 @@ STAGE = .stage
 .DEFAULT_GOAL = dist
 
 
-ifeq ($(OS),Linux)
-	MKTEMP := mktemp
+ifeq ($(OS),Darwin)
+	MKTEMP := mktemp -t
 else
 	MKTEMP := mktemp -t
 endif
