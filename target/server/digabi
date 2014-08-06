@@ -1,2 +1,2 @@
 # ip=frommedia read by live-hook 9990-netbase, use existing /etc/network/interfaces
-DIGABI_APPEND="${DIGABI_APPEND} ip=frommedia"
+#DIGABI_APPEND="${DIGABI_APPEND} ip=frommedia"
