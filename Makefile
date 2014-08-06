@@ -58,7 +58,7 @@ STAGE = .stage
 ifeq ($(OS),Darwin)
 	MKTEMP := mktemp -t
 else
-	MKTEMP := mktemp -t
+	MKTEMP := mktemp
 endif
 
 
