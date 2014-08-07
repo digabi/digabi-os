@@ -4,7 +4,7 @@ Standards-Version: 3.9.2
 
 Package: koetilapalvelin
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Version: 0.0.1
+Version: 0.1.0
 Architecture: all
 Description: Placeholder for our alpha-stage software.
  Currently some of our software is in non-public development, and 
