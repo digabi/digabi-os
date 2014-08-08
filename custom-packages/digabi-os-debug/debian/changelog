@@ -1,3 +1,9 @@
+digabi-os-debug (1.8) UNRELEASED; urgency=medium
+
+  * Converted package to native Debian package.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 08 Aug 2014 10:47:06 +0300
+
 digabi-os-debug (1.7) unstable; urgency=medium
 
   * Added terminator to Depends: (we want multiple terminals inside one window).
