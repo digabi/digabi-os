@@ -1,3 +1,0 @@
-[submodule "custom-packages/digabi-repository"]
-	path = custom-packages/digabi-repository
-	url = git://github.com/digabi/digabi-repository.git
