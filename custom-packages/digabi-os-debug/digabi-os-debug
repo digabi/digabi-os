@@ -2,30 +2,20 @@
 
 set -e
 
-TEMPFILE="$(mktemp digabi-os-debug.XXXXXXXX.tar.gz)"
-_FB_TEMP="$(mktemp)"
-FILES="/var/log/Xorg.0.log /var/log/syslog /var/log/auth.log /var/lib/digabi/version"
+SOURCESLIST="/usr/share/doc/digabi-os-debug/digabi-os-debug.list" 
 
-###
-_FILES=""
-for f in ${FILES}
-do
-    if [ -r "${f}" ]
-    then
-	echo "I: Adding file ${f}."
-        _FILES="${_FILES} ${f}"
-    else
-        echo "W: Can't open ${f}, skipping."
-    fi
-done
+if [ ! -f "${SOURCESLIST}" ]
+then
+    echo "E: sources.list template is missing."
+    exit 1
+fi
 
-TAR_BIN="/bin/tar"
-TAR_FLAGS="czf"
+if [ ! -w "/etc/apt/sources.list.d" ]
+then
+    echo "E: No permissions to add new sources.list."
+    exit 1
+fi
 
-digabi collect-feedback >${_FB_TEMP}
-${TAR_BIN} ${TAR_FLAGS} ${TEMPFILE} ${_FILES} ${_FB_TEMP} 2>/dev/null
-chmod ugo+r ${TEMPFILE}
-
-rm -f ${_FB_TEMP}
-
-echo "I: Debug data collected to ${TEMPFILE}."
+cp "${SOURCESLIST}" /etc/apt/sources.list.d/
+apt-get update
+DEBIAN_FRONTEND="noninteractive" apt-get -y upgrade
