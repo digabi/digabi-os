@@ -1,0 +1,34 @@
+#!/bin/sh
+set -e
+
+if [ -z "$1" ]
+then
+    echo "E: Missing username. Exiting."
+    exit 1
+fi
+
+USERNAME="$1,digabi"
+HOST="frs.sf.net"
+DIR="/home/frs/project/d/di/digabi/experimental"
+
+shift
+
+FILES="$@"
+
+if [ -z "${FILES}" ]
+then
+    echo "E: No files specified."
+    exit 1
+fi
+
+for file in ${FILES}
+do
+    if [ ! -r "${file}" ]
+    then
+        echo "E: File not found: ${file}"
+        exit 1
+    fi
+    echo "I: Uploading file ${file} (SHA256: $(sha256sum ${file} |cut -d' ' -f1))"
+    scp "${file}" "${USERNAME}@${HOST}:${DIR}/$(basename ${file})"
+done
+
