@@ -1,3 +1,9 @@
+digabi-customization (2.13) unstable; urgency=medium
+
+  * Fixed invalid paths. (Paths changed in digabi-backgrounds.)
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 08 Aug 2014 14:53:11 +0300
+
 digabi-customization (2.12) unstable; urgency=medium
 
   * Disabled setting desktop-background.xml.

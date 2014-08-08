@@ -21,10 +21,10 @@ File: postinst
  PLYMOUTH_BIN="/usr/sbin/plymouth-set-default-theme"
  PLYMOUTH_THEME="glow"
  
- update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/digabi/proprietary/background.svg 100
- update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/digabi/proprietary/digabi.svg 100
- update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-splash desktop-splash /usr/share/digabi/proprietary/background.svg 100
- update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-grub desktop-grub /usr/share/digabi/proprietary/background.svg 100
+ update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/digabi/images/background.svg 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/digabi/images/digabi.svg 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-splash desktop-splash /usr/share/digabi/images/background.svg 100
+ update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-grub desktop-grub /usr/share/digabi/images/background.svg 100
  
  if [ ! -x "${PLYMOUTH_BIN}" ]
  then
