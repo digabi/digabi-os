@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -e
-
-touch authorized_keys
