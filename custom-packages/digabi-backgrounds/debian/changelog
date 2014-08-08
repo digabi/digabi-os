@@ -1,3 +1,9 @@
+digabi-backgrounds (1.8) unstable; urgency=medium
+
+  * Bump version number.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 08 Aug 2014 14:57:44 +0300
+
 digabi-backgrounds (1.7) unstable; urgency=medium
 
   * Added @VERSION@ to background svgs (will be replaced at build time).
