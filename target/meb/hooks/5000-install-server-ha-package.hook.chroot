@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# We don't install the koetilapalvelin-ha package the normal way because it overwrites (configuration) files from other packages.
+
+if [ -n "${DIGABI_DEBUG}" ] ; then set -x  ; fi
+
+set -e
+
+if [[ $DIGABI_BUILD_TARGET == "*server*" ]] ; then
+	apt-get -o Dpkg::Options::="--force-overwrite" install koetilapalvelin-ha
+fi
