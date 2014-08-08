@@ -75,7 +75,7 @@ clean: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
 	mkdir -p $(STAGE)
-	rm -f $(STAGE)/build $(STAGE)/config
+	rm -f $(STAGE)/build* $(STAGE)/config
 	touch $(STAGE)/clean
 
 # Remove builder (destroys virtual machine)
@@ -134,6 +134,24 @@ $(STAGE)/build: $(STAGE)/config
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
+
+$(STAGE)/build-bootstrap: $(STAGE)/config
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb bootstrap'
+	mkdir -p $(STAGE)
+	touch $(STAGE)/build-bootstrap
+
+$(STAGE)/build-chroot: $(STAGE)/build-bootstrap
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb chroot'
+	mkdir -p $(STAGE)
+	touch $(STAGE)/build-chroot
+
+$(STAGE)/build-binary: $(STAGE)/build-chroot
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb binary ; mv digabi-* /$(BUILDER)/'
+	mkdir -p $(STAGE)
+	touch $(STAGE)/build-binary
 	rm -f $(STAGE)/collect
 
 build: $(STAGE)/build

@@ -41,3 +41,8 @@ looks like GitHub repository, you can manage issues.
 ## SourceForge
 
     sftp user,digabi@frs.sf.net:/home/frs/project/d/di/digabi
+
+## Vagrantboxes
+### VMware Workstation
+
+ - you might need to configure DHCP lease times for VMware DHCPd, downgrade to 20 seconds or something like that if you have issues w/ 'vagrant ssh' timing out
