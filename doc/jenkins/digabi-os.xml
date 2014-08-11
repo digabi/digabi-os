@@ -8,7 +8,7 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
     <daysToKeep>-1</daysToKeep>
     <numToKeep>-1</numToKeep>
     <artifactDaysToKeep>-1</artifactDaysToKeep>
-    <artifactNumToKeep>-1</artifactNumToKeep>
+    <artifactNumToKeep>10</artifactNumToKeep>
   </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties>
@@ -78,9 +78,9 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
           <description>Level of Vagrant logging. (default: info)</description>
           <choices class="java.util.Arrays$ArrayList">
             <a class="string-array">
+              <string>warn</string>
               <string>info</string>
               <string>debug</string>
-              <string>warn</string>
               <string>error</string>
             </a>
           </choices>
@@ -97,12 +97,6 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
         </hudson.model.ChoiceParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
-    <hudson.plugins.promoted__builds.JobPropertyImpl plugin="promoted-builds@2.17">
-      <activeProcessNames>
-        <string>Full system working (client, server, boot test), manually tested</string>
-        <string>Client+server build successful</string>
-      </activeProcessNames>
-    </hudson.plugins.promoted__builds.JobPropertyImpl>
     <hudson.plugins.throttleconcurrents.ThrottleJobProperty plugin="throttle-concurrents@1.8.3">
       <maxConcurrentPerNode>6</maxConcurrentPerNode>
       <maxConcurrentTotal>0</maxConcurrentTotal>
@@ -113,18 +107,27 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
         <throttleMatrixConfigurations>true</throttleMatrixConfigurations>
       </matrixOptions>
     </hudson.plugins.throttleconcurrents.ThrottleJobProperty>
-    <hudson.plugins.disk__usage.DiskUsageProperty plugin="disk-usage@0.23"/>
+    <hudson.plugins.disk__usage.DiskUsageProperty plugin="disk-usage@0.24"/>
   </properties>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.4">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
+        <name>digabi-os</name>
         <url>https://github.com/digabi/digabi-os.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+      <hudson.plugins.git.UserRemoteConfig>
+        <name>experimental</name>
+        <url>git@github.com:digabi/dos-experimental.git</url>
+        <credentialsId>fe7c3ee4-3e91-48e1-8bb9-1bd50bc6b747</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>*/master</name>
+        <name>digabi-os/master</name>
+      </hudson.plugins.git.BranchSpec>
+      <hudson.plugins.git.BranchSpec>
+        <name>experimental/feature/**</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -177,7 +180,7 @@ First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if success
       </values>
     </hudson.matrix.TextAxis>
   </axes>
-  <combinationFilter>!(BINARY_IMAGES==&quot;hdd&quot;) &amp;&amp; !(ARCH==&quot;i386&quot;)</combinationFilter>
+  <combinationFilter>!(BINARY_IMAGES==&quot;hdd&quot;) &amp;&amp; (ARCH==&quot;i386&quot;).implies(DIGABI_BUILD_TARGET==&quot;client&quot;)</combinationFilter>
   <builders>
     <hudson.tasks.Shell>
       <command>echo &quot;TODO: Build *.deb, publish using debs to repository&quot;</command>
@@ -213,6 +216,14 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
       <chatNotification>false</chatNotification>
       <notifyMap>
         <entry>
+          <com.flowdock.jenkins.BuildResult>ABORTED</com.flowdock.jenkins.BuildResult>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
+          <com.flowdock.jenkins.BuildResult>FAILURE</com.flowdock.jenkins.BuildResult>
+          <boolean>false</boolean>
+        </entry>
+        <entry>
           <com.flowdock.jenkins.BuildResult>NOT_BUILT</com.flowdock.jenkins.BuildResult>
           <boolean>false</boolean>
         </entry>
@@ -221,24 +232,16 @@ custom-packages/digabi-dev/scripts/_os/jenkins-build stable</command>
           <boolean>true</boolean>
         </entry>
         <entry>
-          <com.flowdock.jenkins.BuildResult>ABORTED</com.flowdock.jenkins.BuildResult>
+          <com.flowdock.jenkins.BuildResult>UNSTABLE</com.flowdock.jenkins.BuildResult>
           <boolean>false</boolean>
         </entry>
         <entry>
           <com.flowdock.jenkins.BuildResult>FIXED</com.flowdock.jenkins.BuildResult>
           <boolean>true</boolean>
         </entry>
-        <entry>
-          <com.flowdock.jenkins.BuildResult>FAILURE</com.flowdock.jenkins.BuildResult>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
-          <com.flowdock.jenkins.BuildResult>UNSTABLE</com.flowdock.jenkins.BuildResult>
-          <boolean>false</boolean>
-        </entry>
       </notifyMap>
       <notifySuccess>true</notifySuccess>
-      <notifyFailure>true</notifyFailure>
+      <notifyFailure>false</notifyFailure>
       <notifyFixed>true</notifyFixed>
       <notifyUnstable>false</notifyUnstable>
       <notifyAborted>false</notifyAborted>
