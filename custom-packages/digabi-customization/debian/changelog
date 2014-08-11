@@ -1,3 +1,9 @@
+digabi-customization (2.15) unstable; urgency=medium
+
+  * Removed plymouth-drm from Depends.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 11 Aug 2014 09:59:03 +0300
+
 digabi-customization (2.14) unstable; urgency=medium
 
   * Disabled start-here.svg.
