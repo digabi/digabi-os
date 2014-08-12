@@ -117,7 +117,6 @@ then
 fi    
 
 HDD_LABEL="${DIGABI_DIST_NAME}"
-HDD_SIZE="1024" # MB
 BINARY_FILESYSTEM="fat32"
 if [ -z "${BINARY_IMAGES}" ]
 then
@@ -142,7 +141,7 @@ lb config noauto \
     --clean \
     --distribution "${DISTRIBUTION}" \
     --hdd-label "${HDD_LABEL}" \
-    --hdd-size "${HDD_SIZE}" \
+    --hdd-size "auto" \
     --ignore-system-defaults \
     --image-name "${IMAGE_NAME}" \
     --iso-publisher "${ISO_PUBLISHER}" \
