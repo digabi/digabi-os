@@ -21,3 +21,5 @@ console-data
 less
 
 xdg-utils
+
+tzdata
