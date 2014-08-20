@@ -187,7 +187,7 @@ buildbox: clean $(STAGE)/environment
 
 debug: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	$(BUILDER_DO) run
+	$(BUILDER_DO) run || exit 0
 
 .PHONY: custom-packages
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
