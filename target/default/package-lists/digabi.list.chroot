@@ -6,7 +6,7 @@ digabi-os
 digabi-firewall
 
 # Debugging tools (TODO: Remove this)
-digabi-os-debug
+#digabi-os-debug
 
 # MEB Root CA
 digabi-certificates
