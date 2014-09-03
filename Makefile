@@ -64,7 +64,7 @@ $(STAGE)/environment:
 
 
 # Clean build environment
-clean: $(STAGE)/environment
+bclean: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
 	mkdir -p $(STAGE)
@@ -78,7 +78,7 @@ purge:
 	rm -rf $(STAGE)
 
 # Configure build environment
-$(STAGE)/config:	clean $(STAGE)/environment
+$(STAGE)/config:	bclean $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX))
 
@@ -103,7 +103,7 @@ $(STAGE)/config:	clean $(STAGE)/environment
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && lb config'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/config
-	rm -f $(STAGE)/build $(STAGE)/clean
+	rm -f $(STAGE)/build $(STAGE)/bclean
 
 config: $(STAGE)/config
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
@@ -147,8 +147,10 @@ $(STAGE)/build-binary: $(STAGE)/build-chroot
 	touch $(STAGE)/build-binary
 	rm -f $(STAGE)/collect
 
-build: $(STAGE)/build
+bbuild: $(STAGE)/build
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
+
+build:
 
 # Collect build artifacts (.ISO) to dist/
 $(STAGE)/collect: build
@@ -158,7 +160,7 @@ $(STAGE)/collect: build
 	touch $(STAGE)/collect
 
 # Build image & collect results
-dist:	$(STAGE)/collect
+ddist:	$(STAGE)/collect
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 # Build custom packages defined in ./custom-packages/*
@@ -181,7 +183,7 @@ publish-packages: $(STAGE)/custom-packages
 	$(REPOSITORY_DO) sync-to-server
 
 # Export builder as VirtualBox Machine Image
-buildbox: clean $(STAGE)/environment
+buildbox: bclean $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	# TODO: Modify VM: remove VT-X, PAE et. all
 

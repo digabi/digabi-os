@@ -1,12 +1,21 @@
+Source: digabi-os
 Section: misc
 Priority: optional
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
 Homepage: https://digabi.fi/os
-Standards-Version: 3.9.2
-Vcs-Browser: https://github.com/digabi/digabi-os
 Vcs-Git: git://github.com/digabi/digabi-os.git
+Vcs-Browser: https://github.com/digabi/digabi-os
 
 Package: digabi-os
-Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: digabi-live
-Changelog: debian/changelog
 Description: Digabi OS
+ Live operating system for the use of Matriculation Examination Board.
+
+Package: digabi-os-doc
+Architecture: all
+Description: documentation for digabi-os
+ Documentation.
