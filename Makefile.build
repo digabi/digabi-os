@@ -78,7 +78,7 @@ purge:
 	rm -rf $(STAGE)
 
 # Configure build environment
-$(STAGE)/config:	bclean $(STAGE)/environment
+$(STAGE)/config:	clean $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX))
 
@@ -103,7 +103,7 @@ $(STAGE)/config:	bclean $(STAGE)/environment
 	$(BUILDER_DO) run COMMAND='cd $(BUILD_DIR) && lb config'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/config
-	rm -f $(STAGE)/build $(STAGE)/bclean
+	rm -f $(STAGE)/build $(STAGE)/clean
 
 config: $(STAGE)/config
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
@@ -172,7 +172,7 @@ $(STAGE)/custom-packages: $(STAGE)/environment
 	mkdir -p $(STAGE)
 	touch $(STAGE)/custom-packages
 
-ublish-packages: $(STAGE)/custom-packages
+publish-packages: $(STAGE)/custom-packages
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	git submodule init
 	git submodule update
@@ -181,7 +181,7 @@ ublish-packages: $(STAGE)/custom-packages
 	$(REPOSITORY_DO) sync-to-server
 
 # Export builder as VirtualBox Machine Image
-buildbox: bclean $(STAGE)/environment
+buildbox: clean $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	# TODO: Modify VM: remove VT-X, PAE et. all
 
