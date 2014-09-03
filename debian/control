@@ -16,6 +16,8 @@ Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.
 
 Package: digabi-os-doc
+Section: doc
+Depends: ${misc:Depends}
 Architecture: all
 Description: documentation for digabi-os
  Documentation.
@@ -23,12 +25,13 @@ Description: documentation for digabi-os
 Package: linux-image-digabi
 Section: kernel
 Architecture: all
-Depends: linux-image-486 | linux-image-686-pae | linux-image-amd64
+Depends: ${misc:Depends},
+ linux-image-486 | linux-image-686-pae | linux-image-amd64
 Provides: linux-image-ytl
 Replaces: linux-image-ytl
 Conflicts: linux-image-ytl
-Description: Digabi Linux kernel
- This package depends on the latest Digabi Linux kernel and modules.
+Description: Latest Digabi Linux kernel
+ This metapackage depends on the latest Digabi Linux kernel and modules.
  .
  Currently only 32-bit/64-bit Intel/AMD systems (i386, amd64) are
  supported.

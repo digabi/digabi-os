@@ -1,4 +1,11 @@
-digabi-os (14.08a1) UNRELEASED; urgency=medium
+digabi-os (14.09a1) UNRELEASED; urgency=medium
+
+  * Updated to native Debian packaging.
+  * Updated linux-image-digabi.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 03 Sep 2014 17:10:05 +0300
+
+digabi-os (14.08a1) testing; urgency=medium
 
   * Added updated feedback client (digabi-feedback).
 
