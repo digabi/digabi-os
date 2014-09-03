@@ -19,3 +19,19 @@ Package: digabi-os-doc
 Architecture: all
 Description: documentation for digabi-os
  Documentation.
+
+Package: linux-image-digabi
+Section: kernel
+Architecture: all
+Depends: linux-image-486 | linux-image-686-pae | linux-image-amd64
+Provides: linux-image-ytl
+Replaces: linux-image-ytl
+Conflicts: linux-image-ytl
+Description: Digabi Linux kernel
+ This package depends on the latest Digabi Linux kernel and modules.
+ .
+ Currently only 32-bit/64-bit Intel/AMD systems (i386, amd64) are
+ supported.
+ .
+ Only for use with Digabi OS (might break on other systems).
+
