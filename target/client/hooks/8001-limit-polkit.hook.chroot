@@ -2,7 +2,13 @@
 
 set -e
 
-if [ -f "/lib/live/config/1090-policykit" ]
+PKHOOK="/lib/live/config/1080-policykit"
+
+if [ -f "${PKHOOK}" ]
 then
-	rm "/lib/live/config/1090-policykit"
+	echo "I: Removing PolicyKit hook (live-config)"
+	rm "${PKHOOK}"
+else
+	echo "E: PolicyKit hook not found, possible security issue."
+	exit 1
 fi
