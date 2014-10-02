@@ -2,8 +2,8 @@
 
 set -e
 
-HOMEPAGE="http://localhost/static/ktp/"
-USB_MOUNT="/media/usb1"
+HOMEPAGE="http://localhost/index.html"
+USB_MOUNT="/media/usb2"
 
 if [ ! -d "/etc/iceweasel/profile" ]
 then
