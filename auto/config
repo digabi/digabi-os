@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -xe
+set -e
 
 contains() {
     string="$1"
