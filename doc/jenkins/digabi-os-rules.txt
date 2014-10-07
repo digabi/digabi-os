@@ -1,4 +1,5 @@
 # Rules for Jenkins log parser plugin, based on console-rules.txt.
+# For instructions, see <https://wiki.jenkins-ci.org/display/JENKINS/Log+Parser+Plugin>
 
 # match line starting with 'error ', case-insensitive
 error /(?i)^error /
