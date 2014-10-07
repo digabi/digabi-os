@@ -1,0 +1,15 @@
+# Rules for Jenkins log parser plugin, based on console-rules.txt.
+# For instructions, see <https://wiki.jenkins-ci.org/display/JENKINS/Log+Parser+Plugin>
+
+# match line starting with 'error ', case-insensitive
+error /(?i)^error /
+error /[^A-Z]ERROR[^A-Z]/
+
+# list of warnings here...
+warning /[Ww]arning/
+warning /WARN/
+warning /(?i)notice/
+
+# create a quick access link to lines in the report containing 'INFO'
+info /(?i)INFO/
+
