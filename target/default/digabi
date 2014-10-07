@@ -15,14 +15,6 @@
 # Base for the string that will be passed to "lb config --bootappend-live"
 DIGABI_APPEND=""
 
-### You should not have to change anything bellow this line ####################
-
-# sanity checks
-if [ ! -x "`which dpkg-parsechangelog`" ]; then
-   echo "could not find dpkg-parsechangelog, please apt-get install dpkg-dev" >&2
-   exit 2
-fi
-
 DIGABI_DIST_NAME="digabi-os"
 DIGABI_DIST_NAME_SHORT="dos"
 
