@@ -65,6 +65,7 @@ done
 if [ -r "${CONFIG_DIR}/digabi.local" ]
 then
     cp ${CONFIG_DIR}/digabi.local ${CONFIG_DIR}/environment.chroot
+    sed -i 's, ,+,g' ${CONFIG_DIR}/environment.chroot
 fi
 
 set -a
