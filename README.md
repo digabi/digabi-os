@@ -33,7 +33,7 @@ For documentation, see `doc/*.md`. Manual for `live-build` toolset:
 
 
 ### How to build
-See `doc/building` for detailed instructions. TL;DR; `make -f Makefile.build dist`.
+See `doc/building.md` for detailed instructions. TL;DR; `make -f Makefile.build dist`.
 
 Our official images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
 
