@@ -59,6 +59,6 @@ some `digabi-*` packages), and when otherwise noted.
 
 ## Contact
  * [The Matriculation Examination Board of Finland](http://www.ylioppilastutkinto.fi/), PB50, 00581 Helsinki, Finland
- * Project website: [digabi.fi](http://digabi.fi/)
+ * Project website: [digabi.fi](https://digabi.fi/)
  * [github.com/digabi/digabi-os](https://github.com/digabi/digabi-os)
  * email: [digabi@ylioppilastutkinto.fi](mailto:digabi@ylioppilastutkinto.fi)
