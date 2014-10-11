@@ -54,10 +54,15 @@ In `Makefile:config` these will be saved to the build system, to file `config/di
 
 Following assumes that you have vagrant & VirtualBox installed:
 
+    # Fetch the sources
     git clone https://github.com/digabi/digabi-os digabi-os
     cd digabi-os
+
+    # Configure build
     export ROOT_PASSWORD="my-super-secret-password"
     export DEBIAN_MIRROR="http://my-local-mirror.example.com/debian"
     export ARCH="i386"
     export BINARY_IMAGES="hdd"
-    make build
+
+    # Do the build (runs inside Vagrant)
+    make -f Makefile.build dist
