@@ -6,12 +6,19 @@ Matriculation Examination Board of Finland (In Finnish:
 
 
 ## Goals
-Live system goals:
 
+### Client
+
+ * runs on student devices (BYOD)
  * prevent cheating (using forbidden materials, communication w/ other 
   students, using internet when forbidden)
  * provide solid system for attending the exam
 
+
+### Server
+
+ * runs on school-owned devices
+ * hosts local copy of the testing system, syncs data to cloud
 
 ## Documentation
 For documentation, see `doc/*.md`. Manual for `live-build` toolset: 
