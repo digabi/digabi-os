@@ -26,16 +26,9 @@ For documentation, see `doc/*.md`. Manual for `live-build` toolset:
 
 
 ### How to build
-Assuming you have required packages installed (see above), building new 
-image is quite easy:
+See `doc/building` for detailed instructions. TL;DR; `make -f Makefile.build dist`.
 
 Our official images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
-
-    git clone https://github.com/digabi/digabi-os.git digabi-os
-    cd digabi-os
-    make dist
-
-After building, image can be found in `dist/` directory.
 
 
 ## Disclaimer
