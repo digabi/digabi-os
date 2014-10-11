@@ -1,4 +1,4 @@
-# digabi-live
+# digabi-os
 ===========================
 
 What version should I use? See [Digabi OS information](http://digabi.fi/os).
