@@ -10,6 +10,7 @@ then
     mkdir -p /etc/iceweasel/profile
 fi
 
+echo "user_pref(\"browser.open.lastDir\", \"${USB_MOUNT}\");" >> /etc/iceweasel/profile/prefs.js
 echo "user_pref(\"browser.download.lastDir\", \"${USB_MOUNT}\");" >> /etc/iceweasel/profile/prefs.js
 echo "user_pref(\"browser.download.useDownloadDir\", false);" >> /etc/iceweasel/profile/prefs.js
 echo "user_pref(\"browser.startup.homepage\", \"${HOMEPAGE}\");" >>/etc/iceweasel/profile/prefs.js
