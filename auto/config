@@ -64,7 +64,7 @@ done
 # Monkey-patch, add our custom variables to chroot environment
 if [ -r "${CONFIG_DIR}/digabi.local" ]
 then
-    cp ${CONFIG_DIR}/digabi.local ${CONFIG_DIR}/environment.chroot
+    grep -v '^#' ${CONFIG_DIR}/digabi.local |sed 's, ,+,g' |xargs > ${CONFIG_DIR}/environment.chroot
 fi
 
 set -a
