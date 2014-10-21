@@ -7,3 +7,4 @@ ttf-mscorefonts-installer
 linux-headers-3.16-2-all
 virtualbox-guest-dkms
 virtualbox-guest-utils
+virtualbox-guest-x11
