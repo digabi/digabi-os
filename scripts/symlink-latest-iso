@@ -1,9 +1,0 @@
-#!/bin/sh
-
-set -e
-
-# Symlinks latest iso (by filesystem timestamp) to latest.iso
-
-LATEST_ISO="$(ls -t *.iso |head -n1)"
-
-ln -sf "${LATEST_ISO}" latest.iso
