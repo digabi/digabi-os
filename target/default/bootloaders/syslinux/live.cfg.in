@@ -36,14 +36,14 @@ label macbook
 
     linux @LINUX@
     initrd @INITRD@
-    append @APPEND_LIVE@ text nomodeset
+    append @APPEND_LIVE@ nomodeset
 
 label chromebook
     menu label ^Chromebook
 
     linux @LINUX@
     initrd @INITRD@
-    append @APPEND_LIVE@ text mem=1G
+    append @APPEND_LIVE@ mem=1G
 
 menu tabmsg Press ENTER to boot
 menu clear
