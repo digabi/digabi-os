@@ -5,6 +5,6 @@ Name=Web Browser (Iceweasel)
 Name[fi]=Verkkoselain (Iceweasel)
 Name[sv]=Webbläsare (Iceweasel)
 Exec=/usr/bin/iceweasel
-Icon=web-browser
+Icon=iceweasel
 Terminal=false
 StartupNotify=false
