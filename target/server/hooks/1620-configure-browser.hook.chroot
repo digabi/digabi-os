@@ -4,13 +4,16 @@ set -e
 
 HOMEPAGE="http://localhost/supo/index.html"
 USB_MOUNT="/media/usb2"
+CONFIG_FILE="/etc/iceweasel/profile/prefs.js"
 
 if [ ! -d "/etc/iceweasel/profile" ]
 then
     mkdir -p /etc/iceweasel/profile
 fi
 
-echo "user_pref(\"browser.open.lastDir\", \"${USB_MOUNT}\");" >> /etc/iceweasel/profile/prefs.js
-echo "user_pref(\"browser.download.lastDir\", \"${USB_MOUNT}\");" >> /etc/iceweasel/profile/prefs.js
-echo "user_pref(\"browser.download.useDownloadDir\", false);" >> /etc/iceweasel/profile/prefs.js
-echo "user_pref(\"browser.startup.homepage\", \"${HOMEPAGE}\");" >>/etc/iceweasel/profile/prefs.js
+cat > ${CONFIG_FILE} << EOF
+user_pref("browser.open.lastDir", "${USB_MOUNT}");
+user_pref("browser.download.lastDir", "${USB_MOUNT}");
+user_pref("browser.download.useDownloadDir", false);
+user_pref("browser.startup.homepage", "${HOMEPAGE}");
+EOF
