@@ -1,0 +1,4 @@
+Package: *
+Pin: origin dev.digabi.fi
+Pin-Priority: 1001
+
