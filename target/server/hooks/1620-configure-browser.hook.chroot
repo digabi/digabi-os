@@ -2,7 +2,7 @@
 
 set -e
 
-HOMEPAGE="http://localhost/index.html"
+HOMEPAGE="http://localhost/supo/index.html"
 USB_MOUNT="/media/usb2"
 
 if [ ! -d "/etc/iceweasel/profile" ]
@@ -13,4 +13,4 @@ fi
 echo "user_pref(\"browser.open.lastDir\", \"${USB_MOUNT}\");" >> /etc/iceweasel/profile/prefs.js
 echo "user_pref(\"browser.download.lastDir\", \"${USB_MOUNT}\");" >> /etc/iceweasel/profile/prefs.js
 echo "user_pref(\"browser.download.useDownloadDir\", false);" >> /etc/iceweasel/profile/prefs.js
-echo "user_pref(\"browser.startup.homepage\", \"${HOMEPAGE}\");" >>/etc/iceweasel/profile/prefs.js
+echo "user_pref(\"browser.startup.homepage\", \"${HOMEPAGE}\");" >>/etc/iceweasel/profile/prefs.js-
