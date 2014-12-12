@@ -1,4 +1,10 @@
-digabi-os (14.09a1) UNRELEASED; urgency=medium
+digabi-os (15.01a1) UNRELEASED; urgency=medium
+
+  * New version for Kurko testing.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Dec 2014 10:31:43 +0200
+
+digabi-os (14.09a1) testing; urgency=medium
 
   * Updated to native Debian packaging.
   * Updated linux-image-digabi.
