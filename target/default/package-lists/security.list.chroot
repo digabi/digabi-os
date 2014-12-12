@@ -1,6 +1,3 @@
-# Monitor processes running as root (uid 0)
-ninja
-
 # Collect device inforrmation
 lshw
 virt-what
