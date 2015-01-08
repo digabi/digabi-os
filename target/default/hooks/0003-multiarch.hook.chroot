@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+if [ -z "${LB_ARCHITECTURE}" ]
+then
+    echo "E: LB_ARCHITECTURE not set!"
+    exit 1
+fi
