@@ -6,3 +6,12 @@ then
     echo "E: LB_ARCHITECTURE not set!"
     exit 1
 fi
+
+case "${LB_MULTIARCH}" in
+    amd64)
+        dpkg --add-architecture i386
+    ;;
+    *)
+        echo "W: Unsupported arch ${LB_ARCHITECTURE}, not enabling multiarch."
+    ;;
+esac
