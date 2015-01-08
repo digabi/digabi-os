@@ -9,9 +9,6 @@ maxima
 wxmaxima
 
 wine
-#if ARCHITECTURES amd64
-wine32
-#endif
 
 pinta
 gimp
