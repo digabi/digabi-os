@@ -147,6 +147,12 @@ $(STAGE)/build-binary: $(STAGE)/build-chroot
 	touch $(STAGE)/build-binary
 	rm -f $(STAGE)/collect
 
+$(STAGE)/build-kernel: $(STAGE)/environment
+	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; apt-get source linux && cd linux-* && debuild-pbuilder -us uc'
+
+build-kernel: $(STAGE)/build-kernel
+
 build: $(STAGE)/build
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
