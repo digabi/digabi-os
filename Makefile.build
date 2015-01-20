@@ -149,9 +149,11 @@ $(STAGE)/build-binary: $(STAGE)/build-chroot
 
 $(STAGE)/build-kernel: $(STAGE)/environment
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; apt-get source linux && cd linux-* && debuild-pbuilder -us uc'
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; apt-get source linux && cd linux-* && debuild-pbuilder -us -uc && cd .. && mv *.deb *.dsc *.changes *.xz /$(BUILDER)/'
 
 build-kernel: $(STAGE)/build-kernel
+	mkdir -p $(ARTIFACTS_DIR)
+	mv $(BUILDER)/*.deb $(ARTIFACTS_DIR)/
 
 build: $(STAGE)/build
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
