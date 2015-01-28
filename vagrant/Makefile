@@ -28,7 +28,7 @@ $(STAGE)/init-vm: up
 
 $(STAGE)/provision: $(STAGE)/init-vm
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	vagrant up --provision
+	vagrant up --provider=$(VAGRANT_DEFAULT_PROVIDER) --provision
 	mkdir -p $(STAGE)
 	touch $(STAGE)/provision
 
@@ -42,7 +42,7 @@ endif
 
 up: $(STAGE)/init-vm
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
-	vagrant up --no-provision
+	vagrant up --provider=$(VAGRANT_DEFAULT_PROVIDER) --no-provision
 
 halt:
 	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
