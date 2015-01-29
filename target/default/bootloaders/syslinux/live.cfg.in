@@ -32,18 +32,11 @@ label pc
     append @APPEND_LIVE@ quiet splash
 
 label macbook
-    menu label ^Macbook
+    menu label ^Macbook (tulossa / på kommande)
 
     linux @LINUX@
     initrd @INITRD@
     append @APPEND_LIVE@ nomodeset
-
-label chromebook
-    menu label ^Chromebook
-
-    linux @LINUX@
-    initrd @INITRD@
-    append @APPEND_LIVE@ mem=1G
 
 menu tabmsg Press ENTER to boot
 menu clear
