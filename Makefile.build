@@ -115,7 +115,11 @@ $(STAGE)/build: $(STAGE)/config
 	touch $(STAGE)/build
 
 build-kernel: $(STAGE)/environment
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux'
+	# && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. &&
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd linux-* && fakeroot make -j$(DIGABI_BUILD_CPUS) -f debian/rules.gen binary-arch_i386_none_686'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd linux-* && fakeroot make -j$(DIGABI_BUILD_CPUS) -f debian/rules.gen binary-arch_amd64_none_none'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; mv *.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
 
 build: $(STAGE)/build
 
