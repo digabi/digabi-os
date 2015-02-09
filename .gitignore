@@ -34,7 +34,7 @@ live-image-*.hybrid.iso.zsync
 live-image-*.packages
 
 # Ignore vagrant state file
-vagrant/.vagrant
+.vagrant/
 
 # Ignore local vagrant provision script
 scripts/vagrant-local.sh
@@ -44,7 +44,6 @@ scripts/vagrant-local.sh
 *.iso
 *.iso.*
 
-vagrant/definitions/jessie/preseed.cfg
 build.log
 
 *.tmp
