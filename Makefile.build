@@ -75,7 +75,7 @@ purge:
 	rm -rf $(STAGE)
 
 # Configure build environment
-$(STAGE)/config:
+$(STAGE)/config: $(STAGE)/environment
 	@echo "Configure build environment..."
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
 	echo 'ARCH="$(ARCH)"' >>$(CONFIG_FILE)
