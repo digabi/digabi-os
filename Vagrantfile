@@ -7,16 +7,11 @@ VAGRANTFILE_API_VERSION = "2"
 # Hostname of the virtual machine (must be in /etc/hosts)
 VIRTUAL_MACHINE_HOSTNAME = 'jessie.vagrantup.com'
 
-# Virtual machine memory size for in-memory builds
-VM_MEMORY_FOR_RAM_BUILDS = 6 * 1024 + 512 # 6.5 GB
-
 # Virtual machine memory size for on-disk builds
 VM_MEMORY_FOR_DISK_BUILDS = 1024 # 1 GB
 
 if ENV['DIGABI_BUILD_MEM']
   mem_size = ENV['DIGABI_BUILD_MEM']
-elsif ENV['DIGABI_RAM_BUILD']
-  mem_size = VM_MEMORY_FOR_RAM_BUILDS
 else
   mem_size = VM_MEMORY_FOR_DISK_BUILDS
 end
