@@ -27,6 +27,9 @@ DIGABI_BUILD_TARGET ?= default
 # Enable debugging? (If true, runs debug hooks when building)
 DIGABI_DEBUG ?= false
 
+DIGABI_BUILD_CPUS ?= 1
+DIGABI_BUILD_MEM ?= 1024
+
 #
 # Other configuration
 #
@@ -128,8 +131,8 @@ $(STAGE)/build-binary: $(STAGE)/build-chroot
 	rm -f $(STAGE)/collect
 
 $(STAGE)/build-kernel: $(STAGE)/environment
-	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; apt-get source linux && cd linux-* && debuild-pbuilder -us -uc && cd .. && mv *.deb *.dsc *.changes *.xz /$(BUILDER)/'
-
+	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz /$(BUILDER)/'
+	
 build-kernel: $(STAGE)/build-kernel
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/*.deb $(ARTIFACTS_DIR)/
