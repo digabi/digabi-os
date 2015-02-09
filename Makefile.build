@@ -14,7 +14,7 @@
 ARCH ?= i386
 BINARY_IMAGES ?= iso-hybrid
 BUILD_TAG ?= N/A
-BUILD_NUMBER ?= unknown.$(shell date +%Y%m%d%H%M%S)
+BUILD_NUMBER ?= 0.unknown
 COMMIT ?= HEAD
 DEBIAN_MIRROR ?= http://http.debian.net/debian
 DIGABI_BUILD_CPUS ?= 1
@@ -38,11 +38,11 @@ GIT_REPOSITORY = /digabi-os.git
 
 ARTIFACTS_DIR = dist
 ARTIFACTS_MOUNT = /artifacts/
-CONFIG_FILE = digabi-os.$(BUILD_NUMBER).config
+CONFIG_FILE = digabi-os.config.$(BUILD_NUMBER)
 
 BUILD_CONFIG = $(BUILD_DIR)/target/default/$(CONFIG_FILE)
 
-VM_ENVIRONMENT ?= set -ex && . /vagrant/$(CONFIG_FILE)
+VM_ENVIRONMENT ?= set -ex ; [ -f "/vagrant/$(CONFIG_FILE)" ] && source /vagrant/$(CONFIG_FILE)
 VAGRANT  = vagrant
 
 STAGE = .stage
@@ -75,7 +75,7 @@ purge:
 	rm -rf $(STAGE)
 
 # Configure build environment
-$(STAGE)/config:	clean $(STAGE)/environment
+$(STAGE)/config:	clean
 	@echo "Configure build environment..."
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
 	echo 'ARCH="$(ARCH)"' >>$(CONFIG_FILE)
@@ -110,7 +110,7 @@ provision: $(STAGE)/environment
 # Build new image
 $(STAGE)/build: $(STAGE)/config
 	@echo "Build image..."
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* $(ARTIFACTS_MOUNT)'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && sudo lb build ; mv digabi-* $(ARTIFACTS_MOUNT)'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
 
@@ -121,7 +121,6 @@ build: $(STAGE)/build
 
 # Collect build artifacts (.ISO) to dist/
 $(STAGE)/collect: $(STAGE)/build
-	mv vagrant/digabi-os-* $(ARTIFACTS_DIR)/
 	touch $(STAGE)/collect
 
 # Build image & collect results
