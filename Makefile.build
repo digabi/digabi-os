@@ -39,6 +39,7 @@ BUILD_DIR = digabi-os.$(BUILD_NUMBER)
 BUILD_NUMBER ?= unknown
 
 GIT_REPOSITORY = /digabi-os.git
+
 ARTIFACTS_DIR = dist
 CONFIG_FILE = digabi.local
 
@@ -77,7 +78,7 @@ purge:
 
 # Configure build environment
 $(STAGE)/config:	clean $(STAGE)/environment
-	$(eval TMP := $(shell mktemp vagrant/$(CONFIG_FILE).XXXXXX))
+	$(eval TMP := $(shell mktemp $(CONFIG_FILE).XXXXXX))
 
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
 	echo 'COMMIT="$(COMMIT)"' >>$(TMP)
@@ -109,7 +110,8 @@ provision: $(STAGE)/environment
 
 # Build new image
 $(STAGE)/build: $(STAGE)/config
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /vagrant/'
+	mkdir -p $(ARTIFACTS_DIR)
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /artifacts/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
 

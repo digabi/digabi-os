@@ -41,7 +41,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Mount /vagrant as read-only
   config.vm.synced_folder '.', '/vagrant', :mount_options => ["ro"]
 
-  config.vm.synced_folder '.git', '/digabi-os.git'
+  config.vm.synced_folder '.git', '/digabi-os.git', :mount_options => ["ro"]
+  config.vm.synced_folder 'dist', '/artifacts'
 
   if network_type == 'bridged'
     if network_host_dev
