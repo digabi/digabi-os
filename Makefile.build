@@ -53,7 +53,9 @@ STAGE = .stage
 
 
 $(STAGE)/environment:
+	@echo "Create artifacts dir..."
 	mkdir -p $(ARTIFACTS_DIR)
+	@echo "Provision vagrant..."
 	vagrant up --provider=$(VAGRANT_DEFAULT_PROVIDER) --provision
 	mkdir -p $(STAGE)
 	touch $(STAGE)/environment
@@ -67,11 +69,13 @@ clean: $(STAGE)/environment
 
 # Remove builder (destroys virtual machine)
 purge:
+	@echo "Purge..."
 	$(VAGRANT) destroy -f
 	rm -rf $(STAGE)
 
 # Configure build environment
 $(STAGE)/config:	clean $(STAGE)/environment
+	@echo "Configure build environment..."
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
 	echo 'ARCH="$(ARCH)"' >>$(CONFIG_FILE)
 	echo 'BINARY_IMAGES="$(BINARY_IMAGES)"' >>$(CONFIG_FILE)
@@ -92,8 +96,6 @@ $(STAGE)/config:	clean $(STAGE)/environment
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cp /vagrant/$(CONFIG_FILE) $(BUILD_CONFIG)'
 
-	rm $(CONFIG_FILE)
-
 	$(VAGRANT) ssh -c 'cd $(BUILD_DIR) && lb config'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/config
@@ -106,6 +108,7 @@ provision: $(STAGE)/environment
 
 # Build new image
 $(STAGE)/build: $(STAGE)/config
+	@echo "Build image..."
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /artifacts/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
