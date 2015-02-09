@@ -61,8 +61,11 @@ $(STAGE)/environment:
 	mkdir -p $(STAGE)
 	touch $(STAGE)/environment
 
+up: $(STAGE)/environment
+	vagrant up
+
 # Clean build environment
-clean: $(STAGE)/environment
+clean: $(STAGE)/environment up
 	$(VAGRANT) ssh -c 'if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
 	mkdir -p $(STAGE)
 	rm -f $(STAGE)/build* $(STAGE)/config
@@ -75,7 +78,7 @@ purge:
 	rm -rf $(STAGE)
 
 # Configure build environment
-$(STAGE)/config: $(STAGE)/environment
+$(STAGE)/config: $(STAGE)/environment up
 	@echo "Configure build environment..."
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
 	echo 'ARCH="$(ARCH)"' >>$(CONFIG_FILE)
@@ -105,13 +108,13 @@ $(STAGE)/config: $(STAGE)/environment
 config: $(STAGE)/config
 
 # Build new image
-$(STAGE)/build: $(STAGE)/config
+$(STAGE)/build: $(STAGE)/config up
 	@echo "Build image..."
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && sudo lb build ; mv digabi-* $(ARTIFACTS_MOUNT)'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
 
-build-kernel: $(STAGE)/environment
+build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux'
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
 	#$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd linux-* && fakeroot make -j$(DIGABI_BUILD_CPUS) -f debian/rules.gen binary-arch_i386_none_686-pae'
