@@ -13,26 +13,19 @@
 #
 ARCH ?= i386
 BINARY_IMAGES ?= iso-hybrid
-
 BUILD_TAG ?= N/A
 BUILD_NUMBER ?= unknown.$(shell date +%Y%m%d%H%M%S)
-
 COMMIT ?= HEAD
-
 DEBIAN_MIRROR ?= http://http.debian.net/debian
-
 DIGABI_BUILD_CPUS ?= 1
 DIGABI_BUILD_MEM ?= 1024
 DIGABI_BUILD_TARGET ?= default
 DIGABI_DEBUG ?= false
 DIGABI_RAM_BUILD ?= 0
 HTTP_PROXY ?= 
-
 REPOSITORY_SUITE ?= sid
-
 ROOT_PASSWORD ?=
 VAGRANT_DEFAULT_PROVIDER ?= virtualbox
-
 
 #
 # Other configuration
