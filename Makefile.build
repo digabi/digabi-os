@@ -37,6 +37,7 @@ REPOSITORY = custom-packages/digabi-repository
 GIT_REPOSITORY = /digabi-os.git
 
 ARTIFACTS_DIR = dist
+ARTIFACTS_MOUNT = /artifacts/
 CONFIG_FILE = digabi-os.$(BUILD_NUMBER).config
 
 BUILD_CONFIG = $(BUILD_DIR)/target/default/$(CONFIG_FILE)
@@ -109,12 +110,12 @@ provision: $(STAGE)/environment
 # Build new image
 $(STAGE)/build: $(STAGE)/config
 	@echo "Build image..."
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /artifacts/'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* $(ARTIFACTS_MOUNT)'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
 
 build-kernel: $(STAGE)/environment
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz /artifacts/'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
 
 build: $(STAGE)/build
 
