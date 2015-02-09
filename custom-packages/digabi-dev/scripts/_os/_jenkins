@@ -43,6 +43,7 @@ dns_resolve() {
 }
 
 rm -rf dist
+mkdir -p dist
 
 
 REPOSITORY_IP="$(dns_resolve ${REPOSITORY_HOST})"
