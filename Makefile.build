@@ -48,6 +48,7 @@ VM_ENVIRONMENT ?= set -ex
 
 # Helper for running targets in another Makefile (default: vagrant/Makefile)
 VAGRANT  = vagrant
+VAGRANT_DEFAULT_PROVIDER ?= virtualbox
 
 STAGE = .stage
 
