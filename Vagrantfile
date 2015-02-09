@@ -37,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "https://cdn.ypcs.fi/vagrant/metadata.json"
 
   config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' sh /vagrant/scripts/provision.sh"
-  config.vm.synced_folder '../.git', '/digabi-os.git'
+  config.vm.synced_folder '.git', '/digabi-os.git'
 
   if network_type == 'bridged'
     if network_host_dev
