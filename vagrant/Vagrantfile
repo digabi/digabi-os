@@ -30,7 +30,7 @@ end
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "debian-jessie64"
 
-  config.vm.box_url = "http://cdn.ypcs.fi/vagrant/metadata.json"
+  config.vm.box_url = "https://cdn.ypcs.fi/vagrant/metadata.json"
 
   config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' /vagrant/provision/setup-dos-builder"
   config.vm.synced_folder '../.git', '/digabi-os.git'
