@@ -47,7 +47,7 @@ BUILD_CONFIG = $(BUILD_DIR)/target/default/$(CONFIG_FILE)
 VM_ENVIRONMENT ?= set -ex
 
 # Helper for running targets in another Makefile (default: vagrant/Makefile)
-VAGRANT  = $(MAKE) -C vagrant
+VAGRANT  = vagrant
 
 STAGE = .stage
 
@@ -58,21 +58,20 @@ STAGE = .stage
 
 
 $(STAGE)/environment:
-	$(VAGRANT) up
-	$(VAGRANT) provision
+	vagrant up --provider=$(VAGRANT_DEFAULT_PROVIDER) --provision
 	mkdir -p $(STAGE)
 	touch $(STAGE)/environment
 
 # Clean build environment
 clean: $(STAGE)/environment
-	$(VAGRANT) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
+	$(VAGRANT) ssh -c 'if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
 	mkdir -p $(STAGE)
 	rm -f $(STAGE)/build* $(STAGE)/config
 	touch $(STAGE)/clean
 
 # Remove builder (destroys virtual machine)
 purge:
-	$(VAGRANT) destroy
+	$(VAGRANT) destroy -f
 	rm -rf $(STAGE)
 
 # Configure build environment
@@ -90,14 +89,14 @@ $(STAGE)/config:	clean $(STAGE)/environment
 	echo 'BUILD_NUMBER="$(BUILD_NUMBER)"' >>$(TMP)
 	echo 'DIGABI_BUILD_TARGET="$(DIGABI_BUILD_TARGET)"' >>$(TMP)
 
-	$(VAGRANT) run COMMAND='$(VM_ENVIRONMENT) ; if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
-	$(VAGRANT) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update'
 
-	$(VAGRANT) run COMMAND='$(VM_ENVIRONMENT) ; cat /vagrant/$(shell basename $(TMP)) >> $(BUILD_CONFIG)'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cat /vagrant/$(shell basename $(TMP)) >> $(BUILD_CONFIG)'
 
 	rm $(TMP)
 
-	$(VAGRANT) run COMMAND='cd $(BUILD_DIR) && lb config'
+	$(VAGRANT) ssh -c 'cd $(BUILD_DIR) && lb config'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/config
 	rm -f $(STAGE)/build $(STAGE)/clean
@@ -109,28 +108,28 @@ provision: $(STAGE)/environment
 
 # Build new image
 $(STAGE)/build: $(STAGE)/config
-	$(VAGRANT) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /vagrant/'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /vagrant/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
 
 $(STAGE)/build-bootstrap: $(STAGE)/config
-	$(VAGRANT) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb bootstrap'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb bootstrap'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build-bootstrap
 
 $(STAGE)/build-chroot: $(STAGE)/build-bootstrap
-	$(VAGRANT) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb chroot'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb chroot'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build-chroot
 
 $(STAGE)/build-binary: $(STAGE)/build-chroot
-	$(VAGRANT) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb binary ; mv digabi-* /vagrant/'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb binary ; mv digabi-* /vagrant/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build-binary
 	rm -f $(STAGE)/collect
 
 $(STAGE)/build-kernel: $(STAGE)/environment
-	$(VAGRANT) run COMMAND='$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz /vagrant/'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz /vagrant/'
 	
 build-kernel: $(STAGE)/build-kernel
 	mkdir -p $(ARTIFACTS_DIR)
@@ -148,4 +147,4 @@ $(STAGE)/collect: $(STAGE)/build
 dist:	$(STAGE)/collect
 
 debug: $(STAGE)/environment
-	$(VAGRANT) run || exit 0
+	$(VAGRANT) ssh || exit 0
