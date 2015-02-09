@@ -40,7 +40,7 @@ ARTIFACTS_DIR = dist
 ARTIFACTS_MOUNT = /artifacts/
 CONFIG_FILE = digabi-os.config.$(BUILD_NUMBER)
 
-BUILD_CONFIG = $(BUILD_DIR)/target/default/$(CONFIG_FILE)
+BUILD_CONFIG = $(BUILD_DIR)/target/default/digabi.local
 
 VM_ENVIRONMENT ?= set -ex ; [ -f "/vagrant/$(CONFIG_FILE)" ] && source /vagrant/$(CONFIG_FILE)
 VAGRANT  = vagrant
