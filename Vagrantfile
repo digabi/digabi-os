@@ -37,6 +37,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "https://cdn.ypcs.fi/vagrant/metadata.json"
 
   config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' sh /vagrant/scripts/provision.sh"
+
+  # Mount /vagrant as read-only
+  config.vm.synced_folder '.', '/vagrant', :mount_options => ["ro"]
+
   config.vm.synced_folder '.git', '/digabi-os.git'
 
   if network_type == 'bridged'
