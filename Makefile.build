@@ -132,7 +132,7 @@ $(STAGE)/build-binary: $(STAGE)/build-chroot
 	rm -f $(STAGE)/collect
 
 $(STAGE)/build-kernel: $(STAGE)/environment
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz /vagrant/'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz /artifacts/'
 	
 build-kernel: $(STAGE)/build-kernel
 	mv vagrant/*.deb $(ARTIFACTS_DIR)/
