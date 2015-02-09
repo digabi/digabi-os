@@ -60,6 +60,7 @@ STAGE = .stage
 
 
 $(STAGE)/environment:
+	mkdir -p $(ARTIFACTS_DIR)
 	vagrant up --provider=$(VAGRANT_DEFAULT_PROVIDER) --provision
 	mkdir -p $(STAGE)
 	touch $(STAGE)/environment
@@ -110,7 +111,6 @@ provision: $(STAGE)/environment
 
 # Build new image
 $(STAGE)/build: $(STAGE)/config
-	mkdir -p $(ARTIFACTS_DIR)
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /artifacts/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
@@ -135,14 +135,12 @@ $(STAGE)/build-kernel: $(STAGE)/environment
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz /vagrant/'
 	
 build-kernel: $(STAGE)/build-kernel
-	mkdir -p $(ARTIFACTS_DIR)
 	mv vagrant/*.deb $(ARTIFACTS_DIR)/
 
 build: $(STAGE)/build
 
 # Collect build artifacts (.ISO) to dist/
 $(STAGE)/collect: $(STAGE)/build
-	mkdir -p $(ARTIFACTS_DIR)
 	mv vagrant/digabi-os-* $(ARTIFACTS_DIR)/
 	touch $(STAGE)/collect
 
