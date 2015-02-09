@@ -82,10 +82,14 @@ then
     then
         SNAPSHOT="true"
     fi
-    echo "deb ${DEBIAN_MIRROR} jessie main contrib non-free" >/etc/apt/sources.list
-    echo "deb-src ${DEBIAN_MIRROR} jessie main contrib non-free" >>/etc/apt/sources.list
-    echo "deb http://security.debian.org/ jessie/updates main contrib non-free" >>/etc/apt/sources.list
-    echo "deb-src http://security.debian.org/ jessie/updates main contrib non-free" >>/etc/apt/sources.list
+    if [ -z "${REPOSITORY_SUITE}" ]
+    then
+        REPOSITORY_SUITE="jessie"
+    fi
+    echo "deb ${DEBIAN_MIRROR} ${REPOSITORY_SUITE} main contrib non-free" >/etc/apt/sources.list
+    echo "deb-src ${DEBIAN_MIRROR} ${REPOSITORY_SUITE} main contrib non-free" >>/etc/apt/sources.list
+    echo "deb http://security.debian.org/ ${REPOSITORY_SUITE}/updates main contrib non-free" >>/etc/apt/sources.list
+    echo "deb-src http://security.debian.org/ ${REPOSITORY_SUITE}/updates main contrib non-free" >>/etc/apt/sources.list
 #    sed -ir "s,http://(ftp.[[:alpha:]][[:alpha:]].debian.org|http.debian.net)/debian(/)?,${DEBIAN_MIRROR},g" /etc/apt/sources.list
 else
     echo "I: Using pre-configured Debian mirror."
