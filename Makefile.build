@@ -71,7 +71,7 @@ clean: $(STAGE)/environment
 # Remove builder (destroys virtual machine)
 purge:
 	@echo "Purge..."
-	$(VAGRANT) destroy -f
+	$(VAGRANT) destroy -f || exit 0
 	rm -rf $(STAGE)
 
 # Configure build environment
