@@ -5,6 +5,8 @@
 # For example, to build new image: make -f Makefile.build dist
 #
 
+include Makefile.build
+
 all:
 
 clean:
