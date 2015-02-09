@@ -104,9 +104,6 @@ $(STAGE)/config: $(STAGE)/environment
 
 config: $(STAGE)/config
 
-# Provision buildbox
-provision: $(STAGE)/environment
-
 # Build new image
 $(STAGE)/build: $(STAGE)/config
 	@echo "Build image..."
