@@ -113,22 +113,6 @@ $(STAGE)/build: $(STAGE)/config
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
 
-$(STAGE)/build-bootstrap: $(STAGE)/config
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb bootstrap'
-	mkdir -p $(STAGE)
-	touch $(STAGE)/build-bootstrap
-
-$(STAGE)/build-chroot: $(STAGE)/build-bootstrap
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb chroot'
-	mkdir -p $(STAGE)
-	touch $(STAGE)/build-chroot
-
-$(STAGE)/build-binary: $(STAGE)/build-chroot
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb binary ; mv digabi-* /vagrant/'
-	mkdir -p $(STAGE)
-	touch $(STAGE)/build-binary
-	rm -f $(STAGE)/collect
-
 $(STAGE)/build-kernel: $(STAGE)/environment
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux && cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) && cd .. && mv *.deb *.dsc *.changes *.xz /artifacts/'
 	
