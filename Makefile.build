@@ -110,7 +110,7 @@ $(STAGE)/halt:
 halt: $(STAGE)/halt
 
 # Provision buildbox
-provision: $(STAGE)/environment halt
+provision: $(STAGE)/environment
 
 # Build new image
 $(STAGE)/build: $(STAGE)/config
