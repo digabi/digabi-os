@@ -8,27 +8,31 @@
 # Author: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 #
 
+#
+# User-configurable variables
+#
 ARCH ?= i386
-
-DEBIAN_MIRROR ?= http://http.debian.net/debian
-#DIGABI_BUILD_CPUS ?= $(shell ...)
-DIGABI_RAM_BUILD ?= 0
-HTTP_PROXY ?= 
-ROOT_PASSWORD ?=
-COMMIT ?= HEAD
+BINARY_IMAGES ?= iso-hybrid
 
 BUILD_TAG ?= N/A
+BUILD_NUMBER ?= unknown.$(shell date +%Y%m%d%H%M%S)
 
-REPOSITORY = custom-packages/digabi-repository
-REPOSITORY_SUITE ?= sid
-BINARY_IMAGES ?= iso-hybrid
-DIGABI_BUILD_TARGET ?= default
+COMMIT ?= HEAD
 
-# Enable debugging? (If true, runs debug hooks when building)
-DIGABI_DEBUG ?= false
+DEBIAN_MIRROR ?= http://http.debian.net/debian
 
 DIGABI_BUILD_CPUS ?= 1
 DIGABI_BUILD_MEM ?= 1024
+DIGABI_BUILD_TARGET ?= default
+DIGABI_DEBUG ?= false
+DIGABI_RAM_BUILD ?= 0
+HTTP_PROXY ?= 
+
+REPOSITORY_SUITE ?= sid
+
+ROOT_PASSWORD ?=
+VAGRANT_DEFAULT_PROVIDER ?= virtualbox
+
 
 #
 # Other configuration
@@ -36,7 +40,7 @@ DIGABI_BUILD_MEM ?= 1024
 
 ROOT_CMD = sudo
 BUILD_DIR = digabi-os.$(BUILD_NUMBER)
-BUILD_NUMBER ?= unknown
+REPOSITORY = custom-packages/digabi-repository
 
 GIT_REPOSITORY = /digabi-os.git
 
@@ -46,10 +50,7 @@ CONFIG_FILE = digabi.local
 BUILD_CONFIG = $(BUILD_DIR)/target/default/$(CONFIG_FILE)
 
 VM_ENVIRONMENT ?= set -ex
-
-# Helper for running targets in another Makefile (default: vagrant/Makefile)
 VAGRANT  = vagrant
-VAGRANT_DEFAULT_PROVIDER ?= virtualbox
 
 STAGE = .stage
 
