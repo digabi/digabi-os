@@ -56,7 +56,6 @@ STAGE = .stage
 
 
 $(STAGE)/environment:
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) up
 	$(BUILDER_DO) provision
 	mkdir -p $(STAGE)
@@ -64,7 +63,6 @@ $(STAGE)/environment:
 
 # Clean build environment
 clean: $(STAGE)/environment
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='if [ -d "$(BUILD_DIR)" ] ; then sudo rm -rf "$(BUILD_DIR)" ; fi'
 	mkdir -p $(STAGE)
 	rm -f $(STAGE)/build* $(STAGE)/config
@@ -72,13 +70,11 @@ clean: $(STAGE)/environment
 
 # Remove builder (destroys virtual machine)
 purge:
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) destroy
 	rm -rf $(STAGE)
 
 # Configure build environment
 $(STAGE)/config:	clean $(STAGE)/environment
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(eval TMP := $(shell mktemp $(BUILDER)/$(CONFIG_FILE).XXXXXX))
 
 	# Export variables to config/digabi.local (which is read by auto/config, auto/build)
@@ -105,49 +101,40 @@ $(STAGE)/config:	clean $(STAGE)/environment
 	rm -f $(STAGE)/build $(STAGE)/clean
 
 config: $(STAGE)/config
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 $(STAGE)/halt:
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) halt
 	mkdir -p $(STAGE)
 	touch $(STAGE)/halt
 
 halt: $(STAGE)/halt
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 # Provision buildbox
 provision: $(STAGE)/environment halt
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 # Build new image
 $(STAGE)/build: $(STAGE)/config
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb build ; mv digabi-* /$(BUILDER)/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build
 
 $(STAGE)/build-bootstrap: $(STAGE)/config
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb bootstrap'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build-bootstrap
 
 $(STAGE)/build-chroot: $(STAGE)/build-bootstrap
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb chroot'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build-chroot
 
 $(STAGE)/build-binary: $(STAGE)/build-chroot
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && $(BUILD_ENV) sudo lb binary ; mv digabi-* /$(BUILDER)/'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/build-binary
 	rm -f $(STAGE)/collect
 
 $(STAGE)/build-kernel: $(STAGE)/environment
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run COMMAND='$(VM_ENVIRONMENT) ; apt-get source linux && cd linux-* && debuild-pbuilder -us -uc && cd .. && mv *.deb *.dsc *.changes *.xz /$(BUILDER)/'
 
 build-kernel: $(STAGE)/build-kernel
@@ -155,22 +142,17 @@ build-kernel: $(STAGE)/build-kernel
 	mv $(BUILDER)/*.deb $(ARTIFACTS_DIR)/
 
 build: $(STAGE)/build
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 # Collect build artifacts (.ISO) to dist/
 $(STAGE)/collect: build
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/digabi-os-* $(ARTIFACTS_DIR)/
 	touch $(STAGE)/collect
 
 # Build image & collect results
 dist:	$(STAGE)/collect
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 
 debug: $(STAGE)/environment
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
 	$(BUILDER_DO) run || exit 0
 
 .PHONY: custom-packages
-	@echo D: Making $@. The prerequisites are $^. Of those, $? are newer than $@.
