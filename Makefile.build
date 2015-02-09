@@ -137,7 +137,7 @@ build-kernel: $(STAGE)/build-kernel
 build: $(STAGE)/build
 
 # Collect build artifacts (.ISO) to dist/
-$(STAGE)/collect: build
+$(STAGE)/collect: $(STAGE)/build
 	mkdir -p $(ARTIFACTS_DIR)
 	mv $(BUILDER)/digabi-os-* $(ARTIFACTS_DIR)/
 	touch $(STAGE)/collect
