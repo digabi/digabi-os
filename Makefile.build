@@ -102,13 +102,6 @@ $(STAGE)/config:	clean $(STAGE)/environment
 
 config: $(STAGE)/config
 
-$(STAGE)/halt:
-	$(BUILDER_DO) halt
-	mkdir -p $(STAGE)
-	touch $(STAGE)/halt
-
-halt: $(STAGE)/halt
-
 # Provision buildbox
 provision: $(STAGE)/environment
 
