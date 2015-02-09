@@ -147,5 +147,3 @@ dist:	$(STAGE)/collect
 
 debug: $(STAGE)/environment
 	$(BUILDER_DO) run || exit 0
-
-.PHONY: custom-packages
