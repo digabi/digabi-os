@@ -30,7 +30,7 @@ end
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "debian-jessie64"
 
-  config.vm.box_url = "http://cdn.ypcs.fi/pub/vagrant-debian-jessie64.box"
+  config.vm.box_url = "http://cdn.ypcs.fi/vagrant/metadata.json"
 
   config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' /vagrant/provision/setup-dos-builder"
   config.vm.synced_folder '../.git', '/digabi-os.git'
@@ -53,13 +53,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provider :vmware_workstation do |vmw, override|
-    override.vm.box_url = "http://cdn.ypcs.fi/pub/vmware_workstation-vagrant-debian-jessie64.box"
     vmw.vmx['memsize'] = mem_size
     vmw.vmx['numvcpus'] = cpus unless cpus.nil?
   end
 
   config.vm.provider :vmware_fusion do |vmw, override|
-    override.vm.box_url = "http://cdn.ypcs.fi/pub/vmware_fusion-vagrant-debian-jessie64.box"
     vmw.vmx['memsize'] = mem_size
     vmw.vmx['numvcpus'] = cpus unless cpus.nil?
   end
