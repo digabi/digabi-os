@@ -31,6 +31,7 @@ if ENV['DIGABI_NETWORK_HOST_DEV']
 end
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # You should be able to use *any* Debian 8 (jessie) image as your building environment
   config.vm.box = "debian-jessie64"
 
   config.vm.box_url = "https://cdn.ypcs.fi/vagrant/metadata.json"
