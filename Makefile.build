@@ -48,7 +48,6 @@ VM_ENVIRONMENT ?= set -ex
 
 # Helper for running targets in another Makefile (default: vagrant/Makefile)
 BUILDER_DO  = $(MAKE) -C $(BUILDER)
-REPOSITORY_DO = $(MAKE) -C $(REPOSITORY)
 
 STAGE = .stage
 
