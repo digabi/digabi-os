@@ -58,9 +58,3 @@ then
     ${UNPACKCMD} ${INITRDREAL}${SUFFIX}
 fi
 
-# ville@lumikki:~/work/digabi/digabi-os/dist/tmp/i$ dd if=initrd.img.old bs=1 skip=458240 count=512 2>/dev/null |hd |grep "1f 8b 08"
-#   00000090  1f 8b 08 00 0d 49 09 54  00 03 ec 5a 7f 74 53 55  |.....I.T...Z.tSU|
-#ville@lumikki:~/work/digabi/digabi-os/dist/tmp/i$ dd if=initrd.img.old bs=1 skip=$((895*512+0x90)) |file -
-#   /dev/stdin: gzip compressed data, last modified: Fri Sep  5 08:24:29 2014, from Unix
-#ville@lumikki:~/work/digabi/digabi-os/dist/tmp/i$ dd if=initrd.img.old bs=1 skip=$((895*512+0x90)) |gunzip |cpio -i
-
