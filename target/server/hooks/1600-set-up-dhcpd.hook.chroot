@@ -20,10 +20,18 @@ then
 
 authoritative;
 
+class "abitti" {
+  match if substring (option vendor-class-identifier, 0, 6) = "abitti";
+}
+
 subnet 10.10.0.0 netmask 255.255.0.0 {
-  default-lease-time 86400;
-  max-lease-time 86400;
-  range 10.10.1.1 10.10.255.250;
+  pool {
+    default-lease-time 86400;
+    max-lease-time 86400;
+    range 10.10.1.1 10.10.255.250;
+    #allow members of "abitti";
+    allow all clients;
+  }
 }
 EOF
 else
