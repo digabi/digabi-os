@@ -2,7 +2,7 @@ koetilapalvelin
 
 nginx
 nodejs
-default-jre
+oracle-java8-jdk
 
 postgresql
 postgresql-contrib
