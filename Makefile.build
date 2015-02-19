@@ -26,6 +26,8 @@ REPOSITORY_SUITE ?= jessie
 ROOT_PASSWORD ?=
 VAGRANT_DEFAULT_PROVIDER ?= virtualbox
 
+EXTRA_CONFIG ?= 
+
 #
 # Other configuration
 #
@@ -99,6 +101,7 @@ $(STAGE)/config: $(STAGE)/environment up
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cp /vagrant/$(CONFIG_FILE) $(BUILD_CONFIG)'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; if [ -n "$(EXTRA_CONFIG)" ] ; then git clone $(EXTRA_CONFIG) $(BUILD_DIR)/target/extra ; fi'
 
 	$(VAGRANT) ssh -c 'cd $(BUILD_DIR) && lb config'
 	mkdir -p $(STAGE)
