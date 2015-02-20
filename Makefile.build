@@ -25,6 +25,7 @@ HTTP_PROXY ?=
 REPOSITORY_SUITE ?= jessie
 ROOT_PASSWORD ?=
 VAGRANT_DEFAULT_PROVIDER ?= virtualbox
+LB_OPTIONS ?=
 
 EXTRA_CONFIG ?= 
 
@@ -103,7 +104,7 @@ $(STAGE)/config: $(STAGE)/environment up
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cp /vagrant/$(CONFIG_FILE) $(BUILD_CONFIG)'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; if [[ -n "$(EXTRA_CONFIG)" && -d "$(EXTRA_CONFIG)" ]] ; then git clone $(EXTRA_CONFIG) $(BUILD_DIR)/target/extra ; fi'
 
-	$(VAGRANT) ssh -c 'cd $(BUILD_DIR) && lb config'
+	$(VAGRANT) ssh -c 'cd $(BUILD_DIR) && lb config $(LB_OPTIONS)'
 	mkdir -p $(STAGE)
 	touch $(STAGE)/config
 	rm -f $(STAGE)/build $(STAGE)/clean
