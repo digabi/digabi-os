@@ -12,13 +12,7 @@ then
 fi
 
 cleanup() {
-    if [ "${JENKINS_REUSE_VAGRANT}" = "true" ]
-    then
-        make -f Makefile.build clean
-        make -f Makefile.build halt
-    else
-        make -f Makefile.build purge
-    fi
+    make -f Makefile.build purge
 }
 
 mdns_resolve() {
