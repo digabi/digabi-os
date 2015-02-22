@@ -2,8 +2,10 @@
 
 set -ex
 
-. $(dirname $0)/_jenkins
+cleanup() {
+    vagrant destroy -f
+}
 
 trap cleanup EXIT
 
-make -f Makefile.build dist
+make -f Makefile dist
