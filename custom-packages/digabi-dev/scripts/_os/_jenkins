@@ -50,11 +50,5 @@ then
     DEBIAN_MIRROR="http://${REPOSITORY_IP}/debian"
 fi
 
-if [ -z "${ARCH}" ]
-then
-    ARCH="i386"
-fi
-
 export DEBIAN_MIRROR="${DEBIAN_MIRROR}"
-export ARCH="${ARCH}"
 export http_proxy="${PROXY}"

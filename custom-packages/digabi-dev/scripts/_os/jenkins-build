@@ -6,4 +6,4 @@ set -ex
 
 trap cleanup EXIT
 
-make -f Makefile.build dist DIGABI_BUILD_TARGET="${DIGABI_BUILD_TARGET}" DIGABI_DEBUG="${DIGABI_DEBUG}" COMMIT="${COMMIT}" ROOT_PASSWORD="${ROOT_PASSWORD}" ARCH="${ARCH}" DEBIAN_MIRROR="${DEBIAN_MIRROR}" http_proxy="${PROXY}" BUILD_TAG="${BUILD_TAG}"
+make -f Makefile.build dist
