@@ -17,7 +17,7 @@ fi
 
 vagrant up
 
-vagrant ssh -c "apt-get source ${PACKAGE} && cd ${PACKAGE}- && debuild-pbuilder -us -uc"
+vagrant ssh -c "apt-get source ${PACKAGE} && cd ${PACKAGE}-* && debuild-pbuilder -us -uc"
 vagrant ssh -c "mv *.deb /artifacts/"
 
 vagrant halt
