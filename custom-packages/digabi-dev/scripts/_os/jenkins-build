@@ -1,1 +1,9 @@
-../../../../scripts/build.sh
+#!/bin/sh
+
+set -ex
+
+. $(dirname $0)/_jenkins
+
+trap cleanup EXIT
+
+make -f Makefile.build dist
