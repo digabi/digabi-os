@@ -15,4 +15,4 @@ then
     exit 1
 fi
 
-make package-${PACKAGE}
+make package PACKAGE=${PACKAGE}
