@@ -1,9 +1,6 @@
 #!/bin/sh
 set -e
 
-rm -rf dist/debs
-mkdir -p dist/debs
-
 cleanup() {
     vagrant destroy -f
 }
@@ -21,6 +18,6 @@ fi
 vagrant up
 
 vagrant ssh -c "apt-get source ${PACKAGE} && cd ${PACKAGE}- && debuild-pbuilder -us -uc"
-vagrant ssh -c "mv *.deb /artifacts/debs/"
+vagrant ssh -c "mv *.deb /artifacts/"
 
 vagrant halt
