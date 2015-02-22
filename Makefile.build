@@ -132,6 +132,10 @@ build-kernel: $(STAGE)/environment up
 	#$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd linux-* && fakeroot make -j$(DIGABI_BUILD_CPUS) -f debian/rules.gen binary-arch_amd64_none_none'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; mv *.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
 
+package-%: $(STAGE)/environment up
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source $@ && cd $@-* && debuild-pbuilder -j$(DIGABI_BUILD_CPUS) -us -uc'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; mv *.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
+
 build: $(STAGE)/build
 
 # Collect build artifacts (.ISO) to dist/
