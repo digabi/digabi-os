@@ -15,9 +15,4 @@ then
     exit 1
 fi
 
-vagrant up
-
-vagrant ssh -c "apt-get source ${PACKAGE} && cd ${PACKAGE}-* && debuild-pbuilder -j${DIGABI_BUILD_CPUS:-1} -us -uc"
-vagrant ssh -c "mv *.deb /artifacts/"
-
-vagrant halt
+make package-${PACKAGE}
