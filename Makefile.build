@@ -134,7 +134,7 @@ build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; mv *.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
 
 package: $(STAGE)/environment up
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source $(PACKAGE) && cd $(PACKAGE)-* && debuild-pbuilder -j$(DIGABI_BUILD_CPUS) -us -uc'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source $(PACKAGE) && cd $(PACKAGE)-* && debchange --local "+ypcs$(BUILD_NUMBER)" "Automatic CI build." && debuild-pbuilder -j$(DIGABI_BUILD_CPUS) -us -uc'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; mv *.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
 
 build: $(STAGE)/build
