@@ -15,4 +15,5 @@ then
     exit 1
 fi
 
+echo "I: Building package ${PACKAGE}..."
 make package PACKAGE=${PACKAGE}
