@@ -1,0 +1,42 @@
+set default=0
+set timeout=10
+
+echo "Ladataan    / Laddas   "
+insmod vbe
+clear
+echo "Ladataan.   / Laddas.  "
+insmod efi_gop
+clear
+echo "Ladataan..  / Laddas.. "
+insmod efi_uga
+clear
+echo "Ladataan... / Laddas..."
+
+if loadfont ${prefix}/fonts/unicode.pf2
+then
+        insmod gfxterm
+        set gfxmode=auto
+        set gfxpayload=keep
+        terminal_output gfxterm
+fi
+
+set color_normal=white/black
+set color_highlight=cyan/black
+
+set superusers="digabi"
+password_pbkdf2 digabi grub.pbkdf2.sha512.10000.F57D99110C891F0C0B55B772EBEEB4284AA6958C8B62EF825BADC7406F29B58BFB0B0B053C0A67DBC32E2305B8D0039E7671935ADD0FB7233BCB125EA5CB8C54.75EAF09F5DE144350CFB74D5C9798CBB1579BD7A7CA0B99F70EAACA919FBFC5CF410E2A1935F1026D94E6062E218B3DAEE6BD1363EE7DD69DF4CC0268B4D9988
+
+insmod gettext
+set lang=fi
+insmod progress
+
+if cpuid -l ; then
+menuentry "PC" --unrestricted {
+linux           @LINUX@ @APPEND_LIVE@ quiet
+initrd          @INITRD@
+}
+menuentry "Macbook" --unrestricted {
+linux           @LINUX@ @APPEND_LIVE@ quiet nomodeset xforcevesa
+initrd          @INITRD@
+}
+fi
