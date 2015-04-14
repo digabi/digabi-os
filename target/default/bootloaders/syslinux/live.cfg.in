@@ -31,12 +31,5 @@ label pc
     initrd @INITRD@
     append @APPEND_LIVE@ quiet splash
 
-label macbook
-    menu label ^Macbook (tulossa / kommer snart)
-
-    linux @LINUX@
-    initrd @INITRD@
-    append @APPEND_LIVE@ nomodeset
-
 menu tabmsg Press ENTER to boot
 menu clear
