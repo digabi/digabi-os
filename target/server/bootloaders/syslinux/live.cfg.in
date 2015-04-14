@@ -30,12 +30,5 @@ label ktp1
     initrd @INITRD@
     append @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.1:255.255.0.0 hostname=ktp1.local persistence
 
-label ktp2
-    menu label ^Koetilapalvelin 2
-
-    linux @LINUX@
-    initrd @INITRD@
-    append @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.2:255.255.0.0 hostname=ktp2.local persistence
-
 menu tabmsg Press ENTER to boot
 menu clear
