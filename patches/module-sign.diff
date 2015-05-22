@@ -1,0 +1,17 @@
+Index: linux-3.16.7-ckt9/debian/config/config
+===================================================================
+--- linux-3.16.7-ckt9.orig/debian/config/config
++++ linux-3.16.7-ckt9/debian/config/config
+@@ -5061,7 +5061,11 @@ CONFIG_MODULE_FORCE_UNLOAD=y
+ CONFIG_MODVERSIONS=y
+ # CONFIG_MODULE_SRCVERSION_ALL is not set
+ #. Not yet
+-# CONFIG_MODULE_SIG is not set
++CONFIG_MODULE_SIG=y
++CONFIG_MODULE_SIG_FORCE=y
++CONFIG_MODULE_SIG_ALL=y
++CONFIG_MODULE_SIG_SHA1=y
++CONFIG_MODULE_SIG_HASH="sha1"
+ 
+ ##
+ ## file: kernel/gcov/Kconfig
