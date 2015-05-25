@@ -15,3 +15,16 @@ Index: linux-3.16.7-ckt9/debian/config/config
  
  ##
  ## file: kernel/gcov/Kconfig
+Index: linux-3.16.7-ckt9/debian/rules.real
+===================================================================
+--- linux-3.16.7-ckt9.orig/debian/rules.real	2015-04-14 15:18:23.000000000 -0400
++++ linux-3.16.7-ckt9/debian/rules.real	2015-05-25 15:44:58.917896407 -0400
+@@ -351,7 +351,7 @@
+ 	  install-image_$(ARCH)_$(FEATURESET)_$(FLAVOUR)_plain_dt \
+ 	  DIR='$(DIR)' PACKAGE_DIR='$(PACKAGE_DIR)' REAL_VERSION='$(REAL_VERSION)'
+ ifeq ($(MODULES),True)
+-	+$(MAKE_CLEAN) -C $(DIR) modules_install DEPMOD='$(CURDIR)/debian/bin/no-depmod' INSTALL_MOD_PATH='$(CURDIR)'/$(PACKAGE_DIR) INSTALL_MOD_STRIP=1
++	+$(MAKE_CLEAN) -C $(DIR) modules_install DEPMOD='$(CURDIR)/debian/bin/no-depmod' INSTALL_MOD_PATH='$(CURDIR)'/$(PACKAGE_DIR)
+ ifeq ($(DEBUG),True)
+ 	set -o pipefail; \
+ 	find $(PACKAGE_DIR) -name '*.ko' | sed 's|$(PACKAGE_DIR)/lib/modules/$(REAL_VERSION)/kernel/||' | while read module ; do \
