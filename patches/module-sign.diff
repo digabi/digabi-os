@@ -28,3 +28,29 @@ Index: linux-3.16.7-ckt9/debian/rules.real
  ifeq ($(DEBUG),True)
  	set -o pipefail; \
  	find $(PACKAGE_DIR) -name '*.ko' | sed 's|$(PACKAGE_DIR)/lib/modules/$(REAL_VERSION)/kernel/||' | while read module ; do \
+Index: linux-3.16.7-ckt9/debian/config/amd64/defines
+===================================================================
+--- linux-3.16.7-ckt9.orig/debian/config/amd64/defines	2015-05-26 03:57:13.512613160 -0400
++++ linux-3.16.7-ckt9/debian/config/amd64/defines	2015-04-14 15:18:22.000000000 -0400
+@@ -5,7 +5,7 @@
+ kernel-arch: x86
+ 
+ [build]
+-debug-info: true
++debug-info: false
+ image-file: arch/x86/boot/bzImage
+ 
+ [image]
+Index: linux-3.16.7-ckt9/debian/config/amd64/defines
+===================================================================
+--- linux-3.16.7-ckt9.orig/debian/config/i386/defines	2015-05-26 03:57:32.540615843 -0400
++++ linux-3.16.7-ckt9/debian/config/i386/defines	2015-04-14 15:18:22.000000000 -0400
+@@ -32,7 +32,7 @@
+  i386/config.586
+ 
+ [686-pae_build]
+-debug-info: true
++debug-info: false
+ 
+ [686-pae_description]
+ hardware: modern PCs
