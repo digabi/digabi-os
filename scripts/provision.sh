@@ -130,7 +130,7 @@ echo "I: Upgrade build system..."
 DEBIAN_FRONTEND=noninteractive apt-get -qy upgrade
 
 echo "I: Install digabi-dev, rsync..."
-DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-buildbox rsync git
+DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-buildbox rsync git aptitude
 
 echo "I: Saving provisioning state..."
 echo "${PROVISION_CHECKSUM}" >${PROVISION_STATEFILE}
