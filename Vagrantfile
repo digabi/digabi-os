@@ -10,6 +10,12 @@ VIRTUAL_MACHINE_HOSTNAME = 'jessie.vagrantup.com'
 # Virtual machine memory size for on-disk builds
 VM_MEMORY_FOR_DISK_BUILDS = 1024 # 1 GB
 
+if ENV['BITS']
+  bits=ENV['BITS']
+else
+  bits=64
+end
+
 if ENV['DIGABI_BUILD_MEM']
   mem_size = ENV['DIGABI_BUILD_MEM']
 else
@@ -27,7 +33,7 @@ end
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # You should be able to use *any* Debian 8 (jessie) image as your building environment
-  config.vm.box = "debian-jessie64"
+  config.vm.box = "debian-jessie#{bits}"
 
   config.vm.box_url = "https://cdn.ypcs.fi/vagrant/metadata.json"
 
