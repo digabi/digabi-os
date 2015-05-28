@@ -57,7 +57,7 @@ Index: linux-3.16.7-ckt9/debian/config/amd64/defines
 Index: linux-3.16.7-ckt9/kernel/Makefile
 --- linux-3.16.7-ckt9.orig/kernel/Makefile	2015-03-30 06:09:09.000000000 -0400
 +++ linux-3.16.7-ckt9/kernel/Makefile	2015-05-28 10:12:48.137082466 -0400
-@@ -184,40 +184,6 @@
+@@ -184,40 +184,7 @@
  $(error Could not determine digest type to use from kernel config)
  endif
  
@@ -98,5 +98,6 @@ Index: linux-3.16.7-ckt9/kernel/Makefile
 -	@echo >>x509.genkey "subjectKeyIdentifier=hash"
 -	@echo >>x509.genkey "authorityKeyIdentifier=keyid"
 +signing_key.%: /vagrant/signing-keys/signing_key.%
-+	@cp $^ $@
++	@echo Copying signing key
++	cp -v $^ $@
  endif
