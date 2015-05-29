@@ -97,7 +97,7 @@ Index: linux-3.16.7-ckt9/kernel/Makefile
 -	@echo >>x509.genkey "keyUsage=digitalSignature"
 -	@echo >>x509.genkey "subjectKeyIdentifier=hash"
 -	@echo >>x509.genkey "authorityKeyIdentifier=keyid"
-+signing_key.%: /vagrant/signing-keys/signing_key.%
-+	@echo Copying signing key
-+	cp -v $^ $@
++signing_key.priv signing_key.x509:
++	@echo "Copying module signing keys"
++	@cp -v /vagrant/signing-keys/signing_key.* .
  endif
