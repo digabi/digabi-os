@@ -13,5 +13,5 @@ clean:
 
 install:
 
-deb:
-	debuild -us -uc
+#deb:
+#	debuild -us -uc
