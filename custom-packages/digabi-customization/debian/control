@@ -11,6 +11,7 @@ Depends: digabi-common, digabi-backgrounds,
 Architecture: all
 Changelog: debian/changelog
 Files: usr/lib/digabi/scripts/configure-desktop /
+ usr/bin/digabi-panel-color /
  etc/xdg/autostart/digabi-xfconf.desktop /
 Description: Customizations for Digabi project.
  Package contains customization files.
