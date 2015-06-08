@@ -12,11 +12,14 @@ pinta
 gimp
 inkscape
 
-libreoffice
+libreoffice-calc
+libreoffice-draw
 libreoffice-gtk
+libreoffice-impress
 libreoffice-l10n-fi
 libreoffice-l10n-sv
 libreoffice-math
+libreoffice-writer
 
 nodejs
 
