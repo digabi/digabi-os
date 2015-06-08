@@ -20,7 +20,7 @@ File: postinst
  set -e
  
  PLYMOUTH_BIN="/usr/sbin/plymouth-set-default-theme"
- PLYMOUTH_THEME="glow"
+ PLYMOUTH_THEME="spinfinity"
  
  update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/digabi/images/background.svg 100
  update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/digabi/images/digabi.svg 100
