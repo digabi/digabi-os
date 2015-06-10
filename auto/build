@@ -114,8 +114,6 @@ set -o pipefail
 if time lb build noauto ${@} 2>&1 | tee "${BUILD_LOG}" ; then
     echo "Image was successfully created"
     echo "Renaming generated files..."
-    ls
-    #mv -i "${BUILD_FILENAME}.${BUILD_FILENAME_EXT}" "${BUILD_DEST_FILENAME}" # FIXME
     mv -i "${BUILD_FILENAME_FULL}" "${BUILD_DEST_FILENAME}" # FIXME
     mv -i "${BUILD_FILENAME}.packages" "${BUILD_PACKAGES}" # FIXME
     tar -cJf "${BUILD_CONFIG}" config
