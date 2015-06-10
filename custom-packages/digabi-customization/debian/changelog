@@ -1,3 +1,9 @@
+digabi-customization (2.18) unstable; urgency=medium
+
+  * Disable XFWM4 general/mousewheel_rollup.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 10 Jun 2015 13:30:31 +0300
+
 digabi-customization (2.17) unstable; urgency=medium
 
   * Use spinfinity as Plymouth theme.

@@ -90,4 +90,8 @@ then
 
     # Prettier notifications
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-notifyd" -p "/theme" -t "string" -s "Smoke"
+    
+    # Disable rolling up windows when scrolling w/ mouse wheel
+    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/mousewheel_rollup" -t "bool" -s "false"
 fi
+
