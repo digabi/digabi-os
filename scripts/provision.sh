@@ -46,16 +46,6 @@ echo "I: Prefer IPv4 over IPv6..."
 sed -i -e 's/#\(precedence ::ffff:.*100\)/\1/' /etc/gai.conf
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
 
-#
-# Do not use virtual machine proxy before apt-cacher-ng is installed
-# (From Tails)
-#
-if [ "$http_proxy" = "http://$(hostname -f):3142" ] &&
-   ! [ -f /etc/apt-cacher-ng/acng.conf ]; then
-    LOCAL_HTTP_PROXY="$http_proxy"
-    http_proxy=''
-fi
-
 if [ -f "/etc/apt/sources.list.d/digabi.list" ]
 then
     echo "I: Digabi repository already configured, skipping configuration..."
@@ -109,22 +99,8 @@ Acquire::Check-Valid-Until "false";
 EOF
 fi
 
-#install -o root -g root -m 755 /vagrant/provision/assets/build-dos /usr/local/bin
-
 echo "I: Update package lists..."
 apt-get -qy update
-
-echo "I: Install apt-cacher-ng..."
-DEBIAN_FRONTEND=noninteractive apt-get -y install apt-cacher-ng
-
-# Install custom configuration for apt-cacher-ng and restart
-#install -o root -g root -m 644 /vagrant/provision/assets/acng.conf /etc/apt-cacher-ng/acng.conf
-#service apt-cacher-ng restart
-
-# Restore local HTTP proxy if needed
-if [ "$LOCAL_HTTP_PROXY" ]; then
-    http_proxy="$LOCAL_HTTP_PROXY"
-fi
 
 echo "I: Upgrade build system..."
 DEBIAN_FRONTEND=noninteractive apt-get -qy upgrade
