@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Build-Depends: debhelper (>= 9), librsvg2-bin, config-package-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: https://github.com/digabi/digabi-os
 Vcs-Git: https://github.com/digabi/digabi-os.git
 
