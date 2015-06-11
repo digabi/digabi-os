@@ -24,7 +24,7 @@ Package: digabios-backgrounds
 Replaces: digabi-backgrounds
 Provides: digabi-backgrounds
 Conflicts: digabi-backgrounds
-Depends: desktop-base
+Depends: ${misc:Depends}, desktop-base
 Architecture: all
 Description: Backgrounds for DigabiOS.
  This package installs background files for DigabiOS.
@@ -32,12 +32,13 @@ Description: Backgrounds for DigabiOS.
 Package: digabios-system-settings
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
+Depends: ${misc:Depends}
 Architecture: all
 Description: Configures system settings for DigabiOS.
  Does misc changes to /etc...
 
 Package: plymouth-themes-digabios
 Architecture: all
-Depends: plymouth, plymouth-x11
+Depends: ${misc:Depends}, plymouth, plymouth-x11
 Description: Custom Plymouth theme
  Installs custom Plymouth theme to system.
