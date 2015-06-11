@@ -1,2 +1,4 @@
+all:
+
 deb:
-	equivs-build debian/control
+	dpkg-buildpackage -us -uc
