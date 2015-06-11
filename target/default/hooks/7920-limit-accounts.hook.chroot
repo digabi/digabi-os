@@ -13,7 +13,7 @@ then
     done 
 fi
 
-ACCOUNTS="$(cat /etc/passwd |cut -d: -f1)"
+ACCOUNTS="$(cat /etc/passwd |cut -d: -f1 |xargs)"
 
 echo "I: Remove unnecessary shells..."
 for a in ${ACCOUNTS}
