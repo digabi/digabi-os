@@ -1,5 +1,4 @@
 #!/bin/bash
-if [ -n "${DIGABI_DEBUG}" ] ; then set -x  ; fi
 
 set -e
 

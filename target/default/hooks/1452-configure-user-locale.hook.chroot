@@ -1,5 +1,4 @@
 #!/bin/sh
-if [ -n "${DIGABI_DEBUG}" ] ; then set -x  ; fi
 set -e
 
 XSESSIONRC="/etc/skel/.xsessionrc"

@@ -2,7 +2,6 @@
 
 # We don't install the koetilapalvelin-ha package the normal way because it overwrites (configuration) files from other packages.
 
-if [ -n "${DIGABI_DEBUG}" ] ; then set -x  ; fi
 
 set -e
 
