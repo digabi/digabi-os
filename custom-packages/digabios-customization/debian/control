@@ -30,6 +30,8 @@ Description: Backgrounds for DigabiOS.
  This package installs background files for DigabiOS.
 
 Package: digabios-system-settings
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
 Architecture: all
 Description: Configures system settings for DigabiOS.
  Does misc changes to /etc...

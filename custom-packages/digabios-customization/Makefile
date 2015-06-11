@@ -25,5 +25,8 @@ install: $(CONTENT_DIR)
 	install -d -m 0755 $(DESTDIR)/usr/share/plymouth/themes/digabios
 	install -D -m 0644 plymouth/* $(DESTDIR)/usr/share/plymouth/themes/digabios
 
+	# digabios-system-settings
+	install -D -m 0644 xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml
+
 deb:
 	dpkg-buildpackage -us -uc
