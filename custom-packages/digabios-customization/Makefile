@@ -23,7 +23,7 @@ install: $(CONTENT_DIR)
 
 	# plymouth-themes-digabios
 	install -d -m 0755 $(DESTDIR)/usr/share/plymouth/themes/digabios
-	install -D plymouth/* $(DESTDIR)/usr/share/plymouth/themes/digabios
+	install -D -m 0644 plymouth/* $(DESTDIR)/usr/share/plymouth/themes/digabios
 
 deb:
 	dpkg-buildpackage -us -uc
