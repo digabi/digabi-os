@@ -27,6 +27,7 @@ install: $(CONTENT_DIR)
 
 	# digabios-system-settings
 	install -D -m 0644 xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml
+	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc
 
 deb:
 	dpkg-buildpackage -us -uc

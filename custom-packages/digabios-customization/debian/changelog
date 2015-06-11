@@ -1,6 +1,7 @@
 digabios-customization (3.0.2) UNRELEASED; urgency=medium
 
   * Lock XFCE4 panel (no modifications allowed).
+  * Customize ~/.xsessionrc.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 11 Jun 2015 15:43:15 +0300
 

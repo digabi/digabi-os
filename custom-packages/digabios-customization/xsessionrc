@@ -1,0 +1,9 @@
+if [ -f "${HOME}/.dmrc" ]
+then
+    _LOCALE="$(sed -n '/^Language=\(.*\)$/s//\1/p' ${HOME}/.dmrc)"
+    if [ -n "${_LOCALE}" ]
+    then
+        export LANG="${_LOCALE}"
+        export LC_ALL="${_LOCALE}"
+    fi
+fi
