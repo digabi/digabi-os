@@ -108,7 +108,7 @@ then
     DISTRIBUTION="jessie"
 fi
 
-DEFAULT_DEBIAN_MIRROR="http://ftp.fi.debian.org/debian/"
+DEFAULT_DEBIAN_MIRROR="http://httpredir.debian.org/debian"
 if [ -z "${DEBIAN_MIRROR}" ] ; then
     DEBIAN_MIRROR="${DEFAULT_DEBIAN_MIRROR}"
 fi
