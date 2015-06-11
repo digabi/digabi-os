@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<channel name="xfce4-panel" version="1.0">
+<channel name="xfce4-panel" version="1.0" locked="*" unlocked="root">
   <property name="configver" type="int" value="2"/>
   <property name="panels" type="array">
     <value type="int" value="1"/>
