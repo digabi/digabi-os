@@ -1,52 +1,59 @@
-digabi-customization (2.18) unstable; urgency=medium
+digabios-customization (3.0.0) unstable; urgency=medium
+
+  * Convert to native Debian package.
+  * Split to multiple packages.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 11 Jun 2015 12:52:17 +0300
+
+digabios-customization (2.18) unstable; urgency=medium
 
   * Disable XFWM4 general/mousewheel_rollup.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 10 Jun 2015 13:30:31 +0300
 
-digabi-customization (2.17) unstable; urgency=medium
+digabios-customization (2.17) unstable; urgency=medium
 
   * Use spinfinity as Plymouth theme.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 08 Jun 2015 15:30:44 +0300
 
-digabi-customization (2.16) unstable; urgency=medium
+digabios-customization (2.16) unstable; urgency=medium
 
   * Add tool for changing XFCE panel color.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 08 Jun 2015 10:17:05 +0300
 
-digabi-customization (2.15) unstable; urgency=medium
+digabios-customization (2.15) unstable; urgency=medium
 
   * Removed plymouth-drm from Depends.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 11 Aug 2014 09:59:03 +0300
 
-digabi-customization (2.14) unstable; urgency=medium
+digabios-customization (2.14) unstable; urgency=medium
 
   * Disabled start-here.svg.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 08 Aug 2014 15:18:38 +0300
 
-digabi-customization (2.13) unstable; urgency=medium
+digabios-customization (2.13) unstable; urgency=medium
 
   * Fixed invalid paths. (Paths changed in digabi-backgrounds.)
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 08 Aug 2014 14:53:11 +0300
 
-digabi-customization (2.12) unstable; urgency=medium
+digabios-customization (2.12) unstable; urgency=medium
 
   * Disabled setting desktop-background.xml.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 28 Jul 2014 10:12:10 +0300
 
-digabi-customization (2.11) unstable; urgency=medium
+digabios-customization (2.11) unstable; urgency=medium
 
   * Added fonts-liberation to Depends.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 17 Jul 2014 18:13:09 +0300
 
-digabi-customization (2.10) unstable; urgency=medium
+digabios-customization (2.10) unstable; urgency=medium
 
   * Fixed antialiasing setting.
   * Use theme for XFCE & XFWM.
@@ -54,46 +61,46 @@ digabi-customization (2.10) unstable; urgency=medium
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 17 Jul 2014 17:32:38 +0300
 
-digabi-customization (2.9) unstable; urgency=medium
+digabios-customization (2.9) unstable; urgency=medium
 
   * Added Depends: ambiance-radiance-colors (third-party package, GPLv2).
     Author: <http://www.ravefinity.com/p/ambiance-radiance-colors-suite.html>
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 17 Jul 2014 15:28:27 +0300
 
-digabi-customization (2.8) unstable; urgency=medium
+digabios-customization (2.8) unstable; urgency=medium
 
   * Updated UI: added shadows, transparency etc.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 17 Jul 2014 11:53:40 +0300
 
-digabi-customization (2.7) unstable; urgency=medium
+digabios-customization (2.7) unstable; urgency=medium
 
   * Install plymouth, plymouth-themes.
   * Configure plymouth: use glow theme.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 14:53:13 +0300
 
-digabi-customization (2.6) unstable; urgency=medium
+digabios-customization (2.6) unstable; urgency=medium
 
   * Set XFCE icon size 48x48.
   * Use XFCE theme Xfce-redmondxp.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 10 Jul 2014 14:52:15 +0300
 
-digabi-customization (2.5) unstable; urgency=medium
+digabios-customization (2.5) unstable; urgency=medium
 
   * Depends: desktop-base.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 14:54:44 +0300
 
-digabi-customization (2.4) unstable; urgency=medium
+digabios-customization (2.4) unstable; urgency=medium
 
   * Added fonts-lato to requirements.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 09:41:01 +0300
 
-digabi-customization (2.3) stable; urgency=low
+digabios-customization (2.3) stable; urgency=low
 
   * Moved autostart file from skel to etc/xdg/autostart.
   * Renamed digabi configure-xfce to digabi configure-desktop.
@@ -101,13 +108,13 @@ digabi-customization (2.3) stable; urgency=low
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 09:40:52 +0300
 
-digabi-customization (2.2) stable; urgency=medium
+digabios-customization (2.2) stable; urgency=medium
 
   * Fixed invalid path to XFCE configuration autostart.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Apr 2014 14:53:04 +0300
 
-digabi-customization (2.1) stable; urgency=low
+digabios-customization (2.1) stable; urgency=low
 
   * Fixed XFCE4 menu icon (now using .svg).
   * Disabled uncool settigns (resizing background icons).
@@ -115,124 +122,124 @@ digabi-customization (2.1) stable; urgency=low
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Sat, 18 Jan 2014 15:21:12 +0200
 
-digabi-customization (2.0) stable; urgency=low
+digabios-customization (2.0) stable; urgency=low
 
   * Configure background using update-alternatives (was: custom XFCE4 autostart script).
   * Splitted backgrounds to separate digabi-backgrounds package. Configuration in this package.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 10 Jan 2014 10:20:45 +0200
 
-digabi-customization (1.9.1) stable; urgency=low
+digabios-customization (1.9.1) stable; urgency=low
 
   * Added Digabi plymouth theme.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 07 Aug 2013 01:39:04 +0300
 
-digabi-customization (1.9.0) stable; urgency=low
+digabios-customization (1.9.0) stable; urgency=low
 
   * Set monitor1 too, fixes background issues on systems that have 2 monitors.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 07 Aug 2013 01:38:46 +0300
 
-digabi-customization (1.8) stable; urgency=low
+digabios-customization (1.8) stable; urgency=low
 
   * Restructuring package sources.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 02 Aug 2013 11:09:00 +0300
 
-digabi-customization (1.6) stable; urgency=low
+digabios-customization (1.6) stable; urgency=low
 
   * Added multiple background sizes, .xml config file for selecting size.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 30 Jul 2013 09:58:39 +0300
 
-digabi-customization (1.5.14) stable; urgency=low
+digabios-customization (1.5.14) stable; urgency=low
 
   * Use configure-xfce via Digabi tool.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 29 Jul 2013 17:33:24 +0300
 
-digabi-customization (1.5.13) stable; urgency=low
+digabios-customization (1.5.13) stable; urgency=low
 
   * Replace logout w/ shutdown.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 29 Jul 2013 17:20:41 +0300
 
-digabi-customization (1.5.12) stable; urgency=low
+digabios-customization (1.5.12) stable; urgency=low
 
   * Set default theme for XFWM4.
   * Set workspace count to 1.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 26 Jul 2013 12:43:51 +0300
 
-digabi-customization (1.5.11) stable; urgency=low
+digabios-customization (1.5.11) stable; urgency=low
 
   * Hide suspend/hibernate.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 25 Jul 2013 15:45:38 +0300
 
-digabi-customization (1.5.10) stable; urgency=low
+digabios-customization (1.5.10) stable; urgency=low
 
   * Fixed invalid value types (integers to booleans).
   * Fixed invalid value path (icon size).
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 17:29:49 +0300
 
-digabi-customization (1.5.9) stable; urgency=low
+digabios-customization (1.5.9) stable; urgency=low
 
   * Updated logo (no background, squared).
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 16:05:41 +0300
 
-digabi-customization (1.5.8) stable; urgency=low
+digabios-customization (1.5.8) stable; urgency=low
 
   * Use Digabi logo in menu.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 15:00:29 +0300
 
-digabi-customization (1.5.7) stable; urgency=low
+digabios-customization (1.5.7) stable; urgency=low
 
   * Added Digabi bird logo.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 14:39:31 +0300
 
-digabi-customization (1.5.6) stable; urgency=low
+digabios-customization (1.5.6) stable; urgency=low
 
   * Added value types for configure-xfce -script, required when creating new settings.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 24 Jul 2013 09:24:40 +0300
 
-digabi-customization (1.5.5) stable; urgency=low
+digabios-customization (1.5.5) stable; urgency=low
 
   * Added script to automatically configure XFCE settings (background etc.).
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 23 Jul 2013 17:45:16 +0300
 
-digabi-customization (1.5.4) stable; urgency=low
+digabios-customization (1.5.4) stable; urgency=low
 
   * Added background also as .png (1024x768).
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 18 Jul 2013 09:10:10 +0300
 
-digabi-customization (1.5.3) stable; urgency=low
+digabios-customization (1.5.3) stable; urgency=low
 
   * Changed image paths (removed /images/), symlinking to splash.svg.in from live-build config/bootloaders/isolinux/splash.svg.in.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 18 Jul 2013 08:36:53 +0300
 
-digabi-customization (1.5.2) stable; urgency=low
+digabios-customization (1.5.2) stable; urgency=low
 
   * Added license (all rights reserved).
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 17 Jul 2013 08:35:04 +0300
 
-digabi-customization (1.5.1) stable; urgency=low
+digabios-customization (1.5.1) stable; urgency=low
 
   * Use background.png from proprietary folder, which includes content that will not be added into DVCS.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 04 Jul 2013 14:02:16 +0300
 
-digabi-customization (1.5.0) stable; urgency=low
+digabios-customization (1.5.0) stable; urgency=low
 
   * Initial version w/ changelog. Added plymouth packages from live-build package list.
 

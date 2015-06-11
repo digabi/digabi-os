@@ -1,46 +1,26 @@
+Source: digabios-customization
 Section: misc
 Priority: optional
-Homepage: http://digabi.fi/
-Standards-Version: 3.9.2
-
-Package: digabi-customization
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Depends: digabi-common, digabi-backgrounds,
- fonts-lato, fonts-liberation, desktop-base, plymouth, plymouth-themes,
- ambiance-radiance-colors
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/digabi/digabi-os
+Vcs-Git: https://github.com/digabi/digabi-os.git
+
+Package: digabios-customization
 Architecture: all
-Changelog: debian/changelog
-Files: usr/lib/digabi/scripts/configure-desktop /
- usr/bin/digabi-panel-color /
- etc/xdg/autostart/digabi-xfconf.desktop /
-Description: Customizations for Digabi project.
- Package contains customization files.
-File: postinst
- #!/bin/sh -e
- set -e
- 
- PLYMOUTH_BIN="/usr/sbin/plymouth-set-default-theme"
- PLYMOUTH_THEME="spinfinity"
- 
- update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/digabi/images/background.svg 100
- update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/digabi/images/digabi.svg 100
-# update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-splash desktop-splash /usr/share/digabi/images/background.svg 100
- update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-grub desktop-grub /usr/share/digabi/images/background.svg 100
- 
- if [ ! -x "${PLYMOUTH_BIN}" ]
- then
-     echo "W: Plymouth not found."
-     exit 0
- fi
- 
- if [ ! -d "/usr/share/plymouth/themes/${PLYMOUTH_THEME}" ]
- then
-     echo "W: Plymouth theme ${PLYMOUTH_THEME} not found."
-     exit 0
- fi
- 
- ${PLYMOUTH_BIN} ${PLYMOUTH_THEME}
-File: prerm
- #!/bin/sh -e
- set -e
- echo "TODO: Remove update-alternative settings"
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ digabios-backgrounds,
+ digabios-system-settings
+Description: Customizations for DigabiOS.
+ Updates system configuration to match Digabi requirements.
+
+Package: digabios-backgrounds
+Architecture: all
+Description: Backgrounds for DigabiOS.
+ This package installs background files for DigabiOS.
+
+Package: digabios-system-settings
+Architecture: all
+Description: Configures system settings for DigabiOS.
+ Does misc changes to /etc...
