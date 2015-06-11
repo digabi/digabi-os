@@ -12,12 +12,18 @@ $(REPOSITORY):
 $(CONTENT_DIR): $(REPOSITORY)
 
 install: $(CONTENT_DIR)
+	# digabi-customization
 	install -D -m 0644 configure-desktop $(DESTDIR)/usr/lib/digabi/scripts/configure-desktop
 	install -D -m 0755 digabi-panel-color $(DESTDIR)/usr/bin/digabi-panel-color
 	install -D -m 0644 digabi-xfconf.desktop $(DESTDIR)/etc/xdg/autostart/digabi-xfconf.desktop
 	
+	# digabi-backgrounds
 	install -d -m 0755 $(DESTDIR)$(IMAGEDIR)
 	install -D -m 0644 $(CONTENT_DIR)/background.svg $(CONTENT_DIR)/digabi.svg $(CONTENT_DIR)/splash.svg $(DESTDIR)$(IMAGEDIR)/
+
+	# plymouth-themes-digabios
+	install -d -m 0755 $(DESTDIR)/usr/share/plymouth/themes/digabios
+	install -D plymouth/* $(DESTDIR)/usr/share/plymouth/themes/digabios
 
 deb:
 	dpkg-buildpackage -us -uc

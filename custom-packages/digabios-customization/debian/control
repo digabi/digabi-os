@@ -36,5 +36,6 @@ Description: Configures system settings for DigabiOS.
 
 Package: plymouth-themes-digabios
 Architecture: all
+Depends: plymouth, plymouth-x11
 Description: Custom Plymouth theme
  Installs custom Plymouth theme to system.
