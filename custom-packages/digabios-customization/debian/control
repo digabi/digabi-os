@@ -33,3 +33,8 @@ Package: digabios-system-settings
 Architecture: all
 Description: Configures system settings for DigabiOS.
  Does misc changes to /etc...
+
+Package: plymouth-themes-digabios
+Architecture: all
+Description: Custom Plymouth theme
+ Installs custom Plymouth theme to system.

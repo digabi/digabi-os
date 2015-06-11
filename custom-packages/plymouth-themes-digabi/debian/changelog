@@ -1,6 +1,0 @@
-plymouth-themes-digabi (1.0) UNRELEASED; urgency=low
-
-  * Initial release.
-  * Separated from package digabi-customization.
-
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 08 Jan 2014 10:16:19 +0200
