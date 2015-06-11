@@ -1,0 +1,1 @@
+/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml.digabi sed -e 's/Sans 10/Lato 10/g'
