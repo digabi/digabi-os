@@ -1,11 +1,11 @@
-digabios-customization (3.0.2) UNRELEASED; urgency=medium
+digabios-customization (3.0.2) unstable; urgency=medium
 
   * Lock XFCE4 panel (no modifications allowed).
   * Customize ~/.xsessionrc.
   * Replace default font (use Lato instead of Sans).
   * Install updated user dirs.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 11 Jun 2015 15:43:15 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Jun 2015 09:04:32 +0300
 
 digabios-customization (3.0.1) unstable; urgency=medium
 
