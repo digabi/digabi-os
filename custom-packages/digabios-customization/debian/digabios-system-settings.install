@@ -1,2 +1,3 @@
-/etc/xdg/xfce4
 /etc/skel
+/etc/xdg/user-dirs.defaults
+/etc/xdg/xfce4
