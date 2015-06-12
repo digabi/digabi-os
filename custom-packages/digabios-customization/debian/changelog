@@ -1,3 +1,9 @@
+digabios-customization (3.0.3) unstable; urgency=medium
+
+  * Displace original user-dirs.defaults file.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Jun 2015 09:11:31 +0300
+
 digabios-customization (3.0.2) unstable; urgency=medium
 
   * Lock XFCE4 panel (no modifications allowed).
