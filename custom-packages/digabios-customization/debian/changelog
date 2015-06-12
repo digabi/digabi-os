@@ -1,3 +1,9 @@
+digabios-customization (3.0.4) unstable; urgency=medium
+
+  * Set okular as default PDF viewer.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Jun 2015 16:09:03 +0300
+
 digabios-customization (3.0.3) unstable; urgency=medium
 
   * Displace original user-dirs.defaults file.

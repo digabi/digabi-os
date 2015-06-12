@@ -1,3 +1,4 @@
 /etc/skel
+/etc/xdg/mimeapps.list
 /etc/xdg/user-dirs.defaults
 /etc/xdg/xfce4

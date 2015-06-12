@@ -29,6 +29,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults
+	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
 
 deb:
 	dpkg-buildpackage -us -uc
