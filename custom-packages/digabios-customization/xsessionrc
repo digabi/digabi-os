@@ -7,3 +7,5 @@ then
         export LC_ALL="${_LOCALE}"
     fi
 fi
+
+export XFCE_PANEL_MIGRATE_DEFAULT="please"

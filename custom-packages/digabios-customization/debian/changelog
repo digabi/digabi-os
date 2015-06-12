@@ -1,3 +1,9 @@
+digabios-customization (3.0.5) unstable; urgency=medium
+
+  * Configure panel migration in package.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Jun 2015 16:46:52 +0300
+
 digabios-customization (3.0.4) unstable; urgency=medium
 
   * Set okular as default PDF viewer.
