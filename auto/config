@@ -131,11 +131,6 @@ fi
 
 DEBOOTSTRAP_OPTIONS="--keyring=custom-packages/digabi-repository/digabi.gpg ${DEBOOTSTRAP_OPTIONS}"
 
-#if [ -z "${APT_PROXY}" ]
-#then
-#    APT_PROXY="http://localhost:3142/"
-#fi
-
 lb config noauto \
     --apt-indices "false" \
     --apt-recommends "false" \
