@@ -11,21 +11,13 @@ SIGNING_KEY="${REPO_PATH}/digabi.asc"
 REPO_CONFIG="${REPO_PATH}/digabi.list"
 
 
-if [ ! -f "${SIGNING_KEY}" ]
-then
-    echo "W: Digabi repository signing key not found (${SIGNING_KEY})."
-    #echo "   Try running: git submodule init && git submodule update"
-    #exit 1
-    echo "I: Update git submodules..."
-    git submodule init
-    git submodule update
-fi
+echo "I: Update git submodules..."
+git submodule init
+git submodule update
 
-if [ ! -f "${REPO_CONFIG}" ]
-then
-    echo "E: Digabi repository config not found (${REPO_CONFIG})."
-    exit 1
-fi
+echo "I: Generate repository configuration..."
+cd ${REPO_PATH}
+make digabi.asc digabi.gpg digabi.list BASE_URL=${DEBIAN_MIRROR}
 
 echo "I: Copying Digabi repository signing key..."
 cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.chroot"
