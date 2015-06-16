@@ -129,6 +129,8 @@ then
     BINARY_IMAGES="iso-hybrid"
 fi
 
+DEBOOTSTRAP_OPTIONS="--keyring=custom-packages/digabi-repository/digabi.gpg ${DEBOOTSTRAP_OPTIONS}"
+
 #if [ -z "${APT_PROXY}" ]
 #then
 #    APT_PROXY="http://localhost:3142/"
@@ -143,6 +145,7 @@ lb config noauto \
     --binary-filesystem "${BINARY_FILESYSTEM}" \
     --binary-images "${BINARY_IMAGES}" \
     --bootappend-live "${BOOTAPPEND_LIVE}" \
+    --debootstrap-options "${DEBOOTSTRAP_OPTIONS}" \
     --checksums "sha512" \
     --clean \
     --distribution "${DISTRIBUTION}" \
