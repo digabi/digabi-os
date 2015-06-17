@@ -54,7 +54,7 @@ then
 fi
 
 GIT_SHORT_ID="$(git rev-parse --short HEAD)"
-if GIT_TAG="$(git describe --tags --exact-match ${GIT_CURRENT_COMMIT})"
+if GIT_TAG="$(git describe --tags --exact-match ${GIT_CURRENT_COMMIT} 2>/dev/null)"
 then
     CLEAN_GIT_TAG="_$(echo "$GIT_TAG" | sed -e 's,/,_,g' -e 's,-rc,~rc,')"
 else
