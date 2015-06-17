@@ -4,20 +4,15 @@ set -e
 
 # Use repository config from submodule digabi-repository (ie. copy it to the config when starting build)
 
-REPO_PATH="custom-packages/digabi-repository"
 CONFIG_PATH="config/archives"
 
-SIGNING_KEY="${REPO_PATH}/digabi.asc"
-REPO_CONFIG="${REPO_PATH}/digabi.list"
+TEMPFILE="$(mktemp)"
+cat > ${TEMPFILE} << EOF
+$(gpg -a --keyring=/usr/share/keyrings/digabi-archive-keyring.gpg --no-default-keyring --export 2>/dev/null)
+EOF
 
-
-echo "I: Update git submodules..."
-git submodule init
-git submodule update
-
-echo "I: Generate repository configuration..."
-cd ${REPO_PATH}
-make digabi.asc digabi.list BASE_URL=${DEBIAN_MIRROR}
+SIGNING_KEY="${TEMPFILE}"
+REPO_CONFIG="/etc/apt/sources.list.d/digabi.list"
 
 echo "I: Copying Digabi repository signing key..."
 cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.chroot"
@@ -26,3 +21,5 @@ cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.binary"
 echo "I: Copying Digabi repository config..."
 cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.chroot"
 cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.binary"
+
+rm -f ${TEMPFILE}
