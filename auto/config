@@ -165,20 +165,3 @@ lb config noauto \
 echo "LB_ARCHITECTURE=${ARCH}" >>config/bootstrap
 echo "LB_BINARY_IMAGES=${BINARY_IMAGES}" >>config/binary
 echo "LB_IMAGE_NAME=${IMAGE_NAME}" >>config/binary
-
-#
-# If we are building from snapshot.debian.org, ignore Valid-Until header in Release files
-#
-
-if contains "${DEBIAN_MIRROR}" "snapshot.debian.org"
-then
-    echo "I: Using Debian snapshots, ignore APT Check-Valid-Until..."
-    STAGES="bootstrap chroot binary"
-    for stage in ${STAGES}
-    do
-        mkdir -p config/includes.${stage}/etc/apt/apt.conf.d
-        cat << EOF >config/includes.${stage}/etc/apt/apt.conf.d/99-snapshots
-Acquire::Check-Valid-Until "false";
-EOF
-    done
-fi

@@ -26,8 +26,6 @@ contains() {
     fi
 }
 
-SNAPSHOT="false"
-
 #
 # Initialiaze new Vagrant (Debian wheezy/jessie)
 #
@@ -68,10 +66,6 @@ fi
 if [ -n "${DEBIAN_MIRROR}" ]
 then
     echo "I: Configuring custom Debian mirror: ${DEBIAN_MIRROR}..."
-    if contains "${DEBIAN_MIRROR}" "snapshot.debian.org"
-    then
-        SNAPSHOT="true"
-    fi
     if [ -z "${REPOSITORY_SUITE}" ]
     then
         REPOSITORY_SUITE="jessie"
@@ -89,14 +83,6 @@ cat << EOF >/etc/apt/apt.conf.d/99-no-recommends
 APT::Install-Recommends "false";
 APT::Install-Suggests "false";
 EOF
-
-if [ "${SNAPSHOT}" = "true" ]
-then
-    echo "I: Using Debian snapshots, ignore APT Check-Valid-Until..."
-    cat << EOF >/etc/apt/apt.conf.d/99-snapshots
-Acquire::Check-Valid-Until "false";
-EOF
-fi
 
 echo "I: Update package lists..."
 apt-get -qy update
