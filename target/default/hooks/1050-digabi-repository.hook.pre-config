@@ -17,7 +17,7 @@ git submodule update
 
 echo "I: Generate repository configuration..."
 cd ${REPO_PATH}
-make digabi.asc digabi.gpg digabi.list BASE_URL=${DEBIAN_MIRROR}
+make digabi.asc digabi.list BASE_URL=${DEBIAN_MIRROR}
 
 echo "I: Copying Digabi repository signing key..."
 cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.chroot"
