@@ -55,14 +55,14 @@ fi
 if [ -n "${DEBIAN_MIRROR}" ]
 then
     echo "I: Configuring custom Debian mirror: ${DEBIAN_MIRROR}..."
-    if [ -z "${REPOSITORY_SUITE}" ]
+    if [ -z "${DEBIAN_SUITE}" ]
     then
-        REPOSITORY_SUITE="jessie"
+        DEBIAN_SUITE="jessie"
     fi
-    echo "deb ${DEBIAN_MIRROR} ${REPOSITORY_SUITE} main contrib non-free" >/etc/apt/sources.list
-    echo "deb-src ${DEBIAN_MIRROR} ${REPOSITORY_SUITE} main contrib non-free" >>/etc/apt/sources.list
-    echo "deb http://security.debian.org/ ${REPOSITORY_SUITE}/updates main contrib non-free" >>/etc/apt/sources.list
-    echo "deb-src http://security.debian.org/ ${REPOSITORY_SUITE}/updates main contrib non-free" >>/etc/apt/sources.list
+    echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free" >/etc/apt/sources.list
+    echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free" >>/etc/apt/sources.list
+    echo "deb http://security.debian.org/ ${DEBIAN_SUITE}/updates main contrib non-free" >>/etc/apt/sources.list
+    echo "deb-src http://security.debian.org/ ${DEBIAN_SUITE}/updates main contrib non-free" >>/etc/apt/sources.list
 else
     echo "I: Using pre-configured Debian mirror."
 fi
