@@ -43,12 +43,12 @@ then
     echo "I: Digabi repository already configured, skipping configuration..."
 else
     echo "I: Add Digabi repository..."
-    if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.list" ]
+    if [ -e "${REPOSITORY_INSTALLER}" ]
     then
         sh ${REPOSITORY_INSTALLER}
     else
-        wget -qO /etc/apt/sources.list.d/digabi.list https://digabi.fi/debian/digabi.list
-        wget -qO- https://digabi.fi/debian/digabi.asc | apt-key add -
+        wget -qO /etc/apt/sources.list.d/digabi.list ${DIGABI_MIRROR}/digabi.list
+        wget -qO- ${DIGABI_MIRROR}/digabi.asc | apt-key add -
     fi
 fi
 
