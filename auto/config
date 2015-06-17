@@ -129,7 +129,7 @@ then
     BINARY_IMAGES="iso-hybrid"
 fi
 
-DEBOOTSTRAP_OPTIONS="--keyring=custom-packages/digabi-repository/digabi.gpg ${DEBOOTSTRAP_OPTIONS}"
+DEBOOTSTRAP_OPTIONS="--keyring=/usr/share/keyrings/digabi-archive-keyring.gpg ${DEBOOTSTRAP_OPTIONS}"
 
 lb config noauto \
     --apt-indices "false" \
@@ -150,6 +150,7 @@ lb config noauto \
     --image-name "${IMAGE_NAME}" \
     --iso-publisher "${ISO_PUBLISHER}" \
     --iso-volume "${ISO_VOLUME}" \
+    --keyring-packages "digabi-archive-keyring" \
     --linux-packages "linux-image-3.16.0.4.ytl linux-headers-3.16.0.4.ytl" \
     --memtest "none" \
     --mirror-binary "${DEFAULT_DEBIAN_MIRROR}" \
