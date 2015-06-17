@@ -109,6 +109,7 @@ then
 fi
 
 DEFAULT_DEBIAN_MIRROR="http://httpredir.debian.org/debian"
+DEFAULT_DIGABI_MIRROR="http://dev.digabi.fi/debian"
 if [ -z "${DEBIAN_MIRROR}" ] ; then
     DEBIAN_MIRROR="${DEFAULT_DEBIAN_MIRROR}"
 fi
@@ -129,8 +130,6 @@ then
     BINARY_IMAGES="iso-hybrid"
 fi
 
-DEBOOTSTRAP_OPTIONS="--keyring=/usr/share/keyrings/digabi-archive-keyring.gpg ${DEBOOTSTRAP_OPTIONS}"
-
 lb config noauto \
     --apt-indices "false" \
     --apt-recommends "false" \
@@ -150,7 +149,6 @@ lb config noauto \
     --image-name "${IMAGE_NAME}" \
     --iso-publisher "${ISO_PUBLISHER}" \
     --iso-volume "${ISO_VOLUME}" \
-    --keyring-packages "digabi-archive-keyring" \
     --linux-packages "linux-image-3.16.0.4.ytl linux-headers-3.16.0.4.ytl" \
     --memtest "none" \
     --mirror-binary "${DEFAULT_DEBIAN_MIRROR}" \
