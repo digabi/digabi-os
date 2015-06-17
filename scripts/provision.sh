@@ -29,7 +29,7 @@ contains() {
 #
 # Initialiaze new Vagrant (Debian wheezy/jessie)
 #
-DIGABI_REPOSITORY_PATH="/vagrant/custom-packages/digabi-repository"
+REPOSITORY_INSTALLER="/vagrant/custom-packages/digabi-repository/install-repository.sh"
 
 #
 # Prefer IPv4 over IPv6
@@ -45,14 +45,9 @@ else
     echo "I: Add Digabi repository..."
     if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.list" ]
     then
-        cp ${DIGABI_REPOSITORY_PATH}/digabi.list /etc/apt/sources.list.d/digabi.list
+        sh ${REPOSITORY_INSTALLER}
     else
         wget -qO /etc/apt/sources.list.d/digabi.list https://digabi.fi/debian/digabi.list
-    fi
-    if [ -f "${DIGABI_REPOSITORY_PATH}/digabi.asc" ]
-    then
-        apt-key add ${DIGABI_REPOSITORY_PATH}/digabi.asc
-    else
         wget -qO- https://digabi.fi/debian/digabi.asc | apt-key add -
     fi
 fi
