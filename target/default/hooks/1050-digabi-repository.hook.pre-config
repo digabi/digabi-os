@@ -15,7 +15,11 @@ EOF
 
 echo "I: Getting sources.list for Digabi repository..."
 REPO_CONFIG="$(mktemp)"
-git submodule init && git submodule update && ${GENLIST} ${DIGABI_SUITE} ${DIGABI_MIRROR} 2>/dev/null >${REPO_CONFIG}
+REPO_BINARY_CONFIG="$(mktemp)"
+git submodule init
+git submodule update
+${GENLIST} ${DIGABI_SUITE} ${DIGABI_MIRROR} >${REPO_CONFIG}
+${GENLIST} ${DIGABI_SUITE} >${REPO_BINARY_CONFIG}
 
 echo "I: Copying Digabi repository signing key..."
 cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.chroot"
@@ -23,6 +27,6 @@ cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.binary"
 
 echo "I: Copying Digabi repository config..."
 cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.chroot"
-cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.binary"
+cp "${REPO_BINARY_CONFIG}" "${CONFIG_PATH}/digabi.list.binary"
 
-rm -rf ${SIGNING_KEY} ${REPO_CONFIG}
+rm -rf ${SIGNING_KEY} ${REPO_CONFIG} ${REPO_BINARY_CONFIG}
