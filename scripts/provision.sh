@@ -45,8 +45,10 @@ else
     echo "I: Add Digabi repository..."
     if [ -e "${REPOSITORY_INSTALLER}" ]
     then
+        echo "D: Install using repository installer..."
         sh ${REPOSITORY_INSTALLER}
     else
+        echo "D: Install using http..."
         wget -qO /etc/apt/sources.list.d/digabi.list ${DIGABI_MIRROR}/digabi.list
         wget -qO- ${DIGABI_MIRROR}/digabi.asc | apt-key add -
     fi
