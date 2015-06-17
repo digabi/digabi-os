@@ -31,12 +31,6 @@ contains() {
 #
 DIGABI_REPOSITORY_PATH="/vagrant/custom-packages/digabi-repository"
 
-if [ -x "/vagrant/scripts/vagrant-local.sh" ]
-then
-    echo "I: Run local Vagrant customization scripts.."
-    /vagrant/scripts/vagrant-local.sh
-fi
-
 #
 # Prefer IPv4 over IPv6
 #
