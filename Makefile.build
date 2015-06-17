@@ -17,13 +17,14 @@ BUILD_TAG ?= N/A
 BUILD_NUMBER ?= 0.unknown
 COMMIT ?= HEAD
 DEBIAN_MIRROR ?= http://http.debian.net/debian
+DEBIAN_SUITE ?= jessie
 DIGABI_MIRROR ?= http://dev.digabi.fi/debian
+DIGABI_SUITE ?= unstable
 DIGABI_BUILD_CPUS ?= 1
 DIGABI_BUILD_MEM ?= 1024
 DIGABI_BUILD_TARGET ?= default
 DIGABI_DEBUG ?= false
 HTTP_PROXY ?= $(http_proxy)
-REPOSITORY_SUITE ?= jessie
 ROOT_PASSWORD ?=
 VAGRANT_DEFAULT_PROVIDER ?= virtualbox
 LB_OPTIONS ?=
@@ -92,21 +93,21 @@ $(STAGE)/config: $(STAGE)/environment up
 	echo 'BUILD_TAG="$(BUILD_TAG)"' >>$(CONFIG_FILE)
 	echo 'COMMIT="$(COMMIT)"' >>$(CONFIG_FILE)
 	echo 'DEBIAN_MIRROR="$(DEBIAN_MIRROR)"' >>$(CONFIG_FILE)
+	echo 'DEBIAN_SUITE="$(DEBIAN_SUITE)"' >>$(CONFIG_FILE)
 	echo 'DIGABI_MIRROR="$(DIGABI_MIRROR)"' >>$(CONFIG_FILE)
 	echo 'DIGABI_BUILD_CPUS="$(DIGABI_BUILD_CPUS)"' >>$(CONFIG_FILE)
 	echo 'DIGABI_BUILD_MEM="$(DIGABI_BUILD_MEM)"' >>$(CONFIG_FILE)
 	echo 'DIGABI_BUILD_TARGET="$(DIGABI_BUILD_TARGET)"' >>$(CONFIG_FILE)
 	echo 'DIGABI_DEBUG="$(DIGABI_DEBUG)"' >>$(CONFIG_FILE)
+	echo 'DIGABI_SUITE="$(DIGABI_SUITE)"' >>$(CONFIG_FILE)
 	echo 'HTTP_PROXY="$(HTTP_PROXY)"' >>$(CONFIG_FILE)
 	echo 'http_proxy="$(HTTP_PROXY)"' >>$(CONFIG_FILE)
-	echo 'REPOSITORY_SUITE="$(REPOSITORY_SUITE)"' >> $(CONFIG_FILE)
 	echo 'ROOT_PASSWORD="$(ROOT_PASSWORD)"' >>$(CONFIG_FILE)
 	echo 'VAGRANT_DEFAULT_PROVIDER="$(VAGRANT_DEFAULT_PROVIDER)"' >>$(CONFIG_FILE)
 
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; if [ ! -d $(BUILD_DIR) ] ; then git clone $(GIT_REPOSITORY) $(BUILD_DIR) ; else cd $(BUILD_DIR) ; git checkout $(COMMIT) ; fi'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd $(BUILD_DIR) && git submodule init && git submodule update'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cp /vagrant/$(CONFIG_FILE) $(BUILD_CONFIG)'
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; if [[ -n "$(EXTRA_CONFIG)" && -d "$(EXTRA_CONFIG)" ]] ; then git clone $(EXTRA_CONFIG) $(BUILD_DIR)/target/extra ; fi'
 
 	$(VAGRANT) ssh -c 'cd $(BUILD_DIR) && lb config $(LB_OPTIONS)'
 	mkdir -p $(STAGE)
