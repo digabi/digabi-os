@@ -113,6 +113,10 @@ DEFAULT_DIGABI_MIRROR="http://dev.digabi.fi/debian"
 if [ -z "${DEBIAN_MIRROR}" ] ; then
     DEBIAN_MIRROR="${DEFAULT_DEBIAN_MIRROR}"
 fi
+if [ -z "${DIGABI_MIRROR}" ]
+then
+    DIGABI_MIRROR="${DEFAULT_DIGABI_MIRROR}"
+fi
 
 BOOTAPPEND_LIVE="boot=live config security=apparmor ${DIGABI_APPEND}"
 ISO_PUBLISHER="Ylioppilastutkintolautakunta ; https://digabi.fi ; digabi@ylioppilastutkinto.fi"
