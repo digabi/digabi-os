@@ -30,6 +30,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
+	install -D -m 0644 locale $(DESTDIR)/etc/default/locale
 
 deb:
 	dpkg-buildpackage -us -uc
