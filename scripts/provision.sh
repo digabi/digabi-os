@@ -47,6 +47,7 @@ else
     then
         echo "D: Install using repository installer..."
         sh ${REPOSITORY_INSTALLER}
+        sed -i "s,-stable,-${DIGABI_SUITE},g" /etc/apt/sources.list.d/digabi.list
     else
         echo "D: Install using http..."
         wget -qO /etc/apt/sources.list.d/digabi.list ${DIGABI_MIRROR}/digabi.list
