@@ -6,10 +6,13 @@ digabi-os
 digabi-firewall
 
 # MEB Root CA
+digabi-archive
+digabi-archive-keyring
 digabi-certificates
 
 # Backgrounds etc.
-digabi-customization
+digabios-backgrounds
+digabios-customization
 
 # Feedback client
 digabi-feedback
