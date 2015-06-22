@@ -37,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box_url = "https://cdn.ypcs.fi/vagrant/metadata.json"
 
-  config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' sh /vagrant/scripts/provision.sh"
+  config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' DIGABI_MIRROR='#{ENV['DIGABI_MIRROR']}' DIGABI_SUITE='#{ENV['DIGABI_SUITE']}' sh /vagrant/scripts/provision.sh"
 
   # Mount /vagrant as read-only
   config.vm.synced_folder '.', '/vagrant', :mount_options => ["ro"]
