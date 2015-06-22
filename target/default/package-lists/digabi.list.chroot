@@ -13,6 +13,7 @@ digabi-certificates
 # Backgrounds etc.
 digabios-backgrounds
 digabios-customization
+digabios-system-settings
 
 # Feedback client
 digabi-feedback
