@@ -1,3 +1,9 @@
+digabios-customization (3.0.7) unstable; urgency=medium
+
+  * Bump version.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 22 Jun 2015 14:14:07 +0300
+
 digabios-customization (3.0.6) unstable; urgency=medium
 
   * Set FI as default locale.
