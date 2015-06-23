@@ -32,7 +32,7 @@ Description: Backgrounds for DigabiOS.
 Package: digabios-system-settings
 Provides: ${diverted-files}
 Conflicts: ${diverted-files}
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, xfce4-panel, xfconf, xfce4-settings
 Architecture: all
 Description: Configures system settings for DigabiOS.
  Does misc changes to /etc...
