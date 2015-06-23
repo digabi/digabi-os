@@ -1,3 +1,9 @@
+digabios-customization (3.2.3) unstable; urgency=medium
+
+  * Fix background names.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 23 Jun 2015 09:52:21 +0300
+
 digabios-customization (3.2.2) unstable; urgency=medium
 
   * Fix file displacements in dos-s-s.
