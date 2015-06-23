@@ -1,3 +1,9 @@
+digabios-customization (3.2.1) unstable; urgency=medium
+
+  * Fix file displacements in dos-s-s.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 23 Jun 2015 09:16:30 +0300
+
 digabios-customization (3.2.0) unstable; urgency=medium
 
   * Bump version.
