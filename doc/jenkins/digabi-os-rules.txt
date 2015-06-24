@@ -4,11 +4,13 @@
 # match line starting with 'error ', case-insensitive
 error /(?i)^error /
 error /[^A-Z]ERROR[^A-Z]/
+error /E:/
 
 # list of warnings here...
 warning /[Ww]arning/
 warning /WARN/
 warning /(?i)notice/
+warning /W:/
 
 # create a quick access link to lines in the report containing 'INFO'
 info /(?i)INFO/
@@ -16,4 +18,4 @@ info /(?i)INFO/
 # Mark different stages
 start /Configure build environment/
 start /Build image/
-start / P:/
+start /P:/
