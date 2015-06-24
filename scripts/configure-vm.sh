@@ -17,10 +17,6 @@ echo "I: Checkout git repository..."
 cd ${BUILD_DIR}
 git checkout ${COMMIT:-HEAD}
 
-echo "I: Initialize submodules..."
-git submodule init
-git submodule update
-
 echo "I: Copy local configuration to build directory..."
 cp ${CONFIG} ${BUILD_DIR}/target/default/digabi.local
 
