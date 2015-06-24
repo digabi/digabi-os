@@ -163,6 +163,7 @@ lb config noauto \
     --security "true" \
     --source "${_SOURCE}" \
     --win32-loader "false" \
+    --zsync "false" \
 	"${@}"
 
 echo "LB_ARCHITECTURE=${ARCH}" >>config/bootstrap
