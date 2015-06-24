@@ -13,3 +13,7 @@ warning /(?i)notice/
 # create a quick access link to lines in the report containing 'INFO'
 info /(?i)INFO/
 
+# Mark different stages
+start /Configure build environment/
+start /Build image/
+start / P:/
