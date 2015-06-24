@@ -31,6 +31,8 @@ DIGABI_SUITE="${DIGABI_SUITE:-stable}"
 http_proxy="${http_proxy}"
 HTTP_PROXY="${HTTP_PROXY:-${http_proxy}}"
 
+LB_OPTIONS="${LB_OPTIONS}"
+
 ROOT_PASSWORD="${ROOT_PASSWORD}"
 
 VAGRANT_DEFAULT_PROVIDER="${VAGRANT_DEFAULT_PROVIDER:-virtualbox}"
