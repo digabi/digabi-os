@@ -22,17 +22,18 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 $(CONTENT_DIR)/background.svg $(DESTDIR)$(IMAGEDIR)/background.svg
 	install -D -m 0644 $(CONTENT_DIR)/digabi.svg $(DESTDIR)$(IMAGEDIR)/start-here.svg
 	install -D -m 0644 $(CONTENT_DIR)/splash.svg $(DESTDIR)$(IMAGEDIR)/splash.svg
-
+	
 	# plymouth-themes-digabios
 	install -d -m 0755 $(DESTDIR)/usr/share/plymouth/themes/digabios
 	install -D -m 0644 plymouth/* $(DESTDIR)/usr/share/plymouth/themes/digabios
-
+	
 	# digabios-system-settings
 	install -D -m 0644 xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml.digabios
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc.digabios
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
 	install -D -m 0644 locale $(DESTDIR)/etc/default/locale.digabios
+	touch $(DESTDIR)/var/lib/live/config/locales
 
 deb:
 	dpkg-buildpackage -us -uc
