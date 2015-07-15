@@ -2,6 +2,8 @@
 
 set -e
 
+# TODO: Whitelist allowed items instead of blacklisting unwanted
+
 FILES="xfce4-session-logout xfce4-about xfhelp4 exo-mail-reader exo-terminal-emulator Thunar xfrun4 exo-file-manager uninstaller globaltime xfce-xfcalendar-settings xfce4-appfinder xfcalendar Thunar-bulk-rename xfce-session-settings xfce-settings-manager xfce4-run xfce4-notifyd-config xfce4-appfinder terminator"
 
 for f in $FILES
