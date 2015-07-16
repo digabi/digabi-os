@@ -1,0 +1,3 @@
+# prevent geogebra sources.list entry from being installed
+
+path-exclude=/etc/apt/sources.list.d/geogebra.list

@@ -1,7 +1,0 @@
-#!/bin/sh
-set -e
-
-if [ -f "/etc/apt/sources.list.d/geogebra.list" ]
-then
-    rm /etc/apt/sources.list.d/geogebra.list
-fi
