@@ -33,6 +33,8 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
 	install -D -m 0644 locale $(DESTDIR)/etc/default/locale.digabios
+	
+	install -d -m 0755 $(DESTDIR)/var/lib/live/config
 	touch $(DESTDIR)/var/lib/live/config/locales
 
 deb:

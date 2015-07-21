@@ -2,5 +2,5 @@
 /etc/xdg/mimeapps.list
 /etc/xdg/user-dirs.defaults.digabios
 /etc/xdg/xfce4
-/etc/default/locales
+/etc/default/locale.digabios
 /var/lib/live/config/locales
