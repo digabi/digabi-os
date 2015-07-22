@@ -1,6 +1,8 @@
 # Rules for Jenkins log parser plugin, based on console-rules.txt.
 # For instructions, see <https://wiki.jenkins-ci.org/display/JENKINS/Log+Parser+Plugin>
 
+# This file is deployed at CI master, currently at user/dos-jenkins-rules.txt (symlink).
+
 # match line starting with 'error ', case-insensitive
 ok /could not connect to ssh-agent/
 error /(?i)^error /
