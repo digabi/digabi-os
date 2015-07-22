@@ -20,6 +20,7 @@ warning /W:/
 warning /No such file or directory/
 
 # create a quick access link to lines in the report containing 'INFO'
+ok /grub-install info:/
 info /(?i)INFO/
 
 # Mark different stages
