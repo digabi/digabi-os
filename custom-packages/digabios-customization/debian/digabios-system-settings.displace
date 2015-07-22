@@ -1,3 +1,4 @@
+/etc/default/keyboard.digabios
 /etc/default/locale.digabios
 /etc/xdg/user-dirs.defaults.digabios
 /etc/xdg/xfce4/panel/default.xml.digabios

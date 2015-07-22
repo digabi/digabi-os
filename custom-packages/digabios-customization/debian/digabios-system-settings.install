@@ -3,4 +3,5 @@
 /etc/xdg/user-dirs.defaults.digabios
 /etc/xdg/xfce4
 /etc/default/locale.digabios
-/var/lib/live/config/locales
+/etc/default/keyboard.digabios
+/var/lib/live/config/*
