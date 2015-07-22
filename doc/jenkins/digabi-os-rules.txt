@@ -24,4 +24,5 @@ info /(?i)INFO/
 # Mark different stages
 start /Configure build environment/
 start /Build image/
+ok /IP:/
 start /P:/
