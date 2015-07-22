@@ -2,6 +2,7 @@
 # For instructions, see <https://wiki.jenkins-ci.org/display/JENKINS/Log+Parser+Plugin>
 
 # match line starting with 'error ', case-insensitive
+ok /could not connect to ssh-agent/
 error /(?i)^error /
 error /[^A-Z]ERROR[^A-Z]/
 error /E:/
