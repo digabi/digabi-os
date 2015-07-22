@@ -6,6 +6,7 @@ ok /could not connect to ssh-agent/
 error /(?i)^error /
 error /[^A-Z]ERROR[^A-Z]/
 error /E:/
+error /Cannot initiate the connection to/
 
 # list of warnings here...
 ok /WARN environment: Process-lock in use: vmware-network/
