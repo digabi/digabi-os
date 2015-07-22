@@ -11,6 +11,7 @@ error /E:/
 ok /WARN environment: Process-lock in use: vmware-network/
 ok /WARN environment: Process-lock in use: fpcollision/
 ok /W: Duplicate sources.list entry/
+ok /update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults/
 warning /[Ww]arning/
 warning /WARN/
 warning /(?i)notice/
