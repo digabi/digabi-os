@@ -5,6 +5,6 @@
 XKBMODEL="pc105"
 XKBLAYOUT="fi,sv,us,de,fr,ru"
 XKBVARIANT=""
-XKBOPTIONS=""
+XKBOPTIONS="grp:alt_shift_toggle"
 
 BACKSPACE="guess"

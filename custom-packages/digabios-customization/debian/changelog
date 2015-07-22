@@ -1,3 +1,9 @@
+digabios-customization (3.4.1) unstable; urgency=medium
+
+  * Add keyboard variants to config file.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 22 Jul 2015 09:09:37 +0300
+
 digabios-customization (3.4.0) unstable; urgency=medium
 
   * Add keyboard configuration.
