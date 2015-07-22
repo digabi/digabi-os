@@ -17,6 +17,7 @@ warning /[Ww]arning/
 warning /WARN/
 warning /(?i)notice/
 warning /W:/
+warning /No such file or directory/
 
 # create a quick access link to lines in the report containing 'INFO'
 info /(?i)INFO/
