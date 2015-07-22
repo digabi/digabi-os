@@ -19,16 +19,23 @@ menu timeoutrow 16
 menu tabmsgrow 18
 
 
-
 menu title Digabi OS
 
-label ktp1
-    menu label ^Koetilapalvelin 1
+label ktp
+    menu label ^Koetilapalvelin / Provlokalens server
     menu default
 
     linux @LINUX@
     initrd @INITRD@
     append @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.1:255.255.0.0 hostname=ktp1.local persistence
+
+label supo
+    menu label ^Lisavalvontakonsoli / Ytterligare kontrolkonsol
+
+    linux @LINUX@
+    initrd @INITRD@
+    append @APPEND_LIVE@ quiet splash remote-supo
+
 
 menu tabmsg Press ENTER to boot
 menu clear
