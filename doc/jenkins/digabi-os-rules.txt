@@ -22,6 +22,7 @@ warning /No such file or directory/
 # create a quick access link to lines in the report containing 'INFO'
 ok /grub-install info:/
 ok /grub-mkimage info:/
+ok /Reading state information/
 info /(?i)INFO/
 
 # Mark different stages
