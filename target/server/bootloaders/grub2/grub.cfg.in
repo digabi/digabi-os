@@ -45,12 +45,12 @@ submenu "Koetilapalvelin / Provlokalens server" {
 submenu "Lisävalvontakonsoli / Ytterligare kontrolkonsol" {
 
   menuentry "PC Valvontakonsoli / Kontrollkonsol" {
-    linux           @LINUX@ @APPEND_LIVE@ quiet splash remote-supo
+    linux           @LINUX@ @APPEND_LIVE@ quiet splash systemd.unit=remote-supo
     initrd          @INITRD@
   }
 
   menuentry "Mac Valvontakonsoli / Kontrollkonsol" {
-    linux           @LINUX@ @APPEND_LIVE@ quiet nomodeset xforcevesa remote-supo
+    linux           @LINUX@ @APPEND_LIVE@ quiet nomodeset xforcevesa systemd.unit=remote-supo
     initrd          @INITRD@
   }
 

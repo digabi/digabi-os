@@ -34,7 +34,7 @@ label supo
 
     linux @LINUX@
     initrd @INITRD@
-    append @APPEND_LIVE@ quiet splash remote-supo
+    append @APPEND_LIVE@ quiet splash systemd.unit=remote-supo
 
 
 menu tabmsg Press ENTER to boot
