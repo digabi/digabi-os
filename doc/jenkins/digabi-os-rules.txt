@@ -3,8 +3,9 @@
 
 # This file is deployed at CI master, currently at user/dos-jenkins-rules.txt (symlink).
 
-# match line starting with 'error ', case-insensitive
+ok /ERROR -- net.ssh.authentication.agent/
 ok /could not connect to ssh-agent/
+# match line starting with 'error ', case-insensitive
 error /(?i)^error /
 error /[^A-Z]ERROR[^A-Z]/
 error /E:/
