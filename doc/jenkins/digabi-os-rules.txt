@@ -3,33 +3,40 @@
 
 # This file is deployed at CI master, currently at user/dos-jenkins-rules.txt (symlink).
 
-ok /ERROR -- net.ssh.authentication.agent/
-ok /could not connect to ssh-agent/
+# Note: Because logparser is buggy, spaces MUST be encoded as \s, \b or \u0020
+# See <https://github.com/jenkinsci/log-parser-plugin/blob/master/src/main/java/hudson/plugins/logparser/LogParserUtils.java>
+# line (currently 67):
+#
+#    final String ruleParts[] = parsingRule.split("\\s");
+#
+
+ok /ERROR\s--\snet.ssh.authentication.agent/
+ok /could\snot\sconnect\sto\sssh-agent/
 # match line starting with 'error ', case-insensitive
-error /(?i)^error /
+error /(?i)^error\s/
 error /[^A-Z]ERROR[^A-Z]/
 error /E:/
-error /Cannot initiate the connection to/
+error /Cannot\sinitiate\sthe\sconnection\sto/
 
 # list of warnings here...
-ok /WARN environment: Process-lock in use: vmware-network/
-ok /WARN environment: Process-lock in use: fpcollision/
-ok /W: Duplicate sources.list entry/
-ok /update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults/
+ok /WARN\senvironment:\sProcess-lock\sin\suse:\svmware-network/
+ok /WARN\senvironment:\sProcess-lock\sin\suse:\sfpcollision/
+ok /W:\sDuplicate\ssources.list\sentry/
+ok /update-rc.d:\swarning:\sstart\sand\sstop\şactions\sare\sno\slonger\ssupported;\sfalling\sback\sto\sdefaults/
 warning /[Ww]arning/
 warning /WARN/
 warning /(?i)notice/
 warning /W:/
-warning /No such file or directory/
+warning /No\ssuch\sfile\sor\sdirectory/
 
 # create a quick access link to lines in the report containing 'INFO'
-ok /grub-install info:/
-ok /grub-mkimage info:/
-ok /Reading state information/
+ok /grub-install\sinfo:/
+ok /grub-mkimage\sinfo:/
+ok /Reading\sstate\sinformation/
 info /(?i)INFO/
 
 # Mark different stages
-start /Configure build environment/
-start /Build image/
+start /Configure\sbuild\senvironment/
+start /Build\simage/
 ok /IP:/
 start /P:/
