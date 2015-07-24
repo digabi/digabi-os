@@ -43,7 +43,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder '.', '/vagrant', :mount_options => ["ro"]
 
   config.vm.synced_folder '.git', '/digabi-os.git', :mount_options => ["ro"]
-  config.vm.synced_folder 'dist', '/artifacts'
+  config.vm.synced_folder 'dist', '/artifacts', create: true
 
   if network_type == 'bridged'
     if network_host_dev
