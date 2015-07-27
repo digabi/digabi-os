@@ -29,13 +29,10 @@ For documentation, see `doc/*.md`. Manual for `live-build` toolset:
  * for required packages, see file 
  `custom-packages/digabi-dev/debian/control` (especially lines Depends, 
  Recommends)
- * you may use [Digabi Buildbox](http://sourceforge.net/projects/digabi/files/tools), VirtualBox machine image for build environment. You probably want to run `sudo apt-get update && sudo apt-get dist-upgrade` after first run
 
 
 ### How to build
 See `doc/building.md` for detailed instructions. TL;DR; `make -f Makefile.build dist`.
-
-Our official images are published via [SourceForge](http://sourceforge.net/projects/digabi/files/).
 
 
 ## Disclaimer
