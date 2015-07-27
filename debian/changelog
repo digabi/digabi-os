@@ -1,8 +1,8 @@
-digabi-os (15.06a1) UNRELEASED; urgency=medium
+digabi-os (15.08a1) unstable; urgency=medium
 
   * Bump version.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 08 Jun 2015 10:55:41 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 27 Jul 2015 11:15:02 +0300
 
 digabi-os (15.01a1) unstable; urgency=medium
 
