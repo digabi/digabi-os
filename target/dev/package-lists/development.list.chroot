@@ -1,5 +1,0 @@
-# Extras for development versions... Should be removed before publishing official images.
-linux-headers-3.16-2-all
-virtualbox-guest-dkms
-virtualbox-guest-utils
-virtualbox-guest-x11
