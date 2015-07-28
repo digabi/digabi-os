@@ -29,10 +29,10 @@ BLUE="$(tohex ${COLOR} 5-6)"
 ALPHA="65535"
 
 # Set background style to solid color (0=system colors, 1=solid colors)
-${XFCONF} -c ${CHANNEL} -p /panels/panel-${PANEL_ID}/background-style -t uint -s 1
+${XFCONF} -n -c ${CHANNEL} -p /panels/panel-${PANEL_ID}/background-style -t uint -s 1
 
 # Set background color
-${XFCONF} -c ${CHANNEL} -p /panels/panel-${PANEL_ID}/background-color -a -t uint -s ${RED} -t uint -s ${GREEN} -t uint -s ${BLUE} -t uint -s ${ALPHA}
+${XFCONF} -n -c ${CHANNEL} -p /panels/panel-${PANEL_ID}/background-color -a -t uint -s ${RED} -t uint -s ${GREEN} -t uint -s ${BLUE} -t uint -s ${ALPHA}
 
 # background color is array of four uintegers, r, g, b, a ; values 0-65535
 # 57562, 7245, 3342, 65535 = 224,28,13 / #e01c0d / 4,94,88 (CMYK)
