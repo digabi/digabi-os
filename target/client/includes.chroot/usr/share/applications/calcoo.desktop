@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Calcoo
+Name[fi]=Laskin
+Name[sv]=Qalculate!
+Exec=calcoo
+Icon=accessories-calculator
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;Application;Utility;
+
