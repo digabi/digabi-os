@@ -28,7 +28,7 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="bool" value="false"/>
     <property name="ColorPalette" type="string" value="black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90"/>
-    <property name="FontName" type="string" value="Sans 10"/>
+    <property name="FontName" type="string" value="Lato 10"/>
     <property name="IconSizes" type="string" value=""/>
     <property name="KeyThemeName" type="string" value=""/>
     <property name="ToolbarStyle" type="string" value="icons"/>
