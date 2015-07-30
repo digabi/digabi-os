@@ -27,6 +27,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 plymouth/* $(DESTDIR)/usr/share/plymouth/themes/digabios
 	
 	# digabios-system-settings
+	install -D -m 0644 locale.gen $(DESTDIR)/etc/locale.gen.digabios
 	install -D -m 0644 xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml.digabios
 	install -D -m 0644 xfwm4.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml.digabios
 	install -D -m 0644 xfwm4.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.digabios

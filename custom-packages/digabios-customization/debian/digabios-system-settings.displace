@@ -1,3 +1,4 @@
+/etc/locale.gen.digabios
 /etc/default/keyboard.digabios
 /etc/default/locale.digabios
 /etc/xdg/user-dirs.defaults.digabios
