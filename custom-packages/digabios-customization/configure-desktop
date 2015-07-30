@@ -54,10 +54,6 @@ then
     # Set custom image for menu
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-1/button-icon" -t "string" -s "${MENU_ICON}"
 
-    # Hide suspend & hibernate from log-out window
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowSuspend" -t "bool" -s "false"
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowHibernate" -t "bool" -s "false"
-
     # Set default theme
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/Net/ThemeName" -t "string" -s "${XFWM_THEME}"
 
