@@ -47,6 +47,11 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 firewall/digabios-firewall.service $(DESTDIR)/lib/systemd/system/digabios-firewall.service
 	install -D -m 0755 firewall/digabios-firewall.sh $(DESTDIR)/usr/sbin/digabios-firewall
 	install -m 0600 firewall/rules/* $(DESTDIR)/etc/digabi/firewall.d
+	
+	# digabios-client
+	install -D -m 0600 client/4000-allow-dns-out.conf $(DESTDIR)/etc/digabi/firewall.d/4000-allow-dns-out.conf
+	install -D -m 0600 client/5100-allow-http_https_out.conf $(DESTDIR)/etc/digabi/firewall.d/5100-allow-http_https_out.conf
+	install -D -m 0600 client/5100-allow-local-maxima.conf $(DESTDIR)/etc/digabi/firewall.d/5100-allow-local-maxima.conf
 
 deb:
 	dpkg-buildpackage -us -uc
