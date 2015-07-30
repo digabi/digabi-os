@@ -4,6 +4,10 @@
   <property name="general" type="empty">
     <property name="FailsafeSessionName" type="string" value="Failsafe"/>
   </property>
+  <property name="shutdown" type="empty">
+    <property name="ShowSuspend" type="bool" value="false"/>
+    <property name="ShowHibernate" type="bool" value="false"/>
+  </property>
   <property name="sessions" type="empty">
     <property name="Failsafe" type="empty">
       <property name="IsFailsafe" type="bool" value="true"/>
