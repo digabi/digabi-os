@@ -107,7 +107,7 @@
 # de_CH ISO-8859-1
 # de_CH.UTF-8 UTF-8
 # de_DE ISO-8859-1
-# de_DE.UTF-8 UTF-8
+de_DE.UTF-8 UTF-8
 # de_DE@euro ISO-8859-15
 # de_LI.UTF-8 UTF-8
 # de_LU ISO-8859-1
@@ -148,7 +148,7 @@
 # en_SG.UTF-8 UTF-8
 # en_US ISO-8859-1
 # en_US.ISO-8859-15 ISO-8859-15
-# en_US.UTF-8 UTF-8
+en_US.UTF-8 UTF-8
 # en_ZA ISO-8859-1
 # en_ZA.UTF-8 UTF-8
 # en_ZM UTF-8
@@ -210,7 +210,7 @@
 # fa_IR UTF-8
 # ff_SN UTF-8
 # fi_FI ISO-8859-1
-# fi_FI.UTF-8 UTF-8
+fi_FI.UTF-8 UTF-8
 # fi_FI@euro ISO-8859-15
 # fil_PH UTF-8
 # fo_FO ISO-8859-1
@@ -223,7 +223,7 @@
 # fr_CH ISO-8859-1
 # fr_CH.UTF-8 UTF-8
 # fr_FR ISO-8859-1
-# fr_FR.UTF-8 UTF-8
+fr_FR.UTF-8 UTF-8
 # fr_FR@euro ISO-8859-15
 # fr_LU ISO-8859-1
 # fr_LU.UTF-8 UTF-8
@@ -374,7 +374,7 @@
 # ru_RU ISO-8859-5
 # ru_RU.CP1251 CP1251
 # ru_RU.KOI8-R KOI8-R
-# ru_RU.UTF-8 UTF-8
+ru_RU.UTF-8 UTF-8
 # ru_UA KOI8-U
 # ru_UA.UTF-8 UTF-8
 # rw_RW UTF-8
@@ -412,7 +412,7 @@
 # sv_FI@euro ISO-8859-15
 # sv_SE ISO-8859-1
 # sv_SE.ISO-8859-15 ISO-8859-15
-# sv_SE.UTF-8 UTF-8
+sv_SE.UTF-8 UTF-8
 # sw_KE UTF-8
 # sw_TZ UTF-8
 # szl_PL UTF-8
