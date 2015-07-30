@@ -1,3 +1,9 @@
+digabios-customization (5.1.2) unstable; urgency=medium
+
+  * Depend on specific package versions.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 30 Jul 2015 11:18:44 +0300
+
 digabios-customization (5.1.1) unstable; urgency=medium
 
   * Bump version.

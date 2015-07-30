@@ -13,8 +13,8 @@ Replaces: digabi-customization
 Conflicts: digabi-customization
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
- digabios-backgrounds,
- digabios-system-settings,
+ digabios-backgrounds (= ${binary:Version}),
+ digabios-system-settings (= ${binary:Version}),
  fonts-lato, fonts-liberation, plymouth,
  plymouth-themes, ambiance-radiance-colors
 Description: Customizations for DigabiOS.
