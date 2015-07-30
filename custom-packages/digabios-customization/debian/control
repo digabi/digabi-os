@@ -70,7 +70,7 @@ Description: Add client configuration to system.
 Package: digabios-server
 Architecture: all
 Depends: digabios-customization, koetilapalvelin,
- nginx, nodej,s oracle-java8-sdk, postgresql,
+ nginx, nodejs, oracle-java8-sdk, postgresql,
  postgresql-contrib, openssh-server, isc-dhcp-server,
  avahi-daemon, usbmount
 Conflicts: digabios-client
