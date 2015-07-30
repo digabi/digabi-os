@@ -1,0 +1,3 @@
+etc/digabi/firewall.d
+lib/systemd/system/digabios-firewall.service
+usr/sbin/digabios-firewall
