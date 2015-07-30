@@ -9,8 +9,8 @@ Before=netfilter-persistent.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/sbin/digabi-firewall start
-ExecStop=/usr/sbin/digabi-firewall stop
+ExecStart=/usr/sbin/digabios-firewall start
+ExecStop=/usr/sbin/digabios-firewall stop
 
 [Install]
 WantedBy=multi-user.target
