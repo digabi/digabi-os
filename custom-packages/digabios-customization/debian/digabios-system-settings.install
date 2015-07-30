@@ -1,3 +1,4 @@
+/etc/locale.gen.digabios
 /etc/skel
 /etc/xdg/mimeapps.list
 /etc/xdg/user-dirs.defaults.digabios
