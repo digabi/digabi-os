@@ -1,3 +1,9 @@
+digabios-customization (5.1.6) unstable; urgency=medium
+
+  * Bump version.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 30 Jul 2015 12:22:44 +0300
+
 digabios-customization (5.1.3) unstable; urgency=medium
 
   * Configure font in dos-s-s.
