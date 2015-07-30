@@ -24,7 +24,7 @@ Package: digabios-backgrounds
 Replaces: digabi-backgrounds
 Provides: digabi-backgrounds
 Conflicts: digabi-backgrounds
-Depends: ${misc:Depends}, desktop-base
+Depends: ${misc:Depends}, desktop-base, gnome-icon-theme
 Architecture: all
 Description: Backgrounds for DigabiOS.
  This package installs background files for DigabiOS.
