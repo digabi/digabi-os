@@ -16,15 +16,8 @@ then
     # Set custom image for menu
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-1/button-icon" -t "string" -s "${MENU_ICON}"
 
-    # Set default theme
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/Net/ThemeName" -t "string" -s "${XFWM_THEME}"
-
     # Show shutdown button instead of logout window
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-2/first-action" -t "int" -s 3
-
-    # Antialiasing
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/Antialias" -t "int" -s 1
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/HintStyle" -t "string" -s "hintmedium"
 
     # Prettier notifications
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-notifyd" -p "/theme" -t "string" -s "Smoke"
