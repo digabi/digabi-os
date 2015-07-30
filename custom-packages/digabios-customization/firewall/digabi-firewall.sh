@@ -1,5 +1,12 @@
 #!/bin/sh
 
+#
+# digabi-firewall
+#
+# This script compiles DigabiOS firewall rules to rule file
+# to be used by iptables-persistent
+#
+
 set -e
 
 if [ "$(id -u)" != 0 ]
