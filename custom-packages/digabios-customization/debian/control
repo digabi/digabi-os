@@ -54,7 +54,14 @@ Description: Simple firewall script for DigabiOS
 
 Package: digabios-client
 Architecture: all
-Depends: digabios-customization
+Depends: digabios-customization, digabi-koe, geogebra5,
+ maxima, wxmaxima, wine, pinta, gimp, inkscape, nodejs,
+ libreoffice-calc, libreoffice-draw, libreoffice-gtk,
+ libreoffice-impress, libreoffice-l10n-fi,
+ libreoffice-l10n-sv, libreoffice-math,
+ libreoffice-writer, xfce4-screenshooter,
+ xfce4-battery-plugin, pulseaudio, pavucontrol,
+ calcoo, okular, dia, dia-shapes
 Conflicts: digabios-server
 Provides: digabios-system-config
 Description: Add client configuration to system.
