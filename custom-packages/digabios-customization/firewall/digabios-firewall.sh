@@ -38,6 +38,6 @@ do
     CONFFILES="$(find ${CONFDIR} -maxdepth 1 -type f -name *.${version}.conf)"
 
     cat ${CONFFILES} >${TEMPFILE}
-    echo "Rules for ${version}: ${TEMPFILE}"
+    install -D -m 0600 ${TEMPFILE} /etc/iptables/rules.${version}
 done
 
