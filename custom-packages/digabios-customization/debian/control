@@ -56,6 +56,7 @@ Package: digabios-client
 Architecture: all
 Depends: digabios-customization
 Conflicts: digabios-server
+Provides: digabios-system-config
 Description: Add client configuration to system.
  TBD
 
@@ -63,5 +64,6 @@ Package: digabios-server
 Architecture: all
 Depends: digabios-customization
 Conflicts: digabios-client
+Provides: digabios-system-config
 Description: Add server configuration to system
  TBD

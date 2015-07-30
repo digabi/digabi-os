@@ -1,3 +1,9 @@
+digabios-customization (5.1.8) UNRELEASED; urgency=medium
+
+  * Add digabios-{client,server}
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 30 Jul 2015 14:44:08 +0300
+
 digabios-customization (5.1.7) unstable; urgency=medium
 
   * Add gnome-icon-theme to digabi-backgrounds dependencies.
