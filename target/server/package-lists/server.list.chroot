@@ -1,15 +1,1 @@
-koetilapalvelin
-
-nginx
-nodejs
-oracle-java8-jdk
-
-postgresql
-postgresql-contrib
-
-openssh-server
-
-isc-dhcp-server
-avahi-daemon
-
-usbmount
+digabios-server
