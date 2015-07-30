@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=digabi-xfconf
-Comment=Configure desktop settings
-Exec=/usr/bin/digabi configure-desktop
-StartupNotify=false
-Terminal=false
-Hidden=false
