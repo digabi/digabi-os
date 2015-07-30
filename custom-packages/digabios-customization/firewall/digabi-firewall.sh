@@ -16,7 +16,7 @@ then
 fi
 
 CONFIG_DIR="/etc/digabi/firewall.d"
-RULEFILE="/etc/iptables.rules"
+RULEFILE="/etc/iptables/rules.v4"
 
 FILES="$(ls ${CONFIG_DIR}/*.conf)"
 
