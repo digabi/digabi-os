@@ -29,7 +29,7 @@
     <property name="horiz_scroll_opacity" type="bool" value="false"/>
     <property name="inactive_opacity" type="int" value="100"/>
     <property name="maximized_offset" type="int" value="0"/>
-    <property name="mousewheel_rollup" type="bool" value="true"/>
+    <property name="mousewheel_rollup" type="bool" value="false"/>
     <property name="move_opacity" type="int" value="100"/>
     <property name="placement_mode" type="string" value="center"/>
     <property name="placement_ratio" type="int" value="20"/>
