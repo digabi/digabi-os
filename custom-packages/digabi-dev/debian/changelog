@@ -1,3 +1,9 @@
+digabi-dev (5.0.0) stable; urgency=medium
+
+  * Equivs to native Debian packaging.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 30 Jul 2015 13:12:56 +0300
+
 digabi-dev (4.2.0) stable; urgency=medium
 
   * Added upgrade-basebox command for automated Vagrantbox updates.
