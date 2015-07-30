@@ -41,6 +41,12 @@ install: $(CONTENT_DIR)
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
+	
+	# digabios-firewall
+	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d
+	install -D -m 0644 firewall/digabios-firewall.service $(DESTDIR)/lib/systemd/system/digabios-firewall.service
+	install -D -m 0755 firewall/digabios-firewall.sh $(DESTDIR)/usr/sbin/digabios-firewall
+	install -m 0600 firewall/rules/* $(DESTDIR)/etc/digabi/firewall.d
 
 deb:
 	dpkg-buildpackage -us -uc
