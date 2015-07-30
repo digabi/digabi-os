@@ -10,7 +10,6 @@ MENU_ICON="/usr/share/digabi/proprietary/digabi.svg"
 # Configure XFCE4 settings
 XFCONF_BIN="/usr/bin/xfconf-query"
 XFCONF_FLAGS="-n"
-XFWM_THEME="Radiance-Orange"
 
 if [ -x "${XFCONF_BIN}" ]
 then
@@ -60,29 +59,10 @@ then
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-session" -p "/shutdown/ShowHibernate" -t "bool" -s "false"
 
     # Set default theme
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/theme" -t "string" -s "${XFWM_THEME}"
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/Net/ThemeName" -t "string" -s "${XFWM_THEME}"
-
-    # Set workspace count
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/workspace_count" -t "int" -s 1
 
     # Show shutdown button instead of logout window
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-panel" -p "/plugins/plugin-2/first-action" -t "int" -s 3
-
-    # Toggle compositing on
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/use_compositing" -t "bool" -s "true"
-
-    # Show shadows
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/show_dock_shadow" -t "bool" -s "true"
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/show_frame_shadow" -t "bool" -s "true"
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/show_popup_shadow" -t "bool" -s "true"
-
-    # Transparent window when moving or resizing
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/move_opacity" -t "int" -s 90
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/resize_opacity" -t "int" -s 90
-
-    # Blink urgent windows
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/urgent_blink" -t "bool" -s "true"
 
     # Antialiasing
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xsettings" -p "/xsettings/Xft/Antialias" -t "int" -s 1
@@ -91,7 +71,5 @@ then
     # Prettier notifications
     ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfce4-notifyd" -p "/theme" -t "string" -s "Smoke"
     
-    # Disable rolling up windows when scrolling w/ mouse wheel
-    ${XFCONF_BIN} ${XFCONF_FLAGS} -c "xfwm4" -p "/general/mousewheel_rollup" -t "bool" -s "false"
 fi
 
