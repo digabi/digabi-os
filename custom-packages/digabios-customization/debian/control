@@ -42,3 +42,11 @@ Architecture: all
 Depends: ${misc:Depends}, plymouth, plymouth-x11
 Description: Custom Plymouth theme
  Installs custom Plymouth theme to system.
+
+Package: digabios-firewall
+Architecture: all
+Conflicts: digabi-firewall
+Provides: digabi-firewall
+Replaces: digabi-firewall
+Description: Simple firewall script for DigabiOS
+ This package installs simple firewall for DigabiOS.
