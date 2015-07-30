@@ -35,8 +35,9 @@ for version in ${VERSIONS}
 do
     TEMPFILE="${TEMPDIR}/rules.${version}"
     TARGETFILE="/etc/iptables/rules.${version}"
-    CONFFILES="$(find ${CONFDIR} -maxdepth 1 -type f -name *.${version}.conf)"
+    CONFFILES="$(find ${CONFDIR} -maxdepth 1 -type f -name *.${version}.conf |sort)"
 
+    echo ${CONFFILES}
     cat ${CONFFILES} >${TEMPFILE}
     install -D -m 0600 ${TEMPFILE} /etc/iptables/rules.${version}
 done
