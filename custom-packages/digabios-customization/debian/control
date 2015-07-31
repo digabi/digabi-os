@@ -61,7 +61,7 @@ Depends: digabios-customization, digabi-koe, geogebra5,
  libreoffice-l10n-sv, libreoffice-math,
  libreoffice-writer, xfce4-screenshooter,
  xfce4-battery-plugin, pulseaudio, pavucontrol,
- calcoo, okular, dia, dia-shapes, digabios-firewall
+ kcalc, okular, dia, dia-shapes, digabios-firewall
 Conflicts: digabios-server
 Provides: digabios-system-config
 Description: Add client configuration to system.

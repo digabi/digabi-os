@@ -1,3 +1,9 @@
+digabios-customization (5.1.13) unstable; urgency=medium
+
+  * Replace calcoo with kcalc.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 31 Jul 2015 12:40:21 +0300
+
 digabios-customization (5.1.12) unstable; urgency=medium
 
   * Bump version.

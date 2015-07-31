@@ -52,7 +52,6 @@ install: $(CONTENT_DIR)
 	install -D -m 0600 client/4000-allow-dns-out.conf $(DESTDIR)/etc/digabi/firewall.d/4000-allow-dns-out.conf
 	install -D -m 0600 client/5100-allow-http_https_out.conf $(DESTDIR)/etc/digabi/firewall.d/5100-allow-http_https_out.conf.digabios
 	install -D -m 0600 client/5100-allow-local-maxima.conf $(DESTDIR)/etc/digabi/firewall.d/5100-allow-local-maxima.conf
-	install -D -m 0644 client/calcoo.desktop $(DESTDIR)/usr/share/applications/calcoo.desktop
 
 deb:
 	dpkg-buildpackage -us -uc
