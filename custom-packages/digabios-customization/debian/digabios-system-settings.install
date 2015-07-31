@@ -1,5 +1,6 @@
 etc/locale.gen.digabios
 etc/skel
+etc/xdg/menus/xfce-applications.menu.digabios
 etc/xdg/mimeapps.list
 etc/xdg/user-dirs.defaults.digabios
 etc/xdg/xfce4

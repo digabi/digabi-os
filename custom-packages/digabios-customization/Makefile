@@ -39,6 +39,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 locale $(DESTDIR)/etc/default/locale.digabios
 	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios	
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
+	install -D -m 0644 xfce-applications.menu $(DESTDIR)/etc/xdg/menus/xfce-applications.menu.digabios
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
 	
