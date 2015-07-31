@@ -1,8 +1,8 @@
-/etc/locale.gen.digabios
-/etc/skel
-/etc/xdg/mimeapps.list
-/etc/xdg/user-dirs.defaults.digabios
-/etc/xdg/xfce4
-/etc/default/locale.digabios
-/etc/default/keyboard.digabios
-/var/lib/live/config/*
+etc/locale.gen.digabios
+etc/skel
+etc/xdg/mimeapps.list
+etc/xdg/user-dirs.defaults.digabios
+etc/xdg/xfce4
+etc/default/locale.digabios
+etc/default/keyboard.digabios
+var/lib/live/config/*
