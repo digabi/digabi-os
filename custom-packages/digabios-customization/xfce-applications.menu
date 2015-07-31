@@ -9,7 +9,7 @@
     <DefaultMergeDirs/>
 
     <Include>
-        <Category>X-Xfce-Toplevel</Category>
+	<All/>
     </Include>
 
     <Layout>
