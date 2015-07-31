@@ -1,35 +1,35 @@
-digabi-os (15.08a2) unstable; urgency=medium
+digabios (15.08a2) unstable; urgency=medium
 
   * Bump version.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 30 Jul 2015 10:24:27 +0300
 
-digabi-os (15.08a1) unstable; urgency=medium
+digabios (15.08a1) unstable; urgency=medium
 
   * Bump version.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 27 Jul 2015 11:15:02 +0300
 
-digabi-os (15.01a1) unstable; urgency=medium
+digabios (15.01a1) unstable; urgency=medium
 
   * New version for Kurko testing.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 12 Dec 2014 10:31:43 +0200
 
-digabi-os (14.09a1) testing; urgency=medium
+digabios (14.09a1) testing; urgency=medium
 
   * Updated to native Debian packaging.
   * Updated linux-image-digabi.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 03 Sep 2014 17:10:05 +0300
 
-digabi-os (14.08a1) testing; urgency=medium
+digabios (14.08a1) testing; urgency=medium
 
   * Added updated feedback client (digabi-feedback).
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 31 Jul 2014 12:19:47 +0300
 
-digabi-os (14.07a6) stable; urgency=medium
+digabios (14.07a6) stable; urgency=medium
 
   * Added placeholder packages for digabi-koe, digabi-koetilanpalvelin.
   * Using new firewall (digabi-firewall) for easy customization.
@@ -37,13 +37,13 @@ digabi-os (14.07a6) stable; urgency=medium
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 31 Jul 2014 12:19:44 +0300
 
-digabi-os (14.07a5) stable; urgency=medium
+digabios (14.07a5) stable; urgency=medium
 
   * Using same config tree for server+client. 
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 23 Jul 2014 14:23:54 +0300
 
-digabi-os (14.07a4) stable; urgency=medium
+digabios (14.07a4) stable; urgency=medium
 
   * Removed XFCE bottom panel.
   * Added xfce4-xkb-panel for easy keyboard layout changing.
@@ -52,35 +52,35 @@ digabi-os (14.07a4) stable; urgency=medium
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 23 Jul 2014 14:23:31 +0300
 
-digabi-os (14.07a3) stable; urgency=medium
+digabios (14.07a3) stable; urgency=medium
 
   * Rebranded project as Digabi OS (was Digabi Live).
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 20:40:54 +0300
 
-digabi-os (14.07a2) stable; urgency=medium
+digabios (14.07a2) stable; urgency=medium
 
   * Using Replaces instead of Conflicts.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 16:14:34 +0300
 
-digabi-os (14.07a1) stable; urgency=medium
+digabios (14.07a1) stable; urgency=medium
 
   * Added Conflicts: digabi-live.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 09:48:46 +0300
 
-digabi-os (14.06a1) stable; urgency=low
+digabios (14.06a1) stable; urgency=low
 
   * Upgraded GeoGebra to 4.4, using package from upstream.
   * Added digabi-feedback client.
-  * Added digabi-os-debug for easy debug data collecting.
+  * Added digabios-debug for easy debug data collecting.
   * Added Ylioppilastutkintolautakunta Root CA (root certificate).
-  * Install approved apps via digabi-os package (instead of specifying them in config/package-lists/digabi.list)
+  * Install approved apps via digabios package (instead of specifying them in config/package-lists/digabi.list)
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Jul 2014 09:46:16 +0300
 
-digabi-os (1.0) stable; urgency=low
+digabios (1.0) stable; urgency=low
 
   * Initial release.
 

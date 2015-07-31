@@ -1,25 +1,25 @@
-Source: digabi-os
+Source: digabios
 Section: misc
 Priority: optional
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
 Homepage: https://digabi.fi/os
-Vcs-Git: git://github.com/digabi/digabi-os.git
-Vcs-Browser: https://github.com/digabi/digabi-os
+Vcs-Git: git://github.com/digabi/digabios.git
+Vcs-Browser: https://github.com/digabi/digabios
 
-Package: digabi-os
+Package: digabios
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: digabi-live
 Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.
 
-Package: digabi-os-doc
+Package: digabios-doc
 Section: doc
 Depends: ${misc:Depends}
 Architecture: all
-Description: documentation for digabi-os
+Description: documentation for digabios
  Documentation.
 
 Package: linux-image-digabi
