@@ -1,3 +1,9 @@
+digabios-customization (5.2.2) unstable; urgency=medium
+
+  * Always require current version of digabios-firewall.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 31 Jul 2015 14:11:20 +0300
+
 digabios-customization (5.2.1) unstable; urgency=medium
 
   * Add XFCE application menu config.
