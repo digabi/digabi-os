@@ -9,7 +9,7 @@ Vcs-Git: git://github.com/digabi/digabios.git
 Vcs-Browser: https://github.com/digabi/digabios
 
 Package: digabios
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends},
  live-boot, live-config, live-config-systemd,
  live-tools, user-setup, eject, sudo, iproute, locales,

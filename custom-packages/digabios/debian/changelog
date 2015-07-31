@@ -1,3 +1,9 @@
+digabios (15.08.1a2) unstable; urgency=medium
+
+  * Update digabios architecture from any to all.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 31 Jul 2015 16:47:59 +0300
+
 digabios (15.08.1a1) unstable; urgency=medium
 
   * Add all dependencies to digabios package.
