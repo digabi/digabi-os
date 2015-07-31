@@ -1,9 +1,9 @@
 # Digabi customizations (apps, ui)
 
-digabi-os
+#digabi-os
 
 # Simple firewall app
-digabi-firewall
+digabios-firewall
 
 # MEB Root CA
 digabi-archive
@@ -16,7 +16,7 @@ digabios-customization
 digabios-system-settings
 
 # Feedback client
-digabi-feedback
+#digabi-feedback
 
 # system config
 digabios-system-config
