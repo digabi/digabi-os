@@ -22,7 +22,7 @@ Architecture: all
 Description: documentation for digabios
  Documentation.
 
-Package: linux-image-digabi
+Package: linux-image-digabios
 Section: kernel
 Architecture: all
 Depends: ${misc:Depends},
