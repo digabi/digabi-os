@@ -25,6 +25,7 @@
         <Filename>mousepad.desktop</Filename>
         <Filename>okular.desktop</Filename>
         <Separator/>
+        <Filename>dia.desktop</Filename>
         <Filename>gimp.desktop</Filename>
         <Filename>inkscape.desktop</Filename>
         <Filename>pinta.desktop</Filename>
@@ -40,6 +41,9 @@
         <Filename>pavucontrol.desktop</Filename>
         <Filename>vlc.desktop</Filename>
         <Separator/>
+        <Filename>xfce-display-settings.desktop</Filename>
+        <Filename>xfce-mouse-settings.desktop</Filename>
+        <Filename>xfce-keyboard-settings.desktop</Filename>
     </Layout>
 
 </Menu>
