@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <matrix-project plugin="matrix-project@1.3">
   <actions/>
-  <description>Build all Digabi OS variants&#xd;
+  <description>Build all DigabiOS variants&#xd;
 &#xd;
 First try building amd64/iso-hybrid/client + amd64/iso-hybrid/server, if successful, build other variants.</description>
   <logRotator class="hudson.tasks.LogRotator">

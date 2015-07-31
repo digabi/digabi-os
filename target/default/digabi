@@ -1,6 +1,6 @@
 # -*- mode: sh; -*-
 
-# Configuration file for the Digabi OS live system
+# Configuration file for the DigabiOS live system
 # 
 # You'd better never directly edit this file: rather put your custom
 # variable assignments in a new file called 'digabi.local', in the
@@ -25,7 +25,7 @@ DIGABI_VERSION="`dpkg-parsechangelog | sed -n 's/^Version: //p'`"
 DIGABI_FULL_VERSION="${DIGABI_VERSION} - ${DIGABI_TODAY}"
 
 # Developpers' data used by git-dch, debcommit and friends in the release script
-DIGABI_DEV_FULLNAME="Digabi OS Developers"
+DIGABI_DEV_FULLNAME="DigabiOS Developers"
 DIGABI_DEV_EMAIL="digabi@ylioppilastutkinto.fi"
 DIGABI_DEV_KEYID=""
 DIGABI_BUILD_TARGET="default"

@@ -1,6 +1,6 @@
-Digabi OS (DOS)
+DigabiOS (DOS)
 ================================
-TL;DR Sources for Digabi OS, a Live-Linux system, created by The 
+TL;DR Sources for DigabiOS, a Live-Linux system, created by The 
 Matriculation Examination Board of Finland (In Finnish: 
 [Ylioppilastutkintolautakunta](http://www.ylioppilastutkinto.fi/)).
 

@@ -19,7 +19,7 @@ menu timeoutrow 16
 menu tabmsgrow 18
 
 
-menu title Digabi OS
+menu title DigabiOS
 
 label ktp
     menu label ^Koetilapalvelin / Provlokalens server
