@@ -22,16 +22,13 @@ Architecture: all
 Description: documentation for digabios
  Documentation.
 
-Package: linux-image-digabios
+Package: linux-image-digabios-amd64
 Section: kernel
-Architecture: all
-Depends: ${misc:Depends},
- linux-image-3.16.0-4.ytl-amd64 |
- linux-image-3.16.0-4.ytl-586 |
- linux-image-3.16.0-4.ytl-686-pae
-Provides: linux-image-ytl
-Replaces: linux-image-ytl
-Conflicts: linux-image-ytl
+Architecture: amd64
+Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-amd64
+Provides: linux-image-digabios
+Replaces: linux-image-ytl, linux-image-digabi
+Conflicts: linux-image-ytl, linux-image-digabi
 Description: Latest Digabi Linux kernel
  This metapackage depends on the latest Digabi Linux kernel and modules.
  .
@@ -39,4 +36,36 @@ Description: Latest Digabi Linux kernel
  supported.
  .
  Only for use with Digabi OS (might break on other systems).
+
+Package: linux-image-digabios-586
+Section: kernel
+Architecture: i386
+Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-586
+Provides: linux-image-digabios
+Replaces: linux-image-ytl, linux-image-digabi
+Conflicts: linux-image-ytl, linux-image-digabi
+Description: Latest Digabi Linux kernel
+ This metapackage depends on the latest Digabi Linux kernel and modules.
+ .
+ Currently only 32-bit/64-bit Intel/AMD systems (i386, amd64) are
+ supported.
+ .
+ Only for use with Digabi OS (might break on other systems).
+
+
+Package: linux-image-digabios-686-pae
+Section: kernel
+Architecture: i386
+Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-686-pae
+Provides: linux-image-digabios
+Replaces: linux-image-ytl, linux-image-digabi
+Conflicts: linux-image-ytl, linux-image-digabi
+Description: Latest Digabi Linux kernel
+ This metapackage depends on the latest Digabi Linux kernel and modules.
+ .
+ Currently only 32-bit/64-bit Intel/AMD systems (i386, amd64) are
+ supported.
+ .
+ Only for use with Digabi OS (might break on other systems).
+
 
