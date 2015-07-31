@@ -1,34 +1,35 @@
-Source: digabios
+Source: digabi-os
 Section: misc
 Priority: optional
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
 Homepage: https://digabi.fi/os
-Vcs-Git: git://github.com/digabi/digabios.git
-Vcs-Browser: https://github.com/digabi/digabios
+Vcs-Git: git://github.com/digabi/digabi-os.git
+Vcs-Browser: https://github.com/digabi/digabi-os
 
-Package: digabios
+Package: digabi-os
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: digabi-live
 Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.
 
-Package: digabios-doc
+Package: digabi-os-doc
 Section: doc
 Depends: ${misc:Depends}
 Architecture: all
-Description: documentation for digabios
+Description: documentation for digabi-os
  Documentation.
 
-Package: linux-image-digabios-amd64
+Package: linux-image-digabi
 Section: kernel
-Architecture: amd64
-Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-amd64
-Provides: linux-image-digabios
-Replaces: linux-image-ytl, linux-image-digabi
-Conflicts: linux-image-ytl, linux-image-digabi
+Architecture: all
+Depends: ${misc:Depends},
+ linux-image-486 | linux-image-686-pae | linux-image-amd64
+Provides: linux-image-ytl
+Replaces: linux-image-ytl
+Conflicts: linux-image-ytl
 Description: Latest Digabi Linux kernel
  This metapackage depends on the latest Digabi Linux kernel and modules.
  .
@@ -36,36 +37,4 @@ Description: Latest Digabi Linux kernel
  supported.
  .
  Only for use with Digabi OS (might break on other systems).
-
-Package: linux-image-digabios-586
-Section: kernel
-Architecture: i386
-Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-586
-Provides: linux-image-digabios
-Replaces: linux-image-ytl, linux-image-digabi
-Conflicts: linux-image-ytl, linux-image-digabi
-Description: Latest Digabi Linux kernel
- This metapackage depends on the latest Digabi Linux kernel and modules.
- .
- Currently only 32-bit/64-bit Intel/AMD systems (i386, amd64) are
- supported.
- .
- Only for use with Digabi OS (might break on other systems).
-
-
-Package: linux-image-digabios-686-pae
-Section: kernel
-Architecture: i386
-Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-686-pae
-Provides: linux-image-digabios
-Replaces: linux-image-ytl, linux-image-digabi
-Conflicts: linux-image-ytl, linux-image-digabi
-Description: Latest Digabi Linux kernel
- This metapackage depends on the latest Digabi Linux kernel and modules.
- .
- Currently only 32-bit/64-bit Intel/AMD systems (i386, amd64) are
- supported.
- .
- Only for use with Digabi OS (might break on other systems).
-
 
