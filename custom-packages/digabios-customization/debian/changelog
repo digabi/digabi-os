@@ -1,8 +1,9 @@
 digabios-customization (5.2.6) unstable; urgency=medium
 
   * Add digabios-server firewall config.
+  * Add sysctl config to dos-s-s package.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 31 Jul 2015 15:11:37 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 31 Jul 2015 15:14:01 +0300
 
 digabios-customization (5.2.5) unstable; urgency=medium
 

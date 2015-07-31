@@ -40,6 +40,8 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios	
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
 	install -D -m 0644 xfce-applications.menu $(DESTDIR)/etc/xdg/menus/xfce-applications.menu.digabios
+	install -d -m 0755 $(DESTDIR)/etc/sysctl.d
+	install -m 0644 sysctl.d/* $(DESTDIR)/etc/sysctl.d
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
 	

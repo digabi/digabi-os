@@ -7,3 +7,4 @@ etc/xdg/xfce4
 etc/default/locale.digabios
 etc/default/keyboard.digabios
 var/lib/live/config/*
+etc/sysctl.d/*
