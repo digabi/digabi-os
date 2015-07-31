@@ -1,4 +1,4 @@
 /etc/digabi/firewall.d/4000-allow-dns-out.conf
-/etc/digabi/firewall.d/5100-allow-http_https_out.conf
+/etc/digabi/firewall.d/5100-allow-http_https_out.conf.install
 /etc/digabi/firewall.d/5100-allow-local-maxima.conf
 /usr/share/applications/calcoo.desktop
