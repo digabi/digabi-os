@@ -2,10 +2,11 @@
 
 set -e
 
-if [ -f "debian/changelog" ]
+CHANGELOG="custom-packages/digabios/debian/changelog"
+if [ -f "${CHANGELOG}" ]
 then
     echo "I: Including debian/changelog to binary."
     mkdir -p config/includes.binary
     # TODO: Change \n to \r\n (Windows-style line endings...) ?
-    cat debian/changelog |sed 's/$/\r/' >config/includes.binary/changelog.txt
+    cat ${CHANGELOG} |sed 's/$/\r/' >config/includes.binary/changelog.txt
 fi
