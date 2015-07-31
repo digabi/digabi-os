@@ -1,20 +1,4 @@
 # Digabi customizations (apps, ui)
 
-#digabi-os
-
-# Simple firewall app
-digabios-firewall
-
-# MEB Root CA
-digabi-archive
-digabi-archive-keyring
-digabi-certificates
-
-# Backgrounds etc.
-digabios-backgrounds
-digabios-customization
-digabios-system-settings
-
-# Feedback client
-#digabi-feedback
+digabios
 

@@ -1,3 +1,9 @@
+digabios (15.08.1a1) unstable; urgency=medium
+
+  * Add all dependencies to digabios package.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 31 Jul 2015 15:34:38 +0300
+
 digabios (15.08a4) unstable; urgency=medium
 
   * Depend on our custom kernel package.

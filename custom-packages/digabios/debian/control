@@ -10,7 +10,33 @@ Vcs-Browser: https://github.com/digabi/digabios
 
 Package: digabios
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ live-boot, live-config, live-config-systemd,
+ live-tools, user-setup, eject, sudo, iproute, locales,
+ keyboard-configuration, uuid-runtime, xdg-utils, ntp,
+ task-desktop, usbutils, console-data, less, tzdata,
+ xserver-xorg-video-all, xserver-xorg-input-all,
+ dbus-x11, tango-icon-theme, gstreamer0.10-alsa,
+ mousepad, task-xfce-desktop, xfce4-power-manager,
+ fbxkb, xfce4-notifyd, libnotify-bin, xfce4-xkb-plugin,
+ terminator, xbacklight,
+ iceweasel, iceweasel-l10n-fi, iceweasel-l10n-sv-se,
+ task-english, task-finnish, task-finnish-desktop,
+ task-swedish, task-swedish-desktop,
+ task-northern-sami, task-northern-sami-desktop,
+ console-setup, wpasupplicant, iw, network-manager,
+ network-manager-gnome, gnome-keyring,
+ digabios-firewall, digabi-archive, digabi-archive-keyring,
+ digabi-certificates, digabios-backgrounds,
+ digabios-customization, digabios-system-settings,
+ lshw, virt-what, imvirt, dmidecode, apparmor,
+ apparmor-notify, apparmor-profiles, apparmor-profiles-extra,
+ apparmor-utils, libpam-apparmor, auditd, consolekit,
+ libpam-ck-connector, policykit-1, 
+ firmware-linux, firmware-linux-nonfree,
+ firmware-b43-installer, firmware-atheros, firmware-ipw2x00,
+ firmware-iwlwifi, firmware-ralink, firmware-realtek,
+ broadcom-sta-dkms, ttf-mscorefonts-installer
 Replaces: digabi-live
 Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.

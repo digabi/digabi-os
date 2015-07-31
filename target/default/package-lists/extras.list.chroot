@@ -1,5 +1,0 @@
-# Install some extra packages
-
-#if ARCHIVE_AREAS non-free
-ttf-mscorefonts-installer
-#endif
