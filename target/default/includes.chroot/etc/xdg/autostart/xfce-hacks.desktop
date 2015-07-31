@@ -1,8 +1,0 @@
-
-[Desktop Entry]
-Type=Application
-Name=Configure XFCE
-Icon=preferences-desktop-screensaver
-Exec=xfconf-query -n -c xfwm4 -p /general/mousewheel_rollup -s false
-TryExec=xfconf-query
-OnlyShowIn=XFCE;
