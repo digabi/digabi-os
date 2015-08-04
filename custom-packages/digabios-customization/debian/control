@@ -8,19 +8,6 @@ Standards-Version: 3.9.6
 Homepage: https://github.com/digabi/digabi-os
 Vcs-Git: https://github.com/digabi/digabi-os.git
 
-Package: digabios-customization
-Provides: digabi-customization
-Replaces: digabi-customization
-Conflicts: digabi-customization
-Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends},
- digabios-backgrounds (= ${binary:Version}),
- digabios-system-settings (= ${binary:Version}),
- fonts-lato, fonts-liberation, plymouth,
- plymouth-themes, ambiance-radiance-colors
-Description: Customizations for DigabiOS.
- Updates system configuration to match Digabi requirements.
-
 Package: digabios-backgrounds
 Replaces: digabi-backgrounds
 Provides: digabi-backgrounds
@@ -31,12 +18,21 @@ Description: Backgrounds for DigabiOS.
  This package installs background files for DigabiOS.
 
 Package: digabios-system-settings
-Provides: ${diverted-files}
-Conflicts: ${diverted-files}
-Depends: ${misc:Depends}, xfce4-panel, xfconf, xfce4-settings
+Provides: ${diverted-files}, digabios-customization
+Conflicts: ${diverted-files},
+ digabios-customization (<< ${binary:Version})
+Replaces: digabios-customization (<< ${binary:Version})
+Depends: ${misc:Depends}, xfce4-panel, xfconf, xfce4-settings,
+ digabios-backgrounds (= ${binary:Version}), fonts-lato,
+ fonts-liberation, plymouth, plymouth-themes,
+ ambiance-radiance-colors
 Architecture: all
-Description: Configures system settings for DigabiOS.
- Does misc changes to /etc...
+Description: Installs customized system settings to DigabiOS
+ Changes include:
+  * customized application menu
+  * customized panels
+  * customized fonts
+  * custom theme
 
 Package: plymouth-themes-digabios
 Architecture: all

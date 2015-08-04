@@ -1,10 +1,11 @@
+etc/default/keyboard.digabios
+etc/default/locale.digabios
 etc/locale.gen.digabios
 etc/skel
+etc/sysctl.d/*
 etc/xdg/menus/xfce-applications.menu.digabios
 etc/xdg/mimeapps.list
 etc/xdg/user-dirs.defaults.digabios
 etc/xdg/xfce4
-etc/default/locale.digabios
-etc/default/keyboard.digabios
+usr/bin/digabi-panel-color
 var/lib/live/config/*
-etc/sysctl.d/*

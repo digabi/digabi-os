@@ -13,8 +13,6 @@ $(CONTENT_DIR): $(REPOSITORY)
 
 install: $(CONTENT_DIR)
 	# digabi-customization
-	install -D -m 0644 configure-desktop $(DESTDIR)/usr/lib/digabi/scripts/configure-desktop
-	install -D -m 0755 digabi-panel-color $(DESTDIR)/usr/bin/digabi-panel-color
 	
 	# digabi-backgrounds
 	install -d -m 0755 $(DESTDIR)$(IMAGEDIR)
@@ -42,6 +40,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfce-applications.menu $(DESTDIR)/etc/xdg/menus/xfce-applications.menu.digabios
 	install -d -m 0755 $(DESTDIR)/etc/sysctl.d
 	install -m 0644 sysctl.d/* $(DESTDIR)/etc/sysctl.d
+	install -D -m 0755 digabi-panel-color $(DESTDIR)/usr/bin/digabi-panel-color
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
 	
