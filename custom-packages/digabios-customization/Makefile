@@ -30,6 +30,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfwm4.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml.digabios
 	install -D -m 0644 xfwm4.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.digabios
 	install -D -m 0644 xfwm4.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml.digabios
+	install -D -m 0644 xfce4-notifyd.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml.digabios
 	install -D -m 0644 xsettings.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml.digabios
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc.digabios
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
