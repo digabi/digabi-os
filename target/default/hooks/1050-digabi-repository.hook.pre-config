@@ -17,7 +17,7 @@ echo "I: Getting sources.list for Digabi repository..."
 REPO_CONFIG="$(mktemp)"
 REPO_BINARY_CONFIG="$(mktemp)"
 git submodule init
-git submodule update
+git submodule update custom-packages/digabi-repository
 ${GENLIST} ${DIGABI_SUITE} ${DIGABI_MIRROR} >${REPO_CONFIG}
 ${GENLIST} ${DIGABI_SUITE} >${REPO_BINARY_CONFIG}
 
