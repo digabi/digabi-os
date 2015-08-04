@@ -4,6 +4,7 @@
 <Menu>
     <Name>Xfce</Name>
 
+    <AppDir>/usr/share/applications/kde4/</AppDir>
     <DefaultAppDirs/>
     <DefaultDirectoryDirs/>
     <DefaultMergeDirs/>

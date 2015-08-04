@@ -1,3 +1,9 @@
+digabios-customization (5.2.10) unstable; urgency=medium
+
+  * Add KDE4 menu directory to menu config.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 04 Aug 2015 08:41:09 +0300
+
 digabios-customization (5.2.9) unstable; urgency=medium
 
   * Add displace config for xsessionrc.
