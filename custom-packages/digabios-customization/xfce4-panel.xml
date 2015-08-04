@@ -11,6 +11,8 @@
       <property name="size" type="uint" value="30"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
+        <value type="int" value="7"/>
+        <value type="int" value="9"/>
         <value type="int" value="3"/>
         <value type="int" value="15"/>
         <value type="int" value="4"/>
@@ -35,22 +37,7 @@
     <property name="plugin-8" type="string" value="separator"/>
     <property name="plugin-9" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="exo-terminal-emulator.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-10" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="exo-file-manager.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-11" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="exo-web-browser.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-12" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="xfce4-appfinder.desktop"/>
+        <value type="string" value="iceweasel.desktop"/>
       </property>
     </property>
     <property name="plugin-13" type="string" value="separator"/>
