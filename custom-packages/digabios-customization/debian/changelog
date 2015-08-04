@@ -1,3 +1,9 @@
+digabios-customization (5.2.13) unstable; urgency=medium
+
+  * Remove pager from top panel.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 04 Aug 2015 11:12:32 +0300
+
 digabios-customization (5.2.12) unstable; urgency=medium
 
   * Add Iceweasel, 'show desktop' to top panel.
