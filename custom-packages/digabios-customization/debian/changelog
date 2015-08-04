@@ -1,8 +1,9 @@
-digabios-customization (6.0.1) UNRELEASED; urgency=medium
+digabios-customization (6.0.1) unstable; urgency=medium
 
   * Show shutdown button instead of logout.
+  * Update application menu icon.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 04 Aug 2015 12:04:51 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 04 Aug 2015 12:07:28 +0300
 
 digabios-customization (6.0.0) unstable; urgency=medium
 
