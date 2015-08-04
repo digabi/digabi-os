@@ -1,0 +1,11 @@
+Package: digabios-doc
+Source: digabios
+Version: 15.08.1a2
+Architecture: all
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Installed-Size: 9
+Section: doc
+Priority: optional
+Homepage: https://digabi.fi/os
+Description: documentation for digabios
+ Documentation.

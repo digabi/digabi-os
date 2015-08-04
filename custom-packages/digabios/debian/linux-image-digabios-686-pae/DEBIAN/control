@@ -1,0 +1,20 @@
+Package: linux-image-digabios-686-pae
+Source: digabios
+Version: 15.08.1a2
+Architecture: i386
+Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
+Installed-Size: 9
+Depends: linux-image-3.16.0-4.ytl-686-pae
+Conflicts: linux-image-digabi, linux-image-ytl
+Replaces: linux-image-digabi, linux-image-ytl
+Provides: linux-image-digabios
+Section: kernel
+Priority: optional
+Homepage: https://digabi.fi/os
+Description: Latest Digabi Linux kernel
+ This metapackage depends on the latest Digabi Linux kernel and modules.
+ .
+ Currently only 32-bit/64-bit Intel/AMD systems (i386, amd64) are
+ supported.
+ .
+ Only for use with Digabi OS (might break on other systems).

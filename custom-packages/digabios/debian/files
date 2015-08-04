@@ -1,0 +1,4 @@
+digabios-doc_15.08.1a2_all.deb doc optional
+digabios_15.08.1a2_all.deb misc optional
+linux-image-digabios-586_15.08.1a2_i386.deb kernel optional
+linux-image-digabios-686-pae_15.08.1a2_i386.deb kernel optional
