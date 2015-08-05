@@ -1,3 +1,9 @@
+digabios-customization (6.0.9) unstable; urgency=medium
+
+  * Add missing config for setting background image.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Aug 2015 08:43:09 +0300
+
 digabios-customization (6.0.8) unstable; urgency=medium
 
   * Specify custom menu for panel instead of replacing
