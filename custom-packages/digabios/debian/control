@@ -38,13 +38,6 @@ Replaces: digabi-live
 Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.
 
-Package: digabios-doc
-Section: doc
-Depends: ${misc:Depends}
-Architecture: all
-Description: documentation for digabios
- Documentation.
-
 Package: linux-image-digabios-amd64
 Section: kernel
 Architecture: amd64
