@@ -31,9 +31,9 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
  sudo, tango-icon-theme, terminator,
  ttf-mscorefonts-installer, tzdata, usbutils, user-setup,
  uuid-runtime, virt-what, wpasupplicant, xbacklight,
- xdg-utils, xfce4, xfce4-notifyd, xfce4-power-manager,
- xfce4-xkb-plugin, xorg, xserver-xorg-input-all,
- xserver-xorg-video-all
+ xdg-user-dirs, xdg-user-dirs-gtk, xdg-utils, xfce4,
+ xfce4-notifyd, xfce4-power-manager, xfce4-xkb-plugin,
+ xorg, xserver-xorg-input-all, xserver-xorg-video-all
 Replaces: digabi-live
 Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.
