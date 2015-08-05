@@ -26,6 +26,8 @@
     <property name="plugin-1" type="string" value="applicationsmenu">
       <property name="button-icon" type="string" value="/usr/share/images/digabios-backgrounds/start-here.svg"/>
       <property name="show-tooltips" type="bool" value="true"/>
+      <property name="custom-menu" type="bool" value="true"/>
+      <property name="custom-menu-file" type="string" value="/etc/xdg/menus/xfce-applications.menu.digabios"/>
     </property>
     <property name="plugin-2" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>
