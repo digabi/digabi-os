@@ -1,3 +1,9 @@
+digabios-customization (6.0.5) unstable; urgency=medium
+
+  * Show action buttons instead of dropdown menu.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Aug 2015 08:20:06 +0300
+
 digabios-customization (6.0.4) unstable; urgency=medium
 
   * Add GeoGebra properties to skip user login.
