@@ -27,9 +27,9 @@
         <property name="color-style" type="int" value="0"/>
         <property name="image-show" type="empty"/>
 	<property name="image-style" type="int" value="0"/>
-        <property name="image-path" type="/usr/share/images/digabios-backgrounds/background.svg"/>
-        <property name="last-image" type="/usr/share/images/digabios-backgrounds/background.svg"/>
-        <property name="last-single-image" type="/usr/share/images/digabios-backgrounds/background.svg"/>
+        <property name="image-path" type="string" value="/usr/share/images/digabios-backgrounds/background.svg"/>
+        <property name="last-image" type="string" value="/usr/share/images/digabios-backgrounds/background.svg"/>
+        <property name="last-single-image" type="string" value="/usr/share/images/digabios-backgrounds/background.svg"/>
       </property>
     </property>
   </property>
