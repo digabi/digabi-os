@@ -1,3 +1,9 @@
+digabios (15.08.1a7) UNRELEASED; urgency=medium
+
+  * Replace task-* packages using exact package names.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Aug 2015 09:13:11 +0300
+
 digabios (15.08.1a6) unstable; urgency=medium
 
   * Bump version.
