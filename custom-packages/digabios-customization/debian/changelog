@@ -1,9 +1,10 @@
-digabios-customization (6.0.8) UNRELEASED; urgency=medium
+digabios-customization (6.0.8) unstable; urgency=medium
 
   * Specify custom menu for panel instead of replacing
     default configuration.
+  * Add separator between action buttons and systray.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Aug 2015 08:29:15 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Aug 2015 08:30:54 +0300
 
 digabios-customization (6.0.7) unstable; urgency=medium
 
