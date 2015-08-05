@@ -24,8 +24,7 @@ Conflicts: ${diverted-files},
 Replaces: digabios-customization (<< ${binary:Version})
 Depends: ${misc:Depends}, xfce4-panel, xfconf, xfce4-settings,
  digabios-backgrounds (= ${binary:Version}), fonts-lato,
- fonts-liberation, plymouth, plymouth-themes,
- ambiance-radiance-colors
+ fonts-liberation, plymouth, plymouth-themes
 Architecture: all
 Description: Installs customized system settings to DigabiOS
  Changes include:
