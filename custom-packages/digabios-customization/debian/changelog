@@ -1,3 +1,9 @@
+digabios-customization (6.0.4) unstable; urgency=medium
+
+  * Add GeoGebra properties to skip user login.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Aug 2015 08:00:28 +0300
+
 digabios-customization (6.0.3) unstable; urgency=medium
 
   * Remove unused build dependency (xfce4-settings).
