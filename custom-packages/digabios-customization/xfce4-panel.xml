@@ -25,6 +25,7 @@
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="applicationsmenu">
       <property name="button-icon" type="string" value="/usr/share/images/digabios-backgrounds/start-here.svg"/>
+      <property name="show-tooltips" type="bool" value="true"/>
     </property>
     <property name="plugin-2" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>
