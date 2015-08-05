@@ -1,3 +1,9 @@
+digabios (15.08.1a11) unstable; urgency=medium
+
+  * Fix dependencies.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 05 Aug 2015 11:47:47 +0300
+
 digabios (15.08.1a10) unstable; urgency=medium
 
   * Drop -doc package.
