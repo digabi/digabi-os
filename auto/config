@@ -153,7 +153,7 @@ lb config noauto \
     --image-name "${IMAGE_NAME}" \
     --iso-publisher "${ISO_PUBLISHER}" \
     --iso-volume "${ISO_VOLUME}" \
-    --linux-packages "linux-image-3.16.0.4.ytl linux-headers-3.16.0.4.ytl" \
+    --linux-flavours "digabios" \
     --memtest "none" \
     --mirror-binary "${DEFAULT_DEBIAN_MIRROR}" \
     --mirror-bootstrap "${DEBIAN_MIRROR}" \
