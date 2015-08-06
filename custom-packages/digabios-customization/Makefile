@@ -43,6 +43,7 @@ install: $(CONTENT_DIR)
 	install -m 0644 sysctl.d/* $(DESTDIR)/etc/sysctl.d
 	install -D -m 0755 digabi-panel-color $(DESTDIR)/usr/bin/digabi-panel-color
 	install -D -m 0644 geogebra.properties $(DESTDIR)/etc/skel/.config/geogebra/geogebra.properties
+	install -D -m 0644 timezone $(DESTDIR)/etc/timezone.digabios
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
 	
