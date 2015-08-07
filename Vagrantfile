@@ -4,12 +4,6 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-# Hostname of the virtual machine (must be in /etc/hosts)
-VIRTUAL_MACHINE_HOSTNAME = 'jessie.vagrantup.com'
-
-# Virtual machine memory size for on-disk builds
-VM_MEMORY_FOR_DISK_BUILDS = 1024 # 1 GB
-
 if ENV['BITS']
   bits=ENV['BITS']
 else
@@ -19,7 +13,7 @@ end
 if ENV['DIGABI_BUILD_MEM']
   mem_size = ENV['DIGABI_BUILD_MEM']
 else
-  mem_size = VM_MEMORY_FOR_DISK_BUILDS
+  mem_size = 1024
 end
 cpus = ENV['DIGABI_BUILD_CPUS']
 
