@@ -16,14 +16,9 @@
 
 *.deb
 
-TODO
-_site
-
 tmp/
 
 /target/default/digabi.local
-
-local/live-build
 
 # After live-build 4.x
 live-image-*.contents
@@ -34,9 +29,6 @@ live-image-*.packages
 
 # Ignore vagrant state file
 .vagrant/
-
-# Ignore local vagrant provision script
-scripts/vagrant-local.sh
 
 *.sublime-*
 
