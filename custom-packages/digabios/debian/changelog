@@ -1,3 +1,9 @@
+digabios (15.08.1a13) UNRELEASED; urgency=medium
+
+  * Depend on XFCE4 >= 4.12.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Fri, 07 Aug 2015 08:53:42 +0300
+
 digabios (15.08.1a12) unstable; urgency=medium
 
   * Add xdg-user-dirs{,-gtk}.
