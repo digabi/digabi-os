@@ -8,4 +8,4 @@ cleanup() {
 
 trap cleanup EXIT
 
-make -f Makefile dist
+make dist
