@@ -85,4 +85,18 @@ Description: Latest Digabi Linux kernel
  .
  Only for use with Digabi OS (might break on other systems).
 
+Package: digabi-dev
+Provides: digabi-buildbox
+Replaces: digabi-buildbox
+Conflicts: digabi-buildbox
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, build-essential,
+ live-build, git, equivs, devscripts, packaging-dev,
+ debconf-utils, git-buildpackage, time, reprepro, piuparts,
+ apt-cacher-ng, kernel-package,
+ gcc-4.8-plugin-dev | gcc-4.9-plugin-dev, libncurses5-dev,
+ python-six, lintian, editorconfig, multipath-tools
+Suggests: pastebinit, vim, vim-scripts, apt-file
+Description: development dependencies for DigabiOS
+ TBD
 
