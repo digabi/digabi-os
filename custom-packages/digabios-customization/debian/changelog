@@ -1,3 +1,9 @@
+digabios-customization (6.0.15) unstable; urgency=medium
+
+  * Group KCalc together with GeoGebra, wxMaxima.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 11 Aug 2015 07:57:58 +0300
+
 digabios-customization (6.0.14) unstable; urgency=medium
 
   * Add timezone config.

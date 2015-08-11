@@ -16,8 +16,6 @@
     <Layout>
         <Filename>iceweasel.desktop</Filename>
         <Separator/>
-        <Filename>kcalc.desktop</Filename>
-        <Separator/>
         <Filename>libreoffice-calc.desktop</Filename>
         <Filename>libreoffice-draw.desktop</Filename>
         <Filename>libreoffice-impress.desktop</Filename>
@@ -32,6 +30,7 @@
         <Filename>pinta.desktop</Filename>
         <Separator/>
         <Filename>geogebra.desktop</Filename>
+        <Filename>kcalc.desktop</Filename>
         <Filename>wxmaxima.desktop</Filename>
         <Separator/>
         <Filename>pavucontrol.desktop</Filename>
