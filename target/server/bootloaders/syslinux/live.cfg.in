@@ -22,7 +22,7 @@ menu tabmsgrow 18
 menu title DigabiOS
 
 label ktp
-    menu label ^Koetilapalvelin / Provlokalens server
+    menu label ^Koetilan palvelin / Provlokalens server
     menu default
 
     linux @LINUX@
@@ -30,7 +30,7 @@ label ktp
     append @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.1:255.255.0.0 hostname=ktp1.local persistence
 
 label supo
-    menu label ^Lisavalvontakonsoli / Ytterligare kontrolkonsol
+    menu label ^Valvojan kone / Overvakarens dator
 
     linux @LINUX@
     initrd @INITRD@

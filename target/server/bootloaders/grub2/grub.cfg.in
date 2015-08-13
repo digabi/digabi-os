@@ -1,5 +1,5 @@
 set default=0>0
-set timeout=15
+set timeout=-1
 
 echo "Ladataan    / Laddas   "
 insmod vbe
@@ -29,27 +29,27 @@ insmod progress
 
 if cpuid -l ; then
 
-submenu "Koetilapalvelin / Provlokalens server" {
+submenu "Koetilan palvelin / Provlokalens server" {
 
-  menuentry "PC Koetilapalvelin / Provlokalens server" {
+  menuentry "PC  | Koetilan palvelin / Provlokalens server" {
     linux           @LINUX@ @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.1:255.255.0.0 hostname=ktp1.local persistence
     initrd          @INITRD@
   }
 
-  menuentry "Mac Koetilapalvelin / Provlokalens server" {
+  menuentry "Mac | Koetilan palvelin / Provlokalens server" {
     linux           @LINUX@ @APPEND_LIVE@ quiet nomodeset xforcevesa ip=eth0:10.10.0.1:255.255.0.0 hostname=ktp1.local persistence
     initrd          @INITRD@
   }
 }
 
-submenu "Lisävalvontakonsoli / Ytterligare kontrolkonsol" {
+submenu "Valvojan kone / Övervakarens dator" {
 
-  menuentry "PC Valvontakonsoli / Kontrollkonsol" {
+  menuentry "PC  | Valvojan kone / Övervakarens dator" {
     linux           @LINUX@ @APPEND_LIVE@ quiet splash systemd.unit=remote-supo.target
     initrd          @INITRD@
   }
 
-  menuentry "Mac Valvontakonsoli / Kontrollkonsol" {
+  menuentry "Mac | Valvojan kone / Övervakarens dator" {
     linux           @LINUX@ @APPEND_LIVE@ quiet nomodeset xforcevesa systemd.unit=remote-supo.target
     initrd          @INITRD@
   }
@@ -57,5 +57,5 @@ submenu "Lisävalvontakonsoli / Ytterligare kontrolkonsol" {
 }
 
 else
-echo "Koetilapalvelin vaatii 64-bittisen prosessorin / Provlokalens server kraver en 64 bits processor"
+echo "Koetilan palvelin vaatii 64-bittisen prosessorin / Provlokalens server kraver en 64 bits processor"
 fi
