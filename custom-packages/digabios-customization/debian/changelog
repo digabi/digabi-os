@@ -1,3 +1,9 @@
+digabios-customization (6.0.18) unstable; urgency=medium
+
+  * Replace duplicated xkb panel config.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 17 Aug 2015 12:56:15 +0300
+
 digabios-customization (6.0.17) unstable; urgency=medium
 
   * Install xkb-plugin configuration, use system-wide
