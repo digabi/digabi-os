@@ -1,3 +1,9 @@
+digabios-customization (6.0.16) unstable; urgency=medium
+
+  * Fix path to timezone configuration.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Mon, 17 Aug 2015 10:00:37 +0300
+
 digabios-customization (6.0.15) unstable; urgency=medium
 
   * Group KCalc together with GeoGebra, wxMaxima.
