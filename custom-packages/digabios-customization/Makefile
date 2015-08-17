@@ -44,6 +44,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0755 digabi-panel-color $(DESTDIR)/usr/bin/digabi-panel-color
 	install -D -m 0644 geogebra.properties $(DESTDIR)/etc/skel/.config/geogebra/geogebra.properties
 	install -D -m 0644 timezone $(DESTDIR)/etc/timezone.digabios
+	install -D -m 0644 xkb-plugin.rc $(DESTDIR)/etc/skel/.config/xfce4/panel/xkb-plugin-11.rc
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
 	
