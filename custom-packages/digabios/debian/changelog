@@ -1,3 +1,10 @@
+digabios (15.08.1a15) unstable; urgency=medium
+
+  * Enable digabios-provides-everything package for replacing
+    packages we'd like to drop from DigabiOS.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 18 Aug 2015 08:41:43 +0300
+
 digabios (15.08.1a14) unstable; urgency=medium
 
   * Add digabi-dev package.
