@@ -2,8 +2,9 @@ Source: digabios-customization
 Section: misc
 Priority: optional
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Build-Depends: debhelper (>= 9),
- config-package-dev, dh-systemd
+Build-Depends: config-package-dev,
+ debhelper (>= 9),
+ dh-systemd
 Standards-Version: 3.9.6
 Homepage: https://github.com/digabi/digabi-os
 Vcs-Git: https://github.com/digabi/digabi-os.git
@@ -12,7 +13,9 @@ Package: digabios-backgrounds
 Replaces: digabi-backgrounds
 Provides: digabi-backgrounds
 Conflicts: digabi-backgrounds
-Depends: ${misc:Depends}, desktop-base, gnome-icon-theme
+Depends: ${misc:Depends},
+ desktop-base,
+ gnome-icon-theme
 Architecture: all
 Description: Backgrounds for DigabiOS.
  This package installs background files for DigabiOS.
@@ -22,9 +25,15 @@ Provides: ${diverted-files}, digabios-customization
 Conflicts: ${diverted-files},
  digabios-customization (<< ${binary:Version})
 Replaces: digabios-customization (<< ${binary:Version})
-Depends: ${misc:Depends}, xfce4-panel, xfconf, xfce4-settings,
- digabios-backgrounds (= ${binary:Version}), fonts-lato,
- fonts-liberation, plymouth, plymouth-themes
+Depends: ${misc:Depends},
+ digabios-backgrounds (= ${binary:Version}),
+ fonts-lato,
+ fonts-liberation,
+ plymouth,
+ plymouth-themes
+ xfce4-panel,
+ xfce4-settings,
+ xfconf,
 Architecture: all
 Description: Installs customized system settings to DigabiOS
  Changes include:
@@ -35,7 +44,9 @@ Description: Installs customized system settings to DigabiOS
 
 Package: plymouth-themes-digabios
 Architecture: all
-Depends: ${misc:Depends}, plymouth, plymouth-x11
+Depends: ${misc:Depends},
+ plymouth,
+ plymouth-x11
 Description: Custom Plymouth theme
  Installs custom Plymouth theme to system.
 
@@ -50,14 +61,33 @@ Description: Simple firewall script for DigabiOS
 
 Package: digabios-client
 Architecture: all
-Depends: digabios-system-settings, digabi-koe, geogebra5,
- maxima, wxmaxima, wine, pinta, gimp, inkscape, nodejs,
- libreoffice-calc, libreoffice-draw, libreoffice-gtk,
- libreoffice-impress, libreoffice-l10n-fi,
- libreoffice-l10n-sv, libreoffice-math,
- libreoffice-writer, xfce4-screenshooter,
- xfce4-battery-plugin, pulseaudio, pavucontrol,
- kcalc, okular, dia, dia-shapes,
+Depends: ${misc:Depends},
+ digabios-system-settings,
+ digabi-koe,
+ geogebra5,
+ maxima,
+ wxmaxima,
+ wine,
+ pinta,
+ gimp,
+ inkscape,
+ nodejs,
+ libreoffice-calc,
+ libreoffice-draw,
+ libreoffice-gtk,
+ libreoffice-impress,
+ libreoffice-l10n-fi,
+ libreoffice-l10n-sv,
+ libreoffice-math,
+ libreoffice-writer,
+ xfce4-screenshooter,
+ xfce4-battery-plugin,
+ pulseaudio,
+ pavucontrol,
+ kcalc,
+ okular,
+ dia,
+ dia-shapes,
  digabios-firewall (= ${binary:Version})
 Conflicts: digabios-server
 Provides: digabios-system-config
@@ -66,10 +96,18 @@ Description: Add client configuration to system.
 
 Package: digabios-server
 Architecture: all
-Depends: digabios-system-settings, koetilapalvelin,
- nginx, nodejs, oracle-java8-jdk, postgresql,
- postgresql-contrib, openssh-server, isc-dhcp-server,
- avahi-daemon, usbmount,
+Depends: ${misc:Depends},
+ digabios-system-settings,
+ koetilapalvelin,
+ nginx,
+ nodejs,
+ oracle-java8-jdk,
+ postgresql,
+ postgresql-contrib,
+ openssh-server,
+ isc-dhcp-server,
+ avahi-daemon,
+ usbmount,
  digabios-firewall (= ${binary:Version})
 Conflicts: digabios-client
 Provides: digabios-system-config
