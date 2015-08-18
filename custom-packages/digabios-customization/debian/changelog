@@ -1,3 +1,9 @@
+digabios-customization (6.0.21) unstable; urgency=medium
+
+  * Fix setting keyboard system-wide.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 18 Aug 2015 09:08:41 +0300
+
 digabios-customization (6.0.20) unstable; urgency=medium
 
   * Add Spanish locale, keyboard.
