@@ -9,5 +9,4 @@ etc/xdg/mimeapps.list
 etc/xdg/user-dirs.defaults.digabios
 etc/xdg/xfce4
 usr/bin/digabi-panel-color
-usr/share/applications
 var/lib/live/config/*
