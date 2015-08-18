@@ -52,7 +52,8 @@ Description: Custom Plymouth theme
 
 Package: digabios-firewall
 Architecture: all
-Depends: iptables-persistent
+Depends: ${misc:Depends},
+ iptables-persistent
 Conflicts: digabi-firewall
 Provides: digabi-firewall
 Replaces: digabi-firewall
