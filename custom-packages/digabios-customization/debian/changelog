@@ -2,6 +2,7 @@ digabios-customization (6.0.26) unstable; urgency=medium
 
   * Update XDG paths: no subdirs in Desktop.
   * Convert Finnish names for languages to lowercase.
+  * Install DPI toggling script to /usr/bin.
 
  -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 18 Aug 2015 15:48:16 +0300
 

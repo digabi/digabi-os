@@ -8,5 +8,6 @@ etc/xdg/menus/xfce-applications.menu.digabios
 etc/xdg/mimeapps.list
 etc/xdg/user-dirs.defaults.digabios
 etc/xdg/xfce4
+usr/bin/digabi-dpi
 usr/bin/digabi-panel-color
 var/lib/live/config/*

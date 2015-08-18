@@ -48,6 +48,7 @@ install: $(CONTENT_DIR)
 	install -m 0644 xkb/* $(DESTDIR)/etc/skel/.config/xfce4/panel/launcher-11
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
+	install -D -m 0755 display/toggle-dpi.sh $(DESTDIR)/usr/bin/digabi-dpi
 	
 	# digabios-firewall
 	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d
