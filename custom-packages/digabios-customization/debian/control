@@ -30,10 +30,10 @@ Depends: ${misc:Depends},
  fonts-lato,
  fonts-liberation,
  plymouth,
- plymouth-themes
+ plymouth-themes,
  xfce4-panel,
  xfce4-settings,
- xfconf,
+ xfconf
 Architecture: all
 Description: Installs customized system settings to DigabiOS
  Changes include:
