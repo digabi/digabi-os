@@ -96,10 +96,13 @@ Description: Digabi OS
 Package: linux-image-digabios-amd64
 Section: kernel
 Architecture: amd64
-Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-amd64
+Depends: ${misc:Depends},
+ linux-image-3.16.0-4.ytl-amd64
 Provides: linux-image-digabios
-Replaces: linux-image-ytl, linux-image-digabi
-Conflicts: linux-image-ytl, linux-image-digabi
+Replaces: linux-image-ytl,
+ linux-image-digabi
+Conflicts: linux-image-ytl,
+ linux-image-digabi
 Description: Latest Digabi Linux kernel
  This metapackage depends on the latest Digabi Linux kernel and modules.
  .
@@ -111,10 +114,13 @@ Description: Latest Digabi Linux kernel
 Package: linux-image-digabios-586
 Section: kernel
 Architecture: i386
-Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-586
+Depends: ${misc:Depends},
+ linux-image-3.16.0-4.ytl-586
 Provides: linux-image-digabios
-Replaces: linux-image-ytl, linux-image-digabi
-Conflicts: linux-image-ytl, linux-image-digabi
+Replaces: linux-image-ytl,
+ linux-image-digabi
+Conflicts: linux-image-ytl,
+ linux-image-digabi
 Description: Latest Digabi Linux kernel
  This metapackage depends on the latest Digabi Linux kernel and modules.
  .
@@ -129,8 +135,10 @@ Section: kernel
 Architecture: i386
 Depends: ${misc:Depends}, linux-image-3.16.0-4.ytl-686-pae
 Provides: linux-image-digabios
-Replaces: linux-image-ytl, linux-image-digabi
-Conflicts: linux-image-ytl, linux-image-digabi
+Replaces: linux-image-ytl,
+ linux-image-digabi
+Conflicts: linux-image-ytl,
+ linux-image-digabi
 Description: Latest Digabi Linux kernel
  This metapackage depends on the latest Digabi Linux kernel and modules.
  .
@@ -144,13 +152,30 @@ Provides: digabi-buildbox
 Replaces: digabi-buildbox
 Conflicts: digabi-buildbox
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, build-essential,
- live-build, git, equivs, devscripts, packaging-dev,
- debconf-utils, git-buildpackage, time, reprepro, piuparts,
- apt-cacher-ng, kernel-package,
- gcc-4.8-plugin-dev | gcc-4.9-plugin-dev, libncurses5-dev,
- python-six, lintian, editorconfig, multipath-tools
-Suggests: pastebinit, vim, vim-scripts, apt-file
+Depends: ${misc:Depends},
+ build-essential,
+ live-build,
+ git,
+ equivs,
+ devscripts,
+ packaging-dev,
+ debconf-utils,
+ git-buildpackage,
+ time,
+ reprepro,
+ piuparts,
+ apt-cacher-ng,
+ kernel-package,
+ gcc-4.8-plugin-dev | gcc-4.9-plugin-dev,
+ libncurses5-dev,
+ python-six,
+ lintian,
+ editorconfig,
+ multipath-tools
+Suggests: apt-file,
+ pastebinit,
+ vim,
+ vim-scripts,
 Description: development dependencies for DigabiOS
  TBD
 
