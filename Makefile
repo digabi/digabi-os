@@ -1,7 +1,7 @@
 #
 # Makefile for digabi-os
 #
-# (c) 2013, 2014 Ylioppilastutkintolautakunta / The Matriculation Examination Board of Finland
+# (c) 2013-2015 Ylioppilastutkintolautakunta / The Matriculation Examination Board of Finland
 # <https://www.ylioppilastutkinto.fi/>
 # <https://digabi.fi/>
 #
