@@ -69,6 +69,18 @@
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
     </property>
     <property name="plugin-10" type="string" value="screenshooter"/>
-    <property name="plugin-11" type="string" value="xkb-plugin"/>
+    <property name="plugin-11" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="xkb-fi.desktop"/>
+        <value type="string" value="xkb-se.desktop"/>
+        <value type="string" value="xkb-en.desktop"/>
+        <value type="string" value="xkb-fr.desktop"/>
+        <value type="string" value="xkb-es.desktop"/>
+        <value type="string" value="xkb-ru.desktop"/>
+      </property>
+      <property name="show-label" type="bool" value="true"/>
+      <property name="move-first" type="bool" value="true"/>
+      <property name="arrow-position" type="uint" value="0"/>
+    </property>
   </property>
 </channel>

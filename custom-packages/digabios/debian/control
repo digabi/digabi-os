@@ -86,7 +86,6 @@ Depends: ${misc:Depends},
  xfce4 (>= 4.12.0),
  xfce4-notifyd,
  xfce4-power-manager,
- xfce4-xkb-plugin,
  xorg,
  xserver-xorg-input-all,
  xserver-xorg-video-all

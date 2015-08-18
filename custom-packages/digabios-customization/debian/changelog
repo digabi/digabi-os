@@ -1,3 +1,9 @@
+digabios-customization (6.0.23) unstable; urgency=medium
+
+  * Replace xkb-plugin using custom launcher.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 18 Aug 2015 11:17:39 +0300
+
 digabios-customization (6.0.22) unstable; urgency=medium
 
   * Depend on dos-s-s instead of dos-customization.

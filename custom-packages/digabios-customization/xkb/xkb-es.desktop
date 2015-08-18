@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Spanish
+Name[fi]=Espanja
+Comment=Switch keyboard language to Spanish
+Comment[fi]=Vaihda näppäimistön kieleksi espanja
+Exec=setxkbmap es
+Icon=
+Path=
+Terminal=false
+StartupNotify=false

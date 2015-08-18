@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=English
+Name[fi]=Englanti
+Comment=Switch keyboard language to English
+Comment[fi]=Vaihda näppäimistön kieleksi englanti
+Exec=setxkbmap en
+Icon=
+Path=
+Terminal=false
+StartupNotify=false

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Swedish
+Name[fi]=Ruotsi
+Comment=Switch keyboard language to Swedish
+Comment[fi]=Vaihda näppäimistön kieleksi ruotsi
+Exec=setxkbmap se
+Icon=
+Path=
+Terminal=false
+StartupNotify=false

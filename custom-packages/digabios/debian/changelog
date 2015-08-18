@@ -1,3 +1,9 @@
+digabios (15.08.2a2) unstable; urgency=medium
+
+  * Drop broken xkb-plugin.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 18 Aug 2015 11:07:15 +0300
+
 digabios (15.08.2a1) unstable; urgency=medium
 
   * Add digabios-provides-everything as a dependency of digabios.
