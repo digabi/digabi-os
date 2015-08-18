@@ -2,7 +2,7 @@ Source: digabios-customization
 Section: misc
 Priority: optional
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
-Build-Depends: debhelper (>= 9), librsvg2-bin,
+Build-Depends: debhelper (>= 9),
  config-package-dev, dh-systemd
 Standards-Version: 3.9.6
 Homepage: https://github.com/digabi/digabi-os
