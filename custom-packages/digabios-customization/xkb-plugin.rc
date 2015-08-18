@@ -1,6 +1,6 @@
 display_type=1
 display_textsize=1
-group_policy=2
+group_policy=0
 default_group=0
 never_modify_config=false
 model=pc105
