@@ -63,16 +63,15 @@ Description: Simple firewall script for DigabiOS
 Package: digabios-client
 Architecture: all
 Depends: ${misc:Depends},
- digabios-system-settings,
+ dia,
+ dia-shapes,
  digabi-koe,
+ digabios-firewall (= ${binary:Version}),
+ digabios-system-settings (= ${binary:Version}),
  geogebra5,
- maxima,
- wxmaxima,
- wine,
- pinta,
  gimp,
  inkscape,
- nodejs,
+ kcalc,
  libreoffice-calc,
  libreoffice-draw,
  libreoffice-gtk,
@@ -81,15 +80,16 @@ Depends: ${misc:Depends},
  libreoffice-l10n-sv,
  libreoffice-math,
  libreoffice-writer,
- xfce4-screenshooter,
- xfce4-battery-plugin,
- pulseaudio,
- pavucontrol,
- kcalc,
+ maxima,
+ nodejs,
  okular,
- dia,
- dia-shapes,
- digabios-firewall (= ${binary:Version})
+ pavucontrol,
+ pinta,
+ pulseaudio,
+ wine,
+ wxmaxima,
+ xfce4-battery-plugin,
+ xfce4-screenshooter
 Conflicts: digabios-server
 Provides: digabios-system-config
 Description: Add client configuration to system.
@@ -98,18 +98,18 @@ Description: Add client configuration to system.
 Package: digabios-server
 Architecture: all
 Depends: ${misc:Depends},
- digabios-system-settings,
+ avahi-daemon,
+ digabios-firewall (= ${binary:Version}),
+ digabios-system-settings (= ${binary:Version}),
+ isc-dhcp-server,
  koetilapalvelin,
- nginx,
  nodejs,
+ nginx,
+ openssh-server,
  oracle-java8-jdk,
  postgresql,
  postgresql-contrib,
- openssh-server,
- isc-dhcp-server,
- avahi-daemon,
- usbmount,
- digabios-firewall (= ${binary:Version})
+ usbmount
 Conflicts: digabios-client
 Provides: digabios-system-config
 Description: Add server configuration to system
