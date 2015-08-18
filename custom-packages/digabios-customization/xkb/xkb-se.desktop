@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Swedish
-Name[fi]=Ruotsi
+Name[fi]=ruotsi
 Comment=Switch keyboard language to Swedish
 Comment[fi]=Vaihda näppäimistön kieleksi ruotsi
 Exec=setxkbmap se

@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=French
-Name[fi]=Ranska
+Name[fi]=ranska
 Comment=Switch keyboard language to French
 Comment[fi]=Vaihda näppäimistön kieleksi ranska
 Exec=setxkbmap fr

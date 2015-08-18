@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Russian
-Name[fi]=Venäjä
+Name[fi]=venäjä
 Comment=Switch keyboard language to Russian
 Comment[fi]=Vaihda näppäimistön kieleksi venäjä
 Exec=setxkbmap ru

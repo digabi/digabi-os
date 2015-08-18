@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Spanish
-Name[fi]=Espanja
+Name[fi]=espanja
 Comment=Switch keyboard language to Spanish
 Comment[fi]=Vaihda näppäimistön kieleksi espanja
 Exec=setxkbmap es

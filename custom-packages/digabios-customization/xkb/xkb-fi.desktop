@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Finnish
-Name[fi]=Suomi
+Name[fi]=suomi
 Comment=Switch keyboard language to Finnish
 Comment[fi]=Vaihda näppäimistön kieleksi suomi
 Exec=setxkbmap fi
