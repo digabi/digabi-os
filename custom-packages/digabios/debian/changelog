@@ -1,3 +1,9 @@
+digabios (15.08.2a1) unstable; urgency=medium
+
+  * Add digabios-provides-everything as a dependency of digabios.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 18 Aug 2015 09:51:24 +0300
+
 digabios (15.08.1a15) unstable; urgency=medium
 
   * Enable digabios-provides-everything package for replacing
