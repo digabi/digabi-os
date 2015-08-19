@@ -1,9 +1,9 @@
-digabios-customization (6.0.27) UNRELEASED; urgency=medium
+digabios-customization (6.0.27) unstable; urgency=medium
 
   * Add desktop icon for toggling DPI value.
   * Add DPI value toggling tool to menu.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 19 Aug 2015 08:11:43 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 19 Aug 2015 08:18:14 +0300
 
 digabios-customization (6.0.26) unstable; urgency=medium
 
