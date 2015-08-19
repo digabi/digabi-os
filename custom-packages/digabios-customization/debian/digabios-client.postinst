@@ -20,6 +20,7 @@ set -e
 
 case "$1" in
     configure)
+	addgroup xterm
         dpkg-statoverride --add root xterm 0770 /usr/share/terminator/terminator
     ;;
 
