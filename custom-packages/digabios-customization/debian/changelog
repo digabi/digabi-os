@@ -1,3 +1,9 @@
+digabios-customization (6.0.28) UNRELEASED; urgency=medium
+
+  * Add dpkg-statoverride for terminator in pkg dos-client.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 19 Aug 2015 09:56:02 +0300
+
 digabios-customization (6.0.27) unstable; urgency=medium
 
   * Add desktop icon for toggling DPI value.
