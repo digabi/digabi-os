@@ -37,6 +37,7 @@
         <Filename>vlc.desktop</Filename>
         <Separator/>
         <Filename>xfce-display-settings.desktop</Filename>
+	<Filename>digabi-dpi.desktop</Filename>
         <Filename>xfce-mouse-settings.desktop</Filename>
         <Filename>xfce-keyboard-settings.desktop</Filename>
     </Layout>

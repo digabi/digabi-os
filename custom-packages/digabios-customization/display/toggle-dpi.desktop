@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Toggle high resolution support
+Description=Toggle HiDPI on/off
+TryExec=/usr/bin/digabi-dpi
+Exec=/usr/bin/digabi-dpi
+Icon=preferences-desktop-display
