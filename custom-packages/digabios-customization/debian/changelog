@@ -1,3 +1,9 @@
+digabios-customization (6.0.29) unstable; urgency=medium
+
+  * Fix statoverride for terminator.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 19 Aug 2015 10:21:50 +0300
+
 digabios-customization (6.0.28) unstable; urgency=medium
 
   * Add dpkg-statoverride for terminator in pkg dos-client.
