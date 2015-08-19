@@ -29,6 +29,7 @@ Depends: ${misc:Depends},
  digabi-certificates,
  digabios-backgrounds,
  digabios-firewall,
+ digabios-provides-everything (= ${binary:Version}),
  digabios-system-settings,
  dmidecode,
  eject,
@@ -179,9 +180,9 @@ Description: development dependencies for DigabiOS
  TBD
 
 Package: digabios-provides-everything
-Provides: libaspell15
-Replaces: libaspell15
-Conflicts: libaspell15
+Provides: aspell-en
+Replaces: aspell-en
+Conflicts: aspell-en
 Architecture: all
 Description: package that forcefully replaces system packages
  This package just fakes that it provides various other
@@ -196,5 +197,6 @@ Description: package that forcefully replaces system packages
  Currently provides following packages (package that depends
  on that pkg):
  .
- . * libaspell15 (inkscape)
+ . * aspell-en (to remove dictionaries, inkscape depends on
+     aspell)
  .
