@@ -110,6 +110,7 @@ Depends: ${misc:Depends},
  oracle-java8-jdk,
  postgresql,
  postgresql-contrib,
+ terminator,
  usbmount
 Conflicts: digabios-client
 Provides: digabios-system-config
