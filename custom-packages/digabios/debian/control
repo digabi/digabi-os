@@ -67,7 +67,7 @@ Depends: ${misc:Depends},
  policykit-1,
  sudo,
  tango-icon-theme,
- terminator,
+ digabios-provides-x-terminal-emulator (= ${binary:Version}) | x-terminal-emulator,
  tzdata,
  usbutils,
  user-setup,
@@ -85,6 +85,14 @@ Depends: ${misc:Depends},
 Replaces: digabi-live
 Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.
+
+Package: digabios-provides-x-terminal-emulator
+Provides: x-terminal-emulator
+Architecture: all
+Description: Provide fake x-terminal-emulator to DigabiOS
+ This package fakes that it provides x-terminal-emulator,
+ to allow installation of the system without terminal
+ application.
 
 Package: linux-image-digabios-amd64
 Section: kernel
