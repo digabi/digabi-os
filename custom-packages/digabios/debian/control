@@ -202,3 +202,9 @@ Description: package that forcefully replaces system packages
  . * aspell-en (to remove dictionaries, inkscape depends on
      aspell)
  .
+
+Package: digabios-debug
+Architecture: all
+Depends: terminator
+Description: DigabiOS debug tools
+ This package installs misc tools for debugging DigabiOS
