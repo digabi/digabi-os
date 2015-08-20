@@ -26,19 +26,19 @@ install: $(CONTENT_DIR)
 	
 	# digabios-system-settings
 	install -D -m 0644 locale.gen $(DESTDIR)/etc/locale.gen.digabios
-	install -D -m 0644 xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml.digabios
-	install -D -m 0644 xfwm4.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml.digabios
-	install -D -m 0644 xfce4-session.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.digabios
-	install -D -m 0644 xfce4-desktop.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml.digabios
-	install -D -m 0644 xfce4-notifyd.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml.digabios
-	install -D -m 0644 xsettings.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml.digabios
+	install -D -m 0644 xfce/xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml.digabios
+	install -D -m 0644 xfce/xfwm4.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml.digabios
+	install -D -m 0644 xfce/xfce4-session.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.digabios
+	install -D -m 0644 xfce/xfce4-desktop.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml.digabios
+	install -D -m 0644 xfce/xfce4-notifyd.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml.digabios
+	install -D -m 0644 xfce/xsettings.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml.digabios
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc.digabios
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
 	install -D -m 0644 locale $(DESTDIR)/etc/default/locale.digabios
 	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios	
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
-	install -D -m 0644 xfce-applications.menu $(DESTDIR)/etc/xdg/menus/xfce-applications.menu.digabios
+	install -D -m 0644 xfce/xfce-applications.menu $(DESTDIR)/etc/xdg/menus/xfce-applications.menu.digabios
 	install -d -m 0755 $(DESTDIR)/etc/sysctl.d
 	install -m 0644 sysctl.d/* $(DESTDIR)/etc/sysctl.d
 	install -D -m 0755 digabi-panel-color $(DESTDIR)/usr/bin/digabi-panel-color
@@ -51,7 +51,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0755 display/toggle-dpi.sh $(DESTDIR)/usr/bin/digabi-dpi
 	install -D -m 0644 display/toggle-dpi.desktop $(DESTDIR)/usr/share/applications/digabi-dpi.desktop
 	install -D -m 0644 iceweasel-localstore.rdf $(DESTDIR)/etc/iceweasel/profile/localstore.rdf.digabios
-	install -D -m 0644 xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
+	install -D -m 0644 xfce/xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
 	
 	# digabios-firewall
 	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d
