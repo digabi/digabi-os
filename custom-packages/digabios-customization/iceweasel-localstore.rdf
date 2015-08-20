@@ -6,4 +6,7 @@
 <RDF:RDF
      xmlns:NC="http://home.netscape.com/NC-rdf#"
      xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <RDF:Description RDF:About="chrome://browser/content/browser.xul">
+        <NC:persist RDF:resource="chrome://browser/content/browser.xul#main-window" sizemode="maximized"/>
+    </RDF:Description>
 </RDF:RDF>
