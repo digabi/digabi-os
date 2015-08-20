@@ -51,6 +51,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0755 display/toggle-dpi.sh $(DESTDIR)/usr/bin/digabi-dpi
 	install -D -m 0644 display/toggle-dpi.desktop $(DESTDIR)/usr/share/applications/digabi-dpi.desktop
 	install -D -m 0644 iceweasel-localstore.rdf $(DESTDIR)/etc/iceweasel/profile/localstore.rdf.digabios
+	install -D -m 0644 xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
 	
 	# digabios-firewall
 	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d
