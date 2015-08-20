@@ -1,3 +1,11 @@
+digabios-customization (6.0.31) unstable; urgency=medium
+
+  * Add phonon-backend-null to digabios-client to prevent
+    installation of VLC as a dependency via
+    phonon-backend-vlc.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 20 Aug 2015 11:50:25 +0300
+
 digabios-customization (6.0.30) unstable; urgency=medium
 
   * Use 3000 as gid for xterm group to prevent issues
