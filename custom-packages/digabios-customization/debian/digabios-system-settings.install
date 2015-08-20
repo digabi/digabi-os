@@ -1,5 +1,6 @@
 etc/default/keyboard.digabios
 etc/default/locale.digabios
+etc/iceweasel
 etc/locale.gen.digabios
 etc/skel
 etc/sysctl.d/*
