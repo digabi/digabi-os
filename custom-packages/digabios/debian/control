@@ -147,6 +147,7 @@ Conflicts: digabi-buildbox
 Architecture: all
 Depends: ${misc:Depends},
  build-essential,
+ rsync,
  live-build,
  git,
  equivs,
