@@ -32,6 +32,7 @@ if ! contains "${DIGABI_BUILD_TARGET}" default
 then
     DIGABI_BUILD_TARGET="default ${DIGABI_BUILD_TARGET}"
 fi
+DIGABI_BUILD_TARGET="$(echo ${DIGABI_BUILD_TARGET} |sed 's,meb,,g')"
 
 CONFIG_DIR="./config"
 mkdir -p "${CONFIG_DIR}"
