@@ -74,6 +74,13 @@ if [ -e config/digabi.local ] ; then
 fi
 set +a
 
+for hook in `ls /usr/share/live/build/hooks`
+do
+    THOOK="config/hooks/$(basename ${hook})"
+    [ -e "${THOOK}" ] && continue
+    cp ${hook} ${THOOK}
+done
+
 # Run pre-config hooks
 PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/*.pre-config)"
 
