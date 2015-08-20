@@ -12,16 +12,17 @@
 CustomizePanel=NONE
 
 [xfce4-session]
-CustomizeSplash=NONE
-CustomizeChooser=NONE
-CustomizeLogout=NONE
+CustomizeSplash=root
+CustomizeChooser=root
+CustomizeLogout=root
 CustomizeCompatibility=ALL
-CustomizeSecurity=NONE
+CustomizeSecurity=root
+SaveSession=root
 Shutdown=ALL
 
 [xfdesktop]
-UserMenu=NONE
-CustomizeBackdrop=NONE
-CustomizeDesktopMenu=NONE
-CustomizeWindowlist=NONE
-CustomizeDesktopIcons=NONE
+CustomizeBackdrop=root
+CustomizeDesktopMenu=root
+CustomizeWindowlist=root
+CustomizeDesktopIcons=root
+UserMenu=root
