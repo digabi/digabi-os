@@ -21,6 +21,7 @@
         <value type="int" value="4"/>
 	<value type="int" value="5"/>
         <value type="int" value="6"/>
+        <value type="int" value="16"/>
         <value type="int" value="13"/>
         <value type="int" value="2"/>
       </property>
@@ -64,6 +65,7 @@
     </property>
     <property name="plugin-13" type="string" value="separator"/>
     <property name="plugin-14" type="string" value="directorymenu"/>
+    <property name="plugin-16" type="string" value="battery"/>
     <property name="plugin-4" type="string" value="mixer">
       <property name="command" type="string" value="pavucontrol"/>
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
