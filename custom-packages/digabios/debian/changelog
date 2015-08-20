@@ -1,3 +1,9 @@
+digabios (15.08.3a2) unstable; urgency=medium
+
+  * Create xterm as system group.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 20 Aug 2015 13:01:13 +0300
+
 digabios (15.08.3a1) unstable; urgency=medium
 
   * Merge digabios-customization to digabios.
