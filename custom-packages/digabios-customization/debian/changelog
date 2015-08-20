@@ -1,3 +1,10 @@
+digabios-customization (6.0.30) unstable; urgency=medium
+
+  * Use 3000 as gid for xterm group to prevent issues
+    with live-config.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 20 Aug 2015 07:56:56 +0300
+
 digabios-customization (6.0.29) unstable; urgency=medium
 
   * Fix statoverride for terminator.
