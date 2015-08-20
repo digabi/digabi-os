@@ -76,7 +76,7 @@ fi
 set +a
 
 HOOKS_SOURCE="/usr/share/live/build/hooks"
-for hook in `ls ${HOOKS_SOURE}/*`
+for hook in `ls ${HOOKS_SOURCE}/*`
 do
     THOOK="config/hooks/$(basename ${hook})"
     [ -e "${THOOK}" ] && continue
