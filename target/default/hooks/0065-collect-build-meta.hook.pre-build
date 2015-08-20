@@ -1,47 +1,15 @@
 #!/bin/sh
-
 set -e
 
 TARGET_FILE="config/includes.chroot/var/lib/digabi/build"
 TARGET_DIR="$(dirname ${TARGET_FILE})"
-ID_FILE="${HOME}/.digabi/builder-id"
-ID_DIR="$(dirname ${ID_FILE})"
 
 if [ ! -d "${TARGET_DIR}" ]
 then
     mkdir -p "${TARGET_DIR}"
 fi
 
-if [ ! -f "${ID_FILE}" ]
-then
-    BUILDER_ID="$(head -n1 /dev/urandom |sha1sum |awk '{print $1}')"
-    if [ ! -d "${ID_DIR}" ]
-    then
-        mkdir -p "${ID_DIR}"
-    fi
-    echo "${BUILDER_ID}" >${ID_FILE}
-else
-    BUILDER_ID="$(cat ${ID_FILE})"
-fi
-
-BUILD_HOST="$(hostname -f)"
-
-if [ -x "/usr/bin/lb" ]
-then
-    LB_VERSION="$(/usr/bin/lb --version)"
-else
-    LB_VERSION="N/A"
-fi
-
 GIT_COMMIT="$(git rev-parse HEAD)"
-BUILD_TIMESTAMP="$(date +%s)"
 
-echo "Builder-ID: ${BUILDER_ID}" >${TARGET_FILE}
-echo "Builder-Host: ${BUILD_HOST}" >>${TARGET_FILE}
-echo "Builder-Kernel: $(uname -srvm)" >>${TARGET_FILE}
-echo "" >>${TARGET_FILE}
-echo "live-build: ${LB_VERSION}" >>${TARGET_FILE}
-echo "" >>${TARGET_FILE}
 echo "Build-Tag: ${BUILD_TAG}" >>${TARGET_FILE}
-echo "Build-Timestamp: ${BUILD_TIMESTAMP}" >>${TARGET_FILE}
 echo "Build-Git-Commit: ${GIT_COMMIT}" >>${TARGET_FILE}
