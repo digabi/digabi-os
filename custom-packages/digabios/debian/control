@@ -55,7 +55,7 @@ Depends: ${misc:Depends},
  libpam-ck-connector,
  libreoffice-gtk,
  libreoffice-l10n-fi,
- libxfce4util-bin
+ libxfce4util-bin,
  lightdm,
  live-boot,
  live-config,
