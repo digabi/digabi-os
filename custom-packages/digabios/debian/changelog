@@ -1,3 +1,9 @@
+digabios (15.08.3a1) unstable; urgency=medium
+
+  * Merge digabios-customization to digabios.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 20 Aug 2015 13:00:07 +0300
+
 digabios (15.08.2a9) unstable; urgency=medium
 
   * Add dos-p-x-terminal-emulator that provides fake

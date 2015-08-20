@@ -1,8 +1,0 @@
-*.log
-*.substvars
-digabios-customization
-digabios-backgrounds
-digabios-system-settings
-plymouth-themes-digabios
-*.debhelper
-files
