@@ -1,4 +1,10 @@
 # Limit user access to XFCE4 settings
+# 
+# NOTE: Implementation is buggy, ie. XFCE doesn't honor
+# these, see:
+#  - <https://bugzilla.xfce.org/show_bug.cgi?id=11011>
+#  - <https://bugzilla.xfce.org/show_bug.cgi?id=11459>
+#  - <https://bugs.launchpad.net/ubuntu/+source/xfdesktop4/+bug/1170047>
 #
 # Documentation: <https://wiki.xfce.org/howto/kiosk_mode>
 
