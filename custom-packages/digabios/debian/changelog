@@ -1,3 +1,9 @@
+digabios (15.08.4a9) unstable; urgency=medium
+
+  * Install Plymouth logo in dos-s-s.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 13:09:25 +0300
+
 digabios (15.08.4a8) unstable; urgency=medium
 
   * Fix path to menu icon.
