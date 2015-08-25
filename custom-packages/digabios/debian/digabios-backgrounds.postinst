@@ -21,7 +21,7 @@ set -e
 case "$1" in
     configure)
 	update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/images/digabios-backgrounds/background.svg 100
-	update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/images/digabios-backgrounds/start-here.svg 100
+	update-alternatives --install /usr/share/icons/gnome/scalable/places/start-here.svg start-here.svg /usr/share/images/digabios-backgrounds/logo.svg 100
 	update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-splash desktop-splash /usr/share/images/digabios-backgrounds/background.svg 100
 	update-alternatives --install /usr/share/icons/gnome/scalable/places/desktop-grub desktop-grub /usr/share/images/digabios-backgrounds/background.svg 100
 
