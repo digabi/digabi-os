@@ -1,3 +1,9 @@
+digabios (15.08.4a2) UNRELEASED; urgency=medium
+
+  * Set screenshot type to region.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 08:44:22 +0300
+
 digabios (15.08.4a1) unstable; urgency=medium
 
   * Bump version.

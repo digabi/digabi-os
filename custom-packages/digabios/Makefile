@@ -46,6 +46,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 timezone $(DESTDIR)/etc/timezone.digabios
 	install -d -m 0755 $(DESTDIR)/etc/skel/.config/xfce4/panel/launcher-11
 	install -m 0644 xkb/* $(DESTDIR)/etc/skel/.config/xfce4/panel/launcher-11
+	install -D -m 0644 screenshotrc $(DESTDIR)/etc/skel/.config/xfce4/panel/screenshooter-10.rc
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
 	install -D -m 0755 display/toggle-dpi.sh $(DESTDIR)/usr/bin/digabi-dpi
