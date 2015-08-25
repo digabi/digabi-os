@@ -1,3 +1,9 @@
+digabios (15.08.4a8) unstable; urgency=medium
+
+  * Fix path to menu icon.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 11:58:37 +0300
+
 digabios (15.08.4a7) unstable; urgency=medium
 
   * Add versioned dependencies for digabios packages.
