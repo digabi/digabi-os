@@ -1,3 +1,9 @@
+digabios (15.08.4a7) unstable; urgency=medium
+
+  * Add versioned dependencies for digabios packages.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 11:26:18 +0300
+
 digabios (15.08.4a6) unstable; urgency=medium
 
   * Enable custom xfce4 session configuration.
