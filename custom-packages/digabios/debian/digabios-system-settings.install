@@ -12,4 +12,5 @@ etc/xdg/xfce4
 usr/bin/digabi-dpi
 usr/bin/digabi-panel-color
 usr/share/applications/digabi-dpi.desktop
+usr/share/polkit-1
 var/lib/live/config/*

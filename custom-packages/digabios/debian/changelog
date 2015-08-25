@@ -1,3 +1,9 @@
+digabios (15.08.4a5) UNRELEASED; urgency=medium
+
+  * Install custom config for Polkit: org.xfce.power.policy.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 10:23:17 +0300
+
 digabios (15.08.4a4) unstable; urgency=medium
 
   * Add config for battery plugin.
