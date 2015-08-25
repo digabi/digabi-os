@@ -19,6 +19,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 $(CONTENT_DIR)/background.svg $(DESTDIR)$(IMAGEDIR)/background.svg
 	install -D -m 0644 $(CONTENT_DIR)/ytl_logo_helmet_black.svg $(DESTDIR)$(IMAGEDIR)/logo.svg
 	install -D -m 0644 $(CONTENT_DIR)/splash.svg $(DESTDIR)$(IMAGEDIR)/splash.svg
+	rsvg-convert -f png -w 121 -o $(DESTDIR)$(IMAGEDIR)/logo.png $(CONTENT_DIR)/ytl_logo_helmet_black.svg
 	
 	# plymouth-themes-digabios
 	install -d -m 0755 $(DESTDIR)/usr/share/plymouth/themes/digabios
