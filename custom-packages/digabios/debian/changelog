@@ -1,3 +1,9 @@
+digabios (15.08.4a4) unstable; urgency=medium
+
+  * Add config for battery plugin.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 10:15:27 +0300
+
 digabios (15.08.4a3) unstable; urgency=medium
 
   * Rename start-here.svg to logo.svg.
