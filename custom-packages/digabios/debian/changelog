@@ -1,8 +1,9 @@
-digabios (15.08.4a5) UNRELEASED; urgency=medium
+digabios (15.08.4a5) unstable; urgency=medium
 
   * Install custom config for Polkit: org.xfce.power.policy.
+  * Disable hibernate, suspend for active user.
 
- -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 10:23:17 +0300
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 10:24:36 +0300
 
 digabios (15.08.4a4) unstable; urgency=medium
 
