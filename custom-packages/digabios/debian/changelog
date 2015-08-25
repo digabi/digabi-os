@@ -1,3 +1,9 @@
+digabios (15.08.4a6) unstable; urgency=medium
+
+  * Enable custom xfce4 session configuration.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 25 Aug 2015 10:40:39 +0300
+
 digabios (15.08.4a5) unstable; urgency=medium
 
   * Install custom config for Polkit: org.xfce.power.policy.
