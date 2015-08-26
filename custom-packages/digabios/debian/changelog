@@ -1,3 +1,9 @@
+digabios (15.08.5a1) unstable; urgency=medium
+
+  * Replace d-audiowizard with d-sound-test.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 26 Aug 2015 10:55:50 +0300
+
 digabios (15.08.4a10) unstable; urgency=medium
 
   * Disable logo displacement.
