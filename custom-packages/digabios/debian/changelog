@@ -1,3 +1,9 @@
+digabios (15.08.5a5) unstable; urgency=medium
+
+  * Add versioned dependency to sound test.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 26 Aug 2015 15:27:34 +0300
+
 digabios (15.08.5a4) unstable; urgency=medium
 
   * Add Digabi Sound Test to panel.
