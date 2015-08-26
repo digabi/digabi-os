@@ -1,3 +1,9 @@
+digabios (15.08.6a1) unstable; urgency=medium
+
+  * Bump version.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 26 Aug 2015 17:59:23 +0300
+
 digabios (15.08.5a6) unstable; urgency=medium
 
   * Add dos-s-t to autostart on client.
