@@ -33,6 +33,7 @@
         <Filename>kcalc.desktop</Filename>
         <Filename>wxmaxima.desktop</Filename>
         <Separator/>
+	<Filename>digabi-sound-test.desktop</Filename>
         <Filename>pavucontrol.desktop</Filename>
         <Filename>vlc.desktop</Filename>
         <Separator/>

@@ -1,3 +1,9 @@
+digabios (15.08.5a3) unstable; urgency=medium
+
+  * Add Digabi Sound Test to menu.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 26 Aug 2015 15:25:24 +0300
+
 digabios (15.08.5a2) unstable; urgency=medium
 
   * Drop alternative keyboard layouts from XKBLAYOUT. Setting
