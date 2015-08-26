@@ -63,6 +63,7 @@
     <property name="plugin-9" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="iceweasel.desktop"/>
+        <value type="string" value="digabi-sound-test.desktop"/>
       </property>
     </property>
     <property name="plugin-13" type="string" value="separator"/>
