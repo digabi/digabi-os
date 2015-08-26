@@ -1,3 +1,11 @@
+digabios (15.08.5a2) unstable; urgency=medium
+
+  * Drop alternative keyboard layouts from XKBLAYOUT. Setting
+    multiple values caused errors when running setupcon, ie.
+    setting up console.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 26 Aug 2015 12:10:16 +0300
+
 digabios (15.08.5a1) unstable; urgency=medium
 
   * Replace d-audiowizard with d-sound-test.
