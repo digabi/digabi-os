@@ -25,6 +25,8 @@ case "$1" in
         dpkg-statoverride --add root xterm 0750 ${TERMINATOR}
         chmod 0750 ${TERMINATOR}
         chown root:xterm ${TERMINATOR}
+
+	[ -f /usr/share/applications/digabi-sound-test.desktop ] && ln -s /usr/share/applications/digabi-sound-test.desktop /etc/xdg/autostart/digabi-sound-test.desktop
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

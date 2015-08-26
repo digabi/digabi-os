@@ -1,3 +1,9 @@
+digabios (15.08.5a6) unstable; urgency=medium
+
+  * Add dos-s-t to autostart on client.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 26 Aug 2015 16:23:35 +0300
+
 digabios (15.08.5a5) unstable; urgency=medium
 
   * Add versioned dependency to sound test.
