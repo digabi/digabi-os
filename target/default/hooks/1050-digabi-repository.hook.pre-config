@@ -25,8 +25,8 @@ echo "I: Copying Digabi repository signing key..."
 cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.chroot"
 cp "${SIGNING_KEY}" "${CONFIG_PATH}/digabi.key.binary"
 
-echo "I: Copying Digabi repository config..."
-cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.chroot"
-cp "${REPO_BINARY_CONFIG}" "${CONFIG_PATH}/digabi.list.binary"
+#echo "I: Copying Digabi repository config..."
+#cp "${REPO_CONFIG}" "${CONFIG_PATH}/digabi.list.chroot"
+#cp "${REPO_BINARY_CONFIG}" "${CONFIG_PATH}/digabi.list.binary"
 
 rm -rf ${SIGNING_KEY} ${REPO_CONFIG} ${REPO_BINARY_CONFIG}
