@@ -3,4 +3,4 @@
 #
 
 deb http://cimonitor/debian-private jessie main contrib non-free
-deb http://cimonitor/debian-public jessie main contrib non-free
+#deb http://cimonitor/debian-public jessie main contrib non-free
