@@ -1,3 +1,9 @@
+digabios (15.08.7a1) unstable; urgency=medium
+
+  * Bump version.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 27 Aug 2015 10:40:48 +0300
+
 digabios (15.08.6a1) unstable; urgency=medium
 
   * Bump version.
