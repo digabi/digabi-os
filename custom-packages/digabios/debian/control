@@ -237,7 +237,8 @@ Depends: ${misc:Depends},
  plymouth-themes,
  xfce4-panel,
  xfce4-settings,
- xfconf
+ xfconf,
+ zenity
 Architecture: all
 Description: Installs customized system settings to DigabiOS
  Changes include:
