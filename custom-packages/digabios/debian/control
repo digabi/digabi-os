@@ -81,6 +81,7 @@ Depends: ${misc:Depends},
  xdg-user-dirs-gtk,
  xdg-utils,
  xfce4 (>= 4.12.0),
+ xfce4-battery-plugin,
  xfce4-notifyd,
  xfce4-power-manager,
  xorg,
@@ -294,7 +295,6 @@ Depends: ${misc:Depends},
  pulseaudio,
  wine,
  wxmaxima,
- xfce4-battery-plugin,
  xfce4-screenshooter
 Conflicts: digabios-server
 Provides: digabios-system-config
