@@ -313,7 +313,8 @@ Depends: ${misc:Depends},
  postgresql,
  postgresql-contrib,
  terminator,
- usbmount
+ usbmount,
+ zenity
 Conflicts: digabios-client
 Provides: digabios-system-config
 Description: Add server configuration to system
