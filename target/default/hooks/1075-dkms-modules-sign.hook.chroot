@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+sign_tool=$(tar xvJf /usr/src/linux-source-*.tar.xz --no-anchored --no-wildcards "scripts/sign-file")
+
+for kernel_dir in /lib/modules/*
+do
+    [ -d ${kernel_dir}/updates/dkms ] && find ${kernel_dir}/updates/dkms/ -name "*.ko" | xargs -n1 /${sign_tool} -v sha1 /live-build/config/signing_keys/signing_key.priv /live-build/config/signing_keys/signing_key.x509
+done
+
+rm ${sign_tool}

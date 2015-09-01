@@ -68,15 +68,19 @@ purge:
 	rm -rf $(STAGE)
 
 # Configure build environment
-$(STAGE)/config: $(STAGE)/environment up
+$(STAGE)/config: $(STAGE)/environment up signing_key.priv
 	@echo "Configure build environment..."
 	./scripts/create-build-config.sh >$(CONFIG_FILE)
-
 	$(VAGRANT) ssh -c '/vagrant/scripts/configure-vm.sh'
+	$(VAGRANT) ssh -c 'mkdir digabi-os/config/signing_keys/ && cp /vagrant/signing_key.* digabi-os/config/signing_keys/'
 
 	mkdir -p $(STAGE)
 	touch $(STAGE)/config
 	rm -f $(STAGE)/build $(STAGE)/clean
+
+signing_key.priv:
+	@echo "Need kernel module signing keys, please provide"
+	false
 
 config: $(STAGE)/config
 
