@@ -1,3 +1,9 @@
+digabios (15.08.7a2) unstable; urgency=medium
+
+  * Add i18n support for DPI toggling script.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 03 Sep 2015 10:24:35 +0300
+
 digabios (15.08.7a1) unstable; urgency=medium
 
   * Bump version.
