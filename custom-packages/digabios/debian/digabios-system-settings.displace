@@ -12,3 +12,4 @@
 /etc/skel/.xsessionrc.digabios
 #/usr/share/plymouth/debian-logo.png.digabios
 /usr/share/polkit-1/actions/org.xfce.power.policy.digabios
+/usr/bin/xlock.digabios

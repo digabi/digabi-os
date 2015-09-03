@@ -1,3 +1,9 @@
+digabios (15.08.7a3) unstable; urgency=medium
+
+  * Add xlock.digabios for blanking the screen.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Thu, 03 Sep 2015 12:05:19 +0300
+
 digabios (15.08.7a2) unstable; urgency=medium
 
   * Add i18n support for DPI toggling script.

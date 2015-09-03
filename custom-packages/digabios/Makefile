@@ -56,6 +56,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 iceweasel-localstore.rdf $(DESTDIR)/etc/iceweasel/profile/localstore.rdf.digabios
 	install -D -m 0644 xfce/xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
 	install -D -m 0644 xfce/org.xfce.power.policy $(DESTDIR)/usr/share/polkit-1/actions/org.xfce.power.policy.digabios
+	install -D -m 0755 display/blank.sh $(DESTDIR)/usr/bin/xlock.digabios
 	
 	# digabios-firewall
 	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d

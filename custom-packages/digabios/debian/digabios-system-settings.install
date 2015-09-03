@@ -11,6 +11,7 @@ etc/xdg/user-dirs.defaults.digabios
 etc/xdg/xfce4
 usr/bin/digabi-dpi
 usr/bin/digabi-panel-color
+usr/bin/xlock.digabios
 usr/share/applications/digabi-dpi.desktop
 usr/share/polkit-1
 var/lib/live/config/*
