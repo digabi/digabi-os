@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ -e /var/lib/live/config/lock-user-account ] && exit 0
+
+chsh digabi -s /bin/false
+
+touch /var/lib/live/config/lock-user-account
