@@ -21,9 +21,23 @@ else
     NEW="${DEFAULT}"
 fi
 
+case "${LANG}"
+in
+    fi*)
+        QUESTION="Haluatko säilyttää nykyisen asetuksen?"
+    ;;
+    sv*)
+        QUESTION="Vill du behålla den nuvarande inställningen?"
+    ;;
+    *)
+        QUESTION="Do you want to keep the current setting?"
+    ;;
+    
+esac
+
 echo "I: Set DPI to ${NEW} (was: ${CURRENT})"
 ${XFCONF} -n -c xsettings -p /Xft/DPI -t int -s ${NEW}
-${ZENITY} --question --text "Do you want to keep the current setting?" --timeout "${TIMEOUT}" 2>/dev/null
+${ZENITY} --question --text "${QUESTION}" --timeout "${TIMEOUT}" 2>/dev/null
 
 if [ $? != 0 ]
 then
