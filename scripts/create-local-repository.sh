@@ -10,6 +10,8 @@ set -e
 # 5. do the build
 # 6. remove temporary repository, ie. get path from step 2
 
+# TODO: Don't fail if no debs found, just tell that
+
 if [ ! -x /usr/bin/realpath ]
 then
     realpath() {
