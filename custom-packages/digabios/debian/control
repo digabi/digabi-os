@@ -358,3 +358,9 @@ Conflicts: digabios-client
 Provides: digabios-system-config
 Description: Add server configuration to system
  TBD
+
+Package: digabios-icons
+Architecture: all
+Depends: ${misc:Depends}
+Description: DigabiOS icon theme
+ TBD

@@ -64,5 +64,9 @@ install: $(CONTENT_DIR)
 	install -D -m 0755 firewall/digabios-firewall.sh $(DESTDIR)/usr/sbin/digabios-firewall
 	install -m 0600 firewall/rules/* $(DESTDIR)/etc/digabi/firewall.d
 	
+	# digabios-icons
+	install -d m 0755 $(DESTDIR)/usr/share/icons/digabi
+	install -m 0644 icons/* $(DESTDIR)/usr/share/icons/digabi
+	
 deb:
 	dpkg-buildpackage -us -uc
