@@ -1,9 +1,41 @@
 #!/bin/sh
 set -e
 
+#
+# Install SOME packages from upcoming Debian 9.0 (stretch)
+#
+
+PACKAGES="$(cat data/packages-from-stretch |awk '{print $2}' |sort |xargs)"
+[ -z "${PACKAGES}" ] && echo "W: No packages to migrate from stretch, skipping..." && exit 0
+
+echo "I: Migrating packages from stretch: ${PACKAGES}..."
+
 DEBIAN_MIRROR="${DEBIAN_MIRROR:-http://httpredir.debian.org/debian}"
 
-echo "I: Adding sources.list entry for stretch, using mirror ${DEBIAN_MIRROR}"
+echo "I: Add pinning configuration for stretch..."
+cat > config/archives/stretch.pref.chroot << EOF
+Package: *
+Pin: release n=stretch
+Pin-Priority: -1
+
+EOF
+
+if [ -n "${PACKAGES}" ]
+then
+    for pkg in ${PACKAGES}
+    do
+        echo "I: Pinning package ${pkg}/stretch..."
+        cat >> config/archives/stretch.pref.chroot << EOF
+Package: ${pkg}
+Pin: release n=stretch
+Pin-Priority: 600
+
+EOF
+    done
+fi
+cp config/archives/stretch.pref.chroot config/archives/stretch.pref.binary
+
+echo "I: Adding sources.list entry for stretch, using mirror ${DEBIAN_MIRROR}..."
 cat > config/archives/stretch.list.chroot << EOF
 deb ${DEBIAN_MIRROR} stretch main contrib non-free
 #deb-src ${DEBIAN_MIRROR} stretch main contrib non-free
