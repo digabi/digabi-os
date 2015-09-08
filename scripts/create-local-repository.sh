@@ -15,7 +15,7 @@ REPO_ID="${BUILD_NUMBER:-$(date +%Y%m%d%H%M%S)}"
 SIGNING_KEY="${SIGNING_KEY:-0x9D3D06EE}"
 
 CURDIR="${PWD}"
-mkdir -p repos incoming
+mkdir -p repos incoming docroot
 TEMPDIR="$(realpath $(mktemp -d repos/dos-repo.${REPO_ID}.XXXXXXXX))"
 
 echo "I: Creating temporary repository to ${TEMPDIR}..." 1>&2
@@ -43,9 +43,9 @@ EOF
 
 NGINX_CONF="nginx_repo_${REPO_ID}.conf"
 cat > ${NGINX_CONF} << EOF
-location /repo/${REPO_ID} {
+location /repos/${REPO_ID} {
     autoindex on;
-    alias ${TEMPDIR}/repository;
+    alias ${CURDIR}/docroot;
 }
 EOF
 
@@ -56,4 +56,11 @@ reprepro includedeb jessie ${DEBS}
 echo "I: List .debs in repository..." 1>&2
 reprepro list jessie
 
-echo "CONFIG: ${TEMPDIR}/${NGINX_CONF}"
+
+ln -s ${TEMPDIR}/repository ${CURDIR}/docroot/${REPO_ID}
+
+cd "${CURDIR}"
+tar cJhf "${CURDIR}/repository_${REPO_ID}.tar.xz" "docroot/${REPO_ID}"
+
+echo "REPO: ${REPO_ID}"
+echo "TEMP: ${TEMPDIR}"
