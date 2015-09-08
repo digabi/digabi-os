@@ -1,3 +1,9 @@
+digabios (15.08.8a6) unstable; urgency=medium
+
+  * Set digabi as default icon theme.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Sep 2015 11:02:29 +0300
+
 digabios (15.08.8a5) unstable; urgency=medium
 
   * digabios-icons: Fix installation: enable cp.
