@@ -1,0 +1,14 @@
+[Icon Theme]
+Name=Digabi
+Comment=Theme for DigabiOS
+Directories=24x24/apps,48x48/apps
+
+[24x24/apps]
+Context=Applications
+Size=24
+Type=Fixed
+
+[48x48/apps]
+Context=Applications
+Size=48
+Type=Fixed
