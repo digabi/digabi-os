@@ -33,7 +33,7 @@ EOF
 
 NGINX_CONF="nginx_repo_${REPO_ID}.conf"
 cat > ${NGINX_CONF} << EOF
-location /repo/${REPOID} {
+location /repo/${REPO_ID} {
     autoindex on;
     alias ${TEMPDIR}/repository;
 }
