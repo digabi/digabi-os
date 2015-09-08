@@ -39,7 +39,8 @@ location /repo/${REPOID} {
 }
 EOF
 
-echo "I: Import .debs from ${CURDIR}..." 1>&2
-find ${CURDIR} -type f -name '*.deb' -exec reprepro includedeb jessie {} \;
+echo "I: Import .debs from ${CURDIR}/incoming..." 1>&2
+DEBS="$(find ${CURDIR}/incoming -type f -name '*.deb' |xargs)"
+reprepro includedeb jessie ${DEBS}
 
 echo "${TEMPDIR}"
