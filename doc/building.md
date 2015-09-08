@@ -23,21 +23,7 @@ mirror](https://www.debian.org/mirror/ftpmirror).
 Currently following configuration variables have been defined in the 
 build system:
 
- - `DEBIAN_MIRROR` allows you to use custom Debian mirror for your build 
- (local mirror, Debian snapshot etc.)
- - `ARCH` allows you to specify build architecture (`i386`, `amd64`, others in future)
- - `http_proxy` allows you to specify HTTP proxy for the build (FIXME)
- - `BINARY_IMAGES` allows you to select which imagetype to use for 
- output (`iso-hybrid`=ISO w/ USB support, `iso` = regular ISO, `hdd` = 
- USB/HDD image)
- - `ROOT_PASSWORD` sets the password for root user (and adds live user 
- to group `wheel` so he/she can use `su`)
- - `DIGABI_DEBUG` (=true) enables `0001-digabi-debug.hook.chroot`
- - `COMMIT` builds specific commit
- - `DIGABI_BUILD_TARGET` which configurations we'd like to use for building? (choices: `default`, `server`, `client`)
- - `VAGRANT_DEFAULT_PROVIDER` which provider to use for building? (choices: `virtualbox`, optionally: `vmware_workstation`)
-
-In `Makefile:config` these will be saved to the build system, to file `config/digabi.local`, which is read by `auto/config` & `auto/build`. This file overrides environment variables defined in the build system. Ie. if you build DigabiOS manually, you should put your variables to this file.
+Please see `scripts/create-build-config.sh` for current options. These are pushed to build environment.
 
 
 ### Adding new customization variables
