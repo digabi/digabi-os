@@ -43,4 +43,4 @@ echo "I: Import .debs from ${CURDIR}/incoming..." 1>&2
 DEBS="$(find ${CURDIR}/incoming -type f -name '*.deb' |xargs)"
 reprepro includedeb jessie ${DEBS}
 
-echo "${TEMPDIR}"
+echo "${TEMPDIR}/${NGINX_CONF}"
