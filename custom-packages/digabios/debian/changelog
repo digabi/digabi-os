@@ -1,3 +1,9 @@
+digabios (15.08.8a2) unstable; urgency=medium
+
+  * Add dos-icons as dependency to digabios.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Sep 2015 10:38:09 +0300
+
 digabios (15.08.8a1) unstable; urgency=medium
 
   * Add digabios-icons package.
