@@ -1,6 +1,15 @@
 #!/bin/sh
 set -e
 
+# HOWTO:
+# 1. import artifacts from .deb builds to $WORKSPACE/incoming/
+# 2. run this script, get path to nginx config ($0 |grep ^CONFIG:)
+# 3. serve repository via http (cp $config, nginx reload)
+# 4. configure current build for build-specific repository
+# 5. do the build
+# 6. remove temporary repository, ie. get path from step 2
+
+
 REPO_ID="${BUILD_NUMBER:-$(date +%Y%m%d%H%M%S)}"
 SIGNING_KEY="${SIGNING_KEY:-0x9D3D06EE}"
 
