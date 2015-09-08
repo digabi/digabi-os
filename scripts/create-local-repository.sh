@@ -10,6 +10,12 @@ set -e
 # 5. do the build
 # 6. remove temporary repository, ie. get path from step 2
 
+if [ ! -x /usr/bin/realpath ]
+then
+    realpath() {
+        readlink -f $*
+    }
+fi
 
 REPO_ID="${BUILD_NUMBER:-$(date +%Y%m%d%H%M%S)}"
 SIGNING_KEY="${SIGNING_KEY:-0x9D3D06EE}"
