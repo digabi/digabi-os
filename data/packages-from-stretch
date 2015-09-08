@@ -6,6 +6,8 @@
 # first field in line is used. Files starting with # are
 # ignored by the script.
 #
+
+# Install XFCE 4.12 and it's essential dependencies from stretch
 libxfce4ui-1-0					install
 libxfce4ui-common				install
 libxfce4ui-utils				install
