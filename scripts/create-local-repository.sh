@@ -2,6 +2,7 @@
 set -e
 
 # HOWTO:
+# 0. (remove previous artifacts for faster builds)
 # 1. import artifacts from .deb builds to $WORKSPACE/incoming/
 # 2. run this script, get path to nginx config ($0 |grep ^CONFIG:)
 # 3. serve repository via http (cp $config, nginx reload)
