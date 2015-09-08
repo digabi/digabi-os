@@ -6,7 +6,7 @@ SIGNING_KEY="0x9D3D06EE"
 
 CURDIR="${PWD}"
 mkdir -p repos
-TEMPDIR="$(mktemp -d repos/dos-repo.XXXXXXXX)"
+TEMPDIR="$(realpath $(mktemp -d repos/dos-repo.XXXXXXXX))"
 
 echo "I: Creating temporary repository to ${TEMPDIR}..." 1>&2
 cd "${TEMPDIR}"
