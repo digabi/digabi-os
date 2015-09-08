@@ -1,16 +1,16 @@
 #!/bin/sh
 set -e
 
-REPO_ID="${BUILD_ID:-$(date +%Y%m%d%H%M%S)}"
+REPO_ID="${BUILD_NUMBER:-$(date +%Y%m%d%H%M%S)}"
 SIGNING_KEY="0x9D3D06EE"
 
 CURDIR="${PWD}"
-mkdir -p repos
+mkdir -p repos incoming
 TEMPDIR="$(realpath $(mktemp -d repos/dos-repo.XXXXXXXX))"
 
 echo "I: Creating temporary repository to ${TEMPDIR}..." 1>&2
 cd "${TEMPDIR}"
-mkdir -p conf incoming
+mkdir -p conf
 
 echo "I: Configure reprepro..." 1>&2
 cat > conf/distributions << EOF
