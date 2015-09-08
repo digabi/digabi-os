@@ -1,3 +1,9 @@
+digabios (15.08.8a3) unstable; urgency=medium
+
+  * digabios-icons: Inherit icons from Tango.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Sep 2015 10:41:59 +0300
+
 digabios (15.08.8a2) unstable; urgency=medium
 
   * Add dos-icons as dependency to digabios.

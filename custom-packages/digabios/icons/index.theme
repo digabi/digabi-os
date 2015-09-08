@@ -2,6 +2,7 @@
 Name=Digabi
 Comment=Theme for DigabiOS
 Directories=24x24/apps,48x48/apps
+Inherits=Tango
 
 [24x24/apps]
 Context=Applications
