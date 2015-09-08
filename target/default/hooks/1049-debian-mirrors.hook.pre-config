@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+DEBIAN_MIRROR="${DEBIAN_MIRROR:-http://httpredir.debian.org/debian}"
+
+echo "I: Adding sources.list entry for stretch, using mirror ${DEBIAN_MIRROR}"
+cat > config/archives/stretch.list.chroot << EOF
+deb ${DEBIAN_MIRROR} stretch main contrib non-free
+#deb-src ${DEBIAN_MIRROR} stretch main contrib non-free
+
+deb http://security.debian.org stretch/updates main contrib non-free
+#deb-src http://security.debian.org stretch/updates main contrib non-free
+EOF
+
+cp config/archives/stretch.list.chroot config/archives/stretch.list.binary
