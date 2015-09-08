@@ -1,3 +1,15 @@
+digabios (15.08.8a5) unstable; urgency=medium
+
+  * digabios-icons: Fix installation: enable cp.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Sep 2015 10:52:41 +0300
+
+digabios (15.08.8a4) unstable; urgency=medium
+
+  * digabios-icons: use cp for installing directories.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Tue, 08 Sep 2015 10:45:29 +0300
+
 digabios (15.08.8a3) unstable; urgency=medium
 
   * digabios-icons: Inherit icons from Tango.

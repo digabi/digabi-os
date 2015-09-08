@@ -66,7 +66,8 @@ install: $(CONTENT_DIR)
 	
 	# digabios-icons
 	install -d m 0755 $(DESTDIR)/usr/share/icons/digabi
-	install -m 0644 icons/* $(DESTDIR)/usr/share/icons/digabi
+#	install -m 0644 icons/* $(DESTDIR)/usr/share/icons/digabi
+	cp -R icons/* $(DESTDIR)/usr/share/icons/digabi
 	
 deb:
 	dpkg-buildpackage -us -uc
