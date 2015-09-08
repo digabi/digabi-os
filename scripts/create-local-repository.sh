@@ -2,7 +2,7 @@
 set -e
 
 REPO_ID="${BUILD_NUMBER:-$(date +%Y%m%d%H%M%S)}"
-SIGNING_KEY="0x9D3D06EE"
+SIGNING_KEY="${SIGNING_KEY:-0x9D3D06EE}"
 
 CURDIR="${PWD}"
 mkdir -p repos incoming
