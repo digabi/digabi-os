@@ -1,10 +1,11 @@
 #!/bin/sh
 set -e
 
+REPO_ID="${BUILD_ID:-$(date +%Y%m%d%H%M%S)}"
 SIGNING_KEY="0x9D3D06EE"
 
 CURDIR="${PWD}"
-TEMPDIR="$(mktemp -d)"
+TEMPDIR="$(mktemp -d repo/dos-repo.XXXXXXXX)"
 
 echo "I: Creating temporary repository to ${TEMPDIR}..." 1>&2
 cd "${TEMPDIR}"
@@ -27,6 +28,14 @@ outdir +b/repository
 dbdir +b/db
 listdir +b/lists
 morguedir +b/morgue
+EOF
+
+NGINX_CONF="nginx_repo_${REPO_ID}.conf"
+cat > ${NGINX_CONF} << EOF
+location /repo/${REPOID} {
+    autoindex on;
+    alias ${TEMPDIR}/repository;
+}
 EOF
 
 echo "I: Import .debs from ${CURDIR}..." 1>&2
