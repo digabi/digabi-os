@@ -2,6 +2,7 @@
 set -e
 
 CONFIG="/vagrant/dos-config"
+SOURCES="/vagrant/sources.list"
 
 [ -f "${CONFIG}" ] && . ${CONFIG} && echo "I: Using local configuration"
 
@@ -19,6 +20,10 @@ git checkout ${COMMIT:-HEAD}
 
 echo "I: Copy local configuration to build directory..."
 cp ${CONFIG} ${BUILD_DIR}/target/default/digabi.local
+
+echo "I: Copy local sources.list configuration to build directory..."
+cp ${SOURCES} ${BUILD_DIR}/target/default/archives/digabi.list.binary
+cp ${SOURCES} ${BUILD_DIR}/target/default/archives/digabi.list.chroot
 
 echo "I: Running lb config..."
 lb config ${LB_OPTIONS}
