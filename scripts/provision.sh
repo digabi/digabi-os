@@ -26,10 +26,6 @@ contains() {
     fi
 }
 
-#
-# Initialiaze new Vagrant (Debian wheezy/jessie)
-#
-REPOSITORY_INSTALLER="/vagrant/custom-packages/digabi-repository/install-repository.sh"
 
 #
 # Prefer IPv4 over IPv6
@@ -43,17 +39,7 @@ then
     echo "I: Digabi repository already configured, skipping configuration..."
 else
     echo "I: Add Digabi repository..."
-    if [ -e "${REPOSITORY_INSTALLER}" ]
-    then
-        echo "D: Install using repository installer..."
-        sh ${REPOSITORY_INSTALLER}
-        sed -i "s,-stable,-${DIGABI_SUITE:-stable},g" /etc/apt/sources.list.d/digabi.list
-        sed -i "s,http://dev.digabi.fi/debian,${DIGABI_MIRROR:-http://dev.digabi.fi/debian},g" /etc/apt/sources.list.d/digabi.list
-    else
-        echo "D: Install using http..."
-        wget -qO /etc/apt/sources.list.d/digabi.list ${DIGABI_MIRROR}/digabi.list
-        wget -qO- ${DIGABI_MIRROR}/digabi.asc | apt-key add -
-    fi
+    cp /vagrant/sources.list /etc/apt/sources.list.d/digabi.list
 fi
 
 if [ -n "${DEBIAN_MIRROR}" ]
