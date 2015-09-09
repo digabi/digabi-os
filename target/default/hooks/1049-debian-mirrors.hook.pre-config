@@ -8,7 +8,7 @@ set -e
 # from there.
 #
 
-PACKAGES="$(grep -v ^# data/packages-from-stretch |awk '{print $2}' |sort |xargs)"
+PACKAGES="$(grep -v ^# data/packages-from-stretch |awk '{print $1}' |sort |xargs)"
 [ -z "${PACKAGES}" ] && echo "W: No packages to migrate from stretch, skipping..." && exit 0
 
 echo "I: Migrating packages from stretch: ${PACKAGES}..."
