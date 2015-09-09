@@ -3,7 +3,7 @@
 #
 # This file is read by target/default/hooks/1049-* which
 # adds APT pinning for all files in this list. Only
-# first field in line is used. Files starting with # are
+# first field in line is used. Lines starting with # are
 # ignored by the script.
 #
 
