@@ -21,7 +21,7 @@ DIGABI_DIST_NAME_SHORT="dos"
 # Compute the current DIGABI's version once for all
 DIGABI_NOW="`date --utc '+%Y%m%dT%H%MZ'`"
 DIGABI_TODAY="`date '+%Y%m%d'`"
-DIGABI_VERSION="`dpkg-parsechangelog -l custom-packages/digabios/debian/changelog | sed -n 's/^Version: //p'`"
+DIGABI_VERSION="`dpkg-parsechangelog -lcustom-packages/digabios/debian/changelog | sed -n 's/^Version: //p'`"
 #DIGABI_VERSION="$(head -n1 custom-packages/digabios/debian/changelog |sed 's,digabios (\(.*\)) .*,\1,')"
 DIGABI_FULL_VERSION="${DIGABI_VERSION} - ${DIGABI_TODAY}"
 
