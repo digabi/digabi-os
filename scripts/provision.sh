@@ -62,7 +62,7 @@ echo "I: Update package lists..."
 apt-get -qy update
 
 echo "I: Upgrade build system..."
-DEBIAN_FRONTEND=noninteractive apt-get -qy upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
 
 echo "I: Install digabi-dev, rsync..."
 DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-dev rsync git aptitude digabi-archive-keyring
