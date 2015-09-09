@@ -1,7 +1,0 @@
-Package: *
-Pin: origin dev.digabi.fi
-Pin-Priority: 1001
-
-Package: *
-Pin: origin cimonitor
-Pin-Priority: 1001
