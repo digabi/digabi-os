@@ -8,6 +8,8 @@ set -e
 # from there.
 #
 
+# TODO: replace mirror URL with the binary URL after building the image
+
 PACKAGES="$(grep -v ^# data/packages-from-stretch |awk '{print $1}' |sort |xargs)"
 [ -z "${PACKAGES}" ] && echo "W: No packages to migrate from stretch, skipping..." && exit 0
 
