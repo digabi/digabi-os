@@ -34,13 +34,8 @@ echo "I: Prefer IPv4 over IPv6..."
 sed -i -e 's/#\(precedence ::ffff:.*100\)/\1/' /etc/gai.conf
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
 
-if [ -f "/etc/apt/sources.list.d/digabi.list" ]
-then
-    echo "I: Digabi repository already configured, skipping configuration..."
-else
-    echo "I: Add Digabi repository..."
-    cp /vagrant/sources.list /etc/apt/sources.list.d/digabi.list
-fi
+echo "I: Add Digabi repository..."
+cp /vagrant/sources.list /etc/apt/sources.list.d/digabi.list
 
 if [ -n "${DEBIAN_MIRROR}" ]
 then
