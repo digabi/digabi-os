@@ -1,3 +1,9 @@
+digabios (15.08.8a8) unstable; urgency=medium
+
+  * Add 16x16 icons.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Sep 2015 11:42:16 +0300
+
 digabios (15.08.8a7) unstable; urgency=medium
 
   * Use custom icons for keyboard layout switcher.
