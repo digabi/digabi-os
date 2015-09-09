@@ -1,3 +1,9 @@
+digabios (15.08.8a7) unstable; urgency=medium
+
+  * Use custom icons for keyboard layout switcher.
+
+ -- Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>  Wed, 09 Sep 2015 09:55:53 +0300
+
 digabios (15.08.8a6) unstable; urgency=medium
 
   * Set digabi as default icon theme.
