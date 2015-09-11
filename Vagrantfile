@@ -42,7 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     if network_host_dev
       config.vm.network "public_network", bridge: network_host_dev
     else
-      config.vm.network "public_network"    
+      config.vm.network "public_network"
     end
 #  else
 #    config.vm.network "private_network", type: "dhcp"
