@@ -27,9 +27,8 @@ end
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # You should be able to use *any* Debian 8 (jessie) image as your building environment
-  config.vm.box = "debian-jessie#{bits}"
-
-  config.vm.box_url = "https://cdn.ypcs.fi/vagrant/metadata.json"
+  config.vm.box = "vagrantbox-debian-jessie-#{bits.to_i == 64 ? 'amd64' : 'i386'}"
+  config.vm.box_url = "http://ci.local/job/vagrant-baseboxen-multiarch/BITS=#{bits}/lastSuccessfulBuild/artifact/metadata.json"
 
   config.vm.provision "shell", inline: "sudo http_proxy='#{ENV['http_proxy']}' DEBIAN_MIRROR='#{ENV['DEBIAN_MIRROR']}' DIGABI_MIRROR='#{ENV['DIGABI_MIRROR']}' DIGABI_SUITE='#{ENV['DIGABI_SUITE']}' sh /vagrant/scripts/provision.sh"
 
