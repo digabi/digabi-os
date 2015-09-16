@@ -46,8 +46,8 @@ then
     fi
     echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free" >/etc/apt/sources.list
     echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free" >>/etc/apt/sources.list
-    echo "deb http://security.debian.org/ ${DEBIAN_SUITE}/updates main contrib non-free" >>/etc/apt/sources.list
-    echo "deb-src http://security.debian.org/ ${DEBIAN_SUITE}/updates main contrib non-free" >>/etc/apt/sources.list
+    echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free" >>/etc/apt/sources.list
+    echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free" >>/etc/apt/sources.list
 else
     echo "I: Using pre-configured Debian mirror."
 fi
