@@ -47,6 +47,7 @@ $(STAGE)/environment:
 	@echo "Create artifacts dir..."
 	mkdir -p $(ARTIFACTS_DIR)
 	@echo "Provision vagrant..."
+	-vagrant box update
 	vagrant up --provider=$(VAGRANT_DEFAULT_PROVIDER) --provision
 	mkdir -p $(STAGE)
 	touch $(STAGE)/environment
