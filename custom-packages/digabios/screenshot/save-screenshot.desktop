@@ -5,6 +5,6 @@ Type=Application
 Name=Take screenshot
 Name[fi]=Ota kuvankaappaus
 Comment=Use mouse to select the area to be saved.
-Comment[fi]=Aseta hiiren osoitin kaapattavan alueen kulmaan, paina hiiren vasen painike pohjaan, siirrä osoitin alueen vastakkaiseen kulmaan ja päästä painike ylös.
+Comment[fi]=Valitse haluamasi alue rajaamalla se hiiren vasen nappi pohjassa.
 Exec=xfce4-screenshooter -d 0 -m -r -o /usr/bin/save-screenshot-image
 Icon=applets-screenshooter
