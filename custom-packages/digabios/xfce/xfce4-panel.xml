@@ -74,7 +74,7 @@
     </property>
     <property name="plugin-10" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="save-screenshot.desktop"/>
+        <value type="string" value="/usr/share/applications/save-screenshot.desktop"/>
       </property>
     </property>
     <property name="plugin-11" type="string" value="launcher">
