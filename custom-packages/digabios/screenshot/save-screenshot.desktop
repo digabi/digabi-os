@@ -7,4 +7,4 @@ Name[fi]=Ota kuvankaappaus
 Comment=Use mouse to select the area to be saved.
 Comment[fi]=Valitse haluamasi alue rajaamalla se hiiren vasen nappi pohjassa.
 Exec=xfce4-screenshooter -d 0 -m -r -o /usr/bin/save-screenshot-image
-Icon=applets-screenshooter
+Icon=digabi-screenshot
