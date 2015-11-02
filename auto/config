@@ -134,6 +134,13 @@ then
     BINARY_IMAGES="iso-hybrid"
 fi
 
+LINUX_FLAVOURS="digabios"
+
+if contains "${DIGABI_BUILD_TARGET}" client
+then
+    LINUX_FLAVOURS="${LINUX_FLAVOURS} 4.2.0-trunk.ytl"
+fi
+
 lb config noauto \
     --apt-indices "false" \
     --apt-recommends "false" \
@@ -153,7 +160,7 @@ lb config noauto \
     --image-name "${IMAGE_NAME}" \
     --iso-publisher "${ISO_PUBLISHER}" \
     --iso-volume "${ISO_VOLUME}" \
-    --linux-flavours "digabios 4.2.0-trunk.ytl" \
+    --linux-flavours "${LINUX_FLAVOURS}" \
     --memtest "none" \
     --mirror-binary "${DEFAULT_DEBIAN_MIRROR}" \
     --mirror-bootstrap "${DEBIAN_MIRROR}" \
