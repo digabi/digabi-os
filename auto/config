@@ -138,7 +138,7 @@ LINUX_FLAVOURS="digabios"
 
 if contains "${DIGABI_BUILD_TARGET}" client
 then
-    LINUX_FLAVOURS="${LINUX_FLAVOURS} 4.2.0-trunk.ytl"
+    LINUX_FLAVOURS="${LINUX_FLAVOURS} 4.2.0-1.ytl"
 fi
 
 lb config noauto \
