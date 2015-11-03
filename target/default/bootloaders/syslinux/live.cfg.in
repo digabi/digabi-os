@@ -1,8 +1,0 @@
-label @NUMBER@
-    menu label ^@NUMBER@
-    menu default
-
-    linux @LINUX@
-    initrd @INITRD@
-    append @APPEND_LIVE@ quiet splash
-
