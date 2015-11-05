@@ -1,0 +1,20 @@
+#
+# Packages to install from upcoming Debian 9.0 (stretch)
+#
+# This file is read by target/default/hooks/1049-* which
+# adds APT pinning for all files in this list. Only
+# first field in line is used. Lines starting with # are
+# ignored by the script.
+#
+
+# Fresh firmware files
+
+firmware-amd-graphics
+firmware-atheros
+firmware-ipw2x00
+firmware-iwlwifi
+firmware-linux
+firmware-linux-free
+firmware-linux-nonfree
+firmware-misc-nonfree
+firmware-realtek
