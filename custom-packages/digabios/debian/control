@@ -302,6 +302,7 @@ Depends: ${misc:Depends},
  libreoffice-math,
  libreoffice-writer,
  maxima,
+ mplayer2,
  nodejs,
  okular,
  pavucontrol,
@@ -331,6 +332,7 @@ Depends: ${misc:Depends},
  postgresql-contrib,
  terminator,
  usbmount,
+ vlc,
  zenity
 Conflicts: digabios-client
 Provides: digabios-system-config
