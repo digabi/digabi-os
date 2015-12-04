@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="59.375px" height="59.5px"
+	 viewBox="26.125 23.375 59.375 59.5" enable-background="new 26.125 23.375 59.375 59.5" xml:space="preserve">
+<title>kello-icon</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1_1_" sketch:type="MSPage">
+	<g id="kello-icon" sketch:type="MSArtboardGroup">
+		<g id="Page-1" transform="translate(27.000000, 24.000000)" sketch:type="MSLayerGroup">
+			<path id="Fill-1" sketch:type="MSShapeGroup" fill="#1F99BA" d="M28.922,54C15.18,54,4,42.818,4,29.077
+				C4,15.335,15.18,4.155,28.922,4.155c13.742,0,24.921,11.18,24.921,24.922C53.844,42.818,42.664,54,28.922,54 M28.922,0.155
+				C12.975,0.155,0,13.13,0,29.077C0,45.025,12.975,58,28.922,58c15.949,0,28.921-12.975,28.921-28.923
+				C57.844,13.13,44.871,0.155,28.922,0.155"/>
+			<path id="Fill-3" sketch:type="MSShapeGroup" fill="#1F99BA" d="M35.107,12.792l-6.715,12.986
+				c-1.598,0.255-2.822,1.629-2.822,3.299c0,0.531,0.134,1.027,0.354,1.474l-0.032,0.062l0.091,0.047
+				c0.403,0.745,1.072,1.315,1.887,1.586l4.723,17.658l3.017-0.808l-4.647-17.375c0.794-0.612,1.313-1.563,1.313-2.644
+				c0-0.502-0.117-0.974-0.315-1.402l6.735-13.027L35.107,12.792z"/>
+		</g>
+	</g>
+</g>
+</svg>
