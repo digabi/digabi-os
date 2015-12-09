@@ -47,14 +47,11 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 timezone $(DESTDIR)/etc/timezone.digabios
 	install -d -m 0755 $(DESTDIR)/etc/skel/.config/xfce4/panel/launcher-11
 	install -m 0644 xkb/* $(DESTDIR)/etc/skel/.config/xfce4/panel/launcher-11
-	install -D -m 0644 xfce/screenshotrc $(DESTDIR)/etc/skel/.config/xfce4/panel/screenshooter-10.rc
 	install -D -m 0644 xfce/batteryrc $(DESTDIR)/etc/skel/.config/xfce4/panel/battery-16.rc
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
 	install -D -m 0755 display/toggle-dpi.sh $(DESTDIR)/usr/bin/digabi-dpi
 	install -D -m 0644 display/toggle-dpi.desktop $(DESTDIR)/usr/share/applications/digabi-dpi.desktop
-	install -D -m 0755 screenshot/save-screenshot-image.sh $(DESTDIR)/usr/bin/save-screenshot-image
-	install -D -m 0644 screenshot/save-screenshot.desktop $(DESTDIR)/usr/share/applications/save-screenshot.desktop
 	install -D -m 0644 iceweasel-localstore.rdf $(DESTDIR)/etc/iceweasel/profile/localstore.rdf.digabios
 	install -D -m 0644 xfce/xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
 	install -D -m 0644 xfce/org.xfce.power.policy $(DESTDIR)/usr/share/polkit-1/actions/org.xfce.power.policy.digabios

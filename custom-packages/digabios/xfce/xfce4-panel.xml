@@ -72,11 +72,6 @@
       <property name="command" type="string" value="pavucontrol"/>
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
     </property>
-    <property name="plugin-10" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="/usr/share/applications/save-screenshot.desktop"/>
-      </property>
-    </property>
     <property name="plugin-11" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="xkb-fi.desktop"/>
