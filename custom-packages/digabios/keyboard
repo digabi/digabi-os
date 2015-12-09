@@ -5,6 +5,6 @@
 XKBMODEL="pc105"
 XKBLAYOUT="fi"
 XKBVARIANT=""
-XKBOPTIONS="grp:alt_shift_toggle"
+XKBOPTIONS="grp:alt_shift_toggle,altwin:ctrl_win"
 
 BACKSPACE="guess"
