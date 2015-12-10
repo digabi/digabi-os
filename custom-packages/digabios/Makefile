@@ -13,18 +13,15 @@ $(CONTENT_DIR): $(REPOSITORY)
 
 install: $(CONTENT_DIR)
 	# digabi-customization
-	
 	# digabi-backgrounds
 	install -d -m 0755 $(DESTDIR)$(IMAGEDIR)
 	install -D -m 0644 $(CONTENT_DIR)/background.svg $(DESTDIR)$(IMAGEDIR)/background.svg
 	install -D -m 0644 $(CONTENT_DIR)/ytl_logo_helmet_black.svg $(DESTDIR)$(IMAGEDIR)/logo.svg
 	install -D -m 0644 $(CONTENT_DIR)/splash.svg $(DESTDIR)$(IMAGEDIR)/splash.svg
 	rsvg-convert -f png -w 121 -o $(DESTDIR)$(IMAGEDIR)/logo.png $(CONTENT_DIR)/ytl_logo_helmet_black.svg
-	
 	# plymouth-themes-digabios
 	install -d -m 0755 $(DESTDIR)/usr/share/plymouth/themes/digabios
 	install -D -m 0644 plymouth/* $(DESTDIR)/usr/share/plymouth/themes/digabios
-	
 	# digabios-system-settings
 	install -D -m 0644 locale.gen $(DESTDIR)/etc/locale.gen.digabios
 	install -D -m 0644 xfce/xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml.digabios
@@ -37,7 +34,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
 	install -D -m 0644 locale $(DESTDIR)/etc/default/locale.digabios
-	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios	
+	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
 	install -D -m 0644 xfce/xfce-applications.menu $(DESTDIR)/etc/xdg/menus/xfce-applications.menu.digabios
 	install -d -m 0755 $(DESTDIR)/etc/sysctl.d
@@ -56,17 +53,14 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfce/xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
 	install -D -m 0644 xfce/org.xfce.power.policy $(DESTDIR)/usr/share/polkit-1/actions/org.xfce.power.policy.digabios
 	install -D -m 0755 display/blank.sh $(DESTDIR)/usr/bin/xlock.digabios
-	
 	# digabios-firewall
 	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d
 	install -D -m 0644 firewall/digabios-firewall.service $(DESTDIR)/lib/systemd/system/digabios-firewall.service
 	install -D -m 0755 firewall/digabios-firewall.sh $(DESTDIR)/usr/sbin/digabios-firewall
 	install -m 0600 firewall/rules/* $(DESTDIR)/etc/digabi/firewall.d
-	
 	# digabios-icons
 	install -d m 0755 $(DESTDIR)/usr/share/icons/digabi
 #	install -m 0644 icons/* $(DESTDIR)/usr/share/icons/digabi
 	cp -R icons/* $(DESTDIR)/usr/share/icons/digabi
-	
 deb:
 	dpkg-buildpackage -us -uc
