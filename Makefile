@@ -94,8 +94,8 @@ $(STAGE)/build: $(STAGE)/config up
 
 build-kernel: $(STAGE)/environment up
 	@echo "Prepare environment..."
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; printf "deb http://ftp.se.debian.org/debian unstable main\ndeb-src http://ftp.se.debian.org/debian unstable main\n" | sudo tee -a /etc/apt/sources.list'
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get -t unstable source linux'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; printf "deb http://ftp.se.debian.org/debian experimental main\ndeb-src http://ftp.se.debian.org/debian experimental main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get -t experimental source linux'
 	@echo "Enable module signing"
 	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/module-sign.diff'
 	$(VAGRANT) ssh -c 'cd linux-* && sed -i "s/\(^abiname.*\)/\1.ytl/" debian/config/defines'
