@@ -1,0 +1,5 @@
+#!/bin/sh
+
+trashdir="/.Trash-$(id -u digabi)"
+mkdir -p "${trashdir}"
+chown -R digabi "${trashdir}"
