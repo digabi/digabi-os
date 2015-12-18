@@ -29,6 +29,19 @@ insmod progress
 
 if cpuid -l ; then
 
+submenu "Kahdennettu KTP" {
+
+  menuentry "Herra" {
+    linux           @LINUX@ @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.1:255.255.0.0 hostname=ktp1.local persistence
+    initrd          @INITRD@
+  }
+
+  menuentry "Orja" {
+    linux           @LINUX@ @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.2:255.255.0.0 hostname=ktp2.local systemd.unit=ktp-spare.target
+    initrd          @INITRD@
+  }
+}
+
 submenu "Koetilan palvelin / Provlokalens server" {
 
   menuentry "PC  | Koetilan palvelin / Provlokalens server" {
