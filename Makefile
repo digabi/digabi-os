@@ -94,6 +94,7 @@ $(STAGE)/build: $(STAGE)/config up
 
 build-kernel: $(STAGE)/environment up
 	@echo "Prepare environment..."
+	@echo > $(CONFIG_FILE)
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; printf "deb http://http.debian.net/debian jessie-backports main\n" | sudo tee -a /etc/apt/sources.list'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; printf "deb http://ftp.se.debian.org/debian experimental main\ndeb-src http://ftp.se.debian.org/debian experimental main\n" | sudo tee -a /etc/apt/sources.list'
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t experimental source linux'
