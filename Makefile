@@ -104,6 +104,8 @@ build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c 'cd linux-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
 	$(VAGRANT) ssh -c 'cd linux-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
 	@echo "Try building. First build fails after updating version, so ignore the fail..."
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; printf "deb http://ftp.se.debian.org/debian stretch main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t experimental source linux'
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) || exit 0'
 	@echo "Now building packages..."
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
