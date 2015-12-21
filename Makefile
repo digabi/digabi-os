@@ -94,10 +94,9 @@ $(STAGE)/build: $(STAGE)/config up
 
 build-kernel: $(STAGE)/environment up
 	@echo "Prepare environment..."
-	@echo > $(CONFIG_FILE)
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; printf "deb http://http.debian.net/debian jessie-backports main\n" | sudo tee -a /etc/apt/sources.list'
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; printf "deb http://ftp.se.debian.org/debian experimental main\ndeb-src http://ftp.se.debian.org/debian experimental main\n" | sudo tee -a /etc/apt/sources.list'
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t experimental source linux'
+	$(VAGRANT) ssh -c 'printf "deb http://http.debian.net/debian jessie-backports main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c 'printf "deb http://ftp.se.debian.org/debian experimental main\ndeb-src http://ftp.se.debian.org/debian experimental main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t experimental source linux'
 	@echo "Enable module signing"
 	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/module-sign.diff'
 	$(VAGRANT) ssh -c 'cd linux-* && sed -i "s/\(^abiname.*\)/\1.ytl/" debian/config/defines'
@@ -105,20 +104,18 @@ build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c 'cd linux-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
 	$(VAGRANT) ssh -c 'cd linux-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
 	@echo "Try building. First build fails after updating version, so ignore the fail..."
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; printf "deb http://ftp.se.debian.org/debian stretch main\n" | sudo tee -a /etc/apt/sources.list'
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t experimental source linux'
+	$(VAGRANT) ssh -c 'printf "deb http://ftp.se.debian.org/debian stretch main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t experimental source linux'
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) || exit 0'
 	@echo "Now building packages..."
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
-	#$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd linux-* && fakeroot make -j$(DIGABI_BUILD_CPUS) -f debian/rules.gen binary-arch_i386_none_686-pae'
-	#$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd linux-* && fakeroot make -j$(DIGABI_BUILD_CPUS) -f debian/rules.gen binary-arch_amd64_none_none'
 	@echo "Build linux-kbuild.."
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get -t experimental source linux-kbuild-4.4'
+	$(VAGRANT) ssh -c 'sudo apt-get update && apt-get -t experimental source linux-kbuild-4.4'
 	$(VAGRANT) ssh -c 'cd linux-tools-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
 	$(VAGRANT) ssh -c 'cd linux-tools-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
 	$(VAGRANT) ssh -c 'cd linux-tools* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) || exit 0'
 	$(VAGRANT) ssh -c 'cd linux-tools* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; mv linux*.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
+	$(VAGRANT) ssh -c 'mv linux*.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
 
 package: $(STAGE)/environment up
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source $(PACKAGE) && cd $(PACKAGE)-* && debchange --local "+ypcs$(BUILD_NUMBER)" "Automatic CI build." && debuild-pbuilder -j$(DIGABI_BUILD_CPUS) -us -uc'
