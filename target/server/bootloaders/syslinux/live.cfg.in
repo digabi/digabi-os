@@ -29,6 +29,13 @@ label ktp
     initrd @INITRD@
     append @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.1:255.255.0.0 hostname=ktp1.local persistence
 
+label spare
+    menu label ^Koetilan varapalvelin / Provlokalens reservserver
+
+    linux @LINUX@
+    initrd @INITRD@
+    append @APPEND_LIVE@ quiet splash ip=eth0:10.10.0.2:255.255.0.0 hostname=ktp2.local persistence systemd.unit=ktp-spare.target
+
 label supo
     menu label ^Valvojan kone / Overvakarens dator
 
