@@ -81,7 +81,8 @@ Depends: ${misc:Depends},
  xfce4-notifyd,
  xfce4-power-manager,
  xorg,
- xserver-xorg-input-all,
+ xserver-xorg-input-evdev,
+ xserver-xorg-input-synaptics,
  xserver-xorg-video-all
 Replaces: digabi-live
 Description: Digabi OS
