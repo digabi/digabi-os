@@ -324,6 +324,7 @@ Package: digabios-server
 Architecture: all
 Depends: ${misc:Depends},
  anacron,
+ arping,
  avahi-daemon,
  digabios-firewall (= ${binary:Version}),
  digabios-system-settings (= ${binary:Version}),
@@ -336,7 +337,7 @@ Depends: ${misc:Depends},
  terminator,
  usbmount,
  vlc,
- zenity
+ zenity,
 Conflicts: digabios-client
 Provides: digabios-system-config
 Description: Add server configuration to system
