@@ -138,7 +138,7 @@ LINUX_FLAVOURS="digabios"
 
 if contains "${DIGABI_BUILD_TARGET}" client
 then
-    LINUX_FLAVOURS="${LINUX_FLAVOURS} 4.4.0-rc5"
+    LINUX_FLAVOURS="${LINUX_FLAVOURS} 4.4.0-rc6"
 fi
 
 lb config noauto \
