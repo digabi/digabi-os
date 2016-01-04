@@ -10,43 +10,55 @@ set -e
 
 # TODO: replace mirror URL with the binary URL after building the image
 
-PACKAGES="$(grep -v ^# data/packages-from-stretch |awk '{print $1}' |sort |xargs)"
-[ -z "${PACKAGES}" ] && echo "W: No packages to migrate from stretch, skipping..." && exit 0
 
-echo "I: Migrating packages from stretch: ${PACKAGES}..."
+create_pinned_apt_config_for_dist()
+{
+    dist="$1"
 
-DEBIAN_MIRROR="${DEBIAN_MIRROR:-http://httpredir.debian.org/debian}"
+    PACKAGES="$(grep -v ^# data/packages-from-${dist} |awk '{print $1}' |sort |xargs)"
+    [ -z "${PACKAGES}" ] && echo "W: No packages to migrate from ${dist}, skipping..." && exit 0
 
-echo "I: Add pinning configuration for stretch..."
-cat > config/archives/stretch.pref.chroot << EOF
+    echo "I: Migrating packages from ${dist}: ${PACKAGES}..."
+
+    DEBIAN_MIRROR="${DEBIAN_MIRROR:-http://httpredir.debian.org/debian}"
+
+    echo "I: Add pinning configuration for ${dist}..."
+    cat > config/archives/${dist}.pref.chroot << EOF
 Package: *
-Pin: release n=stretch
+Pin: release n=${dist}
 Pin-Priority: -1
 
 EOF
 
-if [ -n "${PACKAGES}" ]
-then
-    for pkg in ${PACKAGES}
-    do
-        echo "I: Pinning package ${pkg}/stretch..."
-        cat >> config/archives/stretch.pref.chroot << EOF
+    if [ -n "${PACKAGES}" ]
+    then
+        for pkg in ${PACKAGES}
+        do
+            echo "I: Pinning package ${pkg}/${dist}..."
+            cat >> config/archives/${dist}.pref.chroot << EOF
 Package: ${pkg}
-Pin: release n=stretch
+Pin: release n=${dist}
 Pin-Priority: 600
 
 EOF
-    done
-fi
-cp config/archives/stretch.pref.chroot config/archives/stretch.pref.binary
+        done
+    fi
+    cp config/archives/${dist}.pref.chroot config/archives/${dist}.pref.binary
 
-echo "I: Adding sources.list entry for stretch, using mirror ${DEBIAN_MIRROR}..."
-cat > config/archives/stretch.list.chroot << EOF
-deb ${DEBIAN_MIRROR} stretch main contrib non-free
-#deb-src ${DEBIAN_MIRROR} stretch main contrib non-free
+    echo "I: Adding sources.list entry for ${dist}, using mirror ${DEBIAN_MIRROR}..."
+    cat > config/archives/${dist}.list.chroot << EOF
+deb ${DEBIAN_MIRROR} ${dist} main contrib non-free
+#deb-src ${DEBIAN_MIRROR} ${dist} main contrib non-free
 
-deb http://security.debian.org stretch/updates main contrib non-free
-#deb-src http://security.debian.org stretch/updates main contrib non-free
+deb http://security.debian.org ${dist}/updates main contrib non-free
+#deb-src http://security.debian.org ${dist}/updates main contrib non-free
 EOF
 
-cp config/archives/stretch.list.chroot config/archives/stretch.list.binary
+    cp config/archives/${dist}.list.chroot config/archives/${dist}.list.binary
+}
+
+
+for dist in stretch jessie-backports
+do
+    create_pinned_apt_config_for_dist ${dist}
+done
