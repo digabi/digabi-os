@@ -115,7 +115,12 @@ build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c 'cd linux-tools-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
 	$(VAGRANT) ssh -c 'cd linux-tools* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) || exit 0'
 	$(VAGRANT) ssh -c 'cd linux-tools* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
-	$(VAGRANT) ssh -c 'mv linux*.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
+	# broadcom dkms
+	$(VAGRANT) ssh -c 'sudo apt-get -y -t jessie-backports install linux-compiler-gcc-5-x86'
+	$(VAGRANT) ssh -c 'sudo dpkg -i linux-image-4.4*.deb linux-headers-4.4*.deb linux-kbuild-4.4*.deb'
+	$(VAGRANT) ssh -c 'sudo apt-get install broadcom-sta-dkms'
+	$(VAGRANT) ssh -c 'find /lib/modules/ -name wl.ko | cpio -o > wl-modules.cpio'
+	$(VAGRANT) ssh -c 'mv linux*.deb *.dsc *.changes *.xz wl-modules.cpio $(ARTIFACTS_MOUNT)'
 
 package: $(STAGE)/environment up
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source $(PACKAGE) && cd $(PACKAGE)-* && debchange --local "+ypcs$(BUILD_NUMBER)" "Automatic CI build." && debuild-pbuilder -j$(DIGABI_BUILD_CPUS) -us -uc'
