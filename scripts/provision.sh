@@ -61,6 +61,9 @@ EOF
 echo "I: Update package lists..."
 apt-get -qy update
 
+echo "I: Uninstall postgres so that postgres installed inside chroot gets pristine port..."
+DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.5 postgresql-contrib-9.5 || true
+
 echo "I: Upgrade build system..."
 DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
 
