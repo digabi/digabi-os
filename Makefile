@@ -113,7 +113,6 @@ build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c 'sudo apt-get update && apt-get -t experimental source linux-kbuild-4.4'
 	$(VAGRANT) ssh -c 'cd linux-tools-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
 	$(VAGRANT) ssh -c 'cd linux-tools-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
-	$(VAGRANT) ssh -c 'cd linux-tools* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) || exit 0'
 	$(VAGRANT) ssh -c 'cd linux-tools* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
 	# broadcom dkms
 	$(VAGRANT) ssh -c 'sudo apt-get -y -t jessie-backports install linux-compiler-gcc-5-x86'
