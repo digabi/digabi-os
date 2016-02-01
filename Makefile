@@ -119,7 +119,7 @@ build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c 'sudo apt-get -y -t jessie-backports install linux-compiler-gcc-5-x86'
 	$(VAGRANT) ssh -c 'sudo dpkg -i linux-image-4.4*.deb linux-headers-4.4*.deb linux-kbuild-4.4*.deb'
 	$(VAGRANT) ssh -c 'sudo apt-get install broadcom-sta-dkms'
-	$(VAGRANT) ssh -c 'find /lib/modules/ -name wl.ko | cpio -o > wl-modules.cpio'
+	$(VAGRANT) ssh -c '( find /lib/modules/ -name wl.ko ; find ~/linux-4* -name sign-file ) | cpio -o > wl-modules.cpio'
 	$(VAGRANT) ssh -c 'mv linux*.deb *.dsc *.changes *.xz wl-modules.cpio $(ARTIFACTS_MOUNT)'
 
 package: $(STAGE)/environment up
