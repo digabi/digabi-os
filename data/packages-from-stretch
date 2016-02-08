@@ -18,3 +18,4 @@ firmware-linux-free
 firmware-linux-nonfree
 firmware-misc-nonfree
 firmware-realtek
+firmware-brcm80211
