@@ -95,8 +95,8 @@ $(STAGE)/build: $(STAGE)/config up
 build-kernel: $(STAGE)/environment up
 	@echo "Prepare environment..."
 	$(VAGRANT) ssh -c 'printf "deb http://http.debian.net/debian jessie-backports main\n" | sudo tee -a /etc/apt/sources.list'
-	$(VAGRANT) ssh -c 'printf "deb http://ftp.se.debian.org/debian experimental main\ndeb-src http://ftp.se.debian.org/debian experimental main\n" | sudo tee -a /etc/apt/sources.list'
-	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t experimental source linux'
+	$(VAGRANT) ssh -c 'printf "deb http://ftp.se.debian.org/debian unstable main\ndeb-src http://ftp.se.debian.org/debian unstable main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t unstable source linux'
 	@echo "Apply local patches.."
 	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/module-sign.diff'
 	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/disable-rt.diff'
@@ -106,12 +106,12 @@ build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c 'cd linux-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
 	@echo "Try building. First build fails after updating version, so ignore the fail..."
 	$(VAGRANT) ssh -c 'printf "deb http://ftp.se.debian.org/debian stretch main\n" | sudo tee -a /etc/apt/sources.list'
-	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t experimental source linux'
+	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t unstable source linux'
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) || exit 0'
 	@echo "Now building packages..."
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
 	@echo "Build linux-kbuild.."
-	$(VAGRANT) ssh -c 'sudo apt-get update && apt-get -t experimental source linux-kbuild-4.4'
+	$(VAGRANT) ssh -c 'sudo apt-get update && apt-get -t unstable source linux-kbuild-4.4'
 	$(VAGRANT) ssh -c 'cd linux-tools-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
 	$(VAGRANT) ssh -c 'cd linux-tools-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
 	$(VAGRANT) ssh -c 'cd linux-tools* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
