@@ -2,7 +2,7 @@ Index: linux-3.16.7-ckt9/debian/config/config
 ===================================================================
 --- linux-3.16.7-ckt9.orig/debian/config/config
 +++ linux-3.16.7-ckt9/debian/config/config
-@@ -5061,7 +5061,11 @@ CONFIG_MODULE_FORCE_UNLOAD=y
+@@ -5582,7 +5582,11 @@
  CONFIG_MODVERSIONS=y
  # CONFIG_MODULE_SRCVERSION_ALL is not set
  #. Not yet
@@ -12,17 +12,17 @@ Index: linux-3.16.7-ckt9/debian/config/config
 +CONFIG_MODULE_SIG_ALL=y
 +CONFIG_MODULE_SIG_SHA1=y
 +CONFIG_MODULE_SIG_HASH="sha1"
+ # CONFIG_MODULE_COMPRESS is not set
  
  ##
- ## file: kernel/gcov/Kconfig
 Index: linux-3.16.7-ckt9/debian/rules.real
 ===================================================================
 --- linux-3.16.7-ckt9.orig/debian/rules.real	2015-04-14 15:18:23.000000000 -0400
 +++ linux-3.16.7-ckt9/debian/rules.real	2015-05-25 15:44:58.917896407 -0400
-@@ -351,7 +351,7 @@
- 	  install-image_$(ARCH)_$(FEATURESET)_$(FLAVOUR)_plain_dt \
+@@ -367,7 +367,7 @@
+ 	+$(MAKE_SELF) \
+ 	  install-image_$(ARCH)_$(FEATURESET)_$(FLAVOUR)_dt \
  	  DIR='$(DIR)' PACKAGE_DIR='$(PACKAGE_DIR)' REAL_VERSION='$(REAL_VERSION)'
- ifeq ($(MODULES),True)
 -	+$(MAKE_CLEAN) -C $(DIR) modules_install DEPMOD='$(CURDIR)/debian/bin/no-depmod' INSTALL_MOD_PATH='$(CURDIR)'/$(PACKAGE_DIR) INSTALL_MOD_STRIP=1
 +	+$(MAKE_CLEAN) -C $(DIR) modules_install DEPMOD='$(CURDIR)/debian/bin/no-depmod' INSTALL_MOD_PATH='$(CURDIR)'/$(PACKAGE_DIR)
  ifeq ($(DEBUG),True)
