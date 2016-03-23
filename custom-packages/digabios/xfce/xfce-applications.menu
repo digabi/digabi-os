@@ -37,6 +37,7 @@
         <Filename>pavucontrol.desktop</Filename>
         <Filename>vlc.desktop</Filename>
         <Separator/>
+        <Filename>digabi-language-selection.desktop</Filename>
         <Filename>xfce-display-settings.desktop</Filename>
 	<Filename>digabi-dpi.desktop</Filename>
         <Filename>xfce-mouse-settings.desktop</Filename>
