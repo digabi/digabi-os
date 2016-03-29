@@ -1,6 +1,6 @@
 etc/default/keyboard.digabios
-etc/default/locale.digabios.fi
-etc/default/locale.digabios.sv
+etc/default/locale.digabios-fi
+etc/default/locale.digabios-sv
 etc/iceweasel
 etc/locale.gen.digabios
 etc/skel

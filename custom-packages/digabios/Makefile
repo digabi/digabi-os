@@ -34,8 +34,8 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc.digabios
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
-	install -D -m 0644 locale.fi $(DESTDIR)/etc/default/locale.digabios.fi
-	install -D -m 0644 locale.sv $(DESTDIR)/etc/default/locale.digabios.sv
+	install -D -m 0644 locale.fi $(DESTDIR)/etc/default/locale.digabios-fi
+	install -D -m 0644 locale.sv $(DESTDIR)/etc/default/locale.digabios-sv
 	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
 	install -D -m 0644 xfce/xfce-applications.menu $(DESTDIR)/etc/xdg/menus/xfce-applications.menu.digabios

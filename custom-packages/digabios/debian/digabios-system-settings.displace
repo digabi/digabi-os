@@ -1,6 +1,6 @@
 /etc/locale.gen.digabios
 /etc/default/keyboard.digabios
-/etc/default/locale.digabios
+/etc/default/locale.digabios-fi
 /etc/iceweasel/profile/localstore.rdf.digabios
 /etc/timezone.digabios
 /etc/xdg/user-dirs.defaults.digabios
