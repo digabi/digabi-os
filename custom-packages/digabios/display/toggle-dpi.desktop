@@ -2,9 +2,9 @@
 Version=1.0
 Terminal=false
 Type=Application
-Name=Toggle high resolution support
-Name[fi]=Aseta korkearesoluutioinen näyttötila
-Name[sv]=TODO
+Name=Toggle font size (big/normal)
+Name[fi]=Vaihda fontin kokoa (iso/normaali)
+Name[sv]=Växla teckenstorlek (stor/normal)
 Description=Toggle HiDPI on/off
 Description[fi]=Aseta HiDPI päälle/pois
 TryExec=/usr/bin/digabi-dpi
