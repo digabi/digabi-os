@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=RuSlav
+Name[fi]=RuSlav
+Name[sv]=RuSlav
+Comment=Switch keyboard language to Russian (RuSlav)
+Comment[fi]=Vaihda näppäimistön kieleksi venäjä (RuSlav)
+Comment[sv]=Byt tangentlayouten till ryska (RuSlav)
+Exec=setxkbmap ruslav
+Icon=digabi-keyboard
+Path=
+Terminal=false
+StartupNotify=false

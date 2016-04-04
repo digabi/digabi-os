@@ -63,5 +63,7 @@ install: $(CONTENT_DIR)
 	install -d m 0755 $(DESTDIR)/usr/share/icons/digabi
 #	install -m 0644 icons/* $(DESTDIR)/usr/share/icons/digabi
 	cp -R icons/* $(DESTDIR)/usr/share/icons/digabi
+	# keyboard rules
+	install -m 0644 xkb-symbols/* $(DESTDIR)/usr/share/X11/xkb/symbols
 deb:
 	dpkg-buildpackage -us -uc
