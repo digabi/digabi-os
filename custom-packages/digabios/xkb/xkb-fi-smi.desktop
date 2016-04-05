@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Northern Sami
+Name[fi]=pohjoissaame
+Name[sv]=nordsamiska
+Comment=Switch keyboard language to Northern Sami
+Comment[fi]=Vaihda näppäimistön kieleksi pohjoissaame
+Comment[sv]=Byt tangentlayouten till nordsamiska
+Exec=setxkbmap fi smi
+Icon=digabi-keyboard
+Path=
+Terminal=false
+StartupNotify=false
