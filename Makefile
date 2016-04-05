@@ -94,20 +94,33 @@ $(STAGE)/build: $(STAGE)/config up
 
 build-kernel: $(STAGE)/environment up
 	@echo "Prepare environment..."
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source linux'
-	@echo "Enable module signing"
+	$(VAGRANT) ssh -c 'printf "deb http://http.debian.net/debian jessie-backports main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c 'printf "deb http://ftp.se.debian.org/debian unstable main\ndeb-src http://ftp.se.debian.org/debian unstable main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t unstable source linux'
+	@echo "Apply local patches.."
 	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/module-sign.diff'
+	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/disable-rt.diff'
 	$(VAGRANT) ssh -c 'cd linux-* && sed -i "s/\(^abiname.*\)/\1.ytl/" debian/config/defines'
 	@echo "Increment package version..."
 	$(VAGRANT) ssh -c 'cd linux-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
 	$(VAGRANT) ssh -c 'cd linux-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
 	@echo "Try building. First build fails after updating version, so ignore the fail..."
+	$(VAGRANT) ssh -c 'printf "deb http://ftp.se.debian.org/debian stretch main\n" | sudo tee -a /etc/apt/sources.list'
+	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t unstable source linux'
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) || exit 0'
 	@echo "Now building packages..."
 	$(VAGRANT) ssh -c 'cd linux-* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
-	#$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd linux-* && fakeroot make -j$(DIGABI_BUILD_CPUS) -f debian/rules.gen binary-arch_i386_none_686-pae'
-	#$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; cd linux-* && fakeroot make -j$(DIGABI_BUILD_CPUS) -f debian/rules.gen binary-arch_amd64_none_none'
-	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; mv *.deb *.dsc *.changes *.xz $(ARTIFACTS_MOUNT)'
+	@echo "Build linux-kbuild.."
+	$(VAGRANT) ssh -c 'sudo apt-get update && apt-get -t unstable source linux-kbuild-4.4'
+	$(VAGRANT) ssh -c 'cd linux-tools-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
+	$(VAGRANT) ssh -c 'cd linux-tools-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
+	$(VAGRANT) ssh -c 'cd linux-tools* && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS) || sudo apt-get -f install && debuild-pbuilder -us -uc -j$(DIGABI_BUILD_CPUS)'
+	# broadcom dkms
+	$(VAGRANT) ssh -c 'sudo apt-get -y -t jessie-backports install linux-compiler-gcc-5-x86'
+	$(VAGRANT) ssh -c 'sudo dpkg -i linux-image-4.4*.deb linux-headers-4.4*.deb linux-kbuild-4.4*.deb'
+	$(VAGRANT) ssh -c 'sudo apt-get install broadcom-sta-dkms'
+	$(VAGRANT) ssh -c '( find /lib/modules/ -name wl.ko ; find ~/linux-4* -name sign-file ) | cpio -o > wl-modules.cpio'
+	$(VAGRANT) ssh -c 'mv linux*.deb *.dsc *.changes *.xz wl-modules.cpio $(ARTIFACTS_MOUNT)'
 
 package: $(STAGE)/environment up
 	$(VAGRANT) ssh -c '$(VM_ENVIRONMENT) ; sudo apt-get update && apt-get source $(PACKAGE) && cd $(PACKAGE)-* && debchange --local "+ypcs$(BUILD_NUMBER)" "Automatic CI build." && debuild-pbuilder -j$(DIGABI_BUILD_CPUS) -us -uc'

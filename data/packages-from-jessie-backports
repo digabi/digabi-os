@@ -7,15 +7,4 @@
 # ignored by the script.
 #
 
-# Fresh firmware files
-
-firmware-amd-graphics
-firmware-atheros
-firmware-ipw2x00
-firmware-iwlwifi
-firmware-linux
-firmware-linux-free
-firmware-linux-nonfree
-firmware-misc-nonfree
-firmware-realtek
-firmware-brcm80211
+xserver-xorg-video-intel

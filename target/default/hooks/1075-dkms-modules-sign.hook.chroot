@@ -4,9 +4,23 @@ set -e
 
 sign_tool=$(tar xvJf /usr/src/linux-source-*.tar.xz --no-anchored --no-wildcards "scripts/sign-file")
 
+cat>/tmp/maybe_sign.sh<<EOF
+#!/bin/sh
+
+module="\$1"
+
+if ! grep -q "~Module signature appended~" "\${module}"
+then
+    /${sign_tool} -v sha1 /live-build/config/signing_keys/signing_key.priv /live-build/config/signing_keys/signing_key.x509 "\${module}"
+fi
+
+EOF
+
+chmod 755 /tmp/maybe_sign.sh
+
 for kernel_dir in /lib/modules/*
 do
-    [ -d ${kernel_dir}/updates/dkms ] && find ${kernel_dir}/updates/dkms/ -name "*.ko" | xargs -n1 /${sign_tool} -v sha1 /live-build/config/signing_keys/signing_key.priv /live-build/config/signing_keys/signing_key.x509
+    [ -d ${kernel_dir}/updates/dkms ] && find ${kernel_dir}/updates/dkms/ -name "*.ko" | xargs -n1 /tmp/maybe_sign.sh
 done
 
-rm ${sign_tool}
+rm -f ${sign_tool} /tmp/maybe_sign.sh
