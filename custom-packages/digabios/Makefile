@@ -54,6 +54,8 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfce/xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
 	install -D -m 0644 xfce/org.xfce.power.policy $(DESTDIR)/usr/share/polkit-1/actions/org.xfce.power.policy.digabios
 	install -D -m 0755 display/blank.sh $(DESTDIR)/usr/bin/xlock.digabios
+	install -d -m 0755 $(DESTDIR)/usr/share/X11/xkb/symbols
+	install -m 0644 xkb-symbols/* $(DESTDIR)/usr/share/X11/xkb/symbols
 	# digabios-firewall
 	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d
 	install -D -m 0644 firewall/digabios-firewall.service $(DESTDIR)/lib/systemd/system/digabios-firewall.service
@@ -63,7 +65,5 @@ install: $(CONTENT_DIR)
 	install -d m 0755 $(DESTDIR)/usr/share/icons/digabi
 #	install -m 0644 icons/* $(DESTDIR)/usr/share/icons/digabi
 	cp -R icons/* $(DESTDIR)/usr/share/icons/digabi
-	# keyboard rules
-	install -m 0644 xkb-symbols/* $(DESTDIR)/usr/share/X11/xkb/symbols
 deb:
 	dpkg-buildpackage -us -uc

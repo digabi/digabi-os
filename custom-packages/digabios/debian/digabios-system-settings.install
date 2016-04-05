@@ -17,3 +17,4 @@ usr/share/applications/digabi-dpi.desktop
 usr/share/applications/xkb-*.desktop
 usr/share/polkit-1
 var/lib/live/config/*
+usr/share/X11/xkb/symbols/ruslav
