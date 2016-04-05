@@ -34,7 +34,8 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc.digabios
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
-	install -D -m 0644 locale $(DESTDIR)/etc/default/locale.digabios
+	install -D -m 0644 locale.fi $(DESTDIR)/etc/default/locale.digabios-fi
+	install -D -m 0644 locale.sv $(DESTDIR)/etc/default/locale.digabios-sv
 	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
 	install -D -m 0644 xfce/xfce-applications.menu $(DESTDIR)/etc/xdg/menus/xfce-applications.menu.digabios
@@ -43,9 +44,8 @@ install: $(CONTENT_DIR)
 	install -D -m 0755 digabi-panel-color $(DESTDIR)/usr/bin/digabi-panel-color
 	install -D -m 0644 geogebra.properties $(DESTDIR)/etc/skel/.config/geogebra/geogebra.properties
 	install -D -m 0644 timezone $(DESTDIR)/etc/timezone.digabios
-	install -d -m 0755 $(DESTDIR)/etc/skel/.config/xfce4/panel/launcher-11
-	install -m 0644 xkb/* $(DESTDIR)/etc/skel/.config/xfce4/panel/launcher-11
-	install -D -m 0644 xfce/batteryrc $(DESTDIR)/etc/skel/.config/xfce4/panel/battery-16.rc
+	install -d -m 0755 $(DESTDIR)/usr/share/applications
+	install -m 0644 xkb/* $(DESTDIR)/usr/share/applications
 	touch $(DESTDIR)/var/lib/live/config/locales
 	touch $(DESTDIR)/var/lib/live/config/keyboard-configuration
 	install -D -m 0755 display/toggle-dpi.sh $(DESTDIR)/usr/bin/digabi-dpi

@@ -14,6 +14,7 @@ Vcs-Browser: https://github.com/digabi/digabios
 Package: digabios
 Architecture: all
 Depends: ${misc:Depends},
+ arping,
  console-data,
  consolekit,
  console-setup,
@@ -290,6 +291,7 @@ Depends: ${misc:Depends},
  dia,
  dia-shapes,
  digabi-koe,
+ digabi-koe-ohje,
  digabios-firewall (= ${binary:Version}),
  digabios-system-settings (= ${binary:Version}),
  geogebra5,
@@ -325,7 +327,6 @@ Package: digabios-server
 Architecture: all
 Depends: ${misc:Depends},
  anacron,
- arping,
  avahi-daemon,
  digabios-firewall (= ${binary:Version}),
  digabios-system-settings (= ${binary:Version}),
