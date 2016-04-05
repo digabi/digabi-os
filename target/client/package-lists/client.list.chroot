@@ -4,3 +4,9 @@ digabios-client
 #
 libpcap0.8
 ocl-icd-libopencl1
+#
+# TI inspire dependencies:
+#
+libgphoto2-6
+libgphoto2-port10
+ocl-icd-libopencl1
