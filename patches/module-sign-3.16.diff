@@ -1,0 +1,103 @@
+Index: linux-3.16.7-ckt9/debian/config/config
+===================================================================
+--- linux-3.16.7-ckt9.orig/debian/config/config
++++ linux-3.16.7-ckt9/debian/config/config
+@@ -5061,7 +5061,11 @@ CONFIG_MODULE_FORCE_UNLOAD=y
+ CONFIG_MODVERSIONS=y
+ # CONFIG_MODULE_SRCVERSION_ALL is not set
+ #. Not yet
+-# CONFIG_MODULE_SIG is not set
++CONFIG_MODULE_SIG=y
++CONFIG_MODULE_SIG_FORCE=y
++CONFIG_MODULE_SIG_ALL=y
++CONFIG_MODULE_SIG_SHA1=y
++CONFIG_MODULE_SIG_HASH="sha1"
+ 
+ ##
+ ## file: kernel/gcov/Kconfig
+Index: linux-3.16.7-ckt9/debian/rules.real
+===================================================================
+--- linux-3.16.7-ckt9.orig/debian/rules.real	2015-04-14 15:18:23.000000000 -0400
++++ linux-3.16.7-ckt9/debian/rules.real	2015-05-25 15:44:58.917896407 -0400
+@@ -351,7 +351,7 @@
+ 	  install-image_$(ARCH)_$(FEATURESET)_$(FLAVOUR)_plain_dt \
+ 	  DIR='$(DIR)' PACKAGE_DIR='$(PACKAGE_DIR)' REAL_VERSION='$(REAL_VERSION)'
+ ifeq ($(MODULES),True)
+-	+$(MAKE_CLEAN) -C $(DIR) modules_install DEPMOD='$(CURDIR)/debian/bin/no-depmod' INSTALL_MOD_PATH='$(CURDIR)'/$(PACKAGE_DIR) INSTALL_MOD_STRIP=1
++	+$(MAKE_CLEAN) -C $(DIR) modules_install DEPMOD='$(CURDIR)/debian/bin/no-depmod' INSTALL_MOD_PATH='$(CURDIR)'/$(PACKAGE_DIR)
+ ifeq ($(DEBUG),True)
+ 	set -o pipefail; \
+ 	find $(PACKAGE_DIR) -name '*.ko' | sed 's|$(PACKAGE_DIR)/lib/modules/$(REAL_VERSION)/kernel/||' | while read module ; do \
+Index: linux-3.16.7-ckt9/debian/config/amd64/defines
+===================================================================
+--- linux-3.16.7-ckt9.orig/debian/config/amd64/defines	2015-05-26 03:57:13.512613160 -0400
++++ linux-3.16.7-ckt9/debian/config/amd64/defines	2015-04-14 15:18:22.000000000 -0400
+@@ -5,7 +5,7 @@
+ kernel-arch: x86
+ 
+ [build]
+-debug-info: true
++debug-info: false
+ image-file: arch/x86/boot/bzImage
+ 
+ [image]
+Index: linux-3.16.7-ckt9/debian/config/amd64/defines
+===================================================================
+--- linux-3.16.7-ckt9.orig/debian/config/i386/defines	2015-05-26 03:57:32.540615843 -0400
++++ linux-3.16.7-ckt9/debian/config/i386/defines	2015-04-14 15:18:22.000000000 -0400
+@@ -32,7 +32,7 @@
+  i386/config.586
+ 
+ [686-pae_build]
+-debug-info: true
++debug-info: false
+ 
+ [686-pae_description]
+ hardware: modern PCs
+Index: linux-3.16.7-ckt9/kernel/Makefile
+--- linux-3.16.7-ckt9.orig/kernel/Makefile	2015-03-30 06:09:09.000000000 -0400
++++ linux-3.16.7-ckt9/kernel/Makefile	2015-05-28 10:12:48.137082466 -0400
+@@ -184,40 +184,7 @@
+ $(error Could not determine digest type to use from kernel config)
+ endif
+ 
+-signing_key.priv signing_key.x509: x509.genkey
+-	@echo "###"
+-	@echo "### Now generating an X.509 key pair to be used for signing modules."
+-	@echo "###"
+-	@echo "### If this takes a long time, you might wish to run rngd in the"
+-	@echo "### background to keep the supply of entropy topped up.  It"
+-	@echo "### needs to be run as root, and uses a hardware random"
+-	@echo "### number generator if one is available."
+-	@echo "###"
+-	openssl req -new -nodes -utf8 -$(CONFIG_MODULE_SIG_HASH) -days 36500 \
+-		-batch -x509 -config x509.genkey \
+-		-outform DER -out signing_key.x509 \
+-		-keyout signing_key.priv 2>&1
+-	@echo "###"
+-	@echo "### Key pair generated."
+-	@echo "###"
+-
+-x509.genkey:
+-	@echo Generating X.509 key generation config
+-	@echo  >x509.genkey "[ req ]"
+-	@echo >>x509.genkey "default_bits = 4096"
+-	@echo >>x509.genkey "distinguished_name = req_distinguished_name"
+-	@echo >>x509.genkey "prompt = no"
+-	@echo >>x509.genkey "string_mask = utf8only"
+-	@echo >>x509.genkey "x509_extensions = myexts"
+-	@echo >>x509.genkey
+-	@echo >>x509.genkey "[ req_distinguished_name ]"
+-	@echo >>x509.genkey "O = Magrathea"
+-	@echo >>x509.genkey "CN = Glacier signing key"
+-	@echo >>x509.genkey "emailAddress = slartibartfast@magrathea.h2g2"
+-	@echo >>x509.genkey
+-	@echo >>x509.genkey "[ myexts ]"
+-	@echo >>x509.genkey "basicConstraints=critical,CA:FALSE"
+-	@echo >>x509.genkey "keyUsage=digitalSignature"
+-	@echo >>x509.genkey "subjectKeyIdentifier=hash"
+-	@echo >>x509.genkey "authorityKeyIdentifier=keyid"
++signing_key.priv signing_key.x509:
++	@echo "Copying module signing keys"
++	@cp -v /vagrant/signing-keys/signing_key.* .
+ endif
