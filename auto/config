@@ -136,10 +136,7 @@ fi
 
 LINUX_FLAVOURS="digabios"
 
-if contains "${DIGABI_BUILD_TARGET}" client
-then
-    LINUX_FLAVOURS="${LINUX_FLAVOURS} 4.4.0-1.ytl"
-fi
+LINUX_FLAVOURS="${LINUX_FLAVOURS} 4.4.0-1.ytl"
 
 lb config noauto \
     --apt-indices "false" \
