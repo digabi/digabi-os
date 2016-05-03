@@ -99,7 +99,6 @@ build-kernel: $(STAGE)/environment up
 	$(VAGRANT) ssh -c 'sudo apt-get update && sudo apt-get -y -t jessie-backports install pbuilder && apt-get -t unstable source linux'
 	@echo "Apply local patches.."
 	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/module-sign.diff'
-	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/disable-rt.diff'
 	$(VAGRANT) ssh -c 'cd linux-* && sed -i "s/\(^abiname.*\)/\1.ytl/" debian/config/defines'
 	@echo "Increment package version..."
 	$(VAGRANT) ssh -c 'cd linux-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
