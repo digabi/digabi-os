@@ -1,20 +1,22 @@
 Index: linux-3.16.7-ckt9/debian/config/config
 ===================================================================
---- linux-3.16.7-ckt9.orig/debian/config/config
-+++ linux-3.16.7-ckt9/debian/config/config
-@@ -5582,7 +5582,11 @@
- CONFIG_MODVERSIONS=y
+--- linux-4.5.2.orig/debian/config/config	2016-04-28 10:32:37.000000000 -0400
++++ linux-4.5.2/debian/config/config	2016-05-03 08:42:43.148702805 -0400
+@@ -5590,11 +5590,11 @@
  # CONFIG_MODULE_SRCVERSION_ALL is not set
- #. Not yet
--# CONFIG_MODULE_SIG is not set
-+CONFIG_MODULE_SIG=y
+ CONFIG_MODULE_SIG=y
+ #. Signature validation is a run-time option
+-# CONFIG_MODULE_SIG_FORCE is not set
 +CONFIG_MODULE_SIG_FORCE=y
+ #. Signatures are added in linux-signed
+-# CONFIG_MODULE_SIG_ALL is not set
 +CONFIG_MODULE_SIG_ALL=y
+ ## choice: Which hash algorithm should modules be signed with?
+-CONFIG_MODULE_SIG_SHA256=y
 +CONFIG_MODULE_SIG_SHA1=y
-+CONFIG_MODULE_SIG_HASH="sha1"
+ ## end choice
  # CONFIG_MODULE_COMPRESS is not set
  
- ##
 Index: linux-3.16.7-ckt9/debian/rules.real
 ===================================================================
 --- linux-3.16.7-ckt9.orig/debian/rules.real	2015-04-14 15:18:23.000000000 -0400
