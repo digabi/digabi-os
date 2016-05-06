@@ -100,6 +100,7 @@ build-kernel: $(STAGE)/environment up
 	@echo "Apply local patches.."
 	$(VAGRANT) ssh -c 'cd linux-* && patch -p1 < /vagrant/patches/module-sign.diff'
 	$(VAGRANT) ssh -c 'cd linux-* && sed -i "s/\(^abiname.*\)/\1.ytl/" debian/config/defines'
+	$(VAGRANT) ssh -c 'cp /vagrant/signing-keys/signing_key.* linux-*/certs/'
 	@echo "Increment package version..."
 	$(VAGRANT) ssh -c 'cd linux-* && debchange --local digabi$(shell date +%Y%m%d%H%M%S) "Automated build by CI (dos-kernel)."'
 	$(VAGRANT) ssh -c 'cd linux-* && EDITOR=/bin/true dpkg-source -q --commit . ytl'
