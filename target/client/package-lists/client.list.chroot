@@ -4,8 +4,6 @@ digabios-client
 #
 classpadmanagerforclasspadii
 #
-# TI inspire dependencies:
+# TI inspire
 #
-libgphoto2-6
-libgphoto2-port10
-ocl-icd-libopencl1
+tinspirecxcasstudentsoftware:i386
