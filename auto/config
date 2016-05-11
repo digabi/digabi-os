@@ -134,9 +134,7 @@ then
     BINARY_IMAGES="iso-hybrid"
 fi
 
-LINUX_FLAVOURS="digabios"
-
-LINUX_FLAVOURS="${LINUX_FLAVOURS} 4.4.0-1.ytl"
+LINUX_FLAVOURS="3.16.7-ckt25-ytl 4.4.6-ytl"
 
 lb config noauto \
     --apt-indices "false" \
