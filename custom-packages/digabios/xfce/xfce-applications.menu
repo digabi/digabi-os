@@ -32,6 +32,7 @@
         <Filename>geogebra.desktop</Filename>
         <Filename>kcalc.desktop</Filename>
         <Filename>wxmaxima.desktop</Filename>
+        <Filename>ClassPadManagerforClassPadII.desktop</Filename>
         <Separator/>
 	<Filename>digabi-sound-test.desktop</Filename>
         <Filename>pavucontrol.desktop</Filename>

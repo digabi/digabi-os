@@ -1,9 +1,8 @@
 digabios-client
 #
-# Casio classmanager dependencies:
+# Casio classmanager
 #
-libpcap0.8
-ocl-icd-libopencl1
+classpadmanagerforclasspadii
 #
 # TI inspire dependencies:
 #
