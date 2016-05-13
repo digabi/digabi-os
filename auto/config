@@ -134,7 +134,7 @@ then
     BINARY_IMAGES="iso-hybrid"
 fi
 
-LINUX_FLAVOURS="3.16.7-ckt25-ytl 4.4.6-ytl"
+LINUX_FLAVOURS="3.16.7-ckt25-ytl-${ARCH} 4.4.6-ytl-${ARCH}"
 
 lb config noauto \
     --apt-indices "false" \
