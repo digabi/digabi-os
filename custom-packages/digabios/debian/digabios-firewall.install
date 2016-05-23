@@ -6,11 +6,8 @@ etc/digabi/firewall.d/0000-initialize-tables.v6.conf
 etc/digabi/firewall.d/0001-add-digabi-tables.v4.conf
 etc/digabi/firewall.d/0200-allow-existing-connections.v4.conf
 etc/digabi/firewall.d/0210-allow-dhcp.v4.conf
-etc/digabi/firewall.d/0250-allow-ping.v4.conf
 etc/digabi/firewall.d/0500-forward-traffic-to-digabi-tables.v4.conf
-etc/digabi/firewall.d/6000-allow-dns.v4.conf
 etc/digabi/firewall.d/8999-return-digabi-tables.v4.conf
 etc/digabi/firewall.d/9000-log-and-reject.v4.conf
 etc/digabi/firewall.d/9999-commit.v4.conf
 etc/digabi/firewall.d/9999-commit.v6.conf
-

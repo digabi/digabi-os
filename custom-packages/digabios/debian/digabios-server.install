@@ -1,2 +1,1 @@
-etc/digabi/firewall.d/0200-dhcp-server.v4.conf
-etc/digabi/firewall.d/5000-digabi-misc.v4.conf
+etc/digabi/firewall.d/5000-digabi-server.v4.conf
