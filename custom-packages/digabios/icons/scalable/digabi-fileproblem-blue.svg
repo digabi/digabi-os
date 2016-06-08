@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 47 49.4"
+	 enable-background="new 0 0 47 49.4" xml:space="preserve">
+<title>problem-icon</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<path id="Fill-3" sketch:type="MSShapeGroup" fill="#1F99BA" d="M19.8,24.7c0,1.1-0.9,2.1-2.1,2.1c-1.1,0-2.1-0.9-2.1-2.1
+		c0-1.1,0.9-2.1,2.1-2.1C18.9,22.6,19.8,23.6,19.8,24.7"/>
+	<path id="Fill-5" sketch:type="MSShapeGroup" fill="#1F99BA" d="M32.3,24.7c0,1.1-0.9,2.1-2.1,2.1c-1.1,0-2.1-0.9-2.1-2.1
+		c0-1.1,0.9-2.1,2.1-2.1C31.4,22.6,32.3,23.6,32.3,24.7"/>
+	<path id="Fill-7" sketch:type="MSShapeGroup" fill="#1F99BA" d="M24,31.2c3.9,0,7.3,2.3,8.9,5.8l-2.3,1c-1.2-2.6-3.8-4.3-6.6-4.3
+		s-5.5,1.7-6.6,4.3l-2.3-1C16.7,33.5,20.1,31.2,24,31.2"/>
+	<path fill="#1F99BA" d="M29.5,1H6.3v47.1H42V14.8L29.5,1z M30.4,6.4l6.2,6.9h-6.2V6.4z M9.3,45.1V4h18.1v12.3H39v28.8H9.3z"/>
+</g>
+</svg>
