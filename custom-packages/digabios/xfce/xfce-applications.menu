@@ -14,7 +14,7 @@
     </Include>
 
     <Layout>
-        <Filename>iceweasel.desktop</Filename>
+        <Filename>firefox-esr.desktop</Filename>
         <Separator/>
         <Filename>libreoffice-calc.desktop</Filename>
         <Filename>libreoffice-draw.desktop</Filename>
