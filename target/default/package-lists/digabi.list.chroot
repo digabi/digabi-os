@@ -1,4 +1,4 @@
 # Digabi customizations (apps, ui)
 
 digabios
-linux-headers-digabios linux-source xz-utils
+xz-utils
