@@ -286,7 +286,6 @@ Description: Simple firewall script for DigabiOS
 Package: digabios-client
 Architecture: all
 Depends: ${misc:Depends},
- browser-plugin-vlc,
  dia,
  dia-shapes,
  digabi-koe,
@@ -313,7 +312,6 @@ Depends: ${misc:Depends},
  phonon-backend-null,
  pinta,
  pulseaudio,
- vlc,
  wine,
  wxmaxima,
  xfce4-screenshooter
