@@ -134,7 +134,13 @@ then
     BINARY_IMAGES="iso-hybrid"
 fi
 
-LINUX_FLAVOURS="3.16.7-ckt25-ytl-${ARCH} 4.4.6-ytl-${ARCH}"
+WLAN_FLAVOUR="ytl"
+if [ "${WLAN}" = "true" ]
+then
+    WLAN_FLAVOUR="ytl-now"
+fi
+
+LINUX_FLAVOURS="3.16.7-ckt25-${WLAN_FLAVOUR}-${ARCH} 4.4.6-${WLAN_FLAVOUR}-${ARCH}"
 
 lb config noauto \
     --apt-indices "false" \
