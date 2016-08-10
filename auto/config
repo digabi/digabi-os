@@ -137,7 +137,7 @@ fi
 WLAN_FLAVOUR="ytl"
 if [ "${WLAN}" = "true" ]
 then
-    WLAN_FLAVOUR="ytl-now"
+    WLAN_FLAVOUR="ytl-wls"
 fi
 
 LINUX_FLAVOURS="3.16.7-ckt25-${WLAN_FLAVOUR}-${ARCH} 4.4.6-${WLAN_FLAVOUR}-${ARCH}"
