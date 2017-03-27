@@ -317,6 +317,7 @@ Depends: ${misc:Depends},
  pulseaudio,
  wine,
  wxmaxima,
+ xclip,
  xfce4-screenshooter
 Conflicts: digabios-server
 Provides: digabios-system-config
