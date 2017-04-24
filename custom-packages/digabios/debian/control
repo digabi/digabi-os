@@ -286,6 +286,7 @@ Description: Simple firewall script for DigabiOS
 Package: digabios-client
 Architecture: all
 Depends: ${misc:Depends},
+ 4fnotes,
  dia,
  dia-shapes,
  digabi-koe,
