@@ -22,17 +22,17 @@ case "$1" in
     configure)
         mkdir -p /usr/share/icons/hires/48x48/status /usr/share/icons/hires/32x32/status /usr/share/icons/hires/scalable/status
 	cp /usr/share/icons/digabi/panel/brightness-lcd-48.png /usr/share/icons/hires/48x48/status/xfpm-brightness-lcd.png
-    cp /usr/share/icons/digabi/panel/brightness-lcd-32.png /usr/share/icons/hires/32x32/status/xfpm-brightness-lcd.png
-    cp /usr/share/icons/digabi/panel/brightness-lcd-scalable.svg /usr/share/icons/hires/scalable/status/xfpm-brightness-lcd.svg
-    ;;
+        cp /usr/share/icons/digabi/panel/brightness-lcd-32.png /usr/share/icons/hires/32x32/status/xfpm-brightness-lcd.png
+        cp /usr/share/icons/digabi/panel/brightness-lcd-scalable.svg /usr/share/icons/hires/scalable/status/xfpm-brightness-lcd.svg
+        ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
-    ;;
+        ;;
 
     *)
         echo "postinst called with unknown argument \`$1'" >&2
         exit 1
-    ;;
+        ;;
 esac
 
 # dh_installdeb will replace this with shell code automatically
