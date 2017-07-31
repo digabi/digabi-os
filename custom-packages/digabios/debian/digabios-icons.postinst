@@ -20,6 +20,7 @@ set -e
 
 case "$1" in
     configure)
+        mkdir -p /usr/share/icons/hires/48x48/status /usr/share/icons/hires/32x32/status /usr/share/icons/hires/scalable/status
 	cp /usr/share/icons/digabi/panel/brightness-lcd-48.png /usr/share/icons/hires/48x48/status/xfpm-brightness-lcd.png
     cp /usr/share/icons/digabi/panel/brightness-lcd-32.png /usr/share/icons/hires/32x32/status/xfpm-brightness-lcd.png
     cp /usr/share/icons/digabi/panel/brightness-lcd-scalable.svg /usr/share/icons/hires/scalable/status/xfpm-brightness-lcd.svg
