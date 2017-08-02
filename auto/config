@@ -140,7 +140,7 @@ then
     WLAN_FLAVOUR="ytl-wls"
 fi
 
-LINUX_FLAVOURS="3.16.39-${WLAN_FLAVOUR}-${ARCH} 4.4.30-${WLAN_FLAVOUR}-${ARCH} 4.9.18-${WLAN_FLAVOUR}-${ARCH}"
+LINUX_FLAVOURS="3.16.43-${WLAN_FLAVOUR}-${ARCH} 4.4.30-${WLAN_FLAVOUR}-${ARCH} 4.9.30-${WLAN_FLAVOUR}-${ARCH}"
 
 lb config noauto \
     --apt-indices "false" \
