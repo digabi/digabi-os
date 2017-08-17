@@ -14,7 +14,7 @@
     </Include>
 
     <Layout>
-        <Filename>firefox-esr.desktop</Filename>
+        <Filename>digabi-koe-firefox-esr.desktop</Filename>
         <Separator/>
         <Filename>libreoffice-calc.desktop</Filename>
         <Filename>libreoffice-draw.desktop</Filename>
