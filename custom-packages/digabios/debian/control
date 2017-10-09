@@ -347,8 +347,9 @@ Depends: ${misc:Depends},
  postgresql-contrib-9.5,
  terminator,
  usbmount,
+ virtualbox-guest-x11,
  vlc,
- zenity,
+ zenity
 Conflicts: digabios-client
 Provides: digabios-system-config
 Description: Add server configuration to system
