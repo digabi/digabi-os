@@ -321,7 +321,7 @@ Depends: ${misc:Depends},
  phonon-backend-null,
  pinta,
  pulseaudio,
- wine,
+ wine32,
  wxmaxima,
  xclip,
  xfce4-screenshooter

@@ -8,3 +8,7 @@
 #
 
 xserver-xorg-video-intel
+wine:i386
+wine32:i386
+libwine:i386
+fonts-wine
