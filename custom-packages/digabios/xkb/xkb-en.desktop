@@ -2,12 +2,12 @@
 Version=1.0
 Type=Application
 Name=English
-Name[fi]=englanti
-Name[sv]=engelska
+Name[fi]=englanti (Yhdysvallat)
+Name[sv]=engelska (Förenta staterna)
 Comment=Switch keyboard language to English
 Comment[fi]=Vaihda näppäimistön kieleksi englanti
 Comment[sv]=Byt tangentlayouten till engelska
-Exec=setxkbmap en
+Exec=setxkbmap us
 Icon=digabi-keyboard
 Path=
 Terminal=false
