@@ -1,0 +1,2 @@
+#!/usr/bin/dh-exec
+etc/xdg/menus/xfce-applications-server.menu.digabios => etc/xdg/menus/xfce-applications.menu.digabios

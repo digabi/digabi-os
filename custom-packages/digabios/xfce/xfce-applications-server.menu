@@ -1,0 +1,27 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+  "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+    <Name>Xfce</Name>
+
+    <AppDir>/usr/share/applications/kde4/</AppDir>
+    <DefaultAppDirs/>
+    <DefaultDirectoryDirs/>
+    <DefaultMergeDirs/>
+
+    <Include>
+	<All/>
+    </Include>
+
+    <Layout>
+        <Filename>mousepad.desktop</Filename>
+        <Separator/>
+        <Filename>xfce-display-settings.desktop</Filename>
+	<Filename>digabi-dpi.desktop</Filename>
+        <Filename>xfce-mouse-settings.desktop</Filename>
+        <Filename>xfce-keyboard-settings.desktop</Filename>
+        <Separator/>
+        <Filename>old-answer-mebs.desktop</Filename>
+    </Layout>
+
+</Menu>

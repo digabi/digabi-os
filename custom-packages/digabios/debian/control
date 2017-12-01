@@ -5,6 +5,7 @@ Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Build-Depends: debhelper (>= 9),
  config-package-dev,
  dh-systemd,
+ dh-exec,
  librsvg2-bin
 Standards-Version: 3.9.5
 Homepage: https://digabi.fi/os

@@ -5,7 +5,6 @@ etc/locale.gen.digabios
 etc/skel
 etc/sysctl.d/*
 etc/timezone.digabios
-etc/xdg/menus/xfce-applications.menu.digabios
 etc/xdg/mimeapps.list
 etc/xdg/user-dirs.defaults.digabios
 etc/xdg/xfce4
