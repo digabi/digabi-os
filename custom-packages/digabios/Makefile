@@ -57,6 +57,8 @@ install: $(CONTENT_DIR)
 	install -D -m 0755 display/blank.sh $(DESTDIR)/usr/bin/xlock.digabios
 	install -d -m 0755 $(DESTDIR)/usr/share/X11/xkb/symbols
 	install -m 0644 xkb-symbols/* $(DESTDIR)/usr/share/X11/xkb/symbols
+	install -d -m 0755 $(DESTDIR)/etc/modprobe.d/
+	install -D -m 0644 modprobe.d/* $(DESTDIR)/etc/modprobe.d/
 	# digabios-firewall
 	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d
 	install -D -m 0644 firewall/digabios-firewall.service $(DESTDIR)/lib/systemd/system/digabios-firewall.service
