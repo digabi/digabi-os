@@ -48,6 +48,7 @@
         <Filename>xfce-keyboard-settings.desktop</Filename>
         <Separator/>
         <Filename>digabi-koe-ohje.desktop</Filename>
+        <Filename>maol-digi.desktop</Filename>
     </Layout>
 
 </Menu>
