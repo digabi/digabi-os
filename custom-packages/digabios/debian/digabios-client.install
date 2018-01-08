@@ -1,3 +1,4 @@
 #!/usr/bin/dh-exec
 etc/digabi/firewall.d/5100-allow-local-maxima.v4.conf
 etc/xdg/menus/xfce-applications-client.menu.digabios => etc/xdg/menus/xfce-applications.menu.digabios
+usr/share/mime/packages/application-x-nspire.xml
