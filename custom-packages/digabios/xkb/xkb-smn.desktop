@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Inari Sami
+Name[fi]=inarinsaame
+Name[sv]=enaresamiska
+Comment=Switch keyboard language to Inari Sami
+Comment[fi]=Vaihda näppäimistön kieleksi inarinsaame
+Comment[sv]=Byt tangentlayouten till enaresamiska
+Exec=setxkbmap smn
+Icon=digabi-keyboard
+Path=
+Terminal=false
+StartupNotify=false
