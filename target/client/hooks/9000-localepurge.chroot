@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+echo "I: Install and execute localepurge to remove unnecessary locales"
+
+apt-get -y install localepurge
+sed -i -e 's/USE_DPKG/#&/' /etc/locale.nopurge
+/usr/sbin/localepurge
+apt-get -y remove localepurge
