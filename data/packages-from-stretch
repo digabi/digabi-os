@@ -19,3 +19,5 @@ firmware-linux-nonfree
 firmware-misc-nonfree
 firmware-realtek
 firmware-brcm80211
+virtualbox-guest-x11
+virtualbox-guest-utils
