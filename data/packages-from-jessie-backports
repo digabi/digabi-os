@@ -12,3 +12,5 @@ wine
 wine32:i386
 libwine:i386
 fonts-wine
+virtualbox-guest-x11
+virtualbox-guest-utils
