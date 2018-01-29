@@ -340,6 +340,7 @@ Architecture: all
 Depends: ${misc:Depends},
  anacron,
  avahi-daemon,
+ digabi-vbox-guest-additions,
  digabios-firewall (= ${binary:Version}),
  digabios-system-settings (= ${binary:Version}),
  digabi-dd-curses,
@@ -353,7 +354,6 @@ Depends: ${misc:Depends},
  postgresql-contrib-9.5,
  terminator,
  usbmount,
- virtualbox-guest-x11,
  vlc,
  zenity
 Conflicts: digabios-client
