@@ -17,7 +17,7 @@ then
     echo "I: Configuring custom Debian mirror: ${DEBIAN_MIRROR}..."
     if [ -z "${DEBIAN_SUITE}" ]
     then
-        DEBIAN_SUITE="jessie"
+        DEBIAN_SUITE="stretch"
     fi
     (
         echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free"
@@ -39,15 +39,16 @@ echo "I: Update package lists..."
 sudo apt-get -qy update
 
 echo "I: Uninstall postgres so that postgres installed inside chroot gets pristine port..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.5 postgresql-contrib-9.5 || true
+sudo DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.6 postgresql-contrib-9.6 || true
 
 echo "I: Upgrade build system..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
 
 echo "I: Install digabi-dev, rsync..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-dev rsync git aptitude digabi-archive-keyring
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install build-essential rsync git aptitude live-build=4.0.5-24
 
 echo "I: Copy local sources.list configuration to build directory..."
+sed -i -e 's/^deb /&[trusted=yes] /' "${SOURCES}"
 cp ${SOURCES} target/default/archives/digabi.list.binary
 cp ${SOURCES} target/default/archives/digabi.list.chroot
 

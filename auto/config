@@ -105,7 +105,7 @@ ARCHIVE_AREAS="main contrib non-free"
 
 if [ -z "${DISTRIBUTION}" ]
 then
-    DISTRIBUTION="jessie"
+    DISTRIBUTION="stretch"
 fi
 
 DEFAULT_DEBIAN_MIRROR="http://httpredir.debian.org/debian"
