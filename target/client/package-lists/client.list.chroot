@@ -43,11 +43,11 @@ xfce4-screenshooter
 #
 # Casio classmanager
 #
-classpadmanagerforclasspadii
+#classpadmanagerforclasspadii
 #
 # TI inspire
 #
-wine
-wine32:i386
-winetricks
+#wine
+#wine32:i386
+#winetricks
 
