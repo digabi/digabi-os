@@ -11,8 +11,7 @@ gnuplot
 inkscape
 inotify-tools
 kcalc
-libgl1-mesa-swx11
-libgl1-mesa-swx11:i386
+libgl1-mesa-glx
 libreoffice-calc
 libreoffice-draw
 libreoffice-gtk
@@ -29,7 +28,7 @@ netpbm
 nodejs
 ntpdate
 okular
-openjdk-7-jre
+openjdk-8-jre
 openntpd
 patch
 pavucontrol
