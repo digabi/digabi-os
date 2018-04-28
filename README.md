@@ -10,9 +10,9 @@ Matriculation Examination Board of Finland (In Finnish:
 ### Client
 
  * runs on student devices (BYOD)
- * prevent cheating (using forbidden materials, communication w/ other 
+ * prevents cheating (using forbidden materials, communication w/ other 
   students, using internet when forbidden)
- * provide solid system for attending the exam
+ * provides a solid system for attending the exam
 
 
 ### Server
@@ -49,7 +49,7 @@ to the workstation. All testing is done at one's own risk.
 ## License
 This product is based on Debian 8.0 (jessie), and includes 
 software w/ various licenses. For licensing information, see [Debian 
-License information ](http://www.debian.org/legal/licenses/). Work done 
+License information](http://www.debian.org/legal/licenses/). Work done 
 by MEB is licensed under GPLv3, except MEB/Digabi logos (included in 
 some `digabi-*` packages), and when otherwise noted.
 
