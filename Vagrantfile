@@ -58,6 +58,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :vmware_workstation do |vmw, override|
     vmw.vmx['memsize'] = mem_size
     vmw.vmx['numvcpus'] = cpus unless cpus.nil?
+    vmw.ssh_info_public = true
   end
 
   config.vm.provider :vmware_fusion do |vmw, override|
