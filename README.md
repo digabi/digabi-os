@@ -32,7 +32,7 @@ For documentation, see `doc/*.md`. Manual for `live-build` toolset:
 
 
 ### How to build
-See `doc/building.md` for detailed instructions. TL;DR; `make -f Makefile.build dist`.
+See [`doc/building.md`](doc/building.md) for detailed instructions. TL;DR; `make -f Makefile.build dist`.
 
 
 ## Disclaimer
