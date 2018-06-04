@@ -1,7 +1,7 @@
 digabi-customization
 ================================
 
-Folder `proprieatry` should include:
+Folder `proprietary` should include:
 
  - proprietary/background.svg
  - proprietary/background.png
