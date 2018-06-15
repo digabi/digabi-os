@@ -10,7 +10,7 @@ echo "I: Copy local configuration to build directory..."
 cp ${CONFIG} target/default/digabi.local
 
 echo "I: Configure build env"
-cp "${SOURCES}" /etc/apt/sources.list.d/digabi.list
+sudo cp "${SOURCES}" /etc/apt/sources.list.d/digabi.list
 
 if [ -n "${DEBIAN_MIRROR}" ]
 then
@@ -19,35 +19,33 @@ then
     then
         DEBIAN_SUITE="jessie"
     fi
-    echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free" >/etc/apt/sources.list
-    echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free" >>/etc/apt/sources.list
-    echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free" >>/etc/apt/sources.list
-    echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free" >>/etc/apt/sources.list
+    (
+        echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free"
+        echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free"
+        echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free"
+        echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free"
+    ) | sudo tee /etc/apt/sources.list
 else
     echo "I: Using pre-configured Debian mirror."
 fi
 
 echo "I: Configure APT: do not install recommends..."
-cat << EOF >/etc/apt/apt.conf.d/99-no-recommends
+cat << EOF | sudo tee /etc/apt/apt.conf.d/99-no-recommends
 APT::Install-Recommends "false";
 APT::Install-Suggests "false";
 EOF
 
 echo "I: Update package lists..."
-apt-get -qy update
+sudo apt-get -qy update
 
 echo "I: Uninstall postgres so that postgres installed inside chroot gets pristine port..."
-DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.5 postgresql-contrib-9.5 || true
+sudo DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.5 postgresql-contrib-9.5 || true
 
 echo "I: Upgrade build system..."
-DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
+sudo DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
 
 echo "I: Install digabi-dev, rsync..."
-DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-dev rsync git aptitude digabi-archive-keyring
-
-echo "I: Saving provisioning state..."
-echo "${PROVISION_CHECKSUM}" >${PROVISION_STATEFILE}
-
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install digabi-dev rsync git aptitude digabi-archive-keyring
 
 echo "I: Copy local sources.list configuration to build directory..."
 cp ${SOURCES} target/default/archives/digabi.list.binary
