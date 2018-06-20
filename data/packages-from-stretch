@@ -19,3 +19,11 @@ firmware-linux-nonfree
 firmware-misc-nonfree
 firmware-realtek
 firmware-brcm80211
+
+# input event helpers
+
+libinput10
+libinput-tools
+libinput-bin
+libwacom2
+libwacom-common
