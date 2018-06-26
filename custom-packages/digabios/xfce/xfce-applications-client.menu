@@ -39,6 +39,7 @@
         <Filename>MarvinSketch.desktop</Filename>
         <Filename>4FNotes.desktop</Filename>
         <Filename>LoggerPro.desktop</Filename>
+        <Filename>maol-digi.desktop</Filename>
         <Separator/>
 	<Filename>digabi-sound-test.desktop</Filename>
         <Filename>pavucontrol.desktop</Filename>
@@ -51,7 +52,6 @@
         <Filename>xfce-keyboard-settings.desktop</Filename>
         <Separator/>
         <Filename>digabi-koe-ohje.desktop</Filename>
-        <Filename>maol-digi.desktop</Filename>
     </Layout>
 
 </Menu>
