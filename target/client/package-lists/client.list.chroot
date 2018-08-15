@@ -6,4 +6,7 @@ classpadmanagerforclasspadii
 #
 # TI inspire
 #
-tinspirecxcasstudentsoftware:i386
+wine
+wine32:i386
+winetricks
+
