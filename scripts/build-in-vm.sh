@@ -10,6 +10,7 @@ echo "I: Copy local configuration to build directory..."
 cp ${CONFIG} target/default/digabi.local
 
 echo "I: Configure build env"
+sed -i -e 's/^deb /&[trusted=yes] /' "${SOURCES}"
 sudo cp "${SOURCES}" /etc/apt/sources.list.d/digabi.list
 
 if [ -n "${DEBIAN_MIRROR}" ]
@@ -48,7 +49,6 @@ echo "I: Install digabi-dev, rsync..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install build-essential rsync git aptitude live-build=4.0.5-24
 
 echo "I: Copy local sources.list configuration to build directory..."
-sed -i -e 's/^deb /&[trusted=yes] /' "${SOURCES}"
 cp ${SOURCES} target/default/archives/digabi.list.binary
 cp ${SOURCES} target/default/archives/digabi.list.chroot
 
