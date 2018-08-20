@@ -11,8 +11,9 @@ nodejs
 nginx
 ntp
 openssh-server
-postgresql-9.6
-postgresql-contrib-9.6
+postgresql
+postgresql-contrib
+pciutils
 terminator
 vlc
 zenity
