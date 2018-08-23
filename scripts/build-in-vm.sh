@@ -59,6 +59,14 @@ echo "I: Copy local sources.list configuration to build directory..."
 cp ${SOURCES} target/default/archives/digabi.list.binary
 cp ${SOURCES} target/default/archives/digabi.list.chroot
 
+cat >> target/default/archives/digabi.pref.chroot << EOF
+Package: *
+Pin: release o=Digabi
+Pin-Priority: 1000
+EOF
+
+cp target/default/archives/digabi.pref.chroot target/default/archives/digabi.pref.binary
+
 mkdir -p config/signing_keys/ && cp signing_key.* config/signing_keys/
 
 echo "I: Running lb config..."
