@@ -16,7 +16,7 @@ if [ -n "${ROOT_PASSWORD}" ]
 then
 	echo "I: Setting root password..."
 	echo "root:${ROOT_PASSWORD}" |chpasswd
-	sed -i 's/^LIVE_USER_DEFAULT_GROUPS=\"/LIVE_USER_DEFAULT_GROUPS=\"wheel /' /etc/live/config/user.conf
+	sed -i 's/^LIVE_USER_DEFAULT_GROUPS=\"/LIVE_USER_DEFAULT_GROUPS=\"wheel /' etc/live/config.conf.d/digabi-user.conf
 else
 	echo "I: No root password defined."
 fi
