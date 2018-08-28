@@ -332,6 +332,8 @@ Depends: ${misc:Depends},
  pulseaudio,
  schoolstore-ti-widgets,
  wine,
+ wine32:i386,
+ winetricks,
  wxmaxima,
  xclip,
  xfce4-screenshooter
