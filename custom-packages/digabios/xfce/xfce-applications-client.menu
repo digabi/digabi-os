@@ -30,7 +30,7 @@
         <Filename>pinta.desktop</Filename>
         <Separator/>
         <Filename>geogebra.desktop</Filename>
-        <Filename>kcalc.desktop</Filename>
+        <Filename>org.kde.kcalc.desktop</Filename>
         <Filename>wxmaxima.desktop</Filename>
         <Filename>ClassPadManagerforClassPadII.desktop</Filename>
         <Filename>TI-Nspire CX CAS Student Software.desktop</Filename>
