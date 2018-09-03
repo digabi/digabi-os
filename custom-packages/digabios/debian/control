@@ -361,7 +361,6 @@ Depends: ${misc:Depends},
  postgresql,
  postgresql-contrib,
  terminator,
- vlc,
  zenity
 Conflicts: digabios-client
 Provides: digabios-system-config
