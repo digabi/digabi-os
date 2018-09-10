@@ -334,8 +334,7 @@ Depends: ${misc:Depends},
  winetricks,
  wxmaxima,
  xclip,
- xfce4-screenshooter,
- classpadmanagerforclasspadii:i386
+ xfce4-screenshooter
 Conflicts: digabios-server
 Provides: digabios-system-config
 Description: Add client configuration to system.
