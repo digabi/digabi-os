@@ -32,6 +32,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfce/xsettings.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml.digabios
 	install -D -m 0644 xfce/xfce4-keyboard-shortcuts.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml.digabios
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc.digabios
+	install -D -m 0644 gtkrc-2.0 $(DESTDIR)/etc/skel/.gtkrc-2.0.digabios
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
 	install -D -m 0644 locale.fi $(DESTDIR)/etc/default/locale.digabios-fi
