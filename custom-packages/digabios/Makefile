@@ -55,6 +55,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 display/toggle-dpi.desktop $(DESTDIR)/usr/share/applications/digabi-dpi.desktop
 	install -D -m 0644 xfce/xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
 	install -D -m 0644 xfce/org.xfce.power.policy $(DESTDIR)/usr/share/polkit-1/actions/org.xfce.power.policy.digabios
+	install -D -m 0644 xfce/batteryrc $(DESTDIR)/etc/skel/.config/xfce4/panel/battery-16.rc
 	install -D -m 0755 display/blank.sh $(DESTDIR)/usr/bin/xlock.digabios
 	install -d -m 0755 $(DESTDIR)/usr/share/X11/xkb/symbols
 	install -m 0644 xkb-symbols/* $(DESTDIR)/usr/share/X11/xkb/symbols
