@@ -53,8 +53,8 @@ xkb_symbols "common" {
     key <AB05> { [       Cyrillic_be,       Cyrillic_BE  ] };
     key <AB06> { [       Cyrillic_en,       Cyrillic_EN  ] };
     key <AB07> { [       Cyrillic_em,       Cyrillic_EM  ] };
-    key <AB08> { [             comma,             comma  ] };
-    key <AB09> { [            period,            period  ] };
-	key <AB10> { [        underscore,        underscore  ] };
+    key <AB08> { [             comma,         semicolon  ] };
+    key <AB09> { [            period,             colon  ] };
+    key <AB10> { [             minus,        underscore  ] };
 
  };
