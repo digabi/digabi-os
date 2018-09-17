@@ -50,6 +50,7 @@
 	<Filename>digabi-dpi.desktop</Filename>
         <Filename>xfce-mouse-settings.desktop</Filename>
         <Filename>xfce-keyboard-settings.desktop</Filename>
+        <Filename>florence.desktop</Filename>
         <Separator/>
         <Filename>digabi-koe-ohje.desktop</Filename>
     </Layout>
