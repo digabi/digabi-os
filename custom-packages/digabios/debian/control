@@ -335,6 +335,7 @@ Depends: ${misc:Depends},
  wxmaxima,
  xclip,
  xfce4-screenshooter,
+ at-spi2-core,
  florence
 Conflicts: digabios-server
 Provides: digabios-system-config
