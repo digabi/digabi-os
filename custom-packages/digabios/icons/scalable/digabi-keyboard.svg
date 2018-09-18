@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1189"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="digabi-keyboard.svg">
+  <defs
+     id="defs1183" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-245.71429"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="3404"
+     inkscape:window-height="1395"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1186">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#bebebe;fill-opacity:1;stroke:none;stroke-width:0.90099996;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 42.857422,342.51953 V 619.66211 H 725.71484 V 342.51953 Z m 21.925781,42.7832 h 63.003907 v 45.86133 H 64.783203 Z m 95.636717,0 h 63.00586 v 45.86133 h -63.00586 z m 95.63867,0 h 63.00391 v 45.86133 h -63.00391 z m 95.63672,0 h 63.00391 v 45.86133 h -63.00391 z m 95.63672,0 h 63.00391 v 45.86133 h -63.00391 z m 95.63867,0 h 63.00391 v 45.86133 H 542.9707 Z m 95.63672,0 h 63.00391 v 45.86133 H 638.60742 Z M 64.783203,455.22656 h 63.003907 v 45.86133 H 64.783203 Z m 95.636717,0 h 63.00586 v 45.86133 h -63.00586 z m 95.63867,0 h 63.00391 v 45.86133 h -63.00391 z m 95.63672,0 h 63.00391 v 45.86133 h -63.00391 z m 95.63672,0 h 63.00391 v 45.86133 h -63.00391 z m 95.63867,0 h 63.00391 v 45.86133 H 542.9707 Z m 95.63672,0 h 63.00391 v 45.86133 H 638.60742 Z M 64.783203,525.14844 h 63.003907 v 45.86133 H 64.783203 Z m 95.636717,0 h 445.55469 v 45.86133 H 160.41992 Z m 478.1875,0 h 63.00391 v 45.86133 h -63.00391 z"
+       transform="scale(0.26458333)"
+       id="rect1734"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
