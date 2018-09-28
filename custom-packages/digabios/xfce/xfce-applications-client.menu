@@ -35,8 +35,7 @@
         <Filename>wxMaxima.desktop</Filename>
         <Filename>ClassPadManagerforClassPadII.desktop</Filename>
         <Filename>TI-Nspire CX CAS Student Software.desktop</Filename>
-        <Filename>schoolstore-ti-chemistry-widget.desktop</Filename>
-        <Filename>schoolstore-ti-electricity-widget.desktop</Filename>
+        <Menuname>TexasInstrumentsWidgets</Menuname>
         <Filename>MarvinSketch.desktop</Filename>
         <Filename>4FNotes.desktop</Filename>
         <Filename>LoggerPro.desktop</Filename>
@@ -54,5 +53,14 @@
         <Separator/>
         <Filename>digabi-koe-ohje.desktop</Filename>
     </Layout>
+    <Menu>
+      <Name>TexasInstrumentsWidgets</Name>
+      <Directory>ti-widgets.directory</Directory>
+      <Include><All/></Include>
+      <Layout>
+        <Filename>schoolstore-ti-chemistry-widget.desktop</Filename>
+        <Filename>schoolstore-ti-electricity-widget.desktop</Filename>
+      </Layout>
+    </Menu>
 
 </Menu>
