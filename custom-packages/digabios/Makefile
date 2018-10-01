@@ -40,7 +40,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
 	install -D -m 0644 xfce/xfce-applications-client.menu $(DESTDIR)/etc/xdg/menus/xfce-applications-client.menu.digabios
-	install -D -m 0644 xfce/ti-widgets.directory $(DESTDIR)/usr/share/desktop-directories/ti-widgets.directory.digabios
+	install -D -m 0644 xfce/ti-widgets.directory $(DESTDIR)/usr/share/desktop-directories/ti-widgets.directory
 	install -D -m 0644 xfce/xfce-applications-server.menu $(DESTDIR)/etc/xdg/menus/xfce-applications-server.menu.digabios
 	install -d -m 0755 $(DESTDIR)/etc/sysctl.d
 	install -m 0644 sysctl.d/* $(DESTDIR)/etc/sysctl.d

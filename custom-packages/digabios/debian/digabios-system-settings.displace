@@ -11,6 +11,5 @@
 /etc/skel/.xsessionrc.digabios
 /etc/skel/.gtkrc-2.0.digabios
 #/usr/share/plymouth/debian-logo.png.digabios
-/usr/share/desktop-directories/ti-widgets.directory.digabios
 /usr/share/polkit-1/actions/org.xfce.power.policy.digabios
 /usr/bin/xlock.digabios
