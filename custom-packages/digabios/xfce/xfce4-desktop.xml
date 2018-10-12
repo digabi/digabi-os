@@ -18,9 +18,9 @@
       <property name="monitor0" type="empty">
         <property name="brightness" type="empty"/>
         <property name="color1" type="array">
-	  <value type="uint" value="9472"/>
-	  <value type="uint" value="17664"/>
-	  <value type="uint" value="29184"/>
+	  <value type="uint" value="14392"/>
+	  <value type="uint" value="24158"/>
+	  <value type="uint" value="30583"/>
 	  <value type="uint" value="65535"/>
 	</property>
         <property name="color2" type="empty"/>
