@@ -24,6 +24,13 @@
         <value type="int" value="13"/>
         <value type="int" value="2"/>
       </property>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="19018"/>
+        <value type="uint" value="19018"/>
+        <value type="uint" value="19018"/>
+        <value type="uint" value="65535"/>
+      </property>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -54,7 +61,10 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-5" type="string" value="clock"/>
-    <property name="plugin-6" type="string" value="systray"/>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="size-max" type="uint" value="25"/>
+    </property>
     <property name="plugin-7" type="string" value="showdesktop"/>
     <property name="plugin-8" type="string" value="separator"/>
     <property name="plugin-17" type="string" value="separator"/>

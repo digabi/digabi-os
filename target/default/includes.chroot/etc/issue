@@ -1,16 +1,8 @@
-DigabiOS - <https://digabi.fi/os>
-=========================
+DigabiOS
+
 Live-Linux environment by The Matriculation Examination Board of Finland / Ylioppilastutkintolautakunta.
 
-If you want to login:
- username: digabi
- password: (empty)
-
-Having problems? Tweet your problem using hashtag #digabi (you may 
-include pictures). Or, file an issue at 
-<https://github.com/digabi/digabi-os/issues>.
-
-If you want to return to the graphical user interface, try pressing CTRL+ALT+F8 (or CTRL+ALT+F7).
+If you want to return to the graphical user interface, try pressing CTRL+ALT+F7.
 
 --
 

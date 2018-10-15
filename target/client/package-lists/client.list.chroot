@@ -1,12 +1,4 @@
 digabios-client
-#
-# Casio classmanager
-#
-classpadmanagerforclasspadii
-#
-# TI inspire
-#
-wine
-wine32:i386
-winetricks
-
+classpadmanagerforclasspadii:i386
+libgl1-mesa-dri:i386
+tinspirecxcasstudentsoftware:i386

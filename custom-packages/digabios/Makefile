@@ -32,6 +32,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfce/xsettings.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml.digabios
 	install -D -m 0644 xfce/xfce4-keyboard-shortcuts.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml.digabios
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc.digabios
+	install -D -m 0644 gtkrc-2.0 $(DESTDIR)/etc/skel/.gtkrc-2.0.digabios
 	install -D -m 0644 user-dirs.defaults $(DESTDIR)/etc/xdg/user-dirs.defaults.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
 	install -D -m 0644 locale.fi $(DESTDIR)/etc/default/locale.digabios-fi
@@ -39,6 +40,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 keyboard $(DESTDIR)/etc/default/keyboard.digabios
 	install -d -m 0755 $(DESTDIR)/var/lib/live/config
 	install -D -m 0644 xfce/xfce-applications-client.menu $(DESTDIR)/etc/xdg/menus/xfce-applications-client.menu.digabios
+	install -D -m 0644 xfce/ti-widgets.directory $(DESTDIR)/usr/share/desktop-directories/ti-widgets.directory
 	install -D -m 0644 xfce/xfce-applications-server.menu $(DESTDIR)/etc/xdg/menus/xfce-applications-server.menu.digabios
 	install -d -m 0755 $(DESTDIR)/etc/sysctl.d
 	install -m 0644 sysctl.d/* $(DESTDIR)/etc/sysctl.d
@@ -54,6 +56,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 display/toggle-dpi.desktop $(DESTDIR)/usr/share/applications/digabi-dpi.desktop
 	install -D -m 0644 xfce/xfce-kioskrc $(DESTDIR)/etc/xdg/xfce4/kiosk/kioskrc
 	install -D -m 0644 xfce/org.xfce.power.policy $(DESTDIR)/usr/share/polkit-1/actions/org.xfce.power.policy.digabios
+	install -D -m 0644 xfce/batteryrc $(DESTDIR)/etc/skel/.config/xfce4/panel/battery-16.rc
 	install -D -m 0755 display/blank.sh $(DESTDIR)/usr/bin/xlock.digabios
 	install -d -m 0755 $(DESTDIR)/usr/share/X11/xkb/symbols
 	install -m 0644 xkb-symbols/* $(DESTDIR)/usr/share/X11/xkb/symbols

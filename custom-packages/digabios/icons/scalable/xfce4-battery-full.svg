@@ -11,10 +11,10 @@
    data-name="Layer 1"
    viewBox="0 0 25 25"
    version="1.1"
-   sodipodi:docname="digabi-browser.svg"
+   sodipodi:docname="xfce4-battery-full.svg"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06">
   <metadata
-     id="metadata19">
+     id="metadata26">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -33,9 +33,9 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1458"
-     inkscape:window-height="862"
-     id="namedview17"
+     inkscape:window-width="776"
+     inkscape:window-height="480"
+     id="namedview24"
      showgrid="false"
      inkscape:zoom="9.44"
      inkscape:cx="12.5"
@@ -45,36 +45,15 @@
      inkscape:window-maximized="0"
      inkscape:current-layer="Layer_1" />
   <defs
-     id="defs4">
+     id="defs17">
     <style
-       id="style2">.cls-1{fill:#ffffff;}</style>
+       id="style15">.cls-1{fill:#bebebeff;}</style>
   </defs>
   <title
-     id="title6">YTL_icons_ylapalkki</title>
-  <polygon
+     id="title19">YTL_icons_ylapalkki</title>
+  <path
      class="cls-1"
-     points="6.5 3.85 18.35 3.85 18.35 11.74 19.95 11.74 19.95 2.25 4.9 2.25 4.9 21.84 11.96 21.84 11.96 20.25 6.5 20.25 6.5 3.85"
-     id="polygon8"
-     style="fill:#bebebe;fill-opacity:1" />
-  <rect
-     class="cls-1"
-     x="8.59"
-     y="7.59"
-     width="7.67"
-     height="1.6"
-     id="rect10"
-     style="fill:#bebebe;fill-opacity:1" />
-  <rect
-     class="cls-1"
-     x="8.59"
-     y="12.07"
-     width="6.67"
-     height="1.6"
-     id="rect12"
-     style="fill:#bebebe;fill-opacity:1" />
-  <polygon
-     class="cls-1"
-     points="21.47 19.16 18.94 19.16 18.94 16.63 17.34 16.63 17.34 19.16 14.81 19.16 14.81 20.76 17.34 20.76 17.34 23.3 18.94 23.3 18.94 20.76 21.47 20.76 21.47 19.16"
-     id="polygon14"
+     d="M15.52,4V2h-6V4H5.81V23H19.19V4Z"
+     id="path21"
      style="fill:#bebebe;fill-opacity:1" />
 </svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/x-wine-extension-tns">
+        <comment>ClassPad Manager for ClassPad II Series Document</comment>
+        <icon name="/opt/CASIO/ClassPad_Manager_for_ClassPadII/ClassPad_Icon"/>
+        <glob-deleteall/>
+        <glob pattern="*.vcp"/>
+    </mime-type>
+</mime-info>

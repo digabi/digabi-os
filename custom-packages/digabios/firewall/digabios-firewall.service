@@ -3,7 +3,7 @@ Description=DigabiOS firewall generator
 DefaultDependencies=no
 Before=network.target
 Requires=netfilter-persistent.service systemd-modules-load.service local-fs.target
-After=systemd-modules-load.service local-fs.target systemd-tmpfiles-setup.service
+After=systemd-modules-load.service local-fs.target systemd-tmpfiles-setup.service live-config.service
 Before=netfilter-persistent.service
 
 [Service]

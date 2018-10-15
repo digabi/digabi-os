@@ -2,9 +2,9 @@
 set -e
 
 #
-# Install SOME packages from upcoming Debian 9.0 (stretch)
+# Install SOME packages from other distros
 #
-# This script reads data/packages-from-stretch & picks the package list
+# This script reads data/packages-from-* & picks the package list
 # from there.
 #
 
@@ -62,7 +62,7 @@ EOF
 }
 
 
-for dist in stretch jessie-backports
+for dist in stretch-backports
 do
     create_pinned_apt_config_for_dist ${dist}
 done

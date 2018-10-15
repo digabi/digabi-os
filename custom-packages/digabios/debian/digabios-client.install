@@ -1,5 +1,7 @@
 #!/usr/bin/dh-exec
 etc/digabi/firewall.d/5100-allow-local-maxima.v4.conf
 etc/xdg/menus/xfce-applications-client.menu.digabios => etc/xdg/menus/xfce-applications.menu.digabios
-usr/share/mime/packages/application-x-nspire.xml
+usr/share/mime/packages/application-x-wine-extension-vcp.xml
+usr/share/mime/packages/application-x-wine-extension-tns.xml
 usr/share/mime/packages/application-x-marvinsketch.xml
+usr/share/desktop-directories/ti-widgets.directory
