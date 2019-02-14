@@ -363,6 +363,7 @@ Depends: ${misc:Depends},
  pciutils,
  postgresql,
  postgresql-contrib,
+ sysstat,
  terminator,
  zenity
 Conflicts: digabios-client
