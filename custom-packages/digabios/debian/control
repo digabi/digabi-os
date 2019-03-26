@@ -336,9 +336,7 @@ Depends: ${misc:Depends},
  winetricks,
  wxmaxima,
  xclip,
- xfce4-screenshooter,
- at-spi2-core,
- florence
+ xfce4-screenshooter
 Conflicts: digabios-server
 Provides: digabios-system-config
 Description: Add client configuration to system.
