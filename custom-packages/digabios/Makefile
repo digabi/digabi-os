@@ -66,6 +66,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xorg.conf.d/* $(DESTDIR)/usr/share/X11/xorg.conf.d/
 	install -d -m 0755 $(DESTDIR)/usr/share/mime/packages/
 	install -D -m 0644 mime-packages/* $(DESTDIR)/usr/share/mime/packages/
+	install -D -m 0644 xkb/kbd-layout.desktop $(DESTDIR)/usr/share/applications/
 	# digabios-firewall
 	install -d -m 0700 $(DESTDIR)/etc/digabi/firewall.d
 	install -D -m 0644 firewall/digabios-firewall.service $(DESTDIR)/lib/systemd/system/digabios-firewall.service
