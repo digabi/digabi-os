@@ -1,1 +1,1 @@
-deb http://192.168.2.49/debian-security stretch/updates main contrib non-free
+deb http://192.168.3.32/debian-security stretch/updates main contrib non-free
