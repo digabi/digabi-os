@@ -338,6 +338,7 @@ Depends: ${misc:Depends},
  wine,
  winetricks,
  wxmaxima,
+ maxima-share,
  xclip,
  xfce4-screenshooter
 Conflicts: digabios-server
