@@ -16,6 +16,7 @@ install: $(CONTENT_DIR)
 	# digabi-backgrounds
 	install -d -m 0755 $(DESTDIR)$(IMAGEDIR)
 	install -D -m 0644 $(CONTENT_DIR)/background.svg $(DESTDIR)$(IMAGEDIR)/background.svg
+	install -D -m 0644 $(CONTENT_DIR)/background-versiontag.svg $(DESTDIR)$(IMAGEDIR)/background-versiontag.svg
 	install -D -m 0644 $(CONTENT_DIR)/ytl_logo_helmet_black.svg $(DESTDIR)$(IMAGEDIR)/logo.svg
 	install -D -m 0644 $(CONTENT_DIR)/splash.svg $(DESTDIR)$(IMAGEDIR)/splash.svg
 	rsvg-convert -f png -w 121 -o $(DESTDIR)$(IMAGEDIR)/logo.png $(CONTENT_DIR)/ytl_logo_helmet_black.svg
