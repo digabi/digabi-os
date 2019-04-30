@@ -1,0 +1,63 @@
+// Keyboard layout for Skolt Sami
+// The layout is equal with Koltansaami2.2 Windows implementation
+
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    include "latin"
+    name[Group1] = "Sääˊmǩiõll (Windows)";
+
+    key <TLDE> { [      U01ef,      U01ee,    section,     onehalf ] };
+    key <AE01> { [      U0292,      U01b7,     exclam,  VoidSymbol ] };
+    key <AE02> { [        eng,        ENG,         at,  VoidSymbol ] };
+    key <AE03> { [      U01e9,      U01e8, numbersign,  VoidSymbol ] };
+    key <AE04> { [      U01e5,      U01e4,     dollar,  VoidSymbol ] };
+    key <AE05> { [     gcaron,     Gcaron,    percent,  VoidSymbol ] };
+    key <AE06> { [          6,  ampersand,   quotedbl,  VoidSymbol ] };
+    key <AE07> { [          7,      slash,  braceleft,  VoidSymbol ] };
+    key <AE08> { [          8,  parenleft, bracketleft, VoidSymbol ] };
+    key <AE09> { [          9, parenright, bracketright,VoidSymbol ] };
+    key <AE10> { [          0,      equal, braceright,  VoidSymbol ] };
+    key <AE11> { [       plus,   question,  backslash,  VoidSymbol ] };
+    key <AE12> { [      U02b9,      U02b9, VoidSymbol,  VoidSymbol ] };
+
+    key <AD01> { [ acircumflex, Acircumflex,        q,          Q ] };
+    key <AD02> { [     scaron,     Scaron,          w,          W ] };
+    key <AD03> { [          e,          E,   EuroSign, VoidSymbol ] };
+    key <AD04> { [          r,          R, VoidSymbol, VoidSymbol ] };
+    key <AD05> { [          t,          T, VoidSymbol, VoidSymbol ] };
+    key <AD06> { [    dstroke,    Dstroke,          y,          Y ] };
+    key <AD07> { [          u,          U, VoidSymbol, VoidSymbol ] };
+    key <AD08> { [          i,          I, VoidSymbol, VoidSymbol ] };
+    key <AD09> { [          o,          O, VoidSymbol, VoidSymbol ] };
+    key <AD10> { [          p,          P, VoidSymbol, VoidSymbol ] };
+    key <AD11> { [      aring,      Aring, VoidSymbol, VoidSymbol ] };
+    key <AD12> { [      U02c8,      U02c8, dead_tilde, VoidSymbol ] };
+
+    key <AC01> { [          a,          A, VoidSymbol, VoidSymbol ] };
+    key <AC02> { [          s,          S, VoidSymbol, VoidSymbol ] };
+    key <AC03> { [          d,          D, VoidSymbol, VoidSymbol ] };
+    key <AC04> { [          f,          F, VoidSymbol, VoidSymbol ] };
+    key <AC05> { [          g,          G, VoidSymbol, VoidSymbol ] };
+    key <AC06> { [          h,          H, VoidSymbol, VoidSymbol ] };
+    key <AC07> { [          j,          J, VoidSymbol, VoidSymbol ] };
+    key <AC08> { [          k,          K, VoidSymbol, VoidSymbol ] };
+    key <AC09> { [          l,          L, VoidSymbol, VoidSymbol ] };
+    key <AC10> { [     otilde,     Otilde, odiaeresis, Odiaeresis ] };
+    key <AC11> { [ adiaeresis, Adiaeresis, VoidSymbol, VoidSymbol ] };
+    key <AC12> { [      U02bc,   asterisk,   asterisk, VoidSymbol ] };
+
+    key <LSGT> { [     zcaron,     Zcaron,       less,    greater ] };
+    key <AB01> { [          z,          Z, VoidSymbol, VoidSymbol ] };
+    key <AB02> { [     ccaron,     Ccaron,          x,          X ] };
+    key <AB03> { [          c,          C, VoidSymbol, VoidSymbol ] };
+    key <AB04> { [          v,          V, VoidSymbol, VoidSymbol ] };
+    key <AB05> { [          b,          B, VoidSymbol, VoidSymbol ] };
+    key <AB06> { [          n,          N, VoidSymbol, VoidSymbol ] };
+    key <AB07> { [          m,          M,         mu, VoidSymbol ] };
+    key <AB08> { [      comma,  semicolon, VoidSymbol, VoidSymbol ] };
+    key <AB09> { [ decimalpoint,    colon, VoidSymbol, VoidSymbol ] };
+    key <AB10> { [      minus,   underbar, VoidSymbol, VoidSymbol ] };
+
+    include "level3(ralt_switch)"
+};

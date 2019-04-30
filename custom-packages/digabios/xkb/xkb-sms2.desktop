@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Skolt Sami (Win2.2)
+Name[fi]=koltansaame (Win 2.2)
+Name[sv]=skoltsamiska (Win 2.2)
+Comment=Switch keyboard language to Skolt Sami (version: Windows 2.2)
+Comment[fi]=Vaihda näppäimistön kieleksi koltansaame (versio: Windows 2.2)
+Comment[sv]=Byt tangentlayouten till skoltsamiska (version: Windows 2.2)
+Exec=setxkbmap sms2
+Icon=digabi-keyboard
+Path=
+Terminal=false
+StartupNotify=false
