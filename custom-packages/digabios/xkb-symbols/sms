@@ -1,0 +1,66 @@
+// Keyboard layout for Skolt Sami
+// See http://divvun.no/keyboards/layout-sms.html
+// Follows Windows 7 implementation (v 0.1.5):
+//        http://divvun.no/keyboards/desktopindex.html
+
+
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    include "latin"
+    name[Group1] = "Sääˊmǩiõll (Windows)";
+
+    key <TLDE> { [     section,     onehalf,          bar,     onehalf ] };
+    key <AE01> { [  asciitilde,      exclam,            1,    sterling ] };
+    key <AE02> { [          at,    quotedbl,            2,      dollar ] };
+    key <AE03> { [       U01e9,       U01e8,            3,  numbersign ] };
+    key <AE04> { [       U01e5,       U01e4,            4,    currency ] };
+    key <AE05> { [      gcaron,      Gcaron,            5,     percent ] };
+    key <AE06> { [       U014B,       U014A,            6,   ampersand ] };
+    key <AE07> { [       U0111,       U0110,            7,       slash ] };
+    key <AE08> { [ bracketleft,   parenleft,            8,        less ] };
+    key <AE09> { [bracketright,  parenright,            9,     greater ] };
+    key <AE10> { [         bar,       equal,            0,  VoidSymbol ] };
+    key <AE11> { [        plus,    question,    backslash,         bar ] };
+    key <AE12> { [       U0292,       U01B7,   dead_acute,  dead_grave ] };
+
+    key <AD01> { [ acircumflex, Acircumflex,            q,            Q ] };
+    key <AD02> { [      scaron,      Scaron,            w,            W ] };
+    key <AD03> { [           e,           E,    ebelowdot,         cent ] };
+    key <AD04> { [           r,           R,   registered,      radical ] };
+    key <AD05> { [           t,           T,        U0167,        U0166 ] };
+    key <AD06> { [           y,           Y,        U00FD,        U00DD ] };
+    key <AD07> { [           u,           U,        U00FA,dead_belowdot ] };
+    key <AD08> { [           i,           I,        U00ED,        U00CD ] };
+    key <AD09> { [           o,           O,        U00F8,        U00D5 ] };
+    key <AD10> { [           p,           P,        U03C0,   VoidSymbol ] };
+    key <AD11> { [       aring,       Aring,        U02DA,dead_abovering] };
+    key <AD12> { [       U01EF,       U01EE,    diaeresis,        U005E ] };
+
+    key <AC01> { [           a,           A,       aacute,       Aacute ] };
+    key <AC02> { [           s,           S,       ssharp,       Scaron ] };
+    key <AC03> { [           d,           D,        U00F0,        U0110 ] };
+    key <AC04> { [           f,           F,        thorn,        U01E4 ] };
+    key <AC05> { [           g,           G,       gcaron,       Gcaron ] };
+    key <AC06> { [           h,           H,        U01E5,        U021E ] };
+    key <AC07> { [           j,           J,   asciitilde,   dead_tilde ] };
+    key <AC08> { [           k,           K,        U01E9,        U01E8 ] };
+    key <AC09> { [           l,           L,        minus,   VoidSymbol ] };
+    key <AC10> { [      otilde,      Otilde,   odiaeresis,   Odiaeresis ] };
+    key <AC11> { [  adiaeresis,  Adiaeresis,           ae,           AE ] };
+    key <AC12> { [       U02B9,       U02BC,        U02C8,     asterisk ] };
+
+    key <LSGT> { [      zcaron,      Zcaron,         less,      greater ] };
+    key <AB01> { [           z,           Z,lessthanequal, greaterthanequal ] };
+    key <AB02> { [      ccaron,      Ccaron,            x,            X ] };
+    key <AB03> { [           c,           C,     ccedilla,       Ccedilla ] };
+    key <AB04> { [           v,           V,        U2039,  guillemotleft ] };
+    key <AB05> { [           b,           B,        U203A, guillemotright ] };
+    key <AB06> { [           n,           N, leftsinglequotemark,     ENG ] };
+    key <AB07> { [           m,           M, rightsinglequotemark,     mu ] };
+    key <AB08> { [       comma,   semicolon,        comma,     VoidSymbol ] };
+    key <AB09> { [decimalpoint,       colon,     ellipsis,     VoidSymbol ] };
+    key <AB10> { [       minus,    underbar,        minus,     VoidSymbol ] };
+
+    include "level3(ralt_switch)"
+};
