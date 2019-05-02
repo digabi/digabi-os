@@ -32,7 +32,6 @@
         <Separator/>
         <Filename>geogebra.desktop</Filename>
         <Filename>geogebra-classic.desktop</Filename>
-        <Filename>org.kde.kcalc.desktop</Filename>
         <Filename>wxMaxima.desktop</Filename>
         <Filename>ClassPadManagerforClassPadII.desktop</Filename>
         <Filename>TI-Nspire CX CAS Student Software.desktop</Filename>
@@ -40,6 +39,7 @@
         <Filename>MarvinSketch.desktop</Filename>
         <Filename>4FNotes.desktop</Filename>
         <Filename>LoggerPro.desktop</Filename>
+        <Filename>org.kde.kcalc.desktop</Filename>
         <Filename>speedcrunch.desktop</Filename>
         <Filename>gnome-calculator.desktop</Filename>
         <Filename>maol-digi.desktop</Filename>
