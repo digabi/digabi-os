@@ -20,7 +20,7 @@
 	<Filename>digabi-dpi.desktop</Filename>
         <Filename>xfce-mouse-settings.desktop</Filename>
         <Filename>xfce-keyboard-settings.desktop</Filename>
-	<Filename>digabi-dd-curses.desktop</Filename>
+	<Filename>digabi-usb-monster.desktop</Filename>
         <Separator/>
         <Filename>old-answer-mebs.desktop</Filename>
     </Layout>
