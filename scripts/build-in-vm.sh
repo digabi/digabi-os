@@ -74,5 +74,3 @@ lb config ${LB_OPTIONS}
 
 echo "I: Running lb build..."
 sudo lb build
-
-ls -lR
