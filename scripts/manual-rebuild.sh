@@ -5,7 +5,7 @@
 set -ex
 
 export DIGABI_BUILD_TARGET="client meb"
-export WLAN=true
+export INCLUDE_WLAN=true
 export ROOT_PASSWORD=kukkuu
 export DEBIAN_MIRROR=http://192.168.3.32/debian
 export DEBIAN_SUITE=stretch
