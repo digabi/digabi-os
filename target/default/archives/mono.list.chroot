@@ -1,1 +1,1 @@
-deb http://192.168.3.32/mono/ stable-stretch main
+deb [trusted=yes] https://download.mono-project.com/repo/debian/ stable-stretch/snapshots/5.20 main
