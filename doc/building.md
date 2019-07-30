@@ -38,17 +38,14 @@ Please see `scripts/create-build-config.sh` for current options. These are pushe
 
 ## Do the build
 
-Following assumes that you have vagrant & VirtualBox installed:
+Following assumes that you are running a Debian Stretch machine - use a virtual machine if necessary:
 
     # Fetch the sources
     git clone https://github.com/digabi/digabi-os digabi-os
     cd digabi-os
-
+    
     # Configure build
-    export ROOT_PASSWORD="my-super-secret-password"
-    export DEBIAN_MIRROR="http://my-local-mirror.example.com/debian"
-    export ARCH="i386"
-    export BINARY_IMAGES="hdd"
+    vim scripts/manual-rebuild.sh
 
     # Do the build (runs inside Vagrant)
-    make -f Makefile.build dist
+    sudo scripts/manual-rebuild.sh
