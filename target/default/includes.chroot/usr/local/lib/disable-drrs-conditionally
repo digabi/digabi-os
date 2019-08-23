@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -eu
+
+product_name="$(dmidecode -s system-product-name)"
+
+case "$product_name" in
+  "HP EliteBook 820 G1"|"HP EliteBook 840 G1") ;;
+  *) exit 0 ;;
+esac
+
+test -e /sys/kernel/debug/dri/0/i915_drrs_ctl    || exit 0
+test -e /sys/kernel/debug/dri/0/i915_drrs_status || exit 0
+
+for i in $(seq 20); do
+  if grep -q CRTC /sys/kernel/debug/dri/0/i915_drrs_status; then
+    echo 0 > /sys/kernel/debug/dri/0/i915_drrs_ctl
+    exit 0
+  fi
+  sleep 1
+done
+
+exit 1
