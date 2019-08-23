@@ -1,0 +1,10 @@
+[Unit]
+Description=Disable DRRS conditionally
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/lib/disable-drrs-conditionally
+
+[Install]
+WantedBy=multi-user.target
