@@ -140,7 +140,7 @@ then
     WLAN_FLAVOUR="ytl-stretch-wls"
 fi
 
-LINUX_FLAVOURS="4.9.185-${WLAN_FLAVOUR}-${ARCH} 4.14.13-${WLAN_FLAVOUR}-${ARCH} 4.19.37-${WLAN_FLAVOUR}-${ARCH} 5.2.7-${WLAN_FLAVOUR}-${ARCH}"
+LINUX_FLAVOURS="4.9.185-${WLAN_FLAVOUR}-${ARCH} 4.14.13-${WLAN_FLAVOUR}-${ARCH} 4.19.37-${WLAN_FLAVOUR}-${ARCH} 5.3.2-${WLAN_FLAVOUR}-${ARCH}"
 
 lb config noauto \
     --apt-indices "false" \
