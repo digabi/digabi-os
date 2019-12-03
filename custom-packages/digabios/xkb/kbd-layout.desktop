@@ -7,7 +7,7 @@ Name[sv]=Tangentbordslayout
 Comment=Show current keyboard layout
 Comment[fi]=Näytä tämänhetkinen näppäimistökartta
 Comment[sv]=Visa nuvarande tangetbordslayout
-Exec=/bin/sh -c "CODE=`setxkbmap -query | awk '/layout:/{layout=$2} /variant:/{variant=$2} END {print layout "\t" variant}'`; gkbd-keyboard-display --layout=${CODE}"
+Exec=/bin/sh -c "layout=`setxkbmap -query | awk '/layout:/{print $2}'`;`setxkbmap -query | awk '/variant:/{print $2}'`; if [ -z $variant ]; then gkbd-keyboard-display -l ${layout}; else gkbd-keyboard-display -l ${layout}'\t'${variant}; fi"
 Icon=digabi-keyboard
 Path=
 Terminal=false
