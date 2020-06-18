@@ -24,12 +24,6 @@ Matriculation Examination Board of Finland (In Finnish:
 For documentation, see `doc/*.md`. Manual for `live-build` toolset: 
 [Debian Live Manual](http://live.debian.net/manual/3.x/).
 
-### Requirements for build system
- * [Debian](http://www.debian.org/) 8.0 (jessie)
- * for required packages, see file 
- `custom-packages/digabi-dev/debian/control` (especially lines Depends, 
- Recommends)
-
 
 ### How to build
 See [`doc/building.md`](doc/building.md) for detailed instructions. TL;DR; `make -f Makefile.build dist`.
