@@ -103,10 +103,7 @@ fi
 _SOURCE="false"
 ARCHIVE_AREAS="main contrib non-free"
 
-if [ -z "${DISTRIBUTION}" ]
-then
-    DISTRIBUTION="stretch"
-fi
+DEBIAN_SUITE="${DEBIAN_SUITE:-stretch}"
 
 DEFAULT_DEBIAN_MIRROR="http://httpredir.debian.org/debian"
 DEFAULT_DIGABI_MIRROR="http://dev.digabi.fi/debian"
@@ -154,7 +151,7 @@ lb config noauto \
     --debootstrap-options "--include=apt-transport-https,ca-certificates,openssl ${DEBOOTSTRAP_OPTIONS}" \
     --checksums "sha512" \
     --clean \
-    --distribution "${DISTRIBUTION}" \
+    --distribution "${DEBIAN_SUITE}" \
     --hdd-label "${HDD_LABEL}" \
     --hdd-size "auto" \
     --ignore-system-defaults \
