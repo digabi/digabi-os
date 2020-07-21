@@ -36,6 +36,11 @@ APT::Install-Recommends "false";
 APT::Install-Suggests "false";
 EOF
 
+echo "I: Configure APT: increase number of retries..."
+cat << EOF | sudo tee /etc/apt/apt.conf.d/99-retries
+APT::Acquire::Retries 5;
+EOF
+
 echo "I: Update package lists..."
 sudo apt-get -qy update
 
