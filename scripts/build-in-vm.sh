@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 
 CONFIG="./dos-config"
 SOURCES="sources.list"
