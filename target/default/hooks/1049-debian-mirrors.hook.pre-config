@@ -50,13 +50,11 @@ EOF
 deb ${DEBIAN_MIRROR} ${dist} main contrib non-free
 #deb-src ${DEBIAN_MIRROR} ${dist} main contrib non-free
 EOF
-    if [ "${dist}" = "stretch" ]
-    then
-        cat >>config/archives/${dist}.list.chroot << EOF
+
+    cat >>config/archives/${dist}.list.chroot << EOF
 deb http://security.debian.org ${dist}/updates main contrib non-free
 #deb-src http://security.debian.org ${dist}/updates main contrib non-free
 EOF
-    fi
 
     cp config/archives/${dist}.list.chroot config/archives/${dist}.list.binary
 }
