@@ -48,7 +48,7 @@ echo "I: Uninstall postgres so that postgres installed inside chroot gets pristi
 sudo DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.6 postgresql-contrib-9.6 || true
 
 echo "I: Upgrade build system..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" -qy dist-upgrade
 
 echo "I: Pin our version of live-build"
 cat <<EOF | sudo tee /etc/apt/preferences.d/live-build
