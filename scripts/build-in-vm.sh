@@ -78,4 +78,4 @@ echo "I: Running lb config..."
 lb config ${LB_OPTIONS}
 
 echo "I: Running lb build..."
-sudo lb build
+sudo lb build --verbose --debug
