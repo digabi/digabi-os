@@ -75,7 +75,7 @@ fi
 set +a
 
 # Run pre-config hooks
-PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/*.pre-config)"
+PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/normal/*.pre-config)"
 
 if [ -n "${PRE_CONFIG_HOOKS}" ]
 then
