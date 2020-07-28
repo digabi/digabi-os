@@ -50,13 +50,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.6 postgresql
 echo "I: Upgrade build system..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" -qy dist-upgrade
 
-echo "I: Pin our version of live-build"
-cat <<EOF | sudo tee /etc/apt/preferences.d/live-build
-Package: live-build
-Pin: release o=Digabi
-Pin-Priority: 1000
-EOF
-
 echo "I: Install digabi-dev, rsync..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install build-essential rsync git aptitude live-build
 
