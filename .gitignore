@@ -25,6 +25,7 @@ live-image-*.packages
 *.tmp
 tmp/
 .vagrant/
+/artifacts
 sources.list
 dos-config
 signing_key.*
