@@ -25,3 +25,6 @@ live-image-*.packages
 *.tmp
 tmp/
 .vagrant/
+sources.list
+dos-config
+signing_key.*
