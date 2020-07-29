@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-
-echo "I: Modprobe loop..."
-modprobe loop
-
-# TODO: Run this only when building HDD images

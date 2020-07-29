@@ -10,7 +10,7 @@ echo "I: Copy local configuration to build directory..."
 cp ${CONFIG} target/default/digabi.local
 
 echo "I: Configure build env"
-sed -i -e 's/^deb /&[trusted=yes] /' "${SOURCES}"
+sed -i -e 's/^deb http/deb [trusted=yes] http/' "${SOURCES}"
 sudo cp "${SOURCES}" /etc/apt/sources.list.d/digabi.list
 
 if [ -n "${DEBIAN_MIRROR}" ]
@@ -72,3 +72,7 @@ lb config ${LB_OPTIONS}
 
 echo "I: Running lb build..."
 sudo lb build --verbose --debug
+
+mkdir -p artifacts
+mv digabi-os-* artifacts
+mv chroot/boot/initrd* artifacts
