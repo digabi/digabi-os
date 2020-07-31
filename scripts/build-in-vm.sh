@@ -44,9 +44,6 @@ EOF
 echo "I: Update package lists..."
 sudo apt-get -qy update
 
-echo "I: Uninstall postgres so that postgres installed inside chroot gets pristine port..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.6 postgresql-contrib-9.6 || true
-
 echo "I: Upgrade build system..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" -qy dist-upgrade
 
