@@ -47,9 +47,6 @@ sudo apt-get -qy update
 echo "I: Upgrade build system..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" -qy dist-upgrade
 
-echo "I: Install digabi-dev, rsync..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install build-essential rsync git aptitude live-build
-
 echo "I: Copy local sources.list configuration to build directory..."
 cp ${SOURCES} target/default/archives/digabi.list.binary
 cp ${SOURCES} target/default/archives/digabi.list.chroot
