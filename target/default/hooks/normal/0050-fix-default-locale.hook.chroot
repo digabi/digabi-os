@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+# The live-build version in buster has a chroot hook
+# (0040-create-locales-files.hook.chroot) that overrides our default locale
+# selection with C.UTF-8. This hook runs after it and replaces the default
+# locale file with the expected result.
+
+cat > /etc/default/locale<<EOF
+LANG="fi_FI.UTF-8"
+LANGUAGE="fi_FI.UTF-8"
+LC_ALL="fi_FI.UTF-8"
+EOF
