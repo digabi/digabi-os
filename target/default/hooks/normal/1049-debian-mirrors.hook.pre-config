@@ -14,6 +14,7 @@ set -e
 create_pinned_apt_config_for_dist()
 {
     dist="$1"
+    updates_dist="$2"
 
     PACKAGES="$(grep -v ^# data/packages-from-${dist} |awk '{print $1}' |sort |xargs)"
     [ -z "${PACKAGES}" ] && echo "W: No packages to migrate from ${dist}, skipping..." && exit 0
@@ -51,10 +52,12 @@ deb ${DEBIAN_MIRROR} ${dist} main contrib non-free
 #deb-src ${DEBIAN_MIRROR} ${dist} main contrib non-free
 EOF
 
+    if [ -n "${updates_dist}" ]; then
     cat >>config/archives/${dist}.list.chroot << EOF
-deb http://security.debian.org ${dist}/updates main contrib non-free
-#deb-src http://security.debian.org ${dist}/updates main contrib non-free
+deb http://security.debian.org ${updates_dist} main contrib non-free
+#deb-src http://security.debian.org ${updates_dist} main contrib non-free
 EOF
+    fi
 
     cp config/archives/${dist}.list.chroot config/archives/${dist}.list.binary
 }
