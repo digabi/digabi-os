@@ -60,4 +60,5 @@ EOF
 }
 
 
+create_pinned_apt_config_for_dist bullseye
 create_pinned_apt_config_for_dist buster-backports
