@@ -1,7 +1,6 @@
 /etc/locale.gen.digabios
 /etc/default/keyboard.digabios
 /etc/timezone.digabios
-/etc/xdg/user-dirs.defaults.digabios
 /etc/xdg/xfce4/panel/default.xml.digabios
 /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml.digabios
 /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml.digabios
