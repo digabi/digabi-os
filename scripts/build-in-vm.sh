@@ -30,6 +30,15 @@ else
     echo "I: Using pre-configured Debian mirror."
 fi
 
+set +x # don't print secret
+if [ -n "${DEBIAN_MIRROR_AUTH}" ]
+then
+    echo "${DEBIAN_MIRROR_AUTH}" | sudo tee /etc/apt/auth.conf.d/debian-mirror.conf > /dev/null
+    mkdir -p chroot/etc/apt/auth.conf.d
+    cp /etc/apt/auth.conf.d/debian-mirror.conf chroot/etc/apt/auth.conf.d
+fi
+set -x
+
 echo "I: Configure APT: do not install recommends..."
 cat << EOF | sudo tee /etc/apt/apt.conf.d/99-no-recommends
 APT::Install-Recommends "false";
