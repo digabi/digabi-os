@@ -63,7 +63,7 @@ cp ${SOURCES} target/default/archives/digabi.list.binary
 cp ${SOURCES} target/default/archives/digabi.list.chroot
 
 cat >> target/default/archives/digabi.pref.chroot << EOF
-Package: *
+Package: geogebra* live* nodejs pxe* syslinux* isolinux vbox* openntpd* duplicity*
 Pin: release o=Digabi
 Pin-Priority: 1000
 EOF
