@@ -282,27 +282,20 @@ Replaces: digabi-firewall
 Description: Simple firewall script for DigabiOS
  This package installs simple firewall for DigabiOS.
 
-Package: digabios-client
+Package: digabios-client-gui-software
 Architecture: all
 Depends: ${misc:Depends},
  4fnotes,
  dia,
  dia-shapes,
- digabi-koe,
  digabi-koe-ohje,
- digabios-firewall (= ${binary:Version}),
- digabios-system-settings (= ${binary:Version}),
- digabi-koe-status-indicator,
  geogebra-classic,
  geogebra5,
  gimp,
- gkbd-capplet,
  gnome-calculator,
  gnuplot,
- gtk2-engines-murrine,
  kolourpaint,
  inkscape,
- inotify-tools,
  kcalc,
  libgl1-mesa-glx,
  libinput-bin,
@@ -322,13 +315,11 @@ Depends: ${misc:Depends},
  maol-digi,
  marvin,
  maxima,
+ maxima-share,
  mpv,
  netpbm,
- nodejs,
- ntpdate,
  okular,
  openjdk-11-jre,
- openntpd,
  patch,
  pavucontrol,
  phonon-backend-null,
@@ -339,8 +330,23 @@ Depends: ${misc:Depends},
  wine,
  winetricks,
  wxmaxima,
- maxima-share,
  xclip,
+Description: External GUI software used in the exam. Used in tela laptops and the real exam environment.
+
+Package: digabios-client
+Architecture: all
+Depends: ${misc:Depends},
+ digabi-koe,
+ digabi-koe-status-indicator,
+ digabios-firewall (= ${binary:Version}),
+ digabios-client-gui-software (= ${binary:Version}),
+ digabios-system-settings (= ${binary:Version}),
+ gkbd-capplet,
+ gtk2-engines-murrine,
+ inotify-tools,
+ nodejs,
+ ntpdate,
+ openntpd,
  xfce4-screenshooter
 Conflicts: digabios-server
 Provides: digabios-system-config
