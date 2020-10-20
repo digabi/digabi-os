@@ -1,5 +1,4 @@
-<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
-  "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN" "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
 
 <Menu>
     <Name>Xfce</Name>
@@ -10,12 +9,14 @@
     <DefaultMergeDirs/>
 
     <Include>
-	<All/>
+        <All/>
     </Include>
 
     <Layout>
         <Filename>digabi-koe-firefox-esr.desktop</Filename>
         <Filename>digabi-aineisto-firefox-esr.desktop</Filename>
+        <Filename>digabi-koe-ohje-firefox-esr.desktop</Filename>
+        <Filename>digabi-maol-firefox-esr.desktop</Filename>
         <Separator/>
         <Filename>libreoffice-calc.desktop</Filename>
         <Filename>libreoffice-draw.desktop</Filename>
@@ -42,27 +43,26 @@
         <Filename>org.kde.kcalc.desktop</Filename>
         <Filename>speedcrunch.desktop</Filename>
         <Filename>gnome-calculator.desktop</Filename>
-        <Filename>maol-digi.desktop</Filename>
         <Separator/>
-	<Filename>digabi-sound-test.desktop</Filename>
+        <Filename>digabi-sound-test.desktop</Filename>
         <Separator/>
         <Filename>digabi-language-selection.desktop</Filename>
         <Filename>xfce-display-settings.desktop</Filename>
-	<Filename>digabi-dpi.desktop</Filename>
+        <Filename>digabi-dpi.desktop</Filename>
         <Filename>xfce-mouse-settings.desktop</Filename>
         <Filename>xfce-keyboard-settings.desktop</Filename>
         <Filename>kbd-layout.desktop</Filename>
-        <Separator/>
-        <Filename>digabi-koe-ohje.desktop</Filename>
     </Layout>
     <Menu>
-      <Name>TexasInstrumentsWidgets</Name>
-      <Directory>ti-widgets.directory</Directory>
-      <Include><All/></Include>
-      <Layout>
-        <Filename>schoolstore-ti-chemistry-widget.desktop</Filename>
-        <Filename>schoolstore-ti-electricity-widget.desktop</Filename>
-      </Layout>
+        <Name>TexasInstrumentsWidgets</Name>
+        <Directory>ti-widgets.directory</Directory>
+        <Include>
+            <All/>
+        </Include>
+        <Layout>
+            <Filename>schoolstore-ti-chemistry-widget.desktop</Filename>
+            <Filename>schoolstore-ti-electricity-widget.desktop</Filename>
+        </Layout>
     </Menu>
 
 </Menu>
