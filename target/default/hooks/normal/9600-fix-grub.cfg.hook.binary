@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -ex
+
+# See https://salsa.debian.org/live-team/live-build/-/commit/9220bde3dfdca2f749c16789b6ca8e4e05e961fb
+
+rm -fv /tmp/grub.cfg
+mcopy -n -i "boot/grub/efi.img" "::boot/grub/grub.cfg" /tmp
+sed -i 's#/live/vmlinuz#/.disk/info#' /tmp/grub.cfg
+mcopy -o -i "boot/grub/efi.img" /tmp/grub.cfg "::boot/grub"

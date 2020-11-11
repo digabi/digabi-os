@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 
 CONFIG="./dos-config"
 SOURCES="sources.list"
@@ -10,7 +10,7 @@ echo "I: Copy local configuration to build directory..."
 cp ${CONFIG} target/default/digabi.local
 
 echo "I: Configure build env"
-sed -i -e 's/^deb /&[trusted=yes] /' "${SOURCES}"
+sed -i -e 's/^deb http/deb [trusted=yes] http/' "${SOURCES}"
 sudo cp "${SOURCES}" /etc/apt/sources.list.d/digabi.list
 
 if [ -n "${DEBIAN_MIRROR}" ]
@@ -30,30 +30,33 @@ else
     echo "I: Using pre-configured Debian mirror."
 fi
 
+set +x # don't print secret
+if [ -n "${DEBIAN_MIRROR_AUTH}" ]
+then
+    echo "${DEBIAN_MIRROR_AUTH}" | sudo tee /etc/apt/auth.conf.d/debian-mirror.conf > /dev/null
+    mkdir -p chroot/etc/apt/auth.conf.d
+    cp /etc/apt/auth.conf.d/debian-mirror.conf chroot/etc/apt/auth.conf.d
+fi
+set -x
+
 echo "I: Configure APT: do not install recommends..."
 cat << EOF | sudo tee /etc/apt/apt.conf.d/99-no-recommends
 APT::Install-Recommends "false";
 APT::Install-Suggests "false";
 EOF
 
+echo "I: Configure APT: increase number of retries..."
+cat << EOF | sudo tee /etc/apt/apt.conf.d/99-retries
+APT::Acquire::Retries 5;
+EOF
+cp /etc/apt/apt.conf.d/99-retries target/default/archives/99-retries.conf.binary
+cp /etc/apt/apt.conf.d/99-retries target/default/archives/99-retries.conf.chroot
+
 echo "I: Update package lists..."
 sudo apt-get -qy update
 
-echo "I: Uninstall postgres so that postgres installed inside chroot gets pristine port..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get -qy remove postgresql-9.6 postgresql-contrib-9.6 || true
-
 echo "I: Upgrade build system..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade
-
-echo "I: Pin our version of live-build"
-cat <<EOF | sudo tee /etc/apt/preferences.d/live-build
-Package: live-build
-Pin: release o=Digabi
-Pin-Priority: 1000
-EOF
-
-echo "I: Install digabi-dev, rsync..."
-sudo DEBIAN_FRONTEND=noninteractive apt-get -o "Acquire::http::Pipeline-Depth=10" -qy install build-essential rsync git aptitude live-build
+sudo DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confnew" -qy dist-upgrade
 
 echo "I: Copy local sources.list configuration to build directory..."
 cp ${SOURCES} target/default/archives/digabi.list.binary
@@ -74,3 +77,7 @@ lb config ${LB_OPTIONS}
 
 echo "I: Running lb build..."
 sudo lb build --verbose --debug
+
+mkdir -p artifacts
+mv digabi-os-* artifacts
+mv chroot/boot/initrd* artifacts

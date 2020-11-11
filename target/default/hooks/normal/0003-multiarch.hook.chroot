@@ -1,0 +1,14 @@
+#!/bin/sh
+set -ex
+
+echo "I: Running multiarch.hook.chroot..."
+
+case "$(dpkg --print-architecture)" in
+    amd64)
+        dpkg --add-architecture i386
+        apt-get update
+    ;;
+    *)
+        echo "W: Unsupported arch ${LB_ARCHITECTURE}, not enabling multiarch."
+    ;;
+esac

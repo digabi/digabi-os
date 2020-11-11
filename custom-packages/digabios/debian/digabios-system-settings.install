@@ -7,7 +7,6 @@ etc/sysctl.d/*
 etc/modprobe.d/*
 etc/timezone.digabios
 etc/xdg/mimeapps.list
-etc/xdg/user-dirs.defaults.digabios
 etc/xdg/xfce4
 usr/bin/digabi-dpi
 usr/bin/digabi-panel-color

@@ -24,7 +24,7 @@ set +a
 . config/bootstrap
 
 # Run pre-build hooks
-PRE_BUILD_HOOKS="$(ls ${PWD}/config/hooks/*.pre-build)"
+PRE_BUILD_HOOKS="$(ls ${PWD}/config/hooks/normal/*.pre-build)"
 
 if [ -n "${PRE_BUILD_HOOKS}" ]
 then

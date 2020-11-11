@@ -75,7 +75,7 @@ fi
 set +a
 
 # Run pre-config hooks
-PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/*.pre-config)"
+PRE_CONFIG_HOOKS="$(ls ${PWD}/config/hooks/normal/*.pre-config)"
 
 if [ -n "${PRE_CONFIG_HOOKS}" ]
 then
@@ -103,16 +103,20 @@ fi
 _SOURCE="false"
 ARCHIVE_AREAS="main contrib non-free"
 
-if [ -z "${DISTRIBUTION}" ]
-then
-    DISTRIBUTION="stretch"
-fi
+DEBIAN_SUITE="${DEBIAN_SUITE:-stretch}"
 
 DEFAULT_DEBIAN_MIRROR="http://httpredir.debian.org/debian"
 DEFAULT_DIGABI_MIRROR="http://dev.digabi.fi/debian"
 if [ -z "${DEBIAN_MIRROR}" ] ; then
     DEBIAN_MIRROR="${DEFAULT_DEBIAN_MIRROR}"
 fi
+
+if [ -n "${DEBIAN_MIRROR_AUTH}" ] ; then
+  MIRROR_USERNAME=$(echo "${DEBIAN_MIRROR_AUTH}" | cut -d' ' -f 4)
+  MIRROR_PASSWORD=$(echo "${DEBIAN_MIRROR_AUTH}" | cut -d' ' -f 6)
+  BOOTSTRAP_MIRROR="https://$MIRROR_USERNAME:$MIRROR_PASSWORD@debian.abitti.fi/debian-mirror/debian"
+fi
+
 if [ -z "${DIGABI_MIRROR}" ]
 then
     DIGABI_MIRROR="${DEFAULT_DIGABI_MIRROR}"
@@ -134,13 +138,13 @@ then
     BINARY_IMAGES="iso-hybrid"
 fi
 
-WLAN_FLAVOUR="ytl-stretch"
+WLAN_FLAVOUR="ytl-${DEBIAN_SUITE}"
 if [ "${WLAN}" = "true" ]
 then
-    WLAN_FLAVOUR="ytl-stretch-wls"
+    WLAN_FLAVOUR="ytl-${DEBIAN_SUITE}-wls"
 fi
 
-LINUX_FLAVOURS="4.9.228-${WLAN_FLAVOUR}-${ARCH} 4.14.13-${WLAN_FLAVOUR}-${ARCH} 4.19.118-${WLAN_FLAVOUR}-${ARCH} 5.3.2-${WLAN_FLAVOUR}-${ARCH}"
+LINUX_FLAVOURS="4.9.228-${WLAN_FLAVOUR}-${ARCH} 4.19.132-${WLAN_FLAVOUR}-${ARCH} 5.4.19-${WLAN_FLAVOUR}-${ARCH} 5.8.7-${WLAN_FLAVOUR}-${ARCH}"
 
 lb config noauto \
     --apt-indices "false" \
@@ -154,7 +158,7 @@ lb config noauto \
     --debootstrap-options "--include=apt-transport-https,ca-certificates,openssl ${DEBOOTSTRAP_OPTIONS}" \
     --checksums "sha512" \
     --clean \
-    --distribution "${DISTRIBUTION}" \
+    --distribution "${DEBIAN_SUITE}" \
     --hdd-label "${HDD_LABEL}" \
     --hdd-size "auto" \
     --ignore-system-defaults \
@@ -167,7 +171,7 @@ lb config noauto \
     --mirror-bootstrap "${DEBIAN_MIRROR}" \
     --mirror-chroot "${DEBIAN_MIRROR}" \
     --parent-mirror-binary "${DEBIAN_MIRROR}" \
-    --parent-mirror-bootstrap "${DEBIAN_MIRROR}" \
+    --parent-mirror-bootstrap "${BOOTSTRAP_MIRROR}" \
     --security "true" \
     --source "${_SOURCE}" \
     --win32-loader "false" \

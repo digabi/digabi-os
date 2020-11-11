@@ -158,3 +158,15 @@ dist:	$(STAGE)/collect
 
 debug: $(STAGE)/environment
 	$(VAGRANT) ssh || exit 0
+
+DIGABI_BUILD_TARGET ?= server meb
+CONTAINER_NAME = digabios-build-$(word 1, $(DIGABI_BUILD_TARGET))
+IMAGE_NAME = $(CONTAINER_NAME)-image
+build-docker:
+	echo $(DIGABI_BUILD_TARGET) $(CONTAINER_NAME)
+	rm -rf artifacts
+	docker build -t $(IMAGE_NAME) .
+	-docker container rm -f $(CONTAINER_NAME)
+	docker run --name $(CONTAINER_NAME) --cap-add=SYS_ADMIN $(IMAGE_NAME):latest scripts/build-in-vm.sh
+	docker cp $(CONTAINER_NAME):/workdir/artifacts .
+
