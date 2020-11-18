@@ -42,7 +42,7 @@
         <Filename>LoggerPro.desktop</Filename>
         <Filename>org.kde.kcalc.desktop</Filename>
         <Filename>speedcrunch.desktop</Filename>
-        <Filename>gnome-calculator.desktop</Filename>
+        <Filename>org.gnome.Calculator.desktop</Filename>
         <Separator/>
         <Filename>digabi-sound-test.desktop</Filename>
         <Separator/>
