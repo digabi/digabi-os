@@ -63,6 +63,7 @@
         <Layout>
             <Filename>schoolstore-ti-chemistry-widget.desktop</Filename>
             <Filename>schoolstore-ti-electricity-widget.desktop</Filename>
+            <Filename>schoolstore-ti-maths-widget.desktop</Filename>
         </Layout>
     </Menu>
 
