@@ -344,7 +344,8 @@ Depends: ${misc:Depends},
  phonon-backend-null,
  pulseaudio,
  xclip,
- xfce4-screenshooter
+ xfce4-screenshooter,
+ zip
 Conflicts: digabios-server
 Provides: digabios-system-config
 Description: Add client configuration to system.
