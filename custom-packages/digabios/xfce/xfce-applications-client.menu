@@ -34,7 +34,7 @@
         <Separator/>
         <Filename>geogebra.desktop</Filename>
         <Filename>geogebra-classic.desktop</Filename>
-        <Filename>wxMaxima.desktop</Filename>
+        <Filename>io.github.wxmaxima_developers.wxMaxima.desktop</Filename>
         <Filename>ClassPadManagerforClassPadII.desktop</Filename>
         <Filename>TI-Nspire CX CAS Student Software.desktop</Filename>
         <Menuname>TexasInstrumentsWidgets</Menuname>
