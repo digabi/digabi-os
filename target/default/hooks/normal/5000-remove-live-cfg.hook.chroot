@@ -3,4 +3,4 @@
 set -e
 
 echo "I: Remove unused syslinux menu template that causes binary_syslinux to fail"
-rm -f /usr/share/live/build/bootloaders/syslinux_common/live.cfg.in
+rm -vf /usr/share/live/build/bootloaders/syslinux_common/live.cfg.in
