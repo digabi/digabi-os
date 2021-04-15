@@ -7,5 +7,10 @@ RUN echo 'deb     http://ftp.de.debian.org/debian/    bullseye main contrib non-
 
 RUN apt-get update && apt-get install -y sudo kmod build-essential rsync git mtools apt-utils && apt-get -t bullseye install -y live-build
 
+# Disable generation of default syslinux config because
+# a) it is not used, and
+# b) it breaks the build
+RUN rm /usr/share/live/build/bootloaders/syslinux_common/live.cfg.in
+
 COPY . /workdir
 WORKDIR /workdir
