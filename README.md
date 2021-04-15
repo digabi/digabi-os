@@ -41,7 +41,7 @@ to the workstation. All testing is done at one's own risk.
 
 
 ## License
-This product is based on Debian 9.0 (stretch), and includes 
+This product is based on Debian 10.0 (buster), and includes 
 software w/ various licenses. For licensing information, see [Debian 
 License information](http://www.debian.org/legal/licenses/). Work done 
 by MEB is licensed under GPLv3, except MEB/Digabi logos (included in 
