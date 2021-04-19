@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
-if [ -f "/lib/live/config/0040-sudo" ] && [ -n "$ROOT_PASSWORD" ] && echo "$DIGABI_BUILD_TARGET" | grep -q "server"
+if [[ (-n "$ROOT_PASSWORD"  && "$DIGABI_BUILD_TARGET" =~ "server") || "$DIGABI_BUILD_TARGET" =~ "client" ]]
 then
 	echo "I: disabling passwordless sudo"
 	rm -v "/lib/live/config/0040-sudo"
