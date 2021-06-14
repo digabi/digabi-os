@@ -16,12 +16,13 @@
         <value type="int" value="9"/>
         <value type="int" value="3"/>
         <value type="int" value="15"/>
-	<value type="int" value="17"/>
+        <value type="int" value="17"/>
         <value type="int" value="10"/>
         <value type="int" value="4"/>
         <value type="int" value="6"/>
         <value type="int" value="16"/>
         <value type="int" value="13"/>
+        <value type="int" value="5"/>
         <value type="int" value="2"/>
       </property>
       <property name="background-style" type="uint" value="1"/>
@@ -60,7 +61,9 @@
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-5" type="string" value="clock"/>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="digital-format" type="string" value="%d.%m.%Y"/>
+    </property>
     <property name="plugin-6" type="string" value="systray">
       <property name="show-frame" type="bool" value="false"/>
       <property name="size-max" type="uint" value="25"/>
