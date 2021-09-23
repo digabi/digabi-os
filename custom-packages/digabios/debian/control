@@ -359,6 +359,7 @@ Architecture: all
 Depends: ${misc:Depends},
  anacron,
  avahi-daemon,
+ curl,
  digabios-firewall (= ${binary:Version}),
  digabios-system-settings (= ${binary:Version}),
  exfat-fuse,
