@@ -62,8 +62,6 @@ install: $(CONTENT_DIR)
 	install -m 0644 xkb-symbols/* $(DESTDIR)/usr/share/X11/xkb/symbols
 	install -d -m 0755 $(DESTDIR)/etc/modprobe.d/
 	install -D -m 0644 modprobe.d/* $(DESTDIR)/etc/modprobe.d/
-	install -d -m 0755 $(DESTDIR)/etc/modules-load.d/
-	install -D -m 0644 modules-load.d/* $(DESTDIR)/etc/modules-load.d/
 	install -d -m 0755 $(DESTDIR)/usr/share/X11/xorg.conf.d/
 	install -D -m 0644 xorg.conf.d/* $(DESTDIR)/usr/share/X11/xorg.conf.d/
 	install -d -m 0755 $(DESTDIR)/usr/share/mime/packages/

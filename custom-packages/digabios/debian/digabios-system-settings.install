@@ -5,7 +5,6 @@ etc/locale.gen.digabios
 etc/skel
 etc/sysctl.d/*
 etc/modprobe.d/*
-etc/modules-load.d/*
 etc/timezone.digabios
 etc/xdg/mimeapps.list
 etc/xdg/xfce4
