@@ -379,6 +379,8 @@ Depends: ${misc:Depends},
  sysstat,
  terminator,
  vbox-modules,
+ virtualbox-guest-utils,
+ virtualbox-guest-x11,
  zenity
 Conflicts: digabios-client
 Provides: digabios-system-config
