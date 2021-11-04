@@ -17,7 +17,7 @@ create_pinned_apt_config_for_dist()
     updates_dist="$2"
 
     PACKAGES="$(grep -v ^# data/packages-from-${dist} |awk '{print $1}' |sort |xargs)"
-    [ -z "${PACKAGES}" ] && echo "W: No packages to migrate from ${dist}, skipping..." && exit 0
+    [ -z "${PACKAGES}" ] && echo "E: No packages to migrate from ${dist}." && exit 1
 
     echo "I: Migrating packages from ${dist}: ${PACKAGES}..."
 
