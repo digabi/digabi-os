@@ -357,6 +357,7 @@ Description: Add client configuration to system.
 Package: digabios-server
 Architecture: all
 Depends: ${misc:Depends},
+ abitti-ktpapi,
  anacron,
  avahi-daemon,
  curl,
