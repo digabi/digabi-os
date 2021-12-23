@@ -1,54 +1,37 @@
-DigabiOS (DOS)
+Abitti Disk Image
 ================================
-TL;DR Sources for DigabiOS, a Live-Linux system, created by The 
-Matriculation Examination Board of Finland (In Finnish: 
-[Ylioppilastutkintolautakunta](http://www.ylioppilastutkinto.fi/)).
+Abitti Disk Image (formerly DigabiOS) is a collection of Linux distributions maintained by the [Finnish Matriculation Examination Board](http://www.ylioppilastutkinto.fi/) (MEB). The distributions are based on Debian GNU/Linux and used for disk images distributed for the matriculation examination environment called Abitti.
+
+For information regarding use of the Abitti trademark, please consult (https://abitti.dev/abitti-trademark.html).
 
 
-## Goals
+## Distributions
 
-### Client
+ * The client distribution runs on candidates’ devices
+ * The server distribution runs on exam arrangers’ devices
 
- * runs on student devices (BYOD)
- * prevents cheating (using forbidden materials, communication w/ other 
-  students, using internet when forbidden)
- * provides a solid system for attending the exam
-
-
-### Server
-
- * runs on school-owned devices
- * hosts local copy of the testing system, syncs data to cloud
 
 ## Documentation
 For documentation, see `doc/*.md`. Manual for `live-build` toolset: 
-[Debian Live Manual](http://live.debian.net/manual/3.x/).
+[Debian Live Manual](https://live-team.pages.debian.net/live-manual/).
 
 
 ### How to build
-See [`doc/building.md`](doc/building.md) for detailed instructions. TL;DR; `make -f Makefile.build dist`.
+To get an overview of the building process see [`doc/building.md`](doc/building.md). However, while this repository contains the code required to build the kernel and the image the complete Abitti image contains packages from various sources.
 
+
+### Sources
+Abitti Disk Image is not an open source project. The Abitti Disk Image contains binary packages from various sources:
+
+* Abitti Disk Image uses GNU/Linux kernel obtained from Debian source packages. The source kernels are as-is except a one-line patch that disables booting with an arbitrary initrd. The patched kernel sources can be found at (https://static.abitti.fi/kernel-sources/index.html).
+* Most of the binary files in the image are unchanged Debian packages. The package owning a file can be queried using the standard Debian tool `dpkg`. The sources of these unchanged packages are provided by the Debian project.
+* The Abitti Disk Image contains closed source software. The MEB has signed license agreements with the respective parties and further gives Abitti users rights mentioned in the [Abitti license agreement](https://www.abitti.fi/kayttoehdot/).
+* The Abitti exam system, which in this case means code showing the exam questions, material and recording the test takers’ submissions is owned by the MEB. It is licensed according to the aforementioned Abitti license agreement. Some modules are open source, see (https://abitti.dev).
 
 ## Disclaimer
-The current version of the Matriculation Examination Board's exam 
-operating system aims to demonstrate the exam execution environment. 
-The Matriculation Examination Board reserves the right to revise the 
-exam operating system without prior notice.  As this is solely a test 
-version, the final product may be different.
+The source code is released here on grounds of transparency. The maintainers of the repository do not actively investigate pull request or issues. To contact MEB regarding this repository, please use the address abitti@ylioppilastutkinto.fi.
 
-The operating system is designed so that it will not make modifications 
-to the workstation. All testing is done at one's own risk.
+MEB reserves the right to revise the content of this repository without prior notice.
 
+All use of the content of this repository is done at one's own risk.
 
-## License
-This product is based on Debian 10.0 (buster), and includes 
-software w/ various licenses. For licensing information, see [Debian 
-License information](http://www.debian.org/legal/licenses/). Work done 
-by MEB is licensed under GPLv3, except MEB/Digabi logos (included in 
-some `digabi-*` packages), and when otherwise noted.
-
-
-## Contact
- * [The Matriculation Examination Board of Finland](http://www.ylioppilastutkinto.fi/), PB50, 00581 Helsinki, Finland
- * [github.com/digabi/digabi-os](https://github.com/digabi/digabi-os)
- * email: [digabi@ylioppilastutkinto.fi](mailto:digabi@ylioppilastutkinto.fi)
