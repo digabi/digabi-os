@@ -306,7 +306,6 @@ Depends: ${misc:Depends},
  postgresql-contrib-11,
  sysstat,
  terminator,
- vbox-modules,
  virtualbox-guest-utils,
  virtualbox-guest-x11,
  zenity
