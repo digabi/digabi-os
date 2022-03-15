@@ -16,6 +16,7 @@ Package: digabios
 Architecture: all
 Depends: ${misc:Depends},
  arping,
+ at-spi2-core,
  console-data,
  console-setup,
  dbus-x11,
