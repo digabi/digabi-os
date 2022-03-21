@@ -309,6 +309,7 @@ Depends: ${misc:Depends},
  sysstat,
  tcpdump,
  terminator,
+ unzip,
  virtualbox-guest-utils,
  virtualbox-guest-x11,
  zenity
