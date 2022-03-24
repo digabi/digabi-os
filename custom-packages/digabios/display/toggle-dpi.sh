@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -e
 
-DEFAULT="92"
+DEFAULT="96"
 HIDPI="192"
 TIMEOUT="15"
 
