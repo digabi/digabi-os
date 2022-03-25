@@ -17,7 +17,7 @@ close_firefox() {
         sleep 0.2
     done
 
-    pkill -9 firefox-esr 2>&1 /dev/null
+    pkill -9 firefox-esr 2>&1 >/dev/null
 }
 
 set_scaling_and_start_firefox() {
