@@ -24,7 +24,7 @@ To get an overview of the building process see [`doc/building.md`](doc/building.
 Abitti Disk Image is not an open source project. The Abitti Disk Image contains binary packages from various sources:
 
 * Abitti Disk Image uses GNU/Linux kernel obtained from Debian source packages. The source kernels are as-is except a one-line patch that disables booting with an arbitrary initrd. The patched kernel sources can be found at https://static.abitti.fi/kernel-sources/index.html.
-* Most of the binary files in the image are unchanged Debian packages. The package owning a file can be queried using the standard Debian tool `dpkg`. The sources of these unchanged packages are provided by the Debian project.
+* Most of the binary files in the image are unchanged Debian packages. The package owning a file can be queried using the standard Debian tool `dpkg`. The sources of these unchanged packages are provided by [the Debian project](https://www.debian.org/distrib/packages).
 * The Abitti Disk Image contains closed source software. The MEB has signed license agreements with the respective parties and further gives Abitti users rights mentioned in the [Abitti license agreement](https://www.abitti.fi/kayttoehdot/).
 * The Abitti exam system, which in this case means code showing the exam questions, material and recording the test takers’ submissions is owned by the MEB. It is licensed according to the aforementioned Abitti license agreement. Some modules are open source, see https://abitti.dev.
 
