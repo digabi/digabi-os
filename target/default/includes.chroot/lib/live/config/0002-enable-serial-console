@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# if serial port 0 exists, /proc/tty/driver/serial contains a line like '0: uart:16550A port:...'
+if ! grep -q '^0: uart:unknown ' /proc/tty/driver/serial; then
+  nohup systemctl start getty@ttyS0 >/dev/null 2>&1 &
+fi
