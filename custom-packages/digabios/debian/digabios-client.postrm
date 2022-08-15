@@ -21,7 +21,7 @@ set -e
 
 case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-        dpkg-statoverride --remove /usr/share/terminator/terminator
+        dpkg-statoverride --remove /usr/bin/terminator
     ;;
 
     *)
