@@ -317,7 +317,10 @@ Description: Add server configuration to system
  TBD
 
 Package: digabios-icons
+Section: x11
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
+ tango-icon-theme,
+ gtk-update-icon-cache
 Description: DigabiOS icon theme
  TBD
