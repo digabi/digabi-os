@@ -3,6 +3,7 @@
 <channel name="xfce4-session" version="1.0">
   <property name="general" type="empty">
     <property name="FailsafeSessionName" type="string" value="Failsafe"/>
+    <property name="LockCommand" type="string" value="/usr/local/bin/digabi-scrlock"/>
   </property>
   <property name="shutdown" type="empty">
     <property name="ShowSuspend" type="bool" value="false"/>
