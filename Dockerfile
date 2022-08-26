@@ -2,8 +2,6 @@ FROM debian:11.4
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN echo 'APT::Default-Release "bullseye";' > /etc/apt/apt.conf.d/99defaultrelease
-
 RUN apt-get update && apt-get install -y sudo kmod build-essential rsync git mtools apt-utils live-build
 
 # Fix debootstrap umounting /proc outside chroot
