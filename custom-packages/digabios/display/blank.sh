@@ -1,5 +1,4 @@
 #!/bin/sh
 set -e
 
-sleep 2
-xset s blank
+/usr/local/bin/digabi-scrlock
