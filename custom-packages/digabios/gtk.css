@@ -1,0 +1,13 @@
+.panel {
+    background: #4a4a4a;
+}
+.tasklist button {
+    border-color: #202020;
+    background: #4a4a4a;
+    color: #c0c0c0;
+    font-weight: normal;
+}
+.tasklist button:checked {
+    background: #363636;
+    color: #ffffff;
+}
