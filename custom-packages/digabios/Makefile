@@ -27,6 +27,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 locale.gen $(DESTDIR)/etc/locale.gen.digabios
 	install -D -m 0644 xfce/xfce4-panel.xml $(DESTDIR)/etc/xdg/xfce4/panel/default.xml.digabios
 	install -D -m 0644 xfce/xfwm4.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml.digabios
+	install -D -m 0644 xfce/xfce4-power-manager.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml.digabios
 	install -D -m 0644 xfce/xfce4-session.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml.digabios
 	install -D -m 0644 xfce/xfce4-desktop.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml.digabios
 	install -D -m 0644 xfce/xfce4-notifyd.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml.digabios
