@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -e
-
-mount -o remount,commit=2 /dev/sdb3
