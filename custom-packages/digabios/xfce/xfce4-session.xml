@@ -26,7 +26,7 @@
       <property name="Client2_Command" type="array">
         <value type="string" value="xfce4-panel"/>
       </property>
-      <property name="Client2_Priority" type="int" value="25"/>
+      <property name="Client2_Priority" type="int" value="75"/>
       <property name="Client2_PerScreen" type="bool" value="false"/>
       <property name="Client3_Command" type="array">
         <value type="string" value="Thunar"/>
