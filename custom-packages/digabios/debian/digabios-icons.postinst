@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # postinst script for digabios-backgrounds
 #
 # see: dh_installdeb(1)
@@ -20,8 +20,12 @@ set -e
 
 case "$1" in
     configure)
-        mkdir -p /usr/share/icons/hires/48x48/status /usr/share/icons/hires/32x32/status /usr/share/icons/hires/scalable/status
-        cp /usr/share/icons/digabi/panel/brightness-lcd-scalable.svg /usr/share/icons/hires/scalable/status/xfpm-brightness-lcd.svg
+        cd /usr/share/icons/Adwaita
+        for i in */*/battery-level* */*/battery-full-charged* */*/battery-missing-symbolic*; do
+          extension=$(echo $i|sed 's/.*\.//')
+          mkdir -p ../digabi/$(dirname $i);
+          ln -v -f -s /usr/share/icons/Adwaita/$(dirname $(dirname $i))/status/display-brightness-symbolic.symbolic.$extension ../digabi/$i;
+        done
         ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
