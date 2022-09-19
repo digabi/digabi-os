@@ -1,4 +1,4 @@
-FROM debian:11.4
+FROM debian:11.5
 
 ARG DEBIAN_FRONTEND=noninteractive
 
