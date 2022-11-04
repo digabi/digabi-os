@@ -1,0 +1,19 @@
+.panel {
+    background: #4a4a4a;
+    color: #a0a0a0;
+}
+.panel button#clock-button, .panel button#applicationmenu-button {
+    color: #ffffff;
+}
+.tasklist button {
+    border-color: #202020;
+    background: #4a4a4a;
+    color: #c0c0c0;
+}
+.tasklist button:checked {
+    background: #363636;
+    color: #ffffff;
+}
+.panel button#xfce4-power-manager-plugin, .panel button#launcher-arrow {
+    color: #bebebe;
+}

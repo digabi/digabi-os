@@ -1,11 +1,8 @@
-FROM debian:10.4
+FROM debian:11.5
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN echo 'APT::Default-Release "buster";' > /etc/apt/apt.conf.d/99defaultrelease
-RUN echo 'deb     http://ftp.de.debian.org/debian/    bullseye main contrib non-free' > /etc/apt/sources.list.d/bullseye.list
-
-RUN apt-get update && apt-get install -y sudo kmod build-essential rsync git mtools apt-utils && apt-get -t bullseye install -y live-build
+RUN apt-get update && apt-get install -y sudo kmod build-essential rsync git mtools apt-utils live-build
 
 # Fix debootstrap umounting /proc outside chroot
 # See https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=921815

@@ -9,7 +9,6 @@ etc/timezone.digabios
 etc/xdg/mimeapps.list
 etc/xdg/xfce4
 usr/bin/digabi-dpi
-usr/bin/digabi-panel-color
 usr/bin/xlock.digabios
 usr/share/applications/digabi-dpi.desktop
 usr/share/applications/xkb-*.desktop

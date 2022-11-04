@@ -33,7 +33,7 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfce/xsettings.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml.digabios
 	install -D -m 0644 xfce/xfce4-keyboard-shortcuts.xml $(DESTDIR)/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml.digabios
 	install -D -m 0644 xsessionrc $(DESTDIR)/etc/skel/.xsessionrc.digabios
-	install -D -m 0644 gtkrc-2.0 $(DESTDIR)/etc/skel/.gtkrc-2.0.digabios
+	install -D -m 0644 gtk.css $(DESTDIR)/etc/skel/.config/gtk-3.0/gtk.css.digabios
 	install -D -m 0644 default-applications.list $(DESTDIR)/etc/xdg/mimeapps.list
 	install -D -m 0644 locale.fi $(DESTDIR)/etc/default/locale.digabios-fi
 	install -D -m 0644 locale.sv $(DESTDIR)/etc/default/locale.digabios-sv
@@ -44,7 +44,6 @@ install: $(CONTENT_DIR)
 	install -D -m 0644 xfce/xfce-applications-server.menu $(DESTDIR)/etc/xdg/menus/xfce-applications-server.menu.digabios
 	install -d -m 0755 $(DESTDIR)/etc/sysctl.d
 	install -m 0644 sysctl.d/* $(DESTDIR)/etc/sysctl.d
-	install -D -m 0755 digabi-panel-color $(DESTDIR)/usr/bin/digabi-panel-color
 	install -D -m 0644 geogebra.properties $(DESTDIR)/etc/skel/.config/geogebra/geogebra.properties
 	install -D -m 0644 chemaxon/marvin.properties $(DESTDIR)/etc/skel/.chemaxon/marvin.properties
 	install -D -m 0644 timezone $(DESTDIR)/etc/timezone.digabios

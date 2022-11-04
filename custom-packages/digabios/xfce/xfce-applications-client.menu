@@ -28,7 +28,7 @@
         <Separator/>
         <Filename>dia.desktop</Filename>
         <Filename>gimp.desktop</Filename>
-        <Filename>inkscape.desktop</Filename>
+        <Filename>org.inkscape.Inkscape.desktop</Filename>
         <Filename>org.kde.kolourpaint.desktop</Filename>
         <Separator/>
         <Filename>geogebra.desktop</Filename>

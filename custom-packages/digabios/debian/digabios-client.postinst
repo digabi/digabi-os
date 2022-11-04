@@ -21,7 +21,7 @@ set -e
 case "$1" in
     configure)
 		addgroup --system xterm
-		TERMINATOR="/usr/share/terminator/terminator"
+		TERMINATOR="/usr/bin/terminator"
 		dpkg-statoverride --add root xterm 0750 ${TERMINATOR}
 		chmod 0750 ${TERMINATOR}
 		chown root:xterm ${TERMINATOR}

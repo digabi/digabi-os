@@ -18,6 +18,10 @@
       <property name="monitor0" type="empty">
         <property name="brightness" type="empty"/>
         <property name="color1" type="array">
+          <!-- NOTE: xfce 4.16.1 does not support support reading this color, see
+                     https://github.com/xfce-mirror/xfdesktop/blob/xfdesktop-4.16.1/src/xfce-workspace.c#L447
+                     Background color is set explicitly in xfce4-session.xml
+          -->
 	  <value type="uint" value="14392"/>
 	  <value type="uint" value="24158"/>
 	  <value type="uint" value="30583"/>

@@ -4,7 +4,6 @@ Priority: optional
 Maintainer: Ville Korhonen <ville.korhonen@ylioppilastutkinto.fi>
 Build-Depends: debhelper (>= 9),
  config-package-dev,
- dh-systemd,
  dh-exec,
  librsvg2-bin
 Standards-Version: 3.9.5
@@ -23,6 +22,7 @@ Depends: ${misc:Depends},
  desktop-base,
  digabi-certificates,
  digabi-dkms-modules,
+ digabi-extra-firmware,
  digabi-sound-test (>= 0.5),
  digabios-backgrounds (= ${binary:Version}),
  digabios-firewall (= ${binary:Version}),
@@ -229,7 +229,7 @@ Depends: ${misc:Depends},
  libinput10,
  libreoffice-calc,
  libreoffice-draw,
- libreoffice-gtk2,
+ libreoffice-gtk3,
  libreoffice-impress,
  libreoffice-l10n-fi,
  libreoffice-l10n-sv,
@@ -272,7 +272,7 @@ Depends: ${misc:Depends},
  openntpd,
  patch,
  pavucontrol,
- phonon-backend-null,
+ phonon4qt5-backend-null,
  pulseaudio,
  xclip,
  xfce4-screenshooter,
@@ -287,13 +287,11 @@ Architecture: all
 Depends: ${misc:Depends},
  abitti-ktpapi,
  anacron,
- avahi-daemon,
  curl,
  digabios-firewall (= ${binary:Version}),
  digabios-system-settings (= ${binary:Version}),
  ethtool,
  exfat-fuse,
- ifenslave,
  iperf3,
  isc-dhcp-server,
  ktpjs,
@@ -302,10 +300,8 @@ Depends: ${misc:Depends},
  nginx,
  ntfs-3g,
  ntp,
- openssh-server,
  pciutils,
- postgresql-11,
- postgresql-contrib-11,
+ postgresql-13,
  sysstat,
  tcpdump,
  terminator,
@@ -319,7 +315,10 @@ Description: Add server configuration to system
  TBD
 
 Package: digabios-icons
+Section: x11
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
+ tango-icon-theme,
+ gtk-update-icon-cache
 Description: DigabiOS icon theme
  TBD
