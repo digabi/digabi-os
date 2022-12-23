@@ -276,7 +276,8 @@ Depends: ${misc:Depends},
  pulseaudio,
  xclip,
  xfce4-screenshooter,
- zip
+ zip,
+ ffmpeg
 Conflicts: digabios-server
 Provides: digabios-system-config
 Description: Add client configuration to system.
