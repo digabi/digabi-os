@@ -85,6 +85,7 @@ Depends: ${misc:Depends},
  xserver-xorg-input-evdev,
  xserver-xorg-input-synaptics,
  xserver-xorg-video-all
+ rsyslog-relp
 Replaces: digabi-live
 Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.
