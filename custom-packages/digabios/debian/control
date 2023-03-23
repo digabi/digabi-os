@@ -66,6 +66,7 @@ Depends: ${misc:Depends},
  network-manager-gnome,
  policykit-1,
  rsyslog-gnutls,
+ rsyslog-relp,
  sudo,
  tango-icon-theme,
  terminator,
@@ -85,7 +86,6 @@ Depends: ${misc:Depends},
  xserver-xorg-input-evdev,
  xserver-xorg-input-synaptics,
  xserver-xorg-video-all
- rsyslog-relp
 Replaces: digabi-live
 Description: Digabi OS
  Live operating system for the use of Matriculation Examination Board.
