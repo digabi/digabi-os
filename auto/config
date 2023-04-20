@@ -101,7 +101,7 @@ then
 fi
 
 _SOURCE="false"
-ARCHIVE_AREAS="main contrib non-free"
+ARCHIVE_AREAS="main contrib non-free non-free-firmware"
 
 DEBIAN_SUITE="${DEBIAN_SUITE:-stretch}"
 

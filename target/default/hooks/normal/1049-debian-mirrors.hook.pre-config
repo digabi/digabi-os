@@ -48,14 +48,14 @@ EOF
 
     echo "I: Adding sources.list entry for ${dist}, using mirror ${DEBIAN_MIRROR}..."
     cat > config/archives/${dist}.list.chroot << EOF
-deb ${DEBIAN_MIRROR} ${dist} main contrib non-free
-#deb-src ${DEBIAN_MIRROR} ${dist} main contrib non-free
+deb ${DEBIAN_MIRROR} ${dist} main contrib non-free non-free-firmware
+#deb-src ${DEBIAN_MIRROR} ${dist} main contrib non-free non-free-firmware
 EOF
 
     if [ -n "${updates_dist}" ]; then
     cat >>config/archives/${dist}.list.chroot << EOF
-deb http://security.debian.org ${updates_dist} main contrib non-free
-#deb-src http://security.debian.org ${updates_dist} main contrib non-free
+deb http://security.debian.org ${updates_dist} main contrib non-free non-free-firmware
+#deb-src http://security.debian.org ${updates_dist} main contrib non-free non-free-firmware
 EOF
     fi
 

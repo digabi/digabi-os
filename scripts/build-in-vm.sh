@@ -21,10 +21,10 @@ then
         DEBIAN_SUITE="stretch"
     fi
     (
-        echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free"
-        echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free"
-        echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free"
-        echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free"
+        echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free non-free-firmware"
+        echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE} main contrib non-free non-free-firmware"
+        echo "deb ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free non-free-firmware"
+        echo "deb-src ${DEBIAN_MIRROR} ${DEBIAN_SUITE}-updates main contrib non-free non-free-firmware"
     ) | sudo tee /etc/apt/sources.list
 else
     echo "I: Using pre-configured Debian mirror."
