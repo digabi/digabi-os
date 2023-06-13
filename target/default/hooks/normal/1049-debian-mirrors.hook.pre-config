@@ -63,4 +63,5 @@ EOF
 }
 
 
-create_pinned_apt_config_for_dist bookworm bullseye-backports
+create_pinned_apt_config_for_dist bookworm
+create_pinned_apt_config_for_dist bullseye-backports
