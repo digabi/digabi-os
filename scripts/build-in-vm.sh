@@ -6,6 +6,10 @@ SOURCES="sources.list"
 
 [ -f "${CONFIG}" ] && . ${CONFIG} && echo "I: Using local configuration"
 
+echo D: in build-in-vm.sh INCLUDE_WLAN=$INCLUDE_WLAN
+echo D: in build-in-vm.sh DEBIAN_SUITE=$DEBIAN_SUITE
+echo D: in build-in-vm.sh ARCH=$ARCH
+
 echo "I: Copy local configuration to build directory..."
 cp ${CONFIG} target/default/digabi.local
 
