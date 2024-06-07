@@ -30,6 +30,7 @@
         <Filename>gimp.desktop</Filename>
         <Filename>org.inkscape.Inkscape.desktop</Filename>
         <Filename>org.kde.kolourpaint.desktop</Filename>
+        <Filename>drawio.desktop</Filename>
         <Separator/>
         <Filename>geogebra.desktop</Filename>
         <Filename>geogebra-classic.desktop</Filename>
