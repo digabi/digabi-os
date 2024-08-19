@@ -215,6 +215,7 @@ Package: digabios-client-gui-software
 Architecture: all
 Depends: ${misc:Depends},
  4fnotes,
+ abicus,
  dia,
  dia-shapes,
  digabi-koe-ohje,
