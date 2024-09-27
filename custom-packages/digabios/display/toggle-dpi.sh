@@ -7,7 +7,9 @@ TIMEOUT="15"
 
 ZENITY="/usr/bin/zenity"
 XFCONF="/usr/bin/xfconf-query"
+XPANEL="/usr/bin/xfce4-panel"
 
+[ ! -x "${XPANEL}" ] && echo "E: xfce4-panel not found!" && exit 1
 [ ! -x "${XFCONF}" ] && echo "E: xfconf-query not found!" && exit 1
 [ ! -x "${ZENITY}" ] && echo "E: zenity not found!" && exit 1
 
@@ -40,11 +42,13 @@ esac
 
 echo "I: Set DPI to ${NEW} (was: ${CURRENT})"
 ${XFCONF} -n -c xsettings -p /Xft/DPI -t int -s ${NEW}
+${XPANEL} --restart
 
 if ! ${ZENITY} --question --text "${QUESTION}" --timeout "${TIMEOUT}" --ok-label "${OK}" --cancel-label "${CANCEL}" 2>/dev/null
 then
     echo "I: User asked to return previous value..."
     ${XFCONF} -n -c xsettings -p /Xft/DPI -t int -s ${CURRENT}
+    ${XPANEL} --restart
 fi
 
 exit 0
