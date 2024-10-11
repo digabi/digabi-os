@@ -45,10 +45,15 @@
         /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml -->
         <value type="string" value="bash"/>
         <value type="string" value="-c"/>
-        <value type="string" value="output=$(xrandr 2> /dev/null); xfconf-query -v --channel xfce4-desktop --property &quot;/backdrop/screen0/monitor$(if echo &quot;$output&quot;|grep -q &quot; connected primary&quot;; then echo &quot;$output&quot;|grep &quot; connected primary&quot;|awk '{print $1}'; else echo &quot;0&quot;;fi)/workspace0/rgba1&quot; --create -t double -t double -t double -t double -s 0.219608 -s 0.368627 -s 0.466667 -s 1"/>
+        <value type="string" value="xfconf-query -v --channel xfce4-desktop --property &quot;/backdrop/screen0/monitor$(xrandr|grep &quot; connected primary&quot;|cut -d' ' -f1)/workspace0/rgba1&quot; --create -t double -t double -t double -t double -s 0.219608 -s 0.368627 -s 0.466667 -s 1"/>
       </property>
-      <property name="Client5_Priority" type="int" value="99"/>
-      <property name="Client5_PerScreen" type="bool" value="false"/>
+      <property name="Client6_Command" type="array">
+        <value type="string" value="bash"/>
+        <value type="string" value="-c"/>
+        <value type="string" value="xfconf-query -v --channel xfce4-desktop --property &quot;/backdrop/screen0/monitor0/workspace0/rgba1&quot; --create -t double -t double -t double -t double -s 0.219608 -s 0.368627 -s 0.466667 -s 1"/>
+      </property>
+      <property name="Client6_Priority" type="int" value="98"/>
+      <property name="Client6_PerScreen" type="bool" value="false"/>
     </property>
   </property>
   <property name="splash" type="empty">
