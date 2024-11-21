@@ -2,7 +2,7 @@ Abitti Disk Image
 ================================
 Abitti Disk Image (formerly DigabiOS) is a collection of Linux distributions maintained by the [Finnish Matriculation Examination Board](http://www.ylioppilastutkinto.fi/) (MEB). The distributions are based on Debian GNU/Linux and used for disk images distributed for the matriculation examination environment called Abitti.
 
-For information regarding use of the Abitti trademark, please consult https://abitti.dev/abitti-trademark.html.
+For information regarding use of the Abitti trademark, please consult https://abitti.net/abitti-trademark.html.
 
 
 ## Distributions
