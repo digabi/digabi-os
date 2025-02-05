@@ -1,1 +1,1 @@
-deb https://debian.abitti.fi/debian-mirror/postgres/ bullseye-pgdg main
+deb https://debian.abitti.fi/debian-mirror/postgres/ bookworm-pgdg main
