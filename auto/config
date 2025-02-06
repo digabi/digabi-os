@@ -103,7 +103,7 @@ fi
 _SOURCE="false"
 ARCHIVE_AREAS="main contrib non-free non-free-firmware"
 
-DEBIAN_SUITE="${DEBIAN_SUITE}"
+DEBIAN_SUITE="${DEBIAN_SUITE:-stretch}"
 
 DEFAULT_DEBIAN_MIRROR="http://httpredir.debian.org/debian"
 DEFAULT_DIGABI_MIRROR="http://dev.digabi.fi/debian"
