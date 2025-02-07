@@ -63,4 +63,3 @@ EOF
 }
 
 
-create_pinned_apt_config_for_dist bookworm
