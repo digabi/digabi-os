@@ -168,6 +168,13 @@ build-docker:
 	rm -rf artifacts
 	docker build -t $(IMAGE_NAME) .
 	-docker container rm -f $(CONTAINER_NAME)
+	docker run --name $(CONTAINER_NAME) --privileged --cap-add=SYS_ADMIN $(IMAGE_NAME):latest scripts/build-in-vm.sh
+	docker cp $(CONTAINER_NAME):/workdir/artifacts .
+
+build-docker-local:
+	echo $(DIGABI_BUILD_TARGET) $(CONTAINER_NAME)
+	rm -rf artifacts
+	docker build -t $(IMAGE_NAME) .
+	-docker container rm -f $(CONTAINER_NAME)
 	docker run --rm --name $(CONTAINER_NAME) --privileged --cap-add=SYS_ADMIN $(IMAGE_NAME):latest scripts/manual-rebuild.sh
 	docker cp $(CONTAINER_NAME):/workdir/artifacts ./build-artifacts
-
