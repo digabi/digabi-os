@@ -144,7 +144,7 @@ then
     WLAN_FLAVOUR="ytl-${KERNEL_SUITE}-wls"
 fi
 
-LINUX_FLAVOURS="5.19.11-${WLAN_FLAVOUR}-${ARCH} 6.1.128-${WLAN_FLAVOUR}-${ARCH} 6.12.9-${WLAN_FLAVOUR}-${ARCH}"
+LINUX_FLAVOURS="6.1.128-${WLAN_FLAVOUR}-${ARCH} 6.12.9-${WLAN_FLAVOUR}-${ARCH}"
 
 lb config noauto \
     --apt-indices "false" \
