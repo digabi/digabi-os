@@ -1,15 +1,3 @@
-firmware-adi
-firmware-amd-graphics
-firmware-ast
-firmware-atheros
-firmware-b43legacy-installer
-firmware-bnx2
-firmware-bnx2x
-firmware-brcm80211
-firmware-cavium
-firmware-intel-sound
-firmware-ipw2x00
-firmware-ivtv
 firmware-iwlwifi
 firmware-libertas
 firmware-linux
