@@ -24,7 +24,7 @@
         <Filename>libreoffice-impress.desktop</Filename>
         <Filename>libreoffice-math.desktop</Filename>
         <Filename>libreoffice-writer.desktop</Filename>
-        <Filename>mousepad.desktop</Filename>
+        <Filename>org.xfce.mousepad.desktop</Filename>
         <Filename>org.kde.okular.desktop</Filename>
         <Separator/>
         <Filename>dia.desktop</Filename>

@@ -14,7 +14,7 @@
     </Include>
 
     <Layout>
-        <Filename>mousepad.desktop</Filename>
+        <Filename>org.xfce.mousepad.desktop</Filename>
         <Separator/>
         <Filename>xfce-display-settings.desktop</Filename>
 	<Filename>digabi-dpi.desktop</Filename>
