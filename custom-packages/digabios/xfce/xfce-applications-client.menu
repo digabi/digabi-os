@@ -27,7 +27,7 @@
         <Filename>org.xfce.mousepad.desktop</Filename>
         <Filename>org.kde.okular.desktop</Filename>
         <Separator/>
-        <Filename>dia.desktop</Filename>
+        <Filename>org.gnome.Dia.desktop</Filename>
         <Filename>gimp.desktop</Filename>
         <Filename>org.inkscape.Inkscape.desktop</Filename>
         <Filename>org.kde.kolourpaint.desktop</Filename>
