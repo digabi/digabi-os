@@ -41,7 +41,7 @@ xkb_symbols "basic" {
     key <AC10> { [    dstroke,    Dstroke, odiaeresis, Odiaeresis ] };
     key <AC11> { [ adiaeresis, Adiaeresis,         ae,         AE ] };
     key <AD13> { [ apostrophe,   asterisk ] };
-    key <AB00> { [     zcaron,     Zcaron,      U01EF,      U01EE ] };
+    key <LSGT> { [     zcaron,     Zcaron,       less,    greater ] };
     key <AB01> { [          z,          Z,        ezh,        EZH ] };
     key <AB02> { [     ccaron,     Ccaron,          x,          X ] };
     key <AB03> { [          c,          C,   ccedilla,   Ccedilla ] };
