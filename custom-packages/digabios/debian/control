@@ -216,6 +216,7 @@ Architecture: all
 Depends: ${misc:Depends},
  4fnotes,
  abicus,
+ abicode,
  dia,
  dia-shapes,
  digabi-koe-ohje,
