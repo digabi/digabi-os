@@ -1,8 +1,8 @@
-FROM debian:11.5
+FROM --platform=linux/amd64 debian:12.9
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y sudo kmod build-essential rsync git mtools apt-utils live-build
+RUN apt-get update && apt-get install -y sudo kmod build-essential rsync git mtools apt-utils live-build wget
 
 # Fix debootstrap umounting /proc outside chroot
 # See https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=921815

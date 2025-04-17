@@ -62,6 +62,4 @@ EOF
     cp config/archives/${dist}.list.chroot config/archives/${dist}.list.binary
 }
 
-
-create_pinned_apt_config_for_dist bookworm
-create_pinned_apt_config_for_dist bullseye-backports
+create_pinned_apt_config_for_dist bookworm-backports

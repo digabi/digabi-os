@@ -1,6 +1,14 @@
 #!/bin/bash
 #set -e
 
+restart_xfce4_panel () {
+    ${XPANEL} --restart
+    # Sometimes xfc4-panel restart fails and actually only shutsdown the panel.
+    # Try to start panel again.
+    sleep 1
+    ${XPANEL} &
+}
+
 DEFAULT="96"
 HIDPI="192"
 TIMEOUT="15"
@@ -42,13 +50,13 @@ esac
 
 echo "I: Set DPI to ${NEW} (was: ${CURRENT})"
 ${XFCONF} -n -c xsettings -p /Xft/DPI -t int -s ${NEW}
-${XPANEL} --restart
+restart_xfce4_panel
 
 if ! ${ZENITY} --question --text "${QUESTION}" --timeout "${TIMEOUT}" --ok-label "${OK}" --cancel-label "${CANCEL}" 2>/dev/null
 then
     echo "I: User asked to return previous value..."
     ${XFCONF} -n -c xsettings -p /Xft/DPI -t int -s ${CURRENT}
-    ${XPANEL} --restart
+    restart_xfce4_panel
 fi
 
 exit 0

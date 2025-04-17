@@ -24,17 +24,18 @@
         <Filename>libreoffice-impress.desktop</Filename>
         <Filename>libreoffice-math.desktop</Filename>
         <Filename>libreoffice-writer.desktop</Filename>
-        <Filename>mousepad.desktop</Filename>
+        <Filename>org.xfce.mousepad.desktop</Filename>
         <Filename>org.kde.okular.desktop</Filename>
         <Separator/>
-        <Filename>dia.desktop</Filename>
+        <Filename>org.gnome.Dia.desktop</Filename>
         <Filename>gimp.desktop</Filename>
         <Filename>org.inkscape.Inkscape.desktop</Filename>
         <Filename>org.kde.kolourpaint.desktop</Filename>
         <Filename>drawio.desktop</Filename>
         <Separator/>
-        <Filename>geogebra.desktop</Filename>
+        <Filename>abicode-firefox-esr.desktop</Filename>
         <Filename>geogebra-classic.desktop</Filename>
+        <Filename>graphical-analysis.desktop</Filename>
         <Filename>io.github.wxmaxima_developers.wxMaxima.desktop</Filename>
         <Filename>ClassPadManagerforClassPadII.desktop</Filename>
         <Filename>TI-Nspire CX CAS Student Software.desktop</Filename>
@@ -42,7 +43,6 @@
         <Filename>MarvinSketch.desktop</Filename>
         <Filename>ketcher-firefox-esr.desktop</Filename>
         <Filename>4FNotes.desktop</Filename>
-        <Filename>LoggerPro.desktop</Filename>
         <Filename>org.kde.kcalc.desktop</Filename>
         <Filename>abicus.desktop</Filename>
         <Filename>speedcrunch.desktop</Filename>
