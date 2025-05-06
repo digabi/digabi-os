@@ -16,7 +16,7 @@ BUILD_TAG="${BUILD_TAG:-N/A}"
 
 COMMIT="${COMMIT:-HEAD}"
 
-DEBIAN_MIRROR="${DEBIAN_MIRROR:-http://httpredir.debian.org/debian}"
+DEBIAN_MIRROR="${DEBIAN_MIRROR:-http://deb.debian.org/debian}"
 DEBIAN_MIRROR_AUTH="${DEBIAN_MIRROR_AUTH:-}"
 DEBIAN_SUITE="${DEBIAN_SUITE:-bookworm}"
 KERNEL_SUITE="${KERNEL_SUITE:-bookworm}"
@@ -27,7 +27,6 @@ DIGABI_BUILD_MEM="${DIGABI_BUILD_MEM:-1024}"
 DIGABI_BUILD_TARGET="${DIGABI_BUILD_TARGET:-default}"
 DIGABI_DEBUG="${DIGABI_DEBUG:-false}"
 
-DIGABI_MIRROR="${DIGABI_MIRROR:-http://dev.digabi.fi/debian}"
 DIGABI_SUITE="${DIGABI_SUITE:-stable}"
 
 http_proxy="${http_proxy}"

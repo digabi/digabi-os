@@ -18,7 +18,7 @@ fi
 export DIGABI_BUILD_TARGET="server meb"
 export INCLUDE_WLAN=true
 export ROOT_PASSWORD=kukkuu
-export DEBIAN_MIRROR="https://debian.abitti.fi/debian-mirror/debian"
+export DEBIAN_MIRROR="https://deb.debian.org/debian"
 export DEBIAN_SUITE=bookworm
 export ARCH=amd64
 export DEBIAN_FRONTEND=noninteractive

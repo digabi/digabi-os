@@ -21,7 +21,7 @@ create_pinned_apt_config_for_dist()
 
     echo "I: Migrating packages from ${dist}: ${PACKAGES}..."
 
-    DEBIAN_MIRROR="${DEBIAN_MIRROR:-http://httpredir.debian.org/debian}"
+    DEBIAN_MIRROR="${DEBIAN_MIRROR:-http://deb.debian.org/debian}"
 
     echo "I: Add pinning configuration for ${dist}..."
     cat > config/archives/${dist}.pref.chroot << EOF
