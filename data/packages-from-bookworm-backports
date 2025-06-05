@@ -5,3 +5,4 @@ firmware-linux
 firmware-linux-nonfree
 firmware-ti-connectivity
 firmware-amd-graphics
+firmware-nvidia-graphics
