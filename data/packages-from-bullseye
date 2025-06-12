@@ -1,6 +1,5 @@
 wine
 winetricks
-wine32
 wine32:i386
 wine64
 libwine:i386
