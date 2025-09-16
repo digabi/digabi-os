@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+echo "Europe/Helsinki" > /etc/timezone.digabios
+echo "Europe/Helsinki" > /etc/timezone
+ln -sf /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
+dpkg-reconfigure -f noninteractive tzdata
